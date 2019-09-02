@@ -1,0 +1,382 @@
+---
+title: "R for bioinformatics, Strings and regular expression"
+subtitle: "HUST Bioinformatics course series"
+author: "Wei-Hua Chen (CC BY-NC 2.0)"
+institute: "HUST, China"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  beamer_presentation:
+    theme: AnnArbor
+    colortheme: beaver
+    fonttheme: structurebold
+    highlight: tango
+    includes:
+      in_header: mystyle.sty
+---
+
+```{r include=FALSE}
+color_block = function(color) {
+  function(x, options) sprintf('\\color{%s}\\begin{verbatim}%s\\end{verbatim}',
+                               color, x)
+}
+
+## 将错误信息用红色字体显示
+knitr::knit_hooks$set(error = color_block('red'))
+```
+
+# section 1: TOC
+
+## 前情提要
+
+Talks so far:
+
+1. introduction to R
+2. R language basics, part 1
+3. R language basics, part 2
+4. R language basics, part 3, factors
+5. data wrangler, part 1
+6. data wrangler, part 2
+
+## packages we have touched so far
+
+1. tidyverse
+  * dplyr
+  * tidyr
+  * ggplot2
+2. readr
+3. tibble
+4. forcats
+...
+
+## 本次提要
+
+```stringr ```
+
+1. basics
+ * length
+ * uppercase, lowercase
+ * unite, separate
+ * string comparisons, sub string
+2. regular expression
+
+# section 2: contents
+
+## get ready for the class
+
+\FontSmall
+
+```{r}
+library(tidyverse);
+library(stringr);
+```
+
+\FontNormal
+
+其它著名的 packages 
+
+* ```stringi```
+
+# section 2: simple manipulations ... 
+
+## string
+
+\FontSmall
+
+```{r}
+string1 <- "This is a string";
+string2 <- 'If I want to include a "quote" inside a string, I use single quotes';
+
+
+( string3 <- "a multiline 
+string" );
+
+## 注意与上面的区别
+writeLines( string3 );
+```
+
+## quotes & other special characters
+
+\FontSmall
+
+```{r}
+( double_quote <- "\"" );
+( single_quote <- '\'' );
+
+( x <- "\u00b5" )
+
+## 注意不同！！！！ 
+( y <- "\\" )
+writeLines( y );
+```
+
+## string length
+
+\FontSmall 
+
+```{r}
+## 系统自带
+nchar( c("a", "R for data science", NA) );
+
+## stringr
+str_length(c("a", "R for data science", NA));
+```
+
+## string combine 
+
+\FontSmall
+
+```{r}
+## 系统自带
+paste( "a", "b", "c", sep = "" );
+
+## stringr 
+str_c( "a", "b", "c" );
+```
+
+```{r}
+paste( c( "a", "b", "c" ), 2, sep = "" );
+str_c( c( "a", "b", "c" ), 2 );
+```
+
+## string comparison
+
+\FontSmall 
+
+```{r}
+## direct comparison ; 可用于排序 ...
+"A" > "abc";
+
+## 
+library(pracma);
+strcmp( "chen", "chenweihua" );
+strcmpi( "chen", "CHEN" );
+```
+
+
+
+## other simple functions 
+
+\FontSmall
+
+```{r}
+toupper( letters[1:10] );
+tolower( LETTERS[1:5] );
+
+library(stringi);
+stri_reverse( "ABC" );
+```
+
+\FontNormal
+
+**tricks**
+
+* ``` stringi ``` package 里的 function 都以 ``` stri_ ``` 开头
+* ``` strinr ``` 则以 ``` str_ ``` 开头
+
+# section 3: regular expression basics
+
+## what is regular expression (正则表达式) ? 
+
+在介绍更多 string manipulation 函数之前，先介绍正则表达式:
+
+**a sequence of characters that define a search pattern.**
+
+\FontSmall 
+
+```{r}
+## 比如： [ab] 表示寻找a 或 b 
+c( "abc", "chen", "liu", "blah" ) %>% str_subset( "[ab]" );
+
+## 匹配并取出字符中间的数字 
+c( "a1334bc", "ch13e_45n", "liu", "bl00ah" ) %>% str_extract( "\\d+" );
+```
+
+## useful tools 
+
+https://regexr.com/
+https://regex101.com/
+
+![regex101](images/talk07/regex101.png){height=50%}
+
+## 正则表达式的组成部分
+
+1. 字符规则（Character classes）：（不）匹配什么样的字符
+
+![字符规则](images/talk07/regular_expression_character_roles.png){height=60%}
+
+## 示例
+
+\FontSmall
+
+```{r}
+"abc_123_??$$^" %>% str_extract( "\\s+" ); ## 此字串包括 空格 吗？ 
+"abc_123_??$$^" %>% str_extract( "\\d+" ); ## 数字？？ 
+"abc_123_??$$^" %>% str_extract( "\\w+" ); ## [A-z0-9_]
+```
+
+\FontNormal
+
+```str_extract``` : 取出第一个匹配的部分
+
+## 2. 匹配位置
+
+![匹配位置](images/talk07/regexpr_anchors.png){height=40%}
+
+## 示例
+
+\FontSmall
+
+```{r}
+## 以 wei 结束的字符串
+c("chen wei hua", "chen wei", "chen") %>% str_subset( "wei$" );
+
+## 以 wei 结束的字 
+c("chen wei hua", "chen wei", "chen") %>% str_subset( "wei\\b" ); 
+```
+
+## 3. 匹配数量
+
+![匹配数量](images/talk07/regexprs_quantifiers.png){height=40%}
+
+## 示例
+
+\FontSmall
+
+```{r}
+## 
+"1234abc" %>% str_extract( "\\d+" );
+"1234abc" %>% str_extract( "\\d{3}" );
+"1234abc" %>% str_extract( "\\d{5,6}" );
+"1234abc" %>% str_extract( "\\d{2,6}" );
+```
+
+## 4. classes and groups 
+
+![classes and groups](images/talk07/regexprs_classes_groups.png){height=40%}
+
+## 5. 特别字符
+
+![特别字符](images/talk07/regexprs_special_characters.png){height=50%}
+
+## more to read and excercise
+
+1. [regular expression basic](http://stat545.com/block022_regular-expression.html)
+2. [Regular Expressions Fundamentals: excercise 1](https://www.r-exercises.com/2018/02/19/regular-expressions-fundamentals-exercises/)
+3. [Data wrangling : Cleansing: excercise 1](https://www.r-exercises.com/2017/08/16/data-wrangling-cleansing-regular-expressions-13/)
+4. [Data wrangling : Cleansing: excercise 2](https://www.r-exercises.com/2017/08/30/data-wrangling-cleansing-regular-expressions-23/)
+5. [Data wrangling : Cleansing: excercise 3](https://www.r-exercises.com/2017/09/13/data-wrangling-cleansing-regular-expressions-33/)
+
+# section 4: tasks of regular expression
+
+## tasks of regular expression 
+
+1. detect patterns ： 检查目标string里有无pattern
+
+\FontSmall
+
+```{r}
+grep( "\\d+", c( "123", "abc", "wei555hua" ) ); ## 
+grepl( "\\d+", c( "123", "abc", "wei555hua" ) ); ## 
+c( "123", "abc", "wei555hua" ) %>% str_detect( "\\d+" );
+```
+
+## 2. locate patterns (定位)
+
+\FontSmall 
+
+```{r}
+regexpr( "\\d+", c( "123", "abc", "wei555hua" ) ); ## 
+```
+
+```{r}
+ c( "123", "abc", "wei555hua" ) %>% str_locate( "\\d+" );
+```
+
+
+## 3. extract patterns (抽取匹配的字串)
+
+\FontSmall 
+
+```{r}
+c( "123", "abc", "wei555hua" ) %>% str_extract ( "\\d+" );
+c( "123", "abc", "wei555hua" ) %>% str_match ( "\\d+" );
+```
+
+\FontNormal 
+
+**??** ```str_extract`` 和 ``` str_match ``` 的区别在哪？？
+
+## 4. replace patterns (匹配并替换)
+
+\FontSmall
+
+```{r}
+str_replace( c( "123", "abc", "wei555hua" ) , "\\d+", "###");
+```
+
+\FontNormal 
+
+其它函数
+
+* sub(pattern, replacement, string)
+* gsub(pattern, replacement, string)
+* stringr::str_replace_all(string, pattern, replacement)
+
+更多请见[R regular expression cheatsheet](https://www.rstudio.com/wp-content/uploads/2016/09/RegExCheatsheet.pdf).
+
+## stringr 函数
+
+更多内容见这里： https://stringr.tidyverse.org
+
+## 示例
+
+\FontSmall
+
+```{r}
+( dat <- 
+tibble(chrom = readLines(textConnection("chr11:69464719-69502928
+chr7:55075808-55093954
+chr8:128739772-128762863
+chr3:169389459-169490555
+chr17:37848534-37877201
+chr19:30306758-30316875
+chr1:150496857-150678056
+chr12:69183279-69260755
+chr11:77610143-77641464
+chr8:38191804-38260814
+chr12:58135797-58156509")) ) );
+```
+
+
+## 示例, cont. 
+
+任务：分为三列， chr, start, end
+
+\FontSmall 
+
+```{r}
+
+dat$chrom %>% str_split( '[:-]', simplify = T );
+```
+
+## 示例， cont. 
+
+另一种解决方案
+
+\FontSmall 
+
+```{r}
+library(tidyr)
+extract(dat, chrom, into=c('chr', 'chrStart', 'chrEnd'),
+        '([^:]+):([^-]+)-(.*)', convert=TRUE);
+```
+
+# section 5: Exercise and home work
+
+## more to read
+
+https://r4ds.had.co.nz/strings.html
+
+## 下次预告
+
+data iteration & parallel computing

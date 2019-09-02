@@ -1,0 +1,51 @@
+---
+title: "R for bioinformatics, data summarisation and modeling"
+subtitle: "HUST Bioinformatics course series"
+author: "Wei-Hua Chen (CC BY-NC 2.0)"
+institute: "HUST, China"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  beamer_presentation:
+    theme: AnnArbor
+    colortheme: beaver
+    fonttheme: structurebold
+    highlight: tango
+    includes:
+      in_header: mystyle.sty
+---
+
+```{r include=FALSE}
+color_block = function(color) {
+  function(x, options) sprintf('\\color{%s}\\begin{verbatim}%s\\end{verbatim}',
+                               color, x)
+}
+
+## 将错误信息用红色字体显示
+knitr::knit_hooks$set(error = color_block('red'))
+```
+
+
+
+# section 1: TOC
+
+## 前情提要
+
+## 本次提要
+
+# section 2: contents
+
+## see here 
+
+
+
+# section 3: Exercise and home work
+
+## more to read
+
+## 练习
+
+## 作业
+
+## 下次预告
+
+

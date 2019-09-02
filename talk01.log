@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.7.18)  19 JUL 2019 23:45
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.7.18)  3 AUG 2019 15:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1081,14 +1081,21 @@ Style option: `fancyvrb' v3.2a <2019/01/15> (tvz)
 \c@FancyVerbLine=\count343
 \FV@StepNumber=\count344
 \FV@OutFile=\write5
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip70
+\fb@frw=\dimen309
+\fb@frh=\dimen310
+\FrameRule=\dimen311
+\FrameSep=\dimen312
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)+ FMi change
-\LTleft=\skip70
-\LTright=\skip71
-\LTpre=\skip72
-\LTpost=\skip73
+\LTleft=\skip71
+\LTright=\skip72
+\LTpre=\skip73
+\LTpost=\skip74
 \LTchunksize=\count345
-\LTcapwidth=\dimen309
+\LTcapwidth=\dimen313
 \LT@head=\box80
 \LT@firsthead=\box81
 \LT@foot=\box82
@@ -1100,35 +1107,35 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)+ FMi change
 \LT@p@ftn=\toks48
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2016/04/27 v1.618033 publication quality tables
-\heavyrulewidth=\dimen310
-\lightrulewidth=\dimen311
-\cmidrulewidth=\dimen312
-\belowrulesep=\dimen313
-\belowbottomsep=\dimen314
-\aboverulesep=\dimen315
-\abovetopsep=\dimen316
-\cmidrulesep=\dimen317
-\cmidrulekern=\dimen318
-\defaultaddspace=\dimen319
+\heavyrulewidth=\dimen314
+\lightrulewidth=\dimen315
+\cmidrulewidth=\dimen316
+\belowrulesep=\dimen317
+\belowbottomsep=\dimen318
+\aboverulesep=\dimen319
+\abovetopsep=\dimen320
+\cmidrulesep=\dimen321
+\cmidrulekern=\dimen322
+\defaultaddspace=\dimen323
 \@cmidla=\count350
 \@cmidlb=\count351
-\@aboverulesep=\dimen320
-\@belowrulesep=\dimen321
+\@aboverulesep=\dimen324
+\@belowrulesep=\dimen325
 \@thisruleclass=\count352
 \@lastruleclass=\count353
-\@thisrulewidth=\dimen322
+\@thisrulewidth=\dimen326
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 64.
-\captionmargin=\dimen323
-\captionmargin@=\dimen324
-\captionwidth=\dimen325
-\caption@tempdima=\dimen326
-\caption@indent=\dimen327
-\caption@parindent=\dimen328
-\caption@hangindent=\dimen329
+\captionmargin=\dimen327
+\captionmargin@=\dimen328
+\captionwidth=\dimen329
+\caption@tempdima=\dimen330
+\caption@indent=\dimen331
+\caption@parindent=\dimen332
+\caption@hangindent=\dimen333
 )
 \c@caption@flags=\count354
 \c@ContinuedFloat=\count355
@@ -1189,37 +1196,37 @@ File: xunicode-extra.def 2019/04/07 v3.7.2 extra definition for xunicode
 ) (./talk01.aux)
 \openout1 = `talk01.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 116.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 116.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 123.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 123.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 116.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 116.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 123.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 123.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    ... okay on input line 123.
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1256,7 +1263,7 @@ LaTeX Font Info:    ... okay on input line 116.
 
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box86
-Package hyperref Info: Link coloring OFF on input line 116.
+Package hyperref Info: Link coloring OFF on input line 123.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -1264,59 +1271,59 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count357
 )
-LaTeX Info: Redefining \ref on input line 116.
-LaTeX Info: Redefining \pageref on input line 116.
-LaTeX Info: Redefining \nameref on input line 116.
+LaTeX Info: Redefining \ref on input line 123.
+LaTeX Info: Redefining \pageref on input line 123.
+LaTeX Info: Redefining \nameref on input line 123.
 (./talk01.out) (./talk01.out)
 \@outlinefile=\write6
 \openout6 = `talk01.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 116.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 123.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/bx/n on input line 116.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/bx/n on input line 123.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 116.
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 123.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 116.
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 123.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmr/m/n on input line 116.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 116.
+(Font)                  OT1/lmss/m/n --> TU/lmr/m/n on input line 123.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmss/bx/n on input line 116.
+(Font)                  OT1/lmr/bx/n --> TU/lmss/bx/n on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> TU/lmss/bx/n on input line 116.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 116.
+(Font)                  OT1/lmr/bx/n --> TU/lmss/bx/n on input line 123.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 116.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/m/n on input line 116.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 116.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/m/n on input line 123.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmss/m/it on input line 116.
+(Font)                  OT1/lmr/m/it --> TU/lmss/m/it on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> TU/lmss/m/it on input line 116.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 116.
+(Font)                  OT1/lmr/bx/it --> TU/lmss/m/it on input line 123.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 116.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 116.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 123.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  TU/lmss/m/n --> TU/lmss/bx/n on input line 116.
+(Font)                  TU/lmss/m/n --> TU/lmss/bx/n on input line 123.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  TU/lmss/m/it --> TU/lmss/bx/it on input line 116.
+(Font)                  TU/lmss/m/it --> TU/lmss/bx/it on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmr/bx/n on input line 116.
+(Font)                  OT1/lmss/bx/n --> TU/lmr/bx/n on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  TU/lmss/bx/n --> TU/lmss/bx/n on input line 116.
+(Font)                  TU/lmss/bx/n --> TU/lmss/bx/n on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  TU/lmss/m/n --> TU/lmss/bx/n on input line 116.
+(Font)                  TU/lmss/m/n --> TU/lmss/bx/n on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  TU/lmss/m/it --> TU/lmss/bx/it on input line 116.
+(Font)                  TU/lmss/m/it --> TU/lmss/bx/it on input line 123.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  TU/lmtt/m/n --> TU/lmtt/bx/n on input line 116.
+(Font)                  TU/lmtt/m/n --> TU/lmtt/bx/n on input line 123.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/translator/translator-basic-dicti
 onary-English.dict
@@ -1342,7 +1349,7 @@ Dictionary: translator-numbers-dictionary, Language: English
 tionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \microtypecontext on input line 116.
+LaTeX Info: Redefining \microtypecontext on input line 123.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
@@ -2152,7 +2159,7 @@ Package caption Info: End \AtBeginDocument code.
 
 ]
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/m/n' will be
-(Font)              scaled to size 10.60547pt on input line 138.
+(Font)              scaled to size 10.60547pt on input line 148.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `FandolHei-Regular' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
@@ -2192,7 +2199,7 @@ Package microtype Info: Character `\textquestiondown ' is missing
 
 ]
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
-(Font)              scaled to size 13.14908pt on input line 170.
+(Font)              scaled to size 13.14908pt on input line 182.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2260,14 +2267,14 @@ pping=tex-text;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <7> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 7.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 8.
 
 LaTeX Font Warning: Font shape `TU/FandolFang-Regular(0)/m/it' undefined
 (Font)              using `TU/FandolFang-Regular(0)/m/n' instead on input line 
-17.
+18.
 
 LaTeX Font Info:    Font shape `TU/FandolFang-Regular(0)/m/n' will be
-(Font)              scaled to size 6.58739pt on input line 17.
+(Font)              scaled to size 6.58739pt on input line 18.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `FandolFang-Regular' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
@@ -2305,7 +2312,7 @@ Package microtype Info: Character `\textquestiondown ' is missing
 File: talk01_files/figure-beamer/plot1-1.pdf Graphic file (type pdf)
 <use talk01_files/figure-beamer/plot1-1.pdf>
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
-(Font)              scaled to size 9.99878pt on input line 208.
+(Font)              scaled to size 9.99878pt on input line 222.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2363,10 +2370,10 @@ hic file (type bmp)
 <images/talk01/programming_language_popularity_by_years_2008_2018.png>
 [14
 
-] [15
-
 ]
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 356
+File: images/talk01/R_python_and_matlab.png Graphic file (type bmp)
+<images/talk01/R_python_and_matlab.png>
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 320
 .
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -2375,57 +2382,62 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 356.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 320.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 356
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 320
 .
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 356
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 320
 .
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 356.
+(Font)              <10.95> on input line 320.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 356.
+(Font)              <8> on input line 320.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 356.
-LaTeX Font Info:    Try loading font information for U+msa on input line 356.
+(Font)              <6> on input line 320.
+LaTeX Font Info:    Try loading font information for U+msa on input line 320.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 356.
+LaTeX Font Info:    Try loading font information for U+msb on input line 320.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 356.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 320.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 356.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 320.
+[15
+
+] [16
+
+]
 File: images/talk01/evolview_showcase3.png Graphic file (type bmp)
 <images/talk01/evolview_showcase3.png>
-[16
-
-] [17
+[17
 
 ] [18
+
+] [19
 
 ]
 File: images/talk01/download_R_from_selected_mirror.png Graphic file (type bmp)
 
 <images/talk01/download_R_from_selected_mirror.png>
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/m/n' will be
-(Font)              scaled to size 9.68536pt on input line 402.
+(Font)              scaled to size 9.68536pt on input line 441.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2453,64 +2465,60 @@ Package microtype Info: Character `\textexclamdown ' is missing
 Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
-[19
+[20
 
 ]
 File: images/talk01/R_linux_installer_name.png Graphic file (type bmp)
 <images/talk01/R_linux_installer_name.png>
-[20
+[21
 
 ]
 File: images/talk01/rstudio_mainpage_screenshot.png Graphic file (type bmp)
 <images/talk01/rstudio_mainpage_screenshot.png>
-
-Overfull \vbox (0.26353pt too high) detected at line 428
- []
-
-[21
+[22
 
 ]
 File: images/talk01/RStudio_versions.png Graphic file (type bmp)
 <images/talk01/RStudio_versions.png>
-[22
+[23
 
 ]
 File: images/talk01/RStudio_interface.png Graphic file (type bmp)
 <images/talk01/RStudio_interface.png>
-[23
-
-] [24
+[24
 
 ] [25
+
+] [26
 
 ]
 File: images/talk01/RStudio_code_autocomplete.png Graphic file (type bmp)
 <images/talk01/RStudio_code_autocomplete.png>
-[26
+[27
 
 ]
 File: images/talk01/Rstudio_variables.png Graphic file (type bmp)
 <images/talk01/Rstudio_variables.png>
-[27
+[28
 
 ]
 File: images/talk01/RStudio_export_plots.png Graphic file (type bmp)
 <images/talk01/RStudio_export_plots.png>
-[28
+[29
 
 ]
 File: images/talk01/RStudio_packages.png Graphic file (type bmp)
 <images/talk01/RStudio_packages.png>
-[29
+[30
 
 ]
 \openout4 = `talk01.vrb'.
 
 (./talk01.vrb
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 7.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 8.
 LaTeX Font Info:    Font shape `TU/FandolFang-Regular(0)/m/it' will be
-(Font)              scaled to size 10.30455pt on input line 15.
+(Font)              scaled to size 10.30455pt on input line 16.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolFang-Regular(0)/m/it/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2538,7 +2546,15 @@ Package microtype Info: Character `\textexclamdown ' is missing
 Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolFang-Regular(0)/m/it/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
-) [30
+) [31
+
+]
+\openout4 = `talk01.vrb'.
+
+(./talk01.vrb
+File: images/talk01/choosecran_mirror.png Graphic file (type bmp)
+<images/talk01/choosecran_mirror.png>
+) [32
 
 ]
 \openout4 = `talk01.vrb'.
@@ -2546,105 +2562,73 @@ Package microtype Info: Character `\textquestiondown ' is missing
 (./talk01.vrb
 File: images/talk01/tidyverse.png Graphic file (type bmp)
 <images/talk01/tidyverse.png>
-) [31
+) [33
 
 ]
 File: images/talk01/rstudio_server_login_page_web.png Graphic file (type bmp)
 <images/talk01/rstudio_server_login_page_web.png>
-[32
+[34
 
 ]
 File: images/talk01/rstudio_server_interface.png Graphic file (type bmp)
 <images/talk01/rstudio_server_interface.png>
-[33
+[35
 
-] [34
+] [36
 
 ]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 797.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 797.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 797.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 797.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 797.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 797.
 File: images/talk01/suvminer_example_output.png Graphic file (type bmp)
 <images/talk01/suvminer_example_output.png>
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 711.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 711.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 711.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 711.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 711.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 711.
-[35
+[37
 
 ]
 File: images/talk01/ggvis_v0_4.png Graphic file (type bmp)
 <images/talk01/ggvis_v0_4.png>
-[36
+[38
 
 ]
 File: images/talk01/shiny_example.png Graphic file (type bmp)
 <images/talk01/shiny_example.png>
-[37
+[39
 
-] [38
+] [40
 
-] [39
+] [41
 
 ]
 File: images/talk01/phpMyAdmin.png Graphic file (type bmp)
 <images/talk01/phpMyAdmin.png>
-[40
+[42
 
 ]
 File: images/talk01/phpmyadmin_database_view.png Graphic file (type bmp)
 <images/talk01/phpmyadmin_database_view.png>
-[41
+[43
+
+] [44
 
 ]
 \openout4 = `talk01.vrb'.
 
-(./talk01.vrb) [42
+(./talk01.vrb) [45
 
-]
-\openout4 = `talk01.vrb'.
+] [46
 
-(./talk01.vrb
-LaTeX Font Info:    Font shape `TU/FandolFang-Regular(0)/m/n' will be
-(Font)              scaled to size 10.30455pt on input line 5.
-Package microtype Info: Character `\AE ' is missing
-(microtype)             in font `\TU/FandolFang-Regular(0)/m/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\quotesinglbase ' is missing
-(microtype)             in font `\TU/FandolFang-Regular(0)/m/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\quotedblbase ' is missing
-(microtype)             in font `\TU/FandolFang-Regular(0)/m/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guilsinglleft ' is missing
-(microtype)             in font `\TU/FandolFang-Regular(0)/m/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guilsinglright ' is missing
-(microtype)             in font `\TU/FandolFang-Regular(0)/m/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guillemotleft ' is missing
-(microtype)             in font `\TU/FandolFang-Regular(0)/m/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guillemotright ' is missing
-(microtype)             in font `\TU/FandolFang-Regular(0)/m/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\textexclamdown ' is missing
-(microtype)             in font `\TU/FandolFang-Regular(0)/m/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\textquestiondown ' is missing
-(microtype)             in font `\TU/FandolFang-Regular(0)/m/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-) [43
+] [47
 
-]
-\openout4 = `talk01.vrb'.
-
-(./talk01.vrb) [44
+] [48
 
 ]
 \tf@nav=\write7
@@ -2656,11 +2640,12 @@ Package microtype Info: Character `\textquestiondown ' is missing
 \tf@snm=\write9
 \openout9 = `talk01.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 883.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 883.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1068.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1068.
 (./talk01.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 883.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 883.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1068.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1068.
+
 Package rerunfilecheck Info: File `talk01.out' has not changed.
 (rerunfilecheck)             Checksum: BB6E31FD6CAB6AE82ECBE264736F8893.
 
@@ -2668,12 +2653,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 41874 strings out of 492916
- 836855 string characters out of 6133345
- 941813 words of memory out of 5000000
- 45266 multiletter control sequences out of 15000+600000
+ 41971 strings out of 492916
+ 838886 string characters out of 6133345
+ 949234 words of memory out of 5000000
+ 45359 multiletter control sequences out of 15000+600000
  555988 words of font info for 95 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 68i,15n,129p,792b,892s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,15n,129p,792b,842s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on talk01.pdf (44 pages).
+Output written on talk01.pdf (48 pages).

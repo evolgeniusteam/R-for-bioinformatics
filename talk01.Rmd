@@ -1,5 +1,5 @@
 ---
-title: "R for bioinformatics"
+title: "R for bioinformatics, introduction"
 subtitle: "HUST Bioinformatics course series for '16 class"
 author: "Wei-Hua Chen (CC BY-NC 2.0)"
 institute: "HUST, China"
@@ -9,7 +9,20 @@ output:
     theme: AnnArbor
     colortheme: beaver
     fonttheme: structurebold
+    highlight: tango
+    includes:
+      in_header: mystyle.sty
 ---
+
+```{r include=FALSE}
+color_block = function(color) {
+  function(x, options) sprintf('\\color{%s}\\begin{verbatim}%s\\end{verbatim}',
+                               color, x)
+}
+
+## 将错误信息用红色字体显示
+knitr::knit_hooks$set(error = color_block('red'))
+```
 
 # section 1: TOC
 
@@ -17,12 +30,13 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Contents
+## Course contents
 
 1. 开发平台相关软件安装
 2. R基础知识
 3. 数据处理
 4. 做图
+5. 常用生信分析任务与解决方法
 
 注：不一定按上面的顺序来
 
@@ -132,6 +146,13 @@ plot2;
 ## Popularity by year
 
 ![popularity by year from 2008 to 2018](images/talk01/programming_language_popularity_by_years_2008_2018.png){height=50%}
+
+## Popularity by year, cont.
+
+![yet another statistics](images/talk01/R_python_and_matlab.png){height=50%}
+
+Data from: http://blog.revolutionanalytics.com/2018/06/pypl-programming-language-trends.html
+Accessed on: Sep 24, 2018
 
 ## Programming languages for bioinformatics
 
@@ -301,6 +322,22 @@ install.packages( "reshape2" ); #安装数据处理用的reshape2
 
 第一次运行命令 install.packages() 时，系统会提示选择镜像网站；请选择地理位置上距你最近的镜像（比如中国）。
 
+## install packages, cont.
+
+You can also choose your CRAN mirror manually (recommanded when installing takes a long time):
+
+\FontSmall
+```{r eval=FALSE}
+chooseCRANmirror();
+```
+
+\FontNormal
+
+![Choose CRAN mirror](images/talk01/choosecran_mirror.png){height=40%}
+
+You can also use ```chooseBioCmirror();``` to choose mirror for [BioConductor](https://bioconductor.org/) packages.
+
+
 ## Packages needed for this study, cont.
 
 实际上我们只需要安装一个包就可以了：
@@ -348,19 +385,19 @@ install.packages("tidyverse")
 
 ## RStudio packages for data visualisation, cont.
 
-- ggvis (currently ver0.4): http://ggvis.rstudio.com
-  + from the **ggplot2** team
-  + create interactive graphics in RStudio and web browser
-  + [top 50 ggplot2 visualisations](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html)
+### ggvis (currently ver0.4): http://ggvis.rstudio.com
+  - from the **ggplot2** team
+  - create interactive graphics in RStudio and web browser
+  - [top 50 ggplot2 visualisations](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html)
 
 ![ggvis example plots](images/talk01/ggvis_v0_4.png){height=30%}
 
 ## RStudio packages for data visualisation, cont.
 
-- Shiny: http://shiny.rstudio.com/gallery/
-  + build professional, interactive visualizations
-  + equipped with popular web widgets
-  + can be deployed as independent websites
+### Shiny: http://shiny.rstudio.com/gallery/
+  - build professional, interactive visualizations
+  - equipped with popular web widgets
+  - can be deployed as independent websites
   
 ![Shiny website example: http://shiny.rstudio.com/gallery/bus-dashboard.html](images/talk01/shiny_example.png){height=30%}
 
@@ -383,11 +420,32 @@ install.packages("tidyverse")
 
 ![phpmyadmin database view](images/talk01/phpmyadmin_database_view.png){height=50%}
 
+## other tools
+
+### programming languages
+
+* R
+* Python
+* Perl
+
+### code depository
+
+* Github
+* Github desktop
+* Atom (general-purpose text editor and more)
+
+### web development
+
+* AngularJS
+* Vue.js
+* Bootstrap
+* plot.ly  (interactive visualisation)
+
 ## An example: cross-talking among tools
 
 Here I use the following to show how we process data in our lab:
 
-\fontsize{7}{8}\selectfont
+\FontSmall
 ```{r message=FALSE}
 library(RMySQL); 
 library(dplyr);
@@ -396,7 +454,7 @@ mysql.dbname = "r4ds_test";
 dbCon <- dbConnect(MySQL(), user="r4ds", password="r4ds", 
                    dbname=mysql.dbname );
 
-dat <- dbGetQuery(dbCon, "SELECT * FROM grades");
+dat <- dbGetQuery(dbCon, "SELECT * FROM grades_stats");
 
 ## -- 任务： 为每个人计算：平均成绩、上课总数、及格门数、不及格门数
 stats <- dat %>% group_by(name) %>% 
@@ -406,15 +464,29 @@ stats <- dat %>% group_by(name) %>%
 ```
 
 ## Show the data
-```{r dat, message=FALSE, warning=FALSE}
+```{r dat, message=FALSE, warning=FALSE, echo=FALSE}
 ## -- 显示原始数据 --
 knitr::kable(dat);
 ```
 
 ## and show the results
 
-```{r stats, message=FALSE, warning=FALSE}
+```{r stats, message=FALSE, warning=FALSE, echo=FALSE}
 ## 显示计算结果
 knitr::kable(stats);
 ```
 
+## Concluding remarks
+
+- 生信分析必备编程语言
+- 强大、专业又好用
+- RStudio及其众多扩展包
+- To be continued
+
+### About the course
+- all codes are available at Github: https://github.com/evolgeniusteam/R-for-bioinformatics
+
+### 作业
+- 安装R、RStudio
+- 熟悉Github
+- 自学R编程

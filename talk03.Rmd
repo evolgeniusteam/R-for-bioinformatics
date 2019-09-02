@@ -1,0 +1,397 @@
+---
+title: "R language basics, part  2"
+subtitle: "HUST Bioinformatics course series for '16 class"
+author: "Wei-Hua Chen (CC BY-NC 2.0)"
+institute: "HUST, China"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  beamer_presentation:
+    theme: AnnArbor
+    colortheme: beaver
+    fonttheme: structurebold
+    highlight: tango
+    includes:
+      in_header: mystyle.sty
+---
+
+```{r include=FALSE}
+color_block = function(color) {
+  function(x, options) sprintf('\\color{%s}\\begin{verbatim}%s\\end{verbatim}',
+                               color, x)
+}
+
+## 将错误信息用红色字体显示
+knitr::knit_hooks$set(error = color_block('red'))
+```
+
+# section 1: TOC
+
+## 前情提要
+
+### vector & matrix:
+
+* declaration
+* manipulation
+* arithmetic
+* transposition
+
+### vectorization
+
+* every is a vector!!
+* vectorization versys loop (will be explained later)
+* advantages using vectorization (https://www.noamross.net/blog/2014/4/16/vectorization-in-r--why.html)
+
+## 今次预报
+
+1. data.frame, tibble
+2. read files from harddrive (IO)
+3. factors
+4. exercises
+
+# section 2: contents
+
+## what is a data.frame??? 
+
+眼见为实：
+
+\fontsize{7}{8}\selectfont
+```{r echo=TRUE, message=FALSE}
+library(tidyverse); ## 装入包
+knitr::kable(  head(mpg) ); ## 显示前几行数据
+```
+
+\fontsize{10}{10}\selectfont
+注意```head()``` ```tail()```的用法和参数
+
+## head 和 tail 的用法 
+
+\fontsize{7}{8}\selectfont
+```{r}
+nrow(mpg); ## total number of rows 
+knitr::kable(  head(mpg,  n=3) ); ## 显示前3行数据
+knitr::kable(  tail(mpg,  n=3) ); ## 显示最后3行数据
+```
+
+
+## data.frame, cont.
+
+### 组成
+
+* 二维表格
+* 由不同列组成；每列是一个**vector**，不同列的数据类型可以不同，但一列只包括一种数据类型（int, num, chr ...）
+* 各列的长度相同
+
+### 常用 functions 
+
+* nrow( ); 
+* ncol( );
+* dim( ); 
+* ...
+
+## structure of data.frame 
+
+\fontsize{7}{8}\selectfont
+```{r}
+str( mpg );
+```
+
+**注**：Tibble class 是 data.frame 的升级版本；本课程将二者混用，以tibble为主。
+用```?mpg```命令查看 mpg 各列的意义
+
+## make a new tibble 
+
+\fontsize{7}{8}\selectfont
+```{r}
+## 用 tibble 函数创建，用法和 data.frame() 相似
+( dat <- 
+  tibble( data = sample( 1:100, 10 ), 
+        group = sample( LETTERS[1:3], 10, replace = TRUE), 
+        data2 = 0.1 )
+);
+```
+
+* 注意每列的数据类型
+* 长度不足时，比如**data2**列，会循环使用
+* ```sample()```函数的用法
+
+## str( dat )
+
+查看得到的数据结构
+\fontsize{7}{8}\selectfont
+```{r dat}
+str(dat);
+```
+
+## make a new tibble row-by-row
+
+\fontsize{7}{8}\selectfont
+```{r}
+tribble(
+  ~x, ~y,  ~z,
+  "a", 2,  3.6,
+  "b", 1,  8.5
+)
+```
+
+## make a new data.frame
+
+\fontsize{7}{8}\selectfont
+```{r}
+##  data.frame()
+( dat2 <- 
+  data.frame( data = sample( 1:100, 10 ), 
+        group = sample( LETTERS[1:3], 10, replace = TRUE), 
+        data2 = 0.1 )
+);
+
+str(dat2);
+```
+
+## practises for recycling 
+\fontsize{7}{8}\selectfont
+```{r error=TRUE}
+tibble(a = 1, b = 1:3);
+tibble(a = 1:3, b = 1);
+tibble(a = 1:3, c = 1:2);
+```
+
+## tibble 与 data.frame 之间相互转换
+
+\fontsize{7}{8}\selectfont
+```{r}
+library(tibble)
+head( as_tibble(iris) );
+```
+
+**note**: iris data set gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris (鸢尾属植物). The species are Iris setosa, versicolor, and virginica. 
+
+## tibble to dataframe 
+
+\fontsize{7}{8}\selectfont
+```{r}
+library(tibble)
+as.data.frame(  head( as_tibble(iris) ) );
+```
+
+## differences between tibble and data.frame
+
+### tibble evaluates columns sequentially  
+
+\fontsize{7}{8}\selectfont
+```{r warning=FALSE,message=FALSE}
+rm(x,y); ## 删除可能存在的 x , y
+tibble(x = 1:5, y = x ^ 2); ## 可以用 tibble 这样做
+```
+
+练习：
+```{r error=TRUE}
+data.frame(x = 1:5, y = x ^ 2); ## 但 data.frame 不行
+```
+
+## differences between tibble and data.frame, cont.
+
+### data.frame 在取subset操作时，会造成困扰
+
+\fontsize{7}{8}\selectfont
+```{r}
+df1 <- data.frame(x = 1:3, y = 3:1);
+class(df1[, 1:2]);
+
+## subset 操作 ： 取一列，期待得到一个 data.frame () 
+class(df1[, 1]); ## 结果得到一个 vector ... 
+```
+
+\fontsize{7}{8}\selectfont
+```{r}
+## 而 tibble 则不会
+df2 <- tibble(x = 1:3, y = 3:1);
+class(df2[, 1]); ## 永远都是 tibble 
+```
+
+## differences between tibble and data.frame, cont.
+
+### tibble可以进行可控的数据类型转换：
+
+\fontsize{7}{8}\selectfont
+```{r}
+class(df2[[1]]); ## 取一列，转换为 vector 
+class(df2$x); ## 用 [[]] 或 $ 都可以哦
+```
+
+## differences between tibble and data.frame, cont.
+
+### recycling 
+```{r error=TRUE, warning=TRUE}
+data.frame(a = 1:6, b = LETTERS[1:2]); ##  data.frame 可以！！！
+tibble(a = 1:6, b = LETTERS[1:2]); ## 但 tibble 不行！！！
+```
+
+## differences between tibble and data.frame, cont.
+
+### data.frame will do partial matching
+
+\fontsize{7}{8}\selectfont
+```{r}
+df <- data.frame(abc = 1)
+df$ab; ## unwanted result ... 
+
+## -- but tibble will never do it;
+df2 <- tibble(abc = 1)
+df2$a; ## produce a warning and return NULL 
+```
+
+## attach and detch
+
+\fontsize{7}{8}\selectfont
+```{r}
+head( iris, n = 3 );
+head(  iris$Sepal.Length , n = 10 ); ## 用 $ 操作符取得一列 ... 
+```
+
+
+```{r}
+attach( iris );
+head(  Sepal.Length , n = 10 ); ## 直接用列名获取数据；
+detach(iris); ## 取消 attach 操作 --
+```
+
+## with  函数
+
+\fontsize{7}{8}\selectfont
+```{r}
+with( iris, head(  Sepal.Length, n  = 10 )); ## 用 with 也可以实现
+```
+
+## within 函数 
+
+也可以用 ```within``` 对多列数据进行修改
+\fontsize{7}{8}\selectfont
+```{r}
+head( airquality , n = 3 );
+
+aq <- within(airquality, {     # Notice that multiple vars can be changed
+    lOzone <- log(Ozone)
+    Month <- factor(month.abb[Month])
+    cTemp <- round((Temp - 32) * 5/9, 1) # From Fahrenheit to Celsius
+    S.cT <- Solar.R / cTemp  # using the newly created variable
+    rm(Day, Temp) ## 删除特定列 ... 
+});
+
+head(aq, n = 3 );
+```
+
+# section 3: file IO: read a file into tibble & write tibble to a file
+
+## read from files
+
+使用 functions from the ```readr```  package
+
+\fontsize{7}{8}\selectfont
+```{r eval=FALSE}
+## readr is part of tidyverse
+library(tidyverse); ## or alternatively 
+library(readr);
+```
+
+\fontsize{10}{10}\selectfont
+### available functions 
+
+* read_csv(): comma separated (CSV) files
+* read_tsv(): tab separated files
+* read_delim(): general delimited files
+* read_fwf(): fixed width files
+* read_table(): tabular files where columns are separated by white-space.
+* read_log(): web log files
+
+## read a file into tibble 
+
+\fontsize{7}{8}\selectfont
+```{r}
+myiris <- read_csv("data/talk03/iris.csv");
+```
+
+**注意** 输出的 columns 定义 
+
+## read with predifined column types 
+
+\fontsize{7}{8}\selectfont
+```{r}
+myiris2 <-  read_csv("data/talk03/iris.csv", col_types = cols(
+  Sepal.Length = col_double(),
+  Sepal.Width = col_double(),
+  Petal.Length = col_double(),
+  Petal.Width = col_double(),
+  Species = col_character()
+));
+```
+
+## how to read from other formats??
+
+### try the following packages for other formats
+
+*  **haven** - SPSS, Stata, and SAS files 
+*  **readxl** - excel files (.xls and .xlsx) 
+*  **DBI** - databases
+*  **jsonlite** - json
+*  **xml2** - XML
+*  **httr** - Web APIs
+*  **rvest** - HTML (Web Scraping)
+
+## write to files 
+
+### use the following functions to write object(s) to external files
+
+* Comma delimited file: **write_csv**(x, path, na = "NA", append = FALSE, col_names = !append)
+* File with arbitrary delimiter: **write_delim**(x, path, delim = " ", na = "NA", append = FALSE, col_names = !append)
+* CSV for excel: **write_excel_csv**(x, path, na = "NA", append = FALSE, col_names = !append)
+* String to file: **write_file**(x, path, append = FALSE)
+* String vector to file, one element per line: **write_lines**(x,path, na = "NA", append = FALSE) 
+* Object to RDS file: **write_rds**(x, path, compress = c("none", "gz", "bz2", "xz"), ...)
+* Tab delimited files: **write_tsv**(x, path, na = "NA", append = FALSE, col_names = !append)
+
+## 练习
+
+```{r eval=FALSE}
+## write iris to outfiles of various formats
+write_csv( iris, "iris.csv" );
+write_tsv(iris, "iris.tsv", quote_escape = "none");
+```
+
+
+check ```readr``` cheatsheet: https://rawgit.com/rstudio/cheatsheets/master/data-import.pdf
+
+# section 4: 练习与作业
+
+## 练习
+
+### data frame 练习
+
+1. https://www.r-exercises.com/2016/01/04/data-frame-exercises/
+2. https://www.r-exercises.com/2016/11/28/data-frame-exercises-vol-2/
+
+### tibble 练习
+
+1. https://r4ds.had.co.nz/tibbles.html#exercises-18
+2. http://uc-r.github.io/tibbles
+3. more  to read: http://www.sthda.com/english/wiki/tibble-data-format-in-r-best-and-modern-way-to-work-with-your-data
+
+### 其它练习
+
+1. file IO
+2. ```with``` and ```within```
+
+## 小结
+
+### 今次提要
+
+1. data.frame, tibble
+2. 定义、区别、转化
+3. read files from harddrive (IO)
+
+### 下次预告
+
+* factor ：R 另一个超级重要且难以上手的概念
+* 基础和进阶绘图（配合 factor 讲解）
+
+### important
+* all codes are available at Github: https://github.com/evolgeniusteam/R-for-bioinformatics
