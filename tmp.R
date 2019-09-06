@@ -15,3 +15,14 @@ for( i in LETTERS[1:10] ){
 
 write_tsv( speabun, path =  "data/talk09/mock_species_abundance.txt" );
 
+
+
+
+
+
+
+plot(1:10)
+
+a = "abc"
+
+a <- data.frame(  col1 = 1:10, col2 = LETTERS[1:10] );

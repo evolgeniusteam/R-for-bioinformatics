@@ -1,5 +1,5 @@
 ---
-title: "R for bioinformatics, data summarisation and modeling"
+title: "R for bioinformatics, data summarisation and statistics"
 subtitle: "HUST Bioinformatics course series"
 author: "Wei-Hua Chen (CC BY-NC 2.0)"
 institute: "HUST, China"
@@ -24,13 +24,33 @@ color_block = function(color) {
 knitr::knit_hooks$set(error = color_block('red'))
 ```
 
-
-
 # section 1: TOC
 
 ## 前情提要
 
+* basic plot functions
+* basic ggplot2 
+* special letters
+* equations
+* advanced ggplot2
+
 ## 本次提要
+
+* data summarisation functions (vector data)
+  * median, mean, sd, quantile, summary
+* 图形化的 data summarisation (two-D data/ tibble/ table)
+  * dot plot
+   * smooth
+   * linear regression
+   * correlation & variance explained
+   * groupping & bar/ box/ plots
+* statistics
+   * significance
+   * parametric and non-parametric comparison
+   * chi-squre
+   * hyper-geometric analysis
+   * others
+   
 
 # section 2: contents
 
