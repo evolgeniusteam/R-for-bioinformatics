@@ -299,11 +299,17 @@ RStudio的**第4子窗口**里集中了许多有用的功能，组织在不同�
 
 ## R studio 特点详解, cont.
 
-### 安装和升级**包**
+### 查看已安装的**包**
 
-通过**第4子窗口**的“包“（Packages）标签内的工具，用户可以很方便的安装新的和升级已有的包。安装新包只需搜索、选中和安装（点击“Install”按钮）三步。而升级已有的包，只需点击"Update"按钮就行了。
+通过**第4子窗口**的“包“（Packages）标签内的工具，用户可以很方便的查看已安装的包：
 
-![Packages tab in the bottom right window/panel](images/talk01/RStudio_packages.png){height=30%}
+![Check installed packages](images/talk01/RStudio_installed_packages.png){height=30%}
+
+## install new package(s)
+
+同样通过**第4子窗口**的“包“（Packages）标签内的工具，安装新的包：
+
+![install new package](images/talk01/RStudio_install_package.png){height=50%}
 
 ## Packages needed for this study
 
