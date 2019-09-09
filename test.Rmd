@@ -26,25 +26,3 @@ knitr::knit_hooks$set(error = color_block('red'))
 
 
 
-## ggplot2 小结
-
-### layered grammer (图层语法) 的成分
-
-* 图层 ( geom_xxx )
-* scale ( scale_xxx )
-* faceting ( facet_xxx )
-* 坐标系统
-
-### 图象类型
-
-* 点图
-* bars 
-* boxplots
-
-### 其它重要内容（部分需要自学）
-
-* colours
-* 其它图像类型
-* 图例（legends）和 坐标轴
-* 图形注释和其它定制 
-

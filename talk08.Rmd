@@ -1,7 +1,7 @@
 ---
 title: "R for bioinformatics, data iteration & parallel computing"
 subtitle: "HUST Bioinformatics course series"
-author: "Wei-Hua Chen (CC BY-NC 2.0)"
+author: "Wei-Hua Chen (CC BY-NC 4.0)"
 institute: "HUST, China"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
