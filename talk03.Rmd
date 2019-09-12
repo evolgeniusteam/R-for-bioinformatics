@@ -48,24 +48,27 @@ knitr::knit_hooks$set(error = color_block('red'))
 3. factors
 4. exercises
 
-# section 2: contents
+# section 2: data.frame and tibble
 
 ## what is a data.frame??? 
 
 眼见为实：
 
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 ```{r echo=TRUE, message=FALSE}
 library(tidyverse); ## 装入包
 knitr::kable(  head(mpg) ); ## 显示前几行数据
 ```
 
-\fontsize{10}{10}\selectfont
+\FontNormal
+
 注意```head()``` ```tail()```的用法和参数
 
 ## head 和 tail 的用法 
 
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 ```{r}
 nrow(mpg); ## total number of rows 
 knitr::kable(  head(mpg,  n=3) ); ## 显示前3行数据
@@ -90,7 +93,7 @@ knitr::kable(  tail(mpg,  n=3) ); ## 显示最后3行数据
 
 ## structure of data.frame 
 
-\fontsize{7}{8}\selectfont
+\FontSmall
 ```{r}
 str( mpg );
 ```
@@ -100,7 +103,8 @@ str( mpg );
 
 ## make a new tibble 
 
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 ```{r}
 ## 用 tibble 函数创建，用法和 data.frame() 相似
 ( dat <- 
@@ -117,14 +121,17 @@ str( mpg );
 ## str( dat )
 
 查看得到的数据结构
-\fontsize{7}{8}\selectfont
+
+\FontSmall
+
 ```{r dat}
 str(dat);
 ```
 
 ## make a new tibble row-by-row
 
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 ```{r}
 tribble(
   ~x, ~y,  ~z,
@@ -133,9 +140,85 @@ tribble(
 )
 ```
 
+## make a new tibble then add rows 
+
+\FontSmall 
+
+```{r}
+## 新tibble, with defined columns ... 
+tb <- tibble( x = character(), y = integer(), z = double() );
+dim(tb);
+
+## 增加行 ... 
+tb <- add_row( tb, x = "a", y = 2, z = 3.6  );
+tb <- add_row( tb, x = "b", y = 1, z = 8.5  );
+
+## 显示 
+tb;
+```
+
+## tibble, add_row 的其它参数
+
+\FontSmall
+
+```{r}
+df <- tibble(x = 1:3, y = 3:1);
+
+# You can specify where to add the new rows
+df <- add_row(df, x = 4, y = 0, .before = 2);
+
+df;
+```
+
+## tibble, add_row 插入多行, 插入另一个tibble?? 
+
+\FontSmall
+
+```{r error=TRUE}
+## 插入多行 
+df <- add_row(df, x = 4:5, y = 0:-1);
+
+## 插入另一个tibble （与另一个tibble合并） ??? 
+df2 <- tibble( x = as.double(200:202), y = as.double(1000:1002) );
+df3 <- add_row( df, df2 );
+```
+
+## tibble, 合并多个 tibble 
+
+\FontSmall
+
+```{r}
+df3 <- bind_rows( df, df2 );
+df3;
+```
+
+## tibble, add column
+
+\FontSmall
+
+```{r}
+tb3 <- tribble(
+  ~x, ~y,  ~z,
+  "a", 2,  3.6,
+  "b", 1,  8.5
+);
+
+tb3 <- add_column( tb3, a = 98 ); ## recycle ... 
+tb3 <- add_column( tb3, b = LETTERS[1:2], c = c("CHEN", "WANG") ); 
+tb3;
+```
+
+## tibble, 按列合并两个 tibble? 
+
+练习：
+
+1. 尝试用 ```add_column``` 合并两个 tibble
+2. 使用 ``` bind_cols``` 合并两个 tibble 
+
 ## make a new data.frame
 
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 ```{r}
 ##  data.frame()
 ( dat2 <- 
@@ -147,17 +230,52 @@ tribble(
 str(dat2);
 ```
 
-## practises for recycling 
-\fontsize{7}{8}\selectfont
-```{r error=TRUE}
-tibble(a = 1, b = 1:3);
-tibble(a = 1:3, b = 1);
-tibble(a = 1:3, c = 1:2);
+## make a new data.frame & add data by row 
+
+\FontSmall
+
+```{r}
+df2 <- data.frame( x = character(), y = integer(), z = double() , stringsAsFactors = FALSE );
+
+## 
+df2 <- rbind( df2, data.frame( x = "a", y = 1L, z = 2.2 ) );
+df2 <- rbind( df2, data.frame( x = "b", y = 2, z = 4.4 ) );
+
+df2;
 ```
+
+## data.frame, add column 
+
+\FontSmall 
+
+```{r}
+m <- cbind(1, 1:7);
+( m <- cbind(m, 8:14) );
+```
+
+## data.frame, 以列方式合并两个 data.frame
+
+
+\FontSmall 
+
+```{r error=TRUE}
+(dg <- diag(3));
+
+## 报错？？ 
+cbind( m, dg );
+
+## 
+cbind(1:7, dg);
+
+## 
+cbind(dg, 1:7);
+```
+
 
 ## tibble 与 data.frame 之间相互转换
 
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 ```{r}
 library(tibble)
 head( as_tibble(iris) );
@@ -167,7 +285,8 @@ head( as_tibble(iris) );
 
 ## tibble to dataframe 
 
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 ```{r}
 library(tibble)
 as.data.frame(  head( as_tibble(iris) ) );
@@ -177,7 +296,8 @@ as.data.frame(  head( as_tibble(iris) ) );
 
 ### tibble evaluates columns sequentially  
 
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 ```{r warning=FALSE,message=FALSE}
 rm(x,y); ## 删除可能存在的 x , y
 tibble(x = 1:5, y = x ^ 2); ## 可以用 tibble 这样做
@@ -192,7 +312,8 @@ data.frame(x = 1:5, y = x ^ 2); ## 但 data.frame 不行
 
 ### data.frame 在取subset操作时，会造成困扰
 
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 ```{r}
 df1 <- data.frame(x = 1:3, y = 3:1);
 class(df1[, 1:2]);
@@ -201,7 +322,8 @@ class(df1[, 1:2]);
 class(df1[, 1]); ## 结果得到一个 vector ... 
 ```
 
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 ```{r}
 ## 而 tibble 则不会
 df2 <- tibble(x = 1:3, y = 3:1);
@@ -212,7 +334,8 @@ class(df2[, 1]); ## 永远都是 tibble
 
 ### tibble可以进行可控的数据类型转换：
 
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 ```{r}
 class(df2[[1]]); ## 取一列，转换为 vector 
 class(df2$x); ## 用 [[]] 或 $ 都可以哦
@@ -221,16 +344,31 @@ class(df2$x); ## 用 [[]] 或 $ 都可以哦
 ## differences between tibble and data.frame, cont.
 
 ### recycling 
+
+\FontSmall
+
 ```{r error=TRUE, warning=TRUE}
 data.frame(a = 1:6, b = LETTERS[1:2]); ##  data.frame 可以！！！
 tibble(a = 1:6, b = LETTERS[1:2]); ## 但 tibble 不行！！！
 ```
 
+## practises for recycling 
+
+\FontSmall
+
+```{r error=TRUE}
+tibble(a = 1, b = 1:3);
+tibble(a = 1:3, b = 1);
+tibble(a = 1:3, c = 1:2);
+```
+
+
 ## differences between tibble and data.frame, cont.
 
 ### data.frame will do partial matching
 
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 ```{r}
 df <- data.frame(abc = 1)
 df$ab; ## unwanted result ... 
@@ -242,7 +380,8 @@ df2$a; ## produce a warning and return NULL
 
 ## attach and detch
 
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 ```{r}
 head( iris, n = 3 );
 head(  iris$Sepal.Length , n = 10 ); ## 用 $ 操作符取得一列 ... 
@@ -257,7 +396,8 @@ detach(iris); ## 取消 attach 操作 --
 
 ## with  函数
 
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 ```{r}
 with( iris, head(  Sepal.Length, n  = 10 )); ## 用 with 也可以实现
 ```
@@ -265,7 +405,9 @@ with( iris, head(  Sepal.Length, n  = 10 )); ## 用 with 也可以实现
 ## within 函数 
 
 也可以用 ```within``` 对多列数据进行修改
-\fontsize{7}{8}\selectfont
+
+\FontSmall
+
 ```{r}
 head( airquality , n = 3 );
 
@@ -286,14 +428,16 @@ head(aq, n = 3 );
 
 使用 functions from the ```readr```  package
 
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 ```{r eval=FALSE}
 ## readr is part of tidyverse
 library(tidyverse); ## or alternatively 
 library(readr);
 ```
 
-\fontsize{10}{10}\selectfont
+\FontNormal 
+
 ### available functions 
 
 * read_csv(): comma separated (CSV) files
@@ -305,7 +449,8 @@ library(readr);
 
 ## read a file into tibble 
 
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 ```{r}
 myiris <- read_csv("data/talk03/iris.csv");
 ```
@@ -314,7 +459,8 @@ myiris <- read_csv("data/talk03/iris.csv");
 
 ## read with predifined column types 
 
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 ```{r}
 myiris2 <-  read_csv("data/talk03/iris.csv", col_types = cols(
   Sepal.Length = col_double(),
@@ -351,12 +497,15 @@ myiris2 <-  read_csv("data/talk03/iris.csv", col_types = cols(
 
 ## 练习
 
+\FontSmall
+
 ```{r eval=FALSE}
 ## write iris to outfiles of various formats
 write_csv( iris, "iris.csv" );
 write_tsv(iris, "iris.tsv", quote_escape = "none");
 ```
 
+\FontNormal 
 
 check ```readr``` cheatsheet: https://rawgit.com/rstudio/cheatsheets/master/data-import.pdf
 
