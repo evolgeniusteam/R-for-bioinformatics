@@ -221,6 +221,18 @@ knitr::kable( grades2 );
 
 可以想像，如果以此为输入，用R计算每个人的平均成绩、不及格门数、总学分，将会是很繁琐的一件事（但对其它工具（如Excel）可能会比较简单）
 
+## ```spread``` explained!
+
+\FontSmall
+
+```{r eval=FALSE}
+grades2 <- grades %>% spread( course, grade );
+```
+
+\FontNormal
+
+![```spread``` function explained](images/talk05/spread_explained.png){height=50%}
+
 ## 宽数据转为长数据 
 
 use ```gather()``` function in ```tidyr``` 
@@ -230,6 +242,19 @@ use ```gather()``` function in ```tidyr```
 grades_melted <- grades2 %>% gather( course, grade, -name ); ## 注意参数的使用 ~~ 
 knitr::kable( head( grades_melted ) );
 ```
+
+## ```gather``` explained!
+
+\FontSmall
+
+```{r eval=FALSE}
+grades_melted <- grades2 %>% gather( course, grade, -name ); ## 注意参数的使用 ~~ 
+```
+
+\FontNormal
+
+![annotated gather function](images/talk05/gather_explained.png){height=50%}
+
 
 ## 有 ```NA``` 值怎么办？
 
