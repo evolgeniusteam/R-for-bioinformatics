@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.7.18)  4 SEP 2019 22:53
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.7.18)  25 SEP 2019 20:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1072,7 +1072,23 @@ LaTeX Info: Redefining \lsstyle on input line 258.
 Package microtype Info: Loading configuration file microtype.cfg.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/microtype.cfg
 File: microtype.cfg 2019/02/28 v2.7b microtype main configuration file (RS)
-))
+)) (/usr/local/texlive/2019/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2019/01/15
+Style option: `fancyvrb' v3.2a <2019/01/15> (tvz)
+\FV@CodeLineNo=\count342
+\FV@InFile=\read3
+\FV@TabBox=\box79
+\c@FancyVerbLine=\count343
+\FV@StepNumber=\count344
+\FV@OutFile=\write5
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip70
+\fb@frw=\dimen309
+\fb@frh=\dimen310
+\FrameRule=\dimen311
+\FrameSep=\dimen312
+)
 
 Package xeCJK Warning: Fandol is being set as the default font for CJK text.
 (xeCJK)                Please make sure it has been properly installed.
@@ -1110,9 +1126,9 @@ g=tex-text;"
 
 (/usr/local/texlive/2019/texmf-dist/tex/xelatex/xecjk/xunicode-addon.sty
 Package: xunicode-addon 2019/04/07 v3.7.2 addon file for xunicode
-\l__xunadd_tmp_coffin=\box79
-\l__xunadd_circle_coffin=\box80
-\l_xunadd_slot_int=\count342
+\l__xunadd_tmp_coffin=\box80
+\l__xunadd_circle_coffin=\box81
+\l_xunadd_slot_int=\count345
 ) (/usr/local/texlive/2019/texmf-dist/tex/xelatex/xunicode/xunicode.sty
 File: xunicode.sty 2011/09/09 v0.981 provides access to latin accents and many 
 other characters in Unicode lower plane
@@ -1122,36 +1138,37 @@ File: xunicode-extra.def 2019/04/07 v3.7.2 extra definition for xunicode
 ) (./talk10.aux)
 \openout1 = `talk10.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 67.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 67.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 117.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 117.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 67.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 67.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 117.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 117.
+
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    ... okay on input line 117.
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1187,68 +1204,68 @@ LaTeX Font Info:    ... okay on input line 67.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box81
-Package hyperref Info: Link coloring OFF on input line 67.
+\AtBeginShipoutBox=\box82
+Package hyperref Info: Link coloring OFF on input line 117.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count343
+\c@section@level=\count346
 )
-LaTeX Info: Redefining \ref on input line 67.
-LaTeX Info: Redefining \pageref on input line 67.
-LaTeX Info: Redefining \nameref on input line 67.
+LaTeX Info: Redefining \ref on input line 117.
+LaTeX Info: Redefining \pageref on input line 117.
+LaTeX Info: Redefining \nameref on input line 117.
 (./talk10.out) (./talk10.out)
-\@outlinefile=\write5
-\openout5 = `talk10.out'.
+\@outlinefile=\write6
+\openout6 = `talk10.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 67.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 117.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/bx/n on input line 67.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/bx/n on input line 117.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 67.
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 117.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 67.
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 117.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmr/m/n on input line 67.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 67.
+(Font)                  OT1/lmss/m/n --> TU/lmr/m/n on input line 117.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmss/bx/n on input line 67.
+(Font)                  OT1/lmr/bx/n --> TU/lmss/bx/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> TU/lmss/bx/n on input line 67.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 67.
+(Font)                  OT1/lmr/bx/n --> TU/lmss/bx/n on input line 117.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 67.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/m/n on input line 67.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 67.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/m/n on input line 117.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmss/m/it on input line 67.
+(Font)                  OT1/lmr/m/it --> TU/lmss/m/it on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> TU/lmss/m/it on input line 67.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 67.
+(Font)                  OT1/lmr/bx/it --> TU/lmss/m/it on input line 117.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 67.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 67.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 117.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  TU/lmss/m/n --> TU/lmss/bx/n on input line 67.
+(Font)                  TU/lmss/m/n --> TU/lmss/bx/n on input line 117.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  TU/lmss/m/it --> TU/lmss/bx/it on input line 67.
+(Font)                  TU/lmss/m/it --> TU/lmss/bx/it on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmr/bx/n on input line 67.
+(Font)                  OT1/lmss/bx/n --> TU/lmr/bx/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  TU/lmss/bx/n --> TU/lmss/bx/n on input line 67.
+(Font)                  TU/lmss/bx/n --> TU/lmss/bx/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  TU/lmss/m/n --> TU/lmss/bx/n on input line 67.
+(Font)                  TU/lmss/m/n --> TU/lmss/bx/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  TU/lmss/m/it --> TU/lmss/bx/it on input line 67.
+(Font)                  TU/lmss/m/it --> TU/lmss/bx/it on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  TU/lmtt/m/n --> TU/lmtt/bx/n on input line 67.
+(Font)                  TU/lmtt/m/n --> TU/lmtt/bx/n on input line 117.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/translator/translator-basic-dicti
 onary-English.dict
@@ -1274,7 +1291,7 @@ Dictionary: translator-numbers-dictionary, Language: English
 tionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \microtypecontext on input line 67.
+LaTeX Info: Redefining \microtypecontext on input line 117.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
@@ -2077,7 +2094,7 @@ Package microtype Warning: Unknown slot number of character
 (microtype)                `T1-default'.
 
 (./talk10.nav)
-Overfull \hbox (28.81339pt too wide) in paragraph at lines 67--67
+Overfull \hbox (28.81339pt too wide) in paragraph at lines 117--117
  [][][][]  
  []
 
@@ -2097,7 +2114,7 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 
 ]
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
-(Font)              scaled to size 13.14908pt on input line 89.
+(Font)              scaled to size 13.14908pt on input line 139.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `FandolHei-Regular' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
@@ -2138,7 +2155,7 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 
 ]
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/m/n' will be
-(Font)              scaled to size 10.60547pt on input line 137.
+(Font)              scaled to size 10.60547pt on input line 195.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2181,6 +2198,51 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 [5
 
 ]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb
+
+Package fontspec Warning: Font "FandolFang-Regular" does not contain requested
+(fontspec)                Script "CJK".
+
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-LatinModernRoman.cfg
+File: mt-LatinModernRoman.cfg 2013/03/13 v1.0 microtype config. file: Latin Mod
+ern Roman (RS)
+)
+
+Package fontspec Info: FandolFang-Regular scale = 0.9410493650884307.
+
+
+Package fontspec Info: FandolFang-Regular scale = 0.9410493650884307.
+
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+Package fontspec Info: Font family 'FandolFang-Regular(0)' created for font
+(fontspec)             'FandolFang-Regular' with options
+(fontspec)             [Mapping=tex-text,Scale=MatchLowercase,Script={CJK},Exte
+nsion={.otf}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[0.9410493650884307]"[FandolFang-Regular.otf]/OT:ma
+pping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <7> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 14.
+File: talk10_files/figure-beamer/unnamed-chunk-2-1.pdf Graphic file (type pdf)
+<use talk10_files/figure-beamer/unnamed-chunk-2-1.pdf>
+)
+Overfull \vbox (6.85123pt too high) detected at line 222
+ []
+
+
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2195,6 +2257,101 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 [7
 
 ]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb
+
+LaTeX Font Warning: Font shape `TU/FandolFang-Regular(0)/m/it' undefined
+(Font)              using `TU/FandolFang-Regular(0)/m/n' instead on input line 
+8.
+
+LaTeX Font Info:    Font shape `TU/FandolFang-Regular(0)/m/n' will be
+(Font)              scaled to size 6.58739pt on input line 8.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `FandolFang-Regular' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+Package microtype Info: Character `\AE ' is missing
+(microtype)             in font `\TU/FandolFang-Regular(0)/m/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotesinglbase ' is missing
+(microtype)             in font `\TU/FandolFang-Regular(0)/m/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotedblbase ' is missing
+(microtype)             in font `\TU/FandolFang-Regular(0)/m/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglleft ' is missing
+(microtype)             in font `\TU/FandolFang-Regular(0)/m/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglright ' is missing
+(microtype)             in font `\TU/FandolFang-Regular(0)/m/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotleft ' is missing
+(microtype)             in font `\TU/FandolFang-Regular(0)/m/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotright ' is missing
+(microtype)             in font `\TU/FandolFang-Regular(0)/m/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textexclamdown ' is missing
+(microtype)             in font `\TU/FandolFang-Regular(0)/m/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textquestiondown ' is missing
+(microtype)             in font `\TU/FandolFang-Regular(0)/m/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+File: talk10_files/figure-beamer/unnamed-chunk-3-1.pdf Graphic file (type pdf)
+<use talk10_files/figure-beamer/unnamed-chunk-3-1.pdf>
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 18.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmss.fd
+File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmss' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 18.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 18.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 18.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 18.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 18.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 18.
+LaTeX Font Info:    Try loading font information for U+msa on input line 18.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 18.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 18.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 18.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 18.
+)
+Overfull \vbox (3.82257pt too high) detected at line 269
+ []
+
+
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2202,6 +2359,9 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 [8
 
 ]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2209,6 +2369,12 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 [9
 
 ]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb
+File: talk10_files/figure-beamer/unnamed-chunk-5-1.pdf Graphic file (type pdf)
+<use talk10_files/figure-beamer/unnamed-chunk-5-1.pdf>
+)
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2216,6 +2382,9 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 [10
 
 ]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2223,30 +2392,956 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 [11
 
 ]
-\tf@nav=\write6
-\openout6 = `talk10.nav'.
+\openout4 = `talk10.vrb'.
 
-\tf@toc=\write7
-\openout7 = `talk10.toc'.
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
 
-\tf@snm=\write8
-\openout8 = `talk10.snm'.
+[12
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 168.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 168.
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb
+File: talk10_files/figure-beamer/unnamed-chunk-8-1.pdf Graphic file (type pdf)
+<use talk10_files/figure-beamer/unnamed-chunk-8-1.pdf>
+)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[13
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb
+File: talk10_files/figure-beamer/unnamed-chunk-9-1.pdf Graphic file (type pdf)
+<use talk10_files/figure-beamer/unnamed-chunk-9-1.pdf>
+)
+Overfull \vbox (10.62636pt too high) detected at line 397
+ []
+
+
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[14
+
+]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 418.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 418.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 418.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 418.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 418.
+
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[15
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[16
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 494.
+
+Overfull \vbox (10.11761pt too high) detected at line 494
+ []
+
+
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[17
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[18
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb
+LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/m/n' will be
+(Font)              scaled to size 9.68536pt on input line 22.
+Package microtype Info: Character `\AE ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotesinglbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotedblbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textexclamdown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textquestiondown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[19
+
+]
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[20
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[21
+
+]
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[22
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[23
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb
+File: talk10_files/figure-beamer/unnamed-chunk-16-1.pdf Graphic file (type pdf)
+
+<use talk10_files/figure-beamer/unnamed-chunk-16-1.pdf>
+LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
+(Font)              scaled to size 6.39192pt on input line 14.
+Package microtype Info: Character `\AE ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotesinglbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotedblbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textexclamdown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textquestiondown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/m/n' will be
+(Font)              scaled to size 6.77975pt on input line 14.
+Package microtype Info: Character `\AE ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotesinglbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotedblbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textexclamdown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textquestiondown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+)
+Overfull \vbox (8.80833pt too high) detected at line 649
+ []
+
+
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[24
+
+]
+File: images/talk10/na_figure_2a.png Graphic file (type bmp)
+<images/talk10/na_figure_2a.png>
+
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[25
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb
+File: talk10_files/figure-beamer/unnamed-chunk-17-1.pdf Graphic file (type pdf)
+
+<use talk10_files/figure-beamer/unnamed-chunk-17-1.pdf>
+)
+Overfull \vbox (8.6349pt too high) detected at line 679
+ []
+
+
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[26
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb
+File: talk10_files/figure-beamer/unnamed-chunk-18-1.pdf Graphic file (type pdf)
+
+<use talk10_files/figure-beamer/unnamed-chunk-18-1.pdf>
+)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[27
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb
+File: talk10_files/figure-beamer/unnamed-chunk-19-1.pdf Graphic file (type pdf)
+
+<use talk10_files/figure-beamer/unnamed-chunk-19-1.pdf>
+)
+Overfull \vbox (2.83945pt too high) detected at line 713
+ []
+
+
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[28
+
+]
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[29
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[30
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb
+File: talk10_files/figure-beamer/unnamed-chunk-21-1.pdf Graphic file (type pdf)
+
+<use talk10_files/figure-beamer/unnamed-chunk-21-1.pdf>
+)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[31
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb
+File: talk10_files/figure-beamer/unnamed-chunk-22-1.pdf Graphic file (type pdf)
+
+<use talk10_files/figure-beamer/unnamed-chunk-22-1.pdf>
+)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[32
+
+]
+LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
+(Font)              scaled to size 9.99878pt on input line 783.
+Package microtype Info: Character `\AE ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotesinglbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotedblbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textexclamdown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textquestiondown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[33
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[34
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[35
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[36
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[37
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[38
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb
+File: talk10_files/figure-beamer/unnamed-chunk-29-1.pdf Graphic file (type pdf)
+
+<use talk10_files/figure-beamer/unnamed-chunk-29-1.pdf>
+)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[39
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[40
+
+]
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[41
+
+]
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[42
+
+]
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[43
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[44
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[45
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[46
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[47
+
+]
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[48
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb
+File: talk10_files/figure-beamer/unnamed-chunk-34-1.pdf Graphic file (type pdf)
+
+<use talk10_files/figure-beamer/unnamed-chunk-34-1.pdf>
+)
+Overfull \vbox (0.76782pt too high) detected at line 1194
+ []
+
+
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[49
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb
+File: talk10_files/figure-beamer/unnamed-chunk-35-1.pdf Graphic file (type pdf)
+
+<use talk10_files/figure-beamer/unnamed-chunk-35-1.pdf>
+)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[50
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb
+File: images/talk10/outlier_boxplot.png Graphic file (type bmp)
+<images/talk10/outlier_boxplot.png>
+)
+Overfull \vbox (5.12738pt too high) detected at line 1244
+ []
+
+
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[51
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb
+File: talk10_files/figure-beamer/unnamed-chunk-36-1.pdf Graphic file (type pdf)
+
+<use talk10_files/figure-beamer/unnamed-chunk-36-1.pdf>
+)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[52
+
+]
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[53
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[54
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[55
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[56
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[57
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[58
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[59
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb
+File: talk10_files/figure-beamer/unnamed-chunk-43-1.pdf Graphic file (type pdf)
+
+<use talk10_files/figure-beamer/unnamed-chunk-43-1.pdf>
+)
+Overfull \vbox (2.49818pt too high) detected at line 1494
+ []
+
+
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[60
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[61
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[62
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \vbox (4.13377pt too high) detected at line 1617
+ []
+
+
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[63
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb
+File: talk10_files/figure-beamer/unnamed-chunk-47-1.pdf Graphic file (type pdf)
+
+<use talk10_files/figure-beamer/unnamed-chunk-47-1.pdf>
+)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[64
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[65
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[66
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[67
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[68
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[69
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb
+File: talk10_files/figure-beamer/unnamed-chunk-55-1.pdf Graphic file (type pdf)
+
+<use talk10_files/figure-beamer/unnamed-chunk-55-1.pdf>
+)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[70
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[71
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[72
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb
+File: talk10_files/figure-beamer/unnamed-chunk-58-1.pdf Graphic file (type pdf)
+
+<use talk10_files/figure-beamer/unnamed-chunk-58-1.pdf>
+)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[73
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[74
+
+]
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[75
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \vbox (0.53006pt too high) detected at line 2025
+ []
+
+
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[76
+
+]
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[77
+
+]
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[78
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[79
+
+]
+LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
+(Font)              scaled to size 5.47879pt on input line 2096.
+Package microtype Info: Character `\AE ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotesinglbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotedblbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textexclamdown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textquestiondown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[80
+
+]
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[81
+
+]
+\tf@nav=\write7
+\openout7 = `talk10.nav'.
+
+\tf@toc=\write8
+\openout8 = `talk10.toc'.
+
+\tf@snm=\write9
+\openout9 = `talk10.snm'.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2105.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2105.
 (./talk10.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 168.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 168.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2105.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2105.
+
 Package rerunfilecheck Info: File `talk10.out' has not changed.
-(rerunfilecheck)             Checksum: E7979CC6A55B678E232CB83BB26E4F98.
+(rerunfilecheck)             Checksum: 6680C7CC1A4BDF1E775A644348384F09.
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
  ) 
 Here is how much of TeX's memory you used:
- 39451 strings out of 492916
- 779811 string characters out of 6133345
- 883535 words of memory out of 5000000
- 43000 multiletter control sequences out of 15000+600000
- 532842 words of font info for 43 fonts, out of 8000000 for 9000
+ 41042 strings out of 492916
+ 828547 string characters out of 6133345
+ 925467 words of memory out of 5000000
+ 44339 multiletter control sequences out of 15000+600000
+ 556020 words of font info for 99 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 56i,15n,114p,792b,643s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,15n,129p,792b,762s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on talk10.pdf (11 pages).
+Output written on talk10.pdf (81 pages).

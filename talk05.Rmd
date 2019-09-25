@@ -317,27 +317,6 @@ grades2_melted %>% gather( course, grade, -name, -class, na.rm = T  );
 ```
 
 
-## dplyr cont. 用结果做图
-
-再看一下数据：
-
-\FontSmall
-
-```{r}
-dat2;
-```
-
-
-## dat2 散点图
-
-\FontSmall
-
-```{r fig.height=3, fig.width=8}
-ggplot( dat2, aes( x = lincRNA, y = protein_coding ) ) +
-  geom_point( na.rm = T);
-```
-
-
 ## dplyr 常用函数示例
 
 先创建一个新 tibble 

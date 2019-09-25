@@ -110,7 +110,7 @@ ls();
 save.image( file = "prj_r_for_bioinformatics_aug3_2019.RData" );
 
 ## -- restore ( load ) saved work space 
-load.image( file = "prj_r_for_bioinformatics_aug3_2019.RData" );
+load( file = "prj_r_for_bioinformatics_aug3_2019.RData" );
 ```
 
 \FontNormal
