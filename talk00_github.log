@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.7.18)  9 SEP 2019 21:13
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.7.18)  27 SEP 2019 13:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1122,36 +1122,36 @@ File: xunicode-extra.def 2019/04/07 v3.7.2 extra definition for xunicode
 ) (./talk00_github.aux)
 \openout1 = `talk00_github.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 76.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 76.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 77.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 77.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 76.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 76.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 77.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 77.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    ... okay on input line 77.
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1188,7 +1188,7 @@ LaTeX Font Info:    ... okay on input line 76.
 
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box81
-Package hyperref Info: Link coloring OFF on input line 76.
+Package hyperref Info: Link coloring OFF on input line 77.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -1196,59 +1196,59 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count343
 )
-LaTeX Info: Redefining \ref on input line 76.
-LaTeX Info: Redefining \pageref on input line 76.
-LaTeX Info: Redefining \nameref on input line 76.
+LaTeX Info: Redefining \ref on input line 77.
+LaTeX Info: Redefining \pageref on input line 77.
+LaTeX Info: Redefining \nameref on input line 77.
 (./talk00_github.out) (./talk00_github.out)
 \@outlinefile=\write5
 \openout5 = `talk00_github.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 76.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 77.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/bx/n on input line 76.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/bx/n on input line 77.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 76.
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 77.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 76.
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 77.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmr/m/n on input line 76.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 76.
+(Font)                  OT1/lmss/m/n --> TU/lmr/m/n on input line 77.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 77.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmss/bx/n on input line 76.
+(Font)                  OT1/lmr/bx/n --> TU/lmss/bx/n on input line 77.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> TU/lmss/bx/n on input line 76.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 76.
+(Font)                  OT1/lmr/bx/n --> TU/lmss/bx/n on input line 77.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 77.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 76.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 77.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/m/n on input line 76.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 76.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/m/n on input line 77.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 77.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmss/m/it on input line 76.
+(Font)                  OT1/lmr/m/it --> TU/lmss/m/it on input line 77.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> TU/lmss/m/it on input line 76.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 76.
+(Font)                  OT1/lmr/bx/it --> TU/lmss/m/it on input line 77.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 77.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 76.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 77.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 76.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 77.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  TU/lmss/m/n --> TU/lmss/bx/n on input line 76.
+(Font)                  TU/lmss/m/n --> TU/lmss/bx/n on input line 77.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  TU/lmss/m/it --> TU/lmss/bx/it on input line 76.
+(Font)                  TU/lmss/m/it --> TU/lmss/bx/it on input line 77.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmr/bx/n on input line 76.
+(Font)                  OT1/lmss/bx/n --> TU/lmr/bx/n on input line 77.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  TU/lmss/bx/n --> TU/lmss/bx/n on input line 76.
+(Font)                  TU/lmss/bx/n --> TU/lmss/bx/n on input line 77.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  TU/lmss/m/n --> TU/lmss/bx/n on input line 76.
+(Font)                  TU/lmss/m/n --> TU/lmss/bx/n on input line 77.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  TU/lmss/m/it --> TU/lmss/bx/it on input line 76.
+(Font)                  TU/lmss/m/it --> TU/lmss/bx/it on input line 77.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  TU/lmtt/m/n --> TU/lmtt/bx/n on input line 76.
+(Font)                  TU/lmtt/m/n --> TU/lmtt/bx/n on input line 77.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/translator/translator-basic-dicti
 onary-English.dict
@@ -1274,7 +1274,7 @@ Dictionary: translator-numbers-dictionary, Language: English
 tionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \microtypecontext on input line 76.
+LaTeX Info: Redefining \microtypecontext on input line 77.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
@@ -2076,106 +2076,46 @@ Package microtype Warning: Unknown slot number of character
 (microtype)                in font encoding `TU' in protrusion list
 (microtype)                `T1-default'.
 
-(./talk00_github.nav)
-LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
-(Font)              scaled to size 5.47879pt on input line 76.
+(./talk00_github.nav) [1
+
+] [2
+
+]
+LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/m/n' will be
+(Font)              scaled to size 10.60547pt on input line 114.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `FandolHei-Regular' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 Package microtype Info: Character `\AE ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `\quotesinglbase ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `\quotedblbase ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `\guilsinglleft ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `\guilsinglright ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `\guillemotleft ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `\guillemotright ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `\textexclamdown ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `\textquestiondown ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
-(Font)              scaled to size 13.14908pt on input line 77.
-Package microtype Info: Character `\AE ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\quotesinglbase ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\quotedblbase ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guilsinglleft ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guilsinglright ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guillemotleft ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guillemotright ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\textexclamdown ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\textquestiondown ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
-(microtype)             Ignoring protrusion settings for this character.
-[1
-
-]
-LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/m/n' will be
-(Font)              scaled to size 10.60547pt on input line 94.
-Package microtype Info: Character `\AE ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\quotesinglbase ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\quotedblbase ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guilsinglleft ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guilsinglright ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guillemotleft ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guillemotright ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\textexclamdown ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\textquestiondown ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-[2
-
-]
-LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
-(Font)              scaled to size 9.99878pt on input line 113.
+(Font)              scaled to size 9.99878pt on input line 114.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2210,6 +2150,35 @@ Package microtype Info: Character `\textquestiondown ' is missing
 ]
 File: images/github/github_desktop_download.PNG Graphic file (type bmp)
 <images/github/github_desktop_download.PNG>
+LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
+(Font)              scaled to size 13.14908pt on input line 132.
+Package microtype Info: Character `\AE ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotesinglbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotedblbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textexclamdown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textquestiondown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
 [5
 
 ]
@@ -2220,6 +2189,10 @@ File: images/github/github_desktop_welcome.PNG Graphic file (type bmp)
 ]
 File: images/github/github_create_account.PNG Graphic file (type bmp)
 <images/github/github_create_account.PNG>
+
+Overfull \vbox (1.47408pt too high) detected at line 159
+ []
+
 [7
 
 ]
@@ -2227,29 +2200,67 @@ File: images/github/github_desktop_signin.PNG Graphic file (type bmp)
 <images/github/github_desktop_signin.PNG>
 [8
 
+] [9
+
 ]
 File: images/github/github_desktop_clone_a_repository.PNG Graphic file (type bm
 p)
 <images/github/github_desktop_clone_a_repository.PNG>
-[9
+[10
 
 ]
+\openout4 = `talk00_github.vrb'.
+
+(./talk00_github.vrb
+
+Package fontspec Warning: Font "FandolFang-Regular" does not contain requested
+(fontspec)                Script "CJK".
+
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-LatinModernRoman.cfg
+File: mt-LatinModernRoman.cfg 2013/03/13 v1.0 microtype config. file: Latin Mod
+ern Roman (RS)
+)
+
+Package fontspec Info: FandolFang-Regular scale = 0.9410472510420787.
+
+
+Package fontspec Info: FandolFang-Regular scale = 0.9410472510420787.
+
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+Package fontspec Info: Font family 'FandolFang-Regular(0)' created for font
+(fontspec)             'FandolFang-Regular' with options
+(fontspec)             [Mapping=tex-text,Scale=MatchLowercase,Script={CJK},Exte
+nsion={.otf}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->s*[0.9410472510420787]"[FandolFang-Regular.otf]/OT:ma
+pping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
 File: images/github/github_desktop_clone_a_repository2.PNG Graphic file (type b
 mp)
 <images/github/github_desktop_clone_a_repository2.PNG>
-[10
+) [11
 
 ]
 File: images/github/github_desktop_clone_a_repository3.PNG Graphic file (type b
 mp)
 <images/github/github_desktop_clone_a_repository3.PNG>
-[11
+[12
 
 ]
 File: images/github/github_main_page.PNG Graphic file (type bmp)
 <images/github/github_main_page.PNG>
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/m/n' will be
-(Font)              scaled to size 9.68536pt on input line 207.
+(Font)              scaled to size 9.68536pt on input line 225.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2277,38 +2288,188 @@ Package microtype Info: Character `\textexclamdown ' is missing
 Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
-[12
+[13
 
 ]
 File: images/github/github_local_folder.PNG Graphic file (type bmp)
 <images/github/github_local_folder.PNG>
-
-Overfull \vbox (4.60101pt too high) detected at line 226
- []
-
-[13
+[14
 
 ]
 File: images/github/github_pull_updated_version.PNG Graphic file (type bmp)
 <images/github/github_pull_updated_version.PNG>
 
-Overfull \vbox (8.60974pt too high) detected at line 241
+Overfull \vbox (8.60974pt too high) detected at line 253
  []
 
-[14
+[15
 
 ]
 File: images/github/github_pull_updated_version2.PNG Graphic file (type bmp)
 <images/github/github_pull_updated_version2.PNG>
 
-Overfull \vbox (8.40535pt too high) detected at line 256
+Overfull \vbox (8.40535pt too high) detected at line 268
  []
 
-[15
-
-] [16
+[16
 
 ] [17
+
+]
+File: images/github/new_repo/create_new_repo_01.png Graphic file (type bmp)
+<images/github/new_repo/create_new_repo_01.png>
+[18
+
+]
+File: images/github/new_repo/create_new_repo_02.png Graphic file (type bmp)
+<images/github/new_repo/create_new_repo_02.png>
+[19
+
+]
+File: images/github/new_repo/create_new_repo_03.png Graphic file (type bmp)
+<images/github/new_repo/create_new_repo_03.png>
+[20
+
+]
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 317
+.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmss.fd
+File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmss' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 317.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 317
+.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 317
+.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 317.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 317.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 317.
+LaTeX Font Info:    Try loading font information for U+msa on input line 317.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 317.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 317.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 317.
+File: images/github/new_repo/create_new_repo_04.png Graphic file (type bmp)
+<images/github/new_repo/create_new_repo_04.png>
+
+Overfull \hbox (42.68721pt too wide) in paragraph at lines 317--317
+[][]\TU/lmss/m/n/10.95 ){height=50%}  
+ []
+
+
+Overfull \vbox (5.0235pt too high) detected at line 317
+ []
+
+[21
+
+]
+File: images/github/new_repo/create_new_repo_05.png Graphic file (type bmp)
+<images/github/new_repo/create_new_repo_05.png>
+[22
+
+]
+File: images/github/new_repo/create_new_repo_06.png Graphic file (type bmp)
+<images/github/new_repo/create_new_repo_06.png>
+[23
+
+]
+File: images/github/new_repo/create_new_repo_07.png Graphic file (type bmp)
+<images/github/new_repo/create_new_repo_07.png>
+[24
+
+]
+File: images/github/new_repo/create_new_repo_08.png Graphic file (type bmp)
+<images/github/new_repo/create_new_repo_08.png>
+[25
+
+]
+File: images/github/new_repo/create_new_repo_09.png Graphic file (type bmp)
+<images/github/new_repo/create_new_repo_09.png>
+[26
+
+]
+File: images/github/new_repo/create_new_repo_10.png Graphic file (type bmp)
+<images/github/new_repo/create_new_repo_10.png>
+LaTeX Font Info:    Font shape `TU/lmss/bx/it' in size <10> not available
+(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 395.
+
+
+Overfull \vbox (16.36539pt too high) detected at line 395
+ []
+
+[27
+
+]
+File: images/github/new_repo/create_new_repo_11.png Graphic file (type bmp)
+<images/github/new_repo/create_new_repo_11.png>
+[28
+
+]
+File: images/github/new_repo/create_new_repo_12.png Graphic file (type bmp)
+<images/github/new_repo/create_new_repo_12.png>
+[29
+
+]
+LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
+(Font)              scaled to size 5.47879pt on input line 425.
+Package microtype Info: Character `\AE ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotesinglbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotedblbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textexclamdown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textquestiondown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+[30
+
+] [31
 
 ]
 \tf@nav=\write6
@@ -2320,21 +2481,21 @@ Overfull \vbox (8.40535pt too high) detected at line 256
 \tf@snm=\write8
 \openout8 = `talk00_github.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 266.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 266.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 432.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 432.
 (./talk00_github.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 266.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 266.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 432.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 432.
 Package rerunfilecheck Info: File `talk00_github.out' has not changed.
-(rerunfilecheck)             Checksum: ECF8E86BF21A65670C7F7DB8FCC55FF9.
+(rerunfilecheck)             Checksum: 3E3141108BDFD53B876B08E4842D3375.
  ) 
 Here is how much of TeX's memory you used:
- 39626 strings out of 492916
- 789661 string characters out of 6133345
- 875380 words of memory out of 5000000
- 43158 multiletter control sequences out of 15000+600000
- 532866 words of font info for 46 fonts, out of 8000000 for 9000
+ 39880 strings out of 492916
+ 793301 string characters out of 6133345
+ 888594 words of memory out of 5000000
+ 43325 multiletter control sequences out of 15000+600000
+ 544510 words of font info for 68 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 59i,15n,114p,799b,652s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,15n,129p,799b,653s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on talk00_github.pdf (17 pages).
+Output written on talk00_github.pdf (31 pages).

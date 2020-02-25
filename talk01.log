@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.7.18)  8 SEP 2019 16:05
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.11.28)  28 NOV 2019 10:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2153,9 +2153,24 @@ Package microtype Warning: Unknown slot number of character
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-(./talk01.nav) [1
+(./talk01.nav)
+Overfull \hbox (8.4254pt too wide) in paragraph at lines 123--123
+ [][][][]  
+ []
 
-] [2
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[1
+
+]
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[2
 
 ]
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/m/n' will be
@@ -2191,11 +2206,26 @@ Package microtype Info: Character `\textexclamdown ' is missing
 Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [3
 
-] [4
+]
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
 
-] [5
+[4
+
+]
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[5
 
 ]
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
@@ -2227,6 +2257,11 @@ Package microtype Info: Character `\textexclamdown ' is missing
 Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [6
 
 ]
@@ -2306,7 +2341,12 @@ Package microtype Info: Character `\textexclamdown ' is missing
 Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolFang-Regular(0)/m/n/7'.
 (microtype)             Ignoring protrusion settings for this character.
-) [7
+)
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[7
 
 ]
 File: talk01_files/figure-beamer/plot1-1.pdf Graphic file (type pdf)
@@ -2340,34 +2380,69 @@ Package microtype Info: Character `\textexclamdown ' is missing
 Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [8
 
-] [9
+]
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[9
 
 ]
 \openout4 = `talk01.vrb'.
 
-(./talk01.vrb) [10
+(./talk01.vrb)
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[10
 
 ]
 File: talk01_files/figure-beamer/plot2-1.pdf Graphic file (type pdf)
 <use talk01_files/figure-beamer/plot2-1.pdf>
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [11
 
 ]
 File: images/talk01/google_trends.png Graphic file (type bmp)
 <images/talk01/google_trends.png>
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [12
 
 ]
 File: images/talk01/github_Most-pull-requests-1.png Graphic file (type bmp)
 <images/talk01/github_Most-pull-requests-1.png>
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [13
 
 ]
 File: images/talk01/programming_language_popularity_by_years_2008_2018.png Grap
 hic file (type bmp)
 <images/talk01/programming_language_popularity_by_years_2008_2018.png>
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [14
 
 ]
@@ -2419,25 +2494,50 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
 (Font)              Font shape `TU/lmss/m/sl' tried instead on input line 320.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
 (Font)              Font shape `TU/lmss/m/sl' tried instead on input line 320.
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [15
 
-] [16
+]
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[16
 
 ]
 File: images/talk01/evolview_showcase3.png Graphic file (type bmp)
 <images/talk01/evolview_showcase3.png>
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [17
 
-] [18
+]
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
 
-] [19
+[18
+
+]
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[19
 
 ]
 File: images/talk01/download_R_from_selected_mirror.png Graphic file (type bmp)
 
 <images/talk01/download_R_from_selected_mirror.png>
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/m/n' will be
-(Font)              scaled to size 9.68536pt on input line 441.
+(Font)              scaled to size 9.68536pt on input line 442.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2465,55 +2565,115 @@ Package microtype Info: Character `\textexclamdown ' is missing
 Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [20
 
 ]
 File: images/talk01/R_linux_installer_name.png Graphic file (type bmp)
 <images/talk01/R_linux_installer_name.png>
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [21
 
 ]
 File: images/talk01/rstudio_mainpage_screenshot.png Graphic file (type bmp)
 <images/talk01/rstudio_mainpage_screenshot.png>
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [22
 
 ]
 File: images/talk01/RStudio_versions.png Graphic file (type bmp)
 <images/talk01/RStudio_versions.png>
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [23
 
 ]
 File: images/talk01/RStudio_interface.png Graphic file (type bmp)
 <images/talk01/RStudio_interface.png>
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [24
 
-] [25
+]
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
 
-] [26
+[25
+
+]
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[26
 
 ]
 File: images/talk01/RStudio_code_autocomplete.png Graphic file (type bmp)
 <images/talk01/RStudio_code_autocomplete.png>
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [27
 
 ]
 File: images/talk01/Rstudio_variables.png Graphic file (type bmp)
 <images/talk01/Rstudio_variables.png>
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [28
 
 ]
 File: images/talk01/RStudio_export_plots.png Graphic file (type bmp)
 <images/talk01/RStudio_export_plots.png>
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [29
 
 ]
 File: images/talk01/RStudio_installed_packages.png Graphic file (type bmp)
 <images/talk01/RStudio_installed_packages.png>
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [30
 
 ]
 File: images/talk01/RStudio_install_package.png Graphic file (type bmp)
 <images/talk01/RStudio_install_package.png>
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [31
 
 ]
@@ -2551,7 +2711,12 @@ Package microtype Info: Character `\textexclamdown ' is missing
 Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolFang-Regular(0)/m/it/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
-) [32
+)
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[32
 
 ]
 \openout4 = `talk01.vrb'.
@@ -2559,7 +2724,12 @@ Package microtype Info: Character `\textquestiondown ' is missing
 (./talk01.vrb
 File: images/talk01/choosecran_mirror.png Graphic file (type bmp)
 <images/talk01/choosecran_mirror.png>
-) [33
+)
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[33
 
 ]
 \openout4 = `talk01.vrb'.
@@ -2567,73 +2737,153 @@ File: images/talk01/choosecran_mirror.png Graphic file (type bmp)
 (./talk01.vrb
 File: images/talk01/tidyverse.png Graphic file (type bmp)
 <images/talk01/tidyverse.png>
-) [34
+)
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[34
 
 ]
 File: images/talk01/rstudio_server_login_page_web.png Graphic file (type bmp)
 <images/talk01/rstudio_server_login_page_web.png>
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [35
 
 ]
 File: images/talk01/rstudio_server_interface.png Graphic file (type bmp)
 <images/talk01/rstudio_server_interface.png>
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [36
 
-] [37
+]
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[37
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 810.
+(Font)              <10> on input line 811.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 810.
+(Font)              <7> on input line 811.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 810.
+(Font)              <5> on input line 811.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 810.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 811.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 810.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 811.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 810.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 811.
 File: images/talk01/suvminer_example_output.png Graphic file (type bmp)
 <images/talk01/suvminer_example_output.png>
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [38
 
 ]
 File: images/talk01/ggvis_v0_4.png Graphic file (type bmp)
 <images/talk01/ggvis_v0_4.png>
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [39
 
 ]
 File: images/talk01/shiny_example.png Graphic file (type bmp)
 <images/talk01/shiny_example.png>
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [40
 
-] [41
+]
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
 
-] [42
+[41
+
+]
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[42
 
 ]
 File: images/talk01/phpMyAdmin.png Graphic file (type bmp)
 <images/talk01/phpMyAdmin.png>
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [43
 
 ]
 File: images/talk01/phpmyadmin_database_view.png Graphic file (type bmp)
 <images/talk01/phpmyadmin_database_view.png>
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [44
 
-] [45
+]
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[45
 
 ]
 \openout4 = `talk01.vrb'.
 
-(./talk01.vrb) [46
+(./talk01.vrb)
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
 
-] [47
+[46
 
-] [48
+]
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
 
-] [49
+[47
+
+]
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[48
+
+]
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[49
 
 ]
 \tf@nav=\write7
@@ -2645,11 +2895,11 @@ File: images/talk01/phpmyadmin_database_view.png Graphic file (type bmp)
 \tf@snm=\write9
 \openout9 = `talk01.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1081.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1081.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1082.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1082.
 (./talk01.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1081.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1081.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1082.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1082.
 
 Package rerunfilecheck Info: File `talk01.out' has not changed.
 (rerunfilecheck)             Checksum: BB6E31FD6CAB6AE82ECBE264736F8893.
@@ -2659,8 +2909,8 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
  ) 
 Here is how much of TeX's memory you used:
  41977 strings out of 492916
- 839107 string characters out of 6133345
- 949383 words of memory out of 5000000
+ 839107 string characters out of 6133344
+ 949375 words of memory out of 5000000
  45364 multiletter control sequences out of 15000+600000
  555988 words of font info for 95 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191

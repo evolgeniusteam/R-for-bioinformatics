@@ -1,6 +1,6 @@
 ---
-title: "R for bioinformatics, introduction"
-subtitle: "HUST Bioinformatics course series for '16 class"
+title: "Multi-omics data analysis and visualisation, #1"
+subtitle: "HUST Bioinformatics course series"
 author: "Wei-Hua Chen (CC BY-NC 4.0)"
 institute: "HUST, China"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
@@ -24,11 +24,12 @@ color_block = function(color) {
 knitr::knit_hooks$set(error = color_block('red'))
 ```
 
-# section 1: TOC
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+# section 1: TOC
 
 ## Course contents
 
@@ -39,6 +40,10 @@ knitr::opts_chunk$set(echo = TRUE)
 5. 常用生信分析任务与解决方法
 
 注：不一定按上面的顺序来
+
+## 前置技能
+
+
 
 ## Class rules
 

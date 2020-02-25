@@ -379,7 +379,6 @@ abu.dat <-
 head(abu.dat, n = 11);
 ```
 
-
 ## 尝试作图
 
 \FontSmall

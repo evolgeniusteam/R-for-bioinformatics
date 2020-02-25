@@ -26,70 +26,22 @@ knitr::knit_hooks$set(error = color_block('red'))
 
 # section 1: TOC
 
-## 前情提要
-
-* basic plot functions
-* basic ggplot2 
-* special letters
-* equations
-* advanced ggplot2
-
-## 本次提要
-
-* data summarisation functions (vector data)
-  * median, mean, sd, quantile, summary
-* 图形化的 data summarisation (two-D data/ tibble/ table)
-  * dot plot
-   * smooth
-   * linear regression
-   * correlation & variance explained
-   * groupping & bar/ box/ plots
-* statistics
-   * parametric tests
-     * t-test
-     * one way ANNOVA
-     * two way ANNOVA
-     * linear regression
-     * model / prediction / coefficients
-   * non-parametric comparison
-   
-# section 2: vector summarisation 
-
-
 ## test2 
 
 \FontSmall
 
-```{r}
-wts2 <- bind_rows( 
-   tibble( class = 1, age = sample( 13:15, 20, replace = T ), wt = sample( seq(50, 60, by = 0.1), 20 ) ),
-   tibble( class = 2, age = sample( 14:16, 20, replace = T ), wt = sample( seq(55, 65, by = 0.1), 20 ) ),
-   tibble( class = 3, age = sample( 15:17, 20, replace = T ), wt = sample( seq(60, 70, by = 0.1), 20 ) )
-);
-
+```{sh}
+ls -l
 ```
 
 
-## test
+## 技能树
 
-\FontSmall
+### 前置技能
 
-```{r echo=FALSE, warning=FALSE, message=FALSE}
-library(relaimpo);
-```
+是否需要？
 
-```{r eval=FALSE}
-library(relaimpo);
-```
-
-```{r echo=FALSE}
-res3 <- calc.relimp( wt ~ factor(class) + age, data = wts2 );
-res3$R2; ## 总 R2
-res3$lmg; ## 每个因素的贡献； 
-
-## 测试 rela 参数：
-res4 <- calc.relimp( wt ~ factor(class) + age, data = wts2, rela = T);
-res4$R2; ## 总 R2
-res4$lmg; ## 每个因素的贡献； 
-
-```
+|  |                 |                  |
+|---------------------|-------------------------|----|
+| 编程？ |   不需要    |  plus              |
+| Linux？ |   不需要    |  plus              |

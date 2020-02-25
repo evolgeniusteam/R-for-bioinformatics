@@ -1,5 +1,5 @@
 ---
-title: "Github使用入门（配合本课程）"
+title: "Tutorial for Github and R markdown"
 subtitle: "HUST Bioinformatics course series"
 author: "Wei-Hua Chen (CC BY-NC 4.0)"
 institute: "HUST, China"
@@ -26,12 +26,15 @@ knitr::knit_hooks$set(error = color_block('red'))
 
 ## TOC
 
-* 安装Github
-* 导入项目到RStudio
-* 检查并获取更新
-* 更改代码并生成新的pdf文件（~~）
+1. install Github, sign up and sign in
 
-## Github
+2. clone existing repository (e.g. this repo) to local computer, and get updates
+
+3. create a new repository, add contents and upload to Github server
+
+4. R markdown
+
+## what is Github? 
 
 * GitHub是一个面向开源及私有软件项目的托管平台
 * 支持git 作为唯一的版本库格式进行托管
@@ -40,31 +43,43 @@ knitr::knit_hooks$set(error = color_block('red'))
 
 **注**：资料来自百度百科
 
-# 安装github，下载并更新本课程内容
+# 1. install Github, sign up and sign in
 
 ## 下载 Github desktop 
 
 go to: desktop.github.com
 
-![download desktop Github app](images/github/github_desktop_download.PNG){height=60%}
+![choose a version for your OS and download the desktop Github app](images/github/github_desktop_download.PNG){height=60%}
 
 ## the welcome screen
+
+start the app, and choose sign up (or sign in if you have an account)
 
 ![the welcome screen](images/github/github_desktop_welcome.PNG){height=60%}
 
 ## sign up 
 
+click the sign up link, you will be redirected to the Github website in a browser 
+
 ![sign up at the github website](images/github/github_create_account.PNG){height=60%}
 
 ## sign in
 
+create a new account, go back to the desktop app to sign in
+
 ![login using the desktop app](images/github/github_desktop_signin.PNG){height=60%}
 
+# clone a existing repository and update
+
 ## clone a repository, step 1
+
+From your Github desktop app
 
 ![choose "clone a repository from the internet ... "](images/github/github_desktop_clone_a_repository.PNG){height=60%}
 
 ## clone a repository, step 2
+
+repository: ```evolgeniusteam/R-for-bioinformatics ```
 
 ![select "URL", and add repository URL or username/repository_name](images/github/github_desktop_clone_a_repository2.PNG){height=60%}
 
@@ -78,8 +93,7 @@ go to: desktop.github.com
 
 ## check the local folder 
 
-1. go the local github folder
-2. you may open the "R project" file
+go the local github folder, and check the files downloaded from Github
 
 ![files downloaded to local folder](images/github/github_local_folder.PNG){height=60%}
 
@@ -98,6 +112,76 @@ go to: desktop.github.com
 ![files downloaded to local folder](images/github/github_pull_updated_version2.PNG){height=60%}
 
 **注**：定期检查更新，以获取最新内容
+
+# 3. create a new repository and push to Github
+
+## create a new repo on your computer
+
+from the Github desktop app, select "File" menu -> "New depository ... " 
+
+![create new depository using the Desktop app](images/github/new_repo/create_new_repo_01.png){height=30%}
+
+## create a new repo, step 2
+
+![fill in necessary information and create](images/github/new_repo/create_new_repo_02.png){height=60%}
+
+## create a new repo, step 3
+
+![main page of Github desktop app after the new repo was created](images/github/new_repo/create_new_repo_03.png){height=40%}
+
+## open the repo using Atom
+
+Atom can be downloaded from: https://atom.io
+
+![open the repo using Atom](images/github/new_repo/create_new_repo_04.png)){height=50%}
+
+## view and edit repo using Atom
+
+![open the new repo and edit using Atom](images/github/new_repo/create_new_repo_05.png){height=50%}
+
+Please read more about markdown at here: https://guides.github.com/features/mastering-markdown/
+
+## edit and preview markdown file
+
+enable the "Markdown Preview Enhanced" package to preview the markdown file on the fly. This package should be obtained from: https://atom.io/packages/markdown-preview-enhanced.
+
+![markdown file and preview](images/github/new_repo/create_new_repo_06.png){height=50%}
+
+## go back to Github desktop app
+
+changes will be highlighted in the Github desktop app
+
+![](images/github/new_repo/create_new_repo_07.png){height=50%}
+
+## publish the newly created repository
+
+!["publish" a private repository](images/github/new_repo/create_new_repo_08.png){height=50%}
+
+## check the new repository at Githup website
+
+the url will be : <your_username>/<your_repo_name>
+
+![NOTE: newly added contents will NOT be uploaded to Github at this stage](images/github/new_repo/create_new_repo_09.png){height=50%}
+
+## upload newly added contents and/or changes to Github website
+
+first, use the Github desktop app to upload (push) new contents and/or changes
+
+![***commit*** to master](images/github/new_repo/create_new_repo_10.png){height=60%}
+
+
+## upload newly added contents and/or changes to Github website, cont.
+
+then use the "Push origin" button to actually upload the changes
+
+![***Push origin***](images/github/new_repo/create_new_repo_11.png){height=60%}
+
+## Atom also 'knows'
+
+Atom then 'knows' that the changes have been synchronized to Github:
+
+![Atom knows](images/github/new_repo/create_new_repo_12.png){height=60%}
+
 
 # 使用R markdown
 

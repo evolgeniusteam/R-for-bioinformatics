@@ -42,5 +42,5 @@ knitr::knit_hooks$set(error = color_block('red'))
 
 * machine learning 
 * validation & prediction
-   
+
 # section 2: machine learning using 
