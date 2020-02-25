@@ -1,6 +1,6 @@
 ---
 title: "R language basics, part 1"
-subtitle: "HUST Bioinformatics course series for '16 class"
+subtitle: "HUST Bioinformatics course series"
 author: "Wei-Hua Chen (CC BY-NC 4.0)"
 institute: "HUST, China"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
@@ -370,7 +370,7 @@ a <- 1:3;
 b <- LETTERS[1:3];
 
 ( ab <- c(a,b) );
-mode( ab );
+mode( ab ); ## 一个新的函数~ ... 
 ```
 
 ## vector manipulation, cont.
@@ -513,7 +513,6 @@ t(m);
 ```
 
 
-
 # section 3: 特别值
 
 ## 数据类型汇总
@@ -597,7 +596,7 @@ is.vector();
 ```
 
 
-# section 4: 练习
+# section 4: 练习 & 作业
 
 ## vector 练习
 
@@ -609,3 +608,14 @@ more to find at: https://www.r-exercises.com
 ## matrix 练习 
 
 - https://www.r-exercises.com/2015/11/28/matrix-exercises/
+
+## 作业
+
+提交一份文本或doc文件，内容包含上述练习的答案，包括：
+
+- vector练习1
+- vector练习2，和
+- matrix 练习
+
+截止时间：本周日晚8点前
+

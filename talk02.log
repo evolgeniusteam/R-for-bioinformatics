@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.7.18)  9 SEP 2019 21:58
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.11.28)  25 FEB 2020 15:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2153,17 +2153,42 @@ Package microtype Warning: Unknown slot number of character
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-(./talk02.nav) [1
-
-] [2
-
-]
-LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/m/n' will be
-(Font)              scaled to size 10.60547pt on input line 152.
+(./talk02.nav)
+LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
+(Font)              scaled to size 5.47879pt on input line 123.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `FandolHei-Regular' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
+Package microtype Info: Character `\AE ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotesinglbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotedblbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textexclamdown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textquestiondown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/m/n' will be
+(Font)              scaled to size 10.60547pt on input line 124.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2191,6 +2216,11 @@ Package microtype Info: Character `\textexclamdown ' is missing
 Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
+[1
+
+] [2
+
+]
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
 (Font)              scaled to size 9.99878pt on input line 152.
 Package microtype Info: Character `\AE ' is missing
@@ -2252,35 +2282,6 @@ Package microtype Info: Character `\textexclamdown ' is missing
 Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
-LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
-(Font)              scaled to size 5.47879pt on input line 156.
-Package microtype Info: Character `\AE ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\quotesinglbase ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\quotedblbase ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guilsinglleft ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guilsinglright ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guillemotleft ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guillemotright ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\textexclamdown ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\textquestiondown ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
-(microtype)             Ignoring protrusion settings for this character.
 [4
 
 ]
@@ -2323,10 +2324,10 @@ pping=tex-text;"
 
 LaTeX Font Warning: Font shape `TU/FandolFang-Regular(0)/m/it' undefined
 (Font)              using `TU/FandolFang-Regular(0)/m/n' instead on input line 
-11.
+12.
 
 LaTeX Font Info:    Font shape `TU/FandolFang-Regular(0)/m/n' will be
-(Font)              scaled to size 6.58739pt on input line 11.
+(Font)              scaled to size 6.58739pt on input line 12.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `FandolFang-Regular' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
@@ -2365,7 +2366,7 @@ Package microtype Info: Character `\textquestiondown ' is missing
 
 (./talk02.vrb
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/m/n' will be
-(Font)              scaled to size 6.77975pt on input line 5.
+(Font)              scaled to size 6.77975pt on input line 6.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/m/n/7'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2394,7 +2395,7 @@ Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/m/n/7'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <7> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 27.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 28.
 ) [6
 
 ]
@@ -2402,7 +2403,7 @@ LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <7> not available
 
 (./talk02.vrb
 LaTeX Font Info:    Font shape `TU/FandolFang-Regular(0)/m/it' will be
-(Font)              scaled to size 10.30455pt on input line 7.
+(Font)              scaled to size 10.30455pt on input line 8.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolFang-Regular(0)/m/it/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2431,7 +2432,7 @@ Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolFang-Regular(0)/m/it/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `TU/FandolFang-Regular(0)/m/n' will be
-(Font)              scaled to size 10.30455pt on input line 8.
+(Font)              scaled to size 10.30455pt on input line 9.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolFang-Regular(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2466,7 +2467,7 @@ Package microtype Info: Character `\textquestiondown ' is missing
 
 (./talk02.vrb
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 7.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 8.
 ) [8
 
 ]
@@ -2533,7 +2534,7 @@ Package microtype Info: Character `\textquestiondown ' is missing
 
 (./talk02.vrb)
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 445.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 449.
 [13
 
 ]
@@ -2713,8 +2714,8 @@ Package microtype Info: Character `\textquestiondown ' is missing
 ]
 File: images/talk02/data-structures-overview.png Graphic file (type bmp)
 <images/talk02/data-structures-overview.png>
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 139
-2.
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 140
+0.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -2722,44 +2723,44 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 1392
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 1400
 .
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 139
-2.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 140
+0.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 139
-2.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 140
+0.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 1392.
+(Font)              <10.95> on input line 1400.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 1392.
+(Font)              <8> on input line 1400.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 1392.
-LaTeX Font Info:    Try loading font information for U+msa on input line 1392.
+(Font)              <6> on input line 1400.
+LaTeX Font Info:    Try loading font information for U+msa on input line 1400.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 1392.
+LaTeX Font Info:    Try loading font information for U+msb on input line 1400.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 1392.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 1400.
 
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 1392.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 1400.
 
 [44
 
@@ -2778,7 +2779,7 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
 
 (./talk02.vrb
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
-(Font)              scaled to size 9.13132pt on input line 21.
+(Font)              scaled to size 9.13132pt on input line 22.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2824,6 +2825,8 @@ Package microtype Info: Character `\textquestiondown ' is missing
 
 ] [52
 
+] [53
+
 ]
 \tf@nav=\write7
 \openout7 = `talk02.nav'.
@@ -2834,25 +2837,25 @@ Package microtype Info: Character `\textquestiondown ' is missing
 \tf@snm=\write9
 \openout9 = `talk02.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1579.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1579.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1609.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1609.
 (./talk02.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1579.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1579.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1609.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1609.
 
 Package rerunfilecheck Info: File `talk02.out' has not changed.
-(rerunfilecheck)             Checksum: 701C6ED0368D9E4DC4AB6482EA99834D.
+(rerunfilecheck)             Checksum: 3B2AC17C0CAF778AE2110FB58A309E1D.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 41978 strings out of 492916
- 841086 string characters out of 6133345
- 938954 words of memory out of 5000000
- 45325 multiletter control sequences out of 15000+600000
+ 41980 strings out of 492916
+ 841104 string characters out of 6133344
+ 939280 words of memory out of 5000000
+ 45327 multiletter control sequences out of 15000+600000
  544622 words of font info for 82 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  69i,15n,129p,792b,780s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on talk02.pdf (52 pages).
+Output written on talk02.pdf (53 pages).
