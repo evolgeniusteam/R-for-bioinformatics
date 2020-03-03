@@ -1,6 +1,6 @@
 ---
 title: "R language basics, part  2"
-subtitle: "HUST Bioinformatics course series for '16 class"
+subtitle: "HUST Bioinformatics course series"
 author: "Wei-Hua Chen (CC BY-NC 4.0)"
 institute: "HUST, China"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
