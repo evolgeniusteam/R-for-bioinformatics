@@ -45,12 +45,20 @@ knitr::knit_hooks$set(error = color_block('red'))
 
 1. data.frame, tibble
 2. read files from harddrive (IO)
-3. factors
-4. exercises
+3. factors (初步)
+4. exercises & homework
 
 # section 2: data.frame and tibble
 
-## what is a data.frame??? 
+## data.frame, outline
+
+1. what is a data.frame??? 
+2. how to make a data.frame
+3. how to add row(s)/col(s) to an existing data.frame
+  how to combine two data.frames
+4. how to manipulate a data.frame
+
+## 2.1 what is a data.frame? 
 
 眼见为实：
 
@@ -76,7 +84,7 @@ knitr::kable(  tail(mpg,  n=3) ); ## 显示最后3行数据
 ```
 
 
-## data.frame, cont.
+## data.frame的组成与常用函数
 
 ### 组成
 
@@ -91,7 +99,7 @@ knitr::kable(  tail(mpg,  n=3) ); ## 显示最后3行数据
 * dim( ); 
 * ...
 
-## structure of data.frame 
+## structure of data.frame： ```str``` 函数
 
 \FontSmall
 ```{r}
@@ -101,11 +109,156 @@ str( mpg );
 **注**：Tibble class 是 data.frame 的升级版本；本课程将二者混用，以tibble为主。
 用```?mpg```命令查看 mpg 各列的意义
 
-## make a new tibble 
+## 2.2 make a new data.frame
+
+使用```data.frame```函数创建新的data.frame:
 
 \FontSmall
 
 ```{r}
+##  data.frame()
+( dat2 <- 
+  data.frame( data = sample( 1:100, 10 ), 
+        group = sample( LETTERS[1:3], 10, replace = TRUE), 
+        data2 = 0.1 )
+);
+
+str(dat2);
+```
+
+## 2.3 how to add row(s)/col(s) to an existing data.frame
+
+先创建“表头”，再填充
+
+\FontSmall
+
+```{r}
+df2 <- data.frame( x = character(), y = integer(), z = double() , stringsAsFactors = FALSE );
+
+## 
+df2 <- rbind( df2, data.frame( x = "a", y = 1L, z = 2.2 ) );
+df2 <- rbind( df2, data.frame( x = "b", y = 2, z = 4.4 ) );
+
+df2;
+```
+
+\FontNormal
+
+**注意**
+
+* 使用```rbind```函数
+* 新的一行用 ```data.frame```定义，其“表头”需要与合并表相同
+
+## 问题：
+
+以下代码能顺利执行吗？
+
+\FontSmall
+
+```{r eval=FALSE}
+##  注意这里的 data.frame 会有多行 ...
+df2 <- rbind( df2, data.frame( x = c("a","b","c"), y = 1L, z = 2.2 ) );
+
+```
+
+## data.frame, add column 
+
+用```cbind```函数增加列： **column bind**
+
+\FontSmall 
+
+```{r}
+m <- cbind(1, 1:7); ## 产生两列数据 7行数据 .. 
+( m <- cbind(m, 8:14) ); ## 增加一列 也有7行数据 ... 
+```
+
+## data.frame, add column, cont.
+
+自行练习，回答代码中的问题：
+
+\FontSmall
+
+```{r eval=FALSE}
+## 1. 生成一个 10行2列的 data.frame  
+df3 <- data.frame( data = 1:10, group = c("A","B") );
+
+## 2. 增加一列，其长度是1，可以吗？
+cbind(df3, newcol = 1);
+
+## 3. 增加一列，其长度是10，可以吗？
+cbind(df3, newcol = 1:10);
+
+## 4. 增加一列，其长度是2，可以吗？
+cbind(df3, newcol = 1:2);
+
+## 5. 增加一列，其长度是3，可以吗？
+cbind(df3, newcol = 1:3);
+```
+
+## data.frame, 以列方式合并两个 data.frame
+
+同样使用 ```cbind```
+
+\FontSmall 
+
+```{r error=TRUE}
+df4 <- data.frame( data = 1:10, group = c("A","B") );
+df5 <- data.frame( length = sample(1:100, 10), width = sample(1:100, 10) );
+
+## --
+head( cbind( df4, df5 ) );
+
+## 如果 一个df的行数少于另一处怎么办？ 
+df6 <- data.frame( length = sample(1:100, 5), width = sample(1:100, 5) );
+head( cbind( df4, df6 ) );
+```
+
+\FontNormal
+
+**问题**
+如果一个df的行数不是另一个的整数倍，怎么办？
+
+## 2.4 how to manipulate a data.frame
+
+自行尝试以下操作
+
+\FontSmall
+
+```{r eval=FALSE}
+## 取行：
+df4[ 1:2, ];
+
+## 取列
+df4[, 2]
+
+## 取行，重新排序
+df4[c(2,3,1), ]
+
+## 取列，重新排序
+df4[, c(2,1)]
+
+## 替换一行：
+df4[1, ] <- data.frame( data = 100, group = "A" );
+
+## 替换一列：
+df4[, "data"] <- sample( 1:100, 5 );
+```
+
+## tibble, outline 
+
+5. how to make a tibble
+6. how to add row(s)/col(s) to an existing tibble
+  how to combine two tibble
+7. how to manipulate a tibble
+
+## 2.5 make a new tibble 
+
+```tibble```相关功能由```tibble```或```tidiverse```包提供
+
+\FontSmall
+
+```{r}
+library(tibble); ## 或 library(tidiverse); 
 ## 用 tibble 函数创建，用法和 data.frame() 相似
 ( dat <- 
   tibble( data = sample( 1:100, 10 ), 
@@ -128,11 +281,12 @@ str( mpg );
 str(dat);
 ```
 
-## make a new tibble row-by-row
+## 创建tibble的另一种方式 (by row)
 
 \FontSmall
 
 ```{r}
+## 另一种方式创建tibble 
 tribble(
   ~x, ~y,  ~z,
   "a", 2,  3.6,
@@ -140,12 +294,12 @@ tribble(
 )
 ```
 
-## make a new tibble then add rows 
+## 2.6 how to add row(s)/col(s) to an existing tibble
 
 \FontSmall 
 
 ```{r}
-## 新tibble, with defined columns ... 
+## 新tibble, with defined columns ... 创建表头 
 tb <- tibble( x = character(), y = integer(), z = double() );
 dim(tb);
 
@@ -157,14 +311,15 @@ tb <- add_row( tb, x = "b", y = 1, z = 8.5  );
 tb;
 ```
 
-## tibble, add_row 的其它参数
+## tibble, add_row 插入时指定行号
 
 \FontSmall
 
 ```{r}
+## 生成一个 tibble 
 df <- tibble(x = 1:3, y = 3:1);
 
-# You can specify where to add the new rows
+# 在第二行之前插入
 df <- add_row(df, x = 4, y = 0, .before = 2);
 
 df;
@@ -180,7 +335,7 @@ df <- add_row(df, x = 4:5, y = 0:-1);
 
 ## 插入另一个tibble （与另一个tibble合并） ??? 
 df2 <- tibble( x = as.double(200:202), y = as.double(1000:1002) );
-df3 <- add_row( df, df2 );
+df3 <- add_row( df, df2 ); ## 不能运行 .. 
 ```
 
 ## tibble, 合并多个 tibble 
@@ -215,64 +370,27 @@ tb3;
 1. 尝试用 ```add_column``` 合并两个 tibble
 2. 使用 ``` bind_cols``` 合并两个 tibble 
 
-## make a new data.frame
+## 2.7 how to manipulate a tibble
+
+自行练习以熟悉以下操作：
 
 \FontSmall
 
-```{r}
-##  data.frame()
-( dat2 <- 
-  data.frame( data = sample( 1:100, 10 ), 
-        group = sample( LETTERS[1:3], 10, replace = TRUE), 
-        data2 = 0.1 )
-);
+```{r eval=FALSE}
+## 取得行
+tb3[c(1,2), ];
 
-str(dat2);
+## 取得列，按顺序取列
+tb3[, c("z", "y")];
+
+## 替换列 
+tb3[["z"]] <- c(4.6, 5.5);
+
+## 替换行 
+tb3[ 1, ] <- tibble( x = "d", y = 20, z = 46, a = 10, b = "C", c = "LILI" );
 ```
 
-## make a new data.frame & add data by row 
-
-\FontSmall
-
-```{r}
-df2 <- data.frame( x = character(), y = integer(), z = double() , stringsAsFactors = FALSE );
-
-## 
-df2 <- rbind( df2, data.frame( x = "a", y = 1L, z = 2.2 ) );
-df2 <- rbind( df2, data.frame( x = "b", y = 2, z = 4.4 ) );
-
-df2;
-```
-
-## data.frame, add column 
-
-\FontSmall 
-
-```{r}
-m <- cbind(1, 1:7);
-( m <- cbind(m, 8:14) );
-```
-
-## data.frame, 以列方式合并两个 data.frame
-
-
-\FontSmall 
-
-```{r error=TRUE}
-(dg <- diag(3));
-
-## 报错？？ 
-cbind( m, dg );
-
-## 
-cbind(1:7, dg);
-
-## 
-cbind(dg, 1:7);
-```
-
-
-## tibble 与 data.frame 之间相互转换
+## 2.8 tibble 与 data.frame 之间相互转换
 
 \FontSmall
 
@@ -292,7 +410,7 @@ library(tibble)
 as.data.frame(  head( as_tibble(iris) ) );
 ```
 
-## differences between tibble and data.frame
+## 2.9 differences between tibble and data.frame
 
 ### tibble evaluates columns sequentially  
 
@@ -352,6 +470,10 @@ data.frame(a = 1:6, b = LETTERS[1:2]); ##  data.frame 可以！！！
 tibble(a = 1:6, b = LETTERS[1:2]); ## 但 tibble 不行！！！
 ```
 
+\FontNormal
+
+**注意**  ```tibble```的 recycling 仅限于长度为1或等长；而 ```data.frame``` 则为整除即可。
+
 ## practises for recycling 
 
 \FontSmall
@@ -361,7 +483,6 @@ tibble(a = 1, b = 1:3);
 tibble(a = 1:3, b = 1);
 tibble(a = 1:3, c = 1:2);
 ```
-
 
 ## differences between tibble and data.frame, cont.
 
@@ -378,7 +499,9 @@ df2 <- tibble(abc = 1)
 df2$a; ## produce a warning and return NULL 
 ```
 
-## attach and detch
+##  2.10 data.frame和tibble的高级使用技巧
+
+``` attach ``` 和 ```detach ```
 
 \FontSmall
 
