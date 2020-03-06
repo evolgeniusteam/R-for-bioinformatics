@@ -1,6 +1,6 @@
 ---
 title: 'R language basics, part 3: factor'
-subtitle: "HUST Bioinformatics course series for '16 class"
+subtitle: "HUST Bioinformatics course series"
 author: "Wei-Hua Chen (CC BY-NC 4.0)"
 institute: "HUST, China"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
@@ -34,11 +34,13 @@ knitr::knit_hooks$set(error = color_block('red'))
 * manipulation （更多相关内容会在介绍 ```dplyr```  时讲到）
 * differences between data.frame and tibble
 * advantages of using tibble (更多内容以后会介绍)
+* ```with```, ```within```，```attach```, ```detach``` 等的用法
 
 ### IO
 
 * read from files of different formats
 * write to files
+* use GUI to read files (& get the corresponding code)
 
 ## 今次预报
 
@@ -56,7 +58,7 @@ knitr::knit_hooks$set(error = color_block('red'))
 
 ## R session in RStudio
 
-each RStudio session is automatically associated with a R session
+Each RStudio session is automatically associated with a R session
 
 ![R session in RStudio](images/talk04/r_session_in_rstudio.png){heigh=40%}
 
@@ -87,7 +89,8 @@ each RStudio session is automatically associated with a R session
 当前工作空间，包括所有已装入的数据、包和自制函数
 
 可通过以下代码管理变量
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 ```{r eval=TRUE}
 ls();  ## 显示当前环境下所有变量
 rm( x ); ## 删除一个变量
