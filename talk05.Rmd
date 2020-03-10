@@ -1,6 +1,6 @@
 ---
 title: "R for bioinformatics, data wrangler, part 1"
-subtitle: "HUST Bioinformatics course series for '16 class"
+subtitle: "HUST Bioinformatics course series"
 author: "Wei-Hua Chen (CC BY-NC 4.0)"
 institute: "HUST, China"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
@@ -47,7 +47,8 @@ knitr::knit_hooks$set(error = color_block('red'))
 ### what is ```dplyr``` ? 
 
 - the next iteration of plyr, 
-- focussing on only data frames. 
+- focussing on only data frames (tibble),
+- row-based manipulation, 
 - dplyr is faster and has a more consistent API.
 
 ![dplyr logo](images/talk05/dplyr-large.png){height=50%}
@@ -98,7 +99,6 @@ devtools::install_github("tidyverse/dplyr")
 
 get the data ready
 
-
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library(tidyverse); 
 ```
@@ -124,7 +124,6 @@ table( mouse.tibble$`Transcript type` );
 ```{r}
 table( mouse.tibble$`Chromosome/scaffold name`);
 ```
-
 
 ## 分析任务
 
