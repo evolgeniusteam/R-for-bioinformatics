@@ -230,8 +230,9 @@ Play around with ```levels()```:
 \FontSmall
 ```{r}
 ## other ways of assigning factors ... 
-y <-  c( "single", "married", "married", "single" );
-levels(y) <- c("single", "married")
+y <-  as.factor( c( "single", "married", "married", "single" ) );
+levels( y );
+levels(y) <- c("single", "married", "widowed");
 str(y);
 ```
 

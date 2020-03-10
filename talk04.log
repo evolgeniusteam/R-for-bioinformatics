@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.11.28)  6 MAR 2020 09:40
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.11.28)  10 MAR 2020 09:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2359,7 +2359,7 @@ File: images/talk04/rstudio_open_a_project.png Graphic file (type bmp)
 
 (./talk04.vrb
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/m/n' will be
-(Font)              scaled to size 9.68536pt on input line 24.
+(Font)              scaled to size 9.68536pt on input line 33.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2420,7 +2420,7 @@ File: talk04_files/figure-beamer/unnamed-chunk-16-1.pdf Graphic file (type pdf)
 \openout4 = `talk04.vrb'.
 
 (./talk04.vrb)
-Overfull \vbox (5.05103pt too high) detected at line 767
+Overfull \vbox (5.05103pt too high) detected at line 776
  []
 
 [29
@@ -2486,7 +2486,7 @@ File: talk04_files/figure-beamer/unnamed-chunk-21-1.pdf Graphic file (type pdf)
 
 <use talk04_files/figure-beamer/unnamed-chunk-21-1.pdf>
 )
-Overfull \vbox (2.73955pt too high) detected at line 847
+Overfull \vbox (2.73955pt too high) detected at line 856
  []
 
 [32
@@ -2580,11 +2580,11 @@ File: talk04_files/figure-beamer/unnamed-chunk-25-1.pdf Graphic file (type pdf)
 \tf@snm=\write9
 \openout9 = `talk04.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1031.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1031.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1040.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1040.
 (./talk04.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1031.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1031.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1040.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1040.
 
 Package rerunfilecheck Info: File `talk04.out' has not changed.
 (rerunfilecheck)             Checksum: AA29478BDCEB4178AD7C23EBA5632015.
