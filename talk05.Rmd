@@ -36,6 +36,17 @@ knitr::knit_hooks$set(error = color_block('red'))
   - factors 在做图中的使用
   - ggplot2 和 dplyr 初步
 
+## 问题点评
+
+1. ggplot2问题
+2. 长宽数据转换 & pipe ... 
+
+\FontSmall
+
+```{r eval=FALSE}
+N %>% gather( ind, values ); 
+```
+
 ## 今次提要
 
 * dplyr 、 tidyr (超级强大的数据处理)  part 1

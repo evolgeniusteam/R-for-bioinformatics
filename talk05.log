@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.11.28)  10 MAR 2020 12:23
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.11.28)  12 MAR 2020 07:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2252,10 +2252,6 @@ Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             Ignoring protrusion settings for this character.
 [3
 
-] [4
-
-] [5
-
 ]
 \openout4 = `talk05.vrb'.
 
@@ -2270,13 +2266,11 @@ File: mt-LatinModernRoman.cfg 2013/03/13 v1.0 microtype config. file: Latin Mod
 ern Roman (RS)
 )
 
-Package fontspec Info: FandolFang-Regular scale = 0.9694313445096907.
+Package fontspec Info: FandolFang-Regular scale = 0.9410493650884307.
 
 
-Package fontspec Info: FandolFang-Regular scale = 0.9694313445096907.
+Package fontspec Info: FandolFang-Regular scale = 0.9410493650884307.
 
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 4.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
@@ -2291,37 +2285,48 @@ nsion={.otf}].
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[0.9694313445096907]"[FandolFang-Regular.otf]/OT:ma
+(fontspec)             <->s*[0.9410493650884307]"[FandolFang-Regular.otf]/OT:ma
 pping=tex-text;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-File: images/talk05/dplyr-large.png Graphic file (type bmp)
-<images/talk05/dplyr-large.png>
-)
-Overfull \vbox (75.12909pt too high) detected at line 206
- []
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <7> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 16.
+) [4
 
-[6
+] [5
 
-]
-\openout4 = `talk05.vrb'.
-
-(./talk05.vrb) [7
+] [6
 
 ]
 \openout4 = `talk05.vrb'.
 
 (./talk05.vrb
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <7> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 9.
-) [8
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 4.
+File: images/talk05/dplyr-large.png Graphic file (type bmp)
+<images/talk05/dplyr-large.png>
+)
+Overfull \vbox (75.12909pt too high) detected at line 227
+ []
+
+[7
+
+]
+\openout4 = `talk05.vrb'.
+
+(./talk05.vrb) [8
+
+]
+\openout4 = `talk05.vrb'.
+
+(./talk05.vrb) [9
 
 ]
 \openout4 = `talk05.vrb'.
 
 (./talk05.vrb
 LaTeX Font Info:    Font shape `TU/FandolFang-Regular(0)/m/n' will be
-(Font)              scaled to size 6.78606pt on input line 15.
+(Font)              scaled to size 6.58739pt on input line 15.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `FandolFang-Regular' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
@@ -2355,37 +2360,37 @@ Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             Ignoring protrusion settings for this character.
 )
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 297.
-[9
-
-]
-\openout4 = `talk05.vrb'.
-
-(./talk05.vrb)
-Overfull \vbox (199.72449pt too high) detected at line 362
- []
-
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 318.
 [10
 
 ]
 \openout4 = `talk05.vrb'.
 
 (./talk05.vrb)
-Overfull \vbox (759.0385pt too high) detected at line 497
+Overfull \vbox (199.72449pt too high) detected at line 383
  []
 
 [11
 
-] [12
+]
+\openout4 = `talk05.vrb'.
+
+(./talk05.vrb)
+Overfull \vbox (759.0385pt too high) detected at line 518
+ []
+
+[12
+
+] [13
 
 ]
 \openout4 = `talk05.vrb'.
 
-(./talk05.vrb) [13
+(./talk05.vrb) [14
 
 ]
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/m/n' will be
-(Font)              scaled to size 9.68536pt on input line 579.
+(Font)              scaled to size 9.68536pt on input line 600.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2414,7 +2419,7 @@ Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
-(Font)              scaled to size 9.13132pt on input line 579.
+(Font)              scaled to size 9.13132pt on input line 600.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2442,9 +2447,9 @@ Package microtype Info: Character `\textexclamdown ' is missing
 Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
-[14
+[15
 
-] [15
+] [16
 
 ]
 \openout4 = `talk05.vrb'.
@@ -2509,15 +2514,10 @@ Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/m/n/7'.
 (microtype)             Ignoring protrusion settings for this character.
 )
-Overfull \vbox (45.75275pt too high) detected at line 645
+Overfull \vbox (45.75275pt too high) detected at line 666
  []
 
-[16
-
-]
-\openout4 = `talk05.vrb'.
-
-(./talk05.vrb) [17
+[17
 
 ]
 \openout4 = `talk05.vrb'.
@@ -2527,10 +2527,15 @@ Overfull \vbox (45.75275pt too high) detected at line 645
 ]
 \openout4 = `talk05.vrb'.
 
+(./talk05.vrb) [19
+
+]
+\openout4 = `talk05.vrb'.
+
 (./talk05.vrb
 File: images/talk05/spread_explained.png Graphic file (type bmp)
 <images/talk05/spread_explained.png>
-) [19
+) [20
 
 ]
 \openout4 = `talk05.vrb'.
@@ -2541,7 +2546,7 @@ LaTeX Font Warning: Font shape `TU/FandolFang-Regular(0)/m/it' undefined
 (Font)              using `TU/FandolFang-Regular(0)/m/n' instead on input line 
 10.
 
-) [20
+) [21
 
 ]
 \openout4 = `talk05.vrb'.
@@ -2549,12 +2554,7 @@ LaTeX Font Warning: Font shape `TU/FandolFang-Regular(0)/m/it' undefined
 (./talk05.vrb
 File: images/talk05/gather_explained.png Graphic file (type bmp)
 <images/talk05/gather_explained.png>
-) [21
-
-]
-\openout4 = `talk05.vrb'.
-
-(./talk05.vrb) [22
+) [22
 
 ]
 \openout4 = `talk05.vrb'.
@@ -2592,26 +2592,26 @@ File: images/talk05/gather_explained.png Graphic file (type bmp)
 (./talk05.vrb) [29
 
 ]
+\openout4 = `talk05.vrb'.
+
+(./talk05.vrb) [30
+
+]
 File: images/talk05/dplyr-summarise.png Graphic file (type bmp)
 <images/talk05/dplyr-summarise.png>
-[30
+[31
 
-] [31
+] [32
 
 ]
 \openout4 = `talk05.vrb'.
 
-(./talk05.vrb) [32
+(./talk05.vrb) [33
 
 ]
 File: images/talk05/dplyr-mutate.png Graphic file (type bmp)
 <images/talk05/dplyr-mutate.png>
-[33
-
-]
-\openout4 = `talk05.vrb'.
-
-(./talk05.vrb) [34
+[34
 
 ]
 \openout4 = `talk05.vrb'.
@@ -2629,23 +2629,28 @@ File: images/talk05/dplyr-mutate.png Graphic file (type bmp)
 (./talk05.vrb) [37
 
 ]
+\openout4 = `talk05.vrb'.
+
+(./talk05.vrb) [38
+
+]
 File: images/talk05/dplyr-select.png Graphic file (type bmp)
 <images/talk05/dplyr-select.png>
-[38
+[39
 
 ]
 \openout4 = `talk05.vrb'.
 
-(./talk05.vrb) [39
+(./talk05.vrb) [40
 
 ]
 File: images/talk05/dplyr-subset.png Graphic file (type bmp)
 <images/talk05/dplyr-subset.png>
-[40
+[41
 
 ]
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 128
-2.
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 130
+3.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -2653,48 +2658,46 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 1282
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 1303
 .
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 128
-2.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 130
+3.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 128
-2.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 130
+3.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 1282.
+(Font)              <10.95> on input line 1303.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 1282.
+(Font)              <8> on input line 1303.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 1282.
-LaTeX Font Info:    Try loading font information for U+msa on input line 1282.
+(Font)              <6> on input line 1303.
+LaTeX Font Info:    Try loading font information for U+msa on input line 1303.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 1282.
+LaTeX Font Info:    Try loading font information for U+msb on input line 1303.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 1282.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 1303.
 
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 1282.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 1303.
 
-[41
-
-] [42
+[42
 
 ] [43
 
@@ -2706,6 +2709,8 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
 
 ] [47
 
+] [48
+
 ]
 \tf@nav=\write7
 \openout7 = `talk05.nav'.
@@ -2716,11 +2721,11 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
 \tf@snm=\write9
 \openout9 = `talk05.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1367.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1367.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1388.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1388.
 (./talk05.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1367.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1367.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1388.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1388.
 
 Package rerunfilecheck Info: File `talk05.out' has not changed.
 (rerunfilecheck)             Checksum: 5E69FE73CC507F93786C2117F4A3D6F1.
@@ -2729,12 +2734,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 41967 strings out of 492916
- 842240 string characters out of 6133344
- 1004987 words of memory out of 5000000
- 45339 multiletter control sequences out of 15000+600000
+ 41971 strings out of 492916
+ 842274 string characters out of 6133344
+ 1005024 words of memory out of 5000000
+ 45341 multiletter control sequences out of 15000+600000
  544598 words of font info for 79 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 65i,15n,131p,792b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,15n,129p,792b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on talk05.pdf (47 pages).
+Output written on talk05.pdf (48 pages).
