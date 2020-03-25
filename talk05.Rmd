@@ -209,17 +209,7 @@ knitr::kable( head(grades, n=20) )
 * 应对不同学生选择不同课程的情况
 * 可随时增加新的课程
 
-## 长数据与宽数据之间的转换
-
-什么是宽数据？
-
-\FontSmall
-```{r}
-dat2 <- dat %>% select( CHR, TYPE, `count` ) %>%  spread( TYPE, count  );
-knitr::kable( head(dat2, n=10) );
-```
-
-## 宽数据举例2 
+## 长数据变宽
 
 \FontSmall
 ```{r}
@@ -265,7 +255,6 @@ grades_melted <- grades2 %>% gather( course, grade, -name ); ## 注意参数的�
 
 ![annotated gather function](images/talk05/gather_explained.png){height=50%}
 
-
 ## 有 ```NA``` 值怎么办？
 
 \FontSmall
@@ -301,6 +290,14 @@ mini_iris.melted <- mini_iris %>% gather( type, dat, -Species );
 knitr::kable( mini_iris.melted  );
 ```
 
+## 长宽转换之mouse.tibble
+
+\FontSmall
+```{r}
+dat2 <- dat %>% select( CHR, TYPE, `count` ) %>%  spread( TYPE, count  );
+knitr::kable( head(dat2, n=10) );
+```
+
 ## 比较复杂的例子
 
 \FontSmall
@@ -309,6 +306,10 @@ grades2 <- read_delim( file = "data/talk05/grades2.txt", delim = "\t",
                        quote = "", col_names = T);
 knitr::kable( grades2 );
 ```
+
+\FontNormal
+
+这是哪种数据类型？长还是宽？？
 
 ## 怎么用 spread 把它变为以下的格式？
 
@@ -358,10 +359,22 @@ Question:
 grades.melted <- grades %>% 
   gather( course, grade, -Name, -Occupation, na.rm = T );
 
+## 检查数据 ... 
+knitr::kable( head(grades.melted) );
+```
+
+## 成绩分析，cont
+
+\FontSmall
+
+```{r}
 grades.melted %>% 
   group_by(Name, Occupation) %>% 
   summarise( avg_grades = mean( grade ), courses_count = n() ) %>% 
   arrange( -avg_grades );
+
+## 显示最终结果
+knitr::kable( head( grades.melted ) );
 ```
 
 ## use gather & dplyr functions 
@@ -371,11 +384,25 @@ grades.melted %>%
 \FontSmall
 
 ```{r}
-grades.melted %>% 
-  arrange( Name, -grade ) %>% 
+
+## 步骤1： 排序：
+grades.melted2 <- 
+  grades.melted %>% 
+  arrange( Name, -grade );
+
+knitr::kable( head(grades.melted2) );
+```
+
+## 最强科目问题，cont.
+
+\FontSmall
+
+```{r}
+grades.melted2 %>% 
   group_by(Name) %>% 
-  summarise( avg_grades = mean( grade ), best_course = first( course ),
-             best_grade = first( grade ) ) %>% 
+  summarise( best_course = first( course ),
+             best_grade = first( grade ),
+             avg_grades = mean( grade ) ) %>% 
   arrange( -avg_grades );
 ```
 

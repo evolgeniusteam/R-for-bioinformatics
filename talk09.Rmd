@@ -488,7 +488,101 @@ ggplot(df, aes( x = month, y = value, colour = col ) ) +
 * ``` geom_histogram ```, `` geom_density ``` : 数据的分布，也可用于多组间的比较
 * 其它十余种，请见“ggplot2 : elegant graphics for data analysis” 一书！！
 
-# section 4: ggplot2 进阶1
+# section 4: ggplot2作图的四个基本组成部分
+
+## ggplot2的四个基本组成
+
+1. 图层（layers）
+
+ * ```geom_<图层名>```
+ 
+2. scale：控制数据至美学属性的mapping
+
+ * ```scale_<属性mapping方式>```，e.g. ```scale_color_identity()```
+
+![数据的4种scale方法](images/talk09/scale.png){height=30%}
+
+
+## ggplot2的scale 
+
+* ```scale_color_...```
+* ```scale_shape_...```
+* ```scale_size_...```
+* ```scale_fill_...```
+
+与坐标系统联动的函数
+
+* ```scale_x_log()```
+* ```scale_y_log()``` 
+
+更多内容可以见《ggplot2: elegant graphics for data analysis》一书的第6章。
+
+## ggplot2要素3： 坐标系统
+
+* 正常
+* log-transform
+
+示例：
+
+\FontSmall
+
+```{r fig.height=3, fig.width=10}
+ggplot(mtcars, aes( wt , mpg)) + geom_point() +
+  scale_y_log10()
+```
+
+## ggplot2要素3： 坐标系统，cont. 
+
+\FontSmall
+
+```{r fig.height=3, fig.width=10}
+ggplot(mtcars, aes( wt , mpg)) + geom_point() +
+  coord_trans( y = "log10" );
+```
+
+
+```coord_trans()```的其它参数：
+
+* limx, limy: 限制xy的显示范围
+
+
+## ggplot2要素3： 坐标系统，cont. 
+
+其它函数
+
+* ```coord_flip()``` : x，y轴互换；竖bar变横bar；
+* ```coord_polar()``` :
+
+\FontSmall
+
+```{r fig.height=3, fig.width=10}
+plot1 <-  ggplot(mtcars, aes(x = factor(cyl))) +
+  geom_bar(width = 1, colour = "black");
+plot1;
+```
+
+
+## ggplot2要素3： 坐标系统，cont. 
+
+\FontSmall
+
+```{r fig.height=3, fig.width=10}
+plot1 + coord_polar();
+```
+
+\FontNormal
+
+更多内容可以见《ggplot2: elegant graphics for data analysis》一书的第7章。
+
+## ggplot2要素4： faceting ... 
+
+\FontSmall
+
+```{r fig.height=3, fig.width=10}
+qplot(displ, hwy, data=mpg, facets = . ~ year) + geom_smooth();
+```
+
+# section 5: ggplot2 进阶1
 
 ## 散点图的进一步分析
 
@@ -850,7 +944,7 @@ ggplot( data.frame( x = rnorm(100, x_mean, x_sd) ), aes( x ) ) +
     ggtitle(ex); ## 为什么不需要 parse = TURE ???? 
 ```
 
-# section 5: ggplot2 进阶2 
+# section 6: ggplot2 进阶2 
 
 ## ggplot2的核心在于先计算再做图
 
@@ -1224,7 +1318,7 @@ ggplot( mtcars, aes( x = wt, y = mpg ) ) +
 
 请见“ggplot2 : elegant graphics for data analysis” 一书！！
 
-# section 6: Exercise and home work
+# section 7: Exercise and home work
 
 ## more to read & 练习
 

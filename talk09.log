@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.7.18)  16 AUG 2019 10:53
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.11.28)  25 MAR 2020 20:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2153,7 +2153,70 @@ Package microtype Warning: Unknown slot number of character
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-(./talk09.nav) [1
+(./talk09.nav)
+LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
+(Font)              scaled to size 5.47879pt on input line 123.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `FandolHei-Regular' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+Package microtype Info: Character `\AE ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotesinglbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotedblbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textexclamdown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textquestiondown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/m/n' will be
+(Font)              scaled to size 10.60547pt on input line 124.
+Package microtype Info: Character `\AE ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotesinglbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotedblbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textexclamdown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textquestiondown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+[1
 
 ] [2
 
@@ -2162,11 +2225,7 @@ Package caption Info: End \AtBeginDocument code.
 
 (./talk09.vrb
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
-(Font)              scaled to size 9.99878pt on input line 3.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `FandolHei-Regular' (encoding: TU).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
+(Font)              scaled to size 9.99878pt on input line 4.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2227,38 +2286,9 @@ nsion={.otf}].
 pping=tex-text;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/m/n' will be
-(Font)              scaled to size 10.60547pt on input line 12.
-Package microtype Info: Character `\AE ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\quotesinglbase ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\quotedblbase ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guilsinglleft ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guilsinglright ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guillemotleft ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guillemotright ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\textexclamdown ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\textquestiondown ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
 )
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
-(Font)              scaled to size 13.14908pt on input line 165.
+(Font)              scaled to size 13.14908pt on input line 166.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2425,7 +2455,7 @@ File: talk09_files/figure-beamer/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 <use talk09_files/figure-beamer/unnamed-chunk-5-1.pdf>
 )
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 294.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 296.
 [10
 
 ]
@@ -2483,7 +2513,7 @@ File: talk09_files/figure-beamer/unnamed-chunk-10-1.pdf Graphic file (type pdf)
 \openout4 = `talk09.vrb'.
 
 (./talk09.vrb)
-Overfull \vbox (1636.57022pt too high) detected at line 705
+Overfull \vbox (1636.57022pt too high) detected at line 708
  []
 
 [18
@@ -2527,37 +2557,7 @@ File: talk09_files/figure-beamer/unnamed-chunk-16-1.pdf Graphic file (type pdf)
 
 ] [26
 
-]
-LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
-(Font)              scaled to size 5.47879pt on input line 892.
-Package microtype Info: Character `\AE ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\quotesinglbase ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\quotedblbase ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guilsinglleft ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guilsinglright ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guillemotleft ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guillemotright ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\textexclamdown ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\textquestiondown ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
-(microtype)             Ignoring protrusion settings for this character.
-[27
+] [27
 
 ]
 \openout4 = `talk09.vrb'.
@@ -2662,10 +2662,10 @@ File: talk09_files/figure-beamer/unnamed-chunk-23-1.pdf Graphic file (type pdf)
 
 LaTeX Font Warning: Font shape `TU/FandolFang-Regular(0)/bx/n' undefined
 (Font)              using `TU/FandolFang-Regular(0)/m/n' instead on input line 
-1091.
+1097.
 
 LaTeX Font Info:    Font shape `TU/FandolFang-Regular(0)/m/n' will be
-(Font)              scaled to size 13.55096pt on input line 1091.
+(Font)              scaled to size 13.55096pt on input line 1097.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolFang-Regular(0)/m/n/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2714,8 +2714,8 @@ File: talk09_files/figure-beamer/unnamed-chunk-25-1.pdf Graphic file (type pdf)
 ) [38
 
 ]
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 114
-9.
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 115
+6.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -2723,44 +2723,44 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 1149
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 1156
 .
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 114
-9.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 115
+6.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 114
-9.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 115
+6.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 1149.
+(Font)              <10.95> on input line 1156.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 1149.
+(Font)              <8> on input line 1156.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 1149.
-LaTeX Font Info:    Try loading font information for U+msa on input line 1149.
+(Font)              <6> on input line 1156.
+LaTeX Font Info:    Try loading font information for U+msa on input line 1156.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 1149.
+LaTeX Font Info:    Try loading font information for U+msb on input line 1156.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 1149.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 1156.
 
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 1149.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 1156.
 
 [39
 
@@ -2775,52 +2775,33 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
 \openout4 = `talk09.vrb'.
 
 (./talk09.vrb
-File: talk09_files/figure-beamer/unnamed-chunk-26-1.pdf Graphic file (type pdf)
-
-<use talk09_files/figure-beamer/unnamed-chunk-26-1.pdf>
+File: images/talk09/scale.png Graphic file (type bmp)
+<images/talk09/scale.png>
 ) [42
 
 ]
+\openout4 = `talk09.vrb'.
+
+(./talk09.vrb) [43
+
+]
+\openout4 = `talk09.vrb'.
+
+(./talk09.vrb
+File: talk09_files/figure-beamer/unnamed-chunk-26-1.pdf Graphic file (type pdf)
+
+<use talk09_files/figure-beamer/unnamed-chunk-26-1.pdf>
+) [44
+
+]
+\openout4 = `talk09.vrb'.
+
+(./talk09.vrb
 File: talk09_files/figure-beamer/unnamed-chunk-27-1.pdf Graphic file (type pdf)
 
 <use talk09_files/figure-beamer/unnamed-chunk-27-1.pdf>
-[43
-
-]
-File: images/talk09/equation_explained.png Graphic file (type bmp)
-<images/talk09/equation_explained.png>
-[44
-
-]
-\openout4 = `talk09.vrb'.
-
-(./talk09.vrb) [45
-
-]
-\openout4 = `talk09.vrb'.
-
-(./talk09.vrb) [46
-
-]
-\openout4 = `talk09.vrb'.
-
-(./talk09.vrb) [47
-
-]
-\openout4 = `talk09.vrb'.
-
-(./talk09.vrb
-File: talk09_files/figure-beamer/unnamed-chunk-31-1.pdf Graphic file (type pdf)
-
-<use talk09_files/figure-beamer/unnamed-chunk-31-1.pdf>
-) [48
-
-]
-\openout4 = `talk09.vrb'.
-
-(./talk09.vrb
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/m/n' will be
-(Font)              scaled to size 6.77975pt on input line 7.
+(Font)              scaled to size 6.77975pt on input line 15.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/m/n/7'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2848,41 +2829,65 @@ Package microtype Info: Character `\textexclamdown ' is missing
 Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/m/n/7'.
 (microtype)             Ignoring protrusion settings for this character.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 10.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 10.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 10.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 10.
-) [49
-
-]
-\openout4 = `talk09.vrb'.
-
-(./talk09.vrb) [50
-
-]
-\openout4 = `talk09.vrb'.
-
-(./talk09.vrb) [51
-
-]
-\openout4 = `talk09.vrb'.
-
-(./talk09.vrb) [52
+) [45
 
 ]
 \openout4 = `talk09.vrb'.
 
 (./talk09.vrb
+File: talk09_files/figure-beamer/unnamed-chunk-28-1.pdf Graphic file (type pdf)
 
-Package amsmath Warning: Foreign command \atop;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 23.
+<use talk09_files/figure-beamer/unnamed-chunk-28-1.pdf>
+) [46
 
-) [53
+]
+\openout4 = `talk09.vrb'.
+
+(./talk09.vrb
+File: talk09_files/figure-beamer/unnamed-chunk-29-1.pdf Graphic file (type pdf)
+
+<use talk09_files/figure-beamer/unnamed-chunk-29-1.pdf>
+)
+Overfull \vbox (28.4546pt too high) detected at line 1352
+ []
+
+[47
+
+]
+\openout4 = `talk09.vrb'.
+
+(./talk09.vrb
+File: talk09_files/figure-beamer/unnamed-chunk-30-1.pdf Graphic file (type pdf)
+
+<use talk09_files/figure-beamer/unnamed-chunk-30-1.pdf>
+) [48
+
+] [49
+
+]
+\openout4 = `talk09.vrb'.
+
+(./talk09.vrb
+File: talk09_files/figure-beamer/unnamed-chunk-31-1.pdf Graphic file (type pdf)
+
+<use talk09_files/figure-beamer/unnamed-chunk-31-1.pdf>
+) [50
+
+]
+File: talk09_files/figure-beamer/unnamed-chunk-32-1.pdf Graphic file (type pdf)
+
+<use talk09_files/figure-beamer/unnamed-chunk-32-1.pdf>
+[51
+
+]
+File: images/talk09/equation_explained.png Graphic file (type bmp)
+<images/talk09/equation_explained.png>
+[52
+
+]
+\openout4 = `talk09.vrb'.
+
+(./talk09.vrb) [53
 
 ]
 \openout4 = `talk09.vrb'.
@@ -2895,65 +2900,69 @@ Package amsmath Warning: Foreign command \atop;
 (./talk09.vrb) [55
 
 ]
-File: talk09_files/figure-beamer/unnamed-chunk-33-1.pdf Graphic file (type pdf)
-
-<use talk09_files/figure-beamer/unnamed-chunk-33-1.pdf>
-[56
-
-]
-\openout4 = `talk09.vrb'.
-
-(./talk09.vrb
-File: talk09_files/figure-beamer/unnamed-chunk-34-1.pdf Graphic file (type pdf)
-
-<use talk09_files/figure-beamer/unnamed-chunk-34-1.pdf>
-)
-Overfull \vbox (4.65977pt too high) detected at line 1604
- []
-
-[57
-
-]
-\openout4 = `talk09.vrb'.
-
-(./talk09.vrb
-File: talk09_files/figure-beamer/unnamed-chunk-35-1.pdf Graphic file (type pdf)
-
-<use talk09_files/figure-beamer/unnamed-chunk-35-1.pdf>
-)
-Overfull \vbox (28.18378pt too high) detected at line 1630
- []
-
-[58
-
-]
 \openout4 = `talk09.vrb'.
 
 (./talk09.vrb
 File: talk09_files/figure-beamer/unnamed-chunk-36-1.pdf Graphic file (type pdf)
 
 <use talk09_files/figure-beamer/unnamed-chunk-36-1.pdf>
-)
-Overfull \vbox (52.89961pt too high) detected at line 1659
- []
-
-[59
-
-] [60
-
-]
-\openout4 = `talk09.vrb'.
-
-(./talk09.vrb) [61
+) [56
 
 ]
 \openout4 = `talk09.vrb'.
 
 (./talk09.vrb
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 11.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 11.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 11.
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 11.
+) [57
+
+]
+\openout4 = `talk09.vrb'.
+
+(./talk09.vrb) [58
+
+]
+\openout4 = `talk09.vrb'.
+
+(./talk09.vrb) [59
+
+]
+\openout4 = `talk09.vrb'.
+
+(./talk09.vrb) [60
+
+]
+\openout4 = `talk09.vrb'.
+
+(./talk09.vrb
+
+Package amsmath Warning: Foreign command \atop;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 23.
+
+) [61
+
+]
+\openout4 = `talk09.vrb'.
+
+(./talk09.vrb) [62
+
+]
+\openout4 = `talk09.vrb'.
+
+(./talk09.vrb) [63
+
+]
 File: talk09_files/figure-beamer/unnamed-chunk-38-1.pdf Graphic file (type pdf)
 
 <use talk09_files/figure-beamer/unnamed-chunk-38-1.pdf>
-) [62
+[64
 
 ]
 \openout4 = `talk09.vrb'.
@@ -2962,22 +2971,24 @@ File: talk09_files/figure-beamer/unnamed-chunk-38-1.pdf Graphic file (type pdf)
 File: talk09_files/figure-beamer/unnamed-chunk-39-1.pdf Graphic file (type pdf)
 
 <use talk09_files/figure-beamer/unnamed-chunk-39-1.pdf>
-) [63
+)
+Overfull \vbox (4.65977pt too high) detected at line 1807
+ []
 
-]
-\openout4 = `talk09.vrb'.
-
-(./talk09.vrb) [64
-
-]
-File: images/talk09/microbiome_fig.png Graphic file (type bmp)
-<images/talk09/microbiome_fig.png>
 [65
 
 ]
 \openout4 = `talk09.vrb'.
 
-(./talk09.vrb) [66
+(./talk09.vrb
+File: talk09_files/figure-beamer/unnamed-chunk-40-1.pdf Graphic file (type pdf)
+
+<use talk09_files/figure-beamer/unnamed-chunk-40-1.pdf>
+)
+Overfull \vbox (28.18378pt too high) detected at line 1833
+ []
+
+[66
 
 ]
 \openout4 = `talk09.vrb'.
@@ -2986,16 +2997,18 @@ File: images/talk09/microbiome_fig.png Graphic file (type bmp)
 File: talk09_files/figure-beamer/unnamed-chunk-41-1.pdf Graphic file (type pdf)
 
 <use talk09_files/figure-beamer/unnamed-chunk-41-1.pdf>
-) [67
+)
+Overfull \vbox (52.89961pt too high) detected at line 1862
+ []
+
+[67
+
+] [68
 
 ]
 \openout4 = `talk09.vrb'.
 
-(./talk09.vrb
-File: talk09_files/figure-beamer/unnamed-chunk-42-1.pdf Graphic file (type pdf)
-
-<use talk09_files/figure-beamer/unnamed-chunk-42-1.pdf>
-) [68
+(./talk09.vrb) [69
 
 ]
 \openout4 = `talk09.vrb'.
@@ -3004,7 +3017,7 @@ File: talk09_files/figure-beamer/unnamed-chunk-42-1.pdf Graphic file (type pdf)
 File: talk09_files/figure-beamer/unnamed-chunk-43-1.pdf Graphic file (type pdf)
 
 <use talk09_files/figure-beamer/unnamed-chunk-43-1.pdf>
-) [69
+) [70
 
 ]
 \openout4 = `talk09.vrb'.
@@ -3013,15 +3026,6 @@ File: talk09_files/figure-beamer/unnamed-chunk-43-1.pdf Graphic file (type pdf)
 File: talk09_files/figure-beamer/unnamed-chunk-44-1.pdf Graphic file (type pdf)
 
 <use talk09_files/figure-beamer/unnamed-chunk-44-1.pdf>
-) [70
-
-]
-\openout4 = `talk09.vrb'.
-
-(./talk09.vrb
-File: talk09_files/figure-beamer/unnamed-chunk-45-1.pdf Graphic file (type pdf)
-
-<use talk09_files/figure-beamer/unnamed-chunk-45-1.pdf>
 ) [71
 
 ]
@@ -3030,13 +3034,9 @@ File: talk09_files/figure-beamer/unnamed-chunk-45-1.pdf Graphic file (type pdf)
 (./talk09.vrb) [72
 
 ]
-\openout4 = `talk09.vrb'.
-
-(./talk09.vrb
-File: talk09_files/figure-beamer/unnamed-chunk-46-1.pdf Graphic file (type pdf)
-
-<use talk09_files/figure-beamer/unnamed-chunk-46-1.pdf>
-) [73
+File: images/talk09/microbiome_fig.png Graphic file (type bmp)
+<images/talk09/microbiome_fig.png>
+[73
 
 ]
 \openout4 = `talk09.vrb'.
@@ -3047,10 +3047,19 @@ File: talk09_files/figure-beamer/unnamed-chunk-46-1.pdf Graphic file (type pdf)
 \openout4 = `talk09.vrb'.
 
 (./talk09.vrb
+File: talk09_files/figure-beamer/unnamed-chunk-46-1.pdf Graphic file (type pdf)
+
+<use talk09_files/figure-beamer/unnamed-chunk-46-1.pdf>
+) [75
+
+]
+\openout4 = `talk09.vrb'.
+
+(./talk09.vrb
 File: talk09_files/figure-beamer/unnamed-chunk-47-1.pdf Graphic file (type pdf)
 
 <use talk09_files/figure-beamer/unnamed-chunk-47-1.pdf>
-) [75
+) [76
 
 ]
 \openout4 = `talk09.vrb'.
@@ -3059,6 +3068,61 @@ File: talk09_files/figure-beamer/unnamed-chunk-47-1.pdf Graphic file (type pdf)
 File: talk09_files/figure-beamer/unnamed-chunk-48-1.pdf Graphic file (type pdf)
 
 <use talk09_files/figure-beamer/unnamed-chunk-48-1.pdf>
+) [77
+
+]
+\openout4 = `talk09.vrb'.
+
+(./talk09.vrb
+File: talk09_files/figure-beamer/unnamed-chunk-49-1.pdf Graphic file (type pdf)
+
+<use talk09_files/figure-beamer/unnamed-chunk-49-1.pdf>
+) [78
+
+]
+\openout4 = `talk09.vrb'.
+
+(./talk09.vrb
+File: talk09_files/figure-beamer/unnamed-chunk-50-1.pdf Graphic file (type pdf)
+
+<use talk09_files/figure-beamer/unnamed-chunk-50-1.pdf>
+) [79
+
+]
+\openout4 = `talk09.vrb'.
+
+(./talk09.vrb) [80
+
+]
+\openout4 = `talk09.vrb'.
+
+(./talk09.vrb
+File: talk09_files/figure-beamer/unnamed-chunk-51-1.pdf Graphic file (type pdf)
+
+<use talk09_files/figure-beamer/unnamed-chunk-51-1.pdf>
+) [81
+
+]
+\openout4 = `talk09.vrb'.
+
+(./talk09.vrb) [82
+
+]
+\openout4 = `talk09.vrb'.
+
+(./talk09.vrb
+File: talk09_files/figure-beamer/unnamed-chunk-52-1.pdf Graphic file (type pdf)
+
+<use talk09_files/figure-beamer/unnamed-chunk-52-1.pdf>
+) [83
+
+]
+\openout4 = `talk09.vrb'.
+
+(./talk09.vrb
+File: talk09_files/figure-beamer/unnamed-chunk-53-1.pdf Graphic file (type pdf)
+
+<use talk09_files/figure-beamer/unnamed-chunk-53-1.pdf>
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
 (Font)              scaled to size 6.39192pt on input line 15.
 Package microtype Info: Character `\AE ' is missing
@@ -3088,30 +3152,30 @@ Package microtype Info: Character `\textexclamdown ' is missing
 Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/7'.
 (microtype)             Ignoring protrusion settings for this character.
-) [76
+) [84
 
 ]
 \openout4 = `talk09.vrb'.
 
-(./talk09.vrb) [77
+(./talk09.vrb) [85
 
 ]
 \openout4 = `talk09.vrb'.
 
 (./talk09.vrb)
-Overfull \vbox (0.11514pt too high) detected at line 2074
+Overfull \vbox (0.11514pt too high) detected at line 2281
  []
 
-[78
+[86
 
 ]
 \openout4 = `talk09.vrb'.
 
 (./talk09.vrb
-File: talk09_files/figure-beamer/unnamed-chunk-49-1.pdf Graphic file (type pdf)
+File: talk09_files/figure-beamer/unnamed-chunk-54-1.pdf Graphic file (type pdf)
 
-<use talk09_files/figure-beamer/unnamed-chunk-49-1.pdf>
-) [79
+<use talk09_files/figure-beamer/unnamed-chunk-54-1.pdf>
+) [87
 
 ]
 \openout4 = `talk09.vrb'.
@@ -3121,63 +3185,63 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 24.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
 (Font)              Font shape `TU/lmss/m/sl' tried instead on input line 24.
-) [80
+) [88
 
 ]
 \openout4 = `talk09.vrb'.
 
-(./talk09.vrb) [81
-
-]
-\openout4 = `talk09.vrb'.
-
-(./talk09.vrb
-File: talk09_files/figure-beamer/unnamed-chunk-52-1.pdf Graphic file (type pdf)
-
-<use talk09_files/figure-beamer/unnamed-chunk-52-1.pdf>
-) [82
+(./talk09.vrb) [89
 
 ]
 \openout4 = `talk09.vrb'.
 
 (./talk09.vrb
-File: talk09_files/figure-beamer/unnamed-chunk-53-1.pdf Graphic file (type pdf)
+File: talk09_files/figure-beamer/unnamed-chunk-57-1.pdf Graphic file (type pdf)
 
-<use talk09_files/figure-beamer/unnamed-chunk-53-1.pdf>
-) [83
-
-]
-\openout4 = `talk09.vrb'.
-
-(./talk09.vrb) [84
+<use talk09_files/figure-beamer/unnamed-chunk-57-1.pdf>
+) [90
 
 ]
 \openout4 = `talk09.vrb'.
 
 (./talk09.vrb
-File: talk09_files/figure-beamer/unnamed-chunk-55-1.pdf Graphic file (type pdf)
+File: talk09_files/figure-beamer/unnamed-chunk-58-1.pdf Graphic file (type pdf)
 
-<use talk09_files/figure-beamer/unnamed-chunk-55-1.pdf>
-) [85
+<use talk09_files/figure-beamer/unnamed-chunk-58-1.pdf>
+) [91
+
+]
+\openout4 = `talk09.vrb'.
+
+(./talk09.vrb) [92
 
 ]
 \openout4 = `talk09.vrb'.
 
 (./talk09.vrb
-File: talk09_files/figure-beamer/unnamed-chunk-56-1.pdf Graphic file (type pdf)
+File: talk09_files/figure-beamer/unnamed-chunk-60-1.pdf Graphic file (type pdf)
 
-<use talk09_files/figure-beamer/unnamed-chunk-56-1.pdf>
-) [86
+<use talk09_files/figure-beamer/unnamed-chunk-60-1.pdf>
+) [93
 
-] [87
+]
+\openout4 = `talk09.vrb'.
 
-] [88
+(./talk09.vrb
+File: talk09_files/figure-beamer/unnamed-chunk-61-1.pdf Graphic file (type pdf)
 
-] [89
+<use talk09_files/figure-beamer/unnamed-chunk-61-1.pdf>
+) [94
 
-] [90
+] [95
 
-] [91
+] [96
+
+] [97
+
+] [98
+
+] [99
 
 ]
 \tf@nav=\write7
@@ -3189,25 +3253,25 @@ File: talk09_files/figure-beamer/unnamed-chunk-56-1.pdf Graphic file (type pdf)
 \tf@snm=\write9
 \openout9 = `talk09.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2388.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2388.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2597.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2597.
 (./talk09.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2388.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2388.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2597.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2597.
 
 Package rerunfilecheck Info: File `talk09.out' has not changed.
-(rerunfilecheck)             Checksum: D2E74D7B97310DADB760A8A43C53EDD9.
+(rerunfilecheck)             Checksum: 43483781945100053F7CC419319EA55C.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 42553 strings out of 492916
- 867133 string characters out of 6133345
- 985193 words of memory out of 5000000
- 45792 multiletter control sequences out of 15000+600000
+ 42650 strings out of 492916
+ 871455 string characters out of 6133344
+ 987255 words of memory out of 5000000
+ 45869 multiletter control sequences out of 15000+600000
  556020 words of font info for 99 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  65i,15n,129p,792b,768s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on talk09.pdf (91 pages).
+Output written on talk09.pdf (99 pages).
