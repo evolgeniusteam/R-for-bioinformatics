@@ -190,7 +190,6 @@ df %>% lapply( mean );
 df %>% sapply( mean );
 ```
 
-
 ##  ``` lapply ``` 和 ``` sapply ``` , cont. 
 
 输入是 list ，使用自定义函数

@@ -37,13 +37,39 @@ knitr::opts_chunk$set(echo = TRUE)
 2. R基础知识
 3. 数据处理
 4. 做图
-5. 常用生信分析任务与解决方法
+5. 常见组学数据和分析、可视化方法
+6. 机器学习在组学分析当中的应用
 
-注：不一定按上面的顺序来
+## 机器学习
 
-## 前置技能
+* 宁康：人工智能赋能菌群大数据挖掘
+* 郭安源：AI与表达数据分析
+* 薛宇：机器学习在新冠标志物和图像识别当中的应用
+* 陈卫华：机器学习在肠道菌群为基础的疾病标志物挖掘当中的应用
 
+## 宁康
 
+![宁康教授在热心肠先生的主题报告](images/talk01/ML-kangning.png){width=80%}
+
+[SOHU页面](https://www.sohu.com/a/438990464_185627)
+
+## 郭安源
+
+![Advanced Science (2019 IF: 15.84)](images/talk01/ML-anyuan.png){width=60%}
+
+截止2021年3月7日，已被引用60次 (Google Scholar)
+
+## 薛宇
+
+![Nature BME & Immunity (IF>20)](images/talk01/ML-xueyu.png){width=60%}
+
+机器学习在新冠标志物和图像识别当中的应用
+
+## 陈卫华
+
+![Cell Metabolism (2019 IF: 21.56)](images/talk01/ML-weihuachen.png){width=60%}
+
+机器学习在肠道菌群为基础的疾病标志物挖掘当中的应用
 
 ## Class rules
 
@@ -463,7 +489,8 @@ library(dplyr);
 
 mysql.dbname = "r4ds_test";
 dbCon <- dbConnect(MySQL(), user="r4ds", password="r4ds", 
-                   dbname=mysql.dbname );
+                   dbname=mysql.dbname,
+                   unix.socket="/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock");
 
 dat <- dbGetQuery(dbCon, "SELECT * FROM grades_stats");
 

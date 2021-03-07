@@ -1,6 +1,6 @@
 ---
 title: "Chicken soap"
-subtitle: "HUST Bioinformatics course series for '17 class"
+subtitle: "HUST Bioinformatics course series for undergraduates"
 author: "Wei-Hua Chen (CC BY-NC 4.0)"
 institute: "HUST, China"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
