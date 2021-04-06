@@ -12,6 +12,9 @@ output:
     highlight: tango
     includes:
       in_header: mystyle.sty
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
 ```{r include=FALSE}
@@ -24,7 +27,6 @@ color_block = function(color) {
 knitr::knit_hooks$set(error = color_block('red'))
 ```
 
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -33,67 +35,71 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Course contents
 
-1. 开发平台相关软件安装
-2. R基础知识
-3. 数据处理
-4. 做图
-5. 常见组学数据和分析、可视化方法
-6. 机器学习在组学分析当中的应用
+1.  开发平台相关软件安装
+2.  R基础知识
+3.  数据处理
+4.  做图
+5.  常见组学数据和分析、可视化方法
+6.  机器学习在组学分析当中的应用
 
 ## 机器学习
 
-* 宁康：人工智能赋能菌群大数据挖掘
-* 郭安源：AI与表达数据分析
-* 薛宇：机器学习在新冠标志物和图像识别当中的应用
-* 陈卫华：机器学习在肠道菌群为基础的疾病标志物挖掘当中的应用
+-   宁康：人工智能赋能菌群大数据挖掘
+-   郭安源：AI与表达数据分析
+-   薛宇：机器学习在新冠标志物和图像识别当中的应用
+-   陈卫华：机器学习在肠道菌群为基础的疾病标志物挖掘当中的应用
 
 ## 宁康
 
-![宁康教授在热心肠先生的主题报告](images/talk01/ML-kangning.png){width=80%}
+![宁康教授在热心肠先生的主题报告](images/talk01/ML-kangning.png){width="80%"}
 
 [SOHU页面](https://www.sohu.com/a/438990464_185627)
 
 ## 郭安源
 
-![Advanced Science (2019 IF: 15.84)](images/talk01/ML-anyuan.png){width=60%}
+![Advanced Science (2019 IF:
+15.84)](images/talk01/ML-anyuan.png){width="60%"}
 
 截止2021年3月7日，已被引用60次 (Google Scholar)
 
 ## 薛宇
 
-![Nature BME & Immunity (IF>20)](images/talk01/ML-xueyu.png){width=60%}
+![Nature BME & Immunity
+(IF\>20)](images/talk01/ML-xueyu.png){width="60%"}
 
 机器学习在新冠标志物和图像识别当中的应用
 
 ## 陈卫华
 
-![Cell Metabolism (2019 IF: 21.56)](images/talk01/ML-weihuachen.png){width=60%}
+![Cell Metabolism (2019 IF:
+21.56)](images/talk01/ML-weihuachen.png){width="60%"}
 
 机器学习在肠道菌群为基础的疾病标志物挖掘当中的应用
 
 ## Class rules
 
-1. 每次随机点名
-2. 课堂随机提问
-3. 每人2次无理由缺课机会，占平时成绩的一半
-4. 考试、平时成绩各占总成绩的50%
+1.  每次随机点名
+2.  课堂随机提问
+3.  每人2次无理由缺课机会，占平时成绩的一半
+4.  考试、平时成绩各占总成绩的50%
 
 注: 严格按以上进行，如多次表现不好，可能会不及格
 
-# section 2: why choose R? 
+# section 2: why choose R?
 
 ## R语言简史
 
 1993到2000这段时间R只在小范围内流传。2000年之后开始大爆发，用户数量直线上升。除去R本身的优秀之外，这种爆发与多个因素有关，比如自由软件的兴起，Linux的成熟等等；经济危机也促进大家采用免费的自由软件替代统计领域的传统强者如SPSS、SAS和Matlab等（注：均为收费软件）。
 
-首先，越来越多的学术文章使用R作为分析工具。根据来自著名学术搜索引擎Google Scholar（谷歌学术）的数据，R的流行趋势有以下两个特点：1）在学术领域的市场份额逐年增加，且增势迅猛，2）R是为数不多市场份额增加的统计软件之一。
+首先，越来越多的学术文章使用R作为分析工具。根据来自著名学术搜索引擎Google
+Scholar（谷歌学术）的数据，R的流行趋势有以下两个特点：1）在学术领域的市场份额逐年增加，且增势迅猛，2）R是为数不多市场份额增加的统计软件之一。
 
 接下来我们就用R把这个趋势画出来！如下面代码所示，所需代码包括4个部分：装入所需要的包，读取数据，处理数据和作图。运行这段代码，既专业又美观的图片就生成了！
 
 ## R的流行性调查
 
-代码
-\fontsize{7}{8}\selectfont
+代码 \fontsize{7}{8}\selectfont
+
 ```{r warning=FALSE, message=FALSE}
 library("ggplot2"); library("reshape2");
 
@@ -116,7 +122,6 @@ plot1 <-
               aes(label = Software), hjust = 0, vjust = 0.5);
 ```
 
-
 ## Market share, result
 
 ```{r plot1, fig.width=10, fig.height=5, echo=FALSE, warning=FALSE, message=FALSE }
@@ -133,8 +138,8 @@ plot1
 
 ## R job trends
 
-代码
-\fontsize{7}{8}\selectfont
+代码 \fontsize{7}{8}\selectfont
+
 ```{r warning=FALSE, message=FALSE}
 library("ggplot2"); ## 主作图包
 
@@ -168,40 +173,48 @@ plot2;
 
 ## Programming language trends 2016 vs 2015
 
-![Worldwide Google Trends, Dec 2016 vs Dec 2015](images/talk01/google_trends.png){width=70%}
+![Worldwide Google Trends, Dec 2016 vs Dec
+2015](images/talk01/google_trends.png){width="70%"}
 
 ## Github pulls, 2017
 
-![Github pulls, 2017](images/talk01/github_Most-pull-requests-1.png){height=50%}
+![Github pulls,
+2017](images/talk01/github_Most-pull-requests-1.png){height="50%"}
 
 ## Popularity by year
 
-![popularity by year from 2008 to 2018](images/talk01/programming_language_popularity_by_years_2008_2018.png){height=50%}
+![popularity by year from 2008 to
+2018](images/talk01/programming_language_popularity_by_years_2008_2018.png){height="50%"}
 
 ## Popularity by year, cont.
 
-![yet another statistics](images/talk01/R_python_and_matlab.png){height=50%}
+![yet another
+statistics](images/talk01/R_python_and_matlab.png){height="50%"}
 
-Data from: http://blog.revolutionanalytics.com/2018/06/pypl-programming-language-trends.html
+Data from:
+<http://blog.revolutionanalytics.com/2018/06/pypl-programming-language-trends.html>
 Accessed on: Sep 24, 2018
 
 ## Programming languages for bioinformatics
 
 ### Perl或Python
-- 强大的文本处理能力（包括序列）
-- 不错的运行速度（尤其是Python）
-- 强大的生信和统计学扩展包（尤其是Python）
-- 方便的并行计算
+
+-   强大的文本处理能力（包括序列）
+-   不错的运行速度（尤其是Python）
+-   强大的生信和统计学扩展包（尤其是Python）
+-   方便的并行计算
 
 ### R
-- 强大的格式数据处理能力（二维表格, dplyr）
-- 无以伦比的统计学专业性
-- 专业而好看的数据可视化软件（ggplot2）
-- 专业的生信扩展包（Bioconductor）
-- 超级好用的整合开发环境IDE（RStudio）
+
+-   强大的格式数据处理能力（二维表格, dplyr）
+-   无以伦比的统计学专业性
+-   专业而好看的数据可视化软件（ggplot2）
+-   专业的生信扩展包（Bioconductor）
+-   超级好用的整合开发环境IDE（RStudio）
 
 ## 我用过的 programming languages
 
+```{=tex}
 \begin{columns}
 \begin{column}{0.48\textwidth}
 \begin{itemize}
@@ -230,93 +243,110 @@ cited 95 times in 2018, 75 so far (as of July 19)
 
 \end{column}
 \end{columns}
-
+```
 ## 网站链接、参考文献和扩展阅读
 
 综上所述，R已经是最流行的免费统计分析软件，排名仅在几个传统的分析软件之后，而且大有赶超它们的趋势。学好R，不仅有助于在学术研究领域的发展，对找工作也有不少的帮助。
 
-- R的官方网站: http://www.r-project.org
-- R档案综合网络，即CRAN(Comprehensive R Archive Network): http://cran.r-project.org/
-- ggplot2: http://ggplot2.org/
-- RStudio: http://www.rstudio.com/
-- 如何从Google Scholar抓取引用数据: http://librestats.com/2012/04/12/statistical-software-popularity-on-google-scholar/
-- indeed招聘趋势: www.indeed.com/jobtrends
-- R for data science: https://r4ds.had.co.nz (必读！！)
+-   R的官方网站: <http://www.r-project.org>
+-   R档案综合网络，即CRAN(Comprehensive R Archive Network):
+    <http://cran.r-project.org/>
+-   ggplot2: <http://ggplot2.org/>
+-   RStudio: <http://www.rstudio.com/>
+-   如何从Google Scholar抓取引用数据:
+    <http://librestats.com/2012/04/12/statistical-software-popularity-on-google-scholar/>
+-   indeed招聘趋势: www.indeed.com/jobtrends
+-   R for data science: <https://r4ds.had.co.nz> (必读！！)
 
 # Section 3: setting up working enviroment
 
 ## Install R
 
-Go go https://mirrors.tuna.tsinghua.edu.cn/CRAN/ (清华镜像)，R支持主流的操作系统包括Linux，Windows和MacOS，请根据操作系统下载对应的安装文件。如下图所示：
+Go go <https://mirrors.tuna.tsinghua.edu.cn/CRAN/>
+(清华镜像)，R支持主流的操作系统包括Linux，Windows和MacOS，请根据操作系统下载对应的安装文件。如下图所示：
 
-![选择合适的安装包](images/talk01/download_R_from_selected_mirror.png){width=80%}
+![选择合适的安装包](images/talk01/download_R_from_selected_mirror.png){width="80%"}
 
-新版本的Mac OS X还需要安装XQuartz(http://xquartz.macosforge.org/landing/)。某些还需要用到Xcode，可以从App Store免费安装。
+新版本的Mac OS
+X还需要安装XQuartz(<http://xquartz.macosforge.org/landing/>)。某些还需要用到Xcode，可以从App
+Store免费安装。
 
 ## Install R on Linux
 
 目前大多Linux发行版都带有R，因此可直接使用。从CRAN下载文件进行安装稍嫌复杂，要求用户对Linux系统有一定的了解，而且需要有管理员权限。建议初级用户在Linux高手指导下安装。
-点击上图中的"Download R for Linux"后，发行版为Redhat（红帽）或Suse的用户要先阅读网站上提供的readme或readme.html文件，然后其中的指示进行安装。这里就不再累述了。
+点击上图中的"Download R for
+Linux"后，发行版为Redhat（红帽）或Suse的用户要先阅读网站上提供的readme或readme.html文件，然后其中的指示进行安装。这里就不再累述了。
 
-![R安装包文件名](images/talk01/R_linux_installer_name.png){width=80%}
+![R安装包文件名](images/talk01/R_linux_installer_name.png){width="80%"}
 
 ## R studio
 
 RStudio可以从http://www.rstudio.com/products/rstudio/download/下载，支持等主流的操作系统。
 
-![RStudio website main page](images/talk01/rstudio_mainpage_screenshot.png){height=50%}
+![RStudio website main
+page](images/talk01/rstudio_mainpage_screenshot.png){height="50%"}
 
 ## R studio versions
 
-RStudio 有商业和免费版本；也有server版
-![Rstudio versions](images/talk01/RStudio_versions.png){height=50%}
+RStudio 有商业和免费版本；也有server版 ![Rstudio
+versions](images/talk01/RStudio_versions.png){height="50%"}
 
 ## R studio, cont.
+
 RStudio运行时的界面如下图所示，除了顶部的菜单栏工具栏之外，主界面还包括4个子窗口：
 
-![R studio 单机版主界面](images/talk01/RStudio_interface.png){height=40%}
+![R studio
+单机版主界面](images/talk01/RStudio_interface.png){height="40%"}
 
 ## R studio, cont.
 
 ### 1. 代码编辑器
-- 具有代码编辑、语法高亮、代码和变量提示、代码错误检查等功能
-- 选中并向R控制台（窗口2）发送并运行代码。用快捷键Ctrl+Enter（MacOS下是Cmd+Enter）进行代码发送。没有代码选中时，发送光标所在行的代码
-- 可同时打开编辑多个文件
-- 除R代码外，还支持C++、R MarkDown、HTML等其它文件的编辑
-- 也可用于显示数据
+
+-   具有代码编辑、语法高亮、代码和变量提示、代码错误检查等功能
+-   选中并向R控制台（窗口2）发送并运行代码。用快捷键Ctrl+Enter（MacOS下是Cmd+Enter）进行代码发送。没有代码选中时，发送光标所在行的代码
+-   可同时打开编辑多个文件
+-   除R代码外，还支持C++、R MarkDown、HTML等其它文件的编辑
+-   也可用于显示数据
 
 ### 2. R console
-- 可在此直接输入各种命令并查看运行结果。支持代码提示
+
+-   可在此直接输入各种命令并查看运行结果。支持代码提示
 
 ### 3. 变量列表及代码运行的历史记录
 
 ## R studio, cont.
 
 ### 4. 其它窗口
-- 当前工作目录下的文件列表
-- 作图结果
-- 可用和已安装的扩展包；在这里可以直接安装新的和升级已有的扩展包
-- 帮助
 
-注意，子窗口之间可以通过快捷键 Ctr+子窗口编号 进行切换。如 Ctrl+1 可以切换到代码编辑子窗口， Ctrl+2 则切换到R控制台。
+-   当前工作目录下的文件列表
+-   作图结果
+-   可用和已安装的扩展包；在这里可以直接安装新的和升级已有的扩展包
+-   帮助
+
+注意，子窗口之间可以通过快捷键 Ctr+子窗口编号 进行切换。如 Ctrl+1
+可以切换到代码编辑子窗口， Ctrl+2 则切换到R控制台。
 
 ### 其它特点
-- 创建、管理 projects 
+
+-   创建、管理 projects
 
 ## R studio 特点详解
 
 ### 代码提示/自动完成
+
 **子窗口1和2**都提供有代码提示功能，即：用户输入3个字母时，RStudio会列出所有前3个字母相同的变量或函数名供用户选择；用户可通过键盘的上下键选择，然后用Enter（回车）选定，非常方便。
 变量或函数名前面的小图标表示了它们的类型；如果当前高亮的是函数，RStudio还会显示其部分帮助内容。
 
-![R studio code autocomplete](images/talk01/RStudio_code_autocomplete.png){height=20%}
+![R studio code
+autocomplete](images/talk01/RStudio_code_autocomplete.png){height="20%"}
 
 ## R studio 特点详解, cont.
 
 ### 查看变量内容
+
 **子窗口3**内会列出所有当前使用的变量、变量的类型以及大小，如下图：
 
-![loaded variables](images/talk01/Rstudio_variables.png){height=20%}
+![loaded variables](images/talk01/Rstudio_variables.png){height="20%"}
 
 有些简单变量，如数组，RStudio会直接显示其部分值；对于复杂一些的变量，比如data.frame（类似于二维表格），则可以点击变量名前边的小三角标识展开其内容。
 当变量的最右侧出现小网格状图标时（如上图箭头所指位置），点击它们后可以在子窗口2内察看。
@@ -324,23 +354,27 @@ RStudio运行时的界面如下图所示，除了顶部的菜单栏工具栏之�
 ## R studio 特点详解, cont.
 
 ### 导出作图并选择导出格式
-RStudio的**第4子窗口**里集中了许多有用的功能，组织在不同的‘Tab’（标签）内。比如作图（plots），不仅可以察看画图的结果，还可以导出当前图像至硬盘，或拷贝至剪贴板；如下图所示。支持导出格式有png和pdf。
 
-![export active plot to various graphical formats](images/talk01/RStudio_export_plots.png){height=30%}
+RStudio的**第4子窗口**里集中了许多有用的功能，组织在不同的'Tab'（标签）内。比如作图（plots），不仅可以察看画图的结果，还可以导出当前图像至硬盘，或拷贝至剪贴板；如下图所示。支持导出格式有png和pdf。
+
+![export active plot to various graphical
+formats](images/talk01/RStudio_export_plots.png){height="30%"}
 
 ## R studio 特点详解, cont.
 
 ### 查看已安装的**包**
 
-通过**第4子窗口**的“包“（Packages）标签内的工具，用户可以很方便的查看已安装的包：
+通过**第4子窗口**的"包"（Packages）标签内的工具，用户可以很方便的查看已安装的包：
 
-![Check installed packages](images/talk01/RStudio_installed_packages.png){height=30%}
+![Check installed
+packages](images/talk01/RStudio_installed_packages.png){height="30%"}
 
 ## install new package(s)
 
-同样通过**第4子窗口**的“包“（Packages）标签内的工具，安装新的包：
+同样通过**第4子窗口**的"包"（Packages）标签内的工具，安装新的包：
 
-![install new package](images/talk01/RStudio_install_package.png){height=50%}
+![install new
+package](images/talk01/RStudio_install_package.png){height="50%"}
 
 ## Packages needed for this study
 
@@ -357,23 +391,26 @@ install.packages( "ggplot2" ); #安装作图用的ggplot2
 install.packages( "reshape2" ); #安装数据处理用的reshape2
 ```
 
-第一次运行命令 install.packages() 时，系统会提示选择镜像网站；请选择地理位置上距你最近的镜像（比如中国）。
+第一次运行命令 install.packages()
+时，系统会提示选择镜像网站；请选择地理位置上距你最近的镜像（比如中国）。
 
 ## install packages, cont.
 
-You can also choose your CRAN mirror manually (recommanded when installing takes a long time):
+You can also choose your CRAN mirror manually (recommanded when
+installing takes a long time):
 
 \FontSmall
+
 ```{r eval=FALSE}
 chooseCRANmirror();
 ```
 
 \FontNormal
 
-![Choose CRAN mirror](images/talk01/choosecran_mirror.png){height=40%}
+![Choose CRAN mirror](images/talk01/choosecran_mirror.png){height="40%"}
 
-You can also use ```chooseBioCmirror();``` to choose mirror for [BioConductor](https://bioconductor.org/) packages.
-
+You can also use `chooseBioCmirror();` to choose mirror for
+[BioConductor](https://bioconductor.org/) packages.
 
 ## Packages needed for this study, cont.
 
@@ -383,106 +420,120 @@ You can also use ```chooseBioCmirror();``` to choose mirror for [BioConductor](h
 install.packages("tidyverse")
 ```
 
-它是以下包的集合，都由 https://www.tidyverse.org 开发：
+它是以下包的集合，都由 <https://www.tidyverse.org> 开发：
 
-![tidyverse: a mega package](images/talk01/tidyverse.png){height=30%}
+![tidyverse: a mega package](images/talk01/tidyverse.png){height="30%"}
 
 ## R studio server
 
 ### 特点：
-- 在服务器上安装，使用服务器的强大计算资源
-- 通过网页登录，使用服务器帐号密码（方便，安全）
-- 一直运行
 
-![RStudio server web login form (w/ linux account)](images/talk01/rstudio_server_login_page_web.png){height=30%}
+-   在服务器上安装，使用服务器的强大计算资源
+-   通过网页登录，使用服务器帐号密码（方便，安全）
+-   一直运行
 
-## R studio server, cont. 
+![RStudio server web login form (w/ linux
+account)](images/talk01/rstudio_server_login_page_web.png){height="30%"}
 
-![RStudio server 界面（通过浏览器）](images/talk01/rstudio_server_interface.png){height=50%}
+## R studio server, cont.
+
+![RStudio server
+界面（通过浏览器）](images/talk01/rstudio_server_interface.png){height="50%"}
 
 ## R studio packages for data science
 
 ### all part of (业界良心) tidyverse
-- dplyr: 强大且方便的数据处理
-- tydyr：数据转换工具
-- readr：方便的文件IO
-- stringr：文本处理
-- Tibble：代替 data.frame 的 下一代数据存储格式
-- purr：（暂时还未用到的包 ~~ ）
 
+-   dplyr: 强大且方便的数据处理
+-   tydyr：数据转换工具
+-   readr：方便的文件IO
+-   stringr：文本处理
+-   Tibble：代替 data.frame 的 下一代数据存储格式
+-   purr：（暂时还未用到的包 \~\~ ）
 
 ## R studio packages for data visualisation
 
 ### tidyverse
-- ggplot2：专业好用（但学习曲线很陡）的画图工具
-  + http://ggplot2.tidyverse.org
-  + gallery: http://www.ggplot2-exts.org/gallery/
 
-![surminer https://rpkgs.datanovia.com/survminer/index.html](images/talk01/suvminer_example_output.png){height=30%}
+-   ggplot2：专业好用（但学习曲线很陡）的画图工具
 
-## RStudio packages for data visualisation, cont.
+    -   <http://ggplot2.tidyverse.org>
+    -   gallery: <http://www.ggplot2-exts.org/gallery/>
 
-### ggvis (currently ver0.4): http://ggvis.rstudio.com
-  - from the **ggplot2** team
-  - create interactive graphics in RStudio and web browser
-  - [top 50 ggplot2 visualisations](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html)
-
-![ggvis example plots](images/talk01/ggvis_v0_4.png){height=30%}
+![surminer
+<https://rpkgs.datanovia.com/survminer/index.html>](images/talk01/suvminer_example_output.png){height="30%"}
 
 ## RStudio packages for data visualisation, cont.
 
-### Shiny: http://shiny.rstudio.com/gallery/
-  - build professional, interactive visualizations
-  - equipped with popular web widgets
-  - can be deployed as independent websites
-  
-![Shiny website example: http://shiny.rstudio.com/gallery/bus-dashboard.html](images/talk01/shiny_example.png){height=30%}
+### ggvis (currently ver0.4): <http://ggvis.rstudio.com>
+
+-   from the **ggplot2** team
+-   create interactive graphics in RStudio and web browser
+-   [top 50 ggplot2
+    visualisations](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html)
+
+![ggvis example plots](images/talk01/ggvis_v0_4.png){height="30%"}
+
+## RStudio packages for data visualisation, cont.
+
+### Shiny: <http://shiny.rstudio.com/gallery/>
+
+-   build professional, interactive visualizations
+-   equipped with popular web widgets
+-   can be deployed as independent websites
+
+![Shiny website example:
+<http://shiny.rstudio.com/gallery/bus-dashboard.html>](images/talk01/shiny_example.png){height="30%"}
 
 ## RStudio packages for data visualisation, cont.
 
 ### other packages
-- rmarkdown : create professional documents
-- knitr: convert rmarkdown to pdf, html and more ...
+
+-   rmarkdown : create professional documents
+-   knitr: convert rmarkdown to pdf, html and more ...
 
 # Section 4: other tools used in our group
 
 ## Database tools
 
-- MySQL
-- phpmyadmin 
+-   MySQL
+-   phpmyadmin
 
-![phpmyadmin login page using web browser](images/talk01/phpMyAdmin.png){height=40%}
+![phpmyadmin login page using web
+browser](images/talk01/phpMyAdmin.png){height="40%"}
 
 ## Database tools, cont.
 
-![phpmyadmin database view](images/talk01/phpmyadmin_database_view.png){height=50%}
+![phpmyadmin database
+view](images/talk01/phpmyadmin_database_view.png){height="50%"}
 
 ## other tools
 
 ### programming languages
 
-* R
-* Python
-* Perl
+-   R
+-   Python
+-   Perl
 
 ### code depository
 
-* Github
-* Github desktop
-* Atom (general-purpose text editor and more)
+-   Github
+-   Github desktop
+-   Atom (general-purpose text editor and more)
 
 ### web development
 
-* AngularJS
-* Vue.js
-* Bootstrap
-* plot.ly  (interactive visualisation)
+-   AngularJS
+-   Vue.js
+-   Bootstrap
+-   plot.ly (interactive visualisation)
 
 ## An example: cross-talking among tools
 
 Here I use the following to show how we process data in our lab:
 
 \FontSmall
+
 ```{r message=FALSE}
 library(RMySQL); 
 library(dplyr);
@@ -502,6 +553,7 @@ stats <- dat %>% group_by(name) %>%
 ```
 
 ## Show the data
+
 ```{r dat, message=FALSE, warning=FALSE, echo=FALSE}
 ## -- 显示原始数据 --
 knitr::kable(dat);
@@ -516,15 +568,18 @@ knitr::kable(stats);
 
 ## Concluding remarks
 
-- 生信分析必备编程语言
-- 强大、专业又好用
-- RStudio及其众多扩展包
-- To be continued
+-   生信分析必备编程语言
+-   强大、专业又好用
+-   RStudio及其众多扩展包
+-   To be continued
 
 ### About the course
-- all codes are available at Github: https://github.com/evolgeniusteam/R-for-bioinformatics
+
+-   all codes are available at Github:
+    <https://github.com/evolgeniusteam/R-for-bioinformatics>
 
 ### 作业
-- 安装R、RStudio
-- 熟悉Github
-- 自学R编程
+
+-   安装R、RStudio
+-   熟悉Github
+-   自学R编程
