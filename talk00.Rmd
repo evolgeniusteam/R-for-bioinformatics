@@ -24,7 +24,6 @@ color_block = function(color) {
 knitr::knit_hooks$set(error = color_block('red'))
 ```
 
-
 # Section 1 : outline
 
 ## Outline

@@ -42,7 +42,15 @@ knitr::opts_chunk$set(echo = TRUE)
 5.  常见组学数据和分析、可视化方法
 6.  机器学习在组学分析当中的应用
 
-## 机器学习
+## 机器学习（重点新增内容）
+
+### 内容
+
+-   基础知识
+
+-   应用示例
+
+### 现有工作介绍
 
 -   宁康：人工智能赋能菌群大数据挖掘
 -   郭安源：AI与表达数据分析
@@ -75,6 +83,12 @@ knitr::opts_chunk$set(echo = TRUE)
 21.56)](images/talk01/ML-weihuachen.png){width="60%"}
 
 机器学习在肠道菌群为基础的疾病标志物挖掘当中的应用
+
+## 用肠道菌群profile一次诊断多种疾病
+
+![mSystems (2019 IF: 6.6)](images/talk01/ML_mSystems.png){width="65%"}
+
+诊断多种常见肠病的机器学习模型
 
 ## Class rules
 
@@ -230,7 +244,7 @@ Accessed on: Sep 24, 2018
 
 \href{https://www.evolgenius.info/evolview}{Evolview ver3.0}
 
-cited 95 times in 2018, 75 so far (as of July 19)
+cited 154 times in 2020 (ver2+3), 53 so far (as of April 10, 2021)
 
 \end{column}
 \begin{column}{0.48\textwidth}
@@ -289,14 +303,14 @@ page](images/talk01/rstudio_mainpage_screenshot.png){height="50%"}
 ## R studio versions
 
 RStudio 有商业和免费版本；也有server版 ![Rstudio
-versions](images/talk01/RStudio_versions.png){height="50%"}
+versions](images/talk01/RStudio_versions.png){width="100%"}
 
 ## R studio, cont.
 
 RStudio运行时的界面如下图所示，除了顶部的菜单栏工具栏之外，主界面还包括4个子窗口：
 
 ![R studio
-单机版主界面](images/talk01/RStudio_interface.png){height="40%"}
+单机版主界面](images/talk01/RStudio_interface.png){width="355"}
 
 ## R studio, cont.
 
@@ -378,25 +392,34 @@ package](images/talk01/RStudio_install_package.png){height="50%"}
 
 ## Packages needed for this study
 
-我们在这里一次性的安装所有本书所需要的包。不过，为方便读者直接从后面章节阅读，在每一次使用新包时，我们会再次进行提示安装方法。
+大部分包都由 RStudio
+公司提供；包括：ggplot2，tidyr，readr，stringr等。可以用以下命令一次性安装。不过，为方便读者直接从后面章节阅读，在每一次使用新包时，我们会再次进行提示安装方法。
+
+\FontSmall
 
 ```{r eval=FALSE}
-install.packages( c("ggplot2", "reshape2") );
+install.packages( c("ggplot2", "tidyr", "readr", "stringr") );
 ```
+
+\FontNormal
 
 也可以单独安装：
 
+\FontSmall
+
 ```{r eval=FALSE}
 install.packages( "ggplot2" ); #安装作图用的ggplot2
-install.packages( "reshape2" ); #安装数据处理用的reshape2
+install.packages( "tidyr" ); # 数据处理用等
 ```
+
+\FontNormal
 
 第一次运行命令 install.packages()
 时，系统会提示选择镜像网站；请选择地理位置上距你最近的镜像（比如中国）。
 
 ## install packages, cont.
 
-You can also choose your CRAN mirror manually (recommanded when
+You can also choose your CRAN mirror manually (recommended when
 installing takes a long time):
 
 \FontSmall
@@ -414,15 +437,19 @@ You can also use `chooseBioCmirror();` to choose mirror for
 
 ## Packages needed for this study, cont.
 
-实际上我们只需要安装一个包就可以了：
+实际上，以上包属于一个meta-package，我们只需要安装它就可以了：
+
+\FontSmall
 
 ```{r eval=FALSE}
 install.packages("tidyverse")
 ```
 
+\FontNormal
+
 它是以下包的集合，都由 <https://www.tidyverse.org> 开发：
 
-![tidyverse: a mega package](images/talk01/tidyverse.png){height="30%"}
+![tidyverse: a mega package](images/talk01/tidyverse.png){width="43%"}
 
 ## R studio server
 
@@ -438,7 +465,7 @@ account)](images/talk01/rstudio_server_login_page_web.png){height="30%"}
 ## R studio server, cont.
 
 ![RStudio server
-界面（通过浏览器）](images/talk01/rstudio_server_interface.png){height="50%"}
+界面（通过浏览器）](images/talk01/rstudio_server_interface.png){width="100%"}
 
 ## R studio packages for data science
 
@@ -461,7 +488,7 @@ account)](images/talk01/rstudio_server_login_page_web.png){height="30%"}
     -   gallery: <http://www.ggplot2-exts.org/gallery/>
 
 ![surminer
-<https://rpkgs.datanovia.com/survminer/index.html>](images/talk01/suvminer_example_output.png){height="30%"}
+<https://rpkgs.datanovia.com/survminer/index.html>](images/talk01/suvminer_example_output.png){width="42%"}
 
 ## RStudio packages for data visualisation, cont.
 
@@ -472,7 +499,7 @@ account)](images/talk01/rstudio_server_login_page_web.png){height="30%"}
 -   [top 50 ggplot2
     visualisations](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html)
 
-![ggvis example plots](images/talk01/ggvis_v0_4.png){height="30%"}
+![ggvis example plots](images/talk01/ggvis_v0_4.png){width="40%"}
 
 ## RStudio packages for data visualisation, cont.
 
