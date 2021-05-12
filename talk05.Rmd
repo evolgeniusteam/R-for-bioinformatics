@@ -58,7 +58,7 @@ N %>% gather( ind, values );
 ### what is ```dplyr``` ? 
 
 - the next iteration of plyr, 
-- focussing on only data frames (tibble),
+- focusing on only data frames (also tibble),
 - row-based manipulation, 
 - dplyr is faster and has a more consistent API.
 
@@ -197,7 +197,8 @@ library(dplyr);
 
 mysql.dbname = "r4ds_test";
 dbCon <- dbConnect(MySQL(), user="r4ds", password="r4ds", 
-                   dbname=mysql.dbname );
+                   dbname=mysql.dbname,
+                   unix.socket="/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock");
 
 grades <- dbGetQuery(dbCon, "SELECT * FROM grades_stats");
 

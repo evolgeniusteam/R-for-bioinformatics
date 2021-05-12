@@ -28,22 +28,20 @@ knitr::knit_hooks$set(error = color_block('red'))
 
 ## Outline
 
--   how people in science see each other
+-   the two most important figures in science
 -   think in English
 -   think creative
 -   find your own truth
--   实力与包装：who i am underneath vs. whom people see in me
 
 # section 2 : contents
 
 ## how people in science see each other
 
-![The most important illustration in science](images/talk00/how_people_in_science_see_each_other.png){height="50%"}
+![The most important illustration in science](images/talk00/how_people_in_science_see_each_other.png){width="64%"}
 
-## lesions learned so far
+## the most important Scientific virtue
 
--   know your audiences (what they expect from you)
--   be useful (in the long run)
+![most important core values selected by elite scientists](images/talk00/bige.png){width="60%"}
 
 ## think in English
 
@@ -158,6 +156,7 @@ m<-ggplot(rhp, aes(x=happiness, y=rel)) +
 ## Plot
 
 \FontSmall
+
 ```{R fig.width=10, fig.height=5, warning=FALSE, message=FALSE}
 m
 ```
@@ -165,6 +164,7 @@ m
 ## Happiness vs. ppp
 
 \FontSmall
+
 ```{R}
 c = cor.test( rhp$happiness, rhp$ppp);
 eq <- substitute( 
@@ -188,6 +188,7 @@ m2<-ggplot(rhp, aes(x=happiness, y=ppp)) +
 ## Plot
 
 \FontSmall
+
 ```{R fig.width=10, fig.height=5, warning=FALSE, message=FALSE}
 m2
 ```
@@ -219,6 +220,7 @@ m3<-ggplot(rhp, aes(x=rel, y=ppp)) +
 ## Plot
 
 \FontSmall
+
 ```{R fig.width=10, fig.height=5, warning=FALSE, message=FALSE}
 m3
 ```
@@ -231,55 +233,8 @@ m3
 summary( glm( happiness ~ ppp + rel, data = rhp ) ); 
 ```
 
-## 信号传递理论：Michael Spence
-
-观察：
-
--   MBA学生在进哈佛大学之前没什么了不起
--   出去就能比教授挣几倍、甚至十几倍的钱
--   "这是为什么？"
-
-结论：
-
--   教育具有信号传递的作用
-
-Michael Spence, "Job Market Signaling", Quarterly Journal of Economics, 1973
-
-2001 Nobel price in Economics
-
-## 信号传递理论：实力与包装
-
-信号传递理论的核心：动态不完全信息对策
-
-1.  发送信息
-2.  决策
-
-![Job interview cartoon](images/talk00/job_interview_cartoon.jpg){height="30%"}
-
-## 包装与实力
-
-![The Batman Begins movie 2005](images/talk00/batman_quote2.png){height="50%"}
-
-## 包装的素材
-
-### 教育经历
-
--   名校
--   学科
-
-### 科研经历
-
--   项目
--   成果
--   奖项
-
-### 个人经历
-
--   干部
--   实习（领域知名企业）
-
 ## Concluding remarks
 
--   有实力、会包装
 -   不轻信
--   执着
+-   有创新性
+-   有用
