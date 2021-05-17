@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.7.18)  9 AUG 2019 09:44
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.11.28)  17 MAY 2021 13:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2159,7 +2159,7 @@ Package caption Info: End \AtBeginDocument code.
 
 ]
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/m/n' will be
-(Font)              scaled to size 10.60547pt on input line 181.
+(Font)              scaled to size 10.60547pt on input line 177.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `FandolHei-Regular' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
@@ -2192,7 +2192,7 @@ Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
-(Font)              scaled to size 9.99878pt on input line 181.
+(Font)              scaled to size 9.99878pt on input line 177.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2221,7 +2221,7 @@ Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
-(Font)              scaled to size 13.14908pt on input line 181.
+(Font)              scaled to size 13.14908pt on input line 177.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2250,7 +2250,7 @@ Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
 
-Overfull \vbox (41.20772pt too high) detected at line 181
+Overfull \vbox (41.20772pt too high) detected at line 177
  []
 
 [3
@@ -2264,15 +2264,9 @@ Overfull \vbox (41.20772pt too high) detected at line 181
 ] [7
 
 ]
-File: images/talk06/string_normal_image.png Graphic file (type bmp)
-<images/talk06/string_normal_image.png>
-[8
-
-] [9
-
-] [10
-
-]
+File: images/talk06/STRING_google_scholar_citation_2021.png Graphic file (type 
+bmp)
+<images/talk06/STRING_google_scholar_citation_2021.png>
 
 Package fontspec Warning: Font "FandolFang-Regular" does not contain requested
 (fontspec)                Script "CJK".
@@ -2306,7 +2300,7 @@ nsion={.otf}].
 pping=tex-text;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 314
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 248
 .
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -2315,60 +2309,76 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 314.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 248.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 314
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 248
 .
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 314
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 248
 .
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 314.
+(Font)              <10.95> on input line 248.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 314.
+(Font)              <8> on input line 248.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 314.
-LaTeX Font Info:    Try loading font information for U+msa on input line 314.
+(Font)              <6> on input line 248.
+LaTeX Font Info:    Try loading font information for U+msa on input line 248.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 314.
+LaTeX Font Info:    Try loading font information for U+msb on input line 248.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 314.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 248.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 314.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 248.
+[8
+
+]
+File: images/talk06/string_normal_image.png Graphic file (type bmp)
+<images/talk06/string_normal_image.png>
+[9
+
+] [10
+
+] [11
+
+]
 File: images/talk06/download_human_PPI_from_string.png Graphic file (type bmp)
 <images/talk06/download_human_PPI_from_string.png>
-[11
+[12
 
 ]
 \openout4 = `talk06.vrb'.
 
 (./talk06.vrb
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <7> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 8.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 13.
 
-LaTeX Font Warning: Font shape `TU/FandolFang-Regular(0)/m/it' undefined
+LaTeX Font Warning: Font shape `TU/lmtt/bx/it' in size <7> not available
+(Font)              Font shape `TU/lmtt/b/sl' tried instead on input line 13.
+
+
+LaTeX Font Warning: Font shape `TU/FandolFang-Regular(0)/bx/it' undefined
 (Font)              using `TU/FandolFang-Regular(0)/m/n' instead on input line 
-14.
+13.
 
 LaTeX Font Info:    Font shape `TU/FandolFang-Regular(0)/m/n' will be
-(Font)              scaled to size 6.58728pt on input line 14.
+(Font)              scaled to size 6.58728pt on input line 13.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `FandolFang-Regular' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
@@ -2400,12 +2410,7 @@ Package microtype Info: Character `\textexclamdown ' is missing
 Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolFang-Regular(0)/m/n/7'.
 (microtype)             Ignoring protrusion settings for this character.
-) [12
-
-]
-\openout4 = `talk06.vrb'.
-
-(./talk06.vrb) [13
+) [13
 
 ]
 \openout4 = `talk06.vrb'.
@@ -2415,17 +2420,17 @@ Package microtype Info: Character `\textquestiondown ' is missing
 ]
 \openout4 = `talk06.vrb'.
 
-(./talk06.vrb
-File: talk06_files/figure-beamer/unnamed-chunk-6-1.pdf Graphic file (type pdf)
-<use talk06_files/figure-beamer/unnamed-chunk-6-1.pdf>
-) [15
-
-] [16
+(./talk06.vrb) [15
 
 ]
 \openout4 = `talk06.vrb'.
 
-(./talk06.vrb) [17
+(./talk06.vrb
+File: talk06_files/figure-beamer/unnamed-chunk-6-1.pdf Graphic file (type pdf)
+<use talk06_files/figure-beamer/unnamed-chunk-6-1.pdf>
+) [16
+
+] [17
 
 ]
 \openout4 = `talk06.vrb'.
@@ -2445,16 +2450,16 @@ File: talk06_files/figure-beamer/unnamed-chunk-6-1.pdf Graphic file (type pdf)
 ]
 \openout4 = `talk06.vrb'.
 
-(./talk06.vrb
-File: talk06_files/figure-beamer/unnamed-chunk-11-1.pdf Graphic file (type pdf)
-
-<use talk06_files/figure-beamer/unnamed-chunk-11-1.pdf>
-) [21
+(./talk06.vrb) [21
 
 ]
 \openout4 = `talk06.vrb'.
 
-(./talk06.vrb) [22
+(./talk06.vrb
+File: talk06_files/figure-beamer/unnamed-chunk-11-1.pdf Graphic file (type pdf)
+
+<use talk06_files/figure-beamer/unnamed-chunk-11-1.pdf>
+) [22
 
 ]
 \openout4 = `talk06.vrb'.
@@ -2464,24 +2469,29 @@ File: talk06_files/figure-beamer/unnamed-chunk-11-1.pdf Graphic file (type pdf)
 ]
 \openout4 = `talk06.vrb'.
 
+(./talk06.vrb) [24
+
+]
+\openout4 = `talk06.vrb'.
+
 (./talk06.vrb
 File: talk06_files/figure-beamer/unnamed-chunk-14-1.pdf Graphic file (type pdf)
 
 <use talk06_files/figure-beamer/unnamed-chunk-14-1.pdf>
-) [24
+) [25
 
 ]
 File: images/talk06/igraph_example.png Graphic file (type bmp)
 <images/talk06/igraph_example.png>
-[25
+[26
 
-] [26
+] [27
 
 ]
 File: images/talk06/gmrepo_run_statistics.png Graphic file (type bmp)
 <images/talk06/gmrepo_run_statistics.png>
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/m/n' will be
-(Font)              scaled to size 9.68536pt on input line 689.
+(Font)              scaled to size 9.68536pt on input line 659.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2509,51 +2519,51 @@ Package microtype Info: Character `\textexclamdown ' is missing
 Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
-[27
-
-] [28
+[28
 
 ] [29
+
+] [30
 
 ]
 File: images/talk06/ebi_metagenomics_biomes_aug8_2019.png Graphic file (type bm
 p)
 <images/talk06/ebi_metagenomics_biomes_aug8_2019.png>
-[30
+[31
 
 ]
 File: images/talk06/tara_oceans_boat.jpg Graphic file (type bmp)
 <images/talk06/tara_oceans_boat.jpg>
-[31
+[32
 
 ]
 File: images/talk06/iHMP.png Graphic file (type bmp)
 <images/talk06/iHMP.png>
-[32
+[33
 
 ]
 File: images/talk06/GutMicrobeInfographic.png Graphic file (type bmp)
 <images/talk06/GutMicrobeInfographic.png>
-[33
+[34
 
-] [34
-
-]
-\openout4 = `talk06.vrb'.
-
-(./talk06.vrb) [35
+] [35
 
 ]
 \openout4 = `talk06.vrb'.
 
 (./talk06.vrb) [36
 
-] [37
+]
+\openout4 = `talk06.vrb'.
+
+(./talk06.vrb) [37
+
+] [38
 
 ]
 \openout4 = `talk06.vrb'.
 
-(./talk06.vrb) [38
+(./talk06.vrb) [39
 
 ]
 \openout4 = `talk06.vrb'.
@@ -2562,7 +2572,7 @@ File: images/talk06/GutMicrobeInfographic.png Graphic file (type bmp)
 File: talk06_files/figure-beamer/unnamed-chunk-18-1.pdf Graphic file (type pdf)
 
 <use talk06_files/figure-beamer/unnamed-chunk-18-1.pdf>
-) [39
+) [40
 
 ]
 \openout4 = `talk06.vrb'.
@@ -2571,9 +2581,9 @@ File: talk06_files/figure-beamer/unnamed-chunk-18-1.pdf Graphic file (type pdf)
 File: talk06_files/figure-beamer/unnamed-chunk-19-1.pdf Graphic file (type pdf)
 
 <use talk06_files/figure-beamer/unnamed-chunk-19-1.pdf>
-) [40
+) [41
 
-] [41
+] [42
 
 ]
 \openout4 = `talk06.vrb'.
@@ -2609,22 +2619,17 @@ Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
 )
-Overfull \vbox (3.5163pt too high) detected at line 1020
+Overfull \vbox (15.1163pt too high) detected at line 965
  []
 
-[42
+[43
 
 ]
 \openout4 = `talk06.vrb'.
 
-(./talk06.vrb) [43
+(./talk06.vrb) [44
 
-] [44
-
-]
-\openout4 = `talk06.vrb'.
-
-(./talk06.vrb) [45
+] [45
 
 ]
 \openout4 = `talk06.vrb'.
@@ -2641,14 +2646,14 @@ Overfull \vbox (3.5163pt too high) detected at line 1020
 
 (./talk06.vrb) [48
 
-] [49
-
-] [50
-
 ]
 \openout4 = `talk06.vrb'.
 
-(./talk06.vrb) [51
+(./talk06.vrb) [49
+
+] [50
+
+] [51
 
 ]
 \openout4 = `talk06.vrb'.
@@ -2658,11 +2663,16 @@ Overfull \vbox (3.5163pt too high) detected at line 1020
 ]
 \openout4 = `talk06.vrb'.
 
+(./talk06.vrb) [53
+
+]
+\openout4 = `talk06.vrb'.
+
 (./talk06.vrb
 File: talk06_files/figure-beamer/unnamed-chunk-28-1.pdf Graphic file (type pdf)
 
 <use talk06_files/figure-beamer/unnamed-chunk-28-1.pdf>
-) [53
+) [54
 
 ]
 \openout4 = `talk06.vrb'.
@@ -2671,12 +2681,7 @@ File: talk06_files/figure-beamer/unnamed-chunk-28-1.pdf Graphic file (type pdf)
 File: talk06_files/figure-beamer/unnamed-chunk-29-1.pdf Graphic file (type pdf)
 
 <use talk06_files/figure-beamer/unnamed-chunk-29-1.pdf>
-) [54
-
-]
-\openout4 = `talk06.vrb'.
-
-(./talk06.vrb) [55
+) [55
 
 ]
 \openout4 = `talk06.vrb'.
@@ -2696,9 +2701,14 @@ File: talk06_files/figure-beamer/unnamed-chunk-29-1.pdf Graphic file (type pdf)
 ]
 \openout4 = `talk06.vrb'.
 
+(./talk06.vrb) [59
+
+]
+\openout4 = `talk06.vrb'.
+
 (./talk06.vrb
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
-(Font)              scaled to size 6.39192pt on input line 13.
+(Font)              scaled to size 6.39192pt on input line 12.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/7'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2727,7 +2737,7 @@ Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/7'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/m/n' will be
-(Font)              scaled to size 6.77975pt on input line 18.
+(Font)              scaled to size 6.77975pt on input line 17.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/m/n/7'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2755,29 +2765,29 @@ Package microtype Info: Character `\textexclamdown ' is missing
 Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/m/n/7'.
 (microtype)             Ignoring protrusion settings for this character.
-) [59
+) [60
 
-] [60
+] [61
 
 ]
 File: talk06_files/figure-beamer/unnamed-chunk-35-1.pdf Graphic file (type pdf)
 
 <use talk06_files/figure-beamer/unnamed-chunk-35-1.pdf>
 
-Overfull \vbox (14.41986pt too high) detected at line 1468
+Overfull \vbox (14.41986pt too high) detected at line 1382
  []
 
-[61
+[62
 
 ]
 File: images/talk06/121-ggplot-pie-chart-donut-chart-1.png Graphic file (type b
 mp)
 <images/talk06/121-ggplot-pie-chart-donut-chart-1.png>
-[62
-
-] [63
+[63
 
 ] [64
+
+] [65
 
 ]
 \tf@nav=\write7
@@ -2789,11 +2799,11 @@ mp)
 \tf@snm=\write9
 \openout9 = `talk06.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1503.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1503.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1413.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1413.
 (./talk06.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1503.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1503.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1413.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1413.
 
 Package rerunfilecheck Info: File `talk06.out' has not changed.
 (rerunfilecheck)             Checksum: 227046F4653466F12AE0D70C1FD461E8.
@@ -2802,12 +2812,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 42022 strings out of 492916
- 843401 string characters out of 6133345
- 934712 words of memory out of 5000000
- 45376 multiletter control sequences out of 15000+600000
+ 42030 strings out of 492916
+ 843725 string characters out of 6133344
+ 935268 words of memory out of 5000000
+ 45383 multiletter control sequences out of 15000+600000
  544574 words of font info for 76 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 69i,15n,125p,792b,891s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,15n,125p,792b,903s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on talk06.pdf (64 pages).
+Output written on talk06.pdf (65 pages).
