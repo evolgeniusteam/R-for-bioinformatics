@@ -1159,7 +1159,7 @@ see here for a complete list: https://ggplot2.tidyverse.org/reference/ggtheme.ht
 
 定制：http://www.sthda.com/english/wiki/ggplot2-themes-and-background-colors-the-3-elements
 
-扩展 theme extensions: http://www.ggplot2-exts.org/ggthemes.html
+扩展 theme extensions: https://exts.ggplot2.tidyverse.org/
 
 ## legend 细调
 
@@ -1190,7 +1190,7 @@ devtools::install_github("nanxstats/ggsci")
 
 ``` scale_color_<journal> ``` 和 ``` scale_fill_<journal> ``` 函数
 
-详见：https://nanx.me/ggsci/articles/ggsci.html
+详见：https://cran.r-project.org/web/packages/ggsci/vignettes/ggsci.html
 
 ## ggsci 举例
 \FontSmall
@@ -1336,8 +1336,7 @@ ggplot( mtcars, aes( x = wt, y = mpg ) ) +
 5. [legends](https://www.datanovia.com/en/blog/ggplot-legend-title-position-and-labels/)
 6. 必读！！ R graph gallery : https://www.r-graph-gallery.com
 7. 必读！！ ggplot2 扩展： https://exts.ggplot2.tidyverse.org/
-8. [barchart & theme](http://t-redactyl.io/blog/2016/01/creating-plots-in-r-using-ggplot2-part-4-stacked-bar-plots.html)
-9. plotly 互动图形的领先者: plot.ly 
+8. plotly 互动图形的领先者: plot.ly 
 
 ## 下次预告
 
