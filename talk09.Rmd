@@ -450,7 +450,7 @@ ggplot( data = data.frame( x2 = 1:5, y2 = sample(30:100, 5) ),
 \FontSmall
 
 ```{r fig.height=4, fig.width=10}
-df$col <- sample( colours(), 5 ); ## 现有我们有颜色了！
+df$col <- sample( colours(), 10 ); ## 现有我们有颜色了！
 ggplot(df, aes( x = month, y = value, colour = col ) ) +  
   geom_point( size = 4, shape = 15 ) + facet_grid( ~ cat );
 ```
@@ -612,6 +612,7 @@ eq <- substitute( atop( italic(y) == a + b %.% italic(x),
                            r2 =  as.vector( format(summary(m)$r.squared, digits = 2) ),
                            pvalue =  as.vector( format( c$p.value , digits = 2) ) )
     )
+
 eq <- as.character(as.expression(eq));
 
 ggplot(swiss, aes( x = Education,  y = Fertility ) ) +
@@ -1334,7 +1335,7 @@ ggplot( mtcars, aes( x = wt, y = mpg ) ) +
 4. [legends 1](http://www.cookbook-r.com/Graphs/Legends_(ggplot2)/)
 5. [legends](https://www.datanovia.com/en/blog/ggplot-legend-title-position-and-labels/)
 6. 必读！！ R graph gallery : https://www.r-graph-gallery.com
-7. 必读！！ ggplot2 扩展： http://www.ggplot2-exts.org/gallery
+7. 必读！！ ggplot2 扩展： https://exts.ggplot2.tidyverse.org/
 8. [barchart & theme](http://t-redactyl.io/blog/2016/01/creating-plots-in-r-using-ggplot2-part-4-stacked-bar-plots.html)
 9. plotly 互动图形的领先者: plot.ly 
 

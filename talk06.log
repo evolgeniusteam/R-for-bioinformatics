@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.11.28)  17 MAY 2021 13:03
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.11.28)  17 MAY 2021 13:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2658,7 +2658,11 @@ Overfull \vbox (15.1163pt too high) detected at line 965
 ]
 \openout4 = `talk06.vrb'.
 
-(./talk06.vrb) [52
+(./talk06.vrb)
+Overfull \vbox (61.58046pt too high) detected at line 1218
+ []
+
+[52
 
 ]
 \openout4 = `talk06.vrb'.
@@ -2774,7 +2778,7 @@ File: talk06_files/figure-beamer/unnamed-chunk-35-1.pdf Graphic file (type pdf)
 
 <use talk06_files/figure-beamer/unnamed-chunk-35-1.pdf>
 
-Overfull \vbox (14.41986pt too high) detected at line 1382
+Overfull \vbox (14.41986pt too high) detected at line 1444
  []
 
 [62
@@ -2799,11 +2803,11 @@ mp)
 \tf@snm=\write9
 \openout9 = `talk06.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1413.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1413.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1475.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1475.
 (./talk06.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1413.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1413.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1475.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1475.
 
 Package rerunfilecheck Info: File `talk06.out' has not changed.
 (rerunfilecheck)             Checksum: 227046F4653466F12AE0D70C1FD461E8.
@@ -2814,7 +2818,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  42030 strings out of 492916
  843725 string characters out of 6133344
- 935268 words of memory out of 5000000
+ 939272 words of memory out of 5000000
  45383 multiletter control sequences out of 15000+600000
  544574 words of font info for 76 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191

@@ -529,7 +529,7 @@ head(comb2);
 
 \FontSmall
 
-```{r include=FALSE}
+```{r}
 ## 比如：这段代码可以合并为：
 comb <- bind_rows( meth2, expr2 );
 comb.wide <- comb %>% spread( group, value );
@@ -547,11 +547,11 @@ bind_rows( meth2, expr2 ) %>%
 
 \FontSmall
 
-```{r include=FALSE}
-ppi %>% filter( gene1 == "SALL4" ) %>% do( head(.,  n = 10 ) );
+```{r}
+ppi %>% filter( gene1 == "SALL4" ) %>% do( head(.,  n = 4 ) );
 
 ## 也可以写为
-ppi %>% filter( gene1 == "SALL4" ) %>% head(.,  n = 10 );
+ppi %>% filter( gene1 == "SALL4" ) %>% head(.,  n = 4 );
 ```
 
 ## 其它形式的 pipe

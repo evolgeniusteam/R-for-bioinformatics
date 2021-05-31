@@ -56,7 +56,7 @@ knitr::knit_hooks$set(error = color_block('red'))
 ```{r message=FALSE, warning=FALSE}
 library(tidyverse);
 ## create a tibble 
-df <- tibble( a = rnorm(10), b = rnorm(10), c = rnorm(10), d = rnorm(10) );
+df <- tibble( a = rnorm(100), b = rnorm(100), c = rnorm(100), d = rnorm(100) );
 
 head(df, n = 3);
 ```
@@ -385,13 +385,13 @@ library(iterators);
 ( cpus <- parallel::detectCores() );
 
 ## 创建一个 data.frame 
-d <- data.frame(x=1:10, y=rnorm(10));
+d <- data.frame(x=1:10000, y=rnorm(10000));
 
 ## make a cluster --
 cl <- makeCluster( cpus - 1 );
 
 ## 分配任务 ... 
-res <- foreach( row = iter( d, by = "row" ), .combine = 'c' ) %dopar% {
+res <- foreach( row = iter( d, by = "row" ) ) %dopar% {
   return ( row$x * row$y  );
 }
 
@@ -469,6 +469,11 @@ cl2 <- makeCluster( cpus - 1 );
 res2 <- foreach( df = iter(  mtcars %>% split( .$cyl )  ), .combine = 'rbind' ) %dopar% {
   cor.res <- cor.test( df$wt, df$mpg );
   return ( c( cor.res$estimate, cor.res$p.value )  ); ## 注意这里的返回值是 
+}
+
+res2 <- foreach( df = iter(  mtcars %>% split( .$cyl )  ), .packages = c("ggplot2") ) %dopar% {
+  p <- ggplot(df, aes( x = wt, y = mpg )) + geom_point();
+  return ( p ); ## 注意这里的返回值是 
 }
 
 ## 注意在最后关闭创建的 cluster 
