@@ -38,7 +38,7 @@ knitr::knit_hooks$set(error = color_block('red'))
 ### vectorization
 
 * every is a vector!!
-* vectorization versys loop (will be explained later)
+* vectorization verses loop (will be explained later)
 * advantages using vectorization (https://www.noamross.net/blog/2014/4/16/vectorization-in-r--why.html)
 
 ## 今次预报
@@ -630,27 +630,14 @@ write_tsv(iris, "iris.tsv", quote_escape = "none");
 
 \FontNormal 
 
-check ```readr``` cheatsheet: https://rawgit.com/rstudio/cheatsheets/master/data-import.pdf
+check ```readr``` cheatsheet (please Google).
 
-# section 4: 练习与作业
+# section 4: 练习 & 作业
 
-## 练习
+## 练习 & 作业
+-   ```Exercises and homework``` 目录下 ```talk02-homework.Rmd``` 文件
 
-### data frame 练习
-
-1. https://www.r-exercises.com/2016/01/04/data-frame-exercises/
-2. https://www.r-exercises.com/2016/11/28/data-frame-exercises-vol-2/
-
-### tibble 练习
-
-1. https://r4ds.had.co.nz/tibbles.html#exercises-18
-2. http://uc-r.github.io/tibbles
-3. more  to read: http://www.sthda.com/english/wiki/tibble-data-format-in-r-best-and-modern-way-to-work-with-your-data
-
-### 其它练习
-
-1. file IO
-2. ```with``` and ```within```
+- 完成时间：见钉群的要求
 
 ## 小结
 

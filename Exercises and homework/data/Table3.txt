@@ -1,0 +1,10 @@
+Table 2: Name, Age, Height, Weight and Sex from 7 people
+
+Name    Age   Height  Weight   Sex
+Alex	 25      177      57     F
+Lilly 	 31       NA      69	 F
+Mark	 --	 190      83     M
+Oliver	 52      179      75	 M
+Martha   76        *      70     F
+Lucas	 49      183      **     M
+Caroline 26      164      53     F

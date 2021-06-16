@@ -610,3 +610,4 @@ knitr::kable(stats);
 -   安装R、RStudio
 -   熟悉Github
 -   自学R编程
+-   更多见：```Exercises and homework``` 目录下 ```talk01-homework.Rmd``` 文件

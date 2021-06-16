@@ -595,27 +595,34 @@ is.vector();
 ## 更多 ... 
 ```
 
+# section 4: 简单回顾
 
-# section 4: 练习 & 作业
+## 今日内容回顾
 
-## vector 练习
+### R基本数据类型
 
-- https://www.r-exercises.com/2015/10/09/vector-exercises/
-- https://www.r-exercises.com/2016/11/15/vector-exercises-vol-2/
+* 数字和字符串
+* 整数、小数、逻辑
+* 数据类型之间转换；自动规则
+* ```matrix```
 
-more to find at: https://www.r-exercises.com
+### R数据类型的查看方式
 
-## matrix 练习 
+* ```mode```
+* ```class```
+* ```typeof```
+* ```is.xxx函数们```
 
-- https://www.r-exercises.com/2015/11/28/matrix-exercises/
+### 基本数据类型的操作
 
-## 作业
+* 定义
+* 取部分
+* 替换
+* 其它
 
-提交一份文本或doc文件，内容包含上述练习的答案，包括：
+# section 5: 练习 & 作业
 
-- vector练习1
-- vector练习2，和
-- matrix 练习
+## 练习 & 作业
+-   ```Exercises and homework``` 目录下 ```talk02-homework.Rmd``` 文件
 
-截止时间：本周日晚8点前
-
+- 完成时间：见钉群的要求
