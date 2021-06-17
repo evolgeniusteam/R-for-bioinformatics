@@ -28,57 +28,64 @@ knitr::knit_hooks$set(error = color_block('red'))
 
 ## 前情提要
 
-* basic plot functions
-* basic ggplot2 
-* special letters
-* equations
-* advanced ggplot2
+-   basic plot functions
+-   basic ggplot2
+-   special letters
+-   equations
+-   advanced ggplot2
 
 ## 本次提要
 
-* data summarisation functions (vector data)
-  * median, mean, sd, quantile, summary
-* 图形化的 data summarisation (two-D data/ tibble/ table)
-  * dot plot
-   * smooth
-   * linear regression
-   * correlation & variance explained
-   * groupping & bar/ box/ plots
-* statistics
-   * parametric tests
-     * t-test
-     * one way ANNOVA
-     * two way ANNOVA
-     * linear regression
-     * model / prediction / coefficients
-   * non-parametric comparison
-   
-# section 2: vector summarisation 
+-   data summarisation functions (vector data)
+
+    -   median, mean, sd, quantile, summary
+
+-   图形化的 data summarisation (two-D data/ tibble/ table)
+
+    -   dot plot
+    -   smooth
+    -   linear regression
+    -   correlation & variance explained
+    -   groupping & bar/ box/ plots
+
+-   statistics
+
+    -   parametric tests
+
+        -   t-test
+        -   one way ANNOVA
+        -   two way ANNOVA
+        -   linear regression
+        -   model / prediction / coefficients
+
+    -   non-parametric comparison
+
+# section 2: vector summarisation
 
 ## vector data
 
-1. distribution
+1.  distribution
 
 \FontSmall
+
 ```{r fig.height=3, fig.width=6, message=FALSE}
 library(tidyverse);
 ggplot( swiss, aes( x = Infant.Mortality ) ) + geom_density() +
    ggtitle("Swiss Fertility and Socioeconomic Indicators (1888) Data")
 ```
 
-
-## describe normal distributions 
+## describe normal distributions
 
 可以用 mean 和 sd 来描述
 
-(A) It’s symmetrical.
+(A) It's symmetrical.
 (B) Mean and median are the same.
 (C) Most common values are near the mean; less common values are farther from it.
 (D) Standard deviation marks the distance from the mean to the inflection point.
 
-(mean + 1 * sd) >= 68% 
+(mean + 1 \* sd) \>= 68%
 
-(mean + 2 * sd) >= 95% 的数据
+(mean + 2 \* sd) \>= 95% 的数据
 
 ## functions to generate random normal distrubions
 
@@ -92,9 +99,9 @@ ggplot( data.frame( data = x ), aes( data ) ) + geom_density(  );
 
 \FontNormal
 
-More to read: http://uc-r.github.io/generating_random_numbers/
+More to read: <http://uc-r.github.io/generating_random_numbers/>
 
-## other functions to generate random normal distributions 
+## other functions to generate random normal distributions
 
 注意，以下函数中的 q, p, x 需要自行提供
 
@@ -111,10 +118,9 @@ qnorm(p, mean = 0, sd = 1)
 dnorm(x, mean = 0, sd = 1)
 ```
 
+## 其它规律的 distributions
 
-## 其它规律的 distributions 
-
-1. uniform distributions
+1.  uniform distributions
 
 \FontSmall
 
@@ -122,7 +128,6 @@ dnorm(x, mean = 0, sd = 1)
 x <- runif( 10000 ); ## random numbers of uniform distributions between 0 and 1 
 ggplot( data.frame( dat = x ), aes( x ) ) + geom_histogram();
 ```
-
 
 ## uniform distribution 的各种函数
 
@@ -169,7 +174,7 @@ plot1 <-
 plot1;
 ```
 
-## non-parametric distribution 
+## non-parametric distribution
 
 \FontSmall
 
@@ -180,7 +185,7 @@ bi <- c(7, 3, 2, 1, 7, 3, 4, 5, 7, 6, 2, 2, 1, 3, 7, 2, 6, 8, 2, 7, 2, 2, 1,
 ggplot( data.frame( dat = bi ), aes(dat)) + geom_density();
 ```
 
-note: data from: https://www.ai-therapy.com/psychology-statistics/distributions/nonparametric
+note: data from: <https://www.ai-therapy.com/psychology-statistics/distributions/nonparametric>
 
 ## 量化描述数据
 
@@ -196,8 +201,7 @@ note: data from: https://www.ai-therapy.com/psychology-statistics/distributions/
 
 **range**: 取值范围
 
-note: from: https://www.ai-therapy.com/psychology-statistics/descriptive/mean-mode-median
-
+note: from: <https://www.ai-therapy.com/psychology-statistics/descriptive/mean-mode-median>
 
 ## 量化描述函数
 
@@ -213,7 +217,7 @@ var(norm$dat);
 range(norm$dat);
 ```
 
-## ```quantile``` and ``` summary ```
+## `quantile` and `summary`
 
 \FontSmall
 
@@ -229,7 +233,7 @@ summary( norm$dat );
 summary( combined$type );
 ```
 
-## ```summary```, cont.
+## `summary`, cont.
 
 \FontSmall
 
@@ -238,18 +242,19 @@ summary( combined$type );
 summary( combined );
 ```
 
-## ```table```函数
+## `table`函数
 
-返回vector当中 unique 值和它们的出现次数 
+返回vector当中 unique 值和它们的出现次数
 
 \FontSmall
+
 ```{r}
 table( combined$type );
 ```
 
-\FontNormal 
+\FontNormal
 
-** 注 ** ： ```table``` 还接受 ```data.frame ``` 作为输入，比如 ``` table( combined ) ```。请自行尝试并理解结果
+\*\* 注 \*\* ： `table` 还接受 `data.frame` 作为输入，比如 `table( combined )`。请自行尝试并理解结果
 
 # section 3: two column data: part 1
 
@@ -257,7 +262,7 @@ table( combined$type );
 
 此类数据，通常一列是数值，另一列是分组信息，如下例：
 
-\FontSmall 
+\FontSmall
 
 ```{r message=FALSE}
 data.fig3a <- read_csv( file = "data/talk10/nc2015_data_for_fig3a.csv" );
@@ -273,21 +278,19 @@ trans.at： A - T 碱基使用偏好；
 
 假说：
 
-(a) de novo synthesis cost of A is higher than T, 
-(b) therefore highly expressed genes will tend to use T than A when possible. 
+(a) de novo synthesis cost of A is higher than T,
+(b) therefore highly expressed genes will tend to use T than A when possible.
 (c) 因此，在高表达的基因当中， A - T 的差值会变大（更负）。
-
 
 **data source**: [Chen et al, Nature Communications, 2016](https://www.nature.com/articles/ncomms11334)
 
-
-## boxplot 
+## boxplot
 
 \FontSmall
 
 ```{r fig.width=6, fig.height=4}
 fig3a <- 
-   ggplot( data.fig3a, aes( factor(tai), trans.at ) ) + 
+   ggplot( data.fig3a, aes( factor(tai), zAA1.at ) ) + 
       geom_boxplot( fill = "#22AD5C", linetype = 1 ,outlier.size = 1, width = 0.6) +
       xlab( "tAI group" ) + 
       ylab( expression( paste( italic(S[RNA]) ) ) ) +
@@ -295,10 +298,9 @@ fig3a <-
       geom_hline( yintercept = 0, colour = "red", linetype = 2);
 ```
 
+## show the plot
 
-## show the plot 
-
-\FontSmall 
+\FontSmall
 
 ```{r fig.width=6, fig.height=3}
 fig3a;
@@ -306,17 +308,17 @@ fig3a;
 
 **说明**：
 
-1. 此种情况下，我们通常只看 median 值的趋势；
+1.  此种情况下，我们通常只看 median 值的趋势；
 
-2. 也可增加 Q1 与 Q5 之间的差异分析 (wilcoxon Rank sum test)； p value = **3.243538e-87**
+2.  也可增加 Q1 与 Q5 之间的差异分析 (wilcoxon Rank sum test)； p value = **3.243538e-87**
 
 ## another example plot
 
-![a figure from an in-press manuscript](images/talk10/na_figure_2a.png){height=70%}
+![a figure from an in-press manuscript](images/talk10/na_figure_2a.png){height="70%"}
 
-## how to add significance indicators to plot?? 
+## how to add significance indicators to plot??
 
-ggplot2 的扩展包， ```geom_signif```；如果第一次使用，请先安装。
+ggplot2 的扩展包， `geom_signif`；如果第一次使用，请先安装。
 
 \FontSmall
 
@@ -330,11 +332,11 @@ fig3a + geom_signif( comparisons = list(1:2, 2:3, 3:4, 4:5), test = wilcox.test,
 
 正确的画法为：要高瘦，不要矮胖！！！！
 
-\FontSmall 
+\FontSmall
+
 ```{r fig.height=2.5, fig.width=2}
 fig3a;
 ```
-
 
 ## 此类数据的另一种可视化方式
 
@@ -353,9 +355,9 @@ ggplot( data.fig3a, aes( trans.at, colour = factor(tai) ) ) + geom_density( ) +
 
 多用于描述两组（量化）数据之间的关系；
 
-以 ```mtcars ``` 为例：
+以 `mtcars` 为例：
 
-\FontSmall 
+\FontSmall
 
 ```{r}
 head(mtcars);
@@ -372,7 +374,7 @@ plotcars <-
 plotcars;
 ```
 
-## smooth, 减少噪音 
+## smooth, 减少噪音
 
 \FontSmall
 
@@ -380,11 +382,7 @@ plotcars;
 plotcars + geom_smooth( method = "lm" ); ## default is lowess 
 ```
 
-## 作业： 计算 correlation 并做图 
-
-用 talk09 中介绍的方法添加类似于**第43页**的两个公式
-
-##  ``` expression( R^2 ) ``` variance of x explained by y ... 
+## `expression( R^2 )` variance of x explained by y ...
 
 \FontSmall
 
@@ -395,12 +393,11 @@ plotcars + geom_smooth( method = "lm" ); ## default is lowess
 r^2;
 ```
 
-
 ## 当趋势不明显时，可以按另一组数据分组
 
 这里还以 mtcars 为例。
 
-两种分组（binning）方法 equal-distance, equal-size binning 
+两种分组（binning）方法 equal-distance, equal-size binning
 
 举例：
 
@@ -416,10 +413,9 @@ mtcars2 <- mtcars %>%
            ) ;
 ```
 
+## `ntile` 函数的参数
 
-## ``` ntile ``` 函数的参数 
-
-... ```*tile``` 函数都是 equal size 
+... `*tile` 函数都是 equal size
 
 \FontSmall
 
@@ -428,7 +424,7 @@ mtcars2 <- mtcars %>%
 table( mtcars2$group1 );
 ```
 
-## ```cut``` 函数
+## `cut` 函数
 
 按指定的间隔 (breaks) 对数据进行分割。
 
@@ -437,7 +433,6 @@ table( mtcars2$group1 );
 ```{r}
 table( mtcars2$group2);
 ```
-
 
 \FontNormal
 
@@ -453,10 +448,9 @@ cut(x, breaks, labels = NULL,
     ordered_result = FALSE, …)
 ```
 
-## ```cut``` 示例
+## `cut` 示例
 
-
-\FontNormal 
+\FontNormal
 
 不仅可用于 equal distance，还可以用于任意间距
 
@@ -468,7 +462,7 @@ mtcars3 <- mtcars2 %>%
 table(mtcars3$group3);
 ```
 
-## 分组后的数据适合用 boxplot 
+## 分组后的数据适合用 boxplot
 
 \FontSmall
 
@@ -483,53 +477,52 @@ ggplot( mtcars3, aes( group3, mpg ) ) +
 
 ### 一维数据
 
-```table```, ```summary```, ```range```, ```quantile```, ``` mean ```, ```median``` ... 
+`table`, `summary`, `range`, `quantile`, `mean`, `median` ...
 
 ### 二维数据
 
-* boxplot
-* point plot
-* correlation
-* 分组： equal distance, equal size binning ... 
+-   boxplot
+-   point plot
+-   correlation
+-   分组： equal distance, equal size binning ...
 
 # section 5: parametric tests
 
 ## parametric tests
 
-1. 包括：
+1.  包括：
 
- * t-test
- * analysis of variance
- * linear regression 
+-   t-test
+-   analysis of variance
+-   linear regression
 
-2. 数据有较明确的分布（e.g. normal distribution），或假设数据有明确的分布；当**假设**不成立时，检测会无效；
+2.  数据有较明确的分布（e.g. normal distribution），或假设数据有明确的分布；当**假设**不成立时，检测会无效；
 
-3. 更灵敏（相比 nonparametric test），p-value更低
+3.  更灵敏（相比 nonparametric test），p-value更低
 
-more to read: http://rcompanion.org/handbook/I_01.html
-
+more to read: <http://rcompanion.org/handbook/I_01.html>
 
 ## 适用性
 
 ### 适用于
 
-* 数量化性状，比如：身高、体重、产量、污染值
+-   数量化性状，比如：身高、体重、产量、污染值
 
-* 整数值：成绩、年龄、每天步数
+-   整数值：成绩、年龄、每天步数
 
-### 不适用于 
+### 不适用于
 
-* 其它 count data或者discrete data；
+-   其它 count data或者discrete data；
 
-* 或者有太多趋向于 min 或 max 的值
+-   或者有太多趋向于 min 或 max 的值
 
-* 百分比或比例
+-   百分比或比例
 
-详见：http://rcompanion.org/handbook/index.html
+详见：<http://rcompanion.org/handbook/index.html>
 
-## 需要的 packages 
+## 需要的 packages
 
-需要的packages 
+需要的packages
 
 \FontSmall
 
@@ -546,10 +539,9 @@ library(psych);
 library(rcompanion)
 ```
 
-
 ## 数据
 
-注意 ``` source() ``` 函数的用法 
+注意 `source()` 函数的用法
 
 \FontSmall
 
@@ -568,7 +560,7 @@ library(psych)
 headTail(Data); ## psych 包提供的函数
 ```
 
-## 查看数据, cont. 
+## 查看数据, cont.
 
 \FontSmall
 
@@ -580,9 +572,9 @@ summary(Data)
 
 ## parametric test 的要求
 
-1. 随机取样
+1.  随机取样
 
-2. 值或 residuals 为正态分布；residules 是指观察值与预测值(mean)之差
+2.  值或 residuals 为正态分布；residules 是指观察值与预测值(mean)之差
 
 ## 数据的分布
 
@@ -590,13 +582,12 @@ summary(Data)
 
 ```{r fig.width=6, fig.height=3}
 ggplot(Data, aes(Steps, fill = Sex)) +
-       geom_density(position="dodge", alpha = 0.6)
+       geom_density(position="dodge", alpha = 1)
 ```
 
+## parametric test 的要求， cont.
 
-## parametric test 的要求， cont. 
-
-3. 有相同的variance
+3.  有相同的variance
 
 \FontSmall
 
@@ -612,17 +603,17 @@ Data$Residual = Data$Steps - Data$Mean
 plot(jitter(Residual) ~ Mean, data = Data, las = 1);
 ```
 
-## how to detect outlier ?? 
+## how to detect outlier ??
 
 一个很模糊的定义：Outliers are extreme values that fall a long way outside of the other observations. For example, in a normal distribution, outliers may be values on the tails of the distribution.
 
-对于 normal distribution，通常 mean +- 2 or 3 * sd 
+对于 normal distribution，通常 mean +- 2 or 3 \* sd
 
-对于 non-parametric distribution (注： IRQ计算可使用同名函数：``` IRQ ```) ：
+对于 non-parametric distribution (注： IRQ计算可使用同名函数：`IRQ`) ：
 
-![Tukey's method for outlier detection](images/talk10/outlier_boxplot.png){height=40%}
+![Tukey's method for outlier detection](images/talk10/outlier_boxplot.png){height="40%"}
 
-## an example of outlier values 
+## an example of outlier values
 
 \FontSmall
 
@@ -635,18 +626,6 @@ ggplot( swiss, aes( y =  Infant.Mortality ) ) + geom_boxplot() + coord_flip() +
                colour = "red", size = 2, linetype = 2);
 ```
 
-## other methods for detect outliers
-
-1. https://conversionxl.com/blog/outliers/
-
-2. https://www.r-bloggers.com/outlier-detection-and-treatment-with-r/
-
-3. https://machinelearningmastery.com/how-to-identify-outliers-in-your-data/
-
-4. https://www.amazon.com/dp/1461463955
-
-5. https://www.itl.nist.gov/div898/handbook/eda/section3/eda35h.htm
-
 ## one sample t-test
 
 检测分布是否与预期一致；比如：男生每天的步数是否显著区别于1万
@@ -654,10 +633,10 @@ ggplot( swiss, aes( y =  Infant.Mortality ) ) + geom_boxplot() + coord_flip() +
 \FontSmall
 
 ```{r}
-with( Data, t.test( Steps[ Sex == "male" ], mu = 1000 ) );
+with( Data, t.test( Steps[ Sex == "male" ], mu = 10000 ) );
 ```
 
-## two samples t-test 
+## two samples t-test
 
 比较 sd 和 mean ，可应用于正态分布。几种使用方法：
 
@@ -667,7 +646,7 @@ with( Data, t.test( Steps[ Sex == "male" ], mu = 1000 ) );
 with( Data, t.test( Steps ~ Sex ) )
 ```
 
-## two sample t-test 使用方法 2 
+## two sample t-test 使用方法 2
 
 \FontSmall
 
@@ -684,12 +663,11 @@ res <- with( Data, t.test( Steps ~ Sex ) );
 str(res);
 ```
 
-## paired two sample t test 
+## paired two sample t test
 
 例如：辅导前后的学生成绩：
 
 \FontSmall
-
 
 ```{r}
 source("data/talk10/input_data2.R");
@@ -697,7 +675,7 @@ source("data/talk10/input_data2.R");
 head(scores);
 ```
 
-## paired two sample t test 
+## paired two sample t test
 
 \FontSmall
 
@@ -708,10 +686,9 @@ head(scores.wide, n = 3);
 with( scores.wide, t.test( After, Before,  paired = T ) );
 ```
 
-
 ## one way ANOVA
 
-**ANOVA**: similar to indepedent t-test, but can be applied to multiple groups 
+**ANOVA**: similar to indepedent t-test, but can be applied to multiple groups
 
 比如：3个班学生的体重
 
@@ -726,7 +703,7 @@ wts <- bind_rows( tibble( class = 1, wt = sample( seq(50, 60, by = 0.1), 20 ) ),
 ggplot(wts, aes( factor( class ), wt ) ) + geom_boxplot() + coord_flip();
 ```
 
-## one way ANOVA, cont. 
+## one way ANOVA, cont.
 
 \FontSmall
 
@@ -735,11 +712,11 @@ library(FSA); ## 如果没有这个包，请先安装 ...
 with( wts, Summarize( wt ~ class, digits = 3 ) );
 ```
 
-## linear model 
+## linear model
 
 两个问题：
 
-1. 组间有显著区别吗？
+1.  组间有显著区别吗？
 
 \FontSmall
 
@@ -751,7 +728,7 @@ anova( model );
 
 ## ANOVA
 
-2. 分组对变量的贡献（ r-square, aka. variance explained ）
+2.  分组对变量的贡献（ r-square, aka. variance explained ）
 
 \FontSmall
 
@@ -763,9 +740,9 @@ summary( model );
 
 其中的值都是什么意思？？？
 
-更多内容见： http://rcompanion.org/handbook/I_05.html
+更多内容见： <http://rcompanion.org/handbook/I_05.html>
 
-## one way ANOVA with blocks 
+## one way ANOVA with blocks
 
 同时有多个因素影响**体重**时，哪些才是主要的？
 
@@ -782,7 +759,7 @@ ggplot(wts2, aes( factor( age ), wt ) ) + geom_boxplot() + coord_flip();
 
 ```
 
-## one way ANOVA with blocks, cont. 
+## one way ANOVA with blocks, cont.
 
 \FontSmall
 
@@ -793,12 +770,11 @@ anova( model2 );
 
 \FontSmall
 
-如何获得  r.squre value ??? 
+如何获得 r.squre value ???
 
-## one way ANOVA with blocks, 各个factor的重要性？？ 
+## one way ANOVA with blocks, 各个factor的重要性？？
 
 \FontSmall
-
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 library(relaimpo);
@@ -821,7 +797,7 @@ res4$lmg; ## 每个因素的贡献；
 
 \FontNormal
 
-更多请见： http://rcompanion.org/handbook/I_06.html
+更多请见： <http://rcompanion.org/handbook/I_06.html>
 
 ## two way ANOVA
 
@@ -829,7 +805,7 @@ res4$lmg; ## 每个因素的贡献；
 
 **年级** 和 **年龄** 至少有 4 个 unique combinations .
 
-实际上，上面的 block test 可以认为是 two-way ANOVA 分析 
+实际上，上面的 block test 可以认为是 two-way ANOVA 分析
 
 \FontSmall
 
@@ -837,7 +813,7 @@ res4$lmg; ## 每个因素的贡献；
 Summarize(wt ~ age + class, data = wts2, digits=3);
 ```
 
-##  two way ANOVA, cont. 
+## two way ANOVA, cont.
 
 \FontSmall
 
@@ -847,7 +823,7 @@ anova( model3 );
 
 ```
 
-\FontNormal 
+\FontNormal
 
 其中： class 和 age 称为 **main effects**， class:age 称为 **interaction effects**
 
@@ -861,13 +837,13 @@ res5$R2; ## 总 R2
 res5$lmg; ## 每个因素的贡献； 
 ```
 
-\FontNormal 
+\FontNormal
 
-more to read about the interaction effects: http://oak.ucc.nau.edu/rh232/courses/EPS625/Handouts/Two-way%20ANOVA/Understanding%20the%20Two-way%20ANOVA.pdf
+more to read about the interaction effects: <http://oak.ucc.nau.edu/rh232/courses/EPS625/Handouts/Two-way%20ANOVA/Understanding%20the%20Two-way%20ANOVA.pdf>
 
-## 用模型进行预测 ```predict ```
+## 用模型进行预测 `predict`
 
-``` model2 = lm(formula = wt ~ class + age, data = wts2) ```
+`model2 = lm(formula = wt ~ class + age, data = wts2)`
 
 \FontSmall
 
@@ -894,12 +870,11 @@ with( dat, cor.test( prediction, reference ) )$estimate ^2;
 summary( model2 )$r.squared;  
 ```
 
+## 手动计算 prediction
 
-## 手动计算 prediction 
+在一个 linear model 中， `wt = intercept + a * class + b * age`
 
-在一个 linear model 中， ``` wt = intercept + a * class + b * age ```
-
-而  ``` intercept ``` , ``` a ```, ``` b ``` 的值分别为：
+而 `intercept` , `a`, `b` 的值分别为：
 
 \FontSmall
 
@@ -915,7 +890,6 @@ plot <-
       geom_point() + geom_smooth( method = "lm", se = F );
 ```
 
-
 ## show the plot
 
 \FontSmall
@@ -926,7 +900,7 @@ plot;
 
 ## 更多更方便的函数
 
-以下函数也可以用于 multivariable analysis / multiple regression 
+以下函数也可以用于 multivariable analysis / multiple regression
 
 \FontSmall
 
@@ -946,21 +920,21 @@ influence(fit) # regression diagnostics
 
 ## linear regression 注意事项
 
-1. 是 parametric test
+1.  是 parametric test
 
-2. 假设变量之间独立（比如：**年龄**和**班级**之间没有关联）
+2.  假设变量之间独立（比如：**年龄**和**班级**之间没有关联）
 
-3. homogeneity of variance 
+3.  homogeneity of variance
 
-但实际上 ... 
+但实际上 ...
 
-## multivariable analysis 
+## multivariable analysis
 
-more to read: 
+more to read:
 
-1. https://www.statmethods.net/stats/regression.html
+1.  <https://www.statmethods.net/stats/regression.html>
 
-2. https://data.library.virginia.edu/getting-started-with-multivariate-multiple-regression/
+2.  <https://data.library.virginia.edu/getting-started-with-multivariate-multiple-regression/>
 
 \FontSmall
 
@@ -987,19 +961,19 @@ step$anova # display results
 
 ## extended reading
 
-1. repeated measures ANOVA : http://rcompanion.org/handbook/I_09.html, 同一变量、不同时间段的重复测量（ 对上例中学生的体重进行多次测量 ）
+1.  repeated measures ANOVA : <http://rcompanion.org/handbook/I_09.html>, 同一变量、不同时间段的重复测量（ 对上例中学生的体重进行多次测量 ）
 
-2. correlation and linear regression: http://rcompanion.org/handbook/I_10.html 
+2.  correlation and linear regression: <http://rcompanion.org/handbook/I_10.html>
 
-3. non-linear regression: https://www.amazon.com/Statistical-Tools-Nonlinear-Regression-Statistics/dp/0387400818
+3.  non-linear regression: <https://www.amazon.com/Statistical-Tools-Nonlinear-Regression-Statistics/dp/0387400818>
 
 \FontNormal
 
-更多详见：http://rcompanion.org/handbook/I_08.html
+更多详见：<http://rcompanion.org/handbook/I_08.html>
 
-# section 6: non-parametric test 
+# section 6: non-parametric test
 
-## ```wilcox.test``` and ```kruskal.test``` 
+## `wilcox.test` and `kruskal.test`
 
 \FontSmall
 
@@ -1015,4 +989,6 @@ with( Data, kruskal.test( Steps ~ Sex ) );
 
 ## 作业与练习
 
-练习本课堂所讲的内容 ... 
+-   `Exercises and homework` 目录下 `talk10-homework.Rmd` 文件
+
+-   完成时间：见钉群的要求

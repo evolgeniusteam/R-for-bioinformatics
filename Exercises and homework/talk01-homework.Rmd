@@ -18,28 +18,30 @@ knit: (
 
 ## talk01 内容回顾
 
-* R背景介绍
-* 几个简单示例
-  * R流行度调查
-  * R job trends
+-   R背景介绍
+
+-   几个简单示例
+
+    -   R流行度调查
+    -   R job trends
 
 ## 练习和作业说明
 
-更改```pSubTitle```的值为：```姓名-学号-talk##作业```；
+更改`pSubTitle`的值为：`姓名-学号-talk##作业`；
 
 将相关代码填写入以 \`\`\`{r} \`\`\` 标志的代码框中，运行并看到正确的结果；
 
-完成后，用工具栏里的”Knit“按键生成word文档；
+完成后，用工具栏里的"Knit"按键生成word文档；
 
-确认得到的文档名为：```姓名-学号-talk##作业.docx```。
+确认得到的文档名为：`姓名-学号-talk##作业.docx`。
 
 将word文档提交到老师指定的平台/钉群。
 
 ## 练习/作业1
 
-安装 ```R```和```RStudio```最新版；
+安装 `R`和`RStudio`最新版；
 
-用```RStudio```打开本脚本，按提示操作安排相应的包；
+用`RStudio`打开本脚本，按提示操作安排相应的包；
 
 成功运行本脚本，并出输出作业；
 
@@ -47,18 +49,18 @@ knit: (
 
 重现talk01中的两个图。
 
-1. 安装需要的包：
+1.  安装需要的包：
 
 ```{r warning=FALSE, message=FALSE, echo=FALSE, eval=FALSE}
 chooseCRANmirror(); ## 选择位于中国的 mirror 
 install.packages(c("ggplot2", "reshape2")); ## 安装
 ```
 
-2. R 的流行性调查
+2.  R 的流行性调查
 
 运行以下代码，得到R的流行性调查；
 
-注意输入文件：```chaper01_preface_scholarly_impact_2012.4.9.csv``` 的正确路径；
+注意输入文件：`chaper01_preface_scholarly_impact_2012.4.9.csv` 的正确路径；
 
 注意理解每行代码的意义；
 
@@ -86,11 +88,11 @@ plot1 <-
 plot1; ## 画图
 ```
 
-3. R 的招聘趋势
+3.  R 的招聘趋势
 
 运行以下代码，得到R 的招聘趋势
 
-注意输入文件：```chaper01_preface_scholarly_impact_2012.4.9.csv``` 的正确路径；
+注意输入文件：`chaper01_preface_scholarly_impact_2012.4.9.csv` 的正确路径；
 
 注意理解每行代码的意义；
 
@@ -120,4 +122,3 @@ plot2 <-
 
 plot2;
 ```
-
