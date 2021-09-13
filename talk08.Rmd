@@ -104,6 +104,8 @@ colSums( df );
 
 ## ```apply``` 相关函数
 
+\FontSmall
+
 Usage: 
 
 ``` apply(X, MARGIN, FUN, ...) ```; 
@@ -111,8 +113,6 @@ Usage:
 MARGIN : 1 = 行， 2 = 列； c(1,2) = 行&列
 
 FUN : 函数，可以是系统自带，也可以自己写
-
-\FontSmall
 
 ```{r}
 df %>% apply( ., 1, median ); ## 取行的 median 
@@ -217,11 +217,14 @@ list( a = 1:10, b = letters[1:5], c = LETTERS[1:8] ) %>%
 
 ## ```purrr``` 的基本函数
 
-``` map( FUN ) ``` : 遍历每列（tibble）或 slot （list），运行 FUN 函数，将计算结果返回至 list 
+\FontSmall 
+
+``` map( FUN ) ``` : 
+1. 遍历每列（tibble）或 slot （list），
+2. 运行 FUN 函数，
+3. 将计算结果返回至 list 
 
 对应： ``` lapply ``` 
-
-\FontSmall 
 
 ```{r}
 df %>% map( summary );
@@ -337,11 +340,60 @@ map_dbl( ~.$estimate )
 
 ## more to read & exercise 
 
+* `map`: apply a function to **each element** of **a list**, return **a list**
+
+* `map2`: apply a function to **a pair of elements**, return **a list**
+
+* `pmap`: apply a function to groups of elements from **a list of lists or vectors**, return  **a list**
+
+* `imap`: ... 
+
 * more to read and exercise about iterations: https://r4ds.had.co.nz/iteration.html
-  * walk, walk2 & pwalk : 和 map 相似，但只用于运行命令，不返回值
-  * keep, discard : 用于保留或过滤符合条件的 elements 
-* [purrr 练习1](https://www.r-exercises.com/2018/01/12/functional-programming-with-purrr-exercises-part-1/)
-* [purrr 练习2](https://www.r-exercises.com/2018/01/19/functional-programming-with-purrr-exercises-part-2/)
+  * filter
+  * index
+  * Modify
+  * reshape
+  * combine 
+  * reduce
+  
+* find more exercise at the end of the slides
+
+## `reduce`
+
+\FontSmall
+
+```{r}
+dfs <- list(
+  age = tibble(name = "John", age = 30),
+  sex = tibble(name = c("John", "Mary"), sex = c("M", "F")),
+  trt = tibble(name = "Mary", treatment = "A")
+)
+
+dfs %>% reduce(full_join)
+```
+
+## `reduce`, cont. 
+
+\FontSmall
+
+```{r}
+vs <- list(
+  c(1, 3, 5, 6, 10),
+  c(1, 2, 3, 7, 8, 10),
+  c(1, 2, 3, 4, 8, 9, 10)
+)
+
+vs %>% reduce(intersect)
+```
+
+## `accumulate`
+
+\FontSmall
+
+```{r}
+( x <- sample(10) );
+x %>% accumulate(`+`);
+```
 
 # section 4: 并行计算 
 
@@ -376,7 +428,7 @@ install.packages( "foreach" ); ## 会自动安装 iterators
 ## 简单示例
 
 \FontSmall
-```{r}
+```{r eval=FALSE}
 library(parallel); ## 
 library(foreach);
 library(iterators);
@@ -416,14 +468,13 @@ d <- data.frame(x=1:10, y=rnorm(10));
 
 ## make a cluster --
 cl <- makeCluster( cpus - 1 );
-
 ```
 
 ## 命令详解， cont. 
 
 \FontSmall
 
-```{r include=FALSE}
+```{r include=FALSE, eval=FALSE}
 head(d);
 ```
 
@@ -460,7 +511,6 @@ res <- foreach( row = iter( d, by = "row" ), .combine = 'c' ) %dopar% {
 mtcars %>% split( .$cyl ) %>% map( ~ cor.test( .$wt, .$mpg ) ) %>% map_dbl( ~.$estimate );
 ``` 
 
-
 ```{r eval=FALSE}
 ## make a cluster --
 cl2 <- makeCluster( cpus - 1 );
@@ -473,7 +523,7 @@ res2 <- foreach( df = iter(  mtcars %>% split( .$cyl )  ), .combine = 'rbind' ) 
 
 res2 <- foreach( df = iter(  mtcars %>% split( .$cyl )  ), .packages = c("ggplot2") ) %dopar% {
   p <- ggplot(df, aes( x = wt, y = mpg )) + geom_point();
-  return ( p ); ## 注意这里的返回值是 
+  return ( p ); ## 注意这里的返回值是
 }
 
 ## 注意在最后关闭创建的 cluster 
@@ -532,7 +582,7 @@ foreach( ... ) %:% {
 
 \FontSmall
 
-```{r}
+```{r eval=FALSE}
 cl<-makeCluster(3);
 parLapply(cl, 
           2:4, 
@@ -545,20 +595,7 @@ stopCluster(cl);
 
 其它的函数这里就不一一介绍了
 
-
-## more to read & exercise
-
-### more to read
-
-* parallel 包 的更多示例： https://www.r-bloggers.com/how-to-go-parallel-in-r-basics-tips/
-
-### 练习
-
-* [练习](https://www.r-exercises.com/2017/07/13/parallel-computing-exercises-foreach-and-doparallel-part-2/)
-
-
-
-# section 5: 小结及预告
+# section 5: 小结及作业！
 
 ## 本次小结
 
@@ -579,9 +616,15 @@ stopCluster(cl);
 
 ## 下次预告
 
-data visualisations
+data visualizations
 
 * basic plot functions
 * basic ggplot2 
 * special letters
 * equations 
+
+## 作业
+
+-   ```Exercises and homework``` 目录下 ```talk08-homework.Rmd``` 文件；
+
+- 完成时间：见钉群的要求

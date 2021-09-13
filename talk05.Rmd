@@ -125,7 +125,7 @@ mouse.tibble <- read_delim( file = "data/talk04/mouse_genes_biomart_sep2018.txt"
 \FontSmall
 
 ```{r}
-table( mouse.tibble$`Transcript type` );
+( ttype.stats <- mouse.tibble %>% count( `Transcript type` ) %>% arrange(-n) );
 ```
 
 ## 查看 mouse.tibble 的内容, cont.
@@ -133,7 +133,7 @@ table( mouse.tibble$`Transcript type` );
 \FontSmall
 
 ```{r}
-table( mouse.tibble$`Chromosome/scaffold name`);
+( chr.stats <- mouse.tibble %>% count( `Chromosome/scaffold name` ) %>% arrange(-n) );
 ```
 
 ## 分析任务
@@ -192,17 +192,9 @@ knitr::kable( head( dat, n = 15 ) );
 
 \FontSmall
 ```{r message=FALSE, warning=FALSE}
-library(RMySQL); 
 library(dplyr);
-
-mysql.dbname = "r4ds_test";
-dbCon <- dbConnect(MySQL(), user="r4ds", password="r4ds", 
-                   dbname=mysql.dbname,
-                   unix.socket="/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock");
-
-grades <- dbGetQuery(dbCon, "SELECT * FROM grades_stats");
-
-knitr::kable( head(grades, n=20) )
+grades <- read_tsv( file = "data/talk05/grades.txt" );
+knitr::kable( head(grades, n=20) );
 ```
 
 灵活性：
@@ -234,7 +226,7 @@ grades2 <- grades %>% spread( course, grade );
 
 ![```spread``` function explained](images/talk05/spread_explained.png){height=50%}
 
-## 宽数据转为长数据 
+## 宽数据转为长数据
 
 use ```gather()``` function in ```tidyr``` 
 
@@ -411,20 +403,6 @@ grades.melted2 %>%
 
 ![dplyr::summarise 可用的操作](images/talk05/dplyr-summarise.png){height=60%}
 
-## 练习 & 作业
-
-问题：
-
-1. 每个人最差的学科和成绩分别是什么？
-2. 哪个职业的平均成绩最好？
-3. 每个职业的最佳学科分别是什么（按平均分排序）？？？ 
-
-上交：
-
-1. 产生的数据（导出为tsv格式）
-2. 分析结果（copy & paste 到单独的文本文件里）
-3. 完整的可独立运行的代码
-
 ## 更多练习，使用 ```starwars``` tibble 
 
 \FontSmall
@@ -529,37 +507,20 @@ https://r4ds.had.co.nz/tidy-data.html
 
 # section 3 : 练习与作业
 
-## more to read
+## 练习 & 作业
+-   ```Exercises and homework``` 目录下 ```talk05-homework.Rmd``` 文件；
 
-https://www.dataschool.io/dplyr-tutorial-for-faster-data-manipulation-in-r/
-https://pages.rstudio.net/Webinar-Series-Recording-Essential-Tools-for-R.html
-https://github.com/tidyverse/dplyr
-http://genomicsclass.github.io/book/pages/dplyr_tutorial.html
-http://stat545.com/block009_dplyr-intro.html
-https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html
+- 完成时间：见钉群的要求
 
-## 练习
+## 小结
 
-1. [let's get started with dplyr](https://www.r-exercises.com/2017/01/12/lets-get-started-with-dplyr/)
-2. [dplyr: more smooth data exploration](https://www.r-exercises.com/2017/10/03/dplyr-basics-more-smooth-data-exploration/)
-3. [some more exercise](http://www.dartistics.com/exercise4-tidy-dplyr.html)
-4. [dplyr: 50 examples](https://www.listendata.com/2016/08/dplyr-tutorial.html); 包含了许多本章并未讲到的内容
+### 今次提要
 
-## 作业
+* dplyr 、 tidyr (超级强大的数据处理)  part 1
 
-1. 前半部分提到的作业
-2. 使用 mouse.tibble 数据，统计：
-  * 每个染色体上每种基因类型的数量、平均长度、最大和最小长度，挑出最长和最短的基因
-  * 去掉含有500以下基因的染色体，按染色体、数量 高 -> 低 进行排序
-  
-要求上交：
+### 下次预告
 
-1. 完整能运行的代码，
-2. 保存至文本文件的输出结果
+* dplyr, tidyr 和 forcats 的更多功能与生信操作实例
 
-## 下次提要
-
-dplyr, tidyr 和 forcats 的更多功能与生信操作实例
-
-
-  
+### important
+* all codes are available at Github: https://github.com/evolgeniusteam/R-for-bioinformatics

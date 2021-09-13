@@ -45,6 +45,8 @@ knitr::knit_hooks$set(error = color_block('red'))
 -   arrange()
 -   group_by() ...
 
+## 前情提要, cont. 
+
 ### factors (部分)
 
 -   概念
@@ -58,7 +60,7 @@ knitr::knit_hooks$set(error = color_block('red'))
 
 # section 2: contents
 
-## 生信任务1 ： network analysis and visualisation (dplyr & some plot packages )
+## 生信任务1 ： network analysis and visualisation (dplyr & some plot packages)
 
 protein-protein interaction data
 
@@ -80,6 +82,7 @@ protein-protein interaction data
 ## STRING is one of the most cited resources
 
 ![citation of ver11](images/talk06/STRING_google_scholar_citation_2021.png){height="70%"}
+screenshot took in May 2021
 
 more tools at Peer Bork's group: https://scholar.google.com/citations?hl=en&user=M6Etr6oAAAAJ&view_op=list_works&sortby=pubdate
 
@@ -271,17 +274,17 @@ plot( netnet.nr );
 
 详见：
 
-1.  [igraph introduction](https://www.jessesadler.com/post/network-analysis-with-r/)
-2.  [a comprehensive network visualisation tutorial in R](https://kateto.net/network-visualization): igraph and beyond
+1.  igraph introduction
+2.  a comprehensive network visualization tutorial in R
 
 ![Example final outcomes](images/talk06/igraph_example.png){height="40%"}
 
 ## other network visualisation packages
 
-1.  [ggnet](https://briatte.github.io/ggnet/)
-2.  [interactive networkD3 R package](http://www.sthda.com/english/articles/33-social-network-analysis/137-interactive-network-visualization-using-r/)
-3.  plotly.js
-4.  D3
+1.  `ggnet`
+2.  `interactive networkD3 R package`
+3.  `plotly.js`
+4.  `D3`
 
 ## 生信任务2 : 宏基因基因数据展示的小应用 (forcats)
 
@@ -312,9 +315,9 @@ Metagenomics is the study of genetic material recovered directly from environmen
 
 ## biomes
 
-![Biomes](images/talk06/ebi_metagenomics_biomes_aug8_2019.png){height="60%"}
+![Biomes](images/talk06/ebi_metagenomics_biomes_aug4_2021.png){height="60%"}
 
-Screenshot taken from the [EBI metagenomics database](https://www.ebi.ac.uk/metagenomics/) on Aug 8, 2019.
+Screenshot taken from the `EBI MGnify database` on `Aug 4, 2021`;
 
 ## enviromental microbiome
 
@@ -349,8 +352,10 @@ Species abundances
 \FontSmall
 
 ```{r}
-abu <- read_delim(file = "data/talk06/relative_abundance_for_RUN_ERR1072629_taxonlevel_species.txt",
-                  delim = "\t", quote = "", comment = "#");
+abu <- 
+  read_delim(
+    file = "data/talk06/relative_abundance_for_RUN_ERR1072629_taxonlevel_species.txt",
+    delim = "\t", quote = "", comment = "#");
 
 nrow(abu);
 ```
@@ -399,6 +404,23 @@ ggplot(abu.dat, aes(x = scientific_name, y = relative_abundance, fill = scientif
 ```{r fig.height=4, fig.width=10}
 ## 用 forcat 包的 fct_reorder 函数; 注意它3个参数的意义！！！
 ggplot(abu.dat, aes(x = fct_reorder( scientific_name, relative_abundance, .desc = F), 
+                    y = relative_abundance, fill = scientific_name ) ) + 
+  geom_bar( stat = "identity" ) + 
+  coord_flip() + xlab("Species") + ylab( "Relative abundance %" ) 
+```
+
+## 把 `Others` 和 `Unknown` 放在最后
+
+注意 `fct_reorder`的用法：
+
+\FontSmall
+
+```{r fig.height=4, fig.width=10}
+## 
+abu.dat$scientific_name <- 
+  fct_relevel( fct_reorder( abu.dat$scientific_name, abu.dat$relative_abundance, .desc = F),  
+               "Unknown",  "Others" );
+ggplot(abu.dat, aes(x = scientific_name,
                     y = relative_abundance, fill = scientific_name ) ) + 
   geom_bar( stat = "identity" ) + 
   coord_flip() + xlab("Species") + ylab( "Relative abundance %" ) 
@@ -622,7 +644,7 @@ mtcars %$%
 
 ```{r}
 ## 双向 pipe 
-mtcars %<>% transform(cyl = cyl * 2); 
+mtcars %<>% transform(cyl = cyl * 2);
 ```
 
 **注**
@@ -632,30 +654,23 @@ mtcars %<>% transform(cyl = cyl * 2);
 
 # section 4: Exercise & home work
 
-## 练习
+## 练习 & 作业
+-   ```Exercises and homework``` 目录下 ```talk06-homework.Rmd``` 文件；
 
-练习本堂讲到的三个示例
+- 完成时间：见钉群的要求
 
-用示例2的数据画饼图
+## 小结
 
-```{r echo=FALSE, fig.height=3, fig.width=10}
-ggplot(abu.dat, aes(x = fct_reorder( scientific_name, relative_abundance, .desc = F), 
-                    y = relative_abundance, fill = scientific_name ) ) + 
-  geom_bar( stat = "identity" ) + 
-  coord_polar(  ) + xlab("Species") + ylab( "Relative abundance %" ) 
-```
+### 今次提要
 
-## 作业： pie chart
+1.  3个生信任务的R解决方案
+2.  factors 的更多应用 (forcats)
+3.  pipe
 
-![make a pie chart like this using the meteagenomics data](images/talk06/121-ggplot-pie-chart-donut-chart-1.png){height="50%"}
+### 下次预告
 
-详见： <https://www.datanovia.com/en/blog/how-to-create-a-pie-chart-in-r-using-ggplot2/>
+* Strings and regular expression
 
-## 更多练习
+### important
+* all codes are available at Github: https://github.com/evolgeniusteam/R-for-bioinformatics
 
--   join: <https://r4ds.had.co.nz/relational-data.html>
--   forcats: <https://cran.r-project.org/web/packages/forcats/vignettes/forcats.html>
-
-## 下次预告
-
-Strings and regular expression

@@ -258,14 +258,6 @@ c("chen wei hua", "chen wei", "chen") %>% str_subset( "wei\\b" );
 
 ![特别字符](images/talk07/regexprs_special_characters.png){height=50%}
 
-## more to read and excercise
-
-1. [regular expression basic](http://stat545.com/block022_regular-expression.html)
-2. [Regular Expressions Fundamentals: excercise 1](https://www.r-exercises.com/2018/02/19/regular-expressions-fundamentals-exercises/)
-3. [Data wrangling : Cleansing: excercise 1](https://www.r-exercises.com/2017/08/16/data-wrangling-cleansing-regular-expressions-13/)
-4. [Data wrangling : Cleansing: excercise 2](https://www.r-exercises.com/2017/08/30/data-wrangling-cleansing-regular-expressions-23/)
-5. [Data wrangling : Cleansing: excercise 3](https://www.r-exercises.com/2017/09/13/data-wrangling-cleansing-regular-expressions-33/)
-
 # section 4: tasks of regular expression
 
 ## tasks of regular expression 
@@ -322,7 +314,10 @@ str_replace( c( "123", "abc", "wei555hua" ) , "\\d+", "###");
 * gsub(pattern, replacement, string)
 * stringr::str_replace_all(string, pattern, replacement)
 
-更多请见[R regular expression cheatsheet](https://www.rstudio.com/wp-content/uploads/2016/09/RegExCheatsheet.pdf).
+更多请见 `cheatsheets/` 目录下的：
+
+* strings.pdf
+* regular_expression.pdf 
 
 ## stringr 函数
 
@@ -373,10 +368,26 @@ extract(dat, chrom, into=c('chr', 'chrStart', 'chrEnd'),
 
 # section 5: Exercise and home work
 
-## more to read
+## 小结
 
-https://r4ds.had.co.nz/strings.html
+### 今次提要
 
-## 下次预告
+1. string basics
+ * length
+ * uppercase, lowercase
+ * unite, separate
+ * string comparisons, sub string
+2. regular expression
+ * detect patterns
+ * locate patterns
+ * extract patterns
+ * replace patterns
+
+### 下次预告
 
 data iteration & parallel computing
+
+## 练习 & 作业
+-   ```Exercises and homework``` 目录下 ```talk07-homework.Rmd``` 文件；
+
+- 完成时间：见钉群的要求

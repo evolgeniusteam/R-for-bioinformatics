@@ -39,7 +39,7 @@ knitr::knit_hooks$set(error = color_block('red'))
 
 * every is a vector!!
 * vectorization verses loop (will be explained later)
-* advantages using vectorization (https://www.noamross.net/blog/2014/4/16/vectorization-in-r--why.html)
+* advantages using vectorization
 
 ## 今次预报
 
@@ -610,6 +610,8 @@ myiris2 <-  read_csv("data/talk03/iris.csv", col_types = cols(
 
 ### use the following functions to write object(s) to external files
 
+\FontSmall
+
 * Comma delimited file: **write_csv**(x, path, na = "NA", append = FALSE, col_names = !append)
 * File with arbitrary delimiter: **write_delim**(x, path, delim = " ", na = "NA", append = FALSE, col_names = !append)
 * CSV for excel: **write_excel_csv**(x, path, na = "NA", append = FALSE, col_names = !append)
@@ -635,7 +637,7 @@ check ```readr``` cheatsheet (please Google).
 # section 4: 练习 & 作业
 
 ## 练习 & 作业
--   ```Exercises and homework``` 目录下 ```talk02-homework.Rmd``` 文件
+-   ```Exercises and homework``` 目录下 ```talk03-homework.Rmd``` 文件；
 
 - 完成时间：见钉群的要求
 

@@ -44,7 +44,7 @@ knitr::knit_hooks$set(error = color_block('red'))
 
 ## 今次预报
 
-1. IO, project management, working enviroment management
+1. IO, project management, working environment management
 2. factors: R 中最重要的概念之一 
 3. exercises
 
@@ -89,6 +89,7 @@ Each RStudio session is automatically associated with a R session
 当前工作空间，包括所有已装入的数据、包和自制函数
 
 可通过以下代码管理变量
+
 \FontSmall
 
 ```{r eval=TRUE}
@@ -101,7 +102,7 @@ ls();
 
 ## variables in working space in RStudio
 
-在RStudio右上角的"Enviroment"窗口显示了所有当前工作间的变量
+在RStudio右上角的"Environment"窗口显示了所有当前工作间的变量
 
 ![RStudio enviroment window](images/talk04/rstudio_enviroment_window.png){height=40%}
 
@@ -236,19 +237,96 @@ levels(y) <- c("single", "married", "widowed");
 str(y);
 ```
 
-\FontNormal
-
-** 问题 ** 如果运行以下代码，会报错吗？ 
-
-\FontSmall
-
 ```{r eval=FALSE}
+## 这个代码现在就没有问题了
 y[ length(y) + 1 ] <- "widowed";
 ```
 
 \FontNormal
 
-[more to read](https://www.datamentor.io/r-programming/factor/)
+** 注意 ** 用 `as.factor` 创建 factor 时，得到的 levels 按字母表排列；
+
+但是，用 `levels( y )` 方式指定 levels 时，则按照指定的顺序；
+
+## `levels`的顺序决定了排序的顺序
+
+\FontSmall
+```{r}
+##
+y <-  as.factor( c( "single", "married", "married", "single" ) );
+levels(y);
+sort(y);
+
+## 
+y2 <- y;
+levels(y2) <- c("single", "married", "widowed");
+sort(y2);
+```
+
+## sort data in a meaningful way ... 
+
+\FontSmall
+
+```{r}
+## Month
+x1 <- c("Dec", "Apr", "Jan", "Mar");
+sort(x1);
+
+month_levels <- c(
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+)
+
+y1 <- factor(x1, levels = month_levels)
+sort(y1);
+```
+
+## 以出现的顺序为 `factor`
+
+\FontSmall
+
+```{r}
+## Sometimes you’d prefer that the order of the levels match the order of the first appearance in the data.
+f1 <- factor(x1, levels = unique(x1));
+f1;
+
+library(forcats); ## just to make sure the codes will run smoothly ... 
+## you can also use fct_inorder in the forcats package ...
+f2 <- x1 %>% factor() %>% fct_inorder()
+f2
+```
+
+## use factor to clean data
+
+\FontSmall
+
+```{r}
+## 假设我有一组性别数据，其写法非常不规整；
+gender <- c("f", "m ", "male ","male", "female", "FEMALE", "Male", "f", "m");
+
+## 要求：都改为 Female, Male
+gender <- as_factor( gender );
+fct_count( gender );
+
+gender <- fct_collapse(
+  gender,
+  Female = c("f", "female", "FEMALE"),
+  Male   = c("m ", "m", "male ", "male", "Male")
+)
+fct_count(gender)
+```
+
+## or use `fct_relabel`
+
+\FontSmall
+
+```{r}
+gender <- c("f", "m ", "male ","male", "female", "FEMALE", "Male", "f", "m")
+gender <- as_factor(gender)
+gender <- fct_relabel(gender, ~ ifelse(tolower(substring(., 1, 1)) == "f", "Female", "Male"))
+
+fct_count(gender)
+```
 
 ## factor 在做图中的应用（真正精髓）
 
@@ -348,7 +426,8 @@ str(mouse.genes);
 mouse.chr_10_12 <- subset( mouse.genes,  Chromosome.scaffold.name %in% c( "10", "11", "12" ) );
 ## plot length distribution --
 
-boxplot( Transcript.length..including.UTRs.and.CDS. ~ Chromosome.scaffold.name, data = mouse.chr_10_12, las = 2 );
+boxplot( Transcript.length..including.UTRs.and.CDS. ~ Chromosome.scaffold.name, 
+         data = mouse.chr_10_12, las = 2 );
 ```
 
 \FontNormal
@@ -436,29 +515,68 @@ plot4;
 1. 如果要按 小 -> 大 的顺序排序呢？ ( ```reorder( `Chromosome/scaffold name`, - `Transcript length (including UTRs and CDS)`, median )  )
 2. ```reorder``` 的作用是什么？？ 只在 ggplot2 里有用吗？？ 
 
-[more to read!](https://www.r-bloggers.com/how-do-i-re-arrange-ordering-a-plot-revisited/)
+## use `forcats::fct_reorder` to reorder factors 
 
-# section 4: 练习与作业
+\FontSmall
+```{r fig.width=10, fig.height=4}
+  ggplot( data = mouse.tibble.chr10_12,
+        aes( x = fct_reorder( `Chromosome/scaffold name`, 
+                          `Transcript length (including UTRs and CDS)`, 
+                          median ), 
+             y = `Transcript length (including UTRs and CDS)` ) ) +
+  geom_boxplot() + 
+  coord_flip() + 
+  ylim( 0, 2500 ) ;
+```
 
-## more to read & 练习：
 
-1. [R factors 基础](https://www.datamentor.io/r-programming/factor/)
-2. [R阅读和练习 2, 必读！！](https://r4ds.had.co.nz/factors.html)
-3. [R练习 1](https://www.r-exercises.com/2018/07/06/facing-the-facts-about-factors-exercises/)
-4. [rename columns using dplyr](https://honingds.com/blog/dplyr-rename/)
-5. [ggplot2 boxplot](http://www.sthda.com/english/wiki/ggplot2-box-plot-quick-start-guide-r-software-and-data-visualization)
-6. [ordering a plot in ggplot2](https://www.r-bloggers.com/how-do-i-re-arrange-ordering-a-plot-revisited/)
+## play around with `gss_cat`: General Social Survey
 
-## 作业
+先看一下数据：
 
-1. 用 readr 包中的函数读取 mouse genes 文件 （从本课程的 Github 页面下载 data/talk04/ ）
-2. 选取常染色体的基因
-3. 画以下两个基因长度 boxplot :
-  * 按染色体序号排列，从 1 开始
-  * 按基因长度 中值 排列，从 短 -> 长 ... 
-  
-** 要求 ** 
+\FontSmall
 
-1. 一周内提交
-2. 代码和两个 pdf 文件 ... 
+```{r echo=FALSE}
+head( gss_cat, n = 15 );
+```
 
+## tv hours vs. religion 
+
+\FontSmall
+
+```{r fig.width=10, fig.height=4}
+relig_summary <- gss_cat %>% group_by(relig) %>%
+  summarise(
+    age = mean(age, na.rm = TRUE),
+    tvhours = mean(tvhours, na.rm = TRUE),
+    n = n()
+  )
+
+ggplot(relig_summary, aes(tvhours, fct_reorder(relig, tvhours))) + geom_point()
+```
+
+
+# section 4: 练习 & 作业
+
+## 练习 & 作业
+-   ```Exercises and homework``` 目录下 ```talk04-homework.Rmd``` 文件；
+
+- 完成时间：见钉群的要求
+
+## 小结
+
+### 今次提要
+
+* IO, project management, working environment management
+* factor ：R 另一个超级重要且难以上手的概念
+  * 定义
+  * 操作
+  * 使用
+* 基础和进阶绘图（配合 factor 讲解）
+
+### 下次预告
+
+* data-wrangler: `dplyr`
+
+### important
+* all codes are available at Github: https://github.com/evolgeniusteam/R-for-bioinformatics

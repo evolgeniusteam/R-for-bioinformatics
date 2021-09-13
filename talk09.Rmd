@@ -174,7 +174,6 @@ plot( 1:10, col = "red" ); ## high level
 points( sample(1:10, 10), col = "darkgreen", pch = 20 ); ## low level
 ```
 
-
 ## low level plots 列表 
 * ``` points ``` : 点图
 * ``` lines ``` : 线图
@@ -471,13 +470,6 @@ ggplot(df, aes( x = month, y = value, colour = col ) ) +
   scale_color_identity(); ## magic !! 
 ```
 
-## 练习：认识并掌握颜色
-
-1. 认识颜色：http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/
-2. ggplot2 画板： https://ggplot2.tidyverse.org/reference/scale_brewer.html
-3. 手动调色：https://ggplot2.tidyverse.org/reference/scale_manual.html
-4. ggplot2 color, best practice: https://www.datanovia.com/en/blog/ggplot-colors-best-tricks-you-will-love/
-
 ## 图层简介
 
 * ``` geom_point ``` , ``` geom_line ```: 点线图，用于揭示两组数据间的关系；
@@ -605,13 +597,13 @@ with( swiss, cor.test( Education, Fertility  )$estimate );
 ```{r echo=FALSE, fig.width=10, fig.height=5, warning=FALSE, message=FALSE}
 m = lm(Fertility ~ Education, swiss);
 c = cor.test( swiss$Fertility, swiss$Education );
-eq <- substitute( atop( italic(y) == a + b %.% italic(x),
-                            italic(r)^2~"="~r2*","~italic(p)==pvalue ),
+eq <- substitute( atop( paste( italic(y), " = ",  a + b %.% italic(x), sep = ""),
+                        paste( italic(r)^2, " = ", r2, ", ", italic(p)==pvalue, sep = "" ) ),
                       list(a = as.vector( format(coef(m)[1], digits = 2) ),
                            b =  as.vector(  format(coef(m)[2], digits = 2) ),
                            r2 =  as.vector( format(summary(m)$r.squared, digits = 2) ),
                            pvalue =  as.vector( format( c$p.value , digits = 2) ) )
-    )
+    ); 
 
 eq <- as.character(as.expression(eq));
 
@@ -625,11 +617,7 @@ ggplot(swiss, aes( x = Education,  y = Fertility ) ) +
 
 ## 公式详解
 
-![equation explained!](images/talk09/equation_explained.png){height=40%}
-
-**注**
-
-* 引号两边必须有 * 或 ~ 字符，~ 表示空格，* 表示什么都没有。~~ 表示两个空格。如果公式中需要 ~ 字符怎么办？？见下面“公式示例3”。
+![equation explained!](images/talk09/equation_explained_paste_version.png){height=40%}
 
 ## 公式详解，cont. 
 
@@ -646,8 +634,8 @@ m = lm(Fertility ~ Education, swiss);
 c = cor.test( swiss$Fertility, swiss$Education );
 
 ## 生成公式
-eq <- substitute( atop( italic(y) == a + b %.% italic(x),
-                            italic(r)^2~"="~r2*","~italic(p)==pvalue ),
+eq <- substitute( atop( paste( italic(y), " = ",  a + b %.% italic(x), sep = ""),
+                        paste( italic(r)^2, " = ", r2, ", ", italic(p)==pvalue, sep = "" ) ),
                       list(a = as.vector( format(coef(m)[1], digits = 2) ),
                            b =  as.vector(  format(coef(m)[2], digits = 2) ),
                            r2 =  as.vector( format(summary(m)$r.squared, digits = 2) ),
@@ -660,37 +648,6 @@ eq <- as.character(as.expression(eq));
 
 
 ## 完整代码
-
-\FontSmall
-
-```{r eval=FALSE}
-## 计算 ... 
-m = lm(Fertility ~ Education, swiss);
-c = cor.test( swiss$Fertility, swiss$Education );
-
-## 生成公式
-eq <- substitute( atop( italic(y) == a + b %.% italic(x),
-                            italic(r)^2~"="~r2*","~italic(p)==pvalue ),
-                      list(a = as.vector( format(coef(m)[1], digits = 2) ),
-                           b =  as.vector(  format(coef(m)[2], digits = 2) ),
-                           r2 =  as.vector( format(summary(m)$r.squared, digits = 2) ),
-                           pvalue =  as.vector( format( c$p.value , digits = 2) ) )
-    ); 
-
-## 用 as.expression 对公式进行转化  !!!! 
-eq <- as.character(as.expression(eq));
-
-## 作图，三个图层；特别是 geom_text 使用自己的 data 和 aes ... 
-ggplot(swiss, aes( x = Education,  y = Fertility ) ) +
-        geom_point( shape = 20 ) +
-        geom_smooth( se = T ) + ## smooth line ... 
-        geom_text( data = NULL,
-                   aes( x = 30, y = 80, label= eq, hjust = 0, vjust = 1), ## hjust, vjust ???
-                   size = 4, parse = TRUE, inherit.aes=FALSE); ## 注意： parse = TRUE ！！！
-```
-
-
-## equation 还可以用 paste 函数写（更简单）
 
 \FontSmall
 
@@ -721,7 +678,45 @@ ggplot(swiss, aes( x = Education,  y = Fertility ) ) +
 ```
 
 
-## 每次都能学到新东西之： hjust 和 vjust 
+## equation 的其它写法（更复杂难懂）
+
+\FontSmall
+
+```{r eval=FALSE}
+## 计算 ... 
+m = lm(Fertility ~ Education, swiss);
+c = cor.test( swiss$Fertility, swiss$Education );
+
+## 生成公式
+eq <- substitute( atop( italic(y) == a + b %.% italic(x),
+                            italic(r)^2~"="~r2*","~italic(p)==pvalue ),
+                      list(a = as.vector( format(coef(m)[1], digits = 2) ),
+                           b =  as.vector(  format(coef(m)[2], digits = 2) ),
+                           r2 =  as.vector( format(summary(m)$r.squared, digits = 2) ),
+                           pvalue =  as.vector( format( c$p.value , digits = 2) ) )
+    ); 
+## 用 as.expression 对公式进行转化  !!!! 
+eq <- as.character(as.expression(eq));
+
+## 作图，三个图层；特别是 geom_text 使用自己的 data 和 aes ... 
+ggplot(swiss, aes( x = Education,  y = Fertility ) ) +
+        geom_point( shape = 20 ) +
+        geom_smooth( se = T ) + ## smooth line ... 
+        geom_text( data = NULL,
+                   aes( x = 30, y = 80, label= eq, hjust = 0, vjust = 1), ## hjust, vjust ???
+                   size = 4, parse = TRUE, inherit.aes=FALSE); ## 注意： parse = TRUE ！！！
+```
+
+## 公式详解
+
+![equation explained!](images/talk09/equation_explained.png){height=40%}
+
+**注**
+
+* 引号两边必须有 * 或 ~ 字符，~ 表示空格，* 表示什么都没有。~~ 表示两个空格。如果公式中需要 ~ 字符怎么办？？见下面“公式示例3”。
+
+
+## `hjust` 和 `vjust` 
 
 \FontNormal
 
@@ -1117,8 +1112,6 @@ ggplot(ToothGrowth, aes(x=factor( dose ), y=len, fill=supp)) +
 
 ``` geom_boxplot() ``` : 默认为 ``` dodge ```
 
-[更多 boxplot 的内容见 link](http://www.sthda.com/english/wiki/ggplot2-box-plot-quick-start-guide-r-software-and-data-visualization).
-
 
 ## change color palette 
 
@@ -1157,9 +1150,6 @@ see here for a complete list: https://ggplot2.tidyverse.org/reference/ggtheme.ht
 
 官方：https://ggplot2.tidyverse.org/reference/theme.html
 
-定制：http://www.sthda.com/english/wiki/ggplot2-themes-and-background-colors-the-3-elements
-
-扩展 theme extensions: https://exts.ggplot2.tidyverse.org/
 
 ## legend 细调
 
@@ -1282,8 +1272,160 @@ ggplot( mtcars, aes( x = wt, y = mpg ) ) +
 ```{r fig.height=4, fig.width=10}
 ggplot( mtcars, aes( x = wt, y = mpg ) ) +
   geom_point() + geom_smooth( method = "lm" ) + 
-  facet_wrap( . ~ cyl , ncol = 2, dir = "v");
+  facet_wrap( . ~ cyl , ncol = 2, dir = "v" );
 ```
+
+# 重点讲述： `ggplot2` 的颜色系统
+
+## 非连续颜色
+
+\FontSmall
+
+```{r fig.height=4, fig.width=10}
+mtcars %>% ggplot( aes(disp, mpg) ) + geom_point( aes( color = factor(cyl) ) )
+```
+
+默认使用 `scale_colour_hue()` 颜色；
+
+## `scale_colour_hue()` 
+
+![default discrete colour palette](images/talk09/ggplot_default_palette.png){height=40%}
+
+\FontSmall
+```{r eval=FALSE}
+scale_colour_hue(
+  ...,
+  h = c(0, 360) + 15,
+  c = 100,
+  l = 65,
+  h.start = 0,
+  direction = 1,
+  na.value = "grey50",
+  aesthetics = "colour"
+)
+```
+
+## `scale_colour_brewer()` 更易用
+
+![](images/talk09/ggplot_brewer_palettes.png){height=70%}
+
+## `scale_colour_brewer()`, cont.
+
+\FontSmall
+
+```{r fig.height=4, fig.width=10}
+mtcars %>% ggplot( aes(disp, mpg) ) + geom_point( aes( color = factor(cyl) ) ) +
+  scale_color_brewer( palette = "Set1" );
+```
+
+## `scale_colour_manual()`
+
+\FontSmall
+
+```{r fig.height=4, fig.width=10}
+mtcars %>% ggplot( aes(disp, mpg) ) + geom_point( aes( color = factor(cyl) ) ) +
+  scale_color_manual( breaks = c("4","6","8"), values = c("red","green","blue") );
+```
+
+## 连续颜色
+
+\FontSmall
+
+```{r fig.height=4, fig.width=10}
+mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = cyl ) );
+```
+
+默认为： `scale_color_gradient()`
+
+## `scale_color_gradient()` 改变颜色更容易一些
+
+\FontSmall
+
+```{r eval=FALSE}
+scale_colour_gradient(
+  ...,
+  low = "#132B43",
+  high = "#56B1F7",
+  space = "Lab",
+  na.value = "grey50",
+  guide = "colourbar",
+  aesthetics = "colour"
+)
+```
+
+改变 low 和 high 的值即可；
+
+## `scale_color_gradient()` 举例
+
+\FontSmall
+
+```{r fig.height=4, fig.width=10}
+mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = cyl ) ) +
+  scale_color_gradient( low = "black", high = "yellow" );
+```
+
+## `scale_color_gradient2()` 3个颜色
+
+\FontSmall
+
+```{r fig.height=4, fig.width=10}
+mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = cyl ) ) +
+  scale_colour_gradient2( low = "black", mid = "red", high = "yellow", midpoint = 6 );
+```
+
+**注意** `midpoint` 参数
+
+## `scale_colour_gradientn` 多个颜色
+
+\FontSmall
+
+```{r fig.height=4, fig.width=10}
+mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = cyl ) ) +
+  scale_colour_gradientn( colors = c("black","red", "yellow") );
+```
+
+## `scale_colour_binned` gradient 颜色的另一种方式
+
+\FontSmall
+
+```{r fig.height=4, fig.width=10}
+mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = cyl ) ) +
+  scale_color_binned( low = "black", high = "yellow" );
+```
+
+## `scale_fill_XX`
+
+* 颜色的使用与 `aes` 是配套的：
+
+\FontSmall
+```{r eval=FALSE}
+## color --> scale_colour_xxx 
+mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = cyl ) ) +
+  scale_colour_gradientn( colors = c("black","red", "yellow") );
+```
+
+## 更多举例
+
+\FontSmall 
+
+```{r fig.height=4, fig.width=10}
+ggplot(ToothGrowth, aes(x=factor(dose), y=len, fill=dose, color = factor(dose))) +
+  geom_boxplot() + scale_fill_gradientn( colors = c("black","red", "yellow") ) +
+  scale_colour_manual( values = c("pink", "green", "blue") )
+```
+
+## 查看  RColorBrewer palette
+
+\FontSmall
+```{r fig.height=2, fig.width=10}
+library(RColorBrewer);
+## 画图
+display.brewer.pal(n = 8, name = 'Dark2')
+
+## 查看颜色的值
+brewer.pal(n = 8, name = "Dark2")
+```
+
 
 ## ggplot2 小结
 
@@ -1321,23 +1463,12 @@ ggplot( mtcars, aes( x = wt, y = mpg ) ) +
 
 # section 7: Exercise and home work
 
-## more to read & 练习
-
-\FontSmall
-
-1. [必读！！！在一张图上画多个panel](https://cran.r-project.org/web/packages/gridExtra/vignettes/arrangeGrob.html)
-2. ggplot2 提供的官方指南从A到Z：
- * [abline](https://ggplot2.tidyverse.org/reference/geom_abline.html)
- * [bar charts] (https://ggplot2.tidyverse.org/reference/geom_bar.html)
- * ...
- 
-3. [color brewer](https://ggplot2.tidyverse.org/reference/scale_brewer.html)
-4. [legends 1](http://www.cookbook-r.com/Graphs/Legends_(ggplot2)/)
-5. [legends](https://www.datanovia.com/en/blog/ggplot-legend-title-position-and-labels/)
-6. 必读！！ R graph gallery : https://www.r-graph-gallery.com
-7. 必读！！ ggplot2 扩展： https://exts.ggplot2.tidyverse.org/
-8. plotly 互动图形的领先者: plot.ly 
-
 ## 下次预告
 
-data summarisation and modeling
+data summary and modeling
+
+## 作业
+
+-   ```Exercises and homework``` 目录下 ```talk09-homework.Rmd``` 文件；
+
+- 完成时间：见钉群的要求

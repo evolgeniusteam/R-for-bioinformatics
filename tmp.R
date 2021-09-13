@@ -1,28 +1,27 @@
+library(caret);
+cv_lm.swiss <- train(
+  Fertility ~ ., 
+  data = swiss, 
+  method = "lm",
+  trControl = trainControl(method = "repeatedcv", number = 10, repeats = 10)
+);
 
-mock_abun <- seq(0.1, 0.3, by = 0.05 ) * 100;
+cv_mars.swiss <- train(
+  Fertility ~.,
+  data = swiss,
+  metric = "RMSE", 
+  method = "earth",
+  trControl = trainControl(method = "repeatedcv", number = 10, repeats = 10)
+)
 
-mockabun <- c( mock_abun, mock_abun, 0 ) / 2;
+data.frame(
+  RMSE = c( RMSE( swiss$Fertility, predict( cv_lm.swiss, swiss ) ), RMSE( swiss$Fertility, predict( cv_mars.swiss, swiss ) ) ),
+  R2 = c( R2( swiss$Fertility, predict( cv_lm.swiss, swiss ) ), R2( swiss$Fertility, predict( cv_mars.swiss, swiss ) ) ),
+  row.names = c("LM", "MARS")
+)
 
-species <- c( "Enterobacteriaceae", "Lachnospiraceae", "Bacteroidaceae", "Lactobacillaceae", "Clostridiaceae", 
-              "Ruminococcaceae", "Prevotellaceae", "Erysipelotrichaceae", "Streptococcaceae", "Enterococcaceae", "Other" );
+library(vip);
+p1 <- vip(cv_lm.swiss, num_features = 5, geom = "point", value = "gcv") + ggtitle("LM:GCV")
+p2 <- vip(cv_mars.swiss, num_features = 5, geom = "point", value = "gcv") + ggtitle("MARS:GCV")
 
-speabun <- tibble( id = character(), genus = character(), abundance = double() );
-
-for( i in LETTERS[1:10] ){
-  speabun <- bind_rows( speabun, 
-                        tibble( id = i, genus = species, abundance = sample( mockabun, 11, replace = FALSE ) ) );
-}
-
-write_tsv( speabun, path =  "data/talk09/mock_species_abundance.txt" );
-
-
-
-
-
-
-
-plot(1:10)
-
-a = "abc"
-
-a <- data.frame(  col1 = 1:10, col2 = LETTERS[1:10] );
+gridExtra::grid.arrange(p1, p2, ncol = 2)

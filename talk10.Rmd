@@ -256,6 +256,14 @@ table( combined$type );
 
 \*\* 注 \*\* ： `table` 还接受 `data.frame` 作为输入，比如 `table( combined )`。请自行尝试并理解结果
 
+## `count` in `dplyr` 
+
+\FontSmall
+
+```{r}
+combined %>% dplyr::count( type );
+```
+
 # section 3: two column data: part 1
 
 ## 数据介绍: a numeric vector and a facterial vector
@@ -837,10 +845,6 @@ res5$R2; ## 总 R2
 res5$lmg; ## 每个因素的贡献； 
 ```
 
-\FontNormal
-
-more to read about the interaction effects: <http://oak.ucc.nau.edu/rh232/courses/EPS625/Handouts/Two-way%20ANOVA/Understanding%20the%20Two-way%20ANOVA.pdf>
-
 ## 用模型进行预测 `predict`
 
 `model2 = lm(formula = wt ~ class + age, data = wts2)`
@@ -930,12 +934,6 @@ influence(fit) # regression diagnostics
 
 ## multivariable analysis
 
-more to read:
-
-1.  <https://www.statmethods.net/stats/regression.html>
-
-2.  <https://data.library.virginia.edu/getting-started-with-multivariate-multiple-regression/>
-
 \FontSmall
 
 ```{r eval=FALSE}
@@ -961,15 +959,11 @@ step$anova # display results
 
 ## extended reading
 
-1.  repeated measures ANOVA : <http://rcompanion.org/handbook/I_09.html>, 同一变量、不同时间段的重复测量（ 对上例中学生的体重进行多次测量 ）
+1.  repeated measures ANOVA , 同一变量、不同时间段的重复测量（ 对上例中学生的体重进行多次测量 ）
 
-2.  correlation and linear regression: <http://rcompanion.org/handbook/I_10.html>
+2.  correlation and linear regression 
 
-3.  non-linear regression: <https://www.amazon.com/Statistical-Tools-Nonlinear-Regression-Statistics/dp/0387400818>
-
-\FontNormal
-
-更多详见：<http://rcompanion.org/handbook/I_08.html>
+3.  non-linear regression
 
 # section 6: non-parametric test
 

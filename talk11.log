@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.11.28)  10 APR 2021 10:33
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.11.28)  9 AUG 2021 06:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**talk01.tex
-(./talk01.tex
+**talk11.tex
+(./talk11.tex
 LaTeX2e <2018-12-01>
 (/usr/local/texlive/2019/texmf-dist/tex/latex/beamer/beamer.cls
 Document Class: beamer 2018/12/02 v3.55 A class for typesetting presentations
@@ -1088,65 +1088,7 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \fb@frh=\dimen310
 \FrameRule=\dimen311
 \FrameSep=\dimen312
-) (/usr/local/texlive/2019/texmf-dist/tex/latex/tools/longtable.sty
-Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)+ FMi change
-\LTleft=\skip71
-\LTright=\skip72
-\LTpre=\skip73
-\LTpost=\skip74
-\LTchunksize=\count345
-\LTcapwidth=\dimen313
-\LT@head=\box80
-\LT@firsthead=\box81
-\LT@foot=\box82
-\LT@lastfoot=\box83
-\LT@cols=\count346
-\LT@rows=\count347
-\c@LT@tables=\count348
-\c@LT@chunks=\count349
-\LT@p@ftn=\toks48
-) (/usr/local/texlive/2019/texmf-dist/tex/latex/booktabs/booktabs.sty
-Package: booktabs 2016/04/27 v1.618033 publication quality tables
-\heavyrulewidth=\dimen314
-\lightrulewidth=\dimen315
-\cmidrulewidth=\dimen316
-\belowrulesep=\dimen317
-\belowbottomsep=\dimen318
-\aboverulesep=\dimen319
-\abovetopsep=\dimen320
-\cmidrulesep=\dimen321
-\cmidrulekern=\dimen322
-\defaultaddspace=\dimen323
-\@cmidla=\count350
-\@cmidlb=\count351
-\@aboverulesep=\dimen324
-\@belowrulesep=\dimen325
-\@thisruleclass=\count352
-\@lastruleclass=\count353
-\@thisrulewidth=\dimen326
-) (/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
-(/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 64.
-\captionmargin=\dimen327
-\captionmargin@=\dimen328
-\captionwidth=\dimen329
-\caption@tempdima=\dimen330
-\caption@indent=\dimen331
-\caption@parindent=\dimen332
-\caption@hangindent=\dimen333
 )
-\c@caption@flags=\count354
-\c@ContinuedFloat=\count355
-Package caption Info: beamer document class.
-Package caption Info: hyperref package is loaded.
-Package caption Info: Hyperref support is turned off
-(caption)             because hyperref has stopped early.
-Package caption Info: longtable package is loaded.
-(/usr/local/texlive/2019/texmf-dist/tex/latex/caption/ltcaption.sty
-Package: ltcaption 2018/08/26 v1.4-95 longtable captions (AR)
-))
 
 Package xeCJK Warning: Fandol is being set as the default font for CJK text.
 (xeCJK)                Please make sure it has been properly installed.
@@ -1184,49 +1126,49 @@ g=tex-text;"
 
 (/usr/local/texlive/2019/texmf-dist/tex/xelatex/xecjk/xunicode-addon.sty
 Package: xunicode-addon 2019/04/07 v3.7.2 addon file for xunicode
-\l__xunadd_tmp_coffin=\box84
-\l__xunadd_circle_coffin=\box85
-\l_xunadd_slot_int=\count356
+\l__xunadd_tmp_coffin=\box80
+\l__xunadd_circle_coffin=\box81
+\l_xunadd_slot_int=\count345
 ) (/usr/local/texlive/2019/texmf-dist/tex/xelatex/xunicode/xunicode.sty
 File: xunicode.sty 2011/09/09 v0.981 provides access to latin accents and many 
 other characters in Unicode lower plane
 *** Reloading Xunicode for encoding 'TU' ***
 ) (/usr/local/texlive/2019/texmf-dist/tex/xelatex/xecjk/xunicode-extra.def
 File: xunicode-extra.def 2019/04/07 v3.7.2 extra definition for xunicode
-) (./talk01.aux)
-\openout1 = `talk01.aux'.
+) (./talk11.aux)
+\openout1 = `talk11.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 123.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 123.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 117.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 117.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 123.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 123.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 117.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 117.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    ... okay on input line 117.
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1262,68 +1204,68 @@ LaTeX Font Info:    ... okay on input line 123.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box86
-Package hyperref Info: Link coloring OFF on input line 123.
+\AtBeginShipoutBox=\box82
+Package hyperref Info: Link coloring OFF on input line 117.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count357
+\c@section@level=\count346
 )
-LaTeX Info: Redefining \ref on input line 123.
-LaTeX Info: Redefining \pageref on input line 123.
-LaTeX Info: Redefining \nameref on input line 123.
-(./talk01.out) (./talk01.out)
+LaTeX Info: Redefining \ref on input line 117.
+LaTeX Info: Redefining \pageref on input line 117.
+LaTeX Info: Redefining \nameref on input line 117.
+(./talk11.out) (./talk11.out)
 \@outlinefile=\write6
-\openout6 = `talk01.out'.
+\openout6 = `talk11.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 123.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 117.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/bx/n on input line 123.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/bx/n on input line 117.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 123.
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 117.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 123.
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 117.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmr/m/n on input line 123.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 123.
+(Font)                  OT1/lmss/m/n --> TU/lmr/m/n on input line 117.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmss/bx/n on input line 123.
+(Font)                  OT1/lmr/bx/n --> TU/lmss/bx/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> TU/lmss/bx/n on input line 123.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 123.
+(Font)                  OT1/lmr/bx/n --> TU/lmss/bx/n on input line 117.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 123.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/m/n on input line 123.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 123.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/m/n on input line 117.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmss/m/it on input line 123.
+(Font)                  OT1/lmr/m/it --> TU/lmss/m/it on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> TU/lmss/m/it on input line 123.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 123.
+(Font)                  OT1/lmr/bx/it --> TU/lmss/m/it on input line 117.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 123.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 123.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 117.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  TU/lmss/m/n --> TU/lmss/bx/n on input line 123.
+(Font)                  TU/lmss/m/n --> TU/lmss/bx/n on input line 117.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  TU/lmss/m/it --> TU/lmss/bx/it on input line 123.
+(Font)                  TU/lmss/m/it --> TU/lmss/bx/it on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmr/bx/n on input line 123.
+(Font)                  OT1/lmss/bx/n --> TU/lmr/bx/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  TU/lmss/bx/n --> TU/lmss/bx/n on input line 123.
+(Font)                  TU/lmss/bx/n --> TU/lmss/bx/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  TU/lmss/m/n --> TU/lmss/bx/n on input line 123.
+(Font)                  TU/lmss/m/n --> TU/lmss/bx/n on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  TU/lmss/m/it --> TU/lmss/bx/it on input line 123.
+(Font)                  TU/lmss/m/it --> TU/lmss/bx/it on input line 117.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  TU/lmtt/m/n --> TU/lmtt/bx/n on input line 123.
+(Font)                  TU/lmtt/m/n --> TU/lmtt/bx/n on input line 117.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/translator/translator-basic-dicti
 onary-English.dict
@@ -1349,7 +1291,7 @@ Dictionary: translator-numbers-dictionary, Language: English
 tionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \microtypecontext on input line 123.
+LaTeX Info: Redefining \microtypecontext on input line 117.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
@@ -2151,238 +2093,83 @@ Package microtype Warning: Unknown slot number of character
 (microtype)                in font encoding `TU' in protrusion list
 (microtype)                `T1-default'.
 
-Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: End \AtBeginDocument code.
-(./talk01.nav)
-Overfull \hbox (8.4254pt too wide) in paragraph at lines 123--123
- [][][][]  
- []
+(./talk11.nav) [1
 
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[1
+] [2
 
 ]
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[2
-
-]
-LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/m/n' will be
-(Font)              scaled to size 10.60547pt on input line 146.
+LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
+(Font)              scaled to size 13.14908pt on input line 138.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `FandolHei-Regular' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 Package microtype Info: Character `\AE ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `\quotesinglbase ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `\quotedblbase ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `\guilsinglleft ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `\guilsinglright ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `\guillemotleft ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `\guillemotright ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `\textexclamdown ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `\textquestiondown ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
 [3
 
-]
-LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
-(Font)              scaled to size 9.99878pt on input line 174.
-Package microtype Info: Character `\AE ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\quotesinglbase ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\quotedblbase ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guilsinglleft ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guilsinglright ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guillemotleft ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guillemotright ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\textexclamdown ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\textquestiondown ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
-LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
-(Font)              scaled to size 13.14908pt on input line 174.
-Package microtype Info: Character `\AE ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\quotesinglbase ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\quotedblbase ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guilsinglleft ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guilsinglright ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guillemotleft ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\guillemotright ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\textexclamdown ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `\textquestiondown ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/14.4'.
-(microtype)             Ignoring protrusion settings for this character.
+] [4
 
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[4
+] [5
 
 ]
-File: images/talk01/ML-kangning.png Graphic file (type bmp)
-<images/talk01/ML-kangning.png>
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/m/n' will be
-(Font)              scaled to size 9.68536pt on input line 185.
+(Font)              scaled to size 10.60547pt on input line 3.
 Package microtype Info: Character `\AE ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `\quotesinglbase ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `\quotedblbase ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `\guilsinglleft ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `\guilsinglright ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `\guillemotleft ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `\guillemotright ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `\textexclamdown ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 Package microtype Info: Character `\textquestiondown ' is missing
-(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10'.
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[5
-
-]
-File: images/talk01/ML-anyuan.png Graphic file (type bmp)
-<images/talk01/ML-anyuan.png>
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[6
-
-]
-File: images/talk01/ML-xueyu.png Graphic file (type bmp)
-<images/talk01/ML-xueyu.png>
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[7
-
-]
-File: images/talk01/ML-weihuachen.png Graphic file (type bmp)
-<images/talk01/ML-weihuachen.png>
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[8
-
-]
-File: images/talk01/ML_mSystems.png Graphic file (type bmp)
-<images/talk01/ML_mSystems.png>
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[9
-
-]
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[10
-
-]
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[11
-
-]
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[12
-
-]
-\openout4 = `talk01.vrb'.
-
-(./talk01.vrb
 
 Package fontspec Warning: Font "FandolFang-Regular" does not contain requested
 (fontspec)                Script "CJK".
@@ -2393,10 +2180,10 @@ File: mt-LatinModernRoman.cfg 2013/03/13 v1.0 microtype config. file: Latin Mod
 ern Roman (RS)
 )
 
-Package fontspec Info: FandolFang-Regular scale = 0.9410493650884307.
+Package fontspec Info: FandolFang-Regular scale = 0.9410472510420787.
 
 
-Package fontspec Info: FandolFang-Regular scale = 0.9410493650884307.
+Package fontspec Info: FandolFang-Regular scale = 0.9410472510420787.
 
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: TU).
@@ -2412,17 +2199,23 @@ nsion={.otf}].
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[0.9410493650884307]"[FandolFang-Regular.otf]/OT:ma
+(fontspec)             <->s*[0.9410472510420787]"[FandolFang-Regular.otf]/OT:ma
 pping=tex-text;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
+) [6
 
-LaTeX Font Warning: Font shape `TU/FandolFang-Regular(0)/m/it' undefined
-(Font)              using `TU/FandolFang-Regular(0)/m/n' instead on input line 
-17.
+]
+File: talk11_files/figure-beamer/unnamed-chunk-2-1.pdf Graphic file (type pdf)
+<use talk11_files/figure-beamer/unnamed-chunk-2-1.pdf>
+[7
 
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb
 LaTeX Font Info:    Font shape `TU/FandolFang-Regular(0)/m/n' will be
-(Font)              scaled to size 6.58739pt on input line 17.
+(Font)              scaled to size 6.58728pt on input line 12.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `FandolFang-Regular' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
@@ -2454,34 +2247,141 @@ Package microtype Info: Character `\textexclamdown ' is missing
 Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolFang-Regular(0)/m/n/7'.
 (microtype)             Ignoring protrusion settings for this character.
-)
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
+) [8
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb) [9
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb) [10
+
+]
+File: talk11_files/figure-beamer/unnamed-chunk-6-1.pdf Graphic file (type pdf)
+<use talk11_files/figure-beamer/unnamed-chunk-6-1.pdf>
+[11
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb
+LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
+(Font)              scaled to size 6.39192pt on input line 30.
+Package microtype Info: Character `\AE ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotesinglbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotedblbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textexclamdown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textquestiondown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/m/n' will be
+(Font)              scaled to size 6.77975pt on input line 30.
+Package microtype Info: Character `\AE ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotesinglbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotedblbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textexclamdown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textquestiondown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/m/n/7'.
+(microtype)             Ignoring protrusion settings for this character.
+) [12
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb)
+Overfull \vbox (1.20848pt too high) detected at line 335
  []
 
 [13
 
 ]
-File: talk01_files/figure-beamer/plot1-1.pdf Graphic file (type pdf)
-<use talk01_files/figure-beamer/plot1-1.pdf>
+\openout4 = `talk11.vrb'.
 
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[14
+(./talk11.vrb) [14
 
 ]
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
+\openout4 = `talk11.vrb'.
 
-[15
+(./talk11.vrb
+File: talk11_files/figure-beamer/unnamed-chunk-11-1.pdf Graphic file (type pdf)
+
+<use talk11_files/figure-beamer/unnamed-chunk-11-1.pdf>
+) [15
 
 ]
-\openout4 = `talk01.vrb'.
+\openout4 = `talk11.vrb'.
 
-(./talk01.vrb
+(./talk11.vrb) [16
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb)
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 434.
+[17
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb) [18
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb)
+Overfull \vbox (19.11818pt too high) detected at line 513
+ []
+
+[19
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <7> not available
 (Font)              Font shape `TU/lmtt/b/n' tried instead on input line 7.
 
@@ -2491,61 +2391,133 @@ LaTeX Font Warning: Font shape `TU/lmtt/bx/it' in size <7> not available
 
 LaTeX Font Warning: Font shape `TU/FandolFang-Regular(0)/bx/it' undefined
 (Font)              using `TU/FandolFang-Regular(0)/m/n' instead on input line 
-7.
+9.
 
 )
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[16
-
-]
-File: talk01_files/figure-beamer/plot2-1.pdf Graphic file (type pdf)
-<use talk01_files/figure-beamer/plot2-1.pdf>
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[17
-
-]
-File: images/talk01/google_trends.png Graphic file (type bmp)
-<images/talk01/google_trends.png>
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[18
-
-]
-File: images/talk01/github_Most-pull-requests-1.png Graphic file (type bmp)
-<images/talk01/github_Most-pull-requests-1.png>
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[19
-
-]
-File: images/talk01/programming_language_popularity_by_years_2008_2018.png Grap
-hic file (type bmp)
-<images/talk01/programming_language_popularity_by_years_2008_2018.png>
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
+Overfull \vbox (1.19447pt too high) detected at line 551
  []
 
 [20
 
 ]
-File: images/talk01/R_python_and_matlab.png Graphic file (type bmp)
-<images/talk01/R_python_and_matlab.png>
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 379
-.
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb
+File: talk11_files/figure-beamer/unnamed-chunk-17-1.pdf Graphic file (type pdf)
+
+<use talk11_files/figure-beamer/unnamed-chunk-17-1.pdf>
+)
+Overfull \vbox (212.95013pt too high) detected at line 597
+ []
+
+[21
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb) [22
+
+]
+LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
+(Font)              scaled to size 9.99878pt on input line 662.
+Package microtype Info: Character `\AE ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotesinglbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotedblbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textexclamdown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textquestiondown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+[23
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb)
+Overfull \vbox (207.16945pt too high) detected at line 743
+ []
+
+[24
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb)
+Overfull \vbox (12.74222pt too high) detected at line 794
+ []
+
+[25
+
+] [26
+
+]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <6> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 818.
+[27
+
+] [28
+
+]
+LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
+(Font)              scaled to size 5.47879pt on input line 826.
+Package microtype Info: Character `\AE ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotesinglbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotedblbase ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotleft ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotright ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textexclamdown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textquestiondown ' is missing
+(microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+[29
+
+] [30
+
+] [31
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 17.
+
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -2553,420 +2525,72 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 379.
-
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 17.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 379
-.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 17.
+
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 379
-.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 17.
+
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 379.
+(Font)              <10.95> on input line 17.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 379.
+(Font)              <8> on input line 17.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 379.
-LaTeX Font Info:    Try loading font information for U+msa on input line 379.
+(Font)              <6> on input line 17.
+LaTeX Font Info:    Try loading font information for U+msa on input line 17.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 379.
+LaTeX Font Info:    Try loading font information for U+msb on input line 17.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 379.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 17.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 379.
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[21
-
-]
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[22
-
-]
-File: images/talk01/evolview_showcase3.png Graphic file (type bmp)
-<images/talk01/evolview_showcase3.png>
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[23
-
-]
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[24
-
-]
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[25
-
-]
-File: images/talk01/download_R_from_selected_mirror.png Graphic file (type bmp)
-
-<images/talk01/download_R_from_selected_mirror.png>
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[26
-
-]
-File: images/talk01/R_linux_installer_name.png Graphic file (type bmp)
-<images/talk01/R_linux_installer_name.png>
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[27
-
-]
-File: images/talk01/rstudio_mainpage_screenshot.png Graphic file (type bmp)
-<images/talk01/rstudio_mainpage_screenshot.png>
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[28
-
-]
-File: images/talk01/RStudio_versions.png Graphic file (type bmp)
-<images/talk01/RStudio_versions.png>
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[29
-
-]
-File: images/talk01/RStudio_interface.png Graphic file (type bmp)
-<images/talk01/RStudio_interface.png>
-
-Overfull \vbox (32.46336pt too high) detected at line 532
- []
-
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[30
-
-]
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[31
-
-]
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[32
-
-]
-File: images/talk01/RStudio_code_autocomplete.png Graphic file (type bmp)
-<images/talk01/RStudio_code_autocomplete.png>
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[33
-
-]
-File: images/talk01/Rstudio_variables.png Graphic file (type bmp)
-<images/talk01/Rstudio_variables.png>
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[34
-
-]
-File: images/talk01/RStudio_export_plots.png Graphic file (type bmp)
-<images/talk01/RStudio_export_plots.png>
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[35
-
-]
-File: images/talk01/RStudio_installed_packages.png Graphic file (type bmp)
-<images/talk01/RStudio_installed_packages.png>
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[36
-
-]
-File: images/talk01/RStudio_install_package.png Graphic file (type bmp)
-<images/talk01/RStudio_install_package.png>
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[37
-
-]
-\openout4 = `talk01.vrb'.
-
-(./talk01.vrb)
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[38
-
-]
-\openout4 = `talk01.vrb'.
-
-(./talk01.vrb
-File: images/talk01/choosecran_mirror.png Graphic file (type bmp)
-<images/talk01/choosecran_mirror.png>
-)
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[39
-
-]
-\openout4 = `talk01.vrb'.
-
-(./talk01.vrb
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 15.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 15.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 15.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 15.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 15.
-LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 15.
-File: images/talk01/tidyverse.png Graphic file (type bmp)
-<images/talk01/tidyverse.png>
-)
-Overfull \vbox (7.80357pt too high) detected at line 746
- []
-
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[40
-
-]
-File: images/talk01/rstudio_server_login_page_web.png Graphic file (type bmp)
-<images/talk01/rstudio_server_login_page_web.png>
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[41
-
-]
-File: images/talk01/rstudio_server_interface.png Graphic file (type bmp)
-<images/talk01/rstudio_server_interface.png>
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[42
-
-]
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[43
-
-]
-File: images/talk01/suvminer_example_output.png Graphic file (type bmp)
-<images/talk01/suvminer_example_output.png>
-
-Overfull \vbox (15.63893pt too high) detected at line 825
- []
-
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[44
-
-]
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 848.
-File: images/talk01/ggvis_v0_4.png Graphic file (type bmp)
-<images/talk01/ggvis_v0_4.png>
-
-Overfull \vbox (22.65208pt too high) detected at line 848
- []
-
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[45
-
-]
-File: images/talk01/shiny_example.png Graphic file (type bmp)
-<images/talk01/shiny_example.png>
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[46
-
-]
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[47
-
-]
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[48
-
-]
-File: images/talk01/phpMyAdmin.png Graphic file (type bmp)
-<images/talk01/phpMyAdmin.png>
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[49
-
-]
-File: images/talk01/phpmyadmin_database_view.png Graphic file (type bmp)
-<images/talk01/phpmyadmin_database_view.png>
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[50
-
-]
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[51
-
-]
-\openout4 = `talk01.vrb'.
-
-(./talk01.vrb)
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[52
-
-]
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[53
-
-]
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[54
-
-]
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[55
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 17.
+) [32
 
 ]
 \tf@nav=\write7
-\openout7 = `talk01.nav'.
+\openout7 = `talk11.nav'.
 
 \tf@toc=\write8
-\openout8 = `talk01.toc'.
+\openout8 = `talk11.toc'.
 
 \tf@snm=\write9
-\openout9 = `talk01.snm'.
+\openout9 = `talk11.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1060.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1060.
-(./talk01.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1060.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1060.
-
-Package rerunfilecheck Info: File `talk01.out' has not changed.
-(rerunfilecheck)             Checksum: BB6E31FD6CAB6AE82ECBE264736F8893.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 864.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 864.
+(./talk11.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 864.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 864.
+Package rerunfilecheck Info: File `talk11.out' has not changed.
+(rerunfilecheck)             Checksum: C8621282104F4C0DD43B9CA3640FB8EC.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 42082 strings out of 492916
- 845047 string characters out of 6133344
- 951590 words of memory out of 5000000
- 45464 multiletter control sequences out of 15000+600000
- 555980 words of font info for 94 fonts, out of 8000000 for 9000
+ 40505 strings out of 492916
+ 810336 string characters out of 6133344
+ 923407 words of memory out of 5000000
+ 43919 multiletter control sequences out of 15000+600000
+ 544566 words of font info for 75 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 68i,15n,129p,792b,854s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,15n,129p,792b,908s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on talk01.pdf (55 pages).
+Output written on talk11.pdf (32 pages).

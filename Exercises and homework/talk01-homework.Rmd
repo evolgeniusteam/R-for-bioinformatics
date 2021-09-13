@@ -1,13 +1,18 @@
 ---
 title: "talk01 练习与作业"
+documentclass: ctexart
 output:
+  pdf_document:
+    latex_engine: xelatex
+    toc: true
+    toc_depth: 2
   word_document: default
   html_document:
     df_print: paged
 knit: (
   function(inputFile, encoding) { 
 
-    pSubTitle <- '陈卫华-学号-talk01作业'
+    pSubTitle <- 'talk01-homework'
 
     rmarkdown::render( 
       input       = inputFile, 
@@ -15,6 +20,14 @@ knit: (
       params      = list(sub_title = pSubTitle),      
       output_file = pSubTitle) })
 ---
+
+## 练习和作业说明
+
+将相关代码填写入以 \`\`\`{r} \`\`\` 标志的代码框中，运行并看到正确的结果；
+
+完成后，用工具栏里的"Knit"按键生成PDF文档；
+
+**将生成的PDF**改为：**`姓名-学号-talk01作业.pdf`**，并提交到老师指定的平台/钉群。
 
 ## talk01 内容回顾
 
@@ -31,9 +44,9 @@ knit: (
 
 将相关代码填写入以 \`\`\`{r} \`\`\` 标志的代码框中，运行并看到正确的结果；
 
-完成后，用工具栏里的"Knit"按键生成word文档；
+完成后，用工具栏里的**Knit**按键生成PDF文档；
 
-确认得到的文档名为：`姓名-学号-talk##作业.docx`。
+将得到的PDF文件**更名**为：`姓名-学号-talk##作业.pdf`。
 
 将word文档提交到老师指定的平台/钉群。
 

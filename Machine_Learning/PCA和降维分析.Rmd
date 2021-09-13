@@ -429,6 +429,7 @@ knitr::kable( head(crc.meta, n = 3) );
 
 ```{r}
 ## get meta-data for the target project 
+library(tidyverse);
 meta.data <- crc.meta;
 meta.data$Group2 <- if_else( meta.data$Group == "CTR", 0, 1 );
 meta.data <- meta.data %>% filter( Project == "PRJEB7774" );

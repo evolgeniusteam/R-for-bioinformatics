@@ -519,7 +519,39 @@ account)](images/talk01/rstudio_server_login_page_web.png){height="30%"}
 -   rmarkdown : create professional documents
 -   knitr: convert rmarkdown to pdf, html and more ...
 
-# Section 4: other tools used in our group
+# Section 4: HOWTO do homework?
+
+## How to do homework and submit the results?
+
+* R 4.0 or newer
+* RStudio ver 1.4 or newer 
+
+* When using Windows
+  * better to log into an English user name, without spaces or special letters in the user name
+  * install **R** and **RStudio** to **default locations**
+
+* Download the whole course from GITHUB (https://github.com/evolgeniusteam/R-for-bioinformatics); better to use **GitHub Desktop** app to fetch and sync with the course
+
+## How to do homework and submit the results? cont.
+
+* Open `R for bioinformatics 讲义.Rproj` in the downloaded folder using **RStudio**
+
+* Go to `Excercises and homework` folder in your **RStudio**
+
+* Open `talk##-homework.Rmd` file using **RStudio**
+
+* Install required packages
+  * **tidyverse**
+
+* Do homework
+
+* use `Knit` to generate PDF file, change its name to `姓名-学号-talk##作业.pdf`
+
+* 通过`钉钉`，在规定的时间内提交
+
+* 现场演示 ... 
+
+# Section 5: other tools used in our group
 
 ## Database tools
 
@@ -570,7 +602,7 @@ dbCon <- dbConnect(MySQL(), user="r4ds", password="r4ds",
                    dbname=mysql.dbname,
                    unix.socket="/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock");
 
-dat <- dbGetQuery(dbCon, "SELECT * FROM grades_stats");
+dat <- dbGetQuery(dbCon, "SELECT * FROM grades");
 
 ## -- 任务： 为每个人计算：平均成绩、上课总数、及格门数、不及格门数
 stats <- dat %>% group_by(name) %>% 
@@ -593,21 +625,33 @@ knitr::kable(dat);
 knitr::kable(stats);
 ```
 
+# section 6: Concluding remarks & 作业
+
 ## Concluding remarks
+
+### 本期回顾
 
 -   生信分析必备编程语言
 -   强大、专业又好用
 -   RStudio及其众多扩展包
 -   To be continued
 
+### 下期预告
+
+* 数字和字符串
+* 整数、小数、逻辑
+* 数据类型之间转换；自动规则
+* ```matrix```
+
 ### About the course
 
 -   all codes are available at Github:
     <https://github.com/evolgeniusteam/R-for-bioinformatics>
 
-### 作业
+### important
+* all codes are available at Github: https://github.com/evolgeniusteam/R-for-bioinformatics
 
--   安装R、RStudio
--   熟悉Github
--   自学R编程
--   更多见：```Exercises and homework``` 目录下 ```talk01-homework.Rmd``` 文件
+## 作业
+
+-   ```Exercises and homework``` 目录下 ```talk01-homework.Rmd``` 文件；
+- 完成时间：见钉群的要求

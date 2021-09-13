@@ -1,0 +1,10 @@
+name	course	grade
+Zhi Liu	Microbiology	100
+Zhi Liu	English	50
+Zhi Liu	Chinese	69
+Weihua Chen	Microbiology	89
+Weihua Chen	English	99
+Weihua Chen	Bioinformatics	99
+Kang Ning	Bioinformatics	100
+Kang Ning	Chinese	20
+Kang Ning	Chemistry	76
