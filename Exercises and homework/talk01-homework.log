@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.11.28)  13 SEP 2021 16:06
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.11.28)  14 SEP 2021 11:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1209,26 +1209,26 @@ LaTeX Font Info:    Font shape `TU/FandolFang-Regular(0)/m/n' will be
 
 LaTeX Font Warning: Font shape `TU/FandolFang-Regular(0)/m/it' undefined
 (Font)              using `TU/FandolFang-Regular(0)/m/n' instead on input line 
-196.
+194.
 
 
 LaTeX Font Warning: Font shape `TU/lmtt/bx/it' in size <10.53937> not available
 
-(Font)              Font shape `TU/lmtt/b/sl' tried instead on input line 206.
+(Font)              Font shape `TU/lmtt/b/sl' tried instead on input line 204.
 
 
 LaTeX Font Warning: Font shape `TU/FandolFang-Regular(0)/bx/it' undefined
 (Font)              using `TU/FandolFang-Regular(0)/bx/n' instead on input line
- 206.
+ 204.
 
 LaTeX Font Info:    Font shape `TU/FandolFang-Regular(0)/bx/n' will be
-(Font)              scaled to size 10.21724pt on input line 206.
+(Font)              scaled to size 10.21724pt on input line 204.
 LaTeX Font Info:    Font shape `TU/FandolSong-Regular(0)/m/sl' in size <10.5393
 7> not available
 (Font)              Font shape `TU/FandolSong-Regular(0)/m/it' tried instead on
- input line 208.
+ input line 206.
 [2]
-Overfull \hbox (25.72232pt too wide) in paragraph at lines 216--216
+Overfull \hbox (25.72232pt too wide) in paragraph at lines 214--214
 []\TU/lmtt/m/n/10.53937 ## Warning: Stacking not well defined when not anchored
  on the axis[] 
  []
@@ -1240,12 +1240,12 @@ pe pdf)
 File: talk01-homework_files/figure-latex/unnamed-chunk-3-1.pdf Graphic file (ty
 pe pdf)
 <use talk01-homework_files/figure-latex/unnamed-chunk-3-1.pdf>
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 266.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 264.
 [5]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 266.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 264.
 (./talk01-homework.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 266.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 266.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 264.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 264.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 

@@ -45,7 +45,7 @@ knitr::knit_hooks$set(error = color_block('red'))
 -   arrange()
 -   group_by() ...
 
-## 前情提要, cont. 
+## 前情提要, cont.
 
 ### factors (部分)
 
@@ -81,10 +81,9 @@ protein-protein interaction data
 
 ## STRING is one of the most cited resources
 
-![citation of ver11](images/talk06/STRING_google_scholar_citation_2021.png){height="70%"}
-screenshot took in May 2021
+![citation of ver11](images/talk06/STRING_google_scholar_citation_2021.png){height="70%"} screenshot took in May 2021
 
-more tools at Peer Bork's group: https://scholar.google.com/citations?hl=en&user=M6Etr6oAAAAJ&view_op=list_works&sortby=pubdate
+more tools at Peer Bork's group: <https://scholar.google.com/citations?hl=en&user=M6Etr6oAAAAJ&view_op=list_works&sortby=pubdate>
 
 ## a typical STRING plot
 
@@ -655,9 +654,10 @@ mtcars %<>% transform(cyl = cyl * 2);
 # section 4: Exercise & home work
 
 ## 练习 & 作业
--   ```Exercises and homework``` 目录下 ```talk06-homework.Rmd``` 文件；
 
-- 完成时间：见钉群的要求
+-   `Exercises and homework` 目录下 `talk06-homework.Rmd` 文件；
+
+-   完成时间：见钉群的要求
 
 ## 小结
 
@@ -669,8 +669,8 @@ mtcars %<>% transform(cyl = cyl * 2);
 
 ### 下次预告
 
-* Strings and regular expression
+-   Strings and regular expression
 
 ### important
-* all codes are available at Github: https://github.com/evolgeniusteam/R-for-bioinformatics
 
+-   all codes are available at Github: <https://github.com/evolgeniusteam/R-for-bioinformatics>

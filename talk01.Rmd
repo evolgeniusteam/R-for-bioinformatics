@@ -525,12 +525,14 @@ account)](images/talk01/rstudio_server_login_page_web.png){height="30%"}
 
 * R 4.0 or newer
 * RStudio ver 1.4 or newer 
+* XeLaTeX - for converting TEX to PDF
 
-* When using Windows
+* Download the whole course from GITHUB (https://github.com/evolgeniusteam/R-for-bioinformatics); better to use **GitHub Desktop** app to fetch and sync with the course
+
+* **When using Windows**
   * better to log into an English user name, without spaces or special letters in the user name
   * install **R** and **RStudio** to **default locations**
 
-* Download the whole course from GITHUB (https://github.com/evolgeniusteam/R-for-bioinformatics); better to use **GitHub Desktop** app to fetch and sync with the course
 
 ## How to do homework and submit the results? cont.
 
