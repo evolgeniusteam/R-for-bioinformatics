@@ -1,9 +1,11 @@
 ---
 title: "talk01 练习与作业"
 documentclass: ctexart
+
 output:
-  pdf_document:
-    latex_engine: xelatex
+  rticles::ctex:
+    fig_caption: yes
+    number_sections: yes
     toc: true
     toc_depth: 2
   word_document: default

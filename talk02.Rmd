@@ -46,7 +46,8 @@ knitr::knit_hooks$set(error = color_block('red'))
 
 数字
 
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 ```{r}
 ## 整数
 287
@@ -63,7 +64,8 @@ knitr::knit_hooks$set(error = color_block('red'))
 
 ## 逻辑符号
 
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 真
 ```{r eval=FALSE}
 TRUE
@@ -86,6 +88,7 @@ F
 
 字符串则是可以是任何字符的组合，由单引号或双引号包括。比如：
 
+\FontSmall
 ```{r eval=FALSE}
 'a sentence' ## 单括号
 "一个字符串" ## 双括号
@@ -97,14 +100,17 @@ F
 
 简单数据类型包括vector和矩阵，它们都可以包含某一种基本数据类型的多个数值，比如由多个数字组成的矩阵，多个字符串组成的vector等。但它们**只能包含单一数据类型**；这一点稍后会有解释。
 
+\FontSmall
 ```{r eval=FALSE}
 c(100, 20, 30) ## 整数 vector 
 c("字符串", "数组","是我") ## 字符串 vector
 c(TRUE, FALSE, TRUE, T, F) ## 一个逻辑 vector
 ```
 
+\FontNormal
 如上所示，数组通常用函数 c() 来定义。除此之外，还可以用 ':' 操作符号来定义包含连续整数的 vector：
 
+\FontSmall
 ```{r}
 2:8
 ```
@@ -117,11 +123,11 @@ vector只能包含一种基本数据类型。因此，在定义数组时，如�
  * 逻辑类型 -> 字符串
  * 数字类型 -> 字符串
  
-我们可以用 ```class()```或```str() ``` 函数来判断 vector包含的数据类型。以后会介绍两者的不同。
+我们可以用 `class()`或`str() ` 函数来判断 vector包含的数据类型。以后会介绍两者的不同。
 
 ## vector 的数据类型转换规则
 
-\fontsize{7}{8}\selectfont
+\FontSmall
 ```{r}
 class( c(45, TRUE, 20, FALSE, -100) ); ## 逻辑和数字类型
 str( c("string a", FALSE, "string b", TRUE) ); ## 逻辑和字符
@@ -132,7 +138,9 @@ str( c("a string", 1.2, "another string", 1e-3) ); ## 数字和字符
 
 矩阵也可看做是一种带有限制的二维数组，其限制是，矩阵内的数值必须是同一种类型。当输入混合有多种基本数据类型时，矩阵会按上面提到的规则进行强制转换。
 
-矩阵由函数 ```matrix()``` 定义，比如：
+矩阵由函数 `matrix()` 定义，比如：
+
+\FontSmall
 
 ```{r}
 matrix( c(20, 30.1, 2, 45.8, 23, 14), nrow = 2, byrow = T );
@@ -152,11 +160,11 @@ matrix( c(20, 30.1, 2, 45.8, 23, 14), nrow = 2, byrow = T );
 
 \FontNormal 
 
-更多细节可用 ```? matrix ``` 命令查看
+更多细节可用 `? matrix ` 命令查看
 
-## ```matrix()```参数测试
+## `matrix()`参数测试
 
-\fontsize{7}{8}\selectfont
+\FontSmall
 ```{r}
 matrix( c(20, 30.1, 2, 45.8, 23, 14), nrow = 2, byrow = T );
 ```
@@ -169,11 +177,12 @@ matrix( c(20, 30.1, 2, 45.8, 23, 14), nrow = 2,
        dimnames = list( c("row_A", "row_B"), c("A", "B", "C") ) );
 ```
 
-## ```matrix()```同时指定 ncol 和 nrow 
+## `matrix()`同时指定 ncol 和 nrow 
 
 矩阵的指定长度，即 nrow  ×  ncol，可以不同于输入数据的长度。矩阵长度较小时，输入数据会被截短；而矩阵长度较大时，输入数据则会被重复使用。举例如下：
 
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 ```{r}
 ## 生成一个2x5长度为10的矩阵，但输入数据的长度为20
 matrix( 1:20, nrow = 2, ncol = 5, byrow = T); 
@@ -183,34 +192,37 @@ matrix( 1:20, nrow = 2, ncol = 5, byrow = T);
 matrix( 1:3, nrow = 2, ncol = 3, byrow = T ); 
 ```
 
-## ```matrix()```更多测试
+## `matrix()`更多测试
 
 注意：上面两种情况下，系统并不会给出任何提示。但下面两种情况，系统会报警告信息。
 第一种情况，矩阵长度大于输入数据长度，且前者不是后者的整数倍。
 
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 ```{r}
 matrix( 1:3, nrow = 2, ncol = 4, byrow = T );
 ```
 
-## ```matrix()```更多测试， cont. 
+## `matrix()`更多测试， cont. 
 
 第二种情况，矩阵长度小于输入数据的长度，且后者不是前者的整数倍。
 
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 ```{r}
 matrix( letters[1:20], nrow = 3, ncol = 5, byrow = T );
 ```
 
-## 用```? matrix ``` 命令获得帮助
+## 用`? matrix ` 命令获得帮助
 
-在 Console 窗口中输入 ```? matrix ``` 命令，可在**窗口4**获得有关```matrix()```函数的帮助信息：
+在 Console 窗口中输入 `? matrix ` 命令，可在**窗口4**获得有关`matrix()`函数的帮助信息：
 
 ![matrix() 函数使用方法](images/talk02/get_help_for_matrix_function.png){height=40%}
 
-## ```class()```和```str()```的区别
+## `class()`和`str()`的区别
 
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 ```{r}
 class(matrix( c(20, 30.1, 2, 45.8, 23, 14), 
               nrow = 2, byrow = T ));
@@ -220,13 +232,16 @@ str(matrix( c(20, 30.1, 2, 45.8, 23, 14),
             nrow = 2, byrow = T ));
 ```
 
-```str()```更多功用以后会详细介绍
+\FontNormal 
+
+`str()`更多功用以后会详细介绍
 
 ## 数组（arrray）
 
 vector和矩阵都是数组。vector是一维数组，矩阵是二维数组。这就意味着：a) 还可以有更多维的数组，b)高维数组与vector和矩阵一样，只能包含一种基本数据类型。高维数组可以由函数 array() 定义：
 
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 ```{r}
 array( data = LETTERS[1:16], 
       dim  = c(2,4,2), 
@@ -242,25 +257,39 @@ array( data = LETTERS[1:16],
 
 ### **加减乘除**老一套
 
+\FontSmall
+
 ```{r eval=FALSE}
 1 + 2 - 3 * 4 / 5; ## 加减乘除
 1 + (2 - 3) * 4 / 5;  ##  改变优先级
 ```
 
+\FontNormal
+
 ### 进阶操作
+
+\FontSmall
+
 ```{r eval=FALSE}
 2 ^ 6; ## 阶乘
 5 %% 2; ## 取余
 ```
 
+\FontNormal
+
 ### 逻辑运算符
+
+\FontSmall
+
 ```{r eval=FALSE}
 T | F; ## or 
 T & F; ## and
 5 | 0; ## == 0 FALSE， > 0 TRUE
 ```
 
-? ```5 & -1``` 结果应该是 TRUE 还是 FALSE？？？
+\FontNormal 
+
+? `5 & -1` 结果应该是 TRUE 还是 FALSE？？？
 
 ## 数学函数
 
@@ -274,6 +303,9 @@ T & F; ## and
 在进行下一步之前，先介绍变量与赋值的基本知识
 
 在R中，可以用任何下面的方式**赋值**给**变量**
+
+\FontSmall
+
 ```{r eval=FALSE}
 ## 常用
 x <- c(10,100,1000, 10000);
@@ -285,13 +317,18 @@ c(10,100,1000, 10000) -> x;
 assign( "x", c(10, 100, 1000, 10000) );
 ```
 
-其中```x```就叫做变量 
+\FontNormal 
+
+其中`x`就叫做变量 
 **注**： 赋值后，变量内容默认不再打印到 console 
 **注2**: c() 又叫做 **concatenation function** （以后会再次介绍）
 
 ## 变量的管理
 
 现在我们运行多个赋值操作：
+
+\FontSmall
+
 ```{r echo=TRUE, message=FALSE}
 x <- c(10,100,1000, 10000);
 m <- matrix( c(20, 30.1, 2, 45.8, 23, 14), nrow = 2, 
@@ -302,6 +339,8 @@ m <- matrix( c(20, 30.1, 2, 45.8, 23, 14), nrow = 2,
 
 ## 通过 Console window 管理变量
 
+\FontSmall
+
 ```{r}
 ls();  ## 显示当前环境下所有变量
 rm( x ); ## 删除一个变量
@@ -310,17 +349,22 @@ ls();
 ##rm(list=ls()); ## 删除当前环境下所有变量！！！ 
 ```
 
-## vector 算术， cont.
+## vector 算术, cont.
 
-```vectorisation```：R最重要的一个概念
+**vectorisation**：R最重要的一个概念
 
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 ```{r}
 x <- c(10,100,1000, 10000);
 ( y <- sqrt( x  ) * 4 + 10  ); ## 赋值的之后打印变量内容 
 ```
 
-```vectorisation```的核心在于数据**自动循环使用**
+\FontNormal
+
+**vectorisation**的核心在于数据**自动循环使用**
+
+\FontSmall
 
 ```{r}
 x / c(10,100);
@@ -332,8 +376,10 @@ x / c(10,100,1000); ## 会报错但仍会循环计算
 
 ## matrix 的算术
 
-\fontsize{7}{8}\selectfont
 先查看 m 的内容：
+
+\FontSmall
+
 ```{r}
 knitr::kable(m);
 ```
@@ -345,7 +391,8 @@ m /  c(1,10,100);
 
 ## matrix 的算术, cont.
 
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 ```{r}
 m / c(1,10);
 m / c(1,10,100,1000); ## 多于列数
@@ -364,7 +411,9 @@ m / c(1,10,100,1000); ## 多于列数
 ## vector manipulation
 
 ### 合并
-\fontsize{7}{8}\selectfont
+
+\FontSmall
+
 ```{r}
 a <- 1:3;
 b <- LETTERS[1:3];
@@ -376,7 +425,9 @@ mode( ab ); ## 一个新的函数~ ...
 ## vector manipulation, cont.
 
 ### 取部分
-\fontsize{7}{8}\selectfont
+
+\FontSmall
+
 ```{r}
 ab[1];
 ab[ c(1, 4, 5) ];
@@ -387,7 +438,9 @@ ab[ length(ab) ]; ## length 函数
 ## vector manipultaion, cont.
 
 ### 替换单个值
-\fontsize{7}{8}\selectfont
+
+\FontSmall
+
 ```{r}
 ( ab[1] <- "一" );
 ```
@@ -395,7 +448,9 @@ ab[ length(ab) ]; ## length 函数
 ## vector manipulation, cont.
 
 ### 替换多个值
-\fontsize{7}{8}\selectfont
+
+\FontSmall
+
 ```{r}
 ab[c(2,3)] <- c("二", "三");
 ab
@@ -404,7 +459,9 @@ ab
 ## vector manipulation, cont.
 
 ### naming elements & then replace a value
-\fontsize{7}{8}\selectfont
+
+\FontSmall
+
 ```{r}
 ( names( ab ) <- as.character( ab ) ); ## 注意 names() 和 as.character() 函数的用法
 
@@ -416,7 +473,9 @@ ab;
 ## vector manipulation, cont.
 
 ### other useful functions 
-\fontsize{7}{8}\selectfont
+
+\FontSmall
+
 ```{r}
 ## reverse
 rev(1:10);
@@ -433,7 +492,8 @@ order( lts  ); ## 注意与 sort 的不同
 
 ### 取一行、多行
 
-\fontsize{7}{8}\selectfont
+\FontSmall
+
 ```{r}
 m;
 
@@ -444,7 +504,9 @@ m[ 1:2,  ];
 ## matrix manipulation, cont.
 
 ### 取一行、多行, cont.
-\fontsize{7}{8}\selectfont
+
+\FontSmall
+
 ```{r}
 m[ "row_A", ]
 m[ c( "row_B", "row_A" ), ] ## 注意取的顺序
@@ -453,7 +515,9 @@ m[ c( "row_B", "row_A" ), ] ## 注意取的顺序
 ## matrix manipulation, cont.
 
 ### 取一列、多列
-\fontsize{7}{8}\selectfont
+
+\FontSmall
+
 ```{r}
 m[ , 1 ];
 m[, c(1,2)];
@@ -463,7 +527,9 @@ m[, c("B","A")];## 注意取的顺序
 ## matrix manipulation, cont.
 
 ### 取部分
-\fontsize{7}{8}\selectfont
+
+\FontSmall
+
 ```{r}
 m;
 
@@ -473,7 +539,9 @@ m[1:2, 2:3]; ## 取其中一部分
 ## matrix manipulation, cont.
 
 ### 替换一行
-\fontsize{7}{8}\selectfont
+
+\FontSmall
+
 ```{r}
 m;
 m[1, ] <- c(10);
@@ -482,7 +550,9 @@ m[1, ] <- c(10);
 ## matrix manipulation, cont.
 
 ### 替换一列
-\fontsize{7}{8}\selectfont
+
+\FontSmall
+
 ```{r}
 m[, "C"] <- c(230, 140);
 m;
@@ -491,7 +561,9 @@ m;
 ## matrix manipulation, cont.
 
 ### 替换多行、多列
-\fontsize{7}{8}\selectfont
+
+\FontSmall
+
 ```{r, eval=FALSE}
 ## -- 替换前两行
 m[ 1:2 , ] <- matrix(  1:6, nrow = 2 );
@@ -501,13 +573,17 @@ m[  , c("C", "B") ] <- matrix(  100:103, nrow = 2 );
 ```
 
 ### 替换 subset 
-\fontsize{7}{8}\selectfont
+
+\FontSmall
+
 ```{r, eval=FALSE}
 m[ 1  , c("C", "B") ] <- matrix(  110:111, nrow = 1 );
 ```
 
 ### 转置
-\fontsize{7}{8}\selectfont
+
+\FontSmall
+
 ```{r}
 t(m);
 ```
@@ -521,7 +597,7 @@ t(m);
 
 图片出自：https://r4ds.had.co.nz/vectors.html
 
-## 用 ```typeof() ``` 函数确定以上类型
+## 用 `typeof()` 函数确定以上类型
 
 \FontSmall
 
@@ -558,7 +634,7 @@ typeof( NULL );
 c(-1, 0, 1) / 0;
 ```
 
-``` NA ```
+`NA `
 
 \FontNormal
 
@@ -572,10 +648,10 @@ c(-1, 0, 1) / 0;
 
 |                   | 判定（输入）          | **0**   | **Inf** | **NA** | **NaN** |
 |-------------------|--------------|---------|---------|--------|---------|
-| ```is.finite()``` |  有限值（数字）  | **x** |         |      |      |
-| ```is.infinite()``` | 无限值（数字） |   |    **x**     |      |      |
-| ```is.na()```       |  not available  |  |         |    **x**  |  **x**    |
-| ```is.nan()```      | 不是数字  |  |         |      |   **x**   |
+| `is.finite()` |  有限值（数字）  | **x** |         |      |      |
+| `is.infinite()` | 无限值（数字） |   |    **x**     |      |      |
+| `is.na()`       |  not available  |  |         |    **x**  |  **x**    |
+| `is.nan()`      | 不是数字  |  |         |      |   **x**   |
 
 ## 其它 is. 函数
 
@@ -604,14 +680,14 @@ is.vector();
 * 数字和字符串
 * 整数、小数、逻辑
 * 数据类型之间转换；自动规则
-* ```matrix```
+* `matrix`
 
 ### R数据类型的查看方式
 
-* ```mode```
-* ```class```
-* ```typeof```
-* ```is.xxx函数们```
+* `mode`
+* `class`
+* `typeof`
+* `is.xxx函数们`
 
 ### 基本数据类型的操作
 
@@ -623,6 +699,6 @@ is.vector();
 # section 5: 练习 & 作业
 
 ## 练习 & 作业
--   ```Exercises and homework``` 目录下 ```talk02-homework.Rmd``` 文件
+-   `Exercises and homework` 目录下 `talk02-homework.Rmd` 文件
 
 - 完成时间：见钉群的要求
