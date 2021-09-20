@@ -12,7 +12,7 @@ output:
 knit: (
   function(inputFile, encoding) { 
 
-    pSubTitle <- 'talk03-homework'
+    pSubTitle <- '\u674e\u7ecf\u7eac-U201912387-talk03-homework'
 
     rmarkdown::render( 
       input       = inputFile, 
