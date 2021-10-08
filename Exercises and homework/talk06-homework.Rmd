@@ -43,7 +43,7 @@ knit: (
 **如你当前用户名不能体现你的真实姓名，请改为拼音后再运行本作业！**
 
 ```{r}
-Sys.getenv("USER")
+Sys.info()[["user"]]
 Sys.getenv("HOME")
 ```
 
