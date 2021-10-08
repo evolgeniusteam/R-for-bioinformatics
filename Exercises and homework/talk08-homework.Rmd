@@ -2,8 +2,9 @@
 title: "talk08 练习与作业"
 documentclass: ctexart
 output:
-  pdf_document:
-    latex_engine: xelatex
+  rticles::ctex:
+    fig_caption: yes
+    number_sections: yes
     toc: true
     toc_depth: 2
   word_document: default
@@ -36,6 +37,17 @@ knit: (
 * ``` dplyr ``` 的本质是 遍历 
 * ``` map ``` functions in ```purrr ``` package 
 * 遍历 与 并行计算
+
+## 练习与作业：用户验证
+
+请运行以下命令，验证你的用户名。
+
+**如你当前用户名不能体现你的真实姓名，请改为拼音后再运行本作业！**
+
+```{r}
+Sys.getenv("USER")
+Sys.getenv("HOME")
+```
 
 ## 练习与作业1：loop 初步
 

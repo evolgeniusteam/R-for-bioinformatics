@@ -28,18 +28,18 @@ knitr::knit_hooks$set(error = color_block('red'))
 
 ## 前情提要
 
-1. IO, project management, working enviroment management
-2. factors: R 中最重要的概念之一 
+1.  IO, project management, working enviroment management
+2.  factors: R 中最重要的概念之一
 
-  - factors 基本概念
-  - factors 操作
-  - factors 在做图中的使用
-  - ggplot2 和 dplyr 初步
+-   factors 基本概念
+-   factors 操作
+-   factors 在做图中的使用
+-   ggplot2 和 dplyr 初步
 
 ## 问题点评
 
-1. ggplot2问题
-2. 长宽数据转换 & pipe ... 
+1.  ggplot2问题
+2.  长宽数据转换 & pipe ...
 
 \FontSmall
 
@@ -49,35 +49,35 @@ N %>% gather( ind, values );
 
 ## 今次提要
 
-* dplyr 、 tidyr (超级强大的数据处理)  part 1
+-   dplyr 、 tidyr (超级强大的数据处理) part 1
 
-# section 2: data wrangler - dplyr 
+# section 2: data wrangler - dplyr
 
 ## dplyr
 
-### what is ```dplyr``` ? 
+### what is `dplyr` ?
 
-- the next iteration of plyr, 
-- focusing on only data frames (also tibble),
-- row-based manipulation, 
-- dplyr is faster and has a more consistent API.
+-   the next iteration of plyr,
+-   focusing on only data frames (also tibble),
+-   row-based manipulation,
+-   dplyr is faster and has a more consistent API.
 
-![dplyr logo](images/talk05/dplyr-large.png){height=50%}
+![dplyr logo](images/talk05/dplyr-large.png){height="50%"}
 
 ### more to read
 
-- [dplyr offical page at tidyverse](https://dplyr.tidyverse.org)
-- [R for data science](https://r4ds.had.co.nz)
+-   [dplyr offical page at tidyverse](https://dplyr.tidyverse.org)
+-   [R for data science](https://r4ds.had.co.nz)
 
 ## dplyr, overview
 
 dplyr provides a consistent set of verbs that help you **solve the most common data manipulation challenges**:
 
-- [select()](https://dplyr.tidyverse.org/reference/select.html) 选择列，根据列名规则
-- [filter()](https://dplyr.tidyverse.org/reference/filter.html) 按规则过滤行
-- [mutate()](https://dplyr.tidyverse.org/reference/mutate.html) 增加新列，从其它列计算而得 （不改变行数）
-- [summarise()](https://dplyr.tidyverse.org/reference/summarise.html) 将多个值转换为单个值（通过 mean, median, sd 等操作），生成新列 （总行数减少，通常与 ```group_by```配合使用 ）
-- [arrange()](https://dplyr.tidyverse.org/reference/arrange.html) 对行进行排序
+-   [select()](https://dplyr.tidyverse.org/reference/select.html) 选择列，根据列名规则
+-   [filter()](https://dplyr.tidyverse.org/reference/filter.html) 按规则过滤行
+-   [mutate()](https://dplyr.tidyverse.org/reference/mutate.html) 增加新列，从其它列计算而得 （不改变行数）
+-   [summarise()](https://dplyr.tidyverse.org/reference/summarise.html) 将多个值转换为单个值（通过 mean, median, sd 等操作），生成新列 （总行数减少，通常与 `group_by`配合使用 ）
+-   [arrange()](https://dplyr.tidyverse.org/reference/arrange.html) 对行进行排序
 
 ## dplyr 安装
 
@@ -91,7 +91,7 @@ install.packages("tidyverse")
 install.packages("dplyr")
 ```
 
-\FontNormal 
+\FontNormal
 
 Development version
 
@@ -106,7 +106,7 @@ devtools::install_github("tidyverse/dplyr")
 
 [Get the cheatsheet at here](https://github.com/rstudio/cheatsheets/blob/master/data-transformation.pdf)
 
-## an example of ```dplyr```
+## an example of `dplyr`
 
 get the data ready
 
@@ -115,6 +115,7 @@ library(tidyverse);
 ```
 
 \FontSmall
+
 ```{r}
 mouse.tibble <- read_delim( file = "data/talk04/mouse_genes_biomart_sep2018.txt", 
                             delim = "\t", quote = "" );
@@ -138,12 +139,12 @@ mouse.tibble <- read_delim( file = "data/talk04/mouse_genes_biomart_sep2018.txt"
 
 ## 分析任务
 
-1. 将染色体限制在常染色体和XY上（去掉未组装的小片段） ; 处理行
-2. 将基因类型限制在 protein_coding, miRNA和 lincRNA 这三种；处理行
-3. 统计每条染色体上不同类型基因（protein_coding, miRNA, lincRNA）的数量
-4. 按染色体（正）、基因数量（倒）进行排序
+1.  将染色体限制在常染色体和XY上（去掉未组装的小片段） ; 处理行
+2.  将基因类型限制在 protein_coding, miRNA和 lincRNA 这三种；处理行
+3.  统计每条染色体上不同类型基因（protein_coding, miRNA, lincRNA）的数量
+4.  按染色体（正）、基因数量（倒）进行排序
 
-## 用 ```dplyr``` 实现
+## 用 `dplyr` 实现
 
 \FontSmall
 
@@ -169,10 +170,10 @@ dat <- mouse.tibble %>%
   arrange(  CHR  , desc( count ) );
 ```
 
-
 ## 检查运行结果
 
 \FontSmall
+
 ```{r echo=FALSE}
 knitr::kable( head( dat, n = 15 ) );
 ```
@@ -183,14 +184,15 @@ knitr::kable( head( dat, n = 15 ) );
 
 ## 数据扁平化的优点？
 
-1. 便于用 dplyr 或 tapply 等进行计算；
-2. 更灵活，用于保存稀疏数据
+1.  便于用 dplyr 或 tapply 等进行计算；
+2.  更灵活，用于保存稀疏数据
 
 ## 适合扁平化的数据举例
 
 ### 成绩单
 
 \FontSmall
+
 ```{r message=FALSE, warning=FALSE}
 library(dplyr);
 grades <- read_tsv( file = "data/talk05/grades.txt" );
@@ -199,12 +201,13 @@ knitr::kable( head(grades, n=20) );
 
 灵活性：
 
-* 应对不同学生选择不同课程的情况
-* 可随时增加新的课程
+-   应对不同学生选择不同课程的情况
+-   可随时增加新的课程
 
 ## 长数据变宽
 
 \FontSmall
+
 ```{r}
 grades2 <- grades %>% spread( course, grade );
 knitr::kable( grades2 );
@@ -214,7 +217,7 @@ knitr::kable( grades2 );
 
 可以想像，如果以此为输入，用R计算每个人的平均成绩、不及格门数、总学分，将会是很繁琐的一件事（但对其它工具（如Excel）可能会比较简单）
 
-## ```spread``` explained!
+## `spread` explained!
 
 \FontSmall
 
@@ -224,19 +227,20 @@ grades2 <- grades %>% spread( course, grade );
 
 \FontNormal
 
-![```spread``` function explained](images/talk05/spread_explained.png){height=50%}
+![`spread` function explained](images/talk05/spread_explained.png){height="50%"}
 
 ## 宽数据转为长数据
 
-use ```gather()``` function in ```tidyr``` 
+use `gather()` function in `tidyr`
 
 \FontSmall
+
 ```{r}
 grades_melted <- grades2 %>% gather( course, grade, -name ); ## 注意参数的使用 ~~ 
 knitr::kable( head( grades_melted ) );
 ```
 
-## ```gather``` explained!
+## `gather` explained!
 
 \FontSmall
 
@@ -246,9 +250,9 @@ grades_melted <- grades2 %>% gather( course, grade, -name ); ## 注意参数的�
 
 \FontNormal
 
-![annotated gather function](images/talk05/gather_explained.png){height=50%}
+![annotated gather function](images/talk05/gather_explained.png){height="50%"}
 
-## 有 ```NA``` 值怎么办？
+## 有 `NA` 值怎么办？
 
 \FontSmall
 
@@ -262,7 +266,7 @@ grades_melted <- grades2 %>% gather( course, grade, -name , na.rm = T );
 
 ## 宽长数据转换练习
 
-用 ```spread``` 和 ```gather``` 对下面的数据 ```mini_iris``` 进行宽长转换:
+用 `spread` 和 `gather` 对下面的数据 `mini_iris` 进行宽长转换:
 
 \FontSmall
 
@@ -272,11 +276,12 @@ grades_melted <- grades2 %>% gather( course, grade, -name , na.rm = T );
 
 \FontNormal
 
-```iris``` 是 鸢尾属 一些物种花瓣的量表
+`iris` 是 鸢尾属 一些物种花瓣的量表
 
-## 宽长数据转换练习， cont. 
+## 宽长数据转换练习， cont.
 
 \FontSmall
+
 ```{r}
 ## -- 注意： 第一、二个参数可以自行命名，分别对应原始数据中的 column names 及 values ...
 mini_iris.melted <- mini_iris %>% gather( type, dat, -Species );
@@ -286,6 +291,7 @@ knitr::kable( mini_iris.melted  );
 ## 长宽转换之mouse.tibble
 
 \FontSmall
+
 ```{r}
 dat2 <- dat %>% select( CHR, TYPE, `count` ) %>%  spread( TYPE, count  );
 knitr::kable( head(dat2, n=10) );
@@ -294,6 +300,7 @@ knitr::kable( head(dat2, n=10) );
 ## 比较复杂的例子
 
 \FontSmall
+
 ```{r message=FALSE, warning=FALSE}
 grades2 <- read_delim( file = "data/talk05/grades2.txt", delim = "\t",
                        quote = "", col_names = T);
@@ -320,10 +327,9 @@ knitr::kable( grades2 );
 grades2_melted %>% gather( course, grade, -name, -class, na.rm = T  );
 ```
 
-
 ## dplyr 常用函数示例
 
-先创建一个新 tibble 
+先创建一个新 tibble
 
 \FontSmall
 
@@ -342,9 +348,7 @@ grades;
 
 ## use gather & dplyr functions
 
-Question: 
-1. 每个人平均成绩是多少？
-2. 哪个人的平均成绩最高？
+Question: 1. 每个人平均成绩是多少？ 2. 哪个人的平均成绩最高？
 
 \FontSmall
 
@@ -370,9 +374,9 @@ grades.melted %>%
 knitr::kable( head( grades.melted ) );
 ```
 
-## use gather & dplyr functions 
+## use gather & dplyr functions
 
-问题： 每个人的最强科目是什么？？ 
+问题： 每个人的最强科目是什么？？
 
 \FontSmall
 
@@ -401,9 +405,9 @@ grades.melted2 %>%
 
 ## dplyr::summarise 的其它操作
 
-![dplyr::summarise 可用的操作](images/talk05/dplyr-summarise.png){height=60%}
+![dplyr::summarise 可用的操作](images/talk05/dplyr-summarise.png){height="60%"}
 
-## 更多练习，使用 ```starwars``` tibble 
+## 更多练习，使用 `starwars` tibble
 
 \FontSmall
 
@@ -411,15 +415,15 @@ grades.melted2 %>%
 head(starwars);
 ```
 
-**note** 包含87行  13 列，星战部分人物的信息，包括身高、体重、肤色等
+**note** 包含87行 13 列，星战部分人物的信息，包括身高、体重、肤色等
 
-用 ```?starwars``` 获取更多帮助
+用 `?starwars` 获取更多帮助
 
 ## dplyr::mutate - 产生新列，不改变行数
 
 而 dplyr::summarise 则会使列数减少（通常与 group_by 联合使用）
 
-![dplyr::mutate](images/talk05/dplyr-mutate.png){height=50%}
+![dplyr::mutate](images/talk05/dplyr-mutate.png){height="50%"}
 
 另见下页的例子
 
@@ -427,7 +431,7 @@ head(starwars);
 
 目标：
 
-* 取出相关列，用于计算人物的 BMI 
+-   取出相关列，用于计算人物的 BMI
 
 \FontSmall
 
@@ -440,7 +444,7 @@ stats <-
 head(stats);
 ```
 
-## dplyr::select - 取列, cont. 
+## dplyr::select - 取列, cont.
 
 由于 name, height 和 mass 正好是相邻列，可以用 name:mass 获取：
 
@@ -455,9 +459,9 @@ stats <-
 head(stats);
 ```
 
-## dplyr::select - 取列, cont. 
+## dplyr::select - 取列, cont.
 
-获取与颜色相关的列: hair_color, skin_color, eye_color 
+获取与颜色相关的列: hair_color, skin_color, eye_color
 
 \FontSmall
 
@@ -468,7 +472,7 @@ stats2 <- starwars %>%
 head(stats2);
 ```
 
-## dplyr::select - 去除列, cont. 
+## dplyr::select - 去除列, cont.
 
 请自行检查以下操作的结果
 
@@ -478,9 +482,9 @@ head(stats2);
 head( starwars %>% select( -hair_color, -eye_color )  );
 ```
 
-## dplyr::select - 其它操作, cont. 
+## dplyr::select - 其它操作, cont.
 
-![dplyr::select 支持的操作](images/talk05/dplyr-select.png){height=70%}
+![dplyr::select 支持的操作](images/talk05/dplyr-select.png){height="70%"}
 
 ## dplyr::filter - 行操作
 
@@ -495,32 +499,34 @@ starwars %>% select( name, ends_with("color"), gender, species ) %>%
 
 ## dplyr中其它取行的操作
 
-![dplyr与行相关的操作](images/talk05/dplyr-subset.png){height=70%}
+![dplyr与行相关的操作](images/talk05/dplyr-subset.png){height="70%"}
 
 ## tidyr::separate
 
-https://r4ds.had.co.nz/tidy-data.html
+<https://r4ds.had.co.nz/tidy-data.html>
 
 ## tidyr::unite
 
-https://r4ds.had.co.nz/tidy-data.html
+<https://r4ds.had.co.nz/tidy-data.html>
 
 # section 3 : 练习与作业
 
 ## 练习 & 作业
--   ```Exercises and homework``` 目录下 ```talk05-homework.Rmd``` 文件；
 
-- 完成时间：见钉群的要求
+-   `Exercises and homework` 目录下 `talk05-homework.Rmd` 文件；
+
+-   完成时间：见钉群的要求
 
 ## 小结
 
 ### 今次提要
 
-* dplyr 、 tidyr (超级强大的数据处理)  part 1
+-   dplyr 、 tidyr (超级强大的数据处理) part 1
 
 ### 下次预告
 
-* dplyr, tidyr 和 forcats 的更多功能与生信操作实例
+-   dplyr, tidyr 和 forcats 的更多功能与生信操作实例
 
 ### important
-* all codes are available at Github: https://github.com/evolgeniusteam/R-for-bioinformatics
+
+-   all codes are available at Github: <https://github.com/evolgeniusteam/R-for-bioinformatics>
