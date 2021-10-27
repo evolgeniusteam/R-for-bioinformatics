@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.11.28)  14 SEP 2021 14:15
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.11.28)  10 OCT 2021 21:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2380,6 +2380,13 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
 [12
 
 ]
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[13
+
+]
 \openout4 = `talk01.vrb'.
 
 (./talk01.vrb
@@ -2459,7 +2466,7 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[13
+[14
 
 ]
 File: talk01_files/figure-beamer/plot1-1.pdf Graphic file (type pdf)
@@ -2469,14 +2476,14 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[14
+[15
 
 ]
 Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[15
+[16
 
 ]
 \openout4 = `talk01.vrb'.
@@ -2498,7 +2505,7 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[16
+[17
 
 ]
 File: talk01_files/figure-beamer/plot2-1.pdf Graphic file (type pdf)
@@ -2508,7 +2515,7 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[17
+[18
 
 ]
 File: images/talk01/google_trends.png Graphic file (type bmp)
@@ -2518,7 +2525,7 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[18
+[19
 
 ]
 File: images/talk01/github_Most-pull-requests-1.png Graphic file (type bmp)
@@ -2528,7 +2535,7 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[19
+[20
 
 ]
 File: images/talk01/programming_language_popularity_by_years_2008_2018.png Grap
@@ -2539,12 +2546,12 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[20
+[21
 
 ]
 File: images/talk01/R_python_and_matlab.png Graphic file (type bmp)
 <images/talk01/R_python_and_matlab.png>
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 379
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 394
 .
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -2553,51 +2560,44 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 379.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 394.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 379
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 394
 .
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 379
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 394
 .
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 379.
+(Font)              <10.95> on input line 394.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 379.
+(Font)              <8> on input line 394.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 379.
-LaTeX Font Info:    Try loading font information for U+msa on input line 379.
+(Font)              <6> on input line 394.
+LaTeX Font Info:    Try loading font information for U+msa on input line 394.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 379.
+LaTeX Font Info:    Try loading font information for U+msb on input line 394.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 379.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 394.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 379.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 394.
 
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[21
-
-]
 Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2605,9 +2605,6 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
 [22
 
 ]
-File: images/talk01/evolview_showcase3.png Graphic file (type bmp)
-<images/talk01/evolview_showcase3.png>
-
 Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2615,6 +2612,9 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
 [23
 
 ]
+File: images/talk01/evolview_showcase3.png Graphic file (type bmp)
+<images/talk01/evolview_showcase3.png>
+
 Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2629,6 +2629,13 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
 [25
 
 ]
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[26
+
+]
 File: images/talk01/download_R_from_selected_mirror.png Graphic file (type bmp)
 
 <images/talk01/download_R_from_selected_mirror.png>
@@ -2637,7 +2644,7 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[26
+[27
 
 ]
 File: images/talk01/R_linux_installer_name.png Graphic file (type bmp)
@@ -2647,7 +2654,7 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[27
+[28
 
 ]
 File: images/talk01/rstudio_mainpage_screenshot.png Graphic file (type bmp)
@@ -2657,7 +2664,7 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[28
+[29
 
 ]
 File: images/talk01/RStudio_versions.png Graphic file (type bmp)
@@ -2667,23 +2674,16 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[29
+[30
 
 ]
 File: images/talk01/RStudio_interface.png Graphic file (type bmp)
 <images/talk01/RStudio_interface.png>
 
-Overfull \vbox (32.46336pt too high) detected at line 532
+Overfull \vbox (32.46336pt too high) detected at line 547
  []
 
 
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[30
-
-]
 Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2698,6 +2698,13 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
 [32
 
 ]
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[33
+
+]
 File: images/talk01/RStudio_code_autocomplete.png Graphic file (type bmp)
 <images/talk01/RStudio_code_autocomplete.png>
 
@@ -2705,7 +2712,7 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[33
+[34
 
 ]
 File: images/talk01/Rstudio_variables.png Graphic file (type bmp)
@@ -2715,7 +2722,7 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[34
+[35
 
 ]
 File: images/talk01/RStudio_export_plots.png Graphic file (type bmp)
@@ -2725,7 +2732,7 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[35
+[36
 
 ]
 File: images/talk01/RStudio_installed_packages.png Graphic file (type bmp)
@@ -2735,7 +2742,7 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[36
+[37
 
 ]
 File: images/talk01/RStudio_install_package.png Graphic file (type bmp)
@@ -2745,7 +2752,7 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[37
+[38
 
 ]
 \openout4 = `talk01.vrb'.
@@ -2755,7 +2762,7 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[38
+[39
 
 ]
 \openout4 = `talk01.vrb'.
@@ -2768,7 +2775,7 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[39
+[40
 
 ]
 \openout4 = `talk01.vrb'.
@@ -2789,7 +2796,7 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
 File: images/talk01/tidyverse.png Graphic file (type bmp)
 <images/talk01/tidyverse.png>
 )
-Overfull \vbox (7.80357pt too high) detected at line 746
+Overfull \vbox (7.80357pt too high) detected at line 761
  []
 
 
@@ -2797,7 +2804,7 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[40
+[41
 
 ]
 File: images/talk01/rstudio_server_login_page_web.png Graphic file (type bmp)
@@ -2807,7 +2814,7 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[41
+[42
 
 ]
 File: images/talk01/rstudio_server_interface.png Graphic file (type bmp)
@@ -2817,23 +2824,9 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[42
-
-]
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
 [43
 
 ]
-File: images/talk01/suvminer_example_output.png Graphic file (type bmp)
-<images/talk01/suvminer_example_output.png>
-
-Overfull \vbox (15.63893pt too high) detected at line 825
- []
-
-
 Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2841,12 +2834,10 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
 [44
 
 ]
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 848.
-File: images/talk01/ggvis_v0_4.png Graphic file (type bmp)
-<images/talk01/ggvis_v0_4.png>
+File: images/talk01/suvminer_example_output.png Graphic file (type bmp)
+<images/talk01/suvminer_example_output.png>
 
-Overfull \vbox (22.65208pt too high) detected at line 848
+Overfull \vbox (15.63893pt too high) detected at line 840
  []
 
 
@@ -2857,8 +2848,14 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
 [45
 
 ]
-File: images/talk01/shiny_example.png Graphic file (type bmp)
-<images/talk01/shiny_example.png>
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 863.
+File: images/talk01/ggvis_v0_4.png Graphic file (type bmp)
+<images/talk01/ggvis_v0_4.png>
+
+Overfull \vbox (22.65208pt too high) detected at line 863
+ []
+
 
 Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
@@ -2867,6 +2864,9 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
 [46
 
 ]
+File: images/talk01/shiny_example.png Graphic file (type bmp)
+<images/talk01/shiny_example.png>
+
 Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2886,6 +2886,57 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  []
 
 [49
+
+]
+\openout4 = `talk01.vrb'.
+
+(./talk01.vrb
+
+LaTeX Font Warning: Font shape `TU/lmtt/bx/it' in size <10.95> not available
+(Font)              Font shape `TU/lmtt/b/sl' tried instead on input line 16.
+
+LaTeX Font Info:    Font shape `TU/FandolFang-Regular(0)/bx/it' will be
+(Font)              scaled to size 10.30455pt on input line 16.
+Package microtype Info: Character `\AE ' is missing
+(microtype)             in font `\TU/FandolFang-Regular(0)/bx/it/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotesinglbase ' is missing
+(microtype)             in font `\TU/FandolFang-Regular(0)/bx/it/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\quotedblbase ' is missing
+(microtype)             in font `\TU/FandolFang-Regular(0)/bx/it/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglleft ' is missing
+(microtype)             in font `\TU/FandolFang-Regular(0)/bx/it/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guilsinglright ' is missing
+(microtype)             in font `\TU/FandolFang-Regular(0)/bx/it/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotleft ' is missing
+(microtype)             in font `\TU/FandolFang-Regular(0)/bx/it/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\guillemotright ' is missing
+(microtype)             in font `\TU/FandolFang-Regular(0)/bx/it/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textexclamdown ' is missing
+(microtype)             in font `\TU/FandolFang-Regular(0)/bx/it/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `\textquestiondown ' is missing
+(microtype)             in font `\TU/FandolFang-Regular(0)/bx/it/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+)
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[50
+
+]
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[51
 
 ]
 \openout4 = `talk01.vrb'.
@@ -2925,14 +2976,14 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[50
+[52
 
 ]
 Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[51
+[53
 
 ]
 File: images/talk01/phpMyAdmin.png Graphic file (type bmp)
@@ -2942,29 +2993,12 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[52
+[54
 
 ]
 File: images/talk01/phpmyadmin_database_view.png Graphic file (type bmp)
 <images/talk01/phpmyadmin_database_view.png>
 
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[53
-
-]
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[54
-
-]
-\openout4 = `talk01.vrb'.
-
-(./talk01.vrb)
 Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2979,6 +3013,9 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
 [56
 
 ]
+\openout4 = `talk01.vrb'.
+
+(./talk01.vrb)
 Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -2986,8 +3023,22 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
 [57
 
 ]
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[58
+
+]
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[59
+
+]
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
-(Font)              scaled to size 5.47879pt on input line 1087.
+(Font)              scaled to size 5.47879pt on input line 1124.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -3020,31 +3071,31 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[58
-
-]
-\openout4 = `talk01.vrb'.
-
-(./talk01.vrb)
-Overfull \vbox (47.43114pt too high) detected at line 1140
- []
-
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[59
-
-]
-\openout4 = `talk01.vrb'.
-
-(./talk01.vrb)
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
 [60
+
+]
+\openout4 = `talk01.vrb'.
+
+(./talk01.vrb)
+Overfull \vbox (47.43114pt too high) detected at line 1177
+ []
+
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[61
+
+]
+\openout4 = `talk01.vrb'.
+
+(./talk01.vrb)
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[62
 
 ]
 \tf@nav=\write7
@@ -3056,11 +3107,11 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
 \tf@snm=\write9
 \openout9 = `talk01.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1154.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1154.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1191.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1191.
 (./talk01.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1154.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1154.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1191.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1191.
 
 Package rerunfilecheck Info: File `talk01.out' has not changed.
 (rerunfilecheck)             Checksum: A919ECBE0E2AFD3A2AB45DB340B83972.
@@ -3069,12 +3120,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 42112 strings out of 492916
- 845559 string characters out of 6133344
- 960894 words of memory out of 5000000
- 45486 multiletter control sequences out of 15000+600000
- 555996 words of font info for 96 fonts, out of 8000000 for 9000
+ 42125 strings out of 492916
+ 845827 string characters out of 6133344
+ 961994 words of memory out of 5000000
+ 45496 multiletter control sequences out of 15000+600000
+ 556004 words of font info for 97 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  68i,15n,129p,792b,854s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on talk01.pdf (60 pages).
+Output written on talk01.pdf (62 pages).

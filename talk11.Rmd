@@ -253,7 +253,7 @@ summary(m6);
 
 \FontSmall
 
-```{r fig.width=10, fig.height=4, message=FALSE, warning=FALSE}
+```{r fig.width=6, fig.height=3, message=FALSE, warning=FALSE}
 ## install.packages("interactions"); 如需要，请安装这个包
 library(interactions); ## 装入 
 sim_slopes(m6, pred = youtube, modx = facebook, jnplot = TRUE)
@@ -342,7 +342,7 @@ data.frame( predicted = bm %>% predict( dat, type = "response" ),
 
 \FontSmall
 
-```{r echo=FALSE, fig.width=10, fig.height=4, error=FALSE, message=FALSE, warning=FALSE}
+```{r non-linear-least-squares echo=FALSE, fig.width=10, fig.height=4, error=FALSE, message=FALSE, warning=FALSE}
 set.seed(20160227)
 x<-seq(0,50,1)
 y<-((runif(1,10,20)*x)/(runif(1,0,10)+x))+rnorm(51,0,1)
@@ -357,7 +357,7 @@ lines(x,predict(m),lty=2,col="red",lwd=3)
 
 \FontSmall
 
-```{r eval=FALSE}
+```{r modle1 eval=FALSE}
 ## 1. generate data
 set.seed(20160227)
 x<-seq(0,50,1)
@@ -379,7 +379,7 @@ lines(x,predict(m),lty=2,col="red",lwd=3)
 
 \FontSmall
 
-```{r warning=FALSE, message=FALSE, fig.width=10, fig.height=4}
+```{r using-drc warning=FALSE, message=FALSE, fig.width=10, fig.height=4}
 library(drc); ## Analysis of Dose-Response Curves
 m13 <- drm( y ~ x, fct = LL.3() ); ## here LL.3() is a least square function
 data.frame( x = x, y = y, fitted = predict(m13) ) %>% ggplot( aes(x=x,y=y) ) +
@@ -422,7 +422,9 @@ data.frame( x = x, y = y, fitted = predict(m13) ) %>% ggplot( aes(x=x,y=y) ) +
 
 \FontSmall
 
-```{r}
+```{r using-degradation-aomisc }
+library(aomisc);
+data(degradation);
 m14 <- drm(Conc ~ Time, fct = DRC.expoDecay(),
              data = degradation)
 summary(m14)

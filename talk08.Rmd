@@ -73,6 +73,11 @@ for(  row_idx in 1:nrow( df ) ){
   res1[row_idx] <- mean( as.numeric( df[row_idx , ] ) );
 }
 
+res2 <- c();
+for(  row_idx in 1:nrow( df ) ){
+  res2[ length(res2) + 1 ] <- mean( as.numeric( df[row_idx , ] ) );
+}
+
 ## 计算 column means 
 res2 <- vector( "double", ncol(df) );
 for(  col_idx in 1:ncol( df ) ){

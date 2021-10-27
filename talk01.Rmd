@@ -99,6 +99,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 注: 严格按以上进行，如多次表现不好，可能会不及格
 
+## 作业和扣分规则
+
+1. （几乎）每次课后都有作业；
+2. 直接从平时成绩50分中扣除；
+2. 作业迟交三天以内每次扣3分；七天以内每次5分；七天及以上每次10分；
+3. 每人有一次迟交机会，不扣分。
+
 # section 2: why choose R?
 
 ## R语言简史
@@ -525,7 +532,20 @@ account)](images/talk01/rstudio_server_login_page_web.png){height="30%"}
 
 * R 4.0 or newer
 * RStudio ver 1.4 or newer 
-* XeLaTeX - for converting TEX to PDF
+* install packages and tools for converting TEX to PDF
+
+```{r eval=FALSE}
+install.packages("tinytex");
+tinytex::install_tinytex(); ## 安装 tinytex
+```
+
+如果出现错误，可以先下载 `TinyTex.zip` 文件，在R中运行：
+
+```{r eval=FALSE}
+tinytex:::install_prebuilt("/path/to/TinyTex.zip");
+```
+
+## How to do homework and submit the results? cont. 
 
 * Download the whole course from GITHUB (https://github.com/evolgeniusteam/R-for-bioinformatics); better to use **GitHub Desktop** app to fetch and sync with the course
 

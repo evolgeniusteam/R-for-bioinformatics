@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.11.28)  9 AUG 2021 06:32
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.11.28)  27 OCT 2021 16:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2260,9 +2260,24 @@ Package microtype Info: Character `\textquestiondown ' is missing
 (./talk11.vrb) [10
 
 ]
-File: talk11_files/figure-beamer/unnamed-chunk-6-1.pdf Graphic file (type pdf)
-<use talk11_files/figure-beamer/unnamed-chunk-6-1.pdf>
-[11
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <7> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 9.
+
+LaTeX Font Warning: Font shape `TU/lmtt/bx/it' in size <7> not available
+(Font)              Font shape `TU/lmtt/b/sl' tried instead on input line 9.
+
+) [11
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb
+File: talk11_files/figure-beamer/unnamed-chunk-7-1.pdf Graphic file (type pdf)
+<use talk11_files/figure-beamer/unnamed-chunk-7-1.pdf>
+) [12
 
 ]
 \openout4 = `talk11.vrb'.
@@ -2326,75 +2341,54 @@ Package microtype Info: Character `\textexclamdown ' is missing
 Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/m/n/7'.
 (microtype)             Ignoring protrusion settings for this character.
-) [12
+) [13
 
 ]
 \openout4 = `talk11.vrb'.
 
 (./talk11.vrb)
-Overfull \vbox (1.20848pt too high) detected at line 335
+Overfull \vbox (1.20848pt too high) detected at line 362
  []
 
-[13
+[14
 
 ]
 \openout4 = `talk11.vrb'.
 
-(./talk11.vrb) [14
+(./talk11.vrb) [15
 
 ]
 \openout4 = `talk11.vrb'.
 
 (./talk11.vrb
-File: talk11_files/figure-beamer/unnamed-chunk-11-1.pdf Graphic file (type pdf)
+File: talk11_files/figure-beamer/unnamed-chunk-12-1.pdf Graphic file (type pdf)
 
-<use talk11_files/figure-beamer/unnamed-chunk-11-1.pdf>
-) [15
+<use talk11_files/figure-beamer/unnamed-chunk-12-1.pdf>
+) [16
 
 ]
 \openout4 = `talk11.vrb'.
 
-(./talk11.vrb) [16
+(./talk11.vrb) [17
 
 ]
 \openout4 = `talk11.vrb'.
 
 (./talk11.vrb)
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 434.
-[17
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 461.
+[18
 
 ]
 \openout4 = `talk11.vrb'.
 
-(./talk11.vrb) [18
+(./talk11.vrb) [19
 
 ]
 \openout4 = `talk11.vrb'.
 
 (./talk11.vrb)
-Overfull \vbox (19.11818pt too high) detected at line 513
- []
-
-[19
-
-]
-\openout4 = `talk11.vrb'.
-
-(./talk11.vrb
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <7> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 7.
-
-LaTeX Font Warning: Font shape `TU/lmtt/bx/it' in size <7> not available
-(Font)              Font shape `TU/lmtt/b/sl' tried instead on input line 7.
-
-
-LaTeX Font Warning: Font shape `TU/FandolFang-Regular(0)/bx/it' undefined
-(Font)              using `TU/FandolFang-Regular(0)/m/n' instead on input line 
-9.
-
-)
-Overfull \vbox (1.19447pt too high) detected at line 551
+Overfull \vbox (19.11818pt too high) detected at line 540
  []
 
 [20
@@ -2403,11 +2397,13 @@ Overfull \vbox (1.19447pt too high) detected at line 551
 \openout4 = `talk11.vrb'.
 
 (./talk11.vrb
-File: talk11_files/figure-beamer/unnamed-chunk-17-1.pdf Graphic file (type pdf)
 
-<use talk11_files/figure-beamer/unnamed-chunk-17-1.pdf>
+LaTeX Font Warning: Font shape `TU/FandolFang-Regular(0)/bx/it' undefined
+(Font)              using `TU/FandolFang-Regular(0)/m/n' instead on input line 
+9.
+
 )
-Overfull \vbox (212.95013pt too high) detected at line 597
+Overfull \vbox (1.19447pt too high) detected at line 578
  []
 
 [21
@@ -2415,11 +2411,24 @@ Overfull \vbox (212.95013pt too high) detected at line 597
 ]
 \openout4 = `talk11.vrb'.
 
-(./talk11.vrb) [22
+(./talk11.vrb
+File: talk11_files/figure-beamer/unnamed-chunk-18-1.pdf Graphic file (type pdf)
+
+<use talk11_files/figure-beamer/unnamed-chunk-18-1.pdf>
+)
+Overfull \vbox (210.96114pt too high) detected at line 624
+ []
+
+[22
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb) [23
 
 ]
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
-(Font)              scaled to size 9.99878pt on input line 662.
+(Font)              scaled to size 9.99878pt on input line 692.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2447,38 +2456,217 @@ Package microtype Info: Character `\textexclamdown ' is missing
 Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
-[23
-
-]
-\openout4 = `talk11.vrb'.
-
-(./talk11.vrb)
-Overfull \vbox (207.16945pt too high) detected at line 743
- []
-
 [24
 
 ]
 \openout4 = `talk11.vrb'.
 
 (./talk11.vrb)
-Overfull \vbox (12.74222pt too high) detected at line 794
+Overfull \vbox (48.71547pt too high) detected at line 742
  []
 
 [25
 
-] [26
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb) [26
+
+] [27
 
 ]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <6> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 818.
-[27
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 805.
+[28
 
-] [28
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb
+File: talk11_files/figure-beamer/unnamed-chunk-22-1.pdf Graphic file (type pdf)
+
+<use talk11_files/figure-beamer/unnamed-chunk-22-1.pdf>
+) [29
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb) [30
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb
+File: talk11_files/figure-beamer/unnamed-chunk-24-1.pdf Graphic file (type pdf)
+
+<use talk11_files/figure-beamer/unnamed-chunk-24-1.pdf>
+) [31
+
+]
+Overfull \vbox (79.84622pt too high) detected at line 923
+ []
+
+[32
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb)
+Overfull \vbox (393.39406pt too high) detected at line 1041
+ []
+
+[33
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb
+File: talk11_files/figure-beamer/unnamed-chunk-26-1.pdf Graphic file (type pdf)
+
+<use talk11_files/figure-beamer/unnamed-chunk-26-1.pdf>
+) [34
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb) [35
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb
+File: talk11_files/figure-beamer/unnamed-chunk-28-1.pdf Graphic file (type pdf)
+
+<use talk11_files/figure-beamer/unnamed-chunk-28-1.pdf>
+) [36
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb) [37
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb
+File: talk11_files/figure-beamer/unnamed-chunk-30-1.pdf Graphic file (type pdf)
+
+<use talk11_files/figure-beamer/unnamed-chunk-30-1.pdf>
+) [38
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb
+File: talk11_files/figure-beamer/unnamed-chunk-31-1.pdf Graphic file (type pdf)
+
+<use talk11_files/figure-beamer/unnamed-chunk-31-1.pdf>
+) [39
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 12.
+File: images/talk11/homl-cover.jpeg Graphic file (type bmp)
+<images/talk11/homl-cover.jpeg>
+File: images/talk11/examples-of-multiple-knots-1.png Graphic file (type bmp)
+<images/talk11/examples-of-multiple-knots-1.png>
+)
+Overfull \vbox (85.83192pt too high) detected at line 1193
+ []
+
+[40
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb)
+Overfull \vbox (72.63448pt too high) detected at line 1241
+ []
+
+[41
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb) [42
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb
+File: talk11_files/figure-beamer/unnamed-chunk-34-1.pdf Graphic file (type pdf)
+
+<use talk11_files/figure-beamer/unnamed-chunk-34-1.pdf>
+) [43
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb) [44
+
+]
+File: images/talk11/kfold_ntimes.jpeg Graphic file (type bmp)
+<images/talk11/kfold_ntimes.jpeg>
+[45
+
+]
+File: images/talk11/kfold_ntimes_additional_test.png Graphic file (type bmp)
+<images/talk11/kfold_ntimes_additional_test.png>
+[46
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb) [47
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb)
+Overfull \vbox (391.68147pt too high) detected at line 1431
+ []
+
+[48
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb
+File: talk11_files/figure-beamer/unnamed-chunk-38-1.pdf Graphic file (type pdf)
+
+<use talk11_files/figure-beamer/unnamed-chunk-38-1.pdf>
+)
+Overfull \vbox (16.33022pt too high) detected at line 1469
+ []
+
+[49
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb)
+Overfull \vbox (700.04646pt too high) detected at line 1600
+ []
+
+[50
+
+]
+\openout4 = `talk11.vrb'.
+
+(./talk11.vrb
+File: talk11_files/figure-beamer/unnamed-chunk-41-1.pdf Graphic file (type pdf)
+
+<use talk11_files/figure-beamer/unnamed-chunk-41-1.pdf>
+) [51
+
+] [52
 
 ]
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/bx/n' will be
-(Font)              scaled to size 5.47879pt on input line 826.
+(Font)              scaled to size 5.47879pt on input line 1652.
 Package microtype Info: Character `\AE ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2506,11 +2694,11 @@ Package microtype Info: Character `\textexclamdown ' is missing
 Package microtype Info: Character `\textquestiondown ' is missing
 (microtype)             in font `\TU/FandolHei-Regular(0)/bx/n/6'.
 (microtype)             Ignoring protrusion settings for this character.
-[29
+[53
 
-] [30
+] [54
 
-] [31
+] [55
 
 ]
 \openout4 = `talk11.vrb'.
@@ -2561,7 +2749,7 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <8> not available
 (Font)              Font shape `TU/lmss/m/sl' tried instead on input line 17.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
 (Font)              Font shape `TU/lmss/m/sl' tried instead on input line 17.
-) [32
+) [56
 
 ]
 \tf@nav=\write7
@@ -2573,24 +2761,25 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <6> not available
 \tf@snm=\write9
 \openout9 = `talk11.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 864.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 864.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1729.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1729.
 (./talk11.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 864.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 864.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1729.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1729.
+
 Package rerunfilecheck Info: File `talk11.out' has not changed.
-(rerunfilecheck)             Checksum: C8621282104F4C0DD43B9CA3640FB8EC.
+(rerunfilecheck)             Checksum: 0C2ED9F4B82933038D41D8AA422EFB22.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 40505 strings out of 492916
- 810336 string characters out of 6133344
- 923407 words of memory out of 5000000
- 43919 multiletter control sequences out of 15000+600000
- 544566 words of font info for 75 fonts, out of 8000000 for 9000
+ 40676 strings out of 492916
+ 815185 string characters out of 6133344
+ 960905 words of memory out of 5000000
+ 44029 multiletter control sequences out of 15000+600000
+ 544574 words of font info for 76 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 65i,15n,129p,792b,908s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,15n,129p,792b,903s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on talk11.pdf (32 pages).
+Output written on talk11.pdf (56 pages).

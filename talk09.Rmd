@@ -359,8 +359,7 @@ lines( year1, type = "o", pch = 20, col = "red");
 \FontSmall 
 
 ```{r fig.width=10, fig.height=3}
-df <- rbind( tibble( month = 1:length( year1 ), value = year1, cat = "Year1" ),
-             tibble( month = 1:length( year2 ), value = year2, cat = "Year2 ") );
+df <- rbind( tibble( month = 1:length( year1 ), value = year1, cat = "Year1" ), tibble( month = 1:length( year2 ), value = year2, cat = "Year2 ") );
 
 plot1 <-  ## 将图保存在变量中；
   ggplot( df, aes( x = month, y = value, colour = cat) ) + 
@@ -1013,7 +1012,7 @@ head( speabu );
 
 ```{r fig.width=10, fig.height=4}
 ggplot( speabu, aes( x = id, y = abundance, fill = genus ) ) + 
-  geom_bar( stat = "identity", position = "stack", color = "black", width = 0.8 );
+  geom_bar( stat = "identity", position = "stack", color = "black", width = 0.2 );
 ```
 
 ## 指定Genus展示顺序
@@ -1085,7 +1084,7 @@ df2 <- data.frame(supp=rep(c("VC", "OJ"), each=3),
               len=c(6.8, 15, 33, 4.2, 10, 29.5))
 ggplot( df2, aes(x=factor(dose), y=len, fill=supp)) +
   geom_bar(stat="identity", position=position_dodge())+
-  geom_text(aes(label=len), vjust=1.6, color="white",
+  geom_text(aes(label=len), vjust=1.6, color="black",
             position = position_dodge(0.9), size=3.5)
 ```
 
@@ -1119,7 +1118,7 @@ ggplot(ToothGrowth, aes(x=factor( dose ), y=len, fill=supp)) +
 
 ```{r fig.height=4, fig.width=10}
 ggplot(ToothGrowth, aes(x=factor( dose ), y=len, fill=supp)) +
-  geom_boxplot() + scale_fill_brewer( palette = "Paired" ) + theme_minimal();
+  geom_boxplot() + scale_fill_brewer( palette = "Paired" ) + theme_classic();
 ```
 
 **要点** 
@@ -1158,7 +1157,7 @@ see here for a complete list: https://ggplot2.tidyverse.org/reference/ggtheme.ht
 ```{r fig.height=4, fig.width=10}
 ggplot(ToothGrowth, aes(x=factor( dose ), y=len, fill=supp)) +
   geom_boxplot() + scale_fill_brewer( palette = "Paired" ) + theme_minimal() +
-  labs( fill = "Supplement" ) + theme( legend.position = "top" );
+  labs( fill = "Supplement" ) + theme( legend.position = "top", axis.title.x = element_text("Dose") );
 ```
 
 ## ``` ggsci ```: palette for scientific journals!!!
@@ -1233,7 +1232,7 @@ Faceting generates small multiples each showing a different subset of the data.
 ```{r fig.height=3, fig.width=10}
 ggplot( mtcars, aes( x = wt, y = mpg ) ) +
   geom_point() +
-  facet_grid( . ~ cyl );
+  facet_grid( . ~ cyl, scales = "free" );
 ```
 
 

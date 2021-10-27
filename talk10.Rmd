@@ -298,7 +298,7 @@ trans.at： A - T 碱基使用偏好；
 
 ```{r fig.width=6, fig.height=4}
 fig3a <- 
-   ggplot( data.fig3a, aes( factor(tai), zAA1.at ) ) + 
+   ggplot( data.fig3a, aes( factor(tai), trans.at ) ) + 
       geom_boxplot( fill = "#22AD5C", linetype = 1 ,outlier.size = 1, width = 0.6) +
       xlab( "tAI group" ) + 
       ylab( expression( paste( italic(S[RNA]) ) ) ) +
