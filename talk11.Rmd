@@ -81,7 +81,7 @@ m <- lm(Fertility ~ Education, data = swiss);
 summary(m);
 ```
 
-**lm([target variable] \~ [predictor variables], data = [data source])**
+**lm(\[target variable\] \~ \[predictor variables\], data = \[data source\])**
 
 ## 得到 Coefficients
 
@@ -559,9 +559,7 @@ K fold, N times
 
 ![](images/talk11/kfold_ntimes.jpeg){height="50%"}
 
-**注** 
-1. 每个iteration为随机split；
-2. 得到 K * N 个模型；
+**注** 1. 每个iteration为随机split； 2. 得到 K \* N 个模型；
 
 ## cross validation & additional test
 
@@ -597,7 +595,7 @@ cv_mars <- train(
 
 **注** 10 折 cross validation
 
-**注** 非常 time consuming ... 最好能使用 parallel computing ... 
+**注** 非常 time consuming ... 最好能使用 parallel computing ...
 
 ## Parameter tuning, show results
 
@@ -643,18 +641,18 @@ p2 <- vip(cv_mars, num_features = 40, geom = "point", value = "rss") + ggtitle("
 gridExtra::grid.arrange(p1, p2, ncol = 2)
 ```
 
-## `mars` : final thoughts 
+## `mars` : final thoughts
 
 ### advantages
 
-1. First, MARS naturally handles mixed types of predictors (quantitative and qualitative). 
-2. MARS also requires minimal feature engineering (e.g., feature scaling) and performs automated feature selection. 
-3. Highly correlated predictors do not impede predictive accuracy as much as they do with OLS models.
+1.  First, MARS naturally handles mixed types of predictors (quantitative and qualitative).
+2.  MARS also requires minimal feature engineering (e.g., feature scaling) and performs automated feature selection.
+3.  Highly correlated predictors do not impede predictive accuracy as much as they do with OLS models.
 
-### shortcomings 
+### shortcomings
 
-1. typically slower to train
-2. Also, although correlated predictors do not necessarily impede model performance, they can make model interpretation difficult.
+1.  typically slower to train
+2.  Also, although correlated predictors do not necessarily impede model performance, they can make model interpretation difficult.
 
 # section 4: 小结及作业！
 
@@ -662,27 +660,27 @@ gridExtra::grid.arrange(p1, p2, ncol = 2)
 
 ### linear regression
 
-* lm vs. glm
-* 一元
-* 多元
-* 相关函数
-* performance evaluation
-* interactions
-* visualizations
+-   lm vs. glm
+-   一元
+-   多元
+-   相关函数
+-   performance evaluation
+-   interactions
+-   visualizations
 
 ### non-linear regression
 
-* nls
-* mars
-* earth
-* cross validation
-* K fold, N times (下次详细讲)
+-   nls
+-   mars
+-   earth
+-   cross validation
+-   K fold, N times (下次详细讲)
 
 ## 下次预告
 
-* Random Forest
-* Support Vector Machine
-* Deep learning
+-   Random Forest
+-   Support Vector Machine
+-   Deep learning
 
 ## 作业
 

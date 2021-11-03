@@ -1,0 +1,11 @@
+"","run.id","level","bac","ncbi.id","rel.abun","bowtie2.count","rel.count","Group.x","class.x","Group.y","class.y"
+"1","ERR527043","species","unclassified",-1,100,130,130,NA,NA,"Healthy","validation"
+"2","ERR527149","species","unclassified",-1,100,0,0,"LC","discovery",NA,NA
+"3","ERR527163","species","unclassified",-1,100,27,27,"LC","discovery",NA,NA
+"4","ERR527181","species","unclassified",-1,100,0,0,"LC","discovery",NA,NA
+"5","ERR527184","species","unclassified",-1,100,0,0,"LC","discovery",NA,NA
+"6","ERR527198","species","unclassified",-1,100,0,0,"LC","discovery",NA,NA
+"7","ERR527212","species","unclassified",-1,100,316,316,"LC","discovery",NA,NA
+"8","ERR527214","species","Bacteroides thetaiotaomicron",818,100,580,580,"LC","discovery",NA,NA
+"9","ERR528296","species","unclassified",-1,100,0,0,NA,NA,"LC","validation"
+"10","ERR528328","species","unclassified",-1,100,0,0,NA,NA,"LC","validation"
