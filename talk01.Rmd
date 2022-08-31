@@ -53,7 +53,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ### 现有工作介绍
 
 -   宁康：人工智能赋能菌群大数据挖掘
--   郭安源：AI与表达数据分析
+-   郭安源：表达数据分析
 -   薛宇：机器学习在新冠标志物和图像识别当中的应用
 -   陈卫华：机器学习在肠道菌群为基础的疾病标志物挖掘当中的应用
 
@@ -68,27 +68,43 @@ knitr::opts_chunk$set(echo = TRUE)
 ![Advanced Science (2019 IF:
 15.84)](images/talk01/ML-anyuan.png){width="60%"}
 
-截止2021年3月7日，已被引用60次 (Google Scholar)
+截止2022年8月30日，已被引用321次 (Google Scholar)
 
 ## 薛宇
 
 ![Nature BME & Immunity
-(IF\>20)](images/talk01/ML-xueyu.png){width="60%"}
+(IF=29, 43)](images/talk01/ML-xueyu.png){width="60%"}
 
 机器学习在新冠标志物和图像识别当中的应用
 
 ## 陈卫华
 
-![Cell Metabolism (2019 IF:
-21.56)](images/talk01/ML-weihuachen.png){width="60%"}
+![Cell Metabolism (IF:
+31)](images/talk01/ML-weihuachen.png){width="60%"}
 
 机器学习在肠道菌群为基础的疾病标志物挖掘当中的应用
 
 ## 用肠道菌群profile一次诊断多种疾病
 
-![mSystems (2019 IF: 6.6)](images/talk01/ML_mSystems.png){width="65%"}
+![mSystems (IF: 7.3)](images/talk01/ML_mSystems.png){width="65%"}
 
 诊断多种常见肠病的机器学习模型
+
+## 身体各部位菌群与疾病关系数据库
+
+![NAR (IF: 19.1)](images/talk01/mBodymap.png){width=65%}
+
+重点关注（面部）皮肤。与刘智老师合作课题
+
+## 其它动物的肠道菌群
+
+![NC (IF: 17.7)](images/talk01/buffalo_MAGs.png){width=100%}
+
+## 噬菌体研究
+
+![Microbiology Spectrum (IF: 9)](images/talk01/EHEC_lambda_phage.png){width=60%}
+
+改造噬菌体，增强其杀伤能力和特异性。
 
 ## Class rules
 
@@ -105,6 +121,13 @@ knitr::opts_chunk$set(echo = TRUE)
 2. 直接从平时成绩50分中扣除；
 2. 作业迟交三天以内每次扣3分；七天以内每次5分；七天及以上每次10分；
 3. 每人有一次迟交机会（3天以内），不扣分。
+4. 老师有最终解释权
+
+## 考试
+
+1. 开卷；允许带资料、书籍，不允许带手机电脑pad等电子设备
+2. 内容都在**ppt**上或**作业**里，不会超纲
+3. 考试时允许零星英文，但不允许大段英文（抄ppt）
 4. 老师有最终解释权
 
 # section 2: why choose R?
@@ -193,29 +216,9 @@ plot2 <-
 plot2;
 ```
 
-## Programming language trends 2016 vs 2015
+## Popularity of Programming language 2020
 
-![Worldwide Google Trends, Dec 2016 vs Dec
-2015](images/talk01/google_trends.png){width="70%"}
-
-## Github pulls, 2017
-
-![Github pulls,
-2017](images/talk01/github_Most-pull-requests-1.png){height="50%"}
-
-## Popularity by year
-
-![popularity by year from 2008 to
-2018](images/talk01/programming_language_popularity_by_years_2008_2018.png){height="50%"}
-
-## Popularity by year, cont.
-
-![yet another
-statistics](images/talk01/R_python_and_matlab.png){height="50%"}
-
-Data from:
-<http://blog.revolutionanalytics.com/2018/06/pypl-programming-language-trends.html>
-Accessed on: Sep 24, 2018
+![PYPL ranking (https://pypl.github.io/)](images/talk01/pypl_2020.png){width="70%"}
 
 ## Programming languages for bioinformatics
 
@@ -252,7 +255,7 @@ Accessed on: Sep 24, 2018
 
 \href{https://www.evolgenius.info/evolview}{Evolview ver3.0}
 
-cited 154 times in 2020 (ver2+3), 53 so far (as of April 10, 2021)
+cited 225 times in 2021 (ver2+3), 166 so far (as of Aug 30, 2022)
 
 \end{column}
 \begin{column}{0.48\textwidth}

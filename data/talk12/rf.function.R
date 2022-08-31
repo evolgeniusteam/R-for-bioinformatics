@@ -214,7 +214,8 @@ rf.filter <- function( rf, feat.except = NULL, datatype = "taxon", percentage = 
 ### ################################################
 ### --- modeling ...  -- 
 ## -- June 24, 2020; added parameter: classwt
-rf.train <- function( rf, fold = 10, resample = 10, parallel = F, num.cores = 10, class.weights = NULL ){
+rf.train <- function( rf, fold = 10, resample = 10, 
+                      parallel = F, num.cores = 10, class.weights = NULL ){
   
   ## -- elapsed time --
   tic( "Model training " );

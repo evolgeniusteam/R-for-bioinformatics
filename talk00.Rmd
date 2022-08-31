@@ -233,8 +233,15 @@ m3
 summary( glm( happiness ~ ppp + rel, data = rhp ) ); 
 ```
 
+## How happy are you???
+
+\FontSmall
+
+![Data source: WSJ "Can Money Buy You Happiness?"](images/talk00/How-Happy-Are-You.jpeg){height="90%"}
+
+
 ## Concluding remarks
 
--   不轻信
+-   不轻信、重事实
 -   有创新性
 -   有用
