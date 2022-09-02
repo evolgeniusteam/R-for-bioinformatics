@@ -567,29 +567,32 @@ tinytex:::install_prebuilt("/path/to/TinyTex.zip");
 
 * 在浏览器打开网址：https://github.com/evolgeniusteam/R-for-bioinformatics
 
-![](images/talk01/download_from_github_course_tutorial.png){height="30%"}
+![](images/talk01/download_from_github_course_tutorial.png){height="50%"}
 
 
 ## HOWGO: 完成**作业**并**提交**? 续
 
 第四步，通过Github Desktop 下载教程和作业
 
+* 下载到默认或指定目录
+* 打开下载的目录，找到 `R for bioinformatics 讲义.Rproj` 文件，双击用`RStudio`打开
 
+![](images/talk01/find_and_open_folder_downloaded_from_github.png){height="30%"}
 
-## How to do homework and submit the results? cont.
+## HOWGO: 完成**作业**并**提交**? 续
 
-* Open `R for bioinformatics 讲义.Rproj` in the downloaded folder using **RStudio**
+![](images/talk01/open_project_and_find_homework.png){height="80%"}
 
-* Go to `Excercises and homework` folder in your **RStudio**
+## HOWGO: 完成**作业**并**提交**? 续
 
-* Open `talk##-homework.Rmd` file using **RStudio**
+*按`Rmd`文件的要求回答问题或/和提供代码
 
 * Install required packages
-  * **tidyverse**
+  * 比如：**tidyverse**
 
-* Do homework
+* 完成作业
 
-* use `Knit` to generate PDF file, change its name to `姓名-学号-talk##作业.pdf`
+* 用工具栏中的 `Knit` 按钮生成与 `Rmd` 同名的 `PDF` 文件, 将文件名改为：`姓名-学号-talk##作业.pdf`
 
 * 通过`钉钉`，在规定的时间内提交
 
