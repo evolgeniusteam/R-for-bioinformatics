@@ -61,7 +61,6 @@ Sys.info()[["user"]]
 Sys.getenv("HOME")
 ```
 
-
 ## 练习/作业1
 
 安装 `R`和`RStudio`最新版；

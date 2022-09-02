@@ -530,32 +530,50 @@ account)](images/talk01/rstudio_server_login_page_web.png){height="30%"}
 -   rmarkdown : create professional documents
 -   knitr: convert rmarkdown to pdf, html and more ...
 
-# Section 4: HOWTO do homework?
+# Section 4: 如何做**作业**?
 
-## How to do homework and submit the results?
+## Windows用户
+
+  * 最好新建一个英文帐户，用户名只包括英文字符，比如姓名全拼或英文名： `WeihuaChen` or `JackMa`
+  * 将以下软件安装到默认目录，包括 **R** and **RStudio** 
+
+
+## HOWGO: 完成**作业**并**提交**?
+
+首先，安装必要软件
 
 * R 4.0 or newer
-* RStudio ver 1.4 or newer 
-* install packages and tools for converting TEX to PDF
+* RStudio 最新版 
+
+其次，安装 `tinytex` 包，辅助将 Rmd 文件转为 PDF
 
 ```{r eval=FALSE}
-install.packages("tinytex");
-tinytex::install_tinytex(); ## 安装 tinytex
+tinytex::install_tinytex(version = "latest"); ## 安装 tinytex
 ```
 
 如果出现错误，可以先下载 `TinyTex.zip` 文件，在R中运行：
+
+下载页面：https://github.com/rstudio/tinytex-releases，下载 precompiled `TinyTex.zip` （找到对应的平台）。
 
 ```{r eval=FALSE}
 tinytex:::install_prebuilt("/path/to/TinyTex.zip");
 ```
 
-## How to do homework and submit the results? cont. 
+## HOWGO: 完成**作业**并**提交**? 续
 
-* Download the whole course from GITHUB (https://github.com/evolgeniusteam/R-for-bioinformatics); better to use **GitHub Desktop** app to fetch and sync with the course
+第三，安装 Github Desktop 
 
-* **When using Windows**
-  * better to log into an English user name, without spaces or special letters in the user name
-  * install **R** and **RStudio** to **default locations**
+* 安装Github Desktop 并登入，如无帐户，则先创建；
+
+* 在浏览器打开网址：https://github.com/evolgeniusteam/R-for-bioinformatics
+
+![](images/talk01/download_from_github_course_tutorial.png){height="30%"}
+
+
+## HOWGO: 完成**作业**并**提交**? 续
+
+第四步，通过Github Desktop 下载教程和作业
+
 
 
 ## How to do homework and submit the results? cont.
