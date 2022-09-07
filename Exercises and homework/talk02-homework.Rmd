@@ -49,7 +49,6 @@ Sys.info()[["user"]]
 Sys.getenv("HOME")
 ```
 
-
 ## 练习1：vector的基本类型与简单算术
 
 -   **用`class`命令确定以下`vector`的类型；**
@@ -128,7 +127,7 @@ class( c(45, TRUE, 20, FALSE, -100) );
 
 ------------------------------------------------------------------------
 
--   **将函数`dimis.numericis.characteris.logicallength`应用到下面的`vector`，并展示结果；**
+-   **将函数`dim`, `is.numeric`, `is.character`, `is.logical, `length`应用到下面的`vector`，并展示结果；**
 
 `x <- 1:12`
 

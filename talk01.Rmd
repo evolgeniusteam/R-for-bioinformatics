@@ -535,6 +535,7 @@ account)](images/talk01/rstudio_server_login_page_web.png){height="30%"}
 ## Windows用户
 
   * 最好新建一个英文帐户，用户名只包括英文字符，比如姓名全拼或英文名： `WeihuaChen` or `JackMa`
+  * 尽量**不要**更改当前用户，以免数据丢失
   * 将以下软件安装到默认目录，包括 **R** and **RStudio** 
 
 
