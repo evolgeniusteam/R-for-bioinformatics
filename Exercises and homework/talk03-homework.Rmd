@@ -129,7 +129,7 @@ Sys.getenv("HOME")
 
 -   检查`VADeaths`的类型，如果不是 `data.frame`，则转换之；
 
--   添加新的一列，取名 `Total`，其值每行的总合
+-   添加新的一列，取名 `Total`，其值为每行的总合
 
 -   调整列的顺序，将 `Total` 变为第一列。
 

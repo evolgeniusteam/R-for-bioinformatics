@@ -45,8 +45,7 @@ knitr::knit_hooks$set(error = color_block('red'))
 
 1. data.frame, tibble
 2. read files from harddrive (IO)
-3. factors (初步)
-4. exercises & homework
+3. exercises & homework
 
 # section 2: data.frame and tibble
 
@@ -64,9 +63,10 @@ knitr::knit_hooks$set(error = color_block('red'))
 
 \FontSmall
 
-```{r echo=TRUE, message=FALSE}
+```{r echo=TRUE, message=FALSE, warning=FALSE }
 library(tidyverse); ## 装入包
-knitr::kable(  head(mpg) ); ## 显示前几行数据
+library(kableExtra);
+kbl( head(mpg), booktabs = T); ## 显示前几行数据
 ```
 
 \FontNormal
@@ -79,8 +79,8 @@ knitr::kable(  head(mpg) ); ## 显示前几行数据
 
 ```{r}
 nrow(mpg); ## total number of rows 
-knitr::kable(  head(mpg,  n=3) ); ## 显示前3行数据
-knitr::kable(  tail(mpg,  n=3) ); ## 显示最后3行数据
+kbl( head(mpg,  n=3), booktabs = T); ## 显示前几行数据
+kbl( tail(mpg,  n=3), booktabs = T); ## 显示最后3行数据
 ```
 
 
