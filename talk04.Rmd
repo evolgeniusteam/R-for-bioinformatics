@@ -385,8 +385,7 @@ plot2;
 \FontSmall
 
 ```{r}
-( responses <- factor( c("Agree", "Agree", "Strongly Agree", "Disagree", "Disagree", "Agree"),
-                       ordered = T ) );
+( responses <- factor( c("Agree", "Agree", "Strongly Agree", "Disagree", "Disagree", "Agree"), levels = c( "Disagree", "Agree", "Strongly Agree"), ordered = T ) );
 is.ordered( responses );
 ```
 
