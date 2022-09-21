@@ -271,7 +271,7 @@ grades_melted <- grades2 %>% gather( course, grade, -name , na.rm = T );
 \FontSmall
 
 ```{r}
-( mini_iris <- iris[ c(1, 51, 101),  ] );
+( mini_iris <- iris[ c(1, 51, 101),  ] )
 ```
 
 \FontNormal

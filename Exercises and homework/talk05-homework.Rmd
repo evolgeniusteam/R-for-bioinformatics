@@ -32,10 +32,10 @@ knit: (
 
 ## Talk05 内容回顾
 
-* dplyr 、 tidyr (超级强大的数据处理)  part 1
-  * 长宽数据转换
-  * dplyr 几个重要函数
-  
+-   dplyr 、 tidyr (超级强大的数据处理) part 1
+    -   长宽数据转换
+    -   dplyr 几个重要函数
+
 ## 练习与作业：用户验证
 
 请运行以下命令，验证你的用户名。
@@ -51,10 +51,10 @@ Sys.getenv("HOME")
 
 ------------------------------------------------------------------------
 
-###   **使用 mouse.tibble 变量做统计**
+### **使用 mouse.tibble 变量做统计**
 
-  * 每个染色体（或scaffold）上每种基因类型的数量、平均长度、最大和最小长度，挑出最长和最短的基因
-  * 去掉含有500以下基因的染色体（或scaffold），按染色体（或scaffold）、数量 高 -> 低 进行排序
+-   每个染色体（或scaffold）上每种基因类型的数量、平均长度、最大和最小长度，挑出最长和最短的基因
+-   去掉含有500以下基因的染色体（或scaffold），按染色体（或scaffold）、数量 高 -\> 低 进行排序
 
 ```{r}
 ## 代码写这里，并运行；
@@ -63,52 +63,93 @@ Sys.getenv("HOME")
 
 ------------------------------------------------------------------------
 
-###   **使用 grades 变量做统计**
+### **使用 `grades` 变量做练习**
 
-首先，用下面命令生成 `grades`变量：
+1. 装入`grades`变量；
 
-```
-grades <- tibble( "Name" = c("Weihua Chen", "Mm Hu", "John Doe", "Jane Doe",
-                             "Warren Buffet", "Elon Musk", "Jack Ma"),
-                  "Occupation" = c("Teacher", "Student", "Teacher", "Student", 
-                                   rep( "Entrepreneur", 3 ) ),
-                  "English" = sample( 60:100, 7 ),
-                  "ComputerScience" = sample(80:90, 7),
-                  "Biology" = sample( 50:100, 7),
-                  "Bioinformatics" = sample( 40:90, 7)
-                  );
-```
+`library(dplyr);`
+`grades <- read_tsv( file = "data/talk05/grades.txt" );`
 
-然后统计：
-1. 每个人最差的学科和成绩分别是什么？
-2. 哪个职业的平均成绩最好？
-3. 每个职业的最佳学科分别是什么（按平均分排序）？？？ 
+2. 尝试使用`spread`和`gather`函数将其变宽后再变长；
 
 ```{r}
 ## 代码写这里，并运行；
 
 ```
+
+3. 研究并使用 `tidyr`包里的 `pivot_longer` 和 `pivot_wider` 函数对 `grades` 变量进行宽长转换；
+
+```{r}
+## 代码写这里，并运行；
+
+```
+
+4. 使用 `pivot_longer` 时，有时会产生 `na` 值，如何使用此函数的参数去除带 `na` 的行？
+
+```{r}
+## 代码写这里，并运行；
+
+```
+
+
+5. 以下代码有什么作用？
+
+` grades %>% complete( name, course ) `
+
+答：
 
 
 ------------------------------------------------------------------------
 
-###   **使用 `starwars` 变量做计算**
+### **使用 grades2 变量做练习**
 
-1. 计算每个人的 BMI；
-2. 挑选出 肥胖（BMI >= 30）的人类，并且只显示其 `name`, `sex` 和 `homeworld`；
+首先，用下面命令生成 `grades2`变量：
+
+    grades2 <- tibble( "Name" = c("Weihua Chen", "Mm Hu", "John Doe", "Jane Doe",
+                                 "Warren Buffet", "Elon Musk", "Jack Ma"),
+                      "Occupation" = c("Teacher", "Student", "Teacher", "Student", 
+                                       rep( "Entrepreneur", 3 ) ),
+                      "English" = sample( 60:100, 7 ),
+                      "ComputerScience" = sample(80:90, 7),
+                      "Biology" = sample( 50:100, 7),
+                      "Bioinformatics" = sample( 40:90, 7)
+                      );
+
+然后统计： 1. 每个人最差的学科和成绩分别是什么？ 2. 哪个职业的平均成绩最好？ 3. 每个职业的最佳学科分别是什么（按平均分排序）？？？
 
 ```{r}
 ## 代码写这里，并运行；
 
 ```
 
-3. 挑选出所有人类；
-4. 按BMI将他们分为三组， <18, 18~25, >25，统计每组的人数，并用 barplot 进行展示；注意：展示时三组的按BMI从小到大排序；
-5. 改变排序方式，按每组人数从小到大排序；
+------------------------------------------------------------------------
+
+### **使用 `starwars` 变量做计算**
+
+1.  计算每个人的 BMI；
+2.  挑选出 肥胖（BMI \>= 30）的人类，并且只显示其 `name`, `sex` 和 `homeworld`；
 
 ```{r}
 ## 代码写这里，并运行；
 
 ```
 
+3.  挑选出所有人类；
+4.  按BMI将他们分为三组， \<18, 18\~25, \>25，统计每组的人数，并用 barplot 进行展示；注意：展示时三组的按BMI从小到大排序；
+5.  改变排序方式，按每组人数从小到大排序；
 
+```{r}
+## 代码写这里，并运行；
+
+```
+
+6.  查看 `starwars` 的 `films` 列，它有什么特点？`data.frame`可以实现类似的功能吗？
+
+答：
+
+7.  为`starwars`增加一列，用于统计每个角色在多少部电影中出现。
+
+```{r}
+## 代码写这里，并运行；
+
+```
