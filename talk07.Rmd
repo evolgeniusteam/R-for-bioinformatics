@@ -272,6 +272,20 @@ grepl( "\\d+", c( "123", "abc", "wei555hua" ) ); ##
 c( "123", "abc", "wei555hua" ) %>% str_detect( "\\d+" );
 ```
 
+
+## 1. detection patterns, cont.
+
+\FontSmall
+
+**count patterns：统计匹配的数量**
+
+```{r}
+x <- c("why", "video", "cross", "extra", "deal", "authority");
+str_detect(x, "[aeiou]");
+
+str_count(x, "[aeiou]");
+```
+
 ## 2. locate patterns (定位)
 
 \FontSmall 
@@ -298,13 +312,43 @@ c( "123", "abc", "wei555hua" ) %>% str_match ( "\\d+" );
 
 **??** ```str_extract`` 和 ``` str_match ``` 的区别在哪？？
 
+## `str_extract` vs. `str_match`
+
+\FontSmall
+
+```{r}
+x;
+str_extract(x, "[aeiou]");
+str_match(x, "(.)[aeiou](.)"); ## extract the characters on either side of the vowel ????
+```
+
+？？ 为什么有3个输出？？？
+
+## `str_extract_all` 和 `str_match_all` 
+
+\FontSmall
+
+```{r}
+x;
+str_extract_all( x, "[aeiou]+" );
+str_match_all( x, "[aeiou]+" );
+```
+
 ## 4. replace patterns (匹配并替换)
 
 \FontSmall
 
 ```{r}
 str_replace( c( "123", "abc", "wei555hua" ) , "\\d+", "###");
+str_replace_all( "123_abc_456_789" , "\\d+", "###");
 ```
+
+## 5. split by patterns
+
+```{r}
+str_split(x, "");
+```
+
 
 \FontNormal 
 
@@ -313,6 +357,10 @@ str_replace( c( "123", "abc", "wei555hua" ) , "\\d+", "###");
 * sub(pattern, replacement, string)
 * gsub(pattern, replacement, string)
 * stringr::str_replace_all(string, pattern, replacement)
+
+* fixed(): match exact bytes
+* coll(): match human letters
+* boundary(): match boundaries
 
 更多请见 `cheatsheets/` 目录下的：
 
@@ -382,6 +430,7 @@ extract(dat, chrom, into=c('chr', 'chrStart', 'chrEnd'),
  * locate patterns
  * extract patterns
  * replace patterns
+ * split patterns ...
 
 ### 下次预告
 
