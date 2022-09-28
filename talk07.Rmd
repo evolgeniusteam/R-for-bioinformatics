@@ -345,6 +345,8 @@ str_replace_all( "123_abc_456_789" , "\\d+", "###");
 
 ## 5. split by patterns
 
+\FontSmall
+
 ```{r}
 str_split(x, "");
 ```
