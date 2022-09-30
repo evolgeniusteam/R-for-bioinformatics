@@ -467,6 +467,15 @@ plot3 <-
   geom_boxplot() + 
   coord_flip() + 
   ylim( 0, 2500 ) ;
+
+## do not use ylim, but remove outliers
+
+p1 <- 
+  ggplot( data = mouse.tibble.chr10_12, 
+        aes( x = `Chromosome/scaffold name`, 
+             y = `Transcript length (including UTRs and CDS)` ) ) +
+  geom_boxplot() +
+  coord_flip(ylim = c(0, 5000), clip = "on");
 ```
 
 
