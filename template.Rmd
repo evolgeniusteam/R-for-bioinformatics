@@ -10,6 +10,8 @@ output:
     colortheme: beaver
     fonttheme: structurebold
     highlight: tango
+    slide_level: 2
+    toc: true
     includes:
       in_header: mystyle.sty
 ---

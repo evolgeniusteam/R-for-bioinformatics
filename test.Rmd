@@ -10,6 +10,8 @@ output:
     colortheme: beaver
     fonttheme: structurebold
     highlight: tango
+    slide_level: 2
+    toc: true
     includes:
       in_header: mystyle.sty
 ---
@@ -23,8 +25,6 @@ color_block = function(color) {
 ## 将错误信息用红色字体显示
 knitr::knit_hooks$set(error = color_block('red'))
 
-## try to use layout in beamer
-library(flexdashboard)
 ```
 
 # section 1: TOC
@@ -68,9 +68,115 @@ Column 2
 
 ### XXX
 
-
-
 ### 相关包
+
+## 公式中的写法之**代数符号**
+
+\FontSmall
+
+|分类| R的表达式                | 显示结果                 |
+|---------------------|-------------------------|----|
+|代数符号|  ```expression(x + y)```  |  $x + y$         |
+||```expression(x - y)```| $x-y$ |
+||```expression(x * y)```|$xy$|
+||```expression(x / y)```| $x/y$ |
+||```expression(x %+-% y)```| $x \pm y$ |
+||```expression(x %/% y)```| $x \div y$ |
+||```expression(x %*% y)```| $x \times y$ |
+||```expression(x %.% y)```|$x \cdot y$|
+|| ```expression(x[i])``` | $x_{i}$ |
+|| ```expression(x^2)``` | $x^{2}$ |
+||```expression(sqrt(x))```| $\sqrt{x}$ |
+||```expression(sqrt(x,y))```| $\sqrt[y]{x}$ |
+||```expression(list(x,yz))```| $x,y,z$ |
+
+
+## 希腊字符
+
+代码
+
+\FontSmall 
+
+```{r}
+library(ggplot2);
+greeks <- c("Alpha", "Beta", "Gamma", "Delta", "Epsilon", "Zeta",
+            "Eta", "Theta", "Iota", "Kappa", "Lambda", "Mu",
+            "Nu", "Xi", "Omicron", "Pi", "Rho", "Sigma",
+            "Tau", "Upsilon", "Phi", "Chi", "Psi", "Omega");
+
+dat <- data.frame( x = rep( 1:6, 4 ), y = rep( 4:1, each = 6), greek = greeks );
+
+plot2 <- 
+  ggplot( dat, aes(x=x,y=y) ) + geom_point(size = 0) +
+    # 画希腊字符，注意下面两行代码的区别
+    geom_text( aes( x, y + 0.1, label = tolower( greek ) ), size = 10, parse = T ) +
+    geom_text( aes( x, y - 0.1, label = tolower( greek ) ), size = 5  );
+```
+
+## 希腊字符, cont. 
+
+```{r echo=FALSE, message=FALSE, error=FALSE, fig.height=4, fig.width=10}
+plot2;
+```
+
+## 公式示例
+
+**注** 写公式的方式很多
+
+\FontSmall
+
+```{r fig.width=10, fig.height=4}
+eq <- expression(paste(frac(1, sigma*sqrt(2*pi)), " ",
+                       plain(e)^{frac(-(x-mu)^2, 2*sigma^2)}));
+
+ggplot( data.frame(x=1:10, y=1:10), aes( x,y ) ) + 
+    geom_point( size = 0 ) +
+    geom_text(data = NULL, x = 5, y = 5, size = 12,
+              label = as.character(eq), parse = TRUE );
+```
+
+
+## 公式示例2 
+
+另一种代入变量值的方法：
+
+\FontSmall
+
+```{r fig.width=10, fig.height=4}
+library(ggplot2);
+x <- 1.24;
+y <- 0.6;
+
+ex <- bquote(.(parse(text=paste( "observed (", "italic(R)^2==", 
+                               x,  "^bold(", x, "), n == ", y, ")", 
+                               sep = "  " ))) );
+
+ggplot( data.frame(x=1:10, y=1:10), aes( x,y ) ) + geom_point( size = 0 ) +
+    geom_text(data = NULL, x = 5, y = 5, size = 8,
+              label = as.character(ex), parse = TRUE );
+```
+
+## 公式示例3
+
+使用 paste 和 substitute :
+
+\FontSmall
+
+```{r fig.height=4, fig.width=10}
+x_mean <- 1.5;
+x_sd <- 1.2;
+
+# 表达式
+ex <- substitute(
+    paste(X[i], " ~ N(", mu, "=", m, ", ", sigma^2, "=", s2, ")"),
+    list(m = x_mean, s2 = x_sd^2)
+);
+
+# histogram
+ggplot( data.frame( x = rnorm(100, x_mean, x_sd) ), aes( x ) ) +
+    geom_histogram( binwidth=0.5 ) +
+    ggtitle(ex); ## 为什么不需要 parse = TURE ???? 
+```
 
 
 ## 下次预告

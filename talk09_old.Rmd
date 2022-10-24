@@ -116,7 +116,7 @@ for( o in opts ){
 \FontSmall
 
 ```{r fig.height=3.5, fig.width=10, warning=FALSE, message=FALSE}
-library(tidyverse); library(extrafont);
+library(tidyverse);
 ggplot( data.frame( p = c(0:25, 32:127) ) ) +
   scale_y_continuous( name = "" ) + scale_x_continuous( name = "" ) + 
   scale_shape_identity() + 
@@ -573,770 +573,7 @@ plot1 + coord_polar();
 qplot(displ, hwy, data=mpg, facets = . ~ year) + geom_smooth();
 ```
 
-# ggplot2 进阶 1 ：如何找到合适的颜色？
-
-##  `ggplot2` 的颜色系统
-
-### `color` basics
-
-* pick `one` color with R
-
-* use a `color palette`
-
-### use `scale_colour_` or `scale_fill_` functions to change the mapping
-
-* map `category` variables to colors
-
-* map `numeric` variables to colors
-
-### change `color palette`
-
-* default R and ggplot2 palette
-
-* other useful palette
-
-## `color` basics
-
-\FontSmall
-
-```{r fig.height=2.5, fig.width=8}
-library(ggplot2);
-ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) +
-  geom_point(size=2) + 
-  scale_color_manual(values = c("cyan", rgb(255, 255, 0, maxColorValue = 255), "#7884CF" ));
-```
-### pick a color by
-
-name, `rgb()`, Hex code, Number
-
-## use a color palette, discrete colors
-
-\FontSmall
-
-```{r fig.height=3, fig.width=8}
-mtcars %>% ggplot( aes(disp, mpg) ) + geom_point( aes( color = factor(cyl) ) )
-```
-
-默认使用 `scale_colour_hue()` 颜色；
-
-## `scale_colour_hue()` 
-
-![default discrete colour palette](images/talk09/ggplot_default_palette.png){height=40%}
-
-\FontSmall
-```{r eval=FALSE}
-scale_colour_hue(
-  ...,
-  h = c(0, 360) + 15,
-  c = 100,
-  l = 65,
-  h.start = 0,
-  direction = 1,
-  na.value = "grey50",
-  aesthetics = "colour"
-)
-```
-
-## `scale_colour_brewer()` 更易用
-
-![](images/talk09/ggplot_brewer_palettes.png){height=90%}
-
-## `scale_colour_brewer()`, cont.
-
-\FontSmall
-
-```{r fig.height=3, fig.width=8}
-mtcars %>% ggplot( aes(disp, mpg) ) + geom_point( aes( color = factor(cyl) ) ) +
-  scale_color_brewer( palette = "Set1" );
-```
-
-## Palettes provided by `scale_color_brewer()`
-
-使用方法：
-
-```{r eval=FALSE}
-  + scale_color_brewer( palette = "<palette name>" );
-```
-
-
-\FontSmall
-
-### Diverging
-
-BrBG, PiYG, PRGn, PuOr, RdBu, RdGy, RdYlBu, RdYlGn, Spectral
-
-### Qualitative
-Accent, Dark2, Paired, Pastel1, Pastel2, Set1, Set2, Set3
-
-### Sequential
-Blues, BuGn, BuPu, GnBu, Greens, Greys, Oranges, OrRd, PuBu, PuBuGn, PuRd, Purples, RdPu, Reds, YlGn, YlGnBu, YlOrBr, YlOrRd
-
-## set color manualy : `scale_colour_manual()`
-
-\FontSmall
-
-```{r fig.height=4, fig.width=10}
-mtcars %>% ggplot( aes(disp, mpg) ) + geom_point( aes( color = factor(cyl) ) ) +
-  scale_color_manual( breaks = c("4","6","8"), values = c("red","green","blue") );
-```
-
-## map colors to continous/ numeric values
-
-\FontSmall
-
-```{r fig.height=4, fig.width=10}
-mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = cyl ) );
-```
-
-默认为： `scale_color_gradient()`
-
-## `scale_color_gradient()` 改变颜色更容易一些
-
-\FontSmall
-
-```{r eval=FALSE}
-scale_colour_gradient(
-  ...,
-  low = "#132B43",
-  high = "#56B1F7",
-  space = "Lab",
-  na.value = "grey50",
-  guide = "colourbar",
-  aesthetics = "colour"
-)
-```
-
-改变 low 和 high 的值即可；
-
-## `scale_color_gradient()` 举例
-
-\FontSmall
-
-```{r fig.height=4, fig.width=10}
-mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = cyl ) ) +
-  scale_color_gradient( low = "black", high = "yellow" );
-```
-
-## `scale_color_gradient2()` 3个颜色
-
-\FontSmall
-
-```{r fig.height=4, fig.width=10}
-mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = cyl ) ) +
-  scale_colour_gradient2( low = "black", mid = "red", high = "yellow", midpoint = 6 );
-```
-
-**注意** try change the `midpoint` option
-
-## `scale_colour_gradientn` multiple colors
-
-\FontSmall
-
-```{r fig.height=4, fig.width=10}
-mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = cyl ) ) +
-  scale_colour_gradientn( colors = c("black","red", "yellow") );
-```
-
-## `scale_colour_binned` gradient 颜色的另一种方式
-
-\FontSmall
-
-```{r fig.height=4, fig.width=10}
-mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = cyl ) ) +
-  scale_color_binned( low = "black", high = "yellow" );
-```
-
-## `scale_fill_XX` functions
-
-\FontSmall
-
-* 颜色的使用与 `aes` 是配套的：`aes` 使用 `fill` 时，颜色可使用 `scale_fill_xx`
-
-```{r fig.height=3, fig.width=8}
-mpg %>% ggplot( aes(x=displ, y=hwy) ) + 
-  geom_point( shape = 21, aes( fill = factor(cyl) )  ) +
-  scale_fill_brewer( palette = "Set2"  );
-```
-## `scale_fill_XX` functions, cont. 
-
-* `fill` 为连续值时，需要使用对应连续变量的调色板
-
-\FontSmall
-```{r fig.height=3, fig.width=6}
-mpg %>% ggplot( aes(x=displ, y=hwy) ) + 
-  geom_point( shape = 21, aes( fill = cyl )  ) +
-  scale_fill_continuous(  );
-```
-
-
-
-## 一个较为复杂的例子
-
-同一图中，可对不同对象使用不同（类型）的调色板
-
-\FontSmall 
-
-```{r fig.height=4, fig.width=10}
-ggplot(ToothGrowth, aes(x=factor(dose), y=len, fill=dose, color = factor(dose))) +
-  geom_boxplot() + scale_fill_gradientn( colors = c("black","red", "yellow") ) +
-  scale_colour_manual( values = c("pink", "green", "blue") ) + coord_flip();
-```
-
-## other palettes and related functions
-
-### included in ggplot2
-
-`scale_color_hue`, `scale_color_manual`, `scale_color_grey`, `scale_colour_viridis_d`, `scale_color_brewer` ...
-
-### from the `RColorBrewer` package
-
-`scale_color_brewer(palette = "<palette name>")` ... note: 函数属于 ggplot2
-
-### from the `viridis` package 
-
-`scale_color_viridis( discrete=TRUE, option="<palette name>" )` note: 提供了函数和palette
-
-### other packages ... 
-
-* `paletteer` package: `scale_color_paletteer_xx` functions
-
-* `ggsci` package
-
-
-## ``` ggsci ```: palette for scientific journals!!!
-
-\FontSmall
-
-### install 
-```{r eval=FALSE}
-install.packages("ggsci"); # Install ggsci from CRAN:
-devtools::install_github("nanxstats/ggsci"); # or from github
-```
-
-### contents
-
-``` scale_color_<journal> ``` 和 ``` scale_fill_<journal> ``` functions and color palettes
-
-### supported journals
-
-* NPG `scale_color_npg()`, `scale_fill_npg()`
-* AAAS, NEJM, Lancet, JAMA ... 
-
-## ggsci 举例
-\FontSmall
-
-```{r warning=FALSE, message=FALSE}
-library("ggsci")
-library("ggplot2")
-library("gridExtra")
-data("diamonds")
-p1 <- ggplot(
-  subset(diamonds, carat >= 2.2),
-  aes(x = table, y = price, colour = cut)
-) +
-  geom_point(alpha = 0.7) +
-  geom_smooth(method = "loess", alpha = 0.05, size = 1, span = 1) +
-  theme_bw() + labs( tag = "A" )
-
-p2 <- ggplot(
-  subset(diamonds, carat > 2.2 & depth > 55 & depth < 70),
-  aes(x = depth, fill = cut)
-) +
-  geom_histogram(colour = "black", binwidth = 1, position = "dodge") +
-  theme_bw() + labs( tag = "B" )
-```
-
-\FontNormal
-
-**要点** 
-
-* ``` library(gridExtra) ``` 
-
-## ggsci 结果, Nature Style !! 
-
-\FontSmall
-
-```{r fig.width=10, fig.height=4}
-p1_npg <- p1 + scale_color_npg()
-p2_npg <- p2 + scale_fill_npg()
-grid.arrange(p1_npg, p2_npg, ncol = 2)
-```
-
-## ggplot2 小结
-
-\FontSmall
-
-### layered grammer (图层语法) 的成分
-
-* 图层 ( geom_xxx )
-* scale ( scale_xxx )
-* faceting ( facet_xxx )
-* 坐标系统
-
-### 图象类型
-
-* 点图
-* bars 
-* boxplots
-
-### 其它重要内容（部分需要自学）
-
-* colours
-* theme
-* 其它图像类型
-* 图例（legends）和 坐标轴
-* 图形注释和其它定制 
-
-# ggplot2 进阶 2 ：如何在一张图中画多个panel？
-
-## key requirements for multi-panel plots
-
-* order / position
-* labeling
-* layout 
-
-## faceting ... 
-
-Faceting generates small multiples each showing a different subset of the data.
-
-``` facet_grid( <by_row> ~ <by_col> ) ``` 汽缸、车重与燃油效率间的关系
-
-\FontSmall 
-
-```{r fig.height=3, fig.width=10}
-ggplot( mtcars, aes( x = wt, y = mpg ) ) +
-  geom_point() +
-  facet_grid( . ~ cyl, scales = "free" );
-```
-
-## faceting , cont. 
-
-by col: 请自行尝试~ 
-
-\FontSmall 
-
-```{r eval=FALSE}
-ggplot( mtcars, aes( x = wt, y = mpg ) ) +
-  geom_point() +
-  facet_grid( cyl ~ . );
-```
-
-** 注意 ** 
-
-作图相关概念： panel, strip, axis, tick, tick label, axis label
-
-## ``` facet_grid ``` , cont.
-
-\FontSmall
-
-```{r fig.height=4, fig.width=10}
-ggplot( mtcars, aes( x = wt, y = mpg ) ) +
-  geom_point() + geom_smooth( method = "lm" ) + 
-  facet_grid( . ~ cyl );
-```
-
-## ``` facet_wrap ``` 
-
-指定行、列数和方向
-
-\FontSmall
-
-```{r fig.height=4, fig.width=10}
-ggplot( mtcars, aes( x = wt, y = mpg ) ) +
-  geom_point() + geom_smooth( method = "lm" ) + 
-  facet_wrap( . ~ cyl , ncol = 2, dir = "v" );
-```
-
-## parameters of `facet_wrap`
-
-\FontSmall
-
-```{r eval=FALSE}
-facet_wrap(
-  facets,
-  nrow = NULL,
-  ncol = NULL,
-  scales = "fixed",
-  shrink = TRUE,
-  labeller = "label_value",
-  as.table = TRUE,
-  switch = NULL,
-  drop = TRUE,
-  dir = "h",
-  strip.position = "top"
-)
-```
-
-## combine multiple plots
-
-Useful packages:
-
-* `gridExtra`
-* `cowplot` 
-* `grid`
-* `lattice`
-
-\FontSmall
-
-install or load packages
-
-```{r}
-if (!require("gridExtra")){ 
-  install.packages("gridExtra");
-} 
-
-if (!require("cowplot")){ 
-  install.packages("cowplot");
-} 
-
-library( cowplot );
-library( gridExtra );
-```
-
-## arranging multiple graphs using cowplot 
-
-Prepare two plots
-
-\FontSmall
-
-```{r}
-sp <- ggplot(mpg, aes(x = cty, y = hwy, colour = factor(cyl)))+ 
-  geom_point(size=2.5)
-# Bar plot
-bp <- ggplot(diamonds, aes(clarity, fill = cut)) +
-  geom_bar() +
-  theme(axis.text.x = element_text(angle=70, vjust=0.5))
-```
-
-Combine the two plots (the scatter plot and the bar plot):
-
-```{r fig.height=3, fig.width=10}
-cowplot::plot_grid(sp, bp, labels=c("A", "B"), ncol = 2, nrow = 1)
-```
-
-## `plot_grid` parameters
-
-\FontSmall
-
-```{r eval=FALSE}
-plot_grid(
-  ...,
-  plotlist = NULL,
-  align = c("none", "h", "v", "hv"),
-  axis = c("none", "l", "r", "t", "b", "lr", "tb", "tblr"),
-  nrow = NULL,
-  ncol = NULL,
-  rel_widths = 1,
-  rel_heights = 1,
-  labels = NULL,
-  label_size = 14,
-  label_fontfamily = NULL,
-  label_fontface = "bold",
-  label_colour = NULL,
-  label_x = 0,
-  label_y = 1,
-  hjust = -0.5,
-  vjust = 1.5,
-  scale = 1,
-  greedy = TRUE,
-  byrow = TRUE,
-  cols = NULL,
-  rows = NULL
-)
-```
-
-## 用`draw_plot` 调整graph的相对大小
-
-\FontSmall
-
-先生成一个新的panel
-
-```{r fig.height=3, fig.width=10}
-plot.iris <- ggplot(iris, aes(Sepal.Length, Sepal.Width)) + 
-  geom_point() + facet_grid(. ~ Species) + stat_smooth(method = "lm") +
-  background_grid(major = 'y', minor = "none") + # add thin horizontal lines 
-  panel_border();
-plot.iris;
-```
-
-## 用`draw_plot` 将三个panel画在一起
-
-\FontSmall
-
-```{r}
-plot <- 
-  ggdraw() +
-  draw_plot(plot.iris, x=0, y=.5, width=1, height=.5) +
-  draw_plot(sp, 0, 0, .5, .5) +
-  draw_plot(bp, .5, 0, .5, .5) +
-  draw_plot_label(c("A", "B", "C"), c(0, 0, 0.5), c(1, 0.5, 0.5), size = 15);
-```
-
-`draw_plot(plot, x = 0, y = 0, width = 1, height = 1)` 详解：
-
-* plot: the plot to place (ggplot2 or a gtable)
-* x: The x location of the lower left corner of the plot.
-* y: The y location of the lower left corner of the plot.
-* width, height: the width and the height of the plot
-
-## `draw_plot` results
-
-\FontSmall
-
-```{r fig.height=6, fig.width=10}
-plot
-```
-
-## ```draw_plot_label``` parameters
-
-\FontSmall
-
-Use `draw_plot_label` to add the labels
-
-```{r eval=FALSE}
-draw_plot_label(c("A", "B", "C"), c(0, 0, 0.5), c(1, 0.5, 0.5), size = 15);
-
-draw_plot_label(
-  label,
-  x = 0,
-  y = 1,
-  hjust = -0.5,
-  vjust = 1.5,
-  size = 16,
-  fontface = "bold",
-  family = NULL,
-  color = NULL,
-  colour,
-  ...
-)
-```
-
-## use `gridExtra::grid.arrange` to arrange multiple graphs
-
-\FontSmall
-
-Create four plots
-
-```{r message=FALSE, warning=FALSE, error=FALSE}
-library(ggplot2); library("gridExtra");
-df <- ToothGrowth
-df$dose <- as.factor(df$dose)
-
-bp <- ggplot(df, aes(x=dose, y=len, color=dose)) +
-  geom_boxplot() + 
-  theme(legend.position = "none") + labs( tag = "A");
-dp <- ggplot(df, aes(x=dose, y=len, fill=dose)) +
-  geom_dotplot(binaxis='y', stackdir='center')+
-  stat_summary(fun.data=mean_sdl, mult=1, 
-                 geom="pointrange", color="red")+
-   theme(legend.position = "none") + labs( tag = "B")
-vp <- ggplot(df, aes(x=factor(dose), y=len)) +
-  geom_violin()+
-  geom_boxplot(width=0.1) + labs( tag = "C")
-sc <- ggplot(df, aes(x=dose, y=len, color=dose, shape=dose)) +
-  geom_jitter(position=position_jitter(0.2))+
-  theme(legend.position = "none") +
-  theme_gray() + labs( tag = "D")
-```
-
-## use `gridExtra::grid.arrange` to arrange multiple graphs, cont.
-
-\FontSmall
-
-```{r fig.height=6, fig.width=10}
-grid.arrange(bp, dp, vp, sc, ncol=2, nrow =2);
-```
-
-## use `layout_matrix` parameter in `grid.arrange` 
-
-\FontSmall
-
-```{r fig.height=6, fig.width=10}
-grid.arrange(bp, dp, vp, sc, ncol = 2, 
-             layout_matrix = cbind(c(1,1,1), c(2,3,4)));
-```
-
-## explain `layout_matrix`
-
-\FontSmall
-
-```{r eval=FALSE, fig.width=8, fig.height=6}
-grid.arrange(bp, dp, vp, sc, 
-             ncol = 2,  ## two columns 
-             layout_matrix = cbind(c(1,1,1), c(2,3,4)) ## specify the layout
-             );
-```
-
-How the layout look like??
-
-```{r}
-cbind(c(1,1,1), c(2,3,4));
-```
-
-## make a different layout??? 
-
-\FontSmall
-
-three columns, A and B take the first two, C and D take the third one.
-
-```{r}
-( laymat = cbind(c(1,1), c(2,2), c(3,4)) );
-```
-
-```{r fig.width=8, fig.height=4, message=FALSE, error=FALSE, warning=FALSE}
-grid.arrange(bp, dp, vp, sc,
-             ncol = 3, layout_matrix = laymat);
-```
-
-## Add a common legend for multiple ggplot2 graphs
-
-\FontSmall
-
-Prepare a function to extract legend from a plot. Note **the legend should exist**.
-
-```{r}
-library(gridExtra)
-get_legend<-function(myggplot){
-  tmp <- ggplot_gtable(ggplot_build(myggplot))
-  leg <- which(sapply(tmp$grobs, function(x) x$name) == "guide-box")
-  legend <- tmp$grobs[[leg]]
-  return(legend)
-}
-```
-
-## Prepare the graphs and a legend 
-
-\FontSmall
-
-```{r}
-## 1. Create a box plot WITH legend
-bp <- ggplot(df, aes(x=dose, y=len, color=dose)) +
-  geom_boxplot() + labs(tag = "A");
-## 2. Create a violin plot WITHOUT legend
-vp <- ggplot(df, aes(x=dose, y=len, color=dose)) +
-  geom_violin()+ geom_boxplot(width=0.1) + labs( tag = "B") +
-  theme(legend.position="none") ## no legend 
-## 3. extract the legend from the first plot 
-legend <- get_legend(bp);
-## 4. remove the legend from the first plot 
-bp2 <- bp + theme(legend.position="none");
-```
-
-## plot the common legned to the right 
-
-\FontSmall
-
-```{r fig.width=8, fig.height=4}
-grid.arrange(bp2, vp, legend, ## three objects to plot
-             ncol=3, ## plot by column 
-             widths=c(2.3, 2.3, 0.8)); ## set the width of each graph
-```
-
-缺点：legend看起来属于B，而不是共同的。
-
-## SOLUTION: place the legend at top and align to the center
-
-\FontSmall
-
-```{r fig.width=8, fig.height=4.5 }
-## 1. re-make bp WITH legend, place the legend at top
-bp <- ggplot(df, aes(x=dose, y=len, color=dose)) +
-  geom_boxplot() + labs(tag = "A") + theme(legend.position = "top");
-## 2. extract the legend 
-legend <- get_legend(bp);
-## 3. remove teh legend from the plot 
-bp2 <- bp + theme(legend.position = "none")
-## 4. plot 
-grid.arrange(legend, bp2, vp,  ncol=2, nrow = 2, 
-             layout_matrix = rbind(c(1,1), c(2,3)),
-             widths = c(2.7, 2.7), heights = c(0.2, 2.5));
-```
-
-## Explain
-
-\FontSmall
-
-```{r eval=FALSE}
-grid.arrange(legend, bp2, vp,  
-             ncol=2, nrow = 2, 
-             layout_matrix = rbind(c(1,1), c(2,3)),
-             widths = c(2.7, 2.7), heights = c(0.2, 2.5));
-```
-
-```{r}
-rbind(c(1,1), c(2,3));
-```
-
-* `legend` takes the first row, and has a height of `0.2`
-* the other two graphs take the second row and has a height of `2.5`
-
-## Practise on your own
-
-\FontSmall
-
-To place the legend at:
-
-* the bottom, centered at the middle
-* top-left
-* top-right
-* bottom-left
-* bottom-right
-
-## ggExtra - Add marginal histograms to ggplot2
-
-\FontSmall
-
-please install the package if not exists ...
-
-`install.packages("ggExtra")`
-
-```{r fig.width=8, fig.height=4, warning=FALSE, error=FALSE, message=FALSE}
-library(ggExtra);
-piris <- ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = Species)) +
-  geom_point()
-ggMarginal(piris, groupColour = TRUE, groupFill = TRUE)
-```
-
-## 也可自己写代码实现
-
-\FontSmall
-
-```{r fig.height=4, fig.width=10}
-piris <- ggplot(iris, aes(Sepal.Length, Sepal.Width, colour = Species)) +
-  geom_point() + theme(legend.position=c(0,1), legend.justification=c(0,1))
-xdensity <- ggplot(iris, aes(Sepal.Length, fill = Species)) + 
-  geom_density(alpha=.5) + theme(legend.position = "none")
-ydensity <- ggplot(iris, aes(Sepal.Width, fill=Species)) + 
-  geom_density(alpha=.5) + theme(legend.position = "none") + coord_flip()
-grid.arrange(xdensity, NULL, piris, ydensity, 
-        ncol=2, nrow=2, widths=c(4, 1.4), heights=c(1.4, 4));
-```
-
-## Extended reading
-
-### Other ggplot2 extensions
-
-See the gallery at https://exts.ggplot2.tidyverse.org/gallery/. Or Google `ggplot2 extensions gallery`.
-
-### Explore the `grid` package
-
-* create graphical objects (`grobs`)
-* arrange multiple grobs using `arrangeGrob` function
-
-### Explore the `gridExtra` package
-
-* plot table 
-* ...
-
-
-## Summary
-
-Essentials for combining multiple graphs in one:
-
-* ordering
-* layout
-
-# ggplot2 进阶 3：如何写公式？
+# section 5: ggplot2 进阶1
 
 ## 散点图的进一步分析
 
@@ -1502,7 +739,6 @@ ggplot(td, aes(x=hjust, y=vjust)) +
     scale_y_continuous(breaks=c(0, 0.5, 1), expand=c(0, 0.2))
 ```
 
-
 ## 公式中的写法之**代数符号**
 
 \FontSmall
@@ -1523,7 +759,101 @@ ggplot(td, aes(x=hjust, y=vjust)) +
 ||```expression(sqrt(x,y))```| $\sqrt[y]{x}$ |
 ||```expression(list(x,yz))```| $x,y,z$ |
 
-... 更多，不在这里介绍了。
+## 公式, cont. 
+
+\FontSmall
+
+|分类| R的表达式                | 显示结果                 |
+|---------------------|-------------------------|----|
+|变量间的关系符号|```expression(x==y)```| $x=y$ |
+||```expression(x!=y)```| $x \neq y$ |
+||```expression(x<=y)```| $x \leqslant y$ |
+||```expression(x>=y)```| $x \geqslant y$ |
+||```expression(x %~~% y)```| $x \approx y$ |
+||```expression(x %=~% y)```| $x \cong y$ |
+||```expression(x %==% y)```| $x \equiv y$ |
+||```expression(x %prop% y)```| $x \propto   y$ |
+||```expression(x %~% y)```| $x \sim y$ |
+|列表符号|```expression( list(x[1], ..., x[n] )```| $x_{1}, ... , x_{n}$ |
+||```expression( list(x[1]+...+x[n]) )```| $x_{1} + ... + x_{n}$ |
+
+## 公式, cont. 
+
+\FontSmall
+
+|分类| R的表达式                | 显示结果                 |
+|---------------------|-------------------------|----|
+|数组之间关系的符号|```expression( x %subset% y )```| $x \subset y$ |
+||```expression( x %subseteq% y )```| $x \subseteq y$ |
+||```expression( x %supset% y )```| $x \supset y$ |
+||```expression( x %supseteq% y )```| $x \supseteq y$ |
+||```expression( x %notsubset% y )```| $x \not\subset y$ |
+||```expression( x %in% y )```| $x \in   y$ |
+|注音符号|```expression( hat(x) )```| $\hat{x}$ |
+||```expression( tilde(x) )```| $\tilde{x}$ |
+||```expression( bar(xy) )```| $\bar{xy}$ |
+||```expression( widehat(xy) )```| $\widehat{xy}$ |
+||```expression( widetilde(x) )```| $\widetilde{xy}$ |
+
+
+
+## 公式, cont. 
+
+\FontSmall
+
+|分类| R的表达式                | 显示结果                 |
+|---------------------|-------------------------|----|
+|各种箭头|```expression( x %<->% y )```| $x \leftrightarrow   y$ |
+||```expression( x %->% y )```| $x \rightarrow   y$ |
+||```expression( x %<-% y )```| $x \leftarrow   y$ |
+||```expression( x %up% y )```| $x \uparrow   y$ |
+||```expression( x %down% y )```| $x \downarrow   y$ |
+||```expression( x %<=>% y )```| $x \Leftrightarrow   y$ |
+||```expression( x %=>% y )```| $x \Rightarrow   y$ |
+||```expression( x %<=% y )```| $x \Leftarrow   y$ |
+||```expression( x %dblup% y )```| $x \Uparrow   y$ |
+||```expression( x %dbldown% y )```| $x \Downarrow   y$ |
+
+
+
+
+## 公式, cont. 
+
+\FontSmall
+
+|分类| R的表达式                | 显示结果                 |
+|---------------------|-------------------------|----|
+|特殊符号|```expression( infinity )```| $\infty$ |
+||```expression( 32 * degree )```| $32^\circ$ |
+||```expression( 60 * minute )```| $60^\prime$ |
+||```expression( 30 * second )```| $30^{\prime\prime}$ |
+|空白|```expression( x ~~ y )```| $x\;y$ |
+||```expression( x + phantom() + y )```| $x+\;+y$ |
+|分式|```expression( frac(x,y) ) ```| $\frac{x}{y}$ |
+||```expression( over(x,y) ) ```| $x+\frac{1}{}$ |
+||```expression( atop(x,y ) ) ```| $x \atop{y}$ |
+
+
+
+
+## 公式, cont. 
+
+\FontSmall
+
+|分类| R的表达式                | 显示结果                 |
+|---------------------|-------------------------|----|
+|大型操作符|```expression( sum(x[i], i = 1, n ) ) ```| $\sum_{1}^{n}x_{i}$ |
+||```expression( prod(plain(P)(X==x),x ) ```| $\prod_{x}^{} P(X=x)$ |
+||```expression( integral( f(x) * dx, a,b ) ) ```| $\int_{a}^{b}f(x)dx$ |
+||```expression( union(A[i], i==1,n) ) ```| $\bigcup_{i=1}^{n}A_{i}$ |
+||```expression( intersect(A[i], i==1, n) ) ```|$\bigcap_{i=1}^{n}A_{i}$ |
+||```expression( lim(f(x), x %->% 0) ) ```| $\lim_{x\rightarrow0}f(x)$ |
+||```expression( min(g(x), x >= 0) ) ```| $\min_{x\geqslant0 }g(x)$ |
+|分组|```expression( group("(", list(a, b), "]") ) ```| $(a,b]$ |
+||```expression( bgroup("(", atop(x, y), ")") ) ```| $\binom{x}{y}$ |
+||```expression( group(lceil, x, rceil) ) ```| $\left \lceil x \right \rceil$ |
+||```expression( group(lfloor, x, rfloor) ) ```| $\left \lfloor x \right \rfloor$ |
+
 
 ## 希腊字符
 
@@ -1532,7 +862,6 @@ ggplot(td, aes(x=hjust, y=vjust)) +
 \FontSmall 
 
 ```{r}
-library(ggplot2);
 greeks <- c("Alpha", "Beta", "Gamma", "Delta", "Epsilon", "Zeta",
             "Eta", "Theta", "Iota", "Kappa", "Lambda", "Mu",
             "Nu", "Xi", "Omicron", "Pi", "Rho", "Sigma",
@@ -1610,10 +939,9 @@ ggplot( data.frame( x = rnorm(100, x_mean, x_sd) ), aes( x ) ) +
     ggtitle(ex); ## 为什么不需要 parse = TURE ???? 
 ```
 
+# section 6: ggplot2 进阶2 
 
-# ggplot2 进阶4: 核心在于先计算再做图
-
-## 举例说明
+## ggplot2的核心在于先计算再做图
 
 先看数据（来自talk05）：
 
@@ -1828,75 +1156,311 @@ see here for a complete list: https://ggplot2.tidyverse.org/reference/ggtheme.ht
 
 ```{r fig.height=4, fig.width=10}
 ggplot(ToothGrowth, aes(x=factor( dose ), y=len, fill=supp)) +
-  geom_boxplot() + scale_fill_brewer( palette = "Paired" ) + 
-  labs( fill = "Supplement", x = "Dose (mg)" ) + 
-  theme( legend.position = "top" )
+  geom_boxplot() + scale_fill_brewer( palette = "Paired" ) + theme_minimal() +
+  labs( fill = "Supplement" ) + theme( legend.position = "top", axis.title.x = element_text("Dose") );
 ```
 
-
-## `labs()` function: Modify axis, legend, and plot labels
+## ``` ggsci ```: palette for scientific journals!!!
 
 \FontSmall
 
 ```{r eval=FALSE}
-labs(
-  ...,
-  x = "<x label>",
-  y = "<y label>",
-  colour = "<legend title>", # 与 aes 里的 colour 配合使用
-  fill = "<legend title>", # 与 aes 里的 fill 配合使用
-  shape = "<legend title>", # 与 aes 里的 shape 配合使用
-  title = waiver(),
-  subtitle = waiver(),
-  caption = waiver(),
-  tag = waiver(),
-  alt = waiver(),
-  alt_insight = waiver()
-)
+# Install ggsci from CRAN:
+install.packages("ggsci");
+
+# Or try the development version on GitHub:
+# install.packages("devtools")
+devtools::install_github("nanxstats/ggsci")
 ```
 
-## `labs()` with examples 
+\FontNormal
+
+提供了一系列
+
+``` scale_color_<journal> ``` 和 ``` scale_fill_<journal> ``` 函数
+
+详见：https://cran.r-project.org/web/packages/ggsci/vignettes/ggsci.html
+
+## ggsci 举例
+\FontSmall
+
+```{r warning=FALSE, message=FALSE}
+library("ggsci")
+library("ggplot2")
+library("gridExtra")
+data("diamonds")
+p1 <- ggplot(
+  subset(diamonds, carat >= 2.2),
+  aes(x = table, y = price, colour = cut)
+) +
+  geom_point(alpha = 0.7) +
+  geom_smooth(method = "loess", alpha = 0.05, size = 1, span = 1) +
+  theme_bw()
+
+p2 <- ggplot(
+  subset(diamonds, carat > 2.2 & depth > 55 & depth < 70),
+  aes(x = depth, fill = cut)
+) +
+  geom_histogram(colour = "black", binwidth = 1, position = "dodge") +
+  theme_bw()
+```
+
+\FontNormal
+
+**要点** 
+
+* ``` library(gridExtra) ``` 
+
+## ggsci 结果, Nature Style !! 
+
+\FontSmall
+
+```{r fig.width=10, fig.height=4}
+p1_npg <- p1 + scale_color_npg()
+p2_npg <- p2 + scale_fill_npg()
+grid.arrange(p1_npg, p2_npg, ncol = 2)
+```
+
+## faceting ... 
+
+Faceting generates small multiples each showing a different subset of the data.
+
+``` facet_grid( <by_row> ~ <by_col> ) ``` 汽缸、车重与燃油效率间的关系
+
+\FontSmall 
+
+```{r fig.height=3, fig.width=10}
+ggplot( mtcars, aes( x = wt, y = mpg ) ) +
+  geom_point() +
+  facet_grid( . ~ cyl, scales = "free" );
+```
+
+
+## faceting , cont. 
+
+by col: 请自行尝试~ 
+
+\FontSmall 
+
+```{r eval=FALSE}
+ggplot( mtcars, aes( x = wt, y = mpg ) ) +
+  geom_point() +
+  facet_grid( cyl ~ . );
+```
+
+** 注意 ** 
+
+作图相关概念： panel, strip, axis, tick, tick label, axis label
+
+## ``` facet_grid ``` 的适用范围是**全局**
 
 \FontSmall
 
 ```{r fig.height=4, fig.width=10}
-grid.arrange(sc + labs(tag = "A"), 
-             sc + labs( colour = "Dose (mg)" , tag = "B"),
-             sc + labs( shape = "Dose (mg)" , tag = "C"),
-             sc + labs( colour = "Dose (mg)", shape = "Dose (mg)", tag = "D"  ),
-             ncol=4, nrow =1);
+ggplot( mtcars, aes( x = wt, y = mpg ) ) +
+  geom_point() + geom_smooth( method = "lm" ) + 
+  facet_grid( . ~ cyl );
 ```
 
-# Exercise and home work
+## ``` facet_wrap ``` 
 
-## 总结，本节内容
+指定行、列数和方向
 
-### ggplot2 基础
+\FontSmall
 
-* 优缺点
-* 用法
-* 基本组成
+```{r fig.height=4, fig.width=10}
+ggplot( mtcars, aes( x = wt, y = mpg ) ) +
+  geom_point() + geom_smooth( method = "lm" ) + 
+  facet_wrap( . ~ cyl , ncol = 2, dir = "v" );
+```
 
-### ggplot2 进阶
+# 重点讲述： `ggplot2` 的颜色系统
 
-* 颜色和色板
-* 复杂layout的实现
-* 公式
-* ggplot2的数据统计逻辑
+## 非连续颜色
 
-### 更多阅读
+\FontSmall
 
-* Ggplot2: Elegant Graphics for Data Analysis, Book by Hadley Wickham
-* ggplot2 gallery provided by RStudio on Github
+```{r fig.height=4, fig.width=10}
+mtcars %>% ggplot( aes(disp, mpg) ) + geom_point( aes( color = factor(cyl) ) )
+```
 
+默认使用 `scale_colour_hue()` 颜色；
+
+## `scale_colour_hue()` 
+
+![default discrete colour palette](images/talk09/ggplot_default_palette.png){height=40%}
+
+\FontSmall
+```{r eval=FALSE}
+scale_colour_hue(
+  ...,
+  h = c(0, 360) + 15,
+  c = 100,
+  l = 65,
+  h.start = 0,
+  direction = 1,
+  na.value = "grey50",
+  aesthetics = "colour"
+)
+```
+
+## `scale_colour_brewer()` 更易用
+
+![](images/talk09/ggplot_brewer_palettes.png){height=90%}
+
+## `scale_colour_brewer()`, cont.
+
+\FontSmall
+
+```{r fig.height=4, fig.width=10}
+mtcars %>% ggplot( aes(disp, mpg) ) + geom_point( aes( color = factor(cyl) ) ) +
+  scale_color_brewer( palette = "Set1" );
+```
+
+## `scale_colour_manual()`
+
+\FontSmall
+
+```{r fig.height=4, fig.width=10}
+mtcars %>% ggplot( aes(disp, mpg) ) + geom_point( aes( color = factor(cyl) ) ) +
+  scale_color_manual( breaks = c("4","6","8"), values = c("red","green","blue") );
+```
+
+## 连续颜色
+
+\FontSmall
+
+```{r fig.height=4, fig.width=10}
+mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = cyl ) );
+```
+
+默认为： `scale_color_gradient()`
+
+## `scale_color_gradient()` 改变颜色更容易一些
+
+\FontSmall
+
+```{r eval=FALSE}
+scale_colour_gradient(
+  ...,
+  low = "#132B43",
+  high = "#56B1F7",
+  space = "Lab",
+  na.value = "grey50",
+  guide = "colourbar",
+  aesthetics = "colour"
+)
+```
+
+改变 low 和 high 的值即可；
+
+## `scale_color_gradient()` 举例
+
+\FontSmall
+
+```{r fig.height=4, fig.width=10}
+mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = cyl ) ) +
+  scale_color_gradient( low = "black", high = "yellow" );
+```
+
+## `scale_color_gradient2()` 3个颜色
+
+\FontSmall
+
+```{r fig.height=4, fig.width=10}
+mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = cyl ) ) +
+  scale_colour_gradient2( low = "black", mid = "red", high = "yellow", midpoint = 6 );
+```
+
+**注意** `midpoint` 参数
+
+## `scale_colour_gradientn` 多个颜色
+
+\FontSmall
+
+```{r fig.height=4, fig.width=10}
+mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = cyl ) ) +
+  scale_colour_gradientn( colors = c("black","red", "yellow") );
+```
+
+## `scale_colour_binned` gradient 颜色的另一种方式
+
+\FontSmall
+
+```{r fig.height=4, fig.width=10}
+mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = cyl ) ) +
+  scale_color_binned( low = "black", high = "yellow" );
+```
+
+## `scale_fill_XX`
+
+* 颜色的使用与 `aes` 是配套的：
+
+\FontSmall
+```{r eval=FALSE}
+## color --> scale_colour_xxx 
+mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = cyl ) ) +
+  scale_colour_gradientn( colors = c("black","red", "yellow") );
+```
+
+## 更多举例
+
+\FontSmall 
+
+```{r fig.height=4, fig.width=10}
+ggplot(ToothGrowth, aes(x=factor(dose), y=len, fill=dose, color = factor(dose))) +
+  geom_boxplot() + scale_fill_gradientn( colors = c("black","red", "yellow") ) +
+  scale_colour_manual( values = c("pink", "green", "blue") )
+```
+
+## 查看  RColorBrewer palette
+
+\FontSmall
+```{r fig.height=2, fig.width=10}
+library(RColorBrewer);
+## 画图
+display.brewer.pal(n = 8, name = 'Dark2')
+
+## 查看颜色的值
+brewer.pal(n = 8, name = "Dark2")
+```
+
+
+## ggplot2 小结
+
+\FontSmall
+
+### layered grammer (图层语法) 的成分
+
+* 图层 ( geom_xxx )
+* scale ( scale_xxx )
+* faceting ( facet_xxx )
+* 坐标系统
+
+### 图象类型
+
+* 点图
+* bars 
+* boxplots
+
+### 其它重要内容（部分需要自学）
+
+* colours
+* theme
+* 其它图像类型
+* 图例（legends）和 坐标轴
+* 图形注释和其它定制 
 
 ## 写在后面
 
 1. ggplot2 博大精深，需要一门课去讲
 2. 上手容易，精通难
 3. 太多记忆点
-4. 本节内容只涉及了基础中的基础，更多内容，包括进阶技巧和生信相关的扩展包，更多的需要同学们自行探索
-5. 遇到不会的图，先百度/Google，找包和代码
+4. 本节内容只涉及了基础中的基础，更多内容，包括进阶技巧和生信相关的扩展包，更多的需要同学们自行探索。
+
+请见“ggplot2 : elegant graphics for data analysis” 一书！！
+
+# section 7: Exercise and home work
 
 ## 下次预告
 
