@@ -188,7 +188,8 @@ Sys.getenv("HOME")
 
 ### **用`gridExtra::grid.arrange()`函数将 `p1`, `p2`, `p4` 按下面的方式组合在一起** 
 
-注：需要安装 `gridExtra` 包；
+注：1. 需要安装 `gridExtra` 包；
+2. 请为三个panel加上 A, B, C 字样的标签。
 
 ![](images/talk09-homework-plot07.png)
 
@@ -201,7 +202,8 @@ Sys.getenv("HOME")
 
 ### **用`patchwork`包中的相关函数将 `p1`, `p2`, `p3`, `p4` 按下面的方式组合在一起** 
 
-注：需要安装 `patchwork` 包；
+注：1. 需要安装 `patchwork` 包；
+2. 为四个panel加上 A, B, C, D 字样的标签。
 
 ![](images/talk09-homework-plot08.png)
 
