@@ -76,7 +76,7 @@ swiss %>% ggplot( aes( x = Education, y = Fertility )) +
 
 \FontSmall
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 m <- lm(Fertility ~ Education, data = swiss);
 summary(m);
 ```
@@ -87,7 +87,7 @@ summary(m);
 
 \FontSmall
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 coef( m ); 
 ```
 
@@ -156,7 +156,7 @@ head(marketing);
 
 \FontSmall
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 m1 <- lm( sales ~ youtube + facebook + newspaper, data = marketing );
 m2 <- lm( sales ~ youtube, data = marketing);
 m3 <- lm( sales ~ facebook, data = marketing);
@@ -342,7 +342,7 @@ data.frame( predicted = bm %>% predict( dat, type = "response" ),
 
 \FontSmall
 
-```{r non-linear-least-squares echo=FALSE, fig.width=10, fig.height=4, error=FALSE, message=FALSE, warning=FALSE}
+```{r echo=FALSE, fig.width=10, fig.height=4, error=FALSE, message=FALSE, warning=FALSE}
 set.seed(20160227)
 x<-seq(0,50,1)
 y<-((runif(1,10,20)*x)/(runif(1,0,10)+x))+rnorm(51,0,1)
@@ -357,7 +357,7 @@ lines(x,predict(m),lty=2,col="red",lwd=3)
 
 \FontSmall
 
-```{r modle1 eval=FALSE}
+```{r eval=FALSE}
 ## 1. generate data
 set.seed(20160227)
 x<-seq(0,50,1)
@@ -379,7 +379,7 @@ lines(x,predict(m),lty=2,col="red",lwd=3)
 
 \FontSmall
 
-```{r using-drc warning=FALSE, message=FALSE, fig.width=10, fig.height=4}
+```{r warning=FALSE, message=FALSE, fig.width=10, fig.height=4}
 library(drc); ## Analysis of Dose-Response Curves
 m13 <- drm( y ~ x, fct = LL.3() ); ## here LL.3() is a least square function
 data.frame( x = x, y = y, fitted = predict(m13) ) %>% ggplot( aes(x=x,y=y) ) +
@@ -422,7 +422,14 @@ data.frame( x = x, y = y, fitted = predict(m13) ) %>% ggplot( aes(x=x,y=y) ) +
 
 \FontSmall
 
-```{r using-degradation-aomisc }
+install `aomisc` package:
+
+```{r eval=FALSE}
+install.packages("devtools");
+devtools::install_github("onofriAndreaPG/aomisc");
+```
+
+```{r using-degradation-aomisc, warning=FALSE, error=FALSE, message=FALSE}
 library(aomisc);
 data(degradation);
 m14 <- drm(Conc ~ Time, fct = DRC.expoDecay(),
@@ -444,8 +451,7 @@ plot(m14, log="");
 
 \FontSmall
 
-```{r}
-library(aomisc); ## 记得安装这个包
+```{r message=FALSE, warning=FALSE, message=FALSE}
 data(speciesArea)
 m15 <- drm(numSpecies ~ Area, fct = DRC.powerCurve(),
              data = speciesArea)
@@ -507,6 +513,8 @@ plot(m17, log="", main = "Logistic function")
 推荐一本教程： **`Hands-On Machine Learning with R`**
 
 ![](images/talk11/homl-cover.jpeg){height="40%"}
+
+## 多元 non-linear regression, cont.
 
 \FontSmall
 
@@ -581,7 +589,7 @@ head(hyper_grid);
 
 \FontSmall
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 set.seed(123)  # for reproducibility
 cv_mars <- train(
   x = subset(ames, select = -Sale_Price),
@@ -601,7 +609,7 @@ cv_mars <- train(
 
 \FontSmall
 
-```{r fig.width=10, fig.height=3}
+```{r fig.width=10, fig.height=3, message=FALSE, warning=FALSE}
 cv_mars$bestTune;
 
 cv_mars$results %>%
@@ -616,7 +624,7 @@ ggplot(cv_mars) ## plot
 
 \FontSmall
 
-```{r error=FALSE, message=FALSE}
+```{r error=FALSE, message=FALSE, warning=FALSE}
 cv_lm <- train(
   Sale_Price ~ ., 
   data = ames, 

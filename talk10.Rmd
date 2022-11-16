@@ -262,6 +262,23 @@ table( combined$type );
 
 ```{r}
 combined %>% dplyr::count( type );
+
+## which is similar to:
+combined %>% group_by(type) %>% count( name = "my_count" );
+```
+## `dplyr::count` cont.
+
+\FontSmall
+
+```{r}
+# For table()-like output with two factors:
+
+iris %>% 
+  group_by(Species) %>% 
+  count(Petal.Width)
+
+## which is similar to
+iris %>% count(Species, Petal.Width);
 ```
 
 # section 3: two column data: part 1
@@ -696,9 +713,13 @@ with( scores.wide, t.test( After, Before,  paired = T ) );
 
 ## one way ANOVA
 
-**ANOVA**: similar to indepedent t-test, but can be applied to multiple groups
+**ANOVA**: similar to independent t-test, but can be applied to multiple groups
 
-比如：3个班学生的体重
+主要分析一个变量（多组）对另一变量的贡献度/解释度/影响度。
+
+比如：年级对学生的体重是否有影响？
+
+准备：**3个班学生的体重**
 
 \FontSmall
 

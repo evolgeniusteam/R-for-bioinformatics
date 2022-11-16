@@ -105,7 +105,7 @@ Sys.getenv("HOME")
 用 `starwars` 的数据作图，画 `boxplot` 显示身高 `height` 与性别 `gender` 的关系。要求：
 
 1.  `height` 为NA的，不显示；
-2.  用`ggsigif`包计算 `feminine` 和 `masculine` 两种性别的身高是否有显著区别，并在图上显示。
+2.  用`ggsignif`包计算 `feminine` 和 `masculine` 两种性别的身高是否有显著区别，并在图上显示。
 3.  将此图的结果保存为变量 **`p1`** ，以备后面使用；
 
 最终结果如图所示：

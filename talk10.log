@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.10.22)  1 NOV 2022 20:41
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.10.22)  2 NOV 2022 07:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1134,7 +1134,7 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7> not available
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5> not available
 (Font)              Font shape `TU/lmss/m/sl' tried instead on input line 17.
 )
-Overfull \vbox (6.83911pt too high) detected at line 265
+Overfull \vbox (7.6171pt too high) detected at line 265
  []
 
 
@@ -1303,8 +1303,12 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 [20
 
 ]
-Missing character: There is no 2 ("32) in font nullfont!
-Missing character: There is no 2 ("32) in font nullfont!
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \vbox (219.07344pt too high) detected at line 632
+ []
+
 
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
@@ -1313,9 +1317,9 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 [21
 
 ]
-\openout4 = `talk10.vrb'.
+Missing character: There is no 2 ("32) in font nullfont!
+Missing character: There is no 2 ("32) in font nullfont!
 
-(./talk10.vrb)
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1323,6 +1327,9 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 [22
 
 ]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1330,9 +1337,6 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 [23
 
 ]
-\openout4 = `talk10.vrb'.
-
-(./talk10.vrb)
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1342,18 +1346,7 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 ]
 \openout4 = `talk10.vrb'.
 
-(./talk10.vrb
-File: talk10_files/figure-beamer/unnamed-chunk-17-1.pdf Graphic file (type pdf)
-<use talk10_files/figure-beamer/unnamed-chunk-17-1.pdf>
-LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/b/n' will be
-(Font)              scaled to size 6.58472pt on input line 13.
-LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/m/n' will be
-(Font)              scaled to size 6.9843pt on input line 13.
-)
-Overfull \vbox (8.80833pt too high) detected at line 638
- []
-
-
+(./talk10.vrb)
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1361,8 +1354,19 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 [25
 
 ]
-File: images/talk10/na_figure_2a.png Graphic file (type bmp)
-<images/talk10/na_figure_2a.png>
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb
+File: talk10_files/figure-beamer/unnamed-chunk-18-1.pdf Graphic file (type pdf)
+<use talk10_files/figure-beamer/unnamed-chunk-18-1.pdf>
+LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/b/n' will be
+(Font)              scaled to size 6.58472pt on input line 13.
+LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/m/n' will be
+(Font)              scaled to size 6.9843pt on input line 13.
+)
+Overfull \vbox (8.80833pt too high) detected at line 729
+ []
+
 
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
@@ -1371,15 +1375,8 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 [26
 
 ]
-\openout4 = `talk10.vrb'.
-
-(./talk10.vrb
-File: talk10_files/figure-beamer/unnamed-chunk-18-1.pdf Graphic file (type pdf)
-<use talk10_files/figure-beamer/unnamed-chunk-18-1.pdf>
-)
-Overfull \vbox (8.6349pt too high) detected at line 664
- []
-
+File: images/talk10/na_figure_2a.png Graphic file (type bmp)
+<images/talk10/na_figure_2a.png>
 
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
@@ -1394,6 +1391,10 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 File: talk10_files/figure-beamer/unnamed-chunk-19-1.pdf Graphic file (type pdf)
 <use talk10_files/figure-beamer/unnamed-chunk-19-1.pdf>
 )
+Overfull \vbox (8.6349pt too high) detected at line 755
+ []
+
+
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1407,10 +1408,6 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 File: talk10_files/figure-beamer/unnamed-chunk-20-1.pdf Graphic file (type pdf)
 <use talk10_files/figure-beamer/unnamed-chunk-20-1.pdf>
 )
-Overfull \vbox (2.83945pt too high) detected at line 695
- []
-
-
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1418,8 +1415,15 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 [29
 
 ]
-Missing character: There is no 2 ("32) in font nullfont!
-Missing character: There is no 2 ("32) in font nullfont!
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb
+File: talk10_files/figure-beamer/unnamed-chunk-21-1.pdf Graphic file (type pdf)
+<use talk10_files/figure-beamer/unnamed-chunk-21-1.pdf>
+)
+Overfull \vbox (2.83945pt too high) detected at line 786
+ []
+
 
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
@@ -1428,9 +1432,9 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 [30
 
 ]
-\openout4 = `talk10.vrb'.
+Missing character: There is no 2 ("32) in font nullfont!
+Missing character: There is no 2 ("32) in font nullfont!
 
-(./talk10.vrb)
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1440,10 +1444,7 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 ]
 \openout4 = `talk10.vrb'.
 
-(./talk10.vrb
-File: talk10_files/figure-beamer/unnamed-chunk-22-1.pdf Graphic file (type pdf)
-<use talk10_files/figure-beamer/unnamed-chunk-22-1.pdf>
-)
+(./talk10.vrb)
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1466,7 +1467,10 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 ]
 \openout4 = `talk10.vrb'.
 
-(./talk10.vrb)
+(./talk10.vrb
+File: talk10_files/figure-beamer/unnamed-chunk-24-1.pdf Graphic file (type pdf)
+<use talk10_files/figure-beamer/unnamed-chunk-24-1.pdf>
+)
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1516,15 +1520,25 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 ]
 \openout4 = `talk10.vrb'.
 
-(./talk10.vrb
-File: talk10_files/figure-beamer/unnamed-chunk-30-1.pdf Graphic file (type pdf)
-<use talk10_files/figure-beamer/unnamed-chunk-30-1.pdf>
-)
+(./talk10.vrb)
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [39
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb
+File: talk10_files/figure-beamer/unnamed-chunk-31-1.pdf Graphic file (type pdf)
+<use talk10_files/figure-beamer/unnamed-chunk-31-1.pdf>
+)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[40
 
 ]
 \openout4 = `talk10.vrb'.
@@ -1541,19 +1555,12 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[40
+[41
 
 ]
 Missing character: There is no 4 ("34) in font nullfont!
 Missing character: There is no 2 ("32) in font nullfont!
 
-Overfull \hbox (28.81339pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[41
-
-]
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1561,11 +1568,6 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 [42
 
 ]
-Missing character: There is no 4 ("34) in font nullfont!
-Missing character: There is no 7 ("37) in font nullfont!
-Missing character: There is no 5 ("35) in font nullfont!
-Missing character: There is no 2 ("32) in font nullfont!
-
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1573,9 +1575,11 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 [43
 
 ]
-\openout4 = `talk10.vrb'.
+Missing character: There is no 4 ("34) in font nullfont!
+Missing character: There is no 7 ("37) in font nullfont!
+Missing character: There is no 5 ("35) in font nullfont!
+Missing character: There is no 2 ("32) in font nullfont!
 
-(./talk10.vrb)
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1606,10 +1610,6 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 \openout4 = `talk10.vrb'.
 
 (./talk10.vrb)
-Overfull \vbox (2.75467pt too high) detected at line 1118
- []
-
-
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1617,6 +1617,13 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 [47
 
 ]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
+Overfull \vbox (2.75467pt too high) detected at line 1209
+ []
+
+
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1624,16 +1631,6 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 [48
 
 ]
-\openout4 = `talk10.vrb'.
-
-(./talk10.vrb
-File: talk10_files/figure-beamer/unnamed-chunk-35-1.pdf Graphic file (type pdf)
-<use talk10_files/figure-beamer/unnamed-chunk-35-1.pdf>
-)
-Overfull \vbox (0.76782pt too high) detected at line 1146
- []
-
-
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1647,28 +1644,15 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 File: talk10_files/figure-beamer/unnamed-chunk-36-1.pdf Graphic file (type pdf)
 <use talk10_files/figure-beamer/unnamed-chunk-36-1.pdf>
 )
+Overfull \vbox (0.76782pt too high) detected at line 1237
+ []
+
+
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [50
-
-]
-\openout4 = `talk10.vrb'.
-
-(./talk10.vrb
-File: images/talk10/outlier_boxplot.png Graphic file (type bmp)
-<images/talk10/outlier_boxplot.png>
-)
-Overfull \vbox (5.12738pt too high) detected at line 1192
- []
-
-
-Overfull \hbox (28.81339pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[51
 
 ]
 \openout4 = `talk10.vrb'.
@@ -1681,7 +1665,37 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
 
+[51
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb
+File: images/talk10/outlier_boxplot.png Graphic file (type bmp)
+<images/talk10/outlier_boxplot.png>
+)
+Overfull \vbox (5.12738pt too high) detected at line 1283
+ []
+
+
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [52
+
+]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb
+File: talk10_files/figure-beamer/unnamed-chunk-38-1.pdf Graphic file (type pdf)
+<use talk10_files/figure-beamer/unnamed-chunk-38-1.pdf>
+)
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[53
 
 ]
 \openout4 = `talk10.vrb'.
@@ -1691,7 +1705,7 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[53
+[54
 
 ]
 \openout4 = `talk10.vrb'.
@@ -1702,16 +1716,6 @@ Overfull \hbox (47.98961pt too wide) in paragraph at lines 25--25
  []
 
 )
-Overfull \hbox (28.81339pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[54
-
-]
-\openout4 = `talk10.vrb'.
-
-(./talk10.vrb)
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1751,14 +1755,7 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 ]
 \openout4 = `talk10.vrb'.
 
-(./talk10.vrb
-File: talk10_files/figure-beamer/unnamed-chunk-44-1.pdf Graphic file (type pdf)
-<use talk10_files/figure-beamer/unnamed-chunk-44-1.pdf>
-)
-Overfull \vbox (2.53317pt too high) detected at line 1408
- []
-
-
+(./talk10.vrb)
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1768,7 +1765,14 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 ]
 \openout4 = `talk10.vrb'.
 
-(./talk10.vrb)
+(./talk10.vrb
+File: talk10_files/figure-beamer/unnamed-chunk-45-1.pdf Graphic file (type pdf)
+<use talk10_files/figure-beamer/unnamed-chunk-45-1.pdf>
+)
+Overfull \vbox (2.53317pt too high) detected at line 1499
+ []
+
+
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1789,10 +1793,6 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 \openout4 = `talk10.vrb'.
 
 (./talk10.vrb)
-Overfull \vbox (7.82957pt too high) detected at line 1525
- []
-
-
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1802,10 +1802,11 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 ]
 \openout4 = `talk10.vrb'.
 
-(./talk10.vrb
-File: talk10_files/figure-beamer/unnamed-chunk-48-1.pdf Graphic file (type pdf)
-<use talk10_files/figure-beamer/unnamed-chunk-48-1.pdf>
-)
+(./talk10.vrb)
+Overfull \vbox (7.82957pt too high) detected at line 1616
+ []
+
+
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1815,7 +1816,10 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 ]
 \openout4 = `talk10.vrb'.
 
-(./talk10.vrb)
+(./talk10.vrb
+File: talk10_files/figure-beamer/unnamed-chunk-49-1.pdf Graphic file (type pdf)
+<use talk10_files/figure-beamer/unnamed-chunk-49-1.pdf>
+)
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1826,10 +1830,6 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 \openout4 = `talk10.vrb'.
 
 (./talk10.vrb)
-Overfull \vbox (1.84213pt too high) detected at line 1635
- []
-
-
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1840,6 +1840,10 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 \openout4 = `talk10.vrb'.
 
 (./talk10.vrb)
+Overfull \vbox (1.84213pt too high) detected at line 1726
+ []
+
+
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1869,14 +1873,7 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 ]
 \openout4 = `talk10.vrb'.
 
-(./talk10.vrb
-File: talk10_files/figure-beamer/unnamed-chunk-56-1.pdf Graphic file (type pdf)
-<use talk10_files/figure-beamer/unnamed-chunk-56-1.pdf>
-)
-Overfull \vbox (22.07149pt too high) detected at line 1747
- []
-
-
+(./talk10.vrb)
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1886,7 +1883,14 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 ]
 \openout4 = `talk10.vrb'.
 
-(./talk10.vrb)
+(./talk10.vrb
+File: talk10_files/figure-beamer/unnamed-chunk-57-1.pdf Graphic file (type pdf)
+<use talk10_files/figure-beamer/unnamed-chunk-57-1.pdf>
+)
+Overfull \vbox (19.63806pt too high) detected at line 1838
+ []
+
+
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1906,10 +1910,7 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 ]
 \openout4 = `talk10.vrb'.
 
-(./talk10.vrb
-File: talk10_files/figure-beamer/unnamed-chunk-59-1.pdf Graphic file (type pdf)
-<use talk10_files/figure-beamer/unnamed-chunk-59-1.pdf>
-)
+(./talk10.vrb)
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1919,7 +1920,10 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 ]
 \openout4 = `talk10.vrb'.
 
-(./talk10.vrb)
+(./talk10.vrb
+File: talk10_files/figure-beamer/unnamed-chunk-60-1.pdf Graphic file (type pdf)
+<use talk10_files/figure-beamer/unnamed-chunk-60-1.pdf>
+)
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1927,6 +1931,9 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 [73
 
 ]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1934,9 +1941,6 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 [74
 
 ]
-\openout4 = `talk10.vrb'.
-
-(./talk10.vrb)
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1944,6 +1948,9 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 [75
 
 ]
+\openout4 = `talk10.vrb'.
+
+(./talk10.vrb)
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1951,9 +1958,6 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 [76
 
 ]
-Missing character: There is no 2 ("32) in font nullfont!
-Missing character: There is no 2 ("32) in font nullfont!
-
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1961,9 +1965,9 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 [77
 
 ]
-\openout4 = `talk10.vrb'.
+Missing character: There is no 2 ("32) in font nullfont!
+Missing character: There is no 2 ("32) in font nullfont!
 
-(./talk10.vrb)
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1971,16 +1975,26 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
 [78
 
 ]
-Missing character: There is no 6 ("36) in font nullfont!
-Missing character: There is no 1 ("31) in font nullfont!
-LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/b/n' will be
-(Font)              scaled to size 5.64404pt on input line 1963.
+\openout4 = `talk10.vrb'.
 
+(./talk10.vrb)
 Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [79
+
+]
+Missing character: There is no 6 ("36) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/b/n' will be
+(Font)              scaled to size 5.64404pt on input line 2054.
+
+Overfull \hbox (28.81339pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[80
 
 ]
 \openout4 = `talk10.vrb'.
@@ -1990,7 +2004,7 @@ Overfull \hbox (28.81339pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[80
+[81
 
 ]
 \tf@nav=\write7
@@ -2010,12 +2024,12 @@ Package rerunfilecheck Info: File `talk10.out' has not changed.
 (rerunfilecheck)             Checksum: 91BA26F9209A28C2CC9617C6B31E000E;1260.
  ) 
 Here is how much of TeX's memory you used:
- 34048 strings out of 477723
- 735751 string characters out of 5842358
- 1044092 words of memory out of 5000000
- 54323 multiletter control sequences out of 15000+600000
+ 34052 strings out of 477723
+ 735791 string characters out of 5842358
+ 1056158 words of memory out of 5000000
+ 54325 multiletter control sequences out of 15000+600000
  493507 words of font info for 106 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,15n,127p,1003b,752s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on talk10.pdf (80 pages).
+Output written on talk10.pdf (81 pages).
