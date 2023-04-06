@@ -4,6 +4,8 @@ subtitle: "HUST Bioinformatics course series"
 author: "Wei-Hua Chen (CC BY-NC 4.0)"
 institute: "HUST, China"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
+header-includes:
+- \usepackage{booktabs}
 output: 
   beamer_presentation:
     theme: AnnArbor
@@ -14,7 +16,7 @@ output:
       in_header: mystyle.sty
 ---
 
-```{r include=FALSE}
+```{r setup, include=FALSE}
 color_block = function(color) {
   function(x, options) sprintf('\\color{%s}\\begin{verbatim}%s\\end{verbatim}',
                                color, x)
@@ -22,6 +24,11 @@ color_block = function(color) {
 
 ## 将错误信息用红色字体显示
 knitr::knit_hooks$set(error = color_block('red'))
+
+## 提前装入的一些包
+library(tidyverse)
+library(kableExtra)
+library(knitr)
 ```
 
 # section 1: TOC
@@ -231,12 +238,17 @@ knitr::knit_hooks$set(error = color_block('red'))
 使用`Liver cirrhosis 肝硬化`数据：
 
 \FontSmall
-
-|    Data    |    ID   | Data type | Nr. controls | Nr. cases | Country | 
-|------------|---------|-----------|--------------|-----------|---------|
-| PRJEB6337-cohort1 | Qin-cohort1 |  mNGS | 83 | 98（95）* | China|
-| PRJEB6337-cohort2 | Qin-cohort2 | mNGS | 31 | 25（23）* |  China |
-| PRJNA471972       | Iebba-16S   | 16S  | 14 |  35       |   Italy  |
+```{r}
+summary_tbl <- tibble(
+  `Project ID` = c("PRJEB6337-cohort1", "PRJEB6337-cohort2", "PRJNA471972"),
+  ID = c("Qin-cohort1", "Qin-cohort2", "Iebba-16S"),
+  `Data type` = c("mNGS", "mNGS", "16S"),
+  `Nr. controls` = c(83, 31, 14),
+  `Nr. cases` = c(98, 25, 23),
+  Country = c("China", "China", "Italy")
+)
+summary_tbl;
+```
 
 ## 数据和代码目录
 
@@ -397,7 +409,7 @@ model.a <- rfsrc(Group ~ .,train.data, proximity = T, importance = T, ntree = 50
 
 \FontSmall
 
-```{r relative-importance-data-from-a-model, fig.height=4}
+```{r relative-importance-data-from-a-model, fig.height=3}
 require(tidyverse);
 impo <- as.data.frame( model.a$importance * 100 ) %>% arrange( desc(all) ) %>%
   slice_head( n=20) %>% rownames_to_column( var = "Feat" ) %>% 
@@ -557,10 +569,19 @@ val.res <-
 
 \FontSmall
 
-```{r external-validation-top-four-feature-model }
+```{r external-validation-top-four-feature-model}
 val.res2 <- 
   rf.external.validation(dis.mod.selected2.mod, qc.val.featdata, qc.val.metadata);
 ```
+
+## 外部验证，cont.
+
+\FontSmall
+
+```{r print-validation-results, fig.height=4}
+val.res2$roc.plot;
+```
+
 
 ## 比较 cross validation和external validation结果
 
@@ -571,6 +592,16 @@ res <- rf.plot.multiple.roc( dis.mod.selected2.mod.eval, val.res2,
                              labels = c("Train data, top 4 features", "Test data"));
 ```
 
+
+## 重要！！本章方法的缺点
+
+1. 没有做 nested cross validation ，容易造成过拟合，模型外部验证能力差。
+
+2. 解决方案：
+
+* 不做特征选择
+* 使用 nested cross validation
+* 使用外部验证！
 
 
 # section 5: 小结
@@ -587,6 +618,7 @@ res <- rf.plot.multiple.roc( dis.mod.selected2.mod.eval, val.res2,
 - 练习并重复本章的示例
 - 查看 `rf.funcdtion.R` 的代码，理解其含义；
 - 查看 `siamcat` 这个包，并运行其示例：https://bioconductor.org/packages/release/bioc/vignettes/SIAMCAT/inst/doc/SIAMCAT_vignette.html
+- 用 `siamcat` 这个包及其它相关函数实现本章代码的全部功能 （运行速度较慢，可适当减少 K-fold N-times的数值）
 
 ### important
 * all codes are available at Github: https://github.com/evolgeniusteam/R-for-bioinformatics

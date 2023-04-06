@@ -768,7 +768,7 @@ evaluate.internal.use <- function( res.pred.df, control.group, case.group ){
     theme( plot.title = element_text(hjust = .5, face = "bold", size = 11), 
            axis.text = element_text(size = 9) );
   
-  print( data.roc.plot );
+  ## print( data.roc.plot );
   
   ## ========================================================================
   ### calculate confusion matrix --

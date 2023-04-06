@@ -12,7 +12,7 @@ output:
     highlight: tango
     includes:
       in_header: mystyle.sty
----
+---x
 
 ```{r include=FALSE}
 color_block = function(color) {
@@ -81,7 +81,9 @@ m <- lm(Fertility ~ Education, data = swiss);
 summary(m);
 ```
 
+
 **lm(\[target variable\] \~ \[predictor variables\], data = \[data source\])**
+
 
 ## 得到 Coefficients
 
