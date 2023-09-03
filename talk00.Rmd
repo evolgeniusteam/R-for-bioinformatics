@@ -37,7 +37,7 @@ knitr::knit_hooks$set(error = color_block('red'))
 
 ## how people in science see each other
 
-![The most important illustration in science](images/talk00/how_people_in_science_see_each_other.png){width="64%"}
+![The most important illustration in science](images/talk00/how_people_in_science_see_each_other.png){width="60%"}
 
 ## the most important Scientific virtue
 
@@ -79,22 +79,21 @@ There is a reproducibility crisis in scientific community:
 
 ```{r echo=FALSE, fig.width=10, fig.height=5, warning=FALSE, message=FALSE}
 ## 先展示一下结果；echo=FALSE时只展示图片，不显示代码
-require(xlsx, quietly = TRUE);
+require(readxl, quietly = TRUE);
 require(ppcor, quietly = TRUE);
-require(ggplot2, quietly = TRUE);
+require(tidyverse, quietly = TRUE);
 
 ## -- r == RELIGIOSITY, 即：被调查人自认为是有信仰的百分比；数据来源：http://www.wingia.com/web/files/news/14/file/14.pdf
-r <- read.xlsx(file ="data/talk00/data.xlsx", 1, row.names = 1, header = F);
+r <- read_excel("data/talk00/data.xlsx", col_names = c("country", "rel"), sheet = 1);
 
 ## -- h == happiness, https://en.wikipedia.org/wiki/Satisfaction_with_Life_Index
-h <- read.xlsx(file ="data/talk00/data.xlsx", 2, row.names = 1, header = F);
+h <- read_excel("data/talk00/data.xlsx", col_names = c("country", "happiness"), sheet = 2);
 
 ## -- p == 人均GDP: https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)_per_capita
-p <- read.xlsx(file ="data/talk00/data.xlsx", 3, row.names = 1, header = F);
+p <- read_excel("data/talk00/data.xlsx", col_names = c("country", "ppp"), sheet = 3);
 
 ## -- combine data together ... 
-rhp <- data.frame( happiness = h$X2, rel = r[ rownames(h), "X2" ],  ppp = p[ rownames(h), "X2" ],  row.names = rownames(h) );
-rhp <- rhp[ complete.cases(rhp), ];
+rhp <- list( r, h, p ) %>% reduce( inner_join, by = "country") ;
 
 ## -- 
 c = pcor.test( rhp$happiness, rhp$rel , rhp$ppp);
@@ -237,7 +236,7 @@ summary( glm( happiness ~ ppp + rel, data = rhp ) );
 
 \FontSmall
 
-![Data source: WSJ "Can Money Buy You Happiness?"](images/talk00/How-Happy-Are-You.jpeg){height="90%"}
+![Data source: WSJ "Can Money Buy You Happiness?"](images/talk00/How-Happy-Are-You.jpeg){height="70%"}
 
 
 ## Concluding remarks

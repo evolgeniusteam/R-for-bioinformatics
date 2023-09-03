@@ -174,7 +174,7 @@ cited 225 times in 2021 (ver2+3), 166 so far (as of Aug 30, 2022)
 -   R档案综合网络，即CRAN(Comprehensive R Archive Network):
     <http://cran.r-project.org/>
 -   ggplot2: <http://ggplot2.org/>
--   RStudio: <http://www.rstudio.com/>
+-   RStudio: <https://posit.co/>
 -   如何从Google Scholar抓取引用数据:
     <http://librestats.com/2012/04/12/statistical-software-popularity-on-google-scholar/>
 -   indeed招聘趋势: www.indeed.com/jobtrends
@@ -204,7 +204,7 @@ Linux"后，发行版为Redhat（红帽）或Suse的用户要先阅读网站上�
 
 ## R studio
 
-RStudio可以从http://www.rstudio.com/products/rstudio/download/下载，支持等主流的操作系统。
+RStudio可以从 https://posit.co/download/rstudio-desktop/ 下载，支持等主流的操作系统。
 
 ![RStudio website main
 page](images/talk01/rstudio_mainpage_screenshot.png){height="50%"}
@@ -695,7 +695,6 @@ ggplot(mtcars, aes( wt , mpg)) + geom_point() +
 ggplot(mtcars, aes( wt , mpg)) + geom_point() +
   coord_trans( y = "log10" );
 ```
-
 
 ```coord_trans()```的其它参数：
 

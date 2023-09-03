@@ -53,7 +53,6 @@ knitr::opts_chunk$set(echo = TRUE)
 ### 现有工作介绍
 
 -   宁康：人工智能赋能菌群大数据挖掘
--   郭安源：表达数据分析
 -   薛宇：机器学习在新冠标志物和图像识别当中的应用
 -   陈卫华：机器学习在肠道菌群为基础的疾病标志物挖掘当中的应用
 
@@ -63,48 +62,51 @@ knitr::opts_chunk$set(echo = TRUE)
 
 [SOHU页面](https://www.sohu.com/a/438990464_185627)
 
-## 郭安源
+## 宁康，cont.
 
-![Advanced Science (2019 IF:
-15.84)](images/talk01/ML-anyuan.png){width="60%"}
+![Briefings in Bioinformatics (2023 IF=9.5)](images/talk01/ningkang_2023_bib.png){width="80%"}
 
-截止2022年8月30日，已被引用321次 (Google Scholar)
+基于肿瘤菌的多种肿瘤诊断模型
 
 ## 薛宇
 
-![Nature BME & Immunity
-(IF=29, 43)](images/talk01/ML-xueyu.png){width="60%"}
+![Nature BME & Immunity (2023 IF=29)](images/talk01/ML-xueyu.png){width="60%"}
 
 机器学习在新冠标志物和图像识别当中的应用
 
+## 薛宇, cont.
+
+![Nature communications (2023 IF=16.6)](images/talk01/xueyu2023_NC.png){width="60%"}
+
+小样本机器学习
+
 ## 陈卫华
 
-![Cell Metabolism (IF:
-31)](images/talk01/ML-weihuachen.png){width="60%"}
+![Cell Metabolism (2023IF:29)](images/talk01/ML-weihuachen.png){width="60%"}
 
 机器学习在肠道菌群为基础的疾病标志物挖掘当中的应用
 
-## 用肠道菌群profile一次诊断多种疾病
+## 基于肠道菌群的疾病诊断
 
-![mSystems (IF: 7.3)](images/talk01/ML_mSystems.png){width="65%"}
+![Gut Microbes (2023 IF: 12.2)](images/talk01/WHC_2023_gm.png){height="75%"}
 
-诊断多种常见肠病的机器学习模型
+基于肠道菌群的机器学习诊断模型
 
-## 身体各部位菌群与疾病关系数据库
+## 基于肠道菌群的预后分析
 
-![NAR (IF: 19.1)](images/talk01/mBodymap.png){width=65%}
+![Gut (2023 IF: 24)](images/talk01/WHC_2022_gut.png){width=80%}
 
-重点关注（面部）皮肤。与刘智老师合作课题
+肠道菌群可预示NKTCL的预后
 
 ## 其它动物的肠道菌群
 
-![NC (IF: 17.7)](images/talk01/buffalo_MAGs.png){width=100%}
+![Nature communications (2023 IF: 16.6)](images/talk01/buffalo_MAGs.png){width=100%}
 
 ## 噬菌体研究
 
-![Microbiology Spectrum (IF: 9)](images/talk01/EHEC_lambda_phage.png){width=60%}
+![Advanced science (2023 IF: 15.1)](images/talk01/WHC_2023_advanced_science.png){width=90%}
 
-改造噬菌体，增强其杀伤能力和特异性。
+基于三代测序的肠道噬菌体研究
 
 ## Class rules
 
@@ -218,7 +220,7 @@ plot2;
 
 ## Popularity of Programming language 2020
 
-![PYPL ranking (https://pypl.github.io/)](images/talk01/pypl_2020.png){width="70%"}
+![PYPL ranking (https://pypl.github.io/)](images/talk01/pypl_2023.png){width="70%"}
 
 ## Programming languages for bioinformatics
 
@@ -277,7 +279,7 @@ cited 225 times in 2021 (ver2+3), 166 so far (as of Aug 30, 2022)
 -   R档案综合网络，即CRAN(Comprehensive R Archive Network):
     <http://cran.r-project.org/>
 -   ggplot2: <http://ggplot2.org/>
--   RStudio: <http://www.rstudio.com/>
+-   RStudio: <https://posit.co/products/open-source/rstudio/>
 -   如何从Google Scholar抓取引用数据:
     <http://librestats.com/2012/04/12/statistical-software-popularity-on-google-scholar/>
 -   indeed招聘趋势: www.indeed.com/jobtrends
@@ -306,15 +308,11 @@ Linux"后，发行版为Redhat（红帽）或Suse的用户要先阅读网站上�
 
 ## R studio
 
-RStudio可以从http://www.rstudio.com/products/rstudio/download/下载，支持等主流的操作系统。
+RStudio可以从 https://posit.co/downloads/ 下载，支持等主流的操作系统。
 
-![RStudio website main
-page](images/talk01/rstudio_mainpage_screenshot.png){height="50%"}
+![RStudio website main page](images/talk01/rstudio_mainpage_screenshot.png){height="50%"}
 
-## R studio versions
-
-RStudio 有商业和免费版本；也有server版 ![Rstudio
-versions](images/talk01/RStudio_versions.png){width="100%"}
+RStudio 有商业和免费版本；也有server版
 
 ## R studio, cont.
 
@@ -403,8 +401,7 @@ package](images/talk01/RStudio_install_package.png){height="50%"}
 
 ## Packages needed for this study
 
-大部分包都由 RStudio
-公司提供；包括：ggplot2，tidyr，readr，stringr等。可以用以下命令一次性安装。不过，为方便读者直接从后面章节阅读，在每一次使用新包时，我们会再次进行提示安装方法。
+大部分包都由 Posit （前身为RStudio）公司提供；包括：ggplot2，tidyr，readr，stringr等。可以用以下命令一次性安装。不过，为方便读者直接从后面章节阅读，在每一次使用新包时，我们会再次进行提示安装方法。
 
 \FontSmall
 
@@ -514,18 +511,18 @@ account)](images/talk01/rstudio_server_login_page_web.png){height="30%"}
 
 ## RStudio packages for data visualisation, cont.
 
-### Shiny: <http://shiny.rstudio.com/gallery/>
+### Shiny: <https://shiny.posit.co/r/gallery/>
 
 -   build professional, interactive visualizations
 -   equipped with popular web widgets
 -   can be deployed as independent websites
 
 ![Shiny website example:
-<http://shiny.rstudio.com/gallery/bus-dashboard.html>](images/talk01/shiny_example.png){height="30%"}
+<https://shiny.posit.co/r/gallery/interactive-visualizations/bus-dashboard/>](images/talk01/shiny_example.png){height="30%"}
 
 ## RStudio packages for data visualisation, cont.
 
-### other packages
+### other packages（默认已安装）
 
 -   rmarkdown : create professional documents
 -   knitr: convert rmarkdown to pdf, html and more ...
@@ -539,30 +536,40 @@ account)](images/talk01/rstudio_server_login_page_web.png){height="30%"}
   * 将以下软件安装到默认目录，包括 **R** and **RStudio** 
 
 
-## HOWGO: 完成**作业**并**提交**?
+## 完成**作业**并**提交**?
 
-首先，安装必要软件
+### 1，安装必要软件
 
 * R 4.0 or newer
 * RStudio 最新版 
 
-其次，安装 `tinytex` 包，辅助将 Rmd 文件转为 PDF
+### 2，安装 `tinytex` 包，辅助将 Rmd 文件转为 PDF
 
 ```{r eval=FALSE}
-tinytex::install_tinytex(version = "latest"); ## 安装 tinytex
+install.packages("tinytex");
 ```
 
-如果出现错误，可以先下载 `TinyTex.zip` 文件，在R中运行：
+## 完成**作业**并**提交**? cont.
 
-下载页面：https://github.com/rstudio/tinytex-releases，下载 precompiled `TinyTex.zip` （找到对应的平台）。
+### 3，下载 `TinyTex.zip` 文件
+
+下载页面：https://github.com/rstudio/tinytex-releases
+
+下载 precompiled `TinyTex.zip` （找到对应的平台）。
+
+![TinyTex.zip 下载](images/talk01/download_tinytex_zip.png){height="42%"}
+
+**注意** 不要解压缩！！
+
+## 完成**作业**并**提交**? cont.
+
+### 4，安装下载的 `TinyTex.zip` 文件
 
 ```{r eval=FALSE}
 tinytex:::install_prebuilt("/path/to/TinyTex.zip");
 ```
 
-## HOWGO: 完成**作业**并**提交**? 续
-
-第三，安装 Github Desktop 
+### 5，安装 Github Desktop 
 
 * 安装Github Desktop 并登入，如无帐户，则先创建；
 
@@ -571,22 +578,26 @@ tinytex:::install_prebuilt("/path/to/TinyTex.zip");
 ![](images/talk01/download_from_github_course_tutorial.png){height="50%"}
 
 
-## HOWGO: 完成**作业**并**提交**? 续
+## 完成**作业**并**提交**? cont.
 
-第四步，通过Github Desktop 下载教程和作业
+### 6，通过Github Desktop 下载教程和作业
 
 * 下载到默认或指定目录
 * 打开下载的目录，找到 `R for bioinformatics 讲义.Rproj` 文件，双击用`RStudio`打开
 
 ![](images/talk01/find_and_open_folder_downloaded_from_github.png){height="30%"}
 
-## HOWGO: 完成**作业**并**提交**? 续
+## 完成**作业**并**提交**? cont.
+
+### 7，通过 Rstudio 打开相应的 `Rproj` 文件
 
 ![](images/talk01/open_project_and_find_homework.png){height="80%"}
 
-## HOWGO: 完成**作业**并**提交**? 续
+## 完成**作业**并**提交**? cont.
 
-*按`Rmd`文件的要求回答问题或/和提供代码
+### 8，完成作业并提交
+
+* 按`Rmd`文件的要求回答问题或/和提供代码
 
 * Install required packages
   * 比如：**tidyverse**

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.15)  6 APR 2023 08:41
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.2.15)  6 APR 2023 08:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1155,7 +1155,7 @@ File: images/talk01/RStudio_versions.png Graphic file (type bmp)
 File: images/talk01/RStudio_interface.png Graphic file (type bmp)
 <images/talk01/RStudio_interface.png>
 
-Overfull \vbox (36.18pt too high) detected at line 383
+Overfull \vbox (36.18pt too high) detected at line 384
  []
 
 [19
@@ -1209,7 +1209,7 @@ File: images/talk01/choosecran_mirror.png Graphic file (type bmp)
 File: images/talk01/tidyverse.png Graphic file (type bmp)
 <images/talk01/tidyverse.png>
 )
-Overfull \vbox (7.86356pt too high) detected at line 597
+Overfull \vbox (7.86356pt too high) detected at line 598
  []
 
 [29
@@ -1230,7 +1230,7 @@ File: images/talk01/rstudio_server_interface.png Graphic file (type bmp)
 File: images/talk01/suvminer_example_output.png Graphic file (type bmp)
 <images/talk01/suvminer_example_output.png>
 
-Overfull \vbox (18.18489pt too high) detected at line 676
+Overfull \vbox (18.18489pt too high) detected at line 677
  []
 
 [33
@@ -1239,7 +1239,7 @@ Overfull \vbox (18.18489pt too high) detected at line 676
 File: images/talk01/ggvis_v0_4.png Graphic file (type bmp)
 <images/talk01/ggvis_v0_4.png>
 
-Overfull \vbox (26.31207pt too high) detected at line 699
+Overfull \vbox (26.31207pt too high) detected at line 700
  []
 
 [34
@@ -1255,9 +1255,9 @@ File: images/talk01/shiny_example.png Graphic file (type bmp)
 
 ]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 755.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 756.
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <6> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 755.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 756.
 [38
 
 ]
@@ -1369,7 +1369,7 @@ File: R-language-tutorial---part-2_files/figure-beamer/unnamed-chunk-23-1.pdf Gr
 File: R-language-tutorial---part-2_files/figure-beamer/unnamed-chunk-24-1.pdf Graphic file (type pdf)
 <use R-language-tutorial---part-2_files/figure-beamer/unnamed-chunk-24-1.pdf>
 )
-Overfull \vbox (170.15799pt too high) detected at line 1286
+Overfull \vbox (170.15799pt too high) detected at line 1287
  []
 
 [58
@@ -1381,7 +1381,7 @@ Overfull \vbox (170.15799pt too high) detected at line 1286
 File: R-language-tutorial---part-2_files/figure-beamer/unnamed-chunk-25-1.pdf Graphic file (type pdf)
 <use R-language-tutorial---part-2_files/figure-beamer/unnamed-chunk-25-1.pdf>
 )
-Overfull \vbox (32.05461pt too high) detected at line 1304
+Overfull \vbox (32.05461pt too high) detected at line 1305
  []
 
 [59
@@ -1424,7 +1424,7 @@ File: R-language-tutorial---part-2_files/figure-beamer/unnamed-chunk-29-1.pdf Gr
 File: R-language-tutorial---part-2_files/figure-beamer/unnamed-chunk-32-1.pdf Graphic file (type pdf)
 <use R-language-tutorial---part-2_files/figure-beamer/unnamed-chunk-32-1.pdf>
 )
-Overfull \vbox (0.48746pt too high) detected at line 1488
+Overfull \vbox (0.48746pt too high) detected at line 1489
  []
 
 [65
@@ -1449,7 +1449,7 @@ File: R-language-tutorial---part-2_files/figure-beamer/unnamed-chunk-33-1.pdf Gr
 File: R-language-tutorial---part-2_files/figure-beamer/unnamed-chunk-35-1.pdf Graphic file (type pdf)
 <use R-language-tutorial---part-2_files/figure-beamer/unnamed-chunk-35-1.pdf>
 )
-Overfull \vbox (3.0835pt too high) detected at line 1559
+Overfull \vbox (3.0835pt too high) detected at line 1560
  []
 
 [68
@@ -1547,7 +1547,7 @@ File: images/talk12/RF-application.png Graphic file (type bmp)
 \openout4 = `R-language-tutorial---part-2.vrb'.
 
 (./R-language-tutorial---part-2.vrb)
-Overfull \vbox (4.80945pt too high) detected at line 1976
+Overfull \vbox (4.80945pt too high) detected at line 1977
  []
 
 [88
@@ -1589,7 +1589,7 @@ File: R-language-tutorial---part-2_files/figure-beamer/relative-importance-data-
 \openout4 = `R-language-tutorial---part-2.vrb'.
 
 (./R-language-tutorial---part-2.vrb)
-Overfull \vbox (32.7925pt too high) detected at line 2207
+Overfull \vbox (32.7925pt too high) detected at line 2208
  []
 
 [95
@@ -1606,7 +1606,7 @@ Overfull \vbox (32.7925pt too high) detected at line 2207
 File: R-language-tutorial---part-2_files/figure-beamer/roc-plot-1.pdf Graphic file (type pdf)
 <use R-language-tutorial---part-2_files/figure-beamer/roc-plot-1.pdf>
 )
-Overfull \vbox (18.67804pt too high) detected at line 2252
+Overfull \vbox (18.67804pt too high) detected at line 2253
  []
 
 [97
@@ -1633,7 +1633,7 @@ File: R-language-tutorial---part-2_files/figure-beamer/show-feature-importance-1
 \openout4 = `R-language-tutorial---part-2.vrb'.
 
 (./R-language-tutorial---part-2.vrb)
-Overfull \vbox (0.59248pt too high) detected at line 2374
+Overfull \vbox (0.59248pt too high) detected at line 2375
  []
 
 [101
@@ -1660,7 +1660,7 @@ Overfull \hbox (352.78352pt too wide) in paragraph at lines 16--16
  []
 
 )
-Overfull \vbox (224.19247pt too high) detected at line 2487
+Overfull \vbox (224.19247pt too high) detected at line 2488
  []
 
 [104
@@ -1674,7 +1674,7 @@ Overfull \hbox (352.78352pt too wide) in paragraph at lines 14--14
  []
 
 )
-Overfull \vbox (157.66248pt too high) detected at line 2554
+Overfull \vbox (157.66248pt too high) detected at line 2555
  []
 
 [105
@@ -1708,7 +1708,7 @@ File: images/talk13/deep-learning-with-R.png Graphic file (type bmp)
 
 ]
 LaTeX Font Info:    Font shape `TU/FandolHei-Regular(0)/b/n' will be
-(Font)              scaled to size 5.64404pt on input line 2632.
+(Font)              scaled to size 5.64404pt on input line 2633.
 [112
 
 ] [113
