@@ -150,17 +150,9 @@ matrix( c(20, 30.1, 2, 45.8, 23, 14), nrow = 2, byrow = T );
 
 \FontSmall 
 
-| 参数    | 默认值  | 说明 | 必须 | 允许值 |
-|--------|---------|---------|-----|-------------------------|
-| data   | 无      | 输入数据 | 是 | NA、vector或矩阵 （NA是特殊的值）。 |
-| nrow   | 1      | 指定matrix的行数 | 不 | 自然整数 |
-| ncol   | 1      | 指定列数 | 不 | 自然整数 |
-| byrow  | FALSE  | 是否按行将数据转化为matrix | 不 | 逻辑值  |
-| dimnames | NULL | 指定矩阵的行名和列名 | 不 |  NULL 或 list (注：NULL是特殊的值，list则是一种复杂的数据类型) | 
-
-\FontNormal 
-
-更多细节可用 `? matrix ` 命令查看
+```{r}
+?matrix
+```
 
 ## `matrix()`参数测试
 
@@ -646,12 +638,10 @@ c(-1, 0, 1) / 0;
 
 \FontSmall
 
-|                   | 判定（输入）          | **0**   | **Inf** | **NA** | **NaN** |
-|-------------------|--------------|---------|---------|--------|---------|
-| `is.finite()` |  有限值（数字）  | **x** |         |      |      |
-| `is.infinite()` | 无限值（数字） |   |    **x**     |      |      |
-| `is.na()`       |  not available  |  |         |    **x**  |  **x**    |
-| `is.nan()`      | 不是数字  |  |         |      |   **x**   |
+```{r warning=FALSE, message=FALSE}
+nul <- readr::read_csv(file = "data/talk02/null.csv");
+knitr::kable(nul);
+```
 
 ## 其它 is. 函数
 

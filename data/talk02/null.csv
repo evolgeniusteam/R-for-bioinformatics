@@ -1,0 +1,5 @@
+function,0,-Inf,NA,NaN
+is.finite(),x,,,
+is.infinite(),,x,,
+is.na(),,x,x
+is.nan(),,,,x

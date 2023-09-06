@@ -1,0 +1,6 @@
+Parameter,default,note,required,value allowed
+data,no,输入数据,是,NA、vector或矩阵（NA是特殊的值)
+nrow,1,指定matrix的行数,不,自然整数
+ncol,1,指定列数,不,自然整数
+byrow,FALSE,是否按行将数据转化为matrix,不,逻辑值
+dimnames,NULL,指定矩阵的行名和列名,不,NULL或list
