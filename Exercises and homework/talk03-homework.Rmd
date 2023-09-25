@@ -73,7 +73,6 @@ Sys.info()[["user"]]
 Sys.getenv("HOME")
 ```
 
-
 ## 练习与作业1，`data.frame`
 
 注：以下内容来自 <https://www.r-exercises.com/>。
@@ -183,28 +182,32 @@ Sys.getenv("HOME")
 
 <!-- -->
 
-    > df1 的内容 
-    Id Age
-    1 14
-    2 12
-    3 15
-    4 10 
+```         
+> df1 的内容 
+Id Age
+1 14
+2 12
+3 15
+4 10 
 
-    >df2 的内容
-    Id Sex Code
-    1 F a
-    2 M b
-    3 M c
-    4 F d
+>df2 的内容
+Id Sex Code
+1 F a
+2 M b
+3 M c
+4 F d
+```
 
 合并之后的结果：
 
-    > M 
-    Id Age Sex Code
-    1 14 F a
-    2 12 M b
-    3 15 M c
-    4 10 F d
+```         
+> M 
+Id Age Sex Code
+1 14 F a
+2 12 M b
+3 15 M c
+4 10 F d
+```
 
 ```{r}
 ## 代码写这里，并运行；
@@ -226,16 +229,18 @@ Sys.getenv("HOME")
 
 <!-- -->
 
-    ## 1. 生成一个10 行2 列的data.frame
-    df3 <- data.frame( data = 1:10, group = c("A","B") );
-    ## 2. 增加一列，其长度是1，可以吗？
-    cbind(df3, newcol = 1);
-    ## 3. 增加一列，其长度是10，可以吗？
-    cbind(df3, newcol = 1:10);
-    ## 4. 增加一列，其长度是2，可以吗？
-    cbind(df3, newcol = 1:2);
-    ## 5. 增加一列，其长度是3，可以吗？
-    cbind(df3, newcol = 1:3);
+```         
+## 1. 生成一个10 行2 列的data.frame
+df3 <- data.frame( data = 1:10, group = c("A","B") );
+## 2. 增加一列，其长度是1，可以吗？
+cbind(df3, newcol = 1);
+## 3. 增加一列，其长度是10，可以吗？
+cbind(df3, newcol = 1:10);
+## 4. 增加一列，其长度是2，可以吗？
+cbind(df3, newcol = 1:2);
+## 5. 增加一列，其长度是3，可以吗？
+cbind(df3, newcol = 1:3);
+```
 
 答：
 
@@ -279,10 +284,12 @@ tibble(
 
 <!-- -->
 
-    df <- tibble(
-      x = runif(5),
-      y = rnorm(5)
-    )
+```         
+df <- tibble(
+  x = runif(5),
+  y = rnorm(5)
+)
+```
 
 任务：
 

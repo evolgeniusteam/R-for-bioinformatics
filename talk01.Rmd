@@ -566,7 +566,9 @@ install.packages("tinytex");
 ### 4，安装下载的 `TinyTex.zip` 文件
 
 ```{r eval=FALSE}
-tinytex:::install_prebuilt("/path/to/TinyTex.zip");
+tinytex:::install_prebuilt("C:/wchen/Downloads/TinyTex.zip");
+
+## 注： 请将 “C:/wchen/Downloads/TinyTex.zip” 更换为实际下载路径
 ```
 
 ### 5，安装 Github Desktop 

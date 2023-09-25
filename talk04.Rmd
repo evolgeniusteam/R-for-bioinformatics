@@ -360,13 +360,13 @@ barplot;
 ```{r fig.heigh=2, fig.width=8}
 res <- data.frame( res=responses );
 ## -- 按照同意程度从强->弱 排序
-res$res <- factor( res$res, levels = c( "Strongly Agree", "Agree",  "Disagree" ) );
+res$res <- factor( res$res, levels = c( "Strongly Agree", "Agree",  "Disagree" ), ordered = T );
 str(res);
 
 plot2 <- 
   ggplot( data = res, aes( x = res )) +
   geom_bar() +
-  xlab( "Response" );
+  xlab( "Response" ) + ylab("Count");
 ```
 
 ## 调整 factor 以调整画图顺序， cont.

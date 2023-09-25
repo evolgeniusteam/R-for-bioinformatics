@@ -49,134 +49,9 @@ N %>% gather( ind, values );
 
 ## 今次提要
 
--   pipe
 -   dplyr 、 tidyr (超级强大的数据处理) part 1
 
-# section 2: pipe
-
-## 什么是 pipe ？
-
--   pipe 就是 `%>%`
--   it comes from the `magrittr` package by **Stefan Milton Bache**
--   Packages in the tidyverse load %\>% for you automatically, so you don't usually load magrittr explicitly.
--   实质是中间值的传递
-
-示例：
-
-\FontSmall
-
-```{r message=FALSE, warning=FALSE}
-## 比如：这段代码可以合并为：
-library(tidyverse); ## 装入包
-library(magrittr);
-a <- subset( swiss, Fertility > 20 );
-cor.test(a$Fertility, a$Education);
-
-```
-
-## pipe 版本
-
-\FontSmall
-
-```{r}
-## -- 新代码 ... 
-swiss %>%
-  subset(., Fertility > 20) %$%
-  cor.test( Education , Fertility );
-```
-
-## 是否所有函数都支持 pipe ？
-
-是的。
-
-通常需要用 `.` 指代传递来的数据，并以参数的形式赋予下游函数:
-
-\FontSmall
-
-```{r}
-swiss %>% do( head(.,  n = 4 ) );
-
-## 也可以写为
-swiss %>% head(.,  n = 4 );
-```
-
-## 其它形式的 pipe
-
-`%T>%` : 返回上游的值 （？？？）
-
-\FontSmall
-
-```{r fig.height=4, fig.width=10, message=FALSE, warning=FALSE}
-## 示例：res1 是空值 ... 
-res1 <- 
-  rnorm(100) %>%
-    matrix(ncol = 2) %>%
-    plot();
-```
-
-## %T\>%: 返回上游值 (left-side values)
-
-\FontSmall
-
-```{r fig.height=4, fig.width=10}
-## 示例：res2 是 matrix() 内容 ... 
-res2 <- 
-  rnorm(100) %>%
-    matrix(ncol = 2) %T>%
-    plot();
-```
-
-## %T\>%: 返回上游值 (left-side values), cont.
-
-\FontSmall
-
-```{r}
-head(res2);
-```
-
-## %\$% ： attach ???
-
-\FontSmall
-
-```{r}
-attach( mtcars ); ## note the warning message ... 
-cor.test( cyl, mpg ); ## 汽缸数与燃油效率
-```
-
-## %\$% ： attach ??? , cont.
-
-\FontSmall
-
-```{r}
-detach( mtcars );
-with( mtcars, cor.test( cyl, mpg ) );
-```
-
-## %\$% ： attach ??? , cont.
-
-\FontSmall
-
-```{r}
-mtcars %$% 
-  cor.test( cyl, mpg );
-```
-
-## 其它 pipe 及注意事项
-
-\FontSmall
-
-```{r}
-## 双向 pipe 
-mtcars %<>% transform(cyl = cyl * 2);
-```
-
-**注**
-
--   pipe 的使用可以使思路更清晰
--   因此，尽量使用 `%>%` （方向明确），而不使用其它方向不明确的 pipe
-
-
-# section 3: data wrangler - dplyr
+# section 2: data wrangler - dplyr
 
 ## dplyr
 
@@ -303,7 +178,156 @@ dat <- mouse.tibble %>%
 knitr::kable( head( dat, n = 15 ) );
 ```
 
-## 课堂练习：使用常用函数解决问题
+\FontNormal
+
+这种显示格式通常被称为：**长数据格式**！！又称为**数据扁平化**
+
+## 数据扁平化的优点？
+
+1.  便于用 dplyr 或 tapply 等进行计算；
+2.  更灵活，用于保存稀疏数据
+
+## 适合扁平化的数据举例
+
+### 成绩单
+
+\FontSmall
+
+```{r message=FALSE, warning=FALSE}
+library(dplyr);
+grades <- read_tsv( file = "data/talk05/grades.txt" );
+knitr::kable( head(grades, n=20) );
+```
+
+灵活性：
+
+-   应对不同学生选择不同课程的情况
+-   可随时增加新的课程
+
+## 长数据变宽
+
+\FontSmall
+
+```{r}
+grades2 <- grades %>% spread( course, grade );
+knitr::kable( grades2 );
+```
+
+\FontNormal
+
+可以想像，如果以此为输入，用R计算每个人的平均成绩、不及格门数、总学分，将会是很繁琐的一件事（但对其它工具（如Excel）可能会比较简单）
+
+## `spread` explained!
+
+\FontSmall
+
+```{r eval=FALSE}
+grades2 <- grades %>% spread( course, grade );
+```
+
+\FontNormal
+
+![`spread` function explained](images/talk05/spread_explained.png){height="50%"}
+
+## 宽数据转为长数据
+
+use `gather()` function in `tidyr`
+
+\FontSmall
+
+```{r}
+grades_melted <- grades2 %>% gather( course, grade, -name ); ## 注意参数的使用 ~~ 
+knitr::kable( head( grades_melted ) );
+```
+
+## `gather` explained!
+
+\FontSmall
+
+```{r eval=FALSE}
+grades_melted <- grades2 %>% gather( course, grade, -name ); ## 注意参数的使用 ~~ 
+```
+
+\FontNormal
+
+![annotated gather function](images/talk05/gather_explained.png){height="50%"}
+
+## 有 `NA` 值怎么办？
+
+\FontSmall
+
+```{r eval=FALSE}
+grades_melted1 <- grades_melted[ !is.na(grades_melted$grade),  ];
+grades_melted2 <- grades_melted[ complete.cases( grades_melted )  ,  ];
+
+## -- 更好的方法 ~~ 
+grades_melted <- grades2 %>% gather( course, grade, -name , na.rm = T ); 
+```
+
+## 宽长数据转换练习
+
+用 `spread` 和 `gather` 对下面的数据 `mini_iris` 进行宽长转换:
+
+\FontSmall
+
+```{r}
+( mini_iris <- iris[ c(1, 51, 101),  ] )
+```
+
+\FontNormal
+
+`iris` 是 鸢尾属 一些物种花瓣的量表
+
+## 宽长数据转换练习， cont.
+
+\FontSmall
+
+```{r}
+## -- 注意： 第一、二个参数可以自行命名，分别对应原始数据中的 column names 及 values ...
+mini_iris.melted <- mini_iris %>% gather( type, dat, -Species );
+knitr::kable( mini_iris.melted  );
+```
+
+## 长宽转换之mouse.tibble
+
+\FontSmall
+
+```{r}
+dat2 <- dat %>% select( CHR, TYPE, `count` ) %>%  spread( TYPE, count  );
+knitr::kable( head(dat2, n=10) );
+```
+
+## 比较复杂的例子
+
+\FontSmall
+
+```{r message=FALSE, warning=FALSE}
+grades2 <- read_delim( file = "data/talk05/grades2.txt", delim = "\t",
+                       quote = "", col_names = T);
+knitr::kable( grades2 );
+```
+
+\FontNormal
+
+这是哪种数据类型？长还是宽？？
+
+## 怎么用 spread 把它变为以下的格式？
+
+\FontSmall
+
+```{r echo=FALSE }
+( grades2_melted <- grades2 %>% spread( course, grade ) );
+```
+
+\FontNormal
+
+又怎么把它变回来？？？
+
+```{r echo=FALSE, eval=FALSE }
+grades2_melted %>% gather( course, grade, -name, -class, na.rm = T  );
+```
+
+## dplyr 常用函数示例
 
 先创建一个新 tibble
 
@@ -383,15 +407,7 @@ grades.melted2 %>%
 
 ![dplyr::summarise 可用的操作](images/talk05/dplyr-summarise.png){height="60%"}
 
-## dplyr中其它取行的操作
-
-![dplyr与行相关的操作](images/talk05/dplyr-subset.png){height="70%"}
-
-## 练习考察
-
-问题1： 每个人的最**差**科目是什么？？
-
-## ** 列的使用！ **，以 `starwars` tibble 为例
+## 更多练习，使用 `starwars` tibble
 
 \FontSmall
 
@@ -404,6 +420,8 @@ head(starwars);
 用 `?starwars` 获取更多帮助
 
 ## dplyr::mutate - 产生新列，不改变行数
+
+而 dplyr::summarise 则会使列数减少（通常与 group_by 联合使用）
 
 ![dplyr::mutate](images/talk05/dplyr-mutate.png){height="50%"}
 
@@ -468,7 +486,7 @@ head( starwars %>% select( -hair_color, -eye_color )  );
 
 ![dplyr::select 支持的操作](images/talk05/dplyr-select.png){height="70%"}
 
-## 同时对行列进行操作
+## dplyr::filter - 行操作
 
 任务：从星战中挑选**金发碧眼**的人物
 
@@ -479,6 +497,10 @@ starwars %>% select( name, ends_with("color"), gender, species ) %>%
   filter( hair_color == "blond" & eye_color == "blue" );
 ```
 
+## dplyr中其它取行的操作
+
+![dplyr与行相关的操作](images/talk05/dplyr-subset.png){height="70%"}
+
 ## tidyr::separate
 
 <https://r4ds.had.co.nz/tidy-data.html>
@@ -487,15 +509,7 @@ starwars %>% select( name, ends_with("color"), gender, species ) %>%
 
 <https://r4ds.had.co.nz/tidy-data.html>
 
-## 练习考察
-
-问题2： 从 `starwars` 中选出 18 < bmi < 25  的人物，统计他们的 `homeworld` 分布情况
-
-提示： 1. 需计算 bmi； 2. 用 `count` 函数计算 `homeworld` 的分布
-
-
-
-# section 4 : 练习与作业
+# section 3 : 练习与作业
 
 ## 练习 & 作业
 
@@ -507,12 +521,10 @@ starwars %>% select( name, ends_with("color"), gender, species ) %>%
 
 ### 今次提要
 
--   pipe
 -   dplyr 、 tidyr (超级强大的数据处理) part 1
 
 ### 下次预告
 
--   长宽数据转换
 -   dplyr, tidyr 和 forcats 的更多功能与生信操作实例
 
 ### important

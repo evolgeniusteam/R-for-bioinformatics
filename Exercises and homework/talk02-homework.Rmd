@@ -127,7 +127,7 @@ class( c(45, TRUE, 20, FALSE, -100) );
 
 ------------------------------------------------------------------------
 
--   **将函数`dim`, `is.numeric`, `is.character`, `is.logical, `length`应用到下面的`vector`，并展示结果；**
+-   **将函数`dim`, `is.numeric`, `is.character`, `is.logical,`length`应用到下面的`vector\`，并展示结果；**
 
 `x <- 1:12`
 
