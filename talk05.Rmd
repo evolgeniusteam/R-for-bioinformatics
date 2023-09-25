@@ -252,7 +252,6 @@ mouse.tibble <- read_delim( file = "data/talk04/mouse_genes_biomart_sep2018.txt"
 
 ```{r}
 ( ttype.stats <- mouse.tibble %>% count( `Transcript type` ) %>% arrange(-n) );
-```
 
 ## 查看 mouse.tibble 的内容, cont.
 
@@ -302,6 +301,12 @@ dat <- mouse.tibble %>%
 ```{r echo=FALSE}
 knitr::kable( head( dat, n = 15 ) );
 ```
+
+
+## dplyr中其它取行的操作
+
+![dplyr与行相关的操作](images/talk05/dplyr-subset.png){height="70%"}
+
 
 ## 课堂练习：使用常用函数解决问题
 
@@ -382,10 +387,6 @@ grades.melted2 %>%
 ## dplyr::summarise 的其它操作
 
 ![dplyr::summarise 可用的操作](images/talk05/dplyr-summarise.png){height="60%"}
-
-## dplyr中其它取行的操作
-
-![dplyr与行相关的操作](images/talk05/dplyr-subset.png){height="70%"}
 
 ## 练习考察
 
