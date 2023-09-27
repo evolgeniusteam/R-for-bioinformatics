@@ -1,0 +1,4 @@
+name	Microbiology	English	Chinese	Bioinformatics	Chemistry
+Zhi Liu	100	50	69	NA	NA
+Weihua Chen	89	99	NA	99	NA
+Kang Ning	NA	NA	20	100	76

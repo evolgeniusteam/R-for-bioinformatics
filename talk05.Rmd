@@ -28,7 +28,7 @@ knitr::knit_hooks$set(error = color_block('red'))
 
 ## 前情提要
 
-1.  IO, project management, working enviroment management
+1.  IO, project management, working environment management
 2.  factors: R 中最重要的概念之一
 
 -   factors 基本概念
@@ -36,16 +36,6 @@ knitr::knit_hooks$set(error = color_block('red'))
 -   factors 在做图中的使用
 -   ggplot2 和 dplyr 初步
 
-## 问题点评
-
-1.  ggplot2问题
-2.  长宽数据转换 & pipe ...
-
-\FontSmall
-
-```{r eval=FALSE}
-N %>% gather( ind, values ); 
-```
 
 ## 今次提要
 
@@ -252,6 +242,8 @@ mouse.tibble <- read_delim( file = "data/talk04/mouse_genes_biomart_sep2018.txt"
 
 ```{r}
 ( ttype.stats <- mouse.tibble %>% count( `Transcript type` ) %>% arrange(-n) );
+```
+
 
 ## 查看 mouse.tibble 的内容, cont.
 
@@ -480,21 +472,11 @@ starwars %>% select( name, ends_with("color"), gender, species ) %>%
   filter( hair_color == "blond" & eye_color == "blue" );
 ```
 
-## tidyr::separate
-
-<https://r4ds.had.co.nz/tidy-data.html>
-
-## tidyr::unite
-
-<https://r4ds.had.co.nz/tidy-data.html>
-
 ## 练习考察
 
 问题2： 从 `starwars` 中选出 18 < bmi < 25  的人物，统计他们的 `homeworld` 分布情况
 
 提示： 1. 需计算 bmi； 2. 用 `count` 函数计算 `homeworld` 的分布
-
-
 
 # section 4 : 练习与作业
 
