@@ -1,5 +1,5 @@
 ---
-title: "R for bioinformatics, data wrangler part 3"
+title: "R for bioinformatics, data wrangler practices"
 subtitle: "HUST Bioinformatics course series"
 author: "Wei-Hua Chen (CC BY-NC 4.0)"
 institute: "HUST, China"
@@ -28,10 +28,17 @@ knitr::knit_hooks$set(error = color_block('red'))
 
 ## 前情提要
 
+### pipe
+
+-   %>%
+-   %$%
+-   %T>%
+-   %<>%
+
 ### tidyr
 
--   gather()
--   spread()
+-   pivot_longer()
+-   pivot_wider()
 -   没有仔细讲的
 -   unite()
 -   separate()
