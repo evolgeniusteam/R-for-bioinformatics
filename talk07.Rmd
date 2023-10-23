@@ -414,6 +414,8 @@ dat$chrom %>% str_split( '[:-]', simplify = T );
 library(tidyr)
 extract(dat, chrom, into=c('chr', 'chrStart', 'chrEnd'),
         '([^:]+):([^-]+)-(.*)', convert=TRUE);
+
+## 注：直接 copy & paste 代码可能造成特殊字符有问题，比如 ^
 ```
 
 # section 5: Exercise and home work

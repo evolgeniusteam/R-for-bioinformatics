@@ -448,8 +448,10 @@ d <- data.frame(x=1:10000, y=rnorm(10000));
 cl <- makeCluster( cpus - 1 );
 
 ## 分配任务 ... 
-res <- foreach( row = iter( d, by = "row" ) ) %dopar% {
-  return ( row$x * row$y  );
+res2 <- foreach( row = iter( d, by = "row" ), .combine = "rbind" ) %dopar% {
+  sum <- row$x + row$y;
+  mul <- row$x * row$y;
+  return ( c( he = sum, multiple = mul )  );
 }
 
 ## 注意在最后关闭创建的 cluster 
@@ -523,10 +525,10 @@ cl2 <- makeCluster( cpus - 1 );
 ## 分配任务 ... 
 res2 <- foreach( df = iter(  mtcars %>% split( .$cyl )  ), .combine = 'rbind' ) %dopar% {
   cor.res <- cor.test( df$wt, df$mpg );
-  return ( c( cor.res$estimate, cor.res$p.value )  ); ## 注意这里的返回值是 
+  return ( c( cor = cor.res$estimate, p = cor.res$p.value )  ); ## 注意这里的返回值是 
 }
 
-res2 <- foreach( df = iter(  mtcars %>% split( .$cyl )  ), .packages = c("ggplot2") ) %dopar% {
+res3 <- foreach( df = iter(  mtcars %>% split( .$cyl )  ), .packages = c("ggplot2") ) %dopar% {
   p <- ggplot(df, aes( x = wt, y = mpg )) + geom_point();
   return ( p ); ## 注意这里的返回值是
 }

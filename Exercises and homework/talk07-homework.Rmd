@@ -43,7 +43,6 @@ knit: (
  * extract patterns
  * replace patterns
 
-
 ## 练习与作业：用户验证
 
 请运行以下命令，验证你的用户名。
