@@ -25,7 +25,6 @@ knitr::knit_hooks$set(error = color_block('red'))
 ```
 
 
-
 # section 1: TOC
 
 ## 前情提要
@@ -329,43 +328,31 @@ dev.off(); ## 关闭设备
 
 # section 3: ggplot2 基础
 
-## 为什么要使用 ggplot2 ? 从一个简单示例开始
-
-假设画两条线：
+## 一个简单的示例
 
 \FontSmall
 
-```{r fig.width=10, fig.height=4}
+```{r}
+## 准备数据
 year1 <- c(7, 12, 28, 3, 41);
 year2 <- c(14, 7, 6, 19, 3);
 
-plot( year1, type = "o", pch = 20, col = "red", xlab = "Month", ylab = "Rain fall", 
-      main = "Rain fall chart");
-lines( year2, type = "o", pch = 20, col = "blue");
-```
-
-## 如果改变画线的顺序？
-
-\FontSmall
-
-```{r fig.width=10, fig.height=4}
-plot( year2, type = "o", pch = 20, col = "blue", xlab = "Month", ylab = "Rain fall", 
-      main = "Rain fall chart");
-lines( year1, type = "o", pch = 20, col = "red");
-```
-
-## ggplot2 的方法
-
-\FontSmall 
-
-```{r fig.width=10, fig.height=3}
-df <- rbind( tibble( month = 1:length( year1 ), value = year1, cat = "Year1" ), tibble( month = 1:length( year2 ), value = year2, cat = "Year2 ") );
+df <- rbind( tibble( month = 1:length( year1 ), value = year1, cat = "Year1" ),
+             tibble( month = 1:length( year2 ), value = year2, cat = "Year2 ") );
 
 plot1 <-  ## 将图保存在变量中；
   ggplot( df, aes( x = month, y = value, colour = cat) ) + 
   geom_line() + geom_point() + 
   xlab( "Month" ) + ylab( "Rain fall" ) +
   labs( colour = "Year");
+```
+
+
+## 画图
+
+\FontSmall
+
+```{r fig.width=10, fig.height=4}
 plot1;  ## 画图
 ```
 
@@ -373,9 +360,13 @@ plot1;  ## 画图
 
 ![ggplot2 参数简介](images/talk09/ggplot_explained.png){height=20%}
 
-1. aes (aesthetics)美学：控制全局参数，包括：x,y轴使用的数据，颜色( colour, fill) ，形状 ( shape )，大小 ( size )，分组 ( group ) 等等；
-2. 图层： ``` geom_<layer_name> ``` ；每张图可有多个图层（此处有两个）；图层可使用全局数据 (df) 和参数 (aes)，也可以使用自己的 aes 和 数据；
-3-4. 其它参数
+\FontSmall
+
+1. **aes** (aesthetics)美学：控制全局参数，包括：x,y轴使用的数据，颜色( colour, fill) ，形状 ( shape )，大小 ( size )，分组 ( group ) 等等；
+
+2. **图层**： ``` geom_<layer_name> ``` ；每张图可有多个图层（此处有两个）；图层可使用全局数据 (df) 和参数 (aes)，也可以使用自己的 aes 和 数据；
+
+3. 其它控制函数
 
 ## ggplot2 优缺点
 
@@ -393,6 +384,9 @@ ggplot2 优点：
 
 \FontSmall
 
+图层可从 `ggplot` 继承**数据** 和 其它参数，包括 **aes**，但也可使用自己的
+
+
 ```{r fig.height=3, fig.width=10}
 plot1 + 
   geom_point( data = data.frame( x2 = 1:5, y2 = sample(30:100, 5) ),  ## 注意： data = 是必须的
@@ -400,76 +394,21 @@ plot1 +
           colour =  c("darkgreen", "red", "blue", "gold", "purple") , shape = 15, size = 4 )
 ```
 
-\FontNormal 
 
 **要点**
 
 1. 如上所见，xy -axes 会随数据自动调整
+
 2. ggplot2 作图结果可以保存在变量中，并可累加更多图层
+
 3. 图层使用自己的数据时，需要用 ``` data =  ``` 指定；而全局数据则不用 ``` ggplot ( data.frame( ... ) ) ```
 
-## ``` aes(  ) ``` 内部和外部的 coulor, size, shape 参数有何区别？
 
-在内部时， ``` colour = <列名> ``` 或 ``` colour = factor( <列名> ) ``` ，其真实结果是取 <列名> 的 factor ，然后按顺序为每个 factor **自动指定**一个颜色。默认**颜色顺序**为：
+# section 4: ggplot2作图的四个基本组成部分详解
 
-![default discrete colour palette](images/talk09/ggplot_default_palette.png){height=40%}
+## 1. 图层
 
-## color 举例
-
-\FontSmall
-
-```{r fig.height=3, fig.width=10}
-plot1 + 
-  geom_point( data = data.frame( x2 = 1:5, y2 = sample(30:100, 5) ),  ## 注意： data = 是必须的
-              aes( x = x2, y = y2 , colour = factor( y2 ) ),  ## colour 在 aes 内部
-              shape = 15, size = 4 )
-```
-
-\FontNormal
-
-共有7个颜色；注意与上页图的第7行对应一下！
-
-
-## 当 ``` colour = <数字列> ``` ，则显示 color gradient 
-
-\FontSmall 
-```{r fig.height=3, fig.width=10}
-ggplot( data = data.frame( x2 = 1:5, y2 = sample(30:100, 5) ),
-        aes( x = x2, y = y2 , colour = y2 ) ) + 
-  geom_point( shape = 15, size = 4 )
-```
-
-\FontNormal 
-
-**注意** discrete color  (上页图) 和 continous color ( or color gradient )的默认画板 (color palette) 是不一样的！
-
-## 更改画板，使用指定的颜色（不作为factor使用）
-
-\FontSmall
-
-```{r fig.height=4, fig.width=10}
-df$col <- sample( colours(), 10 ); ## 现有我们有颜色了！
-ggplot(df, aes( x = month, y = value, colour = col ) ) +  
-  geom_point( size = 4, shape = 15 ) + facet_grid( ~ cat );
-```
-
-\FontNormal 
-
-** 注 ** 默认情况下， ``` col ``` （颜色）列是作为 factor 使用。
-
-## 更改画板，使用指定的颜色（不作为factor使用），cont. 
-
-解决方案： ``` scale_color_identity ```
-
-\FontSmall
-
-```{r fig.height=4, fig.width=10}
-ggplot(df, aes( x = month, y = value, colour = col ) ) + 
-  geom_point( size = 4, shape = 15 ) + facet_grid( ~ cat ) +  ##  facet_grid 又是什么？？ 
-  scale_color_identity(); ## magic !! 
-```
-
-## 图层简介
+### ```geom_<图层名>```
 
 * ``` geom_point ``` , ``` geom_line ```: 点线图，用于揭示两组数据间的关系；
 * ``` geom_smooth ``` : 常与 ``` geom_point ``` 联合使用，揭示数据走势
@@ -479,185 +418,68 @@ ggplot(df, aes( x = month, y = value, colour = col ) ) +
 * ``` geom_histogram ```, `` geom_density ``` : 数据的分布，也可用于多组间的比较
 * 其它十余种，请见“ggplot2 : elegant graphics for data analysis” 一书！！
 
-# section 4: ggplot2作图的四个基本组成部分
+## 2. ```scale``` 显示控制
 
-## ggplot2的四个基本组成
+### 基本规则
 
-1. 图层（layers）
+* ```scale_<控制内容>_<控制手段>```，e.g. ```scale_color_manual()```： 以**手选方式** 控制 **颜色**
 
- * ```geom_<图层名>```
- 
-2. scale：控制数据至美学属性的mapping
-
- * ```scale_<属性mapping方式>```，e.g. ```scale_color_identity()```
-
-![数据的4种scale方法](images/talk09/scale.png){height=30%}
-
-
-## ggplot2的scale 
+### 四种控制类型
 
 * ```scale_color_...```
+* ```scale_fill_...```
 * ```scale_shape_...```
 * ```scale_size_...```
-* ```scale_fill_...```
 
-与坐标系统联动的函数
+![数据的4种scale方法](images/talk09/scale.png){height=25%}
 
-* ```scale_x_log()```
-* ```scale_y_log()``` 
-
-更多内容可以见《ggplot2: elegant graphics for data analysis》一书的第6章。
-
-## ggplot2要素3： 坐标系统
-
-* 正常
-* log-transform
-
-示例：
-
-\FontSmall
-
-```{r fig.height=3, fig.width=10}
-ggplot(mtcars, aes( wt , mpg)) + geom_point() +
-  scale_y_log10()
-```
-
-## ggplot2要素3： 坐标系统，cont. 
-
-\FontSmall
-
-```{r fig.height=3, fig.width=10}
-ggplot(mtcars, aes( wt , mpg)) + geom_point() +
-  coord_trans( y = "log10" );
-```
-
-
-```coord_trans()```的其它参数：
-
-* limx, limy: 限制xy的显示范围
-
-
-## ggplot2要素3： 坐标系统，cont. 
-
-其它函数
-
-* ```coord_flip()``` : x，y轴互换；竖bar变横bar；
-* ```coord_polar()``` :
-
-\FontSmall
-
-```{r fig.height=3, fig.width=10}
-plot1 <-  ggplot(mtcars, aes(x = factor(cyl))) +
-  geom_bar(width = 1, colour = "black");
-plot1;
-```
-
-
-## ggplot2要素3： 坐标系统，cont. 
-
-\FontSmall
-
-```{r fig.height=3, fig.width=10}
-plot1 + coord_polar();
-```
-
-\FontNormal
-
-更多内容可以见《ggplot2: elegant graphics for data analysis》一书的第7章。
-
-## ggplot2要素4： faceting ... 
-
-\FontSmall
-
-```{r fig.height=3, fig.width=10}
-qplot(displ, hwy, data=mpg, facets = . ~ year) + geom_smooth();
-```
-
-# ggplot2 进阶 1 ：如何找到合适的颜色？
-
-##  `ggplot2` 的颜色系统
-
-### `color` basics
-
-* pick `one` color with R
-
-* use a `color palette`
-
-### use `scale_colour_` or `scale_fill_` functions to change the mapping
-
-* map `category` variables to colors
-
-* map `numeric` variables to colors
-
-### change `color palette`
-
-* default R and ggplot2 palette
-
-* other useful palette
-
-## `color` basics
+## 2.1 改变颜色 
 
 \FontSmall
 
 ```{r fig.height=2.5, fig.width=8}
 library(ggplot2);
 ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) +
-  geom_point(size=2) + 
-  scale_color_manual(values = c("cyan", rgb(255, 255, 0, maxColorValue = 255), "#7884CF" ));
-```
-### pick a color by
-
-name, `rgb()`, Hex code, Number
-
-## use a color palette, discrete colors
-
-\FontSmall
-
-```{r fig.height=3, fig.width=8}
-mtcars %>% ggplot( aes(disp, mpg) ) + geom_point( aes( color = factor(cyl) ) )
+  geom_point(size=2);
 ```
 
-默认使用 `scale_colour_hue()` 颜色；
 
-## `scale_colour_hue()` 
+解释：
+
+* 使用 `iris` 里 **萼片** 大小数据；
+
+* `colour = Species`：根据 `Species` 列决定颜色；
+
+* 共需要 **3种** 颜色；
+
+* 由**默认色板**决定；
+
+## 默认的色板
 
 ![default discrete colour palette](images/talk09/ggplot_default_palette.png){height=40%}
 
 \FontSmall
-```{r eval=FALSE}
-scale_colour_hue(
-  ...,
-  h = c(0, 360) + 15,
-  c = 100,
-  l = 65,
-  h.start = 0,
-  direction = 1,
-  na.value = "grey50",
-  aesthetics = "colour"
-)
-```
 
-## `scale_colour_brewer()` 更易用
+* 根据需要的颜色数量，取相应的行
+
+## 使用其它色板，比如 `scale_colour_brewer()` 
 
 ![](images/talk09/ggplot_brewer_palettes.png){height=90%}
 
-## `scale_colour_brewer()`, cont.
+## `scale_colour_brewer()`, 使用示例
 
 \FontSmall
 
 ```{r fig.height=3, fig.width=8}
-mtcars %>% ggplot( aes(disp, mpg) ) + geom_point( aes( color = factor(cyl) ) ) +
+ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) + geom_point(size=2) + 
   scale_color_brewer( palette = "Set1" );
 ```
 
-## Palettes provided by `scale_color_brewer()`
+* 使用方法：```scale_color_brewer( palette = "<palette name>" );```
 
-使用方法：
+* 取**前N个**颜色
 
-```{r eval=FALSE}
-  + scale_color_brewer( palette = "<palette name>" );
-```
-
+## `scale_color_brewer` 提供的其它色板
 
 \FontSmall
 
@@ -666,12 +488,12 @@ mtcars %>% ggplot( aes(disp, mpg) ) + geom_point( aes( color = factor(cyl) ) ) +
 BrBG, PiYG, PRGn, PuOr, RdBu, RdGy, RdYlBu, RdYlGn, Spectral
 
 ### Qualitative
-Accent, Dark2, Paired, Pastel1, Pastel2, Set1, Set2, Set3
+Accent, Dark2, Paired, Pastel1, Pastel2, **Set1**, Set2, Set3
 
 ### Sequential
 Blues, BuGn, BuPu, GnBu, Greens, Greys, Oranges, OrRd, PuBu, PuBuGn, PuRd, Purples, RdPu, Reds, YlGn, YlGnBu, YlOrBr, YlOrRd
 
-## set color manualy : `scale_colour_manual()`
+## 手动设置颜色 : `scale_colour_manual()`
 
 \FontSmall
 
@@ -680,17 +502,19 @@ mtcars %>% ggplot( aes(disp, mpg) ) + geom_point( aes( color = factor(cyl) ) ) +
   scale_color_manual( breaks = c("4","6","8"), values = c("red","green","blue") );
 ```
 
-## map colors to continous/ numeric values
+## 如何对应**数量**与颜色？使用**渐变颜色**！
 
 \FontSmall
 
 ```{r fig.height=4, fig.width=10}
-mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = cyl ) );
+mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = displ ) );
 ```
 
-默认为： `scale_color_gradient()`
+* 根据 `displ` 排气量 的值显色；
 
-## `scale_color_gradient()` 改变颜色更容易一些
+* 默认使用2色；
+
+## 用`scale_color_gradient()` 改变渐变颜色
 
 \FontSmall
 
@@ -713,76 +537,141 @@ scale_colour_gradient(
 \FontSmall
 
 ```{r fig.height=4, fig.width=10}
-mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = cyl ) ) +
+mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = displ ) ) +
   scale_color_gradient( low = "black", high = "yellow" );
 ```
 
-## `scale_color_gradient2()` 3个颜色
+## 使用**3个**渐变色？用 `scale_color_gradient2()` 
 
 \FontSmall
 
 ```{r fig.height=4, fig.width=10}
-mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = cyl ) ) +
-  scale_colour_gradient2( low = "black", mid = "red", high = "yellow", midpoint = 6 );
+mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = displ ) ) +
+  scale_colour_gradient2( low = "black", mid = "red", high = "yellow", midpoint = 4.5 );
 ```
 
-**注意** try change the `midpoint` option
+* 三个颜色：`low` `mid` `high`
 
-## `scale_colour_gradientn` multiple colors
+* **注意**  `midpoint` 参数！！
+
+## 更多颜色？使用 `scale_colour_gradientn` 
 
 \FontSmall
 
 ```{r fig.height=4, fig.width=10}
-mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = cyl ) ) +
-  scale_colour_gradientn( colors = c("black","red", "yellow") );
+mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = displ ) ) +
+  scale_colour_gradientn( colors = c("black","red", "yellow", "blue", "pink") );
 ```
 
-## `scale_colour_binned` gradient 颜色的另一种方式
+## 一种有趣的渐变色显示方法 ： `scale_colour_binned` 
 
 \FontSmall
 
 ```{r fig.height=4, fig.width=10}
-mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = cyl ) ) +
+mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = displ ) ) +
   scale_color_binned( low = "black", high = "yellow" );
 ```
 
-## `scale_fill_XX` functions
+* 渐变色，但分组显示
+
+## 2.2 `fill` 颜色
 
 \FontSmall
 
-* 颜色的使用与 `aes` 是配套的：`aes` 使用 `fill` 时，颜色可使用 `scale_fill_xx`
+### `fill`与`colour`有什么区别？？？
 
-```{r fig.height=3, fig.width=8}
-mpg %>% ggplot( aes(x=displ, y=hwy) ) + 
-  geom_point( shape = 21, aes( fill = factor(cyl) )  ) +
-  scale_fill_brewer( palette = "Set2"  );
-```
-## `scale_fill_XX` functions, cont. 
+* `colour` defines the colour with which a geom is **outlined** (the shape's "stroke")
 
-* `fill` 为连续值时，需要使用对应连续变量的调色板
+* `fill`defines the colour with which a geom is **filled**
+
+### 哪些 pch 们有 `fill` ？？
+
+* Points generally only have a `colour` and **no fill**
+
+* However, point shapes **21–25** that include **both** a colour and a fill.
+
+## `fill`与`colour`有啥区别？？？(again)
 
 \FontSmall
-```{r fig.height=3, fig.width=6}
-mpg %>% ggplot( aes(x=displ, y=hwy) ) + 
-  geom_point( shape = 21, aes( fill = cyl )  ) +
-  scale_fill_continuous(  );
-```
 
-
-
-## 一个较为复杂的例子
-
-同一图中，可对不同对象使用不同（类型）的调色板
-
-\FontSmall 
+找一个有两种属性的 point (pch = 21)，先看 `fill` 的效果；
 
 ```{r fig.height=4, fig.width=10}
-ggplot(ToothGrowth, aes(x=factor(dose), y=len, fill=dose, color = factor(dose))) +
-  geom_boxplot() + scale_fill_gradientn( colors = c("black","red", "yellow") ) +
-  scale_colour_manual( values = c("pink", "green", "blue") ) + coord_flip();
+mpg %>% ggplot( aes(displ, hwy) ) + 
+  geom_point( aes( colour = cyl ), shape = 21, stroke = 3);
 ```
 
-## other palettes and related functions
+### 说明
+
+* `colour` 在 shape = 21时，为描边（stroke）色；
+
+* 可用 `stroke` 控制 线条粗细；
+
+## `fill`与`colour`有啥区别？？？, cont.
+
+\FontSmall
+
+同时有 fill 和 colour 
+
+```{r fig.height=4, fig.width=10}
+mpg %>% ggplot( aes(displ, hwy) ) + 
+  geom_point( aes( colour = cyl, fill = class ), 
+              shape = 21, size = 3,
+              stroke = 2);
+```
+
+## fill 的调色板 与 colour 一样！
+
+\FontSmall
+
+先看看离散值的色板
+
+```{r fig.height=4, fig.width=10}
+mpg %>% ggplot( aes(displ, hwy) ) + 
+  geom_point( aes( fill = class ), shape = 21, stroke = 1.5) +
+  scale_fill_brewer( palette = "Set1" ) 
+```
+
+注： 默认的 stroke 颜色为 `black`；
+
+## fill 的 gradient 色板
+
+\FontSmall
+
+```{r fig.height=4, fig.width=10}
+mpg %>% ggplot( aes(displ, hwy) ) + 
+  geom_point( aes( fill = cyl ), shape = 21, stroke = 1) +
+  scale_fill_gradient( low = "yellow", high = "blue" ) ;
+```
+
+注： 默认的 stroke 颜色为 `black`；
+
+## `fill` 与 `colour` 小结
+
+\FontSmall
+
+1. 做到两个匹配，即：
+
+a) `aes` 参数 (如 `fill = `) 与 函数 (如 `scale_fill_xxx`) 匹配；`colour` 也是如此；
+b) 数据类型与色板类型匹配：数量配渐变，离散配离散；
+
+![](images/talk09/color_fill_explained.png){height=40%}
+
+2. 两者色板是通用的；函数也是，比如 `scale_fill_xx` 对应 `scale_colour_xx`;
+
+3. 有些 shape / pch 只有 colour (stroke)，有些则两者都有；
+
+## 其它颜色相关函数
+
+\FontSmall
+
+* scale_fill_continuous, scale_colour_continuous 
+
+* scale_fill_manual, scale_colour_manual 
+
+... 
+
+## 其它包中的调色板和相应函数
 
 ### included in ggplot2
 
@@ -803,7 +692,7 @@ ggplot(ToothGrowth, aes(x=factor(dose), y=len, fill=dose, color = factor(dose)))
 * `ggsci` package
 
 
-## ``` ggsci ```: palette for scientific journals!!!
+## ``` ggsci ```: 论文发表用的色板!!!
 
 \FontSmall
 
@@ -862,40 +751,188 @@ p2_npg <- p2 + scale_fill_npg()
 grid.arrange(p1_npg, p2_npg, ncol = 2)
 ```
 
-## ggplot2 小结
+## 2.3 `size` 
 
 \FontSmall
 
-### layered grammer (图层语法) 的成分
+```{r fig.height=4, fig.width=10}
+mpg %>% ggplot( aes(displ, hwy) ) + 
+  geom_point( aes( size = cyl, colour = class  ) );
+```
 
-* 图层 ( geom_xxx )
-* scale ( scale_xxx )
-* faceting ( facet_xxx )
-* 坐标系统
+* size : 用 cyl 列的值确定大小
 
-### 图象类型
+## 2.4 `shape` 
 
-* 点图
-* bars 
-* boxplots
+\FontSmall
 
-### 其它重要内容（部分需要自学）
+```{r fig.height=4, fig.width=10, warning=FALSE, message=FALSE}
+mpg %>% ggplot( aes(displ, hwy) ) + 
+  geom_point( aes( size = cyl, colour = class, shape = class  ) );
+```
 
-* colours
-* theme
-* 其它图像类型
-* 图例（legends）和 坐标轴
-* 图形注释和其它定制 
+## 问题： `size`, `colour` 等参数可在 `aes()` 内部，也可在外部，有什么区别？？？
 
-# ggplot2 进阶 2 ：如何在一张图中画多个panel？
+\FontSmall
 
-## key requirements for multi-panel plots
+在内部时，以指定列的值确定**大小**，或按 factor 的数量确定颜色、形状的**数量**：
 
-* order / position
-* labeling
-* layout 
+```{r eval=FALSE}
+mpg %>% ggplot( aes(displ, hwy) ) + 
+  geom_point( aes( size = cyl, colour = class, shape = class  ) );
+```
 
-## faceting ... 
+在外部时，则以**指定值**为准：
+
+```{r eval=FALSE}
+mpg %>% ggplot( aes(displ, hwy) ) + 
+  geom_point( size = 2, colour = "green", shape = 21 );
+```
+
+注： size 等接受的值，长度要么为1，要么与行数等长；
+
+## ggplot2要素3： 坐标系统
+
+### 线性坐标系统
+  
+  * `coord_cartesian()`, 
+  * `coord_flip()`, 
+  * `coord_fixed()`
+  
+### 非线性坐标系统
+
+  * `coord_trans()`
+  * `coord_polar()`
+  * `coord_map()`
+  
+## 3.1 线性坐标系统， coord_cartesian()
+
+\FontSmall
+
+默认的坐标系统，可使用 xlim, ylim 等参数，实现**缩放局部**
+
+```{r fig.height=3, fig.width=10, warning=FALSE, message=FALSE}
+p1 <- ggplot(mpg, aes(displ, hwy)) + 
+  geom_point() + geom_smooth()
+
+p1 + coord_cartesian(xlim = c(4, 6))
+```
+
+## 3.1 线性坐标系统， coord_flip()
+
+exchange the x and y axes
+
+\FontSmall
+
+```{r fig.height=4, fig.width=10, warning=FALSE, message=FALSE}
+ggplot(mpg, aes(displ, cty)) + 
+  geom_point() + geom_smooth() + 
+  coord_flip()
+```
+
+## 3.1 线性坐标系统， coord_fixed()
+
+\FontSmall
+
+用特定的长宽比例 (aspect ratio) 作图，如下图所示：
+
+```{r fig.height=3, fig.width=10, warning=FALSE, message=FALSE}
+ggplot(mpg, aes(displ, cty)) + 
+  geom_point() + geom_smooth() + 
+  coord_fixed(ratio = 1) ## ratio = y/x
+```
+
+## 3.2 非线性，`coord_trans()`
+
+\FontSmall
+
+x, y 轴的转换；先生成原图
+
+```{r fig.height=3, fig.width=10}
+rect <- data.frame(x = 50, y = 50)
+line <- data.frame(x = c(1, 200), y = c(100, 1))
+base <- ggplot(mapping = aes(x, y)) + 
+  geom_tile(data = rect, aes(width = 50, height = 50)) + 
+  geom_line(data = line)
+
+base ; ## 画出来
+```
+
+## 3.2 非线性，`coord_trans()`, cont.
+
+\FontSmall
+
+log10(y): 
+
+```{r fig.height=3, fig.width=10}
+base + coord_trans(y = "log10");
+```
+
+```coord_trans()```的其它参数：
+
+* limx, limy: 限制xy的显示范围
+
+
+## 3.2 非线性，coord_polar()
+
+\FontSmall
+
+```{r fig.height=3, fig.width=10}
+base + coord_polar(); ## 默认为 coord_polar("x")
+```
+
+## 3.2 非线性，coord_polar(), cont.
+
+\FontSmall
+
+```{r fig.height=3, fig.width=10}
+base + coord_polar("y");
+```
+
+## 3.2 非线性，coord_polar(), 柱图变饼图
+
+\FontSmall
+
+```{r fig.height=2.6, fig.width=10}
+base <- ggplot(mtcars, aes(factor(1), fill = factor(cyl))) +
+  geom_bar(width = 1) + theme(legend.position = "none") + 
+  scale_x_discrete(NULL, expand = c(0, 0)) +
+  scale_y_continuous(NULL, expand = c(0, 0))
+
+base + coord_polar(theta = "y") ## 变饼图
+```
+
+## 3.2 非线性，coord_map()
+
+\FontSmall
+
+世界地图
+
+```{r fig.height=3, fig.width=10}
+world <- map_data("world")
+worldmap <- ggplot(world, aes(long, lat, group = group)) +
+  geom_path() +
+  scale_y_continuous(NULL, breaks = (-2:3) * 30, labels = NULL) +
+  scale_x_continuous(NULL, breaks = (-4:4) * 45, labels = NULL)
+
+worldmap; ## 画出来
+```
+
+
+## 3.2 非线性，coord_map(), cont.
+
+\FontSmall
+
+球形图
+
+```{r fig.height=3, fig.width=10, message=FALSE, warning=FALSE}
+library(mapproj);
+worldmap + coord_map("ortho");
+```
+
+更多内容可以见《ggplot2: elegant graphics for data analysis》一书的第7章。
+
+## ggplot2要素4： faceting ... 
 
 Faceting generates small multiples each showing a different subset of the data.
 
@@ -911,11 +948,9 @@ ggplot( mtcars, aes( x = wt, y = mpg ) ) +
 
 ## faceting , cont. 
 
-by col: 请自行尝试~ 
-
 \FontSmall 
 
-```{r eval=FALSE}
+```{r fig.height=3, fig.width=10}
 ggplot( mtcars, aes( x = wt, y = mpg ) ) +
   geom_point() +
   facet_grid( cyl ~ . );
@@ -966,6 +1001,26 @@ facet_wrap(
   strip.position = "top"
 )
 ```
+
+
+## ggplot2 小结
+
+\FontSmall
+
+### layered grammer (图层语法) 的成分
+
+* 图层 ( geom_xxx )
+* scale ( scale_xxx )
+* 坐标系统
+* faceting ( facet_xxx )
+
+# ggplot2 进阶 1 ：如何在一张图中画多个panel？
+
+## key requirements for multi-panel plots
+
+* order / position
+* labeling
+* layout 
 
 ## combine multiple plots
 
@@ -1328,15 +1383,14 @@ See the gallery at https://exts.ggplot2.tidyverse.org/gallery/. Or Google `ggplo
 * plot table 
 * ...
 
-
-## Summary
+## 小结
 
 Essentials for combining multiple graphs in one:
 
 * ordering
 * layout
 
-# ggplot2 进阶 3：如何写公式？
+# ggplot2 进阶 2：如何写公式？
 
 ## 散点图的进一步分析
 
@@ -1611,7 +1665,7 @@ ggplot( data.frame( x = rnorm(100, x_mean, x_sd) ), aes( x ) ) +
 ```
 
 
-# ggplot2 进阶4: 核心在于先计算再做图
+# ggplot2 进阶3: 核心在于先计算再做图
 
 ## 举例说明
 
@@ -1784,21 +1838,20 @@ ggplot(ToothGrowth, aes(x=factor( dose ), y=len, fill=supp)) +
 ``` geom_boxplot() ``` : 默认为 ``` dodge ```
 
 
-## change color palette 
+## 改变 `theme()`
 
 \FontSmall 
+
+theme调整 包括 theme() 函数，用于调整各个 elements
+
+和 `theme_xxx()` 函数，直接使用已经定制好的内容；
 
 ```{r fig.height=4, fig.width=10}
 ggplot(ToothGrowth, aes(x=factor( dose ), y=len, fill=supp)) +
   geom_boxplot() + scale_fill_brewer( palette = "Paired" ) + theme_classic();
 ```
 
-**要点** 
-
-1. 颜色 palette 的用法
-2. theme 系统
-
-## theme in ggplot2 
+## ggplot2 中的主题
 
 * ``` theme_gray ``` : 系统默认主题
 * ``` theme_bw ``` , ``` theme_linedraw ```, ``` theme_light ```, ``` theme_dark ```, ``` theme_minimal ``` , ``` theme_classic ```, ``` theme_void() ``` 
@@ -1867,6 +1920,12 @@ grid.arrange(sc + labs(tag = "A"),
              ncol=4, nrow =1);
 ```
 
+## more to read
+
+ggplot2 的在线书
+
+https://ggplot2-book.org/themes
+
 # Exercise and home work
 
 ## 总结，本节内容
@@ -1888,7 +1947,6 @@ grid.arrange(sc + labs(tag = "A"),
 
 * Ggplot2: Elegant Graphics for Data Analysis, Book by Hadley Wickham
 * ggplot2 gallery provided by RStudio on Github
-
 
 ## 写在后面
 
