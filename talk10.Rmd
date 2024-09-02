@@ -634,7 +634,7 @@ plot(jitter(Residual) ~ Mean, data = Data, las = 1);
 
 对于 normal distribution，通常 mean +- 2 or 3 \* sd
 
-对于 non-parametric distribution (注： IRQ计算可使用同名函数：`IRQ`) ：
+对于 non-parametric distribution (注： IQR计算可使用同名函数：`IQR`) ：
 
 ![Tukey's method for outlier detection](images/talk10/outlier_boxplot.png){height="40%"}
 
@@ -644,10 +644,10 @@ plot(jitter(Residual) ~ Mean, data = Data, las = 1);
 
 ```{r fig.width=6, fig.height=2}
 s <- summary( swiss$Infant.Mortality );
-irq <- IQR(swiss$Infant.Mortality);
+iqr <- IQR(swiss$Infant.Mortality);
 ggplot( swiss, aes( y =  Infant.Mortality ) ) + geom_boxplot() + coord_flip() +
    geom_hline( yintercept = s, colour = sample( colors(), length(s) ) ) +
-   geom_hline( yintercept = c( s["1st Qu."] - 1.5 * irq, s["3rd Qu."] + 1.5 * irq ), 
+   geom_hline( yintercept = c( s["1st Qu."] - 1.5 * iqr, s["3rd Qu."] + 1.5 * iqr ), 
                colour = "red", size = 2, linetype = 2);
 ```
 

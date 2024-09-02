@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.6)  6 NOV 2023 17:29
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.6)  6 NOV 2023 18:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**talk08-homework.tex
-(./talk08-homework.tex
+**talk09-homework.tex
+(./talk09-homework.tex
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
 (/Users/wchen/Library/TinyTeX/texmf-dist/tex/latex/ctex/ctexart.cls (/Users/wchen/Library/TinyTeX/texmf-dist/tex/latex/ctex/config/ctexbackend.cfg
@@ -511,8 +511,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 ) (/Users/wchen/Library/TinyTeX/texmf-dist/tex/latex/bookmark/bkm-dvipdfm.def
 File: bkm-dvipdfm.def 2020-11-06 v1.29 bookmark driver for dvipdfm (HO)
 \BKM@id=\count322
-)) (./talk08-homework.aux)
-\openout1 = `talk08-homework.aux'.
+)) (./talk09-homework.aux)
+\openout1 = `talk09-homework.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 111.
 LaTeX Font Info:    ... okay on input line 111.
@@ -814,7 +814,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 113.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/Users/wchen/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) (./talk08-homework.toc
+) (./talk09-homework.toc
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
 (Font)              scaled to size 7.37756pt on input line 1.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
@@ -831,12 +831,16 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 7.37677pt on input line 1.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 5.26912pt on input line 1.
+)
+\tf@toc=\write4
+\openout4 = `talk09-homework.toc'.
+
 
 Package fontspec Warning: Font "STFangsong" does not contain requested Script
 (fontspec)                "CJK".
 
 
-Package fontspec Info: STFangsong scale = 0.9707181870057879.
+Package fontspec Info: STFangsong scale = 0.9999967392190429.
 
 
 Package fontspec Info: Could not resolve font "STFangsong/BI" (it probably
@@ -851,8 +855,10 @@ Package fontspec Info: Could not resolve font "STFangsong/I" (it probably
 (fontspec)             doesn't exist).
 
 
-Package fontspec Info: STFangsong scale = 0.9707181870057879.
+Package fontspec Info: STFangsong scale = 0.9999967392190429.
 
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.53937> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 125.
 
 Package fontspec Info: Font family 'STFangsong(0)' created for font
 (fontspec)             'STFangsong' with options
@@ -862,54 +868,85 @@ Package fontspec Info: Font family 'STFangsong(0)' created for font
 (fontspec)             series/shapes:
 (fontspec)              
 (fontspec)             - 'normal' (m/n) with NFSS spec.:
-(fontspec)             <->s*[0.9707181870057879]"STFangsong/OT:language=dflt;"
+(fontspec)             <->s*[0.9999967392190429]"STFangsong/OT:language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-)
-\tf@toc=\write4
-\openout4 = `talk08-homework.toc'.
-
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.53937> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 125.
 
 LaTeX Font Warning: Font shape `TU/STFangsong(0)/b/n' undefined
 (Font)              using `TU/STFangsong(0)/m/n' instead on input line 125.
 
 LaTeX Font Info:    Font shape `TU/STFangsong(0)/m/n' will be
-(Font)              scaled to size 10.23074pt on input line 125.
+(Font)              scaled to size 10.53937pt on input line 125.
 [1
 
 ]
-Underfull \hbox (badness 1406) in paragraph at lines 188--191
-[]\TU/SongtiSCLight(0)/m/n/10.53937 取 \TU/lmtt/m/n/10.53937 iris \TU/SongtiSCLight(0)/m/n/10.53937 的 列 名，|  计 算 每 个 列 名 的 长 度，|  并 打 印 为 下 面 的 格 式：|
- []
-
+LaTeX Font Info:    Font shape `TU/SongtiSCLight(0)/m/sl' in size <10.53937> not available
+(Font)              Font shape `TU/SongtiSCLight(0)/m/it' tried instead on input line 215.
+[2]
 
 LaTeX Font Warning: Font shape `TU/lmtt/bx/it' in size <10.53937> not available
-(Font)              Font shape `TU/lmtt/b/sl' tried instead on input line 200.
+(Font)              Font shape `TU/lmtt/b/sl' tried instead on input line 233.
 
 
 LaTeX Font Warning: Font shape `TU/STFangsong(0)/b/it' undefined
-(Font)              using `TU/STFangsong(0)/b/n' instead on input line 200.
+(Font)              using `TU/STFangsong(0)/b/n' instead on input line 233.
 
 LaTeX Font Info:    Font shape `TU/STFangsong(0)/b/n' will be
-(Font)              scaled to size 10.23074pt on input line 200.
-LaTeX Font Info:    Font shape `TU/SongtiSCLight(0)/m/sl' in size <10.53937> not available
-(Font)              Font shape `TU/SongtiSCLight(0)/m/it' tried instead on input line 218.
-[2] [3]
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12.045> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 298.
-[4]
-Underfull \hbox (badness 3746) in paragraph at lines 391--391
-[]\TU/SongtiSCLight(0)/b/n/10.53937 运 行 以 下 代 码，|  观 察 得 到 的 结 果，|  并 用 \TU/lmtt/b/n/10.53937 tidyverse \TU/SongtiSCLight(0)/b/n/10.53937 包 中 的
+(Font)              scaled to size 10.53937pt on input line 233.
+File: images/talk09-homework-plot02.png Graphic file (type bmp)
+<images/talk09-homework-plot02.png>
+
+Overfull \hbox (57.97017pt too wide) in paragraph at lines 246--251
+\TU/SongtiSCLight(0)/m/n/10.53937 如 下 图 所 示：| [] 
  []
 
-[5] [6]
-Overfull \hbox (64.45448pt too wide) in paragraph at lines 504--504
-[]\TU/lmtt/m/n/10.53937 ## Warning: executing %dopar% sequentially: no parallel backend registered[] 
+[3] [4]
+File: images/talk09-homework-plot01.png Graphic file (type bmp)
+<images/talk09-homework-plot01.png>
+[5]
+File: images/talk09-homework-plot03.png Graphic file (type bmp)
+<images/talk09-homework-plot03.png>
+[6]
+File: images/talk09-homework-plot04.png Graphic file (type bmp)
+<images/talk09-homework-plot04.png>
+
+Overfull \hbox (114.25311pt too wide) in paragraph at lines 345--345
+[]\TU/lmtt/m/n/10.53937 ## -- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --[] 
  []
 
-[7] [8] (./talk08-homework.aux)
+[7]
+Overfull \hbox (114.25317pt too wide) in paragraph at lines 345--345
+[]\TU/lmtt/m/n/10.53937 ## -- Conflicts ------------------------------------------ tidyverse_conflicts() --[] 
+ []
+
+
+Overfull \hbox (230.44951pt too wide) in paragraph at lines 345--345
+[]\TU/lmtt/m/n/10.53937 ## i Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors[] 
+ []
+
+File: talk09-homework_files/figure-latex/unnamed-chunk-6-1.pdf Graphic file (type pdf)
+<use talk09-homework_files/figure-latex/unnamed-chunk-6-1.pdf>
+[8]
+Overfull \hbox (4.5544pt too wide) in paragraph at lines 414--418
+[]\TU/SongtiSCLight(0)/m/n/10.53937 先 增 加 一 列，|  用 于 保 存 \TU/lmr/m/n/10.53937 rowname : \TU/lmtt/m/n/10.53937 mtcars %>% rownames_to_column()
+ []
+
+[9]
+Underfull \hbox (badness 2393) in paragraph at lines 422--424
+[]\TU/SongtiSCLight(0)/m/n/10.53937 计 算 每 个 \TU/lmr/m/n/10.53937 rowname \TU/SongtiSCLight(0)/m/n/10.53937 的 旋 转 角 度：| \TU/lmtt/m/n/10.53937 mutate( id = row_number(),
+ []
+
+File: images/talk09-homework-plot05.png Graphic file (type bmp)
+<images/talk09-homework-plot05.png>
+File: images/talk09-homework-plot06.png Graphic file (type bmp)
+<images/talk09-homework-plot06.png>
+[10]
+File: images/talk09-homework-plot07.png Graphic file (type bmp)
+<images/talk09-homework-plot07.png>
+[11]
+File: images/talk09-homework-plot08.png Graphic file (type bmp)
+<images/talk09-homework-plot08.png>
+[12] [13] [14] (./talk09-homework.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2022/07/14>
@@ -919,12 +956,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 22413 strings out of 477570
- 462571 string characters out of 5817111
- 1927438 words of memory out of 5000000
- 43294 multiletter control sequences out of 15000+600000
+ 22497 strings out of 477570
+ 466100 string characters out of 5817111
+ 1925438 words of memory out of 5000000
+ 43365 multiletter control sequences out of 15000+600000
  566322 words of font info for 111 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 93i,6n,129p,1012b,503s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,6n,120p,1012b,906s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on talk08-homework.pdf (8 pages).
+Output written on talk09-homework.pdf (14 pages).

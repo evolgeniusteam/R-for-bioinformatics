@@ -203,7 +203,7 @@ dfs <- list(
 dfs %>% reduce(full_join);
 ```
 
-```{r}
+```{r fig.height=10, fig.width=5}
 ## 代码写这里，并运行；
 
 ```
