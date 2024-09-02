@@ -373,7 +373,7 @@ x / c(10,100,1000); ## 会报错但仍会循环计算
 \FontSmall
 
 ```{r}
-knitr::kable(m);
+m;
 ```
 
 ```{r}
@@ -640,7 +640,7 @@ c(-1, 0, 1) / 0;
 
 ```{r warning=FALSE, message=FALSE}
 nul <- readr::read_csv(file = "data/talk02/null.csv");
-knitr::kable(nul);
+nul;
 ```
 
 ## 其它 is. 函数
