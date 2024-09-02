@@ -615,20 +615,7 @@ tinytex:::install_prebuilt("C:/wchen/Downloads/TinyTex.zip");
 
 # Section 5: other tools used in our group
 
-## Database tools
-
--   MySQL
--   phpmyadmin
-
-![phpmyadmin login page using web
-browser](images/talk01/phpMyAdmin.png){height="40%"}
-
-## Database tools, cont.
-
-![phpmyadmin database
-view](images/talk01/phpmyadmin_database_view.png){height="50%"}
-
-## other tools
+## Tools used in our group
 
 ### programming languages
 
@@ -648,44 +635,6 @@ view](images/talk01/phpmyadmin_database_view.png){height="50%"}
 -   Vue.js
 -   Bootstrap
 -   plot.ly (interactive visualisation)
-
-## An example: cross-talking among tools
-
-Here I use the following to show how we process data in our lab:
-
-\FontSmall
-
-```{r message=FALSE}
-library(RMySQL); 
-library(dplyr);
-
-mysql.dbname = "r4ds_test";
-dbCon <- dbConnect(MySQL(), user="r4ds", password="r4ds", 
-                   dbname=mysql.dbname,
-                   unix.socket="/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock");
-
-dat <- dbGetQuery(dbCon, "SELECT * FROM grades");
-
-## -- 任务： 为每个人计算：平均成绩、上课总数、及格门数、不及格门数
-stats <- dat %>% group_by(name) %>% 
-  summarise( avg_grade = mean(grade), count = n(), 
-             passed = sum(  grade >= 60  ), failed = sum( grade  < 60  ) ) %>% 
-  arrange( -avg_grade );
-```
-
-## Show the data
-
-```{r dat, message=FALSE, warning=FALSE, echo=FALSE}
-## -- 显示原始数据 --
-knitr::kable(dat);
-```
-
-## and show the results
-
-```{r stats, message=FALSE, warning=FALSE, echo=FALSE}
-## 显示计算结果
-knitr::kable(stats);
-```
 
 # section 6: Concluding remarks & 作业
 
