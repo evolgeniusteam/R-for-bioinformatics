@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.2)  2 SEP 2024 20:38
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.2)  4 SEP 2024 17:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1956,7 +1956,7 @@ Overfull \hbox (8.4254pt too wide) in paragraph at lines 964--964
 \openout4 = `talk01.vrb'.
 
 
-Overfull \hbox (8.4254pt too wide) in paragraph at lines 980--980
+Overfull \hbox (8.4254pt too wide) in paragraph at lines 978--978
  [][][][]  
  []
 
@@ -1964,10 +1964,6 @@ Overfull \hbox (8.4254pt too wide) in paragraph at lines 980--980
 File: images/talk01/download_tinytex_zip.png Graphic file (type bmp)
 <images/talk01/download_tinytex_zip.png>
 )
-Overfull \vbox (4.93109pt too high) detected at line 980
- []
-
-
 
 
 Overfull \hbox (8.4254pt too wide) has occurred while \output is active
@@ -1977,14 +1973,14 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
 [53
 
 ]
-Overfull \hbox (8.4254pt too wide) in paragraph at lines 982--982
+Overfull \hbox (8.4254pt too wide) in paragraph at lines 980--980
  [][][][]  
  []
 
 \openout4 = `talk01.vrb'.
 
 
-Overfull \hbox (8.4254pt too wide) in paragraph at lines 1006--1006
+Overfull \hbox (8.4254pt too wide) in paragraph at lines 1001--1001
  [][][][]  
  []
 
@@ -1995,13 +1991,7 @@ LaTeX Font Warning: Font shape `TU/lmtt/bx/it' in size <10.95> not available
 
 LaTeX Font Info:    Font shape `TU/FandolFang-Regular(0)/b/it' will be
 (Font)              scaled to size 10.61533pt on input line 9.
-File: images/talk01/download_from_github_course_tutorial.png Graphic file (type bmp)
-<images/talk01/download_from_github_course_tutorial.png>
 )
-Overfull \vbox (66.18625pt too high) detected at line 1006
- []
-
-
 
 
 Overfull \hbox (8.4254pt too wide) has occurred while \output is active
@@ -2011,23 +2001,13 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
 [54
 
 ]
-Overfull \hbox (8.4254pt too wide) in paragraph at lines 1008--1008
+Overfull \hbox (8.4254pt too wide) in paragraph at lines 1016--1016
  [][][][]  
  []
 
-\openout4 = `talk01.vrb'.
+File: images/talk01/download_from_github_course_tutorial.png Graphic file (type bmp)
+<images/talk01/download_from_github_course_tutorial.png>
 
-
-Overfull \hbox (8.4254pt too wide) in paragraph at lines 1023--1023
- [][][][]  
- []
-
-(./talk01.vrb
-LaTeX Font Info:    Font shape `TU/FandolFang-Regular(0)/m/n' will be
-(Font)              scaled to size 10.61533pt on input line 10.
-File: images/talk01/find_and_open_folder_downloaded_from_github.png Graphic file (type bmp)
-<images/talk01/find_and_open_folder_downloaded_from_github.png>
-)
 
 
 Overfull \hbox (8.4254pt too wide) has occurred while \output is active
@@ -2037,7 +2017,7 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
 [55
 
 ]
-Overfull \hbox (8.4254pt too wide) in paragraph at lines 1025--1025
+Overfull \hbox (8.4254pt too wide) in paragraph at lines 1018--1018
  [][][][]  
  []
 
@@ -2049,13 +2029,15 @@ Overfull \hbox (8.4254pt too wide) in paragraph at lines 1031--1031
  []
 
 (./talk01.vrb
-File: images/talk01/open_project_and_find_homework.png Graphic file (type bmp)
-<images/talk01/open_project_and_find_homework.png>
+
+LaTeX Font Warning: Font shape `TU/FandolFang-Regular(0)/b/n' undefined
+(Font)              using `TU/FandolFang-Regular(0)/m/n' instead on input line 3.
+
+LaTeX Font Info:    Font shape `TU/FandolFang-Regular(0)/m/n' will be
+(Font)              scaled to size 10.61533pt on input line 3.
+File: images/talk01/find_and_open_folder_downloaded_from_github.png Graphic file (type bmp)
+<images/talk01/find_and_open_folder_downloaded_from_github.png>
 )
-Overfull \vbox (4.20166pt too high) detected at line 1031
- []
-
-
 
 
 Overfull \hbox (8.4254pt too wide) has occurred while \output is active
@@ -2072,7 +2054,35 @@ Overfull \hbox (8.4254pt too wide) in paragraph at lines 1033--1033
 \openout4 = `talk01.vrb'.
 
 
-Overfull \hbox (8.4254pt too wide) in paragraph at lines 1059--1059
+Overfull \hbox (8.4254pt too wide) in paragraph at lines 1041--1041
+ [][][][]  
+ []
+
+(./talk01.vrb
+File: images/talk01/open_project_and_find_homework.png Graphic file (type bmp)
+<images/talk01/open_project_and_find_homework.png>
+)
+Overfull \vbox (17.03943pt too high) detected at line 1041
+ []
+
+
+
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[57
+
+]
+Overfull \hbox (8.4254pt too wide) in paragraph at lines 1043--1043
+ [][][][]  
+ []
+
+\openout4 = `talk01.vrb'.
+
+
+Overfull \hbox (8.4254pt too wide) in paragraph at lines 1069--1069
  [][][][]  
  []
 
@@ -2083,29 +2093,11 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[57
-
-]
-Overfull \hbox (8.4254pt too wide) in paragraph at lines 1062--1062
- [][][][]  
- []
-
-
-
-
-Overfull \hbox (8.4254pt too wide) has occurred while \output is active
- [][][][]  
- []
-
 [58
 
 ]
-Overfull \hbox (8.4254pt too wide) in paragraph at lines 1106--1106
+Overfull \hbox (8.4254pt too wide) in paragraph at lines 1072--1072
  [][][][]  
- []
-
-
-Overfull \vbox (13.3156pt too high) detected at line 1106
  []
 
 
@@ -2118,8 +2110,12 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
 [59
 
 ]
-Overfull \hbox (8.4254pt too wide) in paragraph at lines 1109--1109
+Overfull \hbox (8.4254pt too wide) in paragraph at lines 1116--1116
  [][][][]  
+ []
+
+
+Overfull \vbox (13.3156pt too high) detected at line 1116
  []
 
 
@@ -2132,19 +2128,8 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
 [60
 
 ]
-Overfull \hbox (8.4254pt too wide) in paragraph at lines 1111--1111
+Overfull \hbox (8.4254pt too wide) in paragraph at lines 1119--1119
  [][][][]  
- []
-
-\openout4 = `talk01.vrb'.
-
-
-Overfull \hbox (8.4254pt too wide) in paragraph at lines 1162--1162
- [][][][]  
- []
-
-(./talk01.vrb)
-Overfull \vbox (70.45981pt too high) detected at line 1162
  []
 
 
@@ -2157,14 +2142,39 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
 [61
 
 ]
-Overfull \hbox (8.4254pt too wide) in paragraph at lines 1164--1164
+Overfull \hbox (8.4254pt too wide) in paragraph at lines 1121--1121
  [][][][]  
  []
 
 \openout4 = `talk01.vrb'.
 
 
+Overfull \hbox (8.4254pt too wide) in paragraph at lines 1172--1172
+ [][][][]  
+ []
+
+(./talk01.vrb)
+Overfull \vbox (70.45981pt too high) detected at line 1172
+ []
+
+
+
+
+Overfull \hbox (8.4254pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[62
+
+]
 Overfull \hbox (8.4254pt too wide) in paragraph at lines 1174--1174
+ [][][][]  
+ []
+
+\openout4 = `talk01.vrb'.
+
+
+Overfull \hbox (8.4254pt too wide) in paragraph at lines 1184--1184
  [][][][]  
  []
 
@@ -2175,7 +2185,7 @@ Overfull \hbox (8.4254pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[62
+[63
 
 ]
 \tf@nav=\write7
@@ -2199,12 +2209,12 @@ Package rerunfilecheck Info: File `talk01.out' has not changed.
 (rerunfilecheck)             Checksum: DE25F0CA5E4209B8F46B179D67322536;1202.
  ) 
 Here is how much of TeX's memory you used:
- 33852 strings out of 476173
- 729346 string characters out of 5784306
+ 33887 strings out of 476173
+ 731872 string characters out of 5784306
  1950609 words of memory out of 5000000
- 55747 multiletter control sequences out of 15000+600000
+ 55782 multiletter control sequences out of 15000+600000
  582293 words of font info for 111 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  101i,16n,130p,1003b,849s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on talk01.pdf (62 pages).
+Output written on talk01.pdf (63 pages).

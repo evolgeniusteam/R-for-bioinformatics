@@ -560,7 +560,6 @@ install.packages("tinytex");
 
 ![TinyTex.zip 下载](images/talk01/download_tinytex_zip.png){height="42%"}
 
-**注意** 不要解压缩！！
 
 ## 完成**作业**并**提交**? cont.
 
@@ -572,27 +571,34 @@ tinytex:::install_prebuilt("C:/wchen/Downloads/TinyTex.zip");
 ## 注： 请将 “C:/wchen/Downloads/TinyTex.zip” 更换为实际下载路径
 ```
 
-### 5，安装 Github Desktop 
+注意：
 
-* 安装Github Desktop 并登入，如无帐户，则先创建；
+* 请使用 / （反斜杠）！！
+
+* 不要解压缩！！
+
+## 完成**作业**并**提交**? cont.
+
+### 5，下载课程文件并解压缩
 
 * 在浏览器打开网址：https://github.com/evolgeniusteam/R-for-bioinformatics
 
-![](images/talk01/download_from_github_course_tutorial.png){height="50%"}
+* 下载课程 zip 文件，并**解压缩！**。
+
+![](images/talk01/download_from_github_course_tutorial.png){height="40%"}
 
 
 ## 完成**作业**并**提交**? cont.
 
-### 6，通过Github Desktop 下载教程和作业
+### 6，打开 `R for bioinformatics 讲义.Rproj` 项目
 
-* 下载到默认或指定目录
-* 打开下载的目录，找到 `R for bioinformatics 讲义.Rproj` 文件，双击用`RStudio`打开
+* 打开解压得到的目录，找到 `R for bioinformatics 讲义.Rproj` 文件，双击用`RStudio`打开
 
 ![](images/talk01/find_and_open_folder_downloaded_from_github.png){height="30%"}
 
 ## 完成**作业**并**提交**? cont.
 
-### 7，通过 Rstudio 打开相应的 `Rproj` 文件
+### 7，通过 Rstudio 打开相应的 `Excercises and homework` 文件夹下面的 `talk01-homework.Rmd` 文件
 
 ![](images/talk01/open_project_and_find_homework.png){height="80%"}
 
