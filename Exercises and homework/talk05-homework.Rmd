@@ -156,3 +156,25 @@ grades2 <- tibble( "Name" = c("Weihua Chen", "Mm Hu", "John Doe", "Jane Doe",
 -   如果 `Wt` \> 72.57，为 'Middleweight'，否则
 -   如果 `Wt` \> 66.68，为 'Light-middleweight'
 -   其它值，为 'Welterweight'
+
+
+### **使用`iris`变量做练习**
+
+运行以下代码：
+
+```{r}
+iris %>%
+  subset(Sepal.Length > 5) %>%
+  aggregate(. ~ Species, ., mean)
+```
+
+回答以下问题：
+
+1. 输出结果中的数值是什么？
+
+答：
+
+2. 请解释 `aggregate` 函数的4个参数分析是什么作用？
+
+答：
+

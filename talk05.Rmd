@@ -34,7 +34,7 @@ knitr::knit_hooks$set(error = color_block('red'))
 -   factors 基本概念
 -   factors 操作
 -   factors 在做图中的使用
--   ggplot2 和 dplyr 初步
+-   ggplot2 和 pipe `%>%` 初步
 
 
 ## 今次提要
@@ -48,28 +48,28 @@ knitr::knit_hooks$set(error = color_block('red'))
 
 -   pipe 就是 `%>%`
 -   it comes from the `magrittr` package by **Stefan Milton Bache**
--   Packages in the tidyverse load %\>% for you automatically, so you don't usually load magrittr explicitly.
 -   实质是中间值的传递
 
 示例：
 
+比较`传统代码（如下）`和 `pipe 代码（下页）`：
+
+\FontSmall
+
+```{r warning=FALSE, message=FALSE}
+## 传统代码：
+a <- subset( swiss, Fertility > 20 );
+cor.test(a$Fertility, a$Education);
+```
+
+## `pipe` 版本
+
 \FontSmall
 
 ```{r message=FALSE, warning=FALSE}
-## 比如：这段代码可以合并为：
+## -- 新代码 ... 
 library(tidyverse); ## 装入包
 library(magrittr);
-a <- subset( swiss, Fertility > 20 );
-cor.test(a$Fertility, a$Education);
-
-```
-
-## pipe 版本
-
-\FontSmall
-
-```{r}
-## -- 新代码 ... 
 swiss %>%
   subset(., Fertility > 20) %$%
   cor.test( Education , Fertility );
@@ -85,10 +85,17 @@ swiss %>%
 
 ```{r}
 swiss %>% do( head(.,  n = 4 ) );
+```
 
-## 也可以写为
+## 以上也可写为：
+
+\FontSmall
+
+```{r}
 swiss %>% head(.,  n = 4 );
 ```
+
+**注**：这里的 `.` 被称为 `占位符`，用于指代上游传递来的数据。
 
 ## 其它形式的 pipe
 
@@ -165,16 +172,35 @@ mtcars %<>% transform(cyl = cyl * 2);
 -   pipe 的使用可以使思路更清晰
 -   因此，尽量使用 `%>%` （方向明确），而不使用其它方向不明确的 pipe
 
+## `R` 自带的 `pipe`
+
+自 `R 4.1.0` 起，系统自带了 `|>` ，其用法与 `%>%` 基本相同，但也有不少区别，详见：
+
+https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/
+
+本教程重点介绍 `%>%`。
+
+## `pipe`的更多用法
+
+之后会详细介绍。
 
 # section 3: data wrangler - dplyr
 
-## dplyr
+## `dplyr` 提要
+
+-   什么是`dplyr`
+-   `dplyr`安装
+-   `mouse gene` 分析示例
+-   `学习成绩`分析示例
+-   `星战人物`分析示例
+
+## 1. 什么是`dplyr`
 
 ### what is `dplyr` ?
 
 -   the next iteration of plyr,
 -   focusing on only data frames (also tibble),
--   row-based manipulation,
+-   **row-based** manipulation,
 -   dplyr is faster and has a more consistent API.
 
 ![dplyr logo](images/talk05/dplyr-large.png){height="50%"}
@@ -184,7 +210,7 @@ mtcars %<>% transform(cyl = cyl * 2);
 -   [dplyr offical page at tidyverse](https://dplyr.tidyverse.org)
 -   [R for data science](https://r4ds.had.co.nz)
 
-## dplyr, overview
+## `dplyr` 函数概览
 
 dplyr provides a consistent set of verbs that help you **solve the most common data manipulation challenges**:
 
@@ -194,7 +220,9 @@ dplyr provides a consistent set of verbs that help you **solve the most common d
 -   [summarise()](https://dplyr.tidyverse.org/reference/summarise.html) 将多个值转换为单个值（通过 mean, median, sd 等操作），生成新列 （总行数减少，通常与 `group_by`配合使用 ）
 -   [arrange()](https://dplyr.tidyverse.org/reference/arrange.html) 对行进行排序
 
-## dplyr 安装
+## 2. `dplyr` 安装
+
+### 正常安装
 
 \FontSmall
 
@@ -208,7 +236,7 @@ install.packages("dplyr")
 
 \FontNormal
 
-Development version
+### Development version
 
 \FontSmall
 
@@ -219,9 +247,9 @@ devtools::install_github("tidyverse/dplyr")
 
 \FontNormal
 
-[Get the cheatsheet at here](https://github.com/rstudio/cheatsheets/blob/master/data-transformation.pdf)
+[Get the cheatsheet at here.](https://github.com/rstudio/cheatsheets/blob/master/data-transformation.pdf)
 
-## an example of `dplyr`
+## 3. `mouse gene` 分析示例
 
 get the data ready
 
@@ -290,8 +318,9 @@ dat <- mouse.tibble %>%
 
 \FontSmall
 
-```{r echo=FALSE}
-knitr::kable( head( dat, n = 15 ) );
+```{r echo=FALSE, message=F}
+library(kableExtra);
+kbl( head( dat, n = 15 ) );
 ```
 
 
@@ -300,7 +329,7 @@ knitr::kable( head( dat, n = 15 ) );
 ![dplyr与行相关的操作](images/talk05/dplyr-subset.png){height="70%"}
 
 
-## 课堂练习：使用常用函数解决问题
+## 4. `学习成绩`分析示例
 
 先创建一个新 tibble
 
@@ -316,10 +345,10 @@ grades <- tibble( "Name" = c("Weihua Chen", "Mm Hu", "John Doe", "Jane Doe",
                   "Biology" = sample( 50:100, 7),
                   "Bioinformatics" = sample( 40:90, 7)
                   );
-grades;
+kbl(grades);
 ```
 
-## use gather & dplyr functions
+## use `gather` & `dplyr` functions
 
 Question: 1. 每个人平均成绩是多少？ 2. 哪个人的平均成绩最高？
 
@@ -330,21 +359,26 @@ grades.melted <- grades %>%
   gather( course, grade, -Name, -Occupation, na.rm = T );
 
 ## 检查数据 ... 
-knitr::kable( head(grades.melted) );
+kbl( head(grades.melted) );
 ```
+
+\FontNormal
+
+**注：** `gather` 的用法之后介绍
 
 ## 成绩分析，cont
 
 \FontSmall
 
 ```{r}
-grades.melted %>% 
+stat3 <- 
+  grades.melted %>% 
   group_by(Name, Occupation) %>% 
   summarise( avg_grades = mean( grade ), courses_count = n() ) %>% 
   arrange( -avg_grades );
 
 ## 显示最终结果
-knitr::kable( head( grades.melted ) );
+kbl( head( stat3 ) );
 ```
 
 ## use gather & dplyr functions
@@ -354,13 +388,12 @@ knitr::kable( head( grades.melted ) );
 \FontSmall
 
 ```{r}
-
 ## 步骤1： 排序：
 grades.melted2 <- 
   grades.melted %>% 
   arrange( Name, -grade );
 
-knitr::kable( head(grades.melted2) );
+kbl( head(grades.melted2) );
 ```
 
 ## 最强科目问题，cont.
@@ -368,12 +401,16 @@ knitr::kable( head(grades.melted2) );
 \FontSmall
 
 ```{r}
-grades.melted2 %>% 
+## 步骤2：分组、每组取第一个
+best_by_course<-
+  grades.melted2 %>% 
   group_by(Name) %>% 
   summarise( best_course = first( course ),
              best_grade = first( grade ),
              avg_grades = mean( grade ) ) %>% 
   arrange( -avg_grades );
+
+kbl( best_by_course );
 ```
 
 ## dplyr::summarise 的其它操作
@@ -384,15 +421,15 @@ grades.melted2 %>%
 
 问题1： 每个人的最**差**科目是什么？？
 
-## ** 列的使用！ **，以 `starwars` tibble 为例
+## 5. `星战人员` 分析示例：**列的使用！**
 
 \FontSmall
 
 ```{r}
-head(starwars);
+kbl(head(starwars));
 ```
 
-**note** 包含87行 13 列，星战部分人物的信息，包括身高、体重、肤色等
+**note** 包含`87`行`13`列，星战部分人物的信息，包括身高、体重、肤色等
 
 用 `?starwars` 获取更多帮助
 
@@ -416,7 +453,7 @@ stats <-
   select( name, height, mass ) %>%
   mutate( bmi = mass / ( (height / 100 ) ^ 2 ) ) ;
 
-head(stats);
+kbl(head(stats));
 ```
 
 ## dplyr::select - 取列, cont.
@@ -431,7 +468,7 @@ stats <-
   select( name:mass ) %>%
   mutate( bmi = mass / ( (height / 100 ) ^ 2 ) ) ;
 
-head(stats);
+kbl(head(stats));
 ```
 
 ## dplyr::select - 取列, cont.
@@ -444,7 +481,7 @@ head(stats);
 stats2 <- starwars %>% 
   select( name, ends_with("color") );
 
-head(stats2);
+kbl(head(stats2));
 ```
 
 ## dplyr::select - 去除列, cont.
@@ -454,7 +491,7 @@ head(stats2);
 \FontSmall
 
 ```{r eval=FALSE}
-head( starwars %>% select( -hair_color, -eye_color )  );
+kbl(head( starwars %>% select( -hair_color, -eye_color )  ));
 ```
 
 ## dplyr::select - 其它操作, cont.
@@ -480,12 +517,6 @@ starwars %>% select( name, ends_with("color"), gender, species ) %>%
 
 # section 4 : 练习与作业
 
-## 练习 & 作业
-
--   `Exercises and homework` 目录下 `talk05-homework.Rmd` 文件；
-
--   完成时间：见钉群的要求
-
 ## 小结
 
 ### 今次提要
@@ -501,3 +532,10 @@ starwars %>% select( name, ends_with("color"), gender, species ) %>%
 ### important
 
 -   all codes are available at Github: <https://github.com/evolgeniusteam/R-for-bioinformatics>
+
+## 练习 & 作业
+
+-   `Exercises and homework` 目录下 `talk05-homework.Rmd` 文件；
+
+-   完成时间：见钉群的要求
+
