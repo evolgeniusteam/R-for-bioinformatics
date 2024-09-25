@@ -1,0 +1,356 @@
+---
+title: "R for bioinformatics, data wrangler, part 2"
+subtitle: "HUST Bioinformatics course series"
+author: "Wei-Hua Chen (CC BY-NC 4.0)"
+institute: "HUST, China"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  beamer_presentation:
+    theme: AnnArbor
+    colortheme: beaver
+    fonttheme: structurebold
+    highlight: tango
+    includes:
+      in_header: mystyle.sty
+---
+
+```{r include=FALSE}
+color_block = function(color) {
+  function(x, options) sprintf('\\color{%s}\\begin{verbatim}%s\\end{verbatim}',
+                               color, x)
+}
+
+## 将错误信息用红色字体显示
+knitr::knit_hooks$set(error = color_block('red'))
+```
+
+# section 1: TOC
+
+## 前情提要
+
+### pipe
+-   pipe
+
+### dplyr
+
+-   select()
+-   filter()
+-   mutate()
+-   summarise()
+-   arrange()
+-   group_by() ...
+
+## 今次提要
+
+### tidyr
+
+-   1. 长宽数据转变
+-   2. 数据分割：一列变多列
+-   3. 数据合并：多列变一列
+-   4. 其它函数
+
+# section 2: data wrangler - tidyr
+
+## tidyr
+
+### what is `tidyr` ?
+
+The goal of tidyr is to help you create **tidy** data.
+
+![dplyr logo](images/talk06/tidyr.png){height="30%"}
+
+
+### more to read
+
+-   [tidyr offical page at tidyverse](https://tidyr.tidyverse.org)
+-   [R for data science](https://r4ds.had.co.nz)
+
+## tidyr 安装
+
+只需**安装一次**即可！
+
+\FontSmall
+
+```{r eval=FALSE}
+# The easiest way to get tidyr is to install the whole tidyverse:
+install.packages("tidyverse")
+
+# Alternatively, install just tidyr:
+install.packages("tidyr")
+
+# Or the development version from GitHub:
+# install.packages("devtools")
+devtools::install_github("tidyverse/tidyr")
+```
+
+\FontNormal
+
+[Get the cheatsheet at here](https://github.com/rstudio/cheatsheets/blob/master/tidyr.pdf)
+
+## 1. 长宽数据转变：`宽数据` 向 `长数据` 转变
+
+get data ready 
+
+\FontSmall
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse); ## 先装入包；
+grades2 <- read_tsv(file = "data/talk06/grades2.txt");
+
+grades2;
+```
+
+## 宽数据的特点
+
+### 优点：
+
+-    自然，易理解；
+
+### 缺点：
+
+-    不易处理；
+-    稀疏时问题较大；
+
+## `宽数据` 向 `长数据` 转变
+
+\FontSmall
+
+```{r message=F}
+library(kableExtra);
+grades3 <- grades2 %>% pivot_longer( - name, names_to = "course", values_to = "grade" );
+kbl( grades3 );
+```
+
+## `pivot_longer` explained!
+
+\FontSmall
+
+```{r eval=FALSE}
+grades3 <- grades2 %>% pivot_longer( - name, names_to = "course", values_to = "grade" );
+```
+
+\FontNormal
+
+![ `pivot_longer` explained! ](images/talk05/gather_explained.png){height="50%"}
+
+## 有 `NA` 值怎么办？
+
+\FontSmall
+
+```{r}
+grades3_1 <- grades3[ !is.na(grades3$grade),  ];
+grades3_2 <- grades3[ complete.cases( grades3 )  ,  ];
+
+## -- 更好的方法 ~~ 
+grades3_long <- grades2 %>% 
+  pivot_longer( - name, 
+                names_to = "course", 
+                values_to = "grade",
+                values_drop_na = TRUE);
+```
+
+
+`values_drop_na` 即可消除；
+
+
+## 有 `NA` 值怎么办？cont.
+
+\FontSmall
+
+```{r}
+kbl( grades3_long );
+```
+
+## 长变宽
+
+\FontSmall
+
+```{r}
+grades3_wide <- grades3_long %>% 
+  pivot_wider( names_from = "course", values_from = "grade" );
+
+grades3_wide;
+```
+
+## `pivot_wider` 怎么用？
+
+![`pivot_wider` function explained](images/talk05/wider_explained.png){height="50%"}
+
+## 宽长数据转换练习
+
+用 `pivot_wider` 和 `pivot_longer` 对下面的数据 `mini_iris` 进行宽长转换:
+
+\FontSmall
+
+```{r}
+mini_iris <- iris[ c(1, 51, 101),  ];
+kbl( mini_iris);
+```
+
+\FontNormal
+
+`iris` 是 鸢尾属 一些物种花瓣的量表
+
+## 宽变长， cont.
+
+\FontSmall
+
+```{r}
+## -- 注意： 第一、二个参数可以自行命名，分别对应原始数据中的 column names 及 values ...
+mini_iris.longer <- mini_iris %>% 
+  pivot_longer( - Species, names_to = "type", values_to = "dat" );
+kbl( mini_iris.longer  );
+```
+
+
+## 长变宽
+
+\FontSmall
+
+```{r}
+## -- 注意： 第一、二个参数可以自行命名，分别对应原始数据中的 column names 及 values ...
+mini_iris.wider <- mini_iris.longer %>% 
+  pivot_wider( names_from =  "type", values_from = "dat" );
+kbl( mini_iris.wider  );
+```
+
+## 比较复杂的例子
+
+\FontSmall
+
+```{r message=FALSE, warning=FALSE}
+grades2 <- read_delim( file = "data/talk05/grades2.txt", delim = "\t",
+                       quote = "", col_names = T);
+kbl( grades2 );
+```
+
+\FontNormal
+
+这是哪种数据类型？长还是宽？？
+
+## 怎么变成宽数据？
+
+\FontSmall
+
+```{r}
+grades2_wide <- grades2 %>% 
+  pivot_wider( names_from = course, values_from =  grade );
+
+grades2_wide;
+```
+
+## 再变成长数据
+
+又怎么把它变回来？
+
+\FontSmall
+
+```{r}
+a <- 
+  grades2_wide %>% 
+  pivot_longer( ! c( name, class ), 
+                names_to = "course", 
+                values_to = "grade", 
+                values_drop_na = T 
+               );
+
+kbl( a );
+```
+
+## 另一种变法, 注意两者的区别！！
+
+\FontSmall
+
+```{r}
+b <- grades2_wide %>% 
+  pivot_longer( bioinformatics:spanish, ## 选择成绩所在的列！
+                names_to = "course", values_to = "grade", 
+                               values_drop_na = T 
+                               );
+
+kbl( b );
+```
+
+## 2. tidyr::separate 将`一列`拆成`多列`
+
+\FontSmall
+
+```{r}
+table3 <- read_tsv(file = "data/talk06/table3.txt");
+
+table3 %>% 
+  separate(rate, into = c("cases", "population"), sep = "/");
+
+```
+
+## tidyr::separate 同时进行格式转换
+
+如何把分拆后的列`正确识别为数字`？？
+
+\FontSmall
+
+```{r}
+table3 %>% 
+  separate(rate, into = c("cases", "population"), convert = TRUE)
+```
+
+## tidyr::separate 按字符长度分割
+
+把年拆分为`世纪`和`年`
+
+\FontSmall
+
+```{r}
+table5 <- table3 %>% 
+  separate(year, into = c("century", "year"), sep = 2)
+
+table5;
+```
+
+## 3. tidyr::unite 将`多列`合成`一列`
+
+\FontSmall
+
+```{r}
+## 将上页分拆的结果进行合并
+
+table5 %>% 
+  unite(new, century, year, sep = ""); ## sep 参数默认是 _ 
+
+```
+
+## `seperate` 与 `unit` 小结
+
+-    分割和合并后，原列会`消失`! 可使用 `remove = FALSE` 保留原列
+-    更多示例见：<https://r4ds.had.co.nz/tidy-data.html>
+
+## 4. 其它函数
+
+-    `fill` （作业会用到）
+-    `complete` （作业会用到）
+-    ...
+
+更多示例见：<https://r4ds.had.co.nz/tidy-data.html>
+
+
+# section 3 : 小结与作业
+
+## 小结
+
+### 今次提要
+
+-   tidyr (超级强大的数据处理) part 2
+
+### 下次预告
+
+-   dplyr, tidyr 和 forcats 的更多功能与生信操作实例
+
+### important
+
+-   all codes are available at Github: <https://github.com/evolgeniusteam/R-for-bioinformatics>
+
+## 练习 & 作业
+
+-   `Exercises and homework` 目录下 `talk06-homework.Rmd` 文件；
+
+-   完成时间：见钉群的要求

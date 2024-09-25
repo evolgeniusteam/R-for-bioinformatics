@@ -79,6 +79,24 @@ Sys.getenv("HOME")
 
 答：
 
+5.   运行以下代码，解释`tribble` 函数和 `fill` 函数的作用；
+
+```{r}
+treatment <- tribble(
+  ~ person,           ~ treatment, ~response,
+  "Derrick Whitmore", 1,           7,
+  NA,                 2,           10,
+  NA,                 3,           9,
+  "Katherine Burke",  1,           4,
+  NA,                 2,           5,
+  NA,                 3,           6
+);
+
+treatment %>% fill(person);
+```
+
+答：
+
 
 ## 练习与作业2：作图
 
