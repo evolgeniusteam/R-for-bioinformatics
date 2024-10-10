@@ -59,7 +59,7 @@ Talks so far:
  * string comparisons, sub string
 2. regular expression
 
-# section 2: contents
+# section 2: simple `string` manipulations ... 
 
 ## get ready for the class
 
@@ -75,8 +75,6 @@ library(stringr);
 其它著名的 packages 
 
 * ```stringi```
-
-# section 2: simple manipulations ... 
 
 ## string
 
@@ -198,31 +196,82 @@ https://regex101.com/
 
 ![regex101](images/talk07/regex101.png){height=50%}
 
-## 正则表达式的组成部分
+## 正则表达式的任务
 
-1. 字符规则（Character classes）：（不）匹配什么样的字符
+1. 匹配模式
 
-![字符规则](images/talk07/regular_expression_character_roles.png){height=60%}
+2. 匹配规则：匹配（或不匹配）什么样的字符
 
-## 示例
+3. 位置规则：在何处匹配（或不匹配）
+
+4. 数量规则：符合规则字符串的数量
+
+
+## 1. 匹配模式
+
+用于定义`模糊匹配`的模式
+
+![匹配模式1](images/talk07/regular_expression_character_roles.png){height=60%}
+
+## 1. 匹配模式2：`classes and groups`
+
+![classes and groups](images/talk07/regexprs_classes_groups.png){height=40%}
+
+
+## 1. 匹配模式3：特别字符
+
+![特别字符](images/talk07/regexprs_special_characters.png){height=50%}
+
+## 2. 匹配规则：匹配什么样的字符
 
 \FontSmall
 
 ```{r}
-"abc_123_??$$^" %>% str_extract( "\\s+" ); ## 此字串包括 空格 吗？ 
-"abc_123_??$$^" %>% str_extract( "\\d+" ); ## 数字？？ 
-"abc_123_??$$^" %>% str_extract( "\\w+" ); ## [A-z0-9_]
+"abc_123_??$$^" %>% str_detect( "\\s+" ); ## 此字串包括 空格 吗？ 
+"abc_123_??$$^" %>% str_detect( "\\d+" ); ## 数字？？ 
+"abc_123_??$$^" %>% str_detect( "\\w+" ); ## [A-z0-9_]
+
+( string3 <- "a multiline 
+string" ); ## 含有回车的字符串
+
+string3 %>% str_detect( "\n" ); ## 
 ```
 
-\FontNormal
+## 2. 匹配规则：**不匹配**什么样的字符
 
-```str_extract``` : 取出第一个匹配的部分
+\FontSmall
 
-## 2. 匹配位置
+```{r}
+"abc_123_??$$^" %>% str_detect( "\\s+", negate = T ); ## 此字串 不包括 空格 吗？ 
+"abc_123_??$$^" %>% str_detect( "\\d+", negate = T ); ## 数字？？ 
+"abc_123_??$$^" %>% str_detect( "\\w+" , negate = T); ## [A-z0-9_]
+
+( string3 <- "a multiline 
+string" ); ## 含有回车的字符串
+
+string3 %>% str_detect( "\n", negate = T); ## 
+```
+
+## 2. 匹配规则：**不匹配** 的其它表达方法
+
+\FontSmall
+
+```{r}
+!str_detect( "abc_123_??$$^", "\\s+" ); ## 此字串 不包括 空格 吗？ 
+!str_detect( "abc_123_??$$^", "\\d+" ); ## 数字？？ 
+!str_detect( "abc_123_??$$^", "\\w+" ); ## [A-z0-9_]
+
+( string3 <- "a multiline 
+string" ); ## 含有回车的字符串
+
+!str_detect( string3, "\n"); ## 
+```
+
+## 2. 位置规则：在何处匹配（或不匹配）
 
 ![匹配位置](images/talk07/regexpr_anchors.png){height=40%}
 
-## 示例
+## 位置匹配：示例
 
 \FontSmall
 
@@ -234,7 +283,20 @@ c("chen wei hua", "chen wei", "chen") %>% str_subset( "wei$" );
 c("chen wei hua", "chen wei", "chen") %>% str_subset( "wei\\b" ); 
 ```
 
-## 3. 匹配数量
+## 位置**不匹配**：示例
+
+\FontSmall
+
+```{r}
+## 以 wei 结束的字符串
+c("chen wei hua", "chen wei", "chen") %>% str_subset( "wei$", negate = T );
+
+## 以 wei 结束的字 
+c("chen wei hua", "chen wei", "chen") %>% str_subset( "wei\\b" , negate = T); 
+```
+
+
+## 3. 数量规则：规定符合规则字符串的数量
 
 ![匹配数量](images/talk07/regexprs_quantifiers.png){height=40%}
 
@@ -250,19 +312,22 @@ c("chen wei hua", "chen wei", "chen") %>% str_subset( "wei\\b" );
 "1234abc" %>% str_extract( "\\d{2,6}" );
 ```
 
-## 4. classes and groups 
-
-![classes and groups](images/talk07/regexprs_classes_groups.png){height=40%}
-
-## 5. 特别字符
-
-![特别字符](images/talk07/regexprs_special_characters.png){height=50%}
 
 # section 4: tasks of regular expression
 
 ## tasks of regular expression 
 
-1. detect patterns ： 检查目标string里有无pattern
+1. detect patterns (检测)： 检查目标string里有无pattern
+
+2. locate patterns (定位)
+
+3. extract patterns (抽取匹配的字串)
+
+4. replace patterns (替换)
+
+5. split by patterns (分割)
+
+## 1. detect patterns ： 检查目标string里有无pattern
 
 \FontSmall
 
@@ -343,7 +408,7 @@ str_replace( c( "123", "abc", "wei555hua" ) , "\\d+", "###");
 str_replace_all( "123_abc_456_789" , "\\d+", "###");
 ```
 
-## 5. split by patterns
+## 5. split by patterns (匹配并分割)
 
 \FontSmall
 
@@ -351,10 +416,9 @@ str_replace_all( "123_abc_456_789" , "\\d+", "###");
 str_split(x, "");
 ```
 
+## 其它字符串函数
 
-\FontNormal 
-
-其它函数
+\FontSmall
 
 * sub(pattern, replacement, string)
 * gsub(pattern, replacement, string)
@@ -369,11 +433,11 @@ str_split(x, "");
 * strings.pdf
 * regular_expression.pdf 
 
-## stringr 函数
+## 更多：`stringr`包内的 函数
 
 更多内容见这里： https://stringr.tidyverse.org
 
-## 示例
+## 高级应用示例
 
 \FontSmall
 
@@ -393,7 +457,7 @@ chr12:58135797-58156509")) ) );
 ```
 
 
-## 示例, cont. 
+## 高级应用示例, cont. 
 
 任务：分为三列， chr, start, end
 
@@ -404,7 +468,7 @@ chr12:58135797-58156509")) ) );
 dat$chrom %>% str_split( '[:-]', simplify = T );
 ```
 
-## 示例， cont. 
+## 高级应用示例， cont. 
 
 另一种解决方案
 
@@ -436,7 +500,7 @@ extract(dat, chrom, into=c('chr', 'chrStart', 'chrEnd'),
  * replace patterns
  * split patterns ...
 
-### 下次预告
+## 下次预告
 
 data iteration & parallel computing
 

@@ -1,0 +1,325 @@
+---
+title: "talk05 练习与作业"
+documentclass: ctexart
+output:
+  rticles::ctex:
+    fig_caption: yes
+    number_sections: yes
+    toc: true
+    toc_depth: 2
+  word_document: default
+  html_document:
+    df_print: paged
+knit: (
+  function(inputFile, encoding) { 
+
+    pSubTitle <- 'talk05-homework'
+
+    rmarkdown::render( 
+      input       = inputFile, 
+      encoding    = encoding, 
+      params      = list(sub_title = pSubTitle),      
+      output_file = pSubTitle) })
+---
+
+## 练习和作业说明
+
+将相关代码填写入以 \`\`\`{r} \`\`\` 标志的代码框中，运行并看到正确的结果；
+
+完成后，用工具栏里的"Knit"按键生成PDF文档；
+
+**将PDF文档**改为：**`姓名-学号-talk05作业.pdf`**，并提交到老师指定的平台/钉群。
+
+## Talk05 内容回顾
+
+-   dplyr 、 tidyr (超级强大的数据处理) part 1
+    -   pipe
+    -   dplyr 几个重要函数
+
+## 练习与作业：用户验证
+
+请运行以下命令，验证你的用户名。
+
+**如你当前用户名不能体现你的真实姓名，请改为拼音后再运行本作业！**
+
+```{r}
+Sys.info()[["user"]]
+Sys.getenv("HOME")
+getwd(); ## 显示当前工作目录
+```
+
+## 练习与作业1：dplyr练习
+
+------------------------------------------------------------------------
+
+### **使用 mouse.tibble 变量做统计**
+
+-   每个染色体（或scaffold）上每种基因类型的数量、平均长度、最大和最小长度，挑出最长和最短的基因
+-   去掉含有500以下基因的染色体（或scaffold），按染色体（或scaffold）、数量 高 -\> 低 进行排序
+
+**挑战题（可选做）：**
+
+实现上述目标（即：去掉少于500基因的染色体、排序、并统计）时不使用中间变量；
+
+```{r}
+## 代码写这里，并运行；
+library(dplyr);library(readr)
+mouse.tibble<- read_delim("../data/talk04/mouse_genes_biomart_sep2018.txt" ,delim = "\t", col_types = cols(),na = c(""))
+##chr_order <- c(1:19,"X", "Y")
+str(mouse.tibble);
+
+##mouse.tibble <-m_g %>% filter( `Chromosome/scaffold name` );
+##( chr.stats <- mouse.tibble %>% count( `Chromosome/scaffold name` ) %>% arrange(-n) );
+##( chr.stats <- mouse.tibble %>% count( `Chromosome/scaffold name` ) %>% arrange(n) );
+
+
+mouse.tibble %>%group_by(`Chromosome/scaffold name`, `Transcript type`) %>%summarise( avg = mean( `Transcript length (including UTRs and CDS)` ), count = n() ) %>%arrange( -avg );
+
+
+plot1 <-
+mouse.tibble %>%
+arrange( `Chromosome/scaffold name`, -`Transcript length (including UTRs and CDS)` );
+
+plot1 %>%
+  group_by(`Chromosome/scaffold name`) %>%
+  summarise(
+    longest = first(`Transcript length (including UTRs and CDS)`),
+    shortest=last(`Transcript length (including UTRs and CDS)`),
+    avg = mean(`Transcript length (including UTRs and CDS)`)
+  ) %>%
+  arrange(-avg)
+
+
+
+##unique_genes <- mouse.tibble %>%distinct(`Chromosome/scaffold name`, `Gene stable ID`, .keep_all = TRUE)
+
+##unique_genes %>%group_by(`Chromosome/scaffold name`) %>%summarise(  count = n() ) %>%arrange( -count );
+
+chr.stats <- mouse.tibble %>% 
+  count(`Chromosome/scaffold name`) %>% 
+  arrange(-n);
+
+chr.stats <- chr.stats %>% 
+  filter(n >= 500)
+
+chr.stats
+```
+
+------------------------------------------------------------------------
+
+### **使用 grades2 变量做练习**
+
+首先，用下面命令生成 `grades2`变量：
+
+``` r
+grades2 <- tibble( "Name" = c("Weihua Chen", "Mm Hu", "John Doe", "Jane Doe",
+                             "Warren Buffet", "Elon Musk", "Jack Ma"),
+                  "Occupation" = c("Teacher", "Student", "Teacher", "Student", 
+                                   rep( "Entrepreneur", 3 ) ),
+                  "English" = sample( 60:100, 7 ),
+                  "ComputerScience" = sample(80:90, 7),
+                  "Biology" = sample( 50:100, 7),
+                  "Bioinformatics" = sample( 40:90, 7)
+                  );
+```
+
+然后统计： 1. 每个人最差的学科和成绩分别是什么？
+2. 哪个职业的平均成绩最好？ 
+3. 每个职业的最佳学科分别是什么（按平均分排序）？？？
+
+```{r}
+## 代码写这里，并运行；
+library(tidyr);
+grades2 <- tibble( "Name" = c("Weihua Chen", "Mm Hu", "John Doe", "Jane Doe",
+                             "Warren Buffet", "Elon Musk", "Jack Ma"),
+                  "Occupation" = c("Teacher", "Student", "Teacher", "Student", 
+                                   rep( "Entrepreneur", 3 ) ),
+                  "English" = sample( 60:100, 7 ),
+                  "ComputerScience" = sample(80:90, 7),
+                  "Biology" = sample( 50:100, 7),
+                  "Bioinformatics" = sample( 40:90, 7)
+                  );
+
+grades.melted <- grades2 %>%
+gather( course, grade, -Name, -Occupation, na.rm = T );
+
+grades.melted %>%
+group_by(Name, Occupation) %>%
+summarise( avg_grades = mean( grade ), courses_count = n() ) %>%
+arrange( -avg_grades );
+##1
+grades.melted2 <-
+grades.melted %>%
+arrange( Name, -grade );
+
+grades.melted2 %>%
+group_by(Name) %>%
+summarise( worst_course = last( course ),
+worst_grade=last( grade ),
+avg_grades = mean( grade ) ) %>%
+arrange( avg_grades );
+##2
+grades.melted %>%
+group_by(Occupation) %>%
+summarise( avg_grades = mean( grade ), courses_count = n() ) %>%
+arrange( -avg_grades );
+##3
+grades.melted3 <-
+grades.melted %>%
+arrange( Occupation, -grade );
+
+grades.melted3 %>%
+group_by(Occupation,course) %>%
+summarise( grade_avg = mean( grade )) %>%
+  group_by(Occupation)%>%  arrange(Occupation,-grade_avg) %>%
+summarise( best_grade=first( course ),best_course_avg = first( grade_avg )) %>%
+arrange( - best_course_avg );
+
+```
+
+------------------------------------------------------------------------
+
+### **使用 `starwars` 变量做计算**
+
+1.  计算每个人的 BMI；
+2.  挑选出 肥胖（BMI \>= 30）的人类，并且只显示其 `name`, `sex` 和 `homeworld`；
+
+```{r}
+## 代码写这里，并运行；
+library(dplyr)
+starwars$BMI <- starwars$mass / (starwars$height / 100)^2
+starwars
+
+
+obese_humans <- starwars %>%
+  filter(species == "Human" & BMI >= 30) %>%
+  select(name, sex, homeworld)
+
+obese_humans
+```
+
+3.  挑选出所有人类；
+4.  按BMI将他们分为三组， \<18, 18\~25, \>25，统计每组的人数，并用 barplot 进行展示；注意：展示时三组的按BMI从小到大排序；
+5.  改变排序方式，按每组人数从小到大排序；
+
+```{r}
+## 代码写这里，并运行；
+library(dplyr)
+library(ggplot2)
+humans<-starwars %>%
+  filter(species == "Human" ) %>%
+arrange( -BMI );
+humans;
+
+humans <- humans %>%
+  mutate(BMI_group = cut(BMI, 
+                        breaks = c(-Inf, 18, 25, Inf),
+                        labels = c("<18", "18~25", ">25")))
+         bmi_counts <- humans %>%
+  count(BMI_group)
+
+barplot(height = bmi_counts$n, names.arg = bmi_counts$BMI_group, main = "Human BMI Distribution by Count", xlab = "BMI Group", ylab = "Count", las = 1)
+
+
+bmi_counts <- bmi_counts %>%
+  mutate(BMI_group = reorder(BMI_group, n))
+
+ggplot(bmi_counts, aes(x = BMI_group, y = n, fill = BMI_group)) +
+  geom_bar(stat = "identity") +
+  theme_minimal() +
+  labs(title = "Human BMI Distribution by Count", x = "BMI Group", y = "Count") +
+  theme(axis.text.x = element_text( hjust = 1))
+```
+
+6.  查看 `starwars` 的 `films` 列，它有什么特点？`data.frame`可以实现类似的功能吗？
+
+答：其特点是它是一个列表（list）型数据，其中每个元素对应一个角色，并存储了该角色参与的所有电影名称，通常表现为字符串数组。这个列允许存在多样性，即不是所有的角色都有相同的电影数目，有的角色可能只参与一部电影，而有的则参与多部，非常适合反映现实生活中的多元联系。
+
+data.frame确实可以实现类似的功能，它能够容纳混合类型的列，包括字符列（如电影名称）、列表列（如films）。通过设置相应的列结构，data.frame可以有效地存储和管理一对多关系的数据，方便进行统计分析和数据挖掘操作。
+
+7.  为`starwars`增加一列，用于统计每个角色在多少部电影中出现。
+
+```{r}
+## 代码写这里，并运行；
+library(dplyr);library(purrr)
+starwars <- starwars %>%
+  mutate(films_count = map_dbl(films, ~ length(.x)))
+starwars
+```
+
+
+
+### **使用`Theoph`变量做练习**
+
+注：以下练习请只显示结果的前6行；
+
+1.  选取从 `Subject` 到 `Dose` 的列；总共有几列？
+
+```{r}
+## 代码写这里，并运行；
+stats <-
+Theoph %>%
+select( Subject:Dose ) 
+head(stats,6)
+```
+
+2.  用`filter` 选取 `Dose` 大于5，且 `Time` 高于 `Time` 列平均值的行；
+
+```{r}
+## 代码写这里，并运行；
+(time_avg <- mean(Theoph$Time, na.rm = TRUE))
+
+stats1<-Theoph %>% filter(Dose>5 & Time>time_avg)
+head(stats1)
+```
+
+3.  用 `mutate` 函数产生新列 `trend`，其值为 `Time` 与 `Time`列平均值的差；注意：请去除可能产生的 `na` 值；
+
+```{r}
+## 代码写这里，并运行；
+stats2 <- Theoph %>%
+  mutate(trend = Time-time_avg)%>%filter(!is.na(trend))
+head(stats2)
+```
+
+4.  用 `mutate` 函数产生新列 `weight_cat` ，其值根据 `Wt`的取值范围而不同：
+
+-   如果`Wt` \> 76.2，为 'Super-middleweight'，否则
+-   如果 `Wt` \> 72.57，为 'Middleweight'，否则
+-   如果 `Wt` \> 66.68，为 'Light-middleweight'
+-   其它值，为 'Welterweight'
+
+```{r}
+stats3 <- Theoph %>%
+  mutate(weight_cat = case_when(
+    Wt > 76.2 ~ "Super-middleweight",
+    Wt > 72.57 ~ "Middleweight",
+    Wt > 66.68 ~ "Light-middleweight",
+    TRUE ~ "Welterweight"
+  ))
+head(stats3)
+```
+
+
+### **使用`iris`变量做练习**
+
+运行以下代码：
+
+```{r}
+iris %>%
+  subset(Sepal.Length > 5) %>%
+  aggregate(. ~ Species, ., mean)
+```
+
+回答以下问题：
+
+1. 输出结果中的数值是什么？
+
+答：从 iris 数据集中选择 Sepal.Length 大于5的行,然后按照 Species 物种进行分组,对每个分组计算所有数值型列的平均值。
+
+2. 请解释 `aggregate` 函数的4个参数分析是什么作用？
+
+答：第一个参数x，是一个公式或数据框中的一个向量，指定了要进行聚合计算的变量。. ~ Species 表示使用 Species 作为分组变量，而对数据框中的所有其他变量进行聚合计算。
+第二个参数by，第二个参数 . 表示当前数据框（. 在公式中通常指代当前数据框的所有行和列）。
+第三个参数，是一个函数，用于对每个分组的数据执行计算。它可以是任何接受向量作为输入并返回单个值的函数。mean 表示对每个分组的变量计算平均值。
+第四个参数，...：是一组可选参数，它们会被传递给 FUN 函数。这些参数可以用来自定义聚合函数的行为。例如，如果你在计算平均值时想要排除 NA 值，可以在 mean 函数中使用 na.rm = TRUE 参数
