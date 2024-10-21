@@ -446,6 +446,14 @@ library(iterators);
 
 registerDoParallel( cpus - 1 );
 
+```
+
+## 简单示例, cont.
+
+\FontSmall
+
+```{r}
+
 ## Basic loop
 data(iris)
 x <- iris[which(iris[,5] != "setosa"), c(1,5)]

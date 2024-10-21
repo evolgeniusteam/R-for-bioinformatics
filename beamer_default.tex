@@ -24,6 +24,11 @@ $endif$
 \usepackage{booktabs} 
 % < --- < ---
 
+% solve the issue below:
+% Undefined control sequence.
+% \@currentHref ->table.\theHtable 
+\newcommand{\theHtable}{\thetable}
+
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
 \usepackage{lmodern}

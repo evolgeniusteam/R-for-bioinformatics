@@ -166,11 +166,12 @@ grades2 <- tibble( "Name" = c("Weihua Chen", "Mm Hu", "John Doe", "Jane Doe",
 
 ```{r}
 iris %>%
-  subset(Sepal.Length > 5) %>%
+  subset( Sepal.Length > 5) %>%
   aggregate(. ~ Species, ., mean)
 ```
 
 回答以下问题：
+
 
 1. 输出结果中的数值是什么？
 
