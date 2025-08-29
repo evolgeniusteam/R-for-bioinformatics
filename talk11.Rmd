@@ -12,7 +12,7 @@ output:
     highlight: tango
     includes:
       in_header: mystyle.sty
----x
+---
 
 ```{r include=FALSE}
 color_block = function(color) {
