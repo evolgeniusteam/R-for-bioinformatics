@@ -219,9 +219,13 @@ plot2 <-
 plot2;
 ```
 
-## Popularity of Programming language 2020
+## Popularity of Programming language 2023
 
 ![PYPL ranking (https://pypl.github.io/)](images/talk01/pypl_2023.png){width="70%"}
+
+## PYPL 2025
+
+![PYPL ranking (https://pypl.github.io/)](images/talk01/pypl_2025.png){width="70%"}
 
 ## Programming languages for bioinformatics
 
@@ -258,7 +262,7 @@ plot2;
 
 \href{https://www.evolgenius.info/evolview}{Evolview ver3.0}
 
-cited 225 times in 2021 (ver2+3), 166 so far (as of Aug 30, 2022)
+cited 242 times in 2024 (ver2+3), 170 so far (as of Aug 30, 2025)
 
 \end{column}
 \begin{column}{0.48\textwidth}
@@ -585,6 +589,8 @@ tinytex:::install_prebuilt("C:/wchen/Downloads/TinyTex.zip");
 
 * 下载课程 zip 文件，并**解压缩！**。
 
+* 注意：工作目录中**不要带中文！！！**
+
 ![](images/talk01/download_from_github_course_tutorial.png){height="40%"}
 
 
@@ -618,6 +624,12 @@ tinytex:::install_prebuilt("C:/wchen/Downloads/TinyTex.zip");
 * 通过`钉钉`，在规定的时间内提交
 
 * 现场演示 ... 
+
+## 注意事项
+
+* 软件安装目录 及 工作目录，**不要带中文！！！**
+* 软件安装目录 及 工作目录，**不要带中文！！！**
+* 软件安装目录 及 工作目录，**不要带中文！！！**
 
 # Section 5: other tools used in our group
 
