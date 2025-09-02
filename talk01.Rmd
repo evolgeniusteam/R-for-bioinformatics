@@ -158,6 +158,8 @@ Subset <- dat[ , cols.subset];
 ScholarLong <- melt(Subset, id.vars = "Year");
 names(ScholarLong) <- c("Year","Software", "Hits");
 
+
+
 plot1 <- 
   ggplot(ScholarLong, aes(Year, Hits, group=Software)) + #准备
     geom_smooth(aes(fill=Software), position="fill", method="loess") + #画图
