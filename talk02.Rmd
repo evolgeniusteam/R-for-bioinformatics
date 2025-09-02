@@ -243,7 +243,7 @@ array( data = LETTERS[1:16],
 ```
 
 
-# section 3: R basics - 简单算术
+# section 3: R basics - 基本运算
 
 ## 运算符
 
@@ -312,8 +312,9 @@ assign( "x", c(10, 100, 1000, 10000) );
 \FontNormal 
 
 其中`x`就叫做变量 
+
 **注**： 赋值后，变量内容默认不再打印到 console 
-**注2**: c() 又叫做 **concatenation function** （以后会再次介绍）
+**注2**: `c()` 又叫做 **concatenation function** （以后会再次介绍）
 
 ## 变量的管理
 
@@ -427,7 +428,7 @@ ab[ 2:5 ];
 ab[ length(ab) ]; ## length 函数
 ```
 
-## vector manipultaion, cont.
+## vector manipulation, cont.
 
 ### 替换单个值
 
@@ -581,7 +582,7 @@ t(m);
 ```
 
 
-# section 3: 特别值
+# section 4: 特别值及判定函数
 
 ## 数据类型汇总
 
@@ -643,7 +644,7 @@ nul <- readr::read_csv(file = "data/talk02/null.csv");
 nul;
 ```
 
-## 其它 is. 函数
+## 其它 `is.` 函数
 
 \FontSmall
 
@@ -661,7 +662,7 @@ is.vector();
 ## 更多 ... 
 ```
 
-# section 4: 简单回顾
+# section 5: 简单回顾
 
 ## 今日内容回顾
 
@@ -686,7 +687,7 @@ is.vector();
 * 替换
 * 其它
 
-# section 5: 练习 & 作业
+# section 6: 练习 & 作业
 
 ## 练习 & 作业
 -   `Exercises and homework` 目录下 `talk02-homework.Rmd` 文件

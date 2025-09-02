@@ -598,9 +598,9 @@ tinytex:::install_prebuilt("C:/wchen/Downloads/TinyTex.zip");
 
 ## 完成**作业**并**提交**? cont.
 
-### 6，打开 `R for bioinformatics 讲义.Rproj` 项目
+### 6，打开 `R for bioinformatics.Rproj` 项目
 
-* 打开解压得到的目录，找到 `R for bioinformatics 讲义.Rproj` 文件，双击用`RStudio`打开
+* 打开解压得到的目录，找到 `R for bioinformatics.Rproj` 文件，双击用`RStudio`打开
 
 ![](images/talk01/find_and_open_folder_downloaded_from_github.png){height="30%"}
 
