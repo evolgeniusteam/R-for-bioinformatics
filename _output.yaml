@@ -4,3 +4,8 @@ beamer_presentation:
   theme: Warsaw
   fonttheme: professionalfonts
   highlight: pygments
+header-includes:
+  - \usepackage[UTF8]{ctex}
+  - \usepackage{graphicx}
+  - \usepackage{xcolor}
+  - \usepackage{geometry}

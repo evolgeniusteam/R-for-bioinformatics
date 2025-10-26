@@ -75,7 +75,7 @@ for(  row_idx in 1:nrow( df ) ){
 
 res2 <- c();
 for(  row_idx in 1:nrow( df ) ){
-  res2[ length(res2) + 1 ] <- mean( as.numeric( df[row_idx , ] ) );
+  res2[ row_idx ] <- mean( as.numeric( df[row_idx , ] ) );
 }
 
 ## 计算 column means 

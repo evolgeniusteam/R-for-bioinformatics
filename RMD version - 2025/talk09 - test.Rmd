@@ -1,0 +1,59 @@
+---
+title: "R for bioinformatics, data visualization"
+subtitle: "HUST Bioinformatics course series"
+author: "Wei-Hua Chen (CC BY-NC 4.0)"
+institute: "HUST, China"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  beamer_presentation:
+    theme: AnnArbor
+    colortheme: beaver
+    fonttheme: structurebold
+    highlight: tango
+    slide_level: 2
+    toc: true
+    latex_engine: xelatex
+---
+
+# section 1: TOC
+
+## 前情提要
+
+### iterations 与 并行计算
+
+* for loop
+* ``` apply ``` functions 
+* ``` dplyr ``` 的本质是 遍历 
+* ``` map ``` functions in ```purrr ``` package 
+* 遍历 与 并行计算
+
+### 相关包
+
+* purrr
+* parallel
+* foreach
+* iterators
+
+## 本次提要
+
+* basic plot functions
+* basic ggplot2 
+* special letters
+* equations
+* advanced ggplot2
+
+# section 2: basic plot functions using R 
+
+## R basic plot functions
+
+过去几节课我们已经使用了 R basic plot 和 ggplot2 的一些绘画功能，比如讲factor时。今次我们进行系统的介绍。
+
+基础做图由 ``` plot ``` 提供。先看示例。这里我们使用系统自带的 ``` swiss ``` 数据，它包含了47个法语地区的一些社会经济指标。
+
+```{r}
+head(swiss);
+```
+
+## 散点图 （dot plot）
+
+我们看一下 教育 与生育率的关系：
