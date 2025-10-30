@@ -1,0 +1,508 @@
+---
+title: "talk08 练习与作业"
+documentclass: ctexart
+output:
+  rticles::ctex:
+    fig_caption: yes
+    number_sections: yes
+    toc: true
+    toc_depth: 2
+  word_document: default
+  html_document:
+    df_print: paged
+knit: (
+  function(inputFile, encoding) { 
+
+    pSubTitle <- 'talk08-homework'
+
+    rmarkdown::render( 
+      input       = inputFile, 
+      encoding    = encoding, 
+      params      = list(sub_title = pSubTitle),      
+      output_file = pSubTitle) })
+---
+
+## 练习和作业说明
+
+将相关代码填写入以 \`\`\`{r} \`\`\` 标志的代码框中，运行并看到正确的结果；
+
+完成后，用工具栏里的"Knit"按键生成PDF文档；
+
+**将PDF文档**改为：**`姓名-学号-talk08作业.pdf`**，并提交到老师指定的平台/钉群。
+
+## talk08 内容回顾
+
+* for loop
+* ``` apply ``` functions 
+* ``` dplyr ``` 的本质是 遍历 
+* ``` map ``` functions in ```purrr ``` package 
+* 遍历 与 并行计算
+
+## 练习与作业：用户验证
+
+请运行以下命令，验证你的用户名。
+
+**如你当前用户名不能体现你的真实姓名，请改为拼音后再运行本作业！**
+
+```{r}
+Sys.info()[["user"]]
+Sys.getenv("HOME")
+```
+
+## 练习与作业1：loop 初步
+
+------------------------------------------------------------------------
+
+###   **`loop`练习 （部分内容来自 r-exercises.com 网站）**
+
+1. 写一个循环，计算从1到7的平方并打印 `print`；
+2. 取`iris`的列名，计算每个列名的长度，并打印为下面的格式： `Sepal.Length (12)`；
+3. 写一个`while`循环，每次用 `rnorm`取一个随机数字并打印，直到取到的数字大于1；
+4. 写一个循环，计算Fibonacci序列的值超过1百万所需的循环数；注：Fibonacci 序列的规则为：`0, 1, 1, 2, 3, 5, 8, 13, 21 ... `;
+
+```{r}
+## 代码写这里，并运行；
+for (i in 1:7) {
+  print(i ^ 2)
+}
+for (nm in colnames(iris)) {
+  cat(nm, "(", nchar(nm), ")\n", sep = "")
+}
+set.seed(1)
+x <- rnorm(1)
+while (x <= 1) {
+  print(x)
+  x <- rnorm(1)
+}
+print(x)
+a<- 0
+b<- 1
+count <- 1
+while (b <= 1e6) {
+  tmp<- b
+  b<- a + b
+  a<- tmp
+  count<- count + 1
+}
+
+count
+b
+
+
+```
+
+
+## 练习与作业2：loop进阶，系统和其它函数
+
+------------------------------------------------------------------------
+
+###   **生成一个数字`matrix`，并做练习**
+
+生成一个 100 x 100 的数字 `matrix`：
+
+1. 行、列平均，用`rowMeans`, `colMeans`函数；
+2. 行、列平均，用 `apply` 函数
+3. 行、列总和，用`rowSums`, `colSums` 函数；
+4. 行、列总和，用 `apply` 函数
+5. 使用自定义函数，同时计算：
+   * 行平均、总和、 sd 
+   * 列平均、总和、 sd 
+
+```{r}
+## 代码写这里，并运行；
+set.seed(123)
+m <- matrix(
+  rnorm(100 * 100),
+  nrow = 100,
+  ncol = 100
+)
+rowMeans(m)
+colMeans(m)
+apply(m, 1, mean)
+apply(m, 2, mean)
+rowSums(m)
+colSums(m)
+apply(m, 1, sum)
+apply(m, 2, sum)
+row_stats <- apply( m, 1,
+  function(v) c(
+    mean = mean(v),
+    sum  = sum(v),
+    sd   = sd(v)
+  )
+)
+row_stats
+col_stats <- apply( m, 2,
+  function(v) c(
+    mean = mean(v),
+    sum  = sum(v),
+    sd   = sd(v)
+  )
+)
+col_stats
+
+```
+
+------------------------------------------------------------------------
+
+###   **用```mtcars```进行练习**
+
+用`tapply`练习：
+
+1. 用 **汽缸数**  分组， 计算 **油耗** 的 **平均值** ；
+2. 用 **汽缸数**  分组， 计算 **wt** 的 **平均值** ；
+
+用 `dplyr` 的函数实现上述计算
+
+
+```{r}
+## 代码写这里，并运行；
+library(dplyr)
+tapply(mtcars$mpg, mtcars$cyl, mean)
+tapply(mtcars$wt,  mtcars$cyl, mean)
+
+mtcars %>%
+  group_by(cyl) %>%
+  summarise(
+    mean_mpg = mean(mpg),
+    mean_wt  = mean(wt),
+    .groups  = "drop"
+  )
+
+```
+
+------------------------------------------------------------------------
+
+###   **练习`lapply`和`sapply`**
+
+1. 分别用 `lapply`和`sapply` 计算下面`list`里每个成员 `vector`的长度：
+
+` list( a = 1:10, b = letters[1:5], c = LETTERS[1:8] ) `;
+
+2. 分别用 `lapply`和`sapply` 计算 `mtcars` 每列的平均值；
+
+```{r}
+## 代码写这里，并运行；
+lst <- list(
+  a = 1:10,
+  b = letters[1:5],
+  c = LETTERS[1:8]
+)
+
+lapply(lst, length)
+sapply(lst, length)
+
+lapply(mtcars, mean)
+sapply(mtcars, mean)
+```
+
+
+## 练习与作业3：loop进阶，`purr`包的函数
+
+------------------------------------------------------------------------
+
+###   **`map`初步**
+
+生成一个变量：
+
+```
+df <- tibble(
+  a = rnorm(10),
+  b = rnorm(10),
+  c = rnorm(10),
+  d = rnorm(10)
+)
+```
+
+用 `map` 计算：
+
+* 列 平均值、总和和中值
+
+
+```{r}
+## 代码写这里，并运行；
+library(purrr)
+library(tibble)
+set.seed(123)
+
+df <- tibble(
+  a = rnorm(10),
+  b = rnorm(10),
+  c = rnorm(10),
+  d = rnorm(10)
+)
+
+map(df, mean)
+map(df, sum)
+map(df, median)
+
+map_dbl(df, mean)
+map_dbl(df, sum)
+map_dbl(df, median)
+```
+
+------------------------------------------------------------------------
+
+###   **`map`进阶**
+
+用 `map` 配合 `purr` 包中其它函数，用 `mtcars` ：
+
+为每一个 **汽缸数** 计算 燃油效率`mpg`与重量`wt`的相关性（Pearson correlation），得到 p 值和 correlation coefficient 值。
+
+
+```{r}
+## 代码写这里，并运行；
+mtcars %>%
+  split(.$cyl) %>%
+  map(~ cor.test(~ mpg + wt, data = .x, method = "pearson")) %>%
+  map(~ c(
+    cor = unname(.x$estimate),
+    p   = .x$p.value
+  ))
+
+```
+------------------------------------------------------------------------
+
+###   **`keep`和`discard`**
+
+1. 保留 `iris` 中有 `factor` 的列，并打印前10行；
+2. 去掉 `iris` 中有 `factor` 的列，并打印前10行；
+
+
+```{r}
+## 代码写这里，并运行；
+iris %>%
+  keep(~ is.factor(.x)) %>%
+  head(10)
+
+iris %>%
+  discard(~ is.factor(.x)) %>%
+  head(10)
+```
+------------------------------------------------------------------------
+
+###   **用`reduce`**
+
+用 `reduce` 得到以下三个vector中共有的数字：
+
+```
+c(1, 3, 5, 6, 10),
+  c(1, 2, 3, 7, 8, 10),
+  c(1, 2, 3, 4, 8, 9, 10)
+```
+
+```{r}
+## 代码写这里，并运行；
+vecs <- list(
+  c(1, 3, 5, 6, 10),
+  c(1, 2, 3, 7, 8, 10),
+  c(1, 2, 3, 4, 8, 9, 10)
+)
+
+reduce(vecs, intersect)
+```
+
+------------------------------------------------------------------------
+
+###   **运行以下代码，观察得到的结果，并用`tidyverse`包中的 `pivot_wider` 等函数实现类似的结果**
+
+```
+dfs <- list(
+  age = tibble(name = "John", age = 30),
+  sex = tibble(name = c("John", "Mary"), sex = c("M", "F")),
+  trt = tibble(name = "Mary", treatment = "A")
+);
+
+dfs %>% reduce(full_join);
+```
+
+```{r fig.height=10, fig.width=5}
+## 代码写这里，并运行；
+dfs <- list(
+  age = tibble(name = "John", age = 30),
+  sex = tibble(name = c("John", "Mary"), sex = c("M", "F")),
+  trt = tibble(name = "Mary", treatment = "A")
+);
+
+dfs %>% reduce(full_join);
+library(tidyverse)
+
+library(tidyverse)
+
+dfs_long <- list(
+  tibble(
+    name  = "John",
+    key   = "age",
+    value = "30"           
+  ),
+  tibble(
+    name  = c("John","Mary"),
+    key   = "sex",
+    value = c("M","F")
+  ),
+  tibble(
+    name  = "Mary",
+    key   = "treatment",
+    value = "A"
+  )
+) %>%
+  bind_rows()
+
+res_pivot <- dfs_long %>%
+  pivot_wider(
+    names_from  = key,
+    values_from = value
+  ) %>%
+  mutate(age = as.numeric(age))  
+
+res_pivot
+
+```
+
+## 练习与作业4：pmap 和 map 的更多用法 
+
+------------------------------------------------------------------------
+
+请参考 https://r4ds.had.co.nz/iteration.html 的 Mapping over multiple arguments 部分
+
+### map2
+
+运行以下代码，查看输出结果。用 for 循环重现计算结果。
+
+```
+mu <- list(5, 10, -3);
+sigma <- list(1, 5, 10);
+map2(mu, sigma, rnorm, n = 5)
+
+```
+
+
+```{r}
+## 代码写这里，并运行；
+set.seed(1)
+
+mu    <- list(5, 10, -3)
+sigma <- list(1, 5, 10)
+
+out_map2 <- map2(
+  mu,
+  sigma,
+  rnorm,
+  n = 5
+)
+out_map2
+
+out_for <- vector("list", length(mu))
+
+set.seed(1)
+for (i in seq_along(mu)) {
+  out_for[[i]] <- rnorm(
+    n    = 5,
+    mean = mu[[i]],
+    sd   = sigma[[i]]
+  )
+}
+out_for
+```
+
+
+### pmap
+
+运行以下代码，查看输出结果。用 for 循环重现计算结果。
+
+```
+params <- tribble(
+  ~mean, ~sd, ~n,
+    5,     1,  1,
+   10,     5,  3,
+   -3,    10,  5
+)
+params %>% 
+  pmap(rnorm)
+  
+```
+
+
+```{r}
+## set.seed(1)
+
+params <- tribble(
+  ~mean, ~sd, ~n,
+   5,     1,   1,
+   10,    5,   3,
+   -3,    10,  5
+)
+
+out_pmap <- params %>%
+  pmap(rnorm)
+out_pmap
+
+out_for2 <- vector("list", nrow(params))
+
+set.seed(1)
+for (i in seq_len(nrow(params))) {
+  out_for2[[i]] <- rnorm(
+    n    = params$n[i],
+    mean = params$mean[i],
+    sd   = params$sd[i]
+  )
+}
+out_for2
+```
+
+
+
+## 练习与作业5：并行计算
+
+------------------------------------------------------------------------
+
+###   **安装相关包，成功运行以下代码，观察得到的结果，并回答问题**
+
+```
+* parallel
+* foreach
+* iterators
+```
+
+```{r}
+library(parallel); ## 
+library(foreach);
+library(iterators);
+( cpus <- parallel::detectCores() );
+
+d <- data.frame(x=1:10000, y=rnorm(10000));
+
+cl <- makeCluster( cpus - 1 );
+
+res <- foreach( row = iter( d, by = "row" ) ) %dopar% {
+  return ( row$x * row$y  );
+}
+
+stopCluster( cl );
+
+summary(unlist(res));
+```
+
+**问**：你的系统有多少个CPU？此次任务使用了多少个？
+22个，用了21个
+**答**：用代码打印出相应的数字即可：
+
+```{r}
+## 代码写这里，并运行；
+library(parallel)
+library(foreach)
+library(iterators)
+cpus <- parallel::detectCores()
+cpus
+
+cl <- makeCluster(cpus - 1)
+
+used <- length(cl)
+used
+
+stopCluster(cl)
+
+cpus
+used
+
+```

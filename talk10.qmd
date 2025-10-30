@@ -607,7 +607,7 @@ summary(Data)
 
 ```{r fig.width=10, fig.height=4}
 ggplot(Data, aes(Steps, fill = Sex)) +
-       geom_density(position="dodge", alpha = 1)
+       geom_density(position="dodge", alpha = 0.5)
 ```
 
 ## parametric test 的要求， cont.

@@ -347,12 +347,21 @@ data.frame( predicted = bm %>% predict( dat, type = "response" ),
 
 \footnotesize
 
-```{r echo=FALSE, fig.width=10, fig.height=4, error=FALSE, message=FALSE, warning=FALSE}
+给个示例：
+
+```{r fig.width=10, fig.height=4, error=FALSE, message=FALSE, warning=FALSE}
 set.seed(20160227)
 x<-seq(0,50,1)
 y<-((runif(1,10,20)*x)/(runif(1,0,10)+x))+rnorm(51,0,1)
 #for simple models nls find good starting values for the parameters even if it throw a warning
 m<-nls(y~a*x/(b+x), start = list(a=0.1, b=0.1));
+```
+
+## non-linear least squares, cont.
+
+\footnotesize
+
+```{r fig.width=10, fig.height=4, error=FALSE, message=FALSE, warning=FALSE}
 #get some estimation of goodness of fit
 plot(x,y)
 lines(x,predict(m),lty=2,col="red",lwd=3)
@@ -619,6 +628,13 @@ cv_mars <- train(
 cv_mars$bestTune;
 cv_mars$results %>%
   filter(nprune == cv_mars$bestTune$nprune, degree == cv_mars$bestTune$degree);
+```
+
+## Parameter tuning, plot results, cont.
+
+\footnotesize
+
+```{r fig.width=10, fig.height=4, message=FALSE, warning=FALSE}
 ggplot(cv_mars) ## plot 
 ```
 
