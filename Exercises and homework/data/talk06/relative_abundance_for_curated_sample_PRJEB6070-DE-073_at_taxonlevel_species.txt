@@ -1,7 +1,7 @@
 #relative abundance information for curated sample: PRJEB6070-DE-073, at species level
 #for project: PRJEB6070
 #phenotype: D006262, Health
-ncbi_taxon_id	taxon_rank_level  relative_abundance	scientific_name
+ncbi_taxon_id	taxon_rank_level	relative_abundance	scientific_name
 853	species	19.882	Faecalibacterium prausnitzii
 39491	species	9.48753	[Eubacterium] rectale
 821	species	7.1516	Bacteroides vulgatus
