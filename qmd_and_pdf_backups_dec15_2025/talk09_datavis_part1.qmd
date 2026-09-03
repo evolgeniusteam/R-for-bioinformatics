@@ -1,0 +1,1022 @@
+---
+title: "R for bioinformatics, data visualisation, part 1"
+subtitle: "HUST Bioinformatics course series"
+author: "Wei-Hua Chen (CC BY-NC 4.0)"
+institute: "HUST, China"
+date: today
+
+CJKmainfont: "Hei"  # 关键：指定中文字体为黑体
+
+format: 
+  beamer:
+    aspectratio: 1610 ## more morden aspectratio --
+    navigation: vertical
+    theme: AnnArbor
+    colortheme: beaver
+    fonttheme: structurebold
+    highlight: tango
+    slide_level: 2
+    toc: true
+  pdf:
+    pdf-engine: xelatex  # 关键：指定XeLaTeX引擎
+
+execute:
+  echo: true
+---
+
+
+# section 1: TOC
+
+## 前情提要
+
+### iterations 与 并行计算
+
+* for loop
+* ``` apply ``` functions 
+* ``` dplyr ``` 的本质是 遍历 
+* ``` map ``` functions in ```purrr ``` package 
+* 遍历 与 并行计算
+
+### 相关包
+
+* purrr
+* parallel
+* foreach
+* iterators
+
+## 本次提要
+
+* basic plot functions
+* basic ggplot2 
+* special letters
+* equations
+* advanced ggplot2
+
+# section 2: basic plot functions using R 
+
+## R basic plot functions
+
+基础做图由 ``` plot ``` 提供。
+
+使用系统自带的 ``` swiss ``` 数据举例，它包含了47个法语地区的一些社会经济指标。
+
+\footnotesize 
+
+```{r}
+head(swiss);
+```
+
+## 散点图 （dot plot）
+
+我们看一下 教育 与生育率的关系：
+
+\footnotesize
+
+```{r fig.height=4.5, fig.width=10}
+with( swiss, plot( Education, Fertility ) );
+```
+
+\normalsize
+
+**注意** ``` with ``` 的作用是什么？？
+
+
+## plot 的参数初探: 先看示例
+
+\footnotesize
+
+```{r fig.height=4, fig.width=10}
+#| label: education vs fertility
+with( swiss, plot(Education, Fertility, type = "p", main = "Swiss data 1888", 
+              sub = "Socioeconomic indicators & Fertility", 
+              xlab = "Education", ylab = "Fertility", col = "darkblue", 
+              xlim = range( Education ), ylim = range( Fertility ), 
+              pch = 20, frame.plot = F) );
+```
+
+## plot 参数， an annotated example 
+
+![an annotated example](images/talk09/plot_annotated_example.png){height=70%}
+
+## plot 支持的画图类型， 参数 ``` p = '?' ``` 的取值
+
+\footnotesize
+```{r fig.height=4, fig.width=10}
+par( mfrow = c(2,4) ); ### 在一张图上画 2 x 4 个 panel 
+opts <- c( "p", "l", "o", "b", "c", "s", "S", "h" );
+for( o in opts ){ 
+  plot(1:5, type = o, main = paste( "type=", o ) ); 
+}
+```
+
+
+## pch 是什么？ 
+
+决定了数据点的形状，注意它的取值范围
+
+\footnotesize
+
+```{r fig.height=3.5, fig.width=10, warning=FALSE, message=FALSE}
+library(tidyverse); library(extrafont);
+ggplot( data.frame( p = c(0:25, 32:127) ) ) +
+  scale_y_continuous( name = "" ) + scale_x_continuous( name = "" ) + 
+  scale_shape_identity() + 
+  geom_point( aes( x = p%%16, y = p%/%16, shape = p ), size = 5, fill = "red" ) + 
+  geom_text( aes( x = p %% 16, y = p%/%16 + 0.4, label = p  ), size = 3 );
+```
+
+## log transform aexes 
+
+ plot  还有一些其它有用的参数，详见：  ? plot.default 
+
+\footnotesize 
+
+```{r fig.height=3.5, fig.width=10}
+with( swiss, plot(Education, Fertility, type = "p", main = "Swiss data 1888", 
+            sub = "Socioeconomic indicators & Fertility", 
+            xlab = "Education", ylab = "Fertility", col = c("darkblue", "darkred"), 
+            xlim = range( Education ), ylim = range( Fertility ), 
+            pch = 0:25, frame.plot = F, log = "xy") );
+## 注： 也可以用 log='x' 或 log='y' 只对一个axis 进行 log 处理
+```
+
+## ggplot 版本
+
+\footnotesize 
+
+```{r fig.height=4, fig.width=10}
+ggplot( swiss, aes( x = Education, y = Fertility ) ) + 
+  geom_point(  ) + scale_x_log10() + scale_y_log10() + 
+  xlab( "Education" ) + ylab( "Fertility" ) + ggtitle( "Swiss data 1888" );
+```
+
+## ggplot 更多散点示例
+
+以 ` mtcars ` 为例
+
+\footnotesize
+
+```{r fig.height=4, fig.width=10}
+ggplot( mtcars, aes( x = wt, y = mpg, colour = factor( cyl ), shape = factor(cyl) ) ) +
+  geom_point() + xlab( "Weight (1000 lbs)" ) + ylab( "Miles/(US) gallon" ) +
+  labs( colour = "Number of cylinders", shape = "Number of cylinders" ) ;
+```
+
+## plot: high-level vs. low-level plots
+
+* **high level**: plotting functions create a new plot on the graphics device
+* **low level**: plotting functions add more information to an existing plot
+
+\footnotesize
+
+```{r fig.height=4, fig.width=10}
+plot( 1:10, col = "red" ); ## high level 
+points( sample(1:10, 10), col = "darkgreen", pch = 20 ); ## low level
+```
+
+## low level plots 列表 
+* points : 点图
+* lines : 线图
+* abline : 直线
+* polygon : 多边形
+* legend : 图例
+* title ： 标题
+* axis : 轴
+... 
+
+## high level plots 列表
+
+* plot  : 通用画图函数
+* pairs 
+* coplot
+* qqnorm
+* hist
+* dotchart
+* image
+* contour
+... 
+
+**注**： 可以用 add = TRUE 参数（如果可用）将 high level 函数强制转换为 low level 
+
+## 图形相关参数（系统函数）
+
+par() 函数： 显示或修改当前**图形设备**的参数。用以下命令查看支持的内容：
+
+\footnotesize
+
+```{r}
+par( c( "mar", "bg" ) ); ## 显示指定参数的值
+## 显示所有参数 
+par(); 
+```
+
+## 调整 par() 参数前请备份
+
+par() 用于指定全局参数，因此在改变前尽量备份
+
+\footnotesize
+
+```{r eval=FALSE}
+oldpar <- par(); ## 备份
+
+## do some changes here ... 
+
+## 恢复
+par( oldpar ); 
+```
+
+## 常用图形参数及调整: margin
+
+图形边距（ figure margins ）
+
+\footnotesize 
+``` {r eval=FALSE} 
+par( mar = c( 5.1, 4.1, 4.1, 2.1 )); ## 设置新 martin 
+```
+
+\normalsize 
+
+分别指定 下 -> 左 -> 上 -> 右 的边距，即从下面开始，顺时针移动。
+
+单位是： text lines  
+
+或：
+
+\footnotesize 
+
+``` {r eval=FALSE} 
+par( mai = c( 5.1, 4.1, 4.1, 2.1 )); ## 设置新 martin 
+```
+
+\normalsize 
+
+单位是： inch 
+
+## 常用图形参数及调整: 多panel 
+
+画 2x3 共 6个panel，从左到右。（2行3列）
+
+\footnotesize 
+
+```{r fig.height=4, fig.width=10}
+par( mfrow=c(2,3) );
+for( i in 1:6 )
+  plot( sample( 1:10, 10 ), main = i );
+```
+
+## 常用图形参数及调整: 多panel , cont.
+
+\normalsize
+
+画 2x3 共 6个panel，从上到下。（2行3列）
+
+\footnotesize 
+
+```{r fig.height=4, fig.width=10}
+par( mfcol=c(2,3) );
+for( i in 1:6 )
+  plot( sample( 1:10, 10 ), main = i );
+```
+
+## 重要概念：图形设备
+
+**图形设备**是指图形输出的设备，可以将**图形设备**理解为**保存格式** 。
+
+默认设备是：
+
+* X11() : *nix 
+* windows() : windows 
+* quartz() : OS X 
+
+图形显示在**显示器**上。
+
+## 图形设备：cont. 
+
+常用其它设备有：
+
+* pdf() 
+* png()
+* jpeg() 
+
+分别对应输出文件格式。
+
+## 常用图形设备： pdf() 
+
+使用方法如下：
+
+\footnotesize 
+
+```{r eval=FALSE}
+## 创建一个新设备/ pdf 文件 
+pdf( file = "/path/to/dir/<file_name>.pdf", height = 5, width = 5 ); 
+plot(1:10); ## 作图；
+dev.off(); ## 关闭设备
+```
+
+\normalsize 
+
+**说明**
+
+1. 默认文件名为 ``` Rplots.pdf ``` ，
+2. ```dev.off() ``` 必须关闭。关闭后，返回到最近使用的图形设备
+3. ``` height ``` 和 ``` width ``` 参数的单位是 inch 
+4. 如果运行多个 high level 作图命令，则会产生**多页pdf** 
+
+
+## 请尽量使用 pdf 作为文件输出格式
+
+1. 生信图片大多是点线图，适合保存为矢量格式（如pdf, ps 等）；
+2. 矢量图可无限放大而不失真（变成像素）；
+3. 可由 Adobe Illustrator 等矢量图软件进行编辑
+
+# section 3: ggplot2 基础
+
+## 一个简单的示例
+
+\footnotesize
+
+```{r}
+## 准备数据
+year1 <- c(7, 12, 28, 3, 41);
+year2 <- c(14, 7, 6, 19, 3);
+
+df <- rbind( 
+  tibble( month = 1:length( year1 ), value = year1, cat = "Year1" ),
+  tibble( month = 1:length( year2 ), value = year2, cat = "Year2 ") );
+
+plot1 <-  ## 将图保存在变量中；
+  ggplot( df, aes( x = month, y = value, colour = cat) ) + 
+  geom_line() + geom_point() + 
+  xlab( "Month" ) + ylab( "Rain fall" ) +
+  labs( colour = "Year");
+```
+
+
+## 画图
+
+\footnotesize
+
+```{r fig.width=10, fig.height=4}
+plot1;  ## 画图
+```
+
+## ggplot2 基础概念详解
+
+![ggplot2 参数简介](images/talk09/ggplot_explained.png){height=20%}
+
+\footnotesize
+
+1. **aes** (aesthetics)美学：控制全局参数，包括：x,y轴使用的数据，颜色( colour, fill) ，形状 ( shape )，大小 ( size )，分组 ( group ) 等等；
+
+2. **图层**： ``` geom_<layer_name> ``` ；每张图可有多个图层（此处有两个）；图层可使用全局数据 (df) 和参数 (aes)，也可以使用自己的 aes 和 数据；
+
+3. 其它控制函数
+
+## ggplot2 优缺点
+
+ggplot2 优点：
+
+1. 强大又专业
+2. 复杂又好看
+3. canvas 大小，坐标会根据数据、图层自动调整，让用户专注于作图本身；
+
+缺点：
+
+太难学！
+
+## 图层使用自己的数据，示例
+
+\footnotesize
+
+图层可从 `ggplot` 继承**数据** 和 其它参数，包括 **aes**，但也可使用自己的
+
+
+```{r fig.height=3, fig.width=10}
+plot1 + 
+  geom_point( data = data.frame( x2 = 1:5, y2 = sample(30:100, 5) ),  
+              ## 注意： data = 是必须的
+          aes( x = x2, y = y2 ),  ## 使用自己的 aes ... 
+          colour =  c("darkgreen", "red", "blue", "gold", "purple") , 
+          shape = 15, size = 4 )
+```
+
+
+**要点**
+
+1. 如上所见，xy -axes 会随数据自动调整
+
+2. ggplot2 作图结果可以保存在变量中，并可累加更多图层
+
+3. 图层使用自己的数据时，需要用 ``` data =  ``` 指定；而全局数据则不用 ``` ggplot ( data.frame( ... ) ) ```
+
+
+# section 4: ggplot2作图的四个基本组成部分详解
+
+## 1. 图层
+
+### ```geom_<图层名>```
+
+* ``` geom_point ``` , ``` geom_line ```: 点线图，用于揭示两组数据间的关系；
+* ``` geom_smooth ``` : 常与 ``` geom_point ``` 联合使用，揭示数据走势
+* ``` geom_bar ``` ： bar 图
+* ``` geom_boxplot ``` : 箱线图，用于比较N组数据，揭示区别
+* ``` geom_path ``` : 与``` geom_line ``` 相似，但也可以画其它复杂图形
+* ``` geom_histogram ```, `` geom_density ``` : 数据的分布，也可用于多组间的比较
+* 其它十余种，请见“ggplot2 : elegant graphics for data analysis” 一书！！
+
+## 2. ```scale``` 显示控制
+
+### 基本规则
+
+* ```scale_<控制内容>_<控制手段>```，e.g. ```scale_color_manual()```： 以**手选方式** 控制 **颜色**
+
+### 四种控制类型
+
+* ```scale_color_...```
+* ```scale_fill_...```
+* ```scale_shape_...```
+* ```scale_size_...```
+
+![数据的4种scale方法](images/talk09/scale.png){height=25%}
+
+## 2.1 改变颜色 
+
+\footnotesize
+
+```{r fig.height=2.5, fig.width=8}
+library(ggplot2);
+ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) +
+  geom_point(size=2);
+```
+
+## 上图的解释
+
+* 使用 `iris` 里 **萼片** 大小数据；
+
+* `colour = Species`：根据 `Species` 列决定颜色；
+
+* 共需要 **3种** 颜色；
+
+* 由**默认色板**决定；
+
+## 默认的色板
+
+![default discrete colour palette](images/talk09/ggplot_default_palette.png){height=50%}
+
+\footnotesize
+
+* 根据需要的颜色数量，取相应的行
+
+## 使用其它色板，比如 `scale_colour_brewer()` 
+
+![](images/talk09/ggplot_brewer_palettes.png){height=90%}
+
+## `scale_colour_brewer()`, 使用示例
+
+\footnotesize
+
+```{r fig.height=3, fig.width=8}
+ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) + geom_point(size=2) + 
+  scale_color_brewer( palette = "Set1" );
+```
+
+* 使用方法：```scale_color_brewer( palette = "<palette name>" );```
+
+* 取**前N个**颜色
+
+## `scale_color_brewer` 提供的其它色板
+
+\footnotesize
+
+### Diverging
+
+BrBG, PiYG, PRGn, PuOr, RdBu, RdGy, RdYlBu, RdYlGn, Spectral
+
+### Qualitative
+Accent, Dark2, Paired, Pastel1, Pastel2, **Set1**, Set2, Set3
+
+### Sequential
+Blues, BuGn, BuPu, GnBu, Greens, Greys, Oranges, OrRd, PuBu, PuBuGn, PuRd, Purples, RdPu, Reds, YlGn, YlGnBu, YlOrBr, YlOrRd
+
+## 手动设置颜色 : `scale_colour_manual()`
+
+\footnotesize
+
+```{r fig.height=4, fig.width=10}
+mtcars %>% ggplot( aes(disp, mpg) ) + geom_point( aes( color = factor(cyl) ) ) +
+  scale_color_manual( breaks = c("4","6","8"), values = c("red","green","blue") );
+```
+
+## 如何对应 **数量变量** 与颜色？使用 **渐变颜色** ！
+
+\footnotesize
+
+```{r fig.height=4, fig.width=10}
+mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = displ ) );
+```
+
+* 根据 `displ` 排气量 的值显色；
+
+* 默认使用2色；
+
+## 用`scale_color_gradient()` 改变渐变颜色
+
+\footnotesize
+
+```{r eval=FALSE}
+scale_colour_gradient(
+  ...,
+  low = "#132B43",
+  high = "#56B1F7",
+  space = "Lab",
+  na.value = "grey50",
+  guide = "colourbar",
+  aesthetics = "colour"
+)
+```
+
+改变 low 和 high 的值即可；
+
+## `scale_color_gradient()` 举例
+
+\footnotesize
+
+```{r fig.height=4, fig.width=10}
+mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = displ ) ) +
+  scale_color_gradient( low = "black", high = "yellow" );
+```
+
+## 使用**3个**渐变色？用 `scale_color_gradient2()` 
+
+\footnotesize
+
+```{r fig.height=3.8, fig.width=10}
+mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = displ ) ) +
+  scale_colour_gradient2( low = "black", mid = "red", high = "yellow", midpoint = 4.5 );
+```
+
+* 三个颜色：`low` `mid` `high`
+
+* **注意**  `midpoint` 参数！！
+
+## 更多颜色？使用 `scale_colour_gradientn` 
+
+\footnotesize
+
+```{r fig.height=4, fig.width=10}
+mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = displ ) ) +
+  scale_colour_gradientn( colors = c("black","red", "yellow", "blue", "pink") );
+```
+
+## 一种有趣的渐变色显示方法 ： `scale_colour_binned` 
+
+\footnotesize
+
+```{r fig.height=4, fig.width=10}
+mpg %>% ggplot( aes(displ, hwy) ) + geom_point( aes( color = displ ) ) +
+  scale_color_binned( low = "black", high = "yellow" );
+```
+
+* 渐变色，但分组显示
+
+## 2.2 `fill` 颜色
+
+\footnotesize
+
+### `fill`与`colour`有什么区别？？？
+
+* `colour` defines the colour with which a geom is **outlined** (the shape's "stroke")
+
+* `fill`defines the colour with which a geom is **filled**
+
+### 哪些 pch 们有 `fill` ？？
+
+* Points generally only have a `colour` and **no fill**
+
+* However, point shapes **21–25** that include **both** a colour and a fill.
+
+## `fill`与`colour`有啥区别？？？(again)
+
+\footnotesize
+
+找一个有两种属性的 point (pch = 21)，先看 `fill` 的效果；
+
+```{r fig.height=4, fig.width=10}
+mpg %>% ggplot( aes(displ, hwy) ) + 
+  geom_point( aes( colour = cyl ), shape = 21, stroke = 3);
+```
+
+### 说明
+
+* `colour` 在 shape = 21时，为描边（stroke）色；
+
+* 可用 `stroke` 控制 线条粗细；
+
+## `fill`与`colour` 的区别？？？, cont.
+
+\footnotesize
+
+同时有 fill 和 colour 
+
+```{r fig.height=4, fig.width=10}
+mpg %>% ggplot( aes(displ, hwy) ) + 
+  geom_point( aes( colour = cyl, fill = class ), 
+              shape = 21, size = 3, stroke = 2); ## 注意 shape 等参数在 aes() 内部与外部的区别
+```
+
+## fill 的调色板 与 colour 一样！
+
+\footnotesize
+
+先看看离散值的色板
+
+```{r fig.height=4, fig.width=10}
+mpg %>% ggplot( aes(displ, hwy) ) + 
+  geom_point( aes( fill = class ), shape = 21, stroke = 1.5) +
+  scale_fill_brewer( palette = "Set1" )  ##
+```
+
+注： 默认的 stroke 颜色为 `black`；
+
+## fill 的 gradient 色板
+
+\footnotesize
+
+```{r fig.height=3.8, fig.width=10}
+mpg %>% ggplot( aes(displ, hwy) ) + 
+  geom_point( aes( fill = cyl ), shape = 21, stroke = 1) +
+  scale_fill_gradient( low = "yellow", high = "blue" ) ;
+```
+
+注： 默认的 stroke 颜色为 `black`；
+
+## `fill` 与 `colour` 小结
+
+\footnotesize
+
+1. 做到两个匹配，即：
+
+a) `aes` 参数 (如 `fill = `) 与 函数 (如 `scale_fill_xxx`) 匹配；`colour` 也是如此；
+b) 数据类型与色板类型匹配：数量配渐变，离散配离散；
+
+![](images/talk09/color_fill_explained.png){height=40%}
+
+2. 两者色板是通用的；函数也是，比如 `scale_fill_xx` 对应 `scale_colour_xx`;
+
+3. 有些 shape / pch 只有 colour (stroke)，有些则两者都有；
+
+## 其它颜色相关函数
+
+\footnotesize
+
+* scale_fill_continuous, scale_colour_continuous 
+
+* scale_fill_manual, scale_colour_manual 
+
+... 
+
+## 其它包中的调色板和相应函数
+
+### included in ggplot2
+
+`scale_color_hue`, `scale_color_manual`, `scale_color_grey`, `scale_colour_viridis_d`, `scale_color_brewer` ...
+
+### from the `RColorBrewer` package
+
+`scale_color_brewer(palette = "<palette name>")` ... note: 函数属于 ggplot2
+
+### from the `viridis` package 
+
+`scale_color_viridis( discrete=TRUE, option="<palette name>" )` note: 提供了函数和palette
+
+### other packages ... 
+
+* `paletteer` package: `scale_color_paletteer_xx` functions
+
+* `ggsci` package
+
+
+## ``` ggsci ```: 论文发表用的色板!!!
+
+\footnotesize
+
+### install 
+```{r eval=FALSE}
+install.packages("ggsci"); # Install ggsci from CRAN:
+devtools::install_github("nanxstats/ggsci"); # or from github
+```
+
+### contents
+
+` scale_color_<journal> ` 和 ` scale_fill_<journal> ` functions and color palettes
+
+### supported journals
+
+* NPG `scale_color_npg()`, `scale_fill_npg()`
+* AAAS, NEJM, Lancet, JAMA ... 
+
+## ggsci 举例
+\footnotesize
+
+```{r warning=FALSE, message=FALSE}
+library("ggsci")
+library("ggplot2")
+library("gridExtra")
+data("diamonds")
+p1 <- ggplot(
+  subset(diamonds, carat >= 2.2),
+  aes(x = table, y = price, colour = cut)
+) +
+  geom_point(alpha = 0.7) +
+  geom_smooth(method = "loess", alpha = 0.05, size = 1, span = 1) +
+  theme_bw() + labs( tag = "A" )
+
+p2 <- ggplot(
+  subset(diamonds, carat > 2.2 & depth > 55 & depth < 70),
+  aes(x = depth, fill = cut)
+) +
+  geom_histogram(colour = "black", binwidth = 1, position = "dodge") +
+  theme_bw() + labs( tag = "B" )
+```
+
+\normalsize
+
+**要点** : 使用了   ` library(gridExtra) `
+
+## ggsci 结果, Nature Style !! 
+
+\footnotesize
+
+```{r fig.width=10, fig.height=4}
+p1_npg <- p1 + scale_color_npg()
+p2_npg <- p2 + scale_fill_npg()
+grid.arrange(p1_npg, p2_npg, ncol = 2)
+```
+
+## 2.3 `size` 
+
+\footnotesize
+
+```{r fig.height=4, fig.width=10}
+mpg %>% ggplot( aes(displ, hwy) ) + 
+  geom_point( aes( size = cyl, colour = class  ) );
+```
+
+* size : 用 cyl 列的值确定大小
+
+## 2.4 `shape` 
+
+\footnotesize
+
+```{r fig.height=4, fig.width=10, warning=FALSE, message=FALSE}
+mpg %>% ggplot( aes(displ, hwy) ) + 
+  geom_point( aes( size = cyl, colour = class, shape = class  ) );
+```
+
+## 问题： `size`, `colour` 等参数可在 `aes()` 内部，也可在外部，有什么区别？？？
+
+\footnotesize
+
+在内部时，以指定列的值确定**大小**，或按 factor 的数量确定颜色、形状的**数量**：
+
+```{r eval=FALSE}
+mpg %>% ggplot( aes(displ, hwy) ) + 
+  geom_point( aes( size = cyl, colour = class, shape = class  ) );
+```
+
+在外部时，则以**指定值**为准：
+
+```{r eval=FALSE}
+mpg %>% ggplot( aes(displ, hwy) ) + 
+  geom_point( size = 2, colour = "green", shape = 21 );
+```
+
+注： size 等接受的值，长度要么为1，要么与行数等长；
+
+## ggplot2要素3： 坐标系统
+
+### 线性坐标系统
+  
+  * `coord_cartesian()`, 
+  * `coord_flip()`, 
+  * `coord_fixed()`
+  
+### 非线性坐标系统
+
+  * `coord_trans()`
+  * `coord_polar()`
+  * `coord_map()`
+  
+## 3.1 线性坐标系统， coord_cartesian()
+
+\footnotesize
+
+默认的坐标系统，可使用 xlim, ylim 等参数，实现**缩放局部**
+
+```{r fig.height=3, fig.width=10, warning=FALSE, message=FALSE}
+p1 <- ggplot(mpg, aes(displ, hwy)) + 
+  geom_point() + geom_smooth()
+
+p1 + coord_cartesian(xlim = c(4, 6))
+```
+
+## 3.1 线性坐标系统， coord_flip()
+
+exchange the x and y axes
+
+\footnotesize
+
+```{r fig.height=4, fig.width=10, warning=FALSE, message=FALSE}
+ggplot(mpg, aes(displ, cty)) + 
+  geom_point() + geom_smooth() + 
+  coord_flip()
+```
+
+## 3.1 线性坐标系统， coord_fixed()
+
+\footnotesize
+
+用特定的**数值比例** (ratio，即：**y 和 x 的真实值**) 作图，如下图所示：
+
+```{r fig.height=3, fig.width=10, warning=FALSE, message=FALSE}
+ggplot(mpg, aes(displ, cty)) + 
+  geom_point() + geom_smooth() + 
+  coord_fixed(ratio = 1) ## ratio = y/x
+```
+
+## 3.2 非线性，`coord_trans()`
+
+\footnotesize
+
+x, y 轴的转换；先生成原图
+
+```{r fig.height=3, fig.width=10}
+rect <- data.frame(x = 50, y = 50)
+line <- data.frame(x = c(1, 200), y = c(100, 1))
+base <- ggplot(mapping = aes(x, y)) + 
+  geom_tile(data = rect, aes(width = 50, height = 50)) + 
+  geom_line(data = line)
+
+base ; ## 画出来
+```
+
+## 3.2 非线性，`coord_trans()`, cont.
+
+\footnotesize
+
+log10(y): 
+
+```{r fig.height=3, fig.width=10}
+base + coord_trans(y = "log10");
+```
+
+`coord_trans()`的其它参数：
+
+* limx, limy: 限制xy的显示范围
+
+
+## 3.2 非线性，coord_polar()
+
+\footnotesize
+
+```{r fig.height=3, fig.width=10}
+base + coord_polar(); ## 默认为 coord_polar("x")
+```
+
+## 3.2 非线性，coord_polar(), cont.
+
+\footnotesize
+
+```{r fig.height=3, fig.width=10}
+base + coord_polar("y");
+```
+
+## 3.2 非线性，coord_polar(), 柱图变饼图
+
+\footnotesize
+
+```{r fig.height=2.6, fig.width=10}
+base <- ggplot(mtcars, aes(factor(1), fill = factor(cyl))) +
+  geom_bar(width = 1) + theme(legend.position = "none") + 
+  scale_x_discrete(NULL, expand = c(0, 0)) +
+  scale_y_continuous(NULL, expand = c(0, 0))
+
+base + coord_polar(theta = "y") ## 变饼图
+```
+
+## 3.2 非线性，coord_map()
+
+\footnotesize
+
+世界地图
+
+```{r fig.height=3, fig.width=10}
+world <- map_data("world")
+worldmap <- ggplot(world, aes(long, lat, group = group)) +
+  geom_path() +
+  scale_y_continuous(NULL, breaks = (-2:3) * 30, labels = NULL) +
+  scale_x_continuous(NULL, breaks = (-4:4) * 45, labels = NULL)
+
+worldmap; ## 画出来
+```
+
+
+## 3.2 非线性，coord_map(), cont.
+
+\footnotesize
+
+球形图
+
+```{r fig.height=3, fig.width=10, message=FALSE, warning=FALSE}
+library(mapproj);
+worldmap + coord_map("ortho");
+```
+
+更多内容可以见《ggplot2: elegant graphics for data analysis》一书的第7章。
+
+## ggplot2要素4： faceting ... 
+
+Faceting generates small multiples each showing a different subset of the data.
+
+`facet_grid( <by_row> ~ <by_col> ) ` 汽缸、车重与燃油效率间的关系
+
+\footnotesize 
+
+```{r fig.height=3, fig.width=10}
+ggplot( mtcars, aes( x = wt, y = mpg ) ) +
+  geom_point() +
+  facet_grid( . ~ cyl, scales = "free" );
+```
+
+## faceting , cont. 
+
+\footnotesize 
+
+```{r fig.height=3, fig.width=10}
+ggplot( mtcars, aes( x = wt, y = mpg ) ) +
+  geom_point() +
+  facet_grid( cyl ~ . );
+```
+
+**注意** ：
+
+作图相关概念： panel, strip, axis, tick, tick label, axis label
+
+## ` facet_grid ` , cont.
+
+\footnotesize
+
+```{r fig.height=4, fig.width=10}
+ggplot( mtcars, aes( x = wt, y = mpg ) ) +
+  geom_point() + geom_smooth( method = "lm" ) + 
+  facet_grid( . ~ cyl );
+```
+
+## ` facet_wrap ` 
+
+指定行、列数和方向
+
+\footnotesize
+
+```{r fig.height=4, fig.width=10}
+ggplot( mtcars, aes( x = wt, y = mpg ) ) +
+  geom_point() + geom_smooth( method = "lm" ) + 
+  facet_wrap( . ~ cyl , ncol = 2, dir = "v" );
+```
+
+## parameters of `facet_wrap`
+
+\footnotesize
+
+```{r eval=FALSE}
+facet_wrap(
+  facets,
+  nrow = NULL,
+  ncol = NULL,
+  scales = "fixed",
+  shrink = TRUE,
+  labeller = "label_value",
+  as.table = TRUE,
+  switch = NULL,
+  drop = TRUE,
+  dir = "h",
+  strip.position = "top"
+)
+```
+
+
+## ggplot2 小结
+
+\footnotesize
+
+### layered grammer (图层语法) 的成分
+
+* 图层 ( geom_xxx )
+* scale ( scale_xxx )
+* 坐标系统
+* faceting ( facet_xxx )
+
+## what's next
+
+* no homework, yet
+* will be continued at **part 2**

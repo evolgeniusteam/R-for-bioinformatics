@@ -1,0 +1,405 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - button "Toggle navigation" [ref=e5]: Toggle navigation
+        - link [ref=e6] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=e7]:
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - link "PYPL Index" [ref=e10] [cursor=pointer]:
+              - /url: PYPL.html
+          - listitem [ref=e11]:
+            - link "10 TOP IDE" [ref=e12] [cursor=pointer]:
+              - /url: IDE.html
+          - listitem [ref=e13]:
+            - link "10 TOP ODE" [ref=e14] [cursor=pointer]:
+              - /url: ODE.html
+          - listitem [ref=e15]:
+            - link "10 TOP DB" [ref=e16] [cursor=pointer]:
+              - /url: DB.html
+        - list
+  - generic [ref=e17]:
+    - generic [ref=e18]:
+      - heading "PYPL PopularitY of Programming Language" [level=1] [ref=e19]
+      - generic [ref=e21]:
+        - paragraph [ref=e22]: The PYPL PopularitY of Programming Language Index is created by analyzing how often language tutorials are searched on Google.
+        - paragraph [ref=e23]: The more a language tutorial is searched, the more popular the language is assumed to be. It is a leading indicator. The raw data comes from Google Trends.
+        - paragraph [ref=e24]: If you believe in collective wisdom, the PYPL Popularity of Programming Language index can help you decide which language to study, or which one to use in a new software project.
+        - paragraph [ref=e25]
+        - paragraph [ref=e26]:
+          - img [ref=e27]
+      - generic [ref=e28]:
+        - paragraph [ref=e29]: "Worldwide, May 2026 :"
+        - table [ref=e31]:
+          - rowgroup [ref=e32]:
+            - row "Rank Change Language Share 1-year trend" [ref=e33]:
+              - columnheader "Rank" [ref=e34]: Rank
+              - columnheader "Change" [ref=e35]
+              - columnheader "Language" [ref=e36]
+              - columnheader "Share" [ref=e37]
+              - columnheader "1-year trend" [ref=e38]
+            - row "1 Python 29.39 % +1.2 %" [ref=e39]:
+              - cell "1" [ref=e40]
+              - cell [ref=e41]
+              - cell "Python" [ref=e42]
+              - cell "29.39 %" [ref=e43]
+              - cell "+1.2 %" [ref=e44]
+            - row "2 Java 15.52 % -0.3 %" [ref=e45]:
+              - cell "2" [ref=e46]
+              - cell [ref=e47]
+              - cell "Java" [ref=e48]
+              - cell "15.52 %" [ref=e49]
+              - cell "-0.3 %" [ref=e50]
+            - row "3 JavaScript 8.16 % -0.9 %" [ref=e51]:
+              - cell "3" [ref=e52]
+              - cell [ref=e53]
+              - cell "JavaScript" [ref=e54]
+              - cell "8.16 %" [ref=e55]
+              - cell "-0.9 %" [ref=e56]
+            - row "4 C/C++ 6.9 % +0.1 %" [ref=e57]:
+              - cell "4" [ref=e58]
+              - cell [ref=e59]
+              - cell "C/C++" [ref=e60]
+              - cell "6.9 %" [ref=e61]
+              - cell "+0.1 %" [ref=e62]
+            - row "5 C# 6.48 % -0.2 %" [ref=e63]:
+              - cell "5" [ref=e64]
+              - cell [ref=e65]
+              - cell "C#" [ref=e66]
+              - cell "6.48 %" [ref=e67]
+              - cell "-0.2 %" [ref=e68]
+            - row "6 R 4.71 % +0.1 %" [ref=e69]:
+              - cell "6" [ref=e70]
+              - cell [ref=e71]:
+                - img [ref=e72]
+              - cell "R" [ref=e73]
+              - cell "4.71 %" [ref=e74]
+              - cell "+0.1 %" [ref=e75]
+            - row "7 PHP 4.09 % -0.6 %" [ref=e76]:
+              - cell "7" [ref=e77]
+              - cell [ref=e78]:
+                - img [ref=e79]
+              - cell "PHP" [ref=e80]
+              - cell "4.09 %" [ref=e81]
+              - cell "-0.6 %" [ref=e82]
+            - row "8 TypeScript 2.91 % +0.0 %" [ref=e83]:
+              - cell "8" [ref=e84]
+              - cell [ref=e85]
+              - cell "TypeScript" [ref=e86]
+              - cell "2.91 %" [ref=e87]
+              - cell "+0.0 %" [ref=e88]
+            - row "9 Swift 2.64 % -0.1 %" [ref=e89]:
+              - cell "9" [ref=e90]
+              - cell [ref=e91]
+              - cell "Swift" [ref=e92]
+              - cell "2.64 %" [ref=e93]
+              - cell "-0.1 %" [ref=e94]
+            - row "10 Rust 2.64 % +0.6 %" [ref=e95]:
+              - cell "10" [ref=e96]
+              - cell [ref=e97]:
+                - img [ref=e98]
+              - cell "Rust" [ref=e99]
+              - cell "2.64 %" [ref=e100]
+              - cell "+0.6 %" [ref=e101]
+            - row "11 Objective-C 2.54 % +0.2 %" [ref=e102]:
+              - cell "11" [ref=e103]
+              - cell [ref=e104]:
+                - img [ref=e105]
+              - cell "Objective-C" [ref=e106]
+              - cell "2.54 %" [ref=e107]
+              - cell "+0.2 %" [ref=e108]
+            - row "12 Go 2.14 % +0.2 %" [ref=e109]:
+              - cell "12" [ref=e110]
+              - cell [ref=e111]
+              - cell "Go" [ref=e112]
+              - cell "2.14 %" [ref=e113]
+              - cell "+0.2 %" [ref=e114]
+            - row "13 Kotlin 1.97 % +0.2 %" [ref=e115]:
+              - cell "13" [ref=e116]
+              - cell [ref=e117]
+              - cell "Kotlin" [ref=e118]
+              - cell "1.97 %" [ref=e119]
+              - cell "+0.2 %" [ref=e120]
+            - row "14 Matlab 1.51 % -0.1 %" [ref=e121]:
+              - cell "14" [ref=e122]
+              - cell [ref=e123]
+              - cell "Matlab" [ref=e124]
+              - cell "1.51 %" [ref=e125]
+              - cell "-0.1 %" [ref=e126]
+            - row "15 Ada 1.03 % -0.0 %" [ref=e127]:
+              - cell "15" [ref=e128]
+              - cell [ref=e129]
+              - cell "Ada" [ref=e130]
+              - cell "1.03 %" [ref=e131]
+              - cell "-0.0 %" [ref=e132]
+            - row "16 VBA 1.01 % +0.1 %" [ref=e133]:
+              - cell "16" [ref=e134]
+              - cell [ref=e135]:
+                - img [ref=e136]
+                - img [ref=e137]
+              - cell "VBA" [ref=e138]
+              - cell "1.01 %" [ref=e139]
+              - cell "+0.1 %" [ref=e140]
+            - row "17 Powershell 1.0 % +0.1 %" [ref=e141]:
+              - cell "17" [ref=e142]
+              - cell [ref=e143]:
+                - img [ref=e144]
+                - img [ref=e145]
+              - cell "Powershell" [ref=e146]
+              - cell "1.0 %" [ref=e147]
+              - cell "+0.1 %" [ref=e148]
+            - row "18 Dart 1.0 % +0.0 %" [ref=e149]:
+              - cell "18" [ref=e150]
+              - cell [ref=e151]:
+                - img [ref=e152]
+              - cell "Dart" [ref=e153]
+              - cell "1.0 %" [ref=e154]
+              - cell "+0.0 %" [ref=e155]
+            - row "19 Ruby 0.97 % -0.0 %" [ref=e156]:
+              - cell "19" [ref=e157]
+              - cell [ref=e158]:
+                - img [ref=e159]
+                - img [ref=e160]
+                - img [ref=e161]
+              - cell "Ruby" [ref=e162]
+              - cell "0.97 %" [ref=e163]
+              - cell "-0.0 %" [ref=e164]
+            - row "20 Lua 0.76 % +0.1 %" [ref=e165]:
+              - cell "20" [ref=e166]
+              - cell [ref=e167]
+              - cell "Lua" [ref=e168]
+              - cell "0.76 %" [ref=e169]
+              - cell "+0.1 %" [ref=e170]
+            - row "21 Abap 0.63 % +0.0 %" [ref=e171]:
+              - cell "21" [ref=e172]
+              - cell [ref=e173]:
+                - img [ref=e174]
+              - cell "Abap" [ref=e175]
+              - cell "0.63 %" [ref=e176]
+              - cell "+0.0 %" [ref=e177]
+            - row "22 Scala 0.55 % -0.1 %" [ref=e178]:
+              - cell "22" [ref=e179]
+              - cell [ref=e180]:
+                - img [ref=e181]
+              - cell "Scala" [ref=e182]
+              - cell "0.55 %" [ref=e183]
+              - cell "-0.1 %" [ref=e184]
+            - row "23 Visual Basic 0.48 % -0.0 %" [ref=e185]:
+              - cell "23" [ref=e186]
+              - cell [ref=e187]
+              - cell "Visual Basic" [ref=e188]
+              - cell "0.48 %" [ref=e189]
+              - cell "-0.0 %" [ref=e190]
+            - row "24 Julia 0.37 % +0.0 %" [ref=e191]:
+              - cell "24" [ref=e192]
+              - cell [ref=e193]
+              - cell "Julia" [ref=e194]
+              - cell "0.37 %" [ref=e195]
+              - cell "+0.0 %" [ref=e196]
+            - row "25 Cobol 0.27 % +0.1 %" [ref=e197]:
+              - cell "25" [ref=e198]
+              - cell [ref=e199]:
+                - img [ref=e200]
+                - img [ref=e201]
+              - cell "Cobol" [ref=e202]
+              - cell "0.27 %" [ref=e203]
+              - cell "+0.1 %" [ref=e204]
+            - row "26 Groovy 0.18 % -0.2 %" [ref=e205]:
+              - cell "26" [ref=e206]
+              - cell [ref=e207]:
+                - img [ref=e208]
+              - cell "Groovy" [ref=e209]
+              - cell "0.18 %" [ref=e210]
+              - cell "-0.2 %" [ref=e211]
+            - row "27 Haskell 0.11 % -0.2 %" [ref=e212]:
+              - cell "27" [ref=e213]
+              - cell [ref=e214]:
+                - img [ref=e215]
+              - cell "Haskell" [ref=e216]
+              - cell "0.11 %" [ref=e217]
+              - cell "-0.2 %" [ref=e218]
+            - row "28 Delphi/Pascal 0.07 % -0.1 %" [ref=e219]:
+              - cell "28" [ref=e220]
+              - cell [ref=e221]
+              - cell "Delphi/Pascal" [ref=e222]
+              - cell "0.07 %" [ref=e223]
+              - cell "-0.1 %" [ref=e224]
+            - row "© Pierre Carbonnelle, 2023" [ref=e225]:
+              - cell "© Pierre Carbonnelle, 2023" [ref=e226]
+    - generic [ref=e227]:
+      - paragraph [ref=e229]: Loading...
+      - img [ref=e231]
+      - paragraph [ref=e233]:
+        - text: This chart uses a
+        - link "logarithmic scale" [ref=e234] [cursor=pointer]:
+          - /url: http://en.wikipedia.org/wiki/Semi-log_plot
+        - text: . It can show your favorite languages
+        - listbox "Choose languages..." [ref=e235]
+        - text: in a country
+        - combobox [ref=e236]
+      - generic [ref=e237]:
+        - paragraph [ref=e238]: "Please check our other popularity indices :"
+        - generic [ref=e239]:
+          - img [ref=e240]
+          - link "Top IDE Integrated Development Environment" [ref=e241] [cursor=pointer]:
+            - /url: IDE.html
+        - generic [ref=e242]:
+          - img [ref=e243]
+          - link "Top Online Integrated Development Environment" [ref=e244] [cursor=pointer]:
+            - /url: ODE.html
+        - generic [ref=e245]:
+          - img [ref=e246]
+          - link "Top Databases" [ref=e247] [cursor=pointer]:
+            - /url: DB.html
+    - generic [ref=e248]:
+      - generic [ref=e249]:
+        - heading "Kudos" [level=1] [ref=e250]
+        - paragraph [ref=e251]: "The PYPL index has been cited in the following trade journals :"
+        - list [ref=e253]:
+          - listitem [ref=e254]:
+            - link "Developer Tech" [ref=e255] [cursor=pointer]:
+              - /url: http://www.developer-tech.com/news/2013/jan/03/pypl-crowns-c-2012s-language-year/
+            - text: ","
+          - listitem [ref=e256]:
+            - link "DevOps" [ref=e257] [cursor=pointer]:
+              - /url: http://devopsangle.com/2013/11/22/apple-ios-7-extends-objective-c-lead-in-november-pypl-programming-language-popularity-index/
+            - text: ","
+          - listitem [ref=e258]:
+            - link "InfoWorld" [ref=e259] [cursor=pointer]:
+              - /url: http://www.infoworld.com/search?query=PYPL&contentType=article%2Cresource
+            - text: (several articles),
+          - listitem [ref=e260]:
+            - link "eWeek" [ref=e261] [cursor=pointer]:
+              - /url: http://www.eweek.com/developer/c-named-top-programming-language-of-2012/
+          - listitem [ref=e262]:
+            - link "Techworld" [ref=e263] [cursor=pointer]:
+              - /url: http://news.techworld.com/applications/3418399/microsoft-c-named-programming-language-of-2012/
+      - generic [ref=e264]:
+        - heading "FAQ" [level=1] [ref=e265]
+        - generic [ref=e266]:
+          - generic [ref=e267]:
+            - heading "What is the PYPL index ? " [level=4] [ref=e269]:
+              - link "What is the PYPL index ? " [ref=e270] [cursor=pointer]:
+                - /url: "#collapseZero"
+            - generic [ref=e272]:
+              - paragraph [ref=e273]: "The PYPL PopularitY of Programming Language Index is created by analyzing how often language tutorials are searched on Google : the more a language tutorial is searched, the more popular the language is assumed to be. It is a leading indicator. The raw data comes from Google Trends."
+              - paragraph [ref=e274]: If you believe in collective wisdom, the PYPL Popularity of Programming Language index can help you decide which language to study, or which one to use in a new software project.
+          - generic [ref=e275]:
+            - heading "Why is PYPL so different from TIOBE ? " [level=4] [ref=e277]:
+              - link "Why is PYPL so different from TIOBE ? " [ref=e278] [cursor=pointer]:
+                - /url: "#collapseOne"
+            - generic [ref=e280]:
+              - text: The
+              - link "TIOBE Index" [ref=e281] [cursor=pointer]:
+                - /url: http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html
+              - text: is a lagging indicator. It counts the number of web pages with the language name.
+              - mark [ref=e282]: Objective-c programming
+              - text: has over 20 million pages on the web,
+              - superscript [ref=e283]:
+                - link "[s]" [ref=e284] [cursor=pointer]:
+                  - /url: https://www.google.be/#hl=fr&tbo=d&output=search&sclient=psy-ab&q=%22objective-c+programming%22&oq=%22objective-c+programming%22&gs_l=hp.3..0l2j0i30l2.3028.3028.0.3908.1.1.0.0.0.0.131.131.0j1.1.0...0.0...1c.1.L2X9Y0uJ0Uk&pbx=1&bav=on.2,or.r_gc.r_pw.r_qf.&bvm=bv.1354675689,d.d2k&fp=c6fa6e161d5c7c9b&bpcl=39650382&biw=1814&bih=1010
+              - text: while
+              - mark [ref=e285]: C programming
+              - text: has only 11 million.
+              - superscript [ref=e286]:
+                - link "[s]" [ref=e287] [cursor=pointer]:
+                  - /url: https://www.google.be/#hl=fr&tbo=d&sclient=psy-ab&q=%22c+programming%22&oq=%22c+programming%22&gs_l=hp.3..0l4.105171.105171.1.106210.1.1.0.0.0.0.217.217.2-1.1.0...0.0...1c.1.i0F5z0y2deM&pbx=1&bav=on.2,or.r_gc.r_pw.r_qf.&bvm=bv.1354675689,d.d2k&fp=c6fa6e161d5c7c9b&bpcl=39650382&biw=1814&bih=1010
+              - text: This explains why Objective-C has a high TIOBE ranking. But who is reading those Objective-C web pages ? Hardly anyone, according to Google Trends data.
+              - mark [ref=e288]: Objective C programming
+              - text: is searched 30 times less than
+              - mark [ref=e289]: C programming
+              - text: .
+              - superscript [ref=e290]:
+                - link "[s]" [ref=e291] [cursor=pointer]:
+                  - /url: http://www.google.be/trends/explore#q=C%20programming%2C%20objective%20c%20programming&date=today%2012-m&cmpt=q
+              - text: In fact, the use of
+              - mark [ref=e292]: programming
+              - text: by the TIOBE index is misleading (see next question).
+          - generic [ref=e293]:
+            - heading "Why do you use tutorial as Google Trends keyword ? " [level=4] [ref=e295]:
+              - link "Why do you use tutorial as Google Trends keyword ? " [ref=e296] [cursor=pointer]:
+                - /url: "#collapseTwo"
+                - text: Why do you use
+                - mark [ref=e297]: tutorial
+                - text: as Google Trends keyword ? 
+            - generic [ref=e299]:
+              - paragraph [ref=e300]: "The following principles were used:"
+              - list [ref=e301]:
+                - list [ref=e302]:
+                  - listitem [ref=e303]:
+                    - text: just the language name, e.g.
+                    - mark [ref=e304]: Python
+                    - text: ", would lead to inconsistent results, because Python has many other meanings;"
+                  - listitem [ref=e305]: the same phrase should be used for all languages, for consistency.
+                  - listitem [ref=e306]:
+                    - mark [ref=e307]: programming
+                    - text: "would not do :"
+                    - mark [ref=e308]: C programming
+                    - text: is used much more than
+                    - mark [ref=e309]: PHP programming
+                    - text: ", because PHP does not need the qualifier"
+                  - listitem [ref=e310]:
+                    - mark [ref=e311]: tutorial
+                    - text: "is a word used frequently by developers learning any new language : it makes a good leading indicator. What is a"
+                    - mark [ref=e312]: python tutorial
+                    - text: ", if not a tutorial on the programming language ?"
+                  - listitem [ref=e313]:
+                    - mark [ref=e314]: ios tutorial
+                    - text: is used instead of the (
+                    - link "less popular" [ref=e315] [cursor=pointer]:
+                      - /url: http://www.google.com/trends/explore?hl=en-US#q=ios%20tutorial%2C%20objective%20c%20tutorial&cmpt=q
+                    - text: )
+                    - mark [ref=e316]: objective-c tutorial
+                    - text: to better reflect what iPhone developers search. This is confirmed by an analysis of language tag followers on
+                    - link "StackOverflow" [ref=e317] [cursor=pointer]:
+                      - /url: http://stackoverflow.com/tags
+                    - text: ", or of the visits of the Wikipedia language pages"
+                    - link "[s]" [ref=e318] [cursor=pointer]:
+                      - /url: http://stats.grok.se/en/latest90/objective-c
+                      - superscript [ref=e319]: "[s]"
+                    - text: ": they give a 4-5% popularity to Objective-C, which is highly consistent with our estimate. It may flatter objective-c's market share because it includes queries of iOS end users."
+          - generic [ref=e320]:
+            - heading "My favorite language is not in the index ! Why ? " [level=4] [ref=e322]:
+              - link "My favorite language is not in the index ! Why ? " [ref=e323] [cursor=pointer]:
+                - /url: "#collapseThree"
+            - paragraph [ref=e326]:
+              - text: The index is currently limited to 29 languages. You can still analyze the popularity of your favorite language and compare it to others, using
+              - link "Google Trends" [ref=e327] [cursor=pointer]:
+                - /url: http://www.google.com/trends/explore
+              - text: ". C++ has the same popularity as C on Google trends: to avoid duplication, it is not included in the PYPL index."
+          - generic [ref=e328]:
+            - heading "How do you compute the share of web searches ? " [level=4] [ref=e330]:
+              - link "How do you compute the share of web searches ? " [ref=e331] [cursor=pointer]:
+                - /url: "#collapseFour"
+            - generic [ref=e334]:
+              - text: We export the data from Google Trends in CSV format,
+              - superscript [ref=e335]:
+                - link "[s]" [ref=e336] [cursor=pointer]:
+                  - /url: http://support.google.com/trends/bin/answer.py?hl=en&answer=87289
+              - text: and analyze it with python's pandas. We first calculate the interest of each language tutorials relative to java tutorials every month. Normalizing the total to 100% yields the share of interest in each language, i.e. their popularity, which we smooth over 6 months.
+          - generic [ref=e337]:
+            - heading "Why is Java so flat in PYPL's diagram, while it is going down in Google Trends over 5 years ? " [level=4] [ref=e339]:
+              - link "Why is Java so flat in PYPL's diagram, while it is going down in Google Trends over 5 years ? " [ref=e340] [cursor=pointer]:
+                - /url: "#collapseFive"
+            - generic [ref=e343]:
+              - text: That's because Google Trends diagrams show how the total number of Java tutorial searches varies over time. That has been going significantly down for most programming languages (and most keywords, by the way). Instead, PYPL's diagram shows the share of
+              - mark [ref=e344]: Java tutorial
+              - text: searches in all language tutorial searches. That share has been fairly stable for Java since 2004.
+          - generic [ref=e345]:
+            - heading "Can I copy material from this page ? " [level=4] [ref=e347]:
+              - link "Can I copy material from this page ? " [ref=e348] [cursor=pointer]:
+                - /url: "#collapseSix"
+            - paragraph [ref=e351]:
+              - text: This work is licensed under a
+              - link "Creative Commons Attribution 3.0 Unported License" [ref=e352] [cursor=pointer]:
+                - /url: http://creativecommons.org/licenses/by/3.0/
+              - text: .
+      - generic [ref=e353]:
+        - link "Contact" [ref=e354] [cursor=pointer]:
+          - /url: mailto:pierre.carbonnelle@gmail.com
+        - text: © Pierre Carbonnelle, 2023,
+        - link "CC BY 3.0" [ref=e355] [cursor=pointer]:
+          - /url: http://creativecommons.org/licenses/by/3.0/
+        - text: .

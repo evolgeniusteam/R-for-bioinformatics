@@ -1,0 +1,248 @@
+---
+title: "Talk 05 — Homework"
+subtitle: "Data Visualization I — Base R & ggplot2 Fundamentals"
+author: "Your Name — Your Student ID"
+date: today
+CJKmainfont: "Hei"
+format:
+  pdf:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    pdf-engine: xelatex
+  html:
+    df-print: paged
+---
+
+## Instructions 说明
+
+1.  All exercises require both **base R graphics** and **ggplot2** versions unless stated otherwise. 除非特别说明，所有练习都需要同时提供 base R 和 ggplot2 两个版本。
+2.  Run each code chunk to verify results. 运行每个代码块以验证结果。
+3.  Submit the compiled PDF as `姓名-学号-talk05-homework.pdf`. 提交编译后的 PDF。
+
+## User Verification 用户验证
+
+```{r}
+Sys.info()[["user"]]
+Sys.getenv("HOME")
+```
+
+```{r}
+library(tidyverse)
+```
+
+---
+
+# Exercise 1: Basic Plots with swiss Data 基础作图 {.unnumbered}
+
+## 1.1 Histogram of Catholic
+
+Use **both** base R `hist()` and ggplot2 `geom_histogram()` to show the distribution of `Catholic` from the `swiss` dataset.
+
+```{r}
+## Base R version
+
+```
+
+```{r}
+## ggplot2 version
+
+```
+
+## 1.2 Scatter Plot
+
+Plot `Education` vs. `Fertility` from `swiss` with proper axis labels and a title. Provide **both** versions.
+
+```{r}
+## Base R version — use plot()
+
+```
+
+```{r}
+## ggplot2 version — use geom_point()
+
+```
+
+**Question**: Which approach do you find more intuitive for creating a scatter plot? Why? 哪种方法创建散点图更直观？为什么？
+
+**Answer**:
+
+---
+
+# Exercise 2: iris Data 鸢尾花数据 {.unnumbered}
+
+## 2.1 Scatter Plot by Species
+
+Plot `Sepal.Length` vs. `Petal.Length`, colored by `Species`, with a legend. Provide **both** versions.
+
+```{r}
+## Base R version — use plot() with col and legend()
+
+```
+
+```{r}
+## ggplot2 version
+
+```
+
+## 2.2 Box Plot by Species
+
+Show the distribution of `Sepal.Length` across `Species` using box plots. Provide **both** versions.
+
+```{r}
+## Base R version — use boxplot()
+
+```
+
+```{r}
+## ggplot2 version — use geom_boxplot()
+
+```
+
+---
+
+# Exercise 3: Multiple Geoms {.unnumbered}
+
+## 3.1 Scatter + Smooth
+
+Using `mtcars`, plot `wt` vs. `mpg`. Add both points (`geom_point`) and a LOESS smooth line (`geom_smooth`). Color points by `cyl` (as factor).
+
+```{r}
+## ggplot2 version
+
+```
+
+## 3.2 Describe the Trend
+
+**Question**: What is the relationship between car weight and fuel efficiency? What does the smooth line tell you? 车重与油耗的关系是什么？平滑线说明了什么？
+
+**Answer**:
+
+---
+
+# Exercise 4: Scales 标尺 {.unnumbered}
+
+## 4.1 Color Scales
+
+Using `mpg` dataset, create a scatter plot of `displ` vs. `hwy`:
+
+1. Color points by `class` using `scale_color_brewer(palette = "Set1")`
+2. Create the same plot but use `scale_color_manual()` with your own colors
+3. Which palette type (sequential, qualitative, diverging) is appropriate here? Why?
+
+```{r}
+## 1. scale_color_brewer
+
+```
+
+```{r}
+## 2. scale_color_manual
+
+```
+
+**Answer to Q3**:
+
+## 4.2 Gradient Color
+
+Using `mpg` dataset, plot `displ` vs. `hwy` and color points by `cty` (continuous variable) using `scale_color_gradient()`.
+
+```{r}
+## Your code here
+
+```
+
+---
+
+# Exercise 5: Coordinate Systems 坐标系 {.unnumbered}
+
+## 5.1 coord_flip
+
+Using `mpg`, create a box plot of `hwy` by `class` (as factor). Then flip the coordinates. When is `coord_flip` useful?
+
+```{r}
+## Your code here
+
+```
+
+**Answer**: 
+
+## 5.2 coord_polar
+
+Using `mtcars`, create a bar chart of `cyl` counts, then convert it to a pie chart with `coord_polar()`. Hint: start with `geom_bar()`.
+
+```{r}
+## Your code here
+
+```
+
+---
+
+# Exercise 6: Facets 分面 {.unnumbered}
+
+## 6.1 Facet by cyl
+
+Plot `wt` vs. `mpg` from `mtcars`, faceted by `cyl` using `facet_grid()`. Add `geom_point()` + `geom_smooth(method = "lm")`.
+
+```{r}
+## Your code here
+
+```
+
+## 6.2 Facet airquality
+
+Use `airquality` data. Plot `Wind` vs. `Temp` faceted by `Month` using `facet_wrap()` (2 rows × 3 columns). Add `geom_point()` + `geom_smooth()`.
+
+```{r}
+## Your code here
+
+```
+
+## 6.3 Free Scales
+
+Re-do 6.2 but use `scales = "free"` in `facet_wrap()`. What changed? When would you use free scales?
+
+```{r}
+## Your code here
+
+```
+
+**Answer**:
+
+---
+
+# Exercise 7: AI-Assisted Practice AI 辅助练习 {.unnumbered}
+
+## 7.1 Debug with AI
+
+Take any plot from this homework that gave you trouble. Ask CodeBuddy/your AI tool to:
+1. Explain what went wrong
+2. Suggest the fix
+3. Show the corrected code
+
+Paste the AI's response below.
+
+**AI Response**:
+
+```
+
+```
+
+## 7.2 Generate New Exercises
+
+Ask your AI tool: *"Give me 3 ggplot2 exercises using the `diamonds` dataset that test scales, facets, and coordinate systems."*
+
+**AI Response**:
+
+```
+
+```
+
+## 7.3 Explain a Concept
+
+Ask your AI tool: *"Explain the difference between `colour` and `fill` in ggplot2 with examples. Also explain when to use `facet_grid()` vs. `facet_wrap()`."*
+
+**AI Response**:
+
+```
+
+```

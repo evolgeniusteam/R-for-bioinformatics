@@ -1,0 +1,382 @@
+---
+title: "AI-powered bioinformatic analysis using R, #7"
+subtitle: "Data Visualization III — Overview of Omics Data & Visualization"
+author: "Wei-Hua Chen (CC BY-NC 4.0)"
+institute: "HUST, China"
+date: today
+
+CJKmainfont: "Arial"
+
+format: 
+  beamer:
+    aspectratio: 1610
+    navigation: vertical
+    theme: AnnArbor
+    colortheme: beaver
+    fonttheme: structurebold
+    highlight: tango
+    slide_level: 2
+    toc: true
+    pdf-engine: xelatex
+    header-includes:
+      - \AtBeginSubsection{}
+
+execute:
+  echo: true
+  fig-width: 8
+  fig-height: 4.5
+---
+
+# Introduction
+
+## The Omics Revolution
+
+Biology has entered the **big data era**. Modern high-throughput technologies generate vast amounts of data across multiple molecular layers:
+
+- **Genomics** — DNA, the blueprint of life
+- **Transcriptomics** — RNA, what genes are expressed
+- **Proteomics** — Proteins, the molecular machines
+- **Metabolomics** — Small molecules, the metabolic output
+- **Epigenomics** — DNA modifications and chromatin structure
+- **Microbiomics** — Communities of microorganisms
+
+**Common goal**: turn raw data into biological insights through analysis and visualization.
+
+## Today's Goal
+
+This talk provides an **overview** of:
+
+1. Major bioinformatics data types and their characteristics
+2. Common visualization tasks for each data type
+3. Key R packages and tools used
+4. The typical workflow: data → analysis → visualization → interpretation
+
+In future courses, we will dive into each data type with **real-world datasets**, covering complete workflows from data analysis to visualization and results interpretation.
+
+# Genomics Data
+
+## What is Genomics?
+
+**Genomics** studies the complete set of DNA in an organism — the genome.
+
+Typical data:
+
+- **Whole Genome Sequencing (WGS)**: entire genome at base-pair resolution
+- **Whole Exome Sequencing (WES)**: protein-coding regions only
+- **Targeted sequencing**: specific genes or regions
+- **GWAS**: genome-wide association studies linking variants to traits
+
+## Genomics: Data & Visualization
+
+\footnotesize
+
+| Data Type | Visualization Task | R Tools |
+|-----------|-------------------|---------|
+| Somatic mutations | Mutation landscape / oncoplot | `maftools` |
+| Somatic mutations | Mutation signature spectrum | `maftools`, `MutationalPatterns` |
+| Copy number variations | CNV heatmap, genome-wide profile | `ComplexHeatmap`, `ggplot2` |
+| SNP / GWAS | Manhattan plot | `qqman` |
+| SNP / GWAS | QQ plot (p-value distribution) | `qqman` |
+| Structural variants | Circos plot, genome rearrangement | `circlize`, `karyoploteR` |
+| Prokaryotic genomes | Gene structure / operon map | `gggenes` |
+| Genome alignment | Synteny dot plot | `ggplot2`, `gggenomes` |
+
+\normalsize
+
+## Genomics: Example Figures
+
+\footnotesize
+
+- **Oncoplot**: rows = genes, columns = patients, colors = mutation types. Shows co-mutation patterns and mutation burden across a cancer cohort.
+- **Manhattan plot**: x-axis = genomic position (by chromosome), y-axis = $-log_{10}(p)$. Peaks above the significance threshold indicate trait-associated loci.
+- **Circos plot**: circular genome view integrating multiple tracks (genes, CNV, SNPs, repeats) in one figure.
+
+\normalsize
+
+# Transcriptomics Data
+
+## What is Transcriptomics?
+
+**Transcriptomics** measures RNA transcripts — revealing which genes are active under specific conditions.
+
+Typical data:
+
+- **Bulk RNA-seq**: average expression across millions of cells
+- **Single-cell RNA-seq (scRNA-seq)**: expression in individual cells
+- **Microarray**: hybridization-based gene expression (legacy technology)
+
+## Transcriptomics: Data & Visualization
+
+\footnotesize
+
+| Data Type | Visualization Task | R Tools |
+|-----------|-------------------|---------|
+| Differential expression | Volcano plot (log2FC vs. -log10 p-value) | `EnhancedVolcano`, `ggplot2` |
+| Differential expression | MA plot (mean expression vs. log2FC) | `DESeq2::plotMA()` |
+| Gene expression | Heatmap with hierarchical clustering | `pheatmap`, `ComplexHeatmap` |
+| Sample quality | PCA plot | `ggplot2` + `prcomp()` |
+| Sample correlation | Correlation heatmap | `corrplot`, `pheatmap` |
+| Time-series expression | Expression trend line plot | `ggplot2::geom_line()` |
+| Splicing analysis | Sashimi plot (exon-junction coverage) | `ggsashimi` |
+| Functional enrichment | GO / KEGG bubble plot | `clusterProfiler`, `enrichplot` |
+| Functional enrichment | GSEA enrichment curve | `enrichplot::gseaplot()` |
+| Gene set overlap | Upset plot / Venn diagram | `UpSetR`, `ggVennDiagram` |
+| scRNA-seq | t-SNE / UMAP cell clustering | `Seurat` |
+| scRNA-seq | Marker gene dot plot / violin plot | `Seurat::DotPlot()`, `VlnPlot()` |
+| scRNA-seq | Pseudotime trajectory | `monocle3` |
+| TF regulation | Gene regulatory network | `igraph`, `ggraph` |
+
+\normalsize
+
+## Transcriptomics: Example Figures
+
+\footnotesize
+
+- **Volcano plot**: x-axis = $\log_2$(fold change), y-axis = $-\log_{10}$(adjusted p-value). Up-regulated genes on the right, down-regulated on the left. Top candidates are labeled.
+- **Heatmap**: rows = genes, columns = samples, color = Z-score of expression. Row/column dendrograms show clustering. Reveals co-expressed gene modules.
+- **GO/KEGG bubble plot**: x-axis = gene ratio, y-axis = pathway terms, bubble size = gene count, color = p-value. Shows which biological functions are enriched.
+
+\normalsize
+
+# Proteomics & Protein Interaction Data
+
+## What is Proteomics?
+
+**Proteomics** studies the full complement of proteins — their abundance, modifications, interactions, and structures.
+
+Typical data:
+
+- **Mass spectrometry (MS)**: protein identification and quantification
+- **Protein-protein interaction (PPI)**: physical contacts between proteins
+- **Protein structure**: 3D coordinates from X-ray, cryo-EM, or prediction
+
+## Proteomics & PPI: Data & Visualization
+
+\footnotesize
+
+| Data Type | Visualization Task | R Tools |
+|-----------|-------------------|---------|
+| Protein abundance | Volcano plot (differential proteins) | `ggplot2` |
+| Protein abundance | Sample correlation heatmap, PCA | `pheatmap`, `ggplot2` |
+| PPI network | Network graph (nodes = proteins, edges = interactions) | `igraph`, `ggraph`, `visNetwork` |
+| PPI network | Hub gene identification | Degree distribution plot |
+| PPI network | Module / community detection | `igraph::cluster_*()` |
+| Protein domains | Domain architecture diagram | `drawProteins` |
+| Protein 3D structure | Interactive 3D rendering | `r3dmol`, `bio3d` |
+| Post-translational modifications | Modification site distribution | `ggplot2::geom_segment()` |
+
+\normalsize
+
+## Proteomics & PPI: Example Figures
+
+\footnotesize
+
+- **PPI network**: a graph where highly-connected "hub" proteins often play critical roles. Communities (modules) represent protein complexes or pathways.
+- **Domain architecture**: linear representation of protein domains as colored boxes along the sequence. Reveals functional modules and evolutionary conservation.
+- **3D structure**: ribbon diagram showing alpha-helices and beta-sheets. Active sites and ligand binding pockets can be highlighted.
+
+\normalsize
+
+# Microbiome Data
+
+## What is Microbiomics?
+
+**Microbiomics** studies communities of microorganisms (bacteria, archaea, fungi, viruses) living in a particular environment.
+
+Typical data:
+
+- **16S rRNA amplicon sequencing**: taxonomic profiling (genus/species level)
+- **Shotgun metagenomics**: taxonomic + functional profiling
+- **Metatranscriptomics**: gene expression of the community
+
+## Microbiome: Data & Visualization
+
+\footnotesize
+
+| Data Type | Visualization Task | R Tools |
+|-----------|-------------------|---------|
+| Taxonomic composition | Stacked bar plot (phylum/genus level) | `ggplot2`, `phyloseq` |
+| Taxonomic composition | Krona / treemap (hierarchical) | `ggplot2::geom_treemap()` |
+| Feature abundance | Heatmap (genus × sample) | `pheatmap`, `geom_tile()` |
+| Alpha diversity | Box plot / violin plot by group | `phyloseq`, `microeco` |
+| Alpha diversity | Rarefaction curve | `vegan::rarecurve()` |
+| Beta diversity | PCoA / NMDS ordination | `phyloseq::plot_ordination()` |
+| Beta diversity | PERMANOVA / anosim results | `vegan` |
+| Differential abundance | LEfSe (LDA score bar plot) | `microeco` |
+| Differential abundance | Volcano plot, cladogram | `ggplot2`, `metacoder` |
+| Phylogeny + abundance | Phylogenetic tree with abundance heatmap | `ggtree` + `ggtreeExtra` |
+| Co-occurrence network | Microbial correlation network | `igraph`, `SpiecEasi` |
+| Functional potential | KEGG pathway abundance heatmap | `ggplot2`, `pheatmap` |
+| Source tracking | Sankey / alluvial diagram | `ggalluvial`, `networkD3` |
+
+\normalsize
+
+## Microbiome: Example Figures
+
+\footnotesize
+
+- **Stacked bar plot**: each bar = one sample, colored segments = different taxa. Shows community composition at a glance. Dominant taxa and rare taxa are easily identified.
+- **PCoA / NMDS**: each point = one sample, distance between points ≈ dissimilarity in community composition. Colored by group to reveal clustering by disease status, diet, etc.
+- **Phylogenetic tree + heatmap**: left panel = evolutionary tree of taxa, right panel = abundance heatmap. Reveals phylogenetic patterns in abundance.
+
+\normalsize
+
+# Epigenomics Data
+
+## What is Epigenomics?
+
+**Epigenomics** studies heritable changes in gene function that do not involve changes to the DNA sequence.
+
+Typical data:
+
+- **ChIP-seq / CUT&RUN**: protein-DNA binding (transcription factors, histone modifications)
+- **ATAC-seq**: open chromatin regions
+- **Bisulfite sequencing (WGBS / RRBS)**: DNA methylation
+- **Hi-C / 3C**: 3D chromatin organization
+
+## Epigenomics: Data & Visualization
+
+\footnotesize
+
+| Data Type | Visualization Task | R Tools |
+|-----------|-------------------|---------|
+| ChIP-seq / ATAC-seq | Genome browser coverage track | `Gviz`, `ggbio` |
+| ChIP-seq / ATAC-seq | Peak annotation pie / bar chart | `ChIPseeker::plotAnnoPie()` |
+| ChIP-seq / ATAC-seq | TSS-centered signal heatmap | `EnrichedHeatmap` |
+| ChIP-seq | Motif enrichment logo | `ggseqlogo`, `motifStack` |
+| DNA methylation | Methylation level distribution | `ggplot2::geom_violin()` |
+| DNA methylation | Differential methylation volcano | `ggplot2` |
+| DNA methylation | Chromosome-level methylation profile | `ggplot2` |
+| Hi-C | Contact matrix heatmap | `HiCcompare`, `pheatmap` |
+| Hi-C | TAD boundary visualization | `HiCExplorer` |
+| Multi-track genome | Circos plot (integrating multiple tracks) | `circlize` |
+
+\normalsize
+
+## Epigenomics: Example Figures
+
+\footnotesize
+
+- **Genome browser track**: a horizontal view of a genomic locus showing coverage peaks, annotated genes, and conservation. Tracks can be stacked for comparison across conditions.
+- **TSS heatmap**: rows = genes, columns = position relative to TSS, color = ChIP signal intensity. Shows enrichment patterns at transcription start sites.
+- **Contact matrix**: a symmetric heatmap where position (i, j) shows interaction frequency between genomic loci i and j. TADs appear as triangles along the diagonal.
+
+\normalsize
+
+# Clinical & Epidemiological Data
+
+## What is Clinical Bioinformatics?
+
+**Clinical bioinformatics** integrates molecular data with patient clinical information to understand disease mechanisms, prognosis, and treatment response.
+
+Typical data:
+
+- **Survival data**: time-to-event (death, recurrence, progression)
+- **Clinical covariates**: age, sex, stage, grade, treatment
+- **Lab tests**: blood counts, biomarkers, imaging
+
+## Clinical Data: Data & Visualization
+
+\footnotesize
+
+| Data Type | Visualization Task | R Tools |
+|-----------|-------------------|---------|
+| Survival analysis | Kaplan-Meier survival curve | `survminer::ggsurvplot()` |
+| Survival analysis | Cumulative hazard curve | `survminer` |
+| Survival analysis | Cox regression forest plot (HR + CI) | `forestplot`, `ggforest` |
+| Prognostic models | Nomogram (prediction tool) | `rms::nomogram()` |
+| Prognostic models | Calibration plot | `rms::calibrate()` |
+| Prognostic models | Time-dependent ROC curve | `timeROC`, `survivalROC` |
+| Diagnostic tests | ROC curve (sensitivity vs. specificity) | `pROC`, `plotROC` |
+| Diagnostic tests | Confusion matrix heatmap | `ggplot2::geom_tile()` |
+| Risk factors | Forest plot (OR / RR with confidence intervals) | `forestplot` |
+| Clinical features | Baseline characteristics table | `tableone` |
+| Drug response | Dose-response curve (IC50) | `drc`, `ggplot2` |
+| Multi-omics integration | Sankey / alluvial diagram | `ggalluvial` |
+| Multi-omics integration | Cross-omics correlation heatmap | `corrplot`, `ComplexHeatmap` |
+| Multi-omics integration | Circos / chord diagram | `circlize` |
+
+\normalsize
+
+## Clinical Data: Example Figures
+
+\footnotesize
+
+- **Kaplan-Meier curve**: x-axis = time, y-axis = survival probability. Step-wise curves for each group. Log-rank p-value tests whether curves differ significantly.
+- **Forest plot**: horizontal lines showing hazard ratio (HR) with 95% confidence interval for each variable. HR > 1 = increased risk, HR < 1 = protective effect.
+- **Nomogram**: a graphical calculator where each predictor contributes points, and total points map to predicted probability. Clinicians use it for individualized risk prediction.
+
+\normalsize
+
+# The Omics Analysis Workflow
+
+## From Raw Data to Insight
+
+```
+Raw Data → Quality Control → Normalization → Statistical Analysis
+                                               ↓
+         Biological Insight ← Interpretation ← Visualization
+```
+
+**Key principle**: visualization is not the final step — it is an **integral part** of every stage of analysis.
+
+## QC Visualization Examples
+
+- **FASTQ quality scores**: per-base quality box plots
+- **Alignment statistics**: mapping rate, duplication rate bar charts
+- **Sample correlation**: PCA or correlation heatmap to detect outliers
+- **Library complexity**: rarefaction curves for microbiome
+
+## Analysis Visualization Examples
+
+- **Differential expression**: volcano plot, MA plot
+- **Clustering**: heatmap, PCA, t-SNE/UMAP
+- **Enrichment**: bubble plot, enrichment map, cnetplot
+- **Classification**: ROC curve, confusion matrix
+
+## Interpretation
+
+Good figures tell a story:
+
+- What is the **biological question**?
+- What does the figure **show**?
+- What is the **take-home message**?
+
+
+# Summary
+
+## What We Covered Today
+
+\footnotesize
+
+| Omics Type | Key Data | Typical Visualizations |
+|------------|----------|----------------------|
+| **Genomics** | Mutations, CNV, GWAS | Oncoplot, Manhattan, Circos |
+| **Transcriptomics** | RNA-seq, scRNA-seq | Volcano, Heatmap, t-SNE/UMAP |
+| **Proteomics & PPI** | Protein abundance, interactions | Network graph, 3D structure |
+| **Microbiome** | 16S rRNA, metagenomics | Stacked bar, PCoA, Heatmap |
+| **Epigenomics** | ChIP-seq, methylation, Hi-C | Genome browser, Contact matrix |
+| **Clinical** | Survival, risk factors | KM curve, Forest plot, Nomogram |
+
+\normalsize
+
+## Key Takeaway
+
+Every omics data type has its own characteristic data structures and visualization needs. Understanding what visualizations are appropriate for each data type is essential for bioinformatics research.
+
+## Looking Ahead
+
+In future courses, we will work through each omics data type with **real-world datasets**, covering:
+
+1. Data loading and preprocessing
+2. Statistical analysis
+3. Visualization with R
+4. Results interpretation
+
+## Next Talk
+
+**Talk 08**: Strings, Iteration & Functional Programming (`stringr` + `purrr` + apply family)
+
+## No Homework
+
+This talk is an overview — no homework assignment. See you in Talk 08!

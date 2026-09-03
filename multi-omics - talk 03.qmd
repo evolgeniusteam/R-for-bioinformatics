@@ -1,0 +1,312 @@
+---
+title: "Multi-omics data analysis and visualisation, #3"
+subtitle: "R语言基础，part 1"
+author: "Wei-Hua Chen (CC BY-NC 4.0)"
+institute: "HUST, China"
+date: today
+
+CJKmainfont: "Hiragino Sans GB"  # 关键：指定中文字体为黑体
+
+format: 
+  beamer:
+    aspectratio: 1610 ## more morden aspectratio --
+    navigation: vertical
+    theme: AnnArbor
+    colortheme: beaver
+    fonttheme: structurebold
+    highlight: tango
+    slide_level: 2
+    toc: true
+    pdf-engine: xelatex  # 关键：指定XeLaTeX引擎
+
+execute:
+  echo: true
+---
+
+# section 1: outline
+
+## 前情提要
+
+- R 语言简史
+- RStudio IDE 简介
+- R 的安装与配置
+- 如何做练习
+
+## 本次提要
+
+1. R的基本数据类型
+2. 基本算术运算
+3. R的变量类型及操作
+
+# section 2: R basics - R的基础数据类型
+
+## `基本数据类型`
+
+- 数值型（Numeric）
+- 逻辑型（Logical）
+- 字符型（Character）
+- 复数型（Complex）
+- 原始型（Raw）
+- 日期和时间型（Date and Time）
+- 特殊值（NA, NaN, Inf, -Inf, NULL）
+
+## 1. 数值型（Numeric）
+
+又叫做数值（numeric），包括整数和小数两种形式。
+
+R中还有一种特殊的整数类型，称为“整型”（integer），它通过在数字后面加上字母"L"来表示。例如：
+
+\footnotesize
+```{r}
+## 整型
+100L
+-45L
+```
+
+另有数值的特殊值：Inf（无穷大）、-Inf（负无穷大）
+
+## 2. 逻辑型（Logical）
+
+\footnotesize
+
+真
+```{r eval=FALSE}
+TRUE
+T
+```
+
+假
+```{r eval=FALSE}
+FALSE
+F
+```
+
+其本质是数字
+```{r}
+1 + TRUE
+2 * FALSE
+```
+
+## 逻辑 至 数字类型的转换规则
+
+TRUE转换为1，FALSE转换为0，可自动转换。例如：
+
+\footnotesize
+
+```{r}
+
+sum( c(TRUE, FALSE, TRUE, TRUE) ); ## 逻辑类型求和
+mean( c(TRUE, FALSE, TRUE, TRUE) ); ## 逻辑类型求平均
+```
+
+## 数字转逻辑的规则与方法
+
+数字转逻辑的规则是：0转换为FALSE，非0转换为TRUE。可以用`as.logical()`函数强制转换。例如：
+
+\footnotesize
+
+```{r}
+as.logical( c(0, 1, -2, 3) );
+
+## 可自动实现转换
+c(1,0,2,-1) & c(TRUE,FALSE,TRUE,TRUE);
+```
+
+## 3. 字符型（Character）
+
+字符型则是可以是任何字符的组合，由单引号或双引号包括。比如：
+
+\footnotesize
+```{r eval=FALSE}
+'a sentence' ## 单括号
+"一个字符串" ## 双括号
+'1.123'      ## 像是数字的字符串
+'*%%*()!@##&@(9'  ## 乱码
+```
+
+## 4. 复数型（Complex）
+
+复数由实部和虚部组成，虚部用字母`i`表示。例如：
+
+\footnotesize
+
+```{r}
+3 + 4i
+-2.5 - 0.1i
+```
+
+## 5. 原始型（Raw）
+
+原始型用于存储原始的字节数据，通常用于处理二进制文件或网络数据。例如：
+
+\footnotesize
+
+```{r}
+charToRaw("Hello")
+```
+
+## 6. 日期和时间型（Date and Time）
+
+R中有多种方式表示日期和时间，常用的有`Date`类和`POSIXct`类。例如：
+\footnotesize
+
+```{r}
+as.Date("2024-01-01")
+as.POSIXct("2024-01-01 12:34:56")
+```
+
+## 7. 特殊值（NA, NaN, Inf, -Inf, NULL）
+
+R中有一些特殊值用于表示缺失数据或无效计算结果：
+
+- `NA`：表示缺失值
+
+- `NaN`：表示“不是一个数字”（Not a Number），通常出现在
+  无效的数学运算中
+
+- `Inf` 和 `-Inf`：表示正无穷大和负无
+  穷大
+
+- `NULL`：表示空值或不存在的对象
+
+# Section 3: R basics - 基础数据类型的操作
+
+## 类型判断
+
+可以用`class()`函数判断数据类型。例如：
+
+\footnotesize
+```{r}
+class(100L);
+class(TRUE);
+class("a string");
+class(3 + 4i);
+class(as.Date("2024-01-01"));
+```
+
+## 类型判断，cont. 
+
+也可以用`is.*`系列函数判断数据类型。例如：
+
+\footnotesize
+
+```{r}
+is.numeric(100L);
+is.logical(TRUE);
+is.character("a string");
+is.complex(3 + 4i);
+```
+
+## 类型判断： Date
+
+R没有自带的`is.date()`函数，但可以用`inherits()`函数判断，或使用扩展包中的函数。例如：
+
+\footnotesize
+
+```{r}
+date_value <- as.Date("2024-01-01");
+inherits(date_value, "Date");
+
+## 使用 lubridate 包
+lubridate::is.Date(date_value);
+```
+
+## 类型转换
+
+### 显式转换
+
+使用`as.*`系列函数进行类型转换。例如：
+
+\footnotesize
+
+```{r}
+as.numeric("123");
+as.logical(1);
+as.character(456);
+as.complex(3);
+as.Date("2024-01-01");
+```
+
+## 隐式转换
+
+### 隐式转换
+
+在某些运算中，R会自动进行类型转换。
+
+主要遵循类型升档的规则，比如从 `logical→ numeric→ character`；例如：
+
+\footnotesize
+
+```{r}
+c(TRUE, FALSE, TRUE) + 1; ## 逻辑转数字
+paste0( c(1, 2, 3), "i");          ## 数字转字符串
+```
+
+## 简单计算
+
+### **加减乘除**老一套
+
+\footnotesize
+
+```{r eval=FALSE}
+1 + 2 - 3 * 4 / 5; ## 加减乘除
+1 + (2 - 3) * 4 / 5;  ##  改变优先级
+```
+
+\normalsize
+
+### 进阶操作
+
+\footnotesize
+
+```{r eval=FALSE}
+2 ^ 6; ## 阶乘
+5 %% 2; ## 取余
+```
+
+\normalsize
+
+### 逻辑运算符
+
+\footnotesize
+
+```{r eval=FALSE}
+T | F; ## or 
+T & F; ## and
+5 | 0; ## == 0 FALSE， > 0 TRUE
+```
+
+\normalsize 
+
+? `5 & -1` 结果应该是 TRUE 还是 FALSE？？？
+
+## 数学函数
+
+- log, log2, log10
+- exp
+- sin, cos, tan
+- sqrt 
+
+# Section 4: 小结及下次预告
+
+## 小结
+
+- 基本数据类型包括数值型、逻辑型、字符型、复数型、原始型、日期和时间型以及特殊值
+
+- 可以使用`class()`和`is.*`函数判断数据类型
+
+- 可以使用`as.*`函数进行显式类型转换，R也会在某些运算中进行隐式类型转换
+
+- 理解数据类型及其操作对于有效使用R语言进行数据分析和编程
+
+## 下次预告
+
+- R的数据结构
+- 向量（Vector）
+- 矩阵（Matrix）
+- 数据框（Data Frame）
+- 列表（List）
+
+- 变量与赋值
+- 复杂数据类型操作
+

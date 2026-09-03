@@ -1,0 +1,13 @@
+[    3544ms] [INFO] Slow network is detected. See https://www.chromestatus.com/feature/5636954674692096 for more details. Fallback font will be used while loading: https://web.archive.org/web/20240530211809im_/http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/fonts/glyphicons-halflings-regular.woff @ https://web.archive.org/web/20240530225804if_/https://pypl.github.io/PYPL.html:0
+[    6919ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://web.archive.org/web/20240530225804/https://pypl.goatcounter.com/count?p=%2FPYPL.html&t=PYPL%20PopularitY%20of%20Programming%20Language%20index&s=1280%2C720%2C1&b=0&rnd=ojw77:0
+[   16346ms] TypeError: Cannot read properties of undefined (reading 'arrayToDataTable')
+    at drawChart (https://web.archive.org/web/20240530225804if_/https://pypl.github.io/PYPL.html:779:38)
+    at Proxy.<anonymous> (https://web.archive.org/web/20240530225804if_/https://pypl.github.io/PYPL.html:835:5)
+    at Function.apply (https://web-static.archive.org/_static/js/wombat.js?v=txqj7nKC:21:64701)
+    at j (https://web.archive.org/web/20240530225804js_/https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js:11:27244)
+    at Object.fireWith [as resolveWith] (https://web.archive.org/web/20240530225804js_/https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js:11:28057)
+    at m.ready (https://web.archive.org/web/20240530225804js_/https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js:11:29891)
+    at HTMLDocument.J (https://web.archive.org/web/20240530225804js_/https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js:11:30257)
+[   16843ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://web.archive.org/web/20240530225804js_/https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202405280101/show_ads_impl_with_ama_fy2021.js?client=ca-pub-7195251742968320&plah=pypl.github.io&aplac=true&bust=31084103:0
+[   19328ms] [ERROR] Loading the image 'https://pypl.github.io/PYPL.html' violates the following Content Security Policy directive: "default-src 'self' 'unsafe-eval' 'unsafe-inline' data: blob: archive.org web.archive.org web-static.archive.org wayback-api.archive.org athena.archive.org analytics.archive.org pragma.archivelab.org wwwb-events.archive.org". Note that 'img-src' was not explicitly set, so 'default-src' is used as a fallback. The action has been blocked. @ https://web.archive.org/web/20240530224647/https://www.gstatic.com/charts/51/js/jsapi_compiled_default_module.js:141
+[   19524ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://web.archive.org/favicon.ico:0

@@ -1,0 +1,94 @@
+#relative abundance information for curated sample: PRJEB6070-DE-076, at species level
+#for project: PRJEB6070
+#phenotype: D006262, Health
+ncbi_taxon_id	taxon_rank_level	relative_abundance	scientific_name
+853	species	12.9972	Faecalibacterium prausnitzii
+1680	species	11.3123	Bifidobacterium adolescentis
+310298	species	9.64785	Bacteroides coprocola
+166486	species	7.20521	Roseburia intestinalis
+39491	species	5.74327	[Eubacterium] rectale
+216816	species	5.32484	Bifidobacterium longum
+39485	species	4.41647	[Eubacterium] eligens
+28117	species	3.68582	Alistipes putredinis
+218538	species	2.95091	Dialister invisus
+821	species	2.48194	Bacteroides vulgatus
+1681	species	2.17232	Bifidobacterium bifidum
+360807	species	1.39257	Roseburia inulinivorans
+74426	species	1.3122	Collinsella aerofaciens
+40545	species	1.27588	Sutterella wadsworthensis
+1118061	species	1.1716	Alistipes obesi
+328813	species	1.01441	Alistipes onderdonkii
+674529	species	0.91509	Bacteroides faecis
+88431	species	0.91336	Dorea longicatena
+820	species	0.90242	Bacteroides uniformis
+487174	species	0.89265	Barnesiella intestinihominis
+552398	species	0.85497	Ruminococcaceae bacterium D16
+39496	species	0.82785	Eubacterium ventriosum
+823	species	0.77154	Parabacteroides distasonis
+410072	species	0.72604	Coprococcus comes
+46228	species	0.60055	Ruminococcus lactaris
+457412	species	0.47757	Ruminococcus sp. 5_1_39BFAA
+39488	species	0.45812	[Eubacterium] hallii
+39490	species	0.43511	Eubacterium ramulus
+28026	species	0.39612	Bifidobacterium pseudocatenulatum
+446660	species	0.38216	Adlercreutzia equolifaciens
+39486	species	0.3809	Dorea formicigenerans
+33039	species	0.36607	[Ruminococcus] torques
+116085	species	0.29009	Coprococcus catus
+28116	species	0.24389	Bacteroides ovatus
+40520	species	0.23339	Blautia obeum
+817	species	0.11694	Bacteroides fragilis
+301301	species	0.07552	Roseburia hominis
+29466	species	0.06228	Veillonella parvula
+371601	species	0.04696	Bacteroides xylanisolvens
+197614	species	0.04574	Streptococcus pasteurianus
+649756	species	0.03969	Anaerostipes hadrus
+106588	species	0.03962	Pseudoflavonifractor capillosus
+310297	species	0.03696	Bacteroides plebeius
+292800	species	0.0365	Flavonifractor plautii
+1099853	species	0.03642	Coprobacter fastidiosus
+33038	species	0.03235	[Ruminococcus] gnavus
+39777	species	0.02843	Veillonella atypica
+471189	species	0.02501	Gordonibacter pamelaeae
+1304	species	0.02489	Streptococcus salivarius
+1351	species	0.02403	Enterococcus faecalis
+1308	species	0.01876	Streptococcus thermophilus
+214856	species	0.01762	Alistipes finegoldii
+818	species	0.01399	Bacteroides thetaiotaomicron
+562	species	0.01398	Escherichia coli
+1535	species	0.01205	[Clostridium] leptum
+1318	species	0.01164	Streptococcus parasanguinis
+261299	species	0.0108	Intestinibacter bartlettii
+658087	species	0.01067	Lachnospiraceae bacterium 7_1_58FAA
+35833	species	0.00932	Bilophila wadsworthia
+357276	species	0.00792	Bacteroides dorei
+84112	species	0.00716	Eggerthella lenta
+1358	species	0.00483	Lactococcus lactis
+658082	species	0.00481	Lachnospiraceae bacterium 2_1_58FAA
+658089	species	0.00475	Lachnospiraceae bacterium 5_1_63FAA
+39778	species	0.0046	Veillonella dispar
+1747	species	0.00443	Propionibacterium acnes
+469610	species	0.004	Burkholderiales bacterium 1_1_47
+658655	species	0.00368	Lachnospiraceae bacterium 1_4_56FAA
+113107	species	0.00357	Streptococcus australis
+59310	species	0.0034	Streptococcus macedonicus
+154046	species	0.0031	Hungatella hathewayi
+729	species	0.00292	Haemophilus parainfluenzae
+239935	species	0.00204	Akkermansia muciniphila
+487175	species	0.00189	Parasutterella excrementihominis
+150055	species	0.00178	Streptococcus lutetiensis
+169435	species	0.00171	Anaerotruncus colihominis
+-1	species	0.00144	Unknown
+28111	species	0.00142	Bacteroides eggerthii
+328814	species	0.00127	Alistipes shahii
+40518	species	0.00114	Ruminococcus bromii
+43675	species	0.0011	Rothia mucilaginosa
+546	species	0.00094	Citrobacter freundii
+658085	species	0.00067	Lachnospiraceae bacterium 5_1_57FAA
+1305	species	0.0006	Streptococcus sanguinis
+1660	species	0.00058	Actinomyces odontolyticus
+1264	species	0.00052	Ruminococcus albus
+665950	species	0.00022	Lachnospiraceae bacterium 3_1_46FAA
+68892	species	0.00015	Streptococcus infantis
+46124	species	0.00014	Granulicatella adiacens
+-1	species	13.9604	Unknown

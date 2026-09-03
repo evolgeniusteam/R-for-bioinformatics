@@ -1,0 +1,9 @@
+[    3303ms] [INFO] Slow network is detected. See https://www.chromestatus.com/feature/5636954674692096 for more details. Fallback font will be used while loading: https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/fonts/glyphicons-halflings-regular.woff @ https://pypl.github.io/PYPL.html:0
+[    6464ms] TypeError: Cannot read properties of undefined (reading 'arrayToDataTable')
+    at drawChart (https://pypl.github.io/PYPL.html:788:46)
+    at HTMLDocument.<anonymous> (https://pypl.github.io/PYPL.html:844:13)
+    at j (https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js:2:27244)
+    at Object.fireWith [as resolveWith] (https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js:2:28057)
+    at m.ready (https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js:2:29891)
+    at HTMLDocument.J (https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js:2:30257)
+[    8518ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://pypl.github.io/favicon.ico:0

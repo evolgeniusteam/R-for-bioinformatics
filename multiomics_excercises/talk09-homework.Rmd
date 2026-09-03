@@ -1,0 +1,243 @@
+---
+title: "talk09 练习与作业"
+documentclass: ctexart
+output:
+  rticles::ctex:
+    fig_caption: yes
+    number_sections: yes
+    toc: true
+    toc_depth: 2
+  word_document: default
+  html_document:
+    df_print: paged
+knit: (
+  function(inputFile, encoding) { 
+
+    pSubTitle <- 'talk09-homework'
+
+    rmarkdown::render( 
+      input       = inputFile, 
+      encoding    = encoding, 
+      params      = list(sub_title = pSubTitle),      
+      output_file = pSubTitle) })
+---
+
+## 练习和作业说明
+
+将相关代码填写入以 \`\`\`{r} \`\`\` 标志的代码框中，运行并看到正确的结果；
+
+完成后，用工具栏里的"Knit"按键生成PDF文档；
+
+**将PDF文档**改为：**`姓名-学号-talk09作业.pdf`**，并提交到老师指定的平台/钉群。
+
+## talk09 内容回顾
+
+-   basic plot
+-   ggplot2
+
+### layered grammer (图层语法) 的成分
+
+-   图层 ( geom_xxx )
+-   scale ( scale_xxx )
+-   faceting ( facet_xxx )
+-   坐标系统
+
+### 图象类型
+
+-   点图
+-   bars
+-   boxplots
+
+### 其它重要内容（部分需要自学）
+
+-   colours
+-   theme
+-   其它图像类型
+-   图例（legends）和 坐标轴
+-   图形注释和其它定制
+
+## 练习与作业：用户验证
+
+请运行以下命令，验证你的用户名。
+
+**如你当前用户名不能体现你的真实姓名，请改为拼音后再运行本作业！**
+
+```{r}
+Sys.info()[["user"]]
+Sys.getenv("HOME")
+```
+
+
+## 练习与作业1：基础做图 & ggplot2
+
+------------------------------------------------------------------------
+
+### **用`swiss`数据做图**
+
+1.  用直方图`histogram`显示 `Catholic` 列的分布情况；
+2.  用散点图显示`Eduction`与`Fertility`的关系；将表示两者关系的线性公式、相关系数和p值画在图的空白处。
+
+注：每种图提供**基础做图函数**和**ggplot2**两个版本！
+
+```{r}
+## 代码写这里，并运行；
+
+```
+
+------------------------------------------------------------------------
+
+### **用`iris`作图**
+
+1.  用散点图显示 `Sepal.Length` 和 `Petal.Length` 之间的关系；按 `species` 为散点确定颜色，并画出 legend 以显示 `species` 对应的颜色； 如下图所示： ![](images/talk09-homework-plot02.png)
+2.  用 boxplot 显示`species`之间 `Sepal.Length` 的分布情况；
+
+注：每种图提供**基础做图函数**和**ggplot2**两个版本！
+
+```{r}
+## 代码写这里，并运行；
+
+```
+
+------------------------------------------------------------------------
+
+### **用 ggplot 作图：`boxplot`**
+
+用 `starwars` 的数据作图，画 `boxplot` 显示身高 `height` 与性别 `gender` 的关系。要求：
+
+1.  `height` 为NA的，不显示；
+2.  用`ggsignif`包计算 `feminine` 和 `masculine` 两种性别的身高是否有显著区别，并在图上显示。
+3.  将此图的结果保存为变量 **`p1`** ，以备后面使用；
+
+最终结果如图所示：
+
+![](images/talk09-homework-plot01.png)
+
+```{r}
+## 代码写这里，并运行；
+
+```
+
+------------------------------------------------------------------------
+
+### **用 ggplot 作图：使用`iris`做图**
+
+用`geom_density2d`显示`Sepal.Length`和`Sepal.Width`之间的关系，同时以 `Species` 为分组，结果如图所示：
+
+将此图的结果保存为变量 **`p2`** ，以备后面使用；
+
+![](images/talk09-homework-plot03.png)
+
+```{r}
+## 代码写这里，并运行；
+
+```
+
+------------------------------------------------------------------------
+
+### **用 ggplot 作图：`facet`**
+
+用 `mtcars` 作图，显示 `wt` 和 `mpg` 之间的关系，但用 `cyl` 将数据分组；见下图：
+
+将此图的结果保存为变量 **`p3`** ，以备后面使用；
+
+![](images/talk09-homework-plot04.png)
+
+**注** 此图中的 `468` 组为所有数据合在一起的结果。
+
+```{r}
+## 代码写这里，并运行；
+
+```
+
+
+### **用 ggplot 作图：`facet` 2**
+
+用 `airquality` 作图，显示 `Wind` 和 `Temp` 之间的关系，用 `Month` 将数据分组；得到的子图按2行3列组织。
+
+**注** 画点线图，并增加smooth图层。
+
+
+```{r}
+## 代码写这里，并运行；
+
+```
+
+
+
+------------------------------------------------------------------------
+
+### **用 ggplot 作图：用`mtcars`做`polar`图**
+
+用 `mtcars` 的 `mpg` 列做如下图，要求：先按 `cyl` 排序；每个`cyl`组内按 `mpg`排序； 将此图的结果保存为变量 **`p4`** ，以备后面使用；
+
+**提示**
+
+1.  先增加一列，用于保存 rowname : `mtcars %>% rownames_to_column()` **注**： 将行名变为列，列名为 `rowname`
+2.  完成排序
+3.  更改 rowname 的 factor
+4.  计算每个 rowname 的旋转角度： `mutate( id = row_number(), angle = 90 - 360 * (id - 0.5) / n() )`
+
+![](images/talk09-homework-plot05.png)
+
+```{r}
+## 代码写这里，并运行；
+
+```
+
+## 练习与作业2：多图组合，将多个图画在一起
+
+------------------------------------------------------------------------
+
+### **用`cowplot::ggdraw`将 `p1`, `p2`和`p3`按下面的方式组合在一起** 
+
+注：需要先安装 `cowplot` 包
+
+![](images/talk09-homework-plot06.png)
+
+```{r}
+## 代码写这里，并运行；
+
+```
+
+------------------------------------------------------------------------
+
+### **用`gridExtra::grid.arrange()`函数将 `p1`, `p2`, `p4` 按下面的方式组合在一起** 
+
+注：1. 需要安装 `gridExtra` 包；
+2. 请为三个panel加上 A, B, C 字样的标签。
+
+![](images/talk09-homework-plot07.png)
+
+```{r}
+## 代码写这里，并运行；
+
+```
+
+------------------------------------------------------------------------
+
+### **用`patchwork`包中的相关函数将 `p1`, `p2`, `p3`, `p4` 按下面的方式组合在一起** 
+
+注：1. 需要安装 `patchwork` 包；
+2. 为四个panel加上 A, B, C, D 字样的标签。
+
+![](images/talk09-homework-plot08.png)
+
+```{r}
+## 代码写这里，并运行；
+
+```
+
+## 练习与作业3：作图扩展
+
+------------------------------------------------------------------------
+
+### **`scatterplot`**
+
+安装 `lattice` 包，并使用其 `splom` 函数作图：
+
+`lattice::splom( mtcars[c(1,3,4,5,6)] )`
+
+```{r}
+## 代码写这里，并运行；
+
+```

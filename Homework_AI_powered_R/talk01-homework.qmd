@@ -1,0 +1,237 @@
+---
+title: "Talk 01 — Homework"
+subtitle: "Course Overview & AI-assisted Setup"
+author: "Your Name — Your Student ID"
+date: today
+
+CJKmainfont: "Hei"
+
+format:
+  pdf:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    pdf-engine: xelatex
+  html:
+    df-print: paged
+---
+
+## Instructions 作业说明 {.unnumbered}
+
+- Write your R code inside `{r}` code chunks, run them, and verify the output. 将R代码填入 `{r}` 代码块中，运行并验证输出结果。
+- After completing all exercises, click the **Render** button in RStudio (or run `quarto render`) to generate a PDF. 完成后，点击 RStudio 中的 **Render** 按钮生成 PDF。
+- **Rename the PDF** to: `Name-StudentID-talk01-homework.pdf` and submit to the course platform. **将PDF重命名**为：`姓名-学号-talk01-homework.pdf`，提交到课程平台。
+- **Important**: If your system username does not reflect your real name, change it to your Pinyin name before running this homework. **注意**：如果你的系统用户名不是真实姓名拼音，请在运行作业前修改。
+
+## User Verification 用户身份验证 {.unnumbered}
+
+Run the following to verify your identity 运行以下代码验证你的身份:
+
+```{r}
+Sys.info()[["user"]]
+Sys.getenv("HOME")
+
+```
+
+## Talk 01 Content Review 内容回顾
+
+Today we covered 今天的内容包括:
+
+- Course overview and structure (16 talks, two parts) 课程概述与结构（16讲，两部分）
+- Why R? — history, popularity, bioinformatics advantages 为什么选R？——历史、流行度及生物信息学优势
+- AI-assisted programming philosophy with **CodeBuddy** AI辅助编程理念（使用 **CodeBuddy**）
+- Step-by-step setup: CodeBuddy → R → RStudio → Extensions → tinytex → R packages → tidyverse 逐步安装流程
+- Clone the course repository and open the R Project 克隆课程仓库并打开 R Project
+- Render QMD files to PDF (Beamer & Article formats) 渲染 QMD 文件为 PDF（Beamer 与 Article 格式）
+
+------------------------------------------------------------------------
+
+# Exercise 1: System Verification {.unnumbered}
+
+## 1.1 Check your R version
+
+Print your R version string using `R.version.string`:
+
+```{r}
+## Write your code here and run it
+R.version.string
+```
+
+## 1.2 Check your operating system
+
+Print your operating system details using `Sys.info()`:
+
+```{r}
+## Write your code here and run it
+Sys.info()
+```
+
+## 1.3 Check your working directory
+
+Print your current working directory with `getwd()`. Does it point to the course repository?
+
+```{r}
+## Write your code here and run it
+
+```
+
+**Question**: What is your current working directory? Is it the cloned course repository (`~/Desktop/R-for-bioinformatics`)? 你当前的工作目录是什么？是否为克隆的课程仓库？
+
+**Answer**:
+
+;lj;j;l
+
+## 1.4 List installed packages
+
+Create a data frame (using `tibble`) that lists **all** installed R packages, with columns: `Package`, `Version`, `LibPath`. Show the first 20 rows.
+
+```{r}
+## Write your code here and run it
+
+```
+
+## 1.5 Verify key packages
+
+Check whether the following packages are installed and report their versions:
+
+- `rmarkdown`
+- `knitr`
+- `tidyverse`
+- `tinytex`
+
+```{r}
+## Write your code here and run it
+
+```
+
+**Question**: Are all four packages installed? If any is missing, use CodeBuddy to install it and report the version after installation.
+
+**Answer**:
+
+## 1.6 Verify tinytex
+
+Check whether TinyTeX is properly installed:
+
+```{r}
+## Write your code here and run it
+
+```
+
+**Question**: Does `tinytex::is_tinytex()` return `TRUE`? If not, ask CodeBuddy to help you install it.
+
+**Answer**:
+
+
+
+------------------------------------------------------------------------
+
+# Exercise 2: AI-assisted Workflow Practice {.unnumbered}
+
+## 2.1 Reproduce the verification-beamer PDF
+
+Use **CodeBuddy** to help you create a new QMD file (save it as `my-verification-beamer.qmd` in your project root). The file should:
+
+- Use **Beamer** format (1610 aspectratio, Warsaw theme, xelatex engine)
+- Contain a title slide: "My Verification Report — Beamer"
+- Show your system info (user name, R version, platform)
+- Show your working directory
+- List at least 10 installed packages
+
+After CodeBuddy creates the file, **render it in RStudio** and confirm the PDF is generated correctly.
+
+```{r, eval=FALSE}
+# No R code needed — this is a QMD creation + rendering exercise
+# Paste the CodeBuddy prompt you used below:
+```
+
+**CodeBuddy prompt used** (paste here):
+
+```         
+```
+
+**Question**: Did the PDF render successfully? Describe any issues you encountered and how you resolved them (with CodeBuddy's help or on your own).
+
+**Answer**:
+
+## 2.2 Create a homework-style verification PDF
+
+Use **CodeBuddy** to help you create another QMD file (save as `my-verification-homework.qmd`). This time, use **article format** (`format: pdf`). The file should:
+
+- Have a top-level heading: "My Verification Report — Homework Style"
+- Contain sections showing: user name, R version, OS, working directory
+- Include a table of at least 10 installed packages (Package, Version, LibPath)
+- Have `echo: true` on all code chunks
+
+After CodeBuddy creates the file, **render it in RStudio**.
+
+```{r, eval=FALSE}
+# No R code needed — paste your CodeBuddy prompt below:
+```
+
+**CodeBuddy prompt used** (paste here):
+
+```         
+```
+
+**Question**: Describe the key differences between rendering a Beamer QMD vs. an Article QMD. Which format would you prefer for homework submissions?
+
+**Answer**:
+
+------------------------------------------------------------------------
+
+# Exercise 3: AI Prompt Practice {.unnumbered}
+
+## 3.1 Writing effective prompts
+
+For each scenario below, write an **effective CodeBuddy prompt** that would accomplish the task. Then (optionally) try it in CodeBuddy and report the result.
+
+**Scenario A**: You want to install a new R package called `palmerpenguins`.
+
+**Your prompt**:
+
+```         
+```
+
+**Scenario B**: You get an error message when trying to render a QMD file: `"Quitting from lines 12-15 (myfile.qmd) Error in library(ggplot2): there is no package called 'ggplot2'"`. Write a prompt to debug this.
+
+**Your prompt**:
+
+```         
+```
+
+**Scenario C**: You want CodeBuddy to explain the differences between R Markdown (.Rmd) and Quarto (.qmd) files.
+
+**Your prompt**:
+
+```         
+```
+
+## 3.2 Reflect on your AI experience
+
+**Question**: In this homework, which tasks did you use CodeBuddy for? What worked well? What was challenging? 本次作业中你在哪些任务中使用了CodeBuddy？哪些效果好？哪些有挑战？
+
+**Answer**:
+
+------------------------------------------------------------------------
+
+# Exercise 4: Prompt Cheat Sheet {.unnumbered}
+
+Based on your experience so far, create your personal **prompt cheat sheet** with at least 5 prompt templates you find useful. Refer to the lecture slides for inspiration.
+
+```{r, eval=FALSE}
+# No code needed — write your cheat sheet below:
+```
+
+**My Prompt Cheat Sheet**:
+
+| Scenario        | My Prompt Template |
+|-----------------|--------------------|
+| Install package |                    |
+| Debug error     |                    |
+| Explain concept |                    |
+| Create file     |                    |
+| Run analysis    |                    |
+
+------------------------------------------------------------------------
+
+*Homework ends here. Double-check that all code chunks run without errors, then Render to PDF. 作业结束。请确认所有代码块运行无误，然后 Render 生成 PDF。*

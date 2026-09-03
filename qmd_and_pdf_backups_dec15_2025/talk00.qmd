@@ -1,0 +1,171 @@
+---
+title: "R for bioinformatics, data visualisation, part 2"
+subtitle: "HUST Bioinformatics course series"
+author: "Wei-Hua Chen (CC BY-NC 4.0)"
+institute: "HUST, China"
+date: today
+
+CJKmainfont: "Hei"  # 关键：指定中文字体为黑体
+
+format: 
+  beamer:
+    aspectratio: 1610 ## more morden aspectratio --
+    navigation: vertical
+    theme: AnnArbor
+    colortheme: beaver
+    fonttheme: structurebold
+    highlight: tango
+    slide_level: 2
+    toc: true
+  pdf:
+    pdf-engine: xelatex  # 关键：指定XeLaTeX引擎
+
+execute:
+  echo: true
+---
+
+# section 1: TOC
+
+## 前情提要
+
+### iterations 与 并行计算
+
+-   for loop
+-   `apply` functions
+-   `dplyr` 的本质是 遍历
+-   `map` functions in `purrr` package
+-   遍历 与 并行计算
+
+### 相关包
+
+-   purrr
+-   parallel
+-   foreach
+-   iterators
+
+## 前情提要, cont.
+
+### ggplot2 basics
+
+-   图层 ( geom_xxx )
+-   scale ( scale_xxx )
+-   坐标系统
+-   faceting ( facet_xxx )
+
+## 本次提要
+
+### part 2： ggplot2 进阶
+
+1.  如何在一张图中画多个panel？
+2.  如何写公式
+3.  ggplot2的核心是先计算，再做图
+4.  themes and legends
+5.  stacked bars 及其它
+
+# ggplot2 进阶 1 ：如何在一张图中画多个panel？
+
+## key requirements for multi-panel plots
+
+-   order / position
+-   labeling
+-   layout
+
+## combine multiple plots
+
+Useful packages:
+
+-   `gridExtra`
+-   `cowplot`
+-   `grid`
+-   `lattice`
+
+\footnotesize
+
+install or load packages
+
+```{r message=FALSE}
+if (!require("gridExtra")){ 
+  install.packages("gridExtra");
+} 
+
+if (!require("cowplot")){ 
+  install.packages("cowplot");
+} 
+
+library( cowplot );
+library( gridExtra );
+```
+
+## arranging multiple graphs using `cowplot`
+
+### cowplot:
+
+1.  `plot_grid`
+2.  `ggdraw` + `draw_plot`
+
+## prepare four panels
+
+\footnotesize
+
+```{r message=FALSE}
+library(tidyverse);
+plot.hwy <- ggplot(mpg, aes(x = cty, y = hwy, colour = factor(cyl)))+ 
+  geom_point(size=2.5)
+# Bar plot
+plot.dose <- ggplot(diamonds, aes(clarity, fill = cut)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle=70, vjust=0.5))
+plot.iris <- ggplot(iris, aes(Sepal.Length, Sepal.Width)) + 
+  geom_point() + facet_grid(. ~ Species) + stat_smooth(method = "lm") +
+  background_grid(major = 'y', minor = "none") + # add thin horizontal lines 
+  panel_border();
+plot.swiss <- swiss %>% ggplot(aes(Education, Agriculture)) +
+  geom_point() + geom_smooth();
+```
+
+## Combine four plots using plot_grid
+
+\footnotesize
+
+```{r fig.height=5, fig.width=10, message=FALSE}
+cowplot::plot_grid(plot.hwy, plot.dose, plot.iris, plot.swiss,
+                   labels=c("A", "B", "C", "D"), ncol = 2, nrow = 2)
+```
+
+## 总结，本节内容
+
+### ggplot2 基础
+
+-   优缺点
+-   用法
+-   基本组成
+
+### ggplot2 进阶
+
+-   颜色和色板
+-   复杂layout的实现
+-   公式
+-   ggplot2的数据统计逻辑
+
+### 更多阅读
+
+-   Ggplot2: Elegant Graphics for Data Analysis, Book by Hadley Wickham
+-   ggplot2 gallery provided by RStudio on Github
+
+## 写在后面
+
+1.  ggplot2 博大精深，需要一门课去讲
+2.  上手容易，精通难
+3.  太多记忆点
+4.  本节内容只涉及了基础中的基础，更多内容，包括进阶技巧和生信相关的扩展包，更多的需要同学们自行探索
+5.  遇到不会的图，先百度/Google，找包和代码
+
+## 下次预告
+
+data summary and modeling
+
+## 作业
+
+-   `Exercises and homework` 目录下 `talk09-homework.Rmd` 文件；
+
+-   完成时间：见钉群的要求

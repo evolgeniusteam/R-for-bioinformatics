@@ -1,0 +1,225 @@
+---
+title: "Talk 06 — Homework"
+subtitle: "Data Visualization II — Advanced ggplot2, Themes & Saving"
+author: "Your Name — Your Student ID"
+date: today
+CJKmainfont: "Hei"
+format:
+  pdf:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    pdf-engine: xelatex
+  html:
+    df-print: paged
+---
+
+## Instructions 说明
+
+1.  Run each code chunk to verify results. 运行每个代码块以验证结果。
+2.  Submit the compiled PDF as `姓名-学号-talk06-homework.pdf`.
+3.  All plots should have proper labels and legends. 所有图都要有合适的标签和图例。
+
+## User Verification 用户验证
+
+```{r}
+Sys.info()[["user"]]
+Sys.getenv("HOME")
+```
+
+```{r}
+library(tidyverse)
+library(cowplot)
+library(gridExtra)
+```
+
+---
+
+# Exercise 1: Multi-panel with cowplot 多图组合 {.unnumbered}
+
+## 1.1 Prepare Four Plots
+
+Create the following four plots and save them:
+
+- **p1**: `starwars` — box plot of `height` by `gender` (filter NA heights, keep top 3 genders by count)
+- **p2**: `iris` — scatter of `Sepal.Length` vs. `Sepal.Width`, colored by `Species`, with `geom_smooth()`
+- **p3**: `mtcars` — scatter of `wt` vs. `mpg`, colored by `cyl` (as factor)
+- **p4**: `ToothGrowth` — violin plot of `len` by `dose` (as factor), filled by `supp`
+
+```{r}
+## Your code here — save as p1, p2, p3, p4
+
+```
+
+## 1.2 plot_grid
+
+Combine all four plots using `cowplot::plot_grid()` in a 2×2 layout with labels A, B, C, D.
+
+```{r}
+## Your code here
+
+```
+
+## 1.3 ggdraw Free Layout
+
+Using `ggdraw()` + `draw_plot()`, arrange p1 and p2 in the top row (each 50% width), and p3 spanning the full bottom row. Add labels.
+
+```{r}
+## Your code here
+
+```
+
+---
+
+# Exercise 2: gridExtra Layouts 矩阵布局 {.unnumbered}
+
+## 2.1 grid.arrange
+
+Create three plots from `diamonds`:
+- **g1**: bar plot of `cut`
+- **g2**: box plot of `price` by `cut`
+- **g3**: histogram of `carat`
+
+Arrange them using `grid.arrange()` with a layout matrix that puts g1 on the left (full height) and g2/g3 stacked on the right.
+
+```{r}
+## Your code here
+
+```
+
+---
+
+# Exercise 3: Equations in Plots 图中公式 {.unnumbered}
+
+## 3.1 Regression Equation
+
+Using the `swiss` dataset, fit a linear model: `Fertility ~ Education`. Create a ggplot2 scatter plot with:
+
+1. Points and a smooth line
+2. The regression equation in the form: *y* = *a* + *b*·*x*
+3. *R*² and *p*-value
+4. Use `substitute()` or `bquote()` to add the equation as text
+
+```{r}
+## Your code here
+
+```
+
+## 3.2 Greek Letters
+
+Create a plot that displays all 24 Greek letters (both lowercase and uppercase) using `geom_text()` with `parse = TRUE`. Arrange them in a grid.
+
+```{r}
+## Your code here
+
+```
+
+---
+
+# Exercise 4: Themes & Customization 主题与自定义 {.unnumbered}
+
+## 4.1 Theme Comparison
+
+Using `mpg` dataset, create a box plot of `hwy` by `class`. Create 4 versions, each with a different built-in theme (`theme_bw`, `theme_minimal`, `theme_classic`, `theme_light`). Arrange them in a 2×2 layout.
+
+```{r}
+## Your code here
+
+```
+
+**Question**: Which theme would you use for a publication figure? Why? 哪个主题适合发表？为什么？
+
+**Answer**:
+
+## 4.2 Custom theme()
+
+Take the `theme_bw` version from 4.1 and customize it:
+1. Move legend to the bottom
+2. Rotate x-axis labels 45 degrees
+3. Increase base font size to 14
+4. Remove minor grid lines
+
+```{r}
+## Your code here
+
+```
+
+## 4.3 labs() Mastery
+
+Using the `iris` dataset, create a scatter plot of `Sepal.Length` vs. `Petal.Length`, colored and shaped by `Species`. Use `labs()` to set:
+- Custom x and y labels
+- Legend titles for color and shape (merged into one)
+- A title, subtitle, and caption
+
+```{r}
+## Your code here
+
+```
+
+---
+
+# Exercise 5: Saving Plots 保存图形 {.unnumbered}
+
+## 5.1 ggsave Practice
+
+Save the plot from Exercise 4.3 as both PDF (vector) and PNG (raster, 300 dpi). Use `ggsave()`.
+
+```{r}
+## Your code here
+
+```
+
+**Question**: When would you use PDF vs. PNG for saving figures? PDF和PNG各适用于什么场景？
+
+**Answer**:
+
+## 5.2 Interactive Plot
+
+Install `plotly` (if not already) and convert the plot from Exercise 4.3 to an interactive version using `ggplotly()`. What additional features does the interactive version provide?
+
+```{r}
+## Your code here
+
+```
+
+**Answer**:
+
+---
+
+# Exercise 6: AI-Assisted Practice AI 辅助练习 {.unnumbered}
+
+## 6.1 Multi-panel Help
+
+Ask your AI tool: *"How do I create a publication-quality multi-panel figure in R with shared legends and consistent styling? Show me with example code."*
+
+**AI Response**:
+
+```
+
+```
+
+## 6.2 Theme Customization
+
+Ask your AI tool: *"Show me how to create a custom ggplot2 theme that mimics the style of Nature or Science journals."*
+
+**AI Response**:
+
+```
+
+```
+
+## 6.3 Debug
+
+If any exercise above gave you errors, paste the error message here and ask your AI tool for help. Record the solution.
+
+**Error**:
+
+```
+
+```
+
+**AI Solution**:
+
+```
+
+```

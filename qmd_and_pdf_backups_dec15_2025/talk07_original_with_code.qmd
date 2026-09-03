@@ -1,0 +1,381 @@
+---
+title: "AI-powered bioinformatic analysis using R, #7"
+subtitle: "Data Visualization III — Bioinformatics Plots with Real Data"
+author: "Wei-Hua Chen (CC BY-NC 4.0)"
+institute: "HUST, China"
+date: today
+
+CJKmainfont: "Arial"
+
+format: 
+  beamer:
+    aspectratio: 1610
+    navigation: vertical
+    theme: AnnArbor
+    colortheme: beaver
+    fonttheme: structurebold
+    highlight: tango
+    slide_level: 2
+    toc: true
+    pdf-engine: xelatex
+    header-includes:
+      - \AtBeginSubsection{}
+
+execute:
+  echo: true
+  fig-width: 8
+  fig-height: 4.5
+---
+
+# Bioinformatics Visualization Overview
+
+## Common Plot Types in Bioinformatics
+
+| Plot Type | Use Case | Typical Data |
+|-----------|----------|--------------|
+| **Stacked bar** | Microbiome composition | OTU/ASV abundance table |
+| **Heatmap** | Gene expression, abundance patterns | Matrix of features × samples |
+| **PCA / PCoA** | Sample clustering, batch effects | Any multivariate data |
+| **Volcano plot** | Differential expression/abundance | Fold change + p-value |
+| **Box/Violin plot** | Group comparisons | Alpha diversity, gene expression |
+| **MA plot** | Expression vs. mean | RNA-seq count data |
+| **Manhattan plot** | GWAS results | SNP positions + p-values |
+| **Phylogenetic tree** | Evolutionary relationships | Sequence alignments |
+
+## Today's Focus
+
+We'll create **real bioinformatics figures** using actual microbiome and genomics data, with proper interpretation.
+
+# Stacked Bar Plots for Microbiome
+
+## Microbiome Data Structure
+
+\footnotesize
+```{r}
+library(tidyverse)
+
+# Mock microbiome species abundance data
+speabu <- read_tsv(file = "data/talk09/mock_species_abundance.txt")
+head(speabu)
+```
+\normalsize
+
+Each row: one genus in one sample. Columns: sample `id`, `genus`, relative `abundance` (%).
+
+## Stacked Bar Plot
+
+\footnotesize
+```{r fig.width=10, fig.height=4}
+ggplot(speabu, aes(x = id, y = abundance, fill = genus)) +
+  geom_bar(stat = "identity", position = "stack", color = "black", width = 0.8)
+```
+\normalsize
+
+**Interpretation**: Each bar = one sample; each color segment = one genus. Compare community composition across samples.
+
+## Control Genus Order with reorder()
+
+\footnotesize
+```{r fig.height=4, fig.width=10}
+speabu$genus <- reorder(speabu$genus, speabu$abundance, median)
+ggplot(speabu, aes(x = id, y = abundance, fill = genus)) +
+  geom_bar(stat = "identity", position = "stack", color = "white", width = 0.8)
+```
+\normalsize
+
+`reorder()` sorts genera by median abundance — high-abundance genera at top.
+
+## position = "dodge"
+
+\footnotesize
+```{r fig.height=4, fig.width=10}
+ggplot(speabu, aes(x = id, y = abundance, fill = genus)) +
+  geom_bar(stat = "identity", position = "dodge", color = "white", width = 0.8)
+```
+\normalsize
+
+Dodge = side-by-side bars. Better for comparing individual genera across samples.
+
+## Add Labels on Stacked Bars
+
+\footnotesize
+```{r fig.height=4, fig.width=10}
+speabu <- speabu %>% arrange(id, desc(factor(genus))) %>%
+  group_by(id) %>% mutate(ypos = cumsum(abundance) - abundance / 2)
+
+ggplot(speabu, aes(x = id, y = abundance, fill = genus)) +
+  geom_bar(stat = "identity", position = "stack", color = "black", width = 0.8) +
+  geom_text(aes(y = ypos, label = paste(abundance, "%", sep = "")), color = "white")
+```
+\normalsize
+
+## geom_bar() Default Stat
+
+**Key insight**: `geom_bar(stat = "count")` counts occurrences. For pre-computed values, use `stat = "identity"`.
+
+Other default stats:
+- `geom_bar`: count
+- `geom_boxplot`: boxplot
+- `geom_histogram`: bin
+- `geom_density`: density
+- `geom_quantile`: quantile
+
+# Real Microbiome Data
+
+## Load Real Genus-level Abundance Data
+
+\footnotesize
+```{r}
+# Real gut microbiome genus data (Qin et al.)
+qin_data <- read_csv("data/talk12/data/Qin.genus.data.csv")
+dim(qin_data)
+qin_data[1:5, 1:8]  # first 5 samples, first 8 genera
+```
+\normalsize
+
+This dataset contains ~250 samples × ~140 genera from a human gut microbiome study.
+
+## Reshape to Long Format for ggplot2
+
+\footnotesize
+```{r}
+# Convert from wide (genera as columns) to long format
+qin_long <- qin_data %>%
+  pivot_longer(-1, names_to = "genus", values_to = "abundance") %>%
+  rename(sample = 1)
+
+head(qin_long)
+```
+\normalsize
+
+## Top Genera Stacked Bar
+
+\footnotesize
+```{r fig.height=5, fig.width=10}
+# Identify top 8 genera by mean abundance
+top_genera <- qin_long %>%
+  group_by(genus) %>%
+  summarise(mean_ab = mean(abundance)) %>%
+  slice_max(mean_ab, n = 8) %>%
+  pull(genus)
+
+# Combine rare genera into "Others"
+qin_plot <- qin_long %>%
+  mutate(genus = ifelse(genus %in% top_genera, genus, "Others")) %>%
+  group_by(sample, genus) %>%
+  summarise(abundance = sum(abundance), .groups = "drop")
+
+ggplot(qin_plot, aes(x = sample, y = abundance, fill = genus)) +
+  geom_bar(stat = "identity", position = "stack") +
+  theme(axis.text.x = element_blank(), axis.ticks.x = element_blank()) +
+  labs(x = "Sample", y = "Relative Abundance (%)",
+       title = "Gut Microbiome Composition (Top 8 Genera)")
+```
+\normalsize
+
+## Interpretation
+
+- **Bacteroides** dominates in most samples — typical of Western gut microbiomes
+- **Prevotella** is abundant in a subset of samples — enterotype indicator
+- **Faecalibacterium** is consistently present — beneficial butyrate producer
+- Large inter-individual variation is normal in microbiome studies
+
+# PCA for Sample Clustering
+
+## Why PCA in Bioinformatics?
+
+- **Dimensionality reduction**: 140 genera → 2 principal components
+- **Visualize sample relationships**: similar microbiomes cluster together
+- **Detect batch effects**: samples from same batch clustering separately
+- **Identify outliers**: samples far from the main cluster
+
+## Prepare Data for PCA
+
+\footnotesize
+```{r}
+# Remove low-abundance genera (present in <10% of samples)
+qin_mat <- qin_data %>%
+  column_to_rownames(colnames(qin_data)[1]) %>%
+  as.matrix()
+
+# Filter: genera present in at least 10% of samples
+qin_filtered <- qin_mat[, colMeans(qin_mat > 0) >= 0.1]
+
+# Log-transform (add pseudocount to avoid log(0))
+qin_log <- log10(qin_filtered + 0.01)
+
+dim(qin_log)
+```
+\normalsize
+
+## Compute PCA
+
+\footnotesize
+```{r}
+pca_res <- prcomp(t(qin_log), scale. = TRUE)
+
+# Variance explained
+var_exp <- round(100 * pca_res$sdev^2 / sum(pca_res$sdev^2), 1)
+
+# Create plotting data frame
+pca_df <- data.frame(
+  PC1 = pca_res$x[, 1],
+  PC2 = pca_res$x[, 2],
+  sample = rownames(pca_res$x)
+)
+
+head(pca_df)
+```
+\normalsize
+
+## PCA Plot — ggplot2
+
+\footnotesize
+```{r fig.height=4, fig.width=6}
+ggplot(pca_df, aes(x = PC1, y = PC2)) +
+  geom_point(size = 2, alpha = 0.7, color = "steelblue") +
+  labs(x = paste0("PC1 (", var_exp[1], "%)"),
+       y = paste0("PC2 (", var_exp[2], "%)"),
+       title = "PCA of Gut Microbiome Samples") +
+  theme_minimal()
+```
+\normalsize
+
+## PCA Interpretation
+
+- **PC1** explains the most variance (typically 15-30% in microbiome data)
+- Samples close together = similar microbiome composition
+- Look for clusters that might correspond to:
+  - Enterotypes (Bacteroides vs. Prevotella dominated)
+  - Disease status (if metadata available)
+  - Technical batches
+
+# Box Plots & Violin Plots
+
+## Alpha Diversity Comparison
+
+In microbiome studies, **alpha diversity** measures within-sample diversity. Common metrics:
+- **Richness**: number of species observed
+- **Shannon index**: richness + evenness
+- **Simpson index**: probability two random reads are from different species
+
+## Simulated Diversity Data
+
+\footnotesize
+```{r}
+set.seed(123)
+div_data <- tibble(
+  group = rep(c("Healthy", "Disease"), each = 30),
+  Shannon = c(rnorm(30, mean = 3.5, sd = 0.5),
+              rnorm(30, mean = 2.8, sd = 0.6)),
+  Richness = c(rnorm(30, mean = 120, sd = 25),
+               rnorm(30, mean = 85, sd = 30))
+)
+head(div_data)
+```
+\normalsize
+
+## Box Plot with Significance
+
+\footnotesize
+```{r fig.height=3.5, fig.width=5}
+ggplot(div_data, aes(x = group, y = Shannon, fill = group)) +
+  geom_boxplot(alpha = 0.7, outlier.shape = 21) +
+  scale_fill_manual(values = c("Healthy" = "#4DBBD5", "Disease" = "#E64B35")) +
+  labs(x = "", y = "Shannon Diversity Index",
+       title = "Alpha Diversity: Healthy vs. Disease") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+\normalsize
+
+## Violin + Box Plot Combo
+
+\footnotesize
+```{r fig.height=3.5, fig.width=5}
+ggplot(div_data, aes(x = group, y = Shannon, fill = group)) +
+  geom_violin(alpha = 0.5, draw_quantiles = 0.5) +
+  geom_boxplot(width = 0.15, fill = "white", outlier.shape = NA) +
+  scale_fill_manual(values = c("Healthy" = "#4DBBD5", "Disease" = "#E64B35")) +
+  labs(x = "", y = "Shannon Diversity Index",
+       title = "Distribution Comparison") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+\normalsize
+
+**Interpretation**: The disease group shows lower Shannon diversity (p < 0.001 by t-test). Reduced gut microbiome diversity is associated with many diseases.
+
+# Heatmaps
+
+## When to Use Heatmaps
+
+Heatmaps visualize **matrix data** — rows = features (genes, genera), columns = samples, color = expression/abundance.
+
+Common in:
+- Gene expression clustering
+- Microbiome abundance patterns
+- Correlation matrices
+
+## Simple Heatmap with ggplot2
+
+\footnotesize
+```{r fig.height=5, fig.width=10}
+# Select top 20 most abundant genera
+top20 <- qin_long %>%
+  group_by(genus) %>%
+  summarise(mean_ab = mean(abundance)) %>%
+  slice_max(mean_ab, n = 20) %>%
+  pull(genus)
+
+# Prepare matrix subset
+qin_heatmap <- qin_long %>%
+  filter(genus %in% top20) %>%
+  mutate(abundance = log10(abundance + 0.01))
+
+ggplot(qin_heatmap, aes(x = sample, y = genus, fill = abundance)) +
+  geom_tile() +
+  scale_fill_gradient(low = "navy", high = "yellow",
+                      name = "log10(Abundance)") +
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x = element_blank()) +
+  labs(x = "Sample", y = "Genus",
+       title = "Gut Microbiome Heatmap (Top 20 Genera)")
+```
+\normalsize
+
+## Heatmap Interpretation
+
+- **Rows**: individual genera (features)
+- **Columns**: individual samples
+- **Color intensity**: relative abundance (yellow = high, dark = low)
+- **Patterns**:
+  - Vertical stripes = samples with similar genus profiles
+  - Horizontal bands = genera consistently high/low across samples
+  - Clustered patterns suggest co-occurring genera
+
+---
+
+# Summary
+
+## What We Covered
+
+| Plot Type | Key Function | Bioinformatics Use |
+|-----------|-------------|-------------------|
+| **Stacked Bar** | `geom_bar(stat="identity")` | Microbiome composition |
+| **PCA** | `prcomp()` + `geom_point()` | Sample clustering |
+| **Box/Violin** | `geom_boxplot()`, `geom_violin()` | Group comparisons (diversity) |
+| **Heatmap** | `geom_tile()` | Feature × sample matrices |
+| **Position** | `"stack"`, `"dodge"`, `"jitter"` | Bar/point layout control |
+
+## Key Takeaway
+
+Bioinformatics visualization is about **telling the data's story**: composition, clustering, comparison, and patterns — all with clear interpretation.
+
+## Next Talk
+
+**Talk 08**: Strings, Iteration & Functional Programming (`stringr` + `purrr` + apply family)
+
+## Homework
+
+Complete `Homework_AI_powered_R/talk07-homework.qmd`

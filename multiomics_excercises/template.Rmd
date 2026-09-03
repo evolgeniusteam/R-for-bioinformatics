@@ -1,0 +1,76 @@
+---
+title: "talk10 练习与作业"
+documentclass: ctexart
+output:
+  pdf_document:
+    latex_engine: xelatex
+    toc: true
+    toc_depth: 2
+  word_document: default
+  html_document:
+    df_print: paged
+knit: (
+  function(inputFile, encoding) { 
+
+    pSubTitle <- 'talk10-homework'
+
+    rmarkdown::render( 
+      input       = inputFile, 
+      encoding    = encoding, 
+      params      = list(sub_title = pSubTitle),      
+      output_file = pSubTitle) })
+---
+
+## 练习和作业说明
+
+将相关代码填写入以 \`\`\`{r} \`\`\` 标志的代码框中，运行并看到正确的结果；
+
+完成后，用工具栏里的"Knit"按键生成PDF文档；
+
+**将PDF文档**改为：**`姓名-学号-talk10作业.pdf`**，并提交到老师指定的平台/钉群。
+
+## Talk10 内容回顾
+
+
+## 练习与作业1：
+
+------------------------------------------------------------------------
+
+###   ****
+
+
+
+```{r}
+## 代码写这里，并运行；
+
+```
+
+
+## 练习与作业2：
+
+------------------------------------------------------------------------
+
+###   ****
+
+
+
+```{r}
+## 代码写这里，并运行；
+
+```
+
+
+## 练习与作业3：
+
+------------------------------------------------------------------------
+
+###   ****
+
+
+
+```{r}
+## 代码写这里，并运行；
+
+```
+
+

@@ -1,0 +1,196 @@
+---
+title: "Talk 09 Homework — Statistical Analysis & Machine Learning Basics"
+author: "Wei-Hua Chen (CC BY-NC 4.0)"
+date: today
+
+format: 
+  pdf:
+    documentclass: article
+    papersize: a4
+    fontsize: 11pt
+    linestretch: 1.5
+    geometry:
+      - top=2.5cm
+      - bottom=2.5cm
+      - left=2.5cm
+      - right=2.5cm
+    pdf-engine: xelatex
+
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+library(tidyverse)
+```
+
+## Exercise 1: Descriptive Statistics & Hypothesis Testing
+
+Use the built-in `iris` dataset.
+
+**1a.** Calculate the mean, median, standard deviation, and IQR of `Sepal.Length` for **each species**. Display the results as a nicely formatted table.
+
+```{r}
+# Your code here
+
+```
+
+**1b.** Perform a **t-test** to compare `Sepal.Length` between *setosa* and *versicolor*. Report and interpret the p-value.
+
+```{r}
+# Your code here
+
+```
+
+**1c.** Perform a **one-way ANOVA** to test whether `Sepal.Length` differs among the three species. If significant, run a **Tukey HSD** post-hoc test. Which species pairs differ significantly?
+
+```{r}
+# Your code here
+
+```
+
+---
+
+## Exercise 2: Multiple Testing Correction
+
+**2a.** Generate 500 p-values: 450 from `runif(450)` (null distribution) and 50 from `rbeta(50, 0.3, 3)` (true signals).
+
+```{r}
+# Your code here
+
+```
+
+**2b.** Apply both **Bonferroni** and **Benjamini-Hochberg (BH/FDR)** corrections. Count how many tests are significant (p < 0.05) with each method. Which correction is more appropriate for this scenario, and why?
+
+```{r}
+# Your code here
+
+```
+
+---
+
+## Exercise 3: Correlation Analysis
+
+Use the built-in `mtcars` dataset.
+
+**3a.** Compute the **Pearson** and **Spearman** correlation between `mpg` and `wt` (weight). Are they similar? Why or why not?
+
+```{r}
+# Your code here
+
+```
+
+**3b.** Create a scatter plot of `mpg` vs. `wt` with a linear regression line. Add the Pearson correlation coefficient and p-value as text annotation on the plot.
+
+```{r}
+# Your code here
+
+```
+
+---
+
+## Exercise 4: Clustering
+
+Use the built-in `USArrests` dataset (violent crime rates by US state).
+
+**4a.** Standardize the data with `scale()`, then perform **k-means clustering** with k = 3. Add the cluster assignments as a new column.
+
+```{r}
+# Your code here
+
+```
+
+**4b.** Use the **elbow method** to determine the optimal k. Plot WSS vs. k for k = 1 to 10. What k would you choose based on the plot?
+
+```{r}
+# Your code here
+
+```
+
+**4c.** Perform **hierarchical clustering** and plot the dendrogram. Use `rect.hclust()` to highlight k = 3 clusters.
+
+```{r}
+# Your code here
+
+```
+
+---
+
+## Exercise 5: Dimensionality Reduction
+
+Use the built-in `iris` dataset (use only the 4 numeric columns).
+
+**5a.** Perform **PCA** on the iris data (remember to scale!). What proportion of variance is explained by PC1 and PC2 combined?
+
+```{r}
+# Your code here
+
+```
+
+**5b.** Create a **PCA score plot** (PC1 vs. PC2) with points colored by `Species`. Add ellipses for each species group.
+
+```{r}
+# Your code here
+
+```
+
+**5c.** (Bonus) Perform **t-SNE** or **UMAP** on the iris data and create a scatter plot colored by Species. How does it compare to the PCA plot?
+
+```{r}
+# Your code here
+
+```
+
+---
+
+## Exercise 6: Classification with Random Forest
+
+Use the built-in `iris` dataset. We'll predict `Species` from the 4 numeric features.
+
+**6a.** Train a **Random Forest** model to predict `Species`. Report the **OOB error rate** and the **confusion matrix**.
+
+```{r}
+# Your code here
+
+```
+
+**6b.** Plot the **variable importance** from the Random Forest model. Which feature is most important for classification?
+
+```{r}
+# Your code here
+
+```
+
+**6c.** (Bonus) Use `caret::train()` to perform **5-fold cross-validation** on the Random Forest model. Report the cross-validated accuracy. How does it compare to the OOB estimate?
+
+```{r}
+# Your code here
+
+```
+
+---
+
+## Bonus Challenge: Bioinformatics-style Analysis
+
+The `mtcars` dataset contains various car attributes. Treat this as if it were a small bioinformatics dataset:
+
+- `mpg` = a clinical outcome (e.g., patient response)
+- `cyl`, `hp`, `wt`, etc. = measured features (e.g., gene expression, metabolites)
+
+**Challenge:** Write a complete mini-analysis pipeline:
+
+1. Descriptive statistics of `mpg` by `cyl` groups
+2. ANOVA to test if `mpg` differs by `cyl`
+3. Correlation analysis of `mpg` with all numeric features
+4. PCA to visualize sample relationships
+5. Random Forest to predict `cyl` from all other features
+
+Summarize your findings in 3-5 sentences.
+
+```{r}
+# Your complete analysis pipeline here
+
+```

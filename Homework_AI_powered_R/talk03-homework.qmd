@@ -1,0 +1,746 @@
+---
+title: "Talk 03 — Homework"
+subtitle: "R Language Basics II — Factors, Lists, Data Frames, File I/O"
+author: "Your Name — Your Student ID"
+date: today
+
+CJKmainfont: "Hei"
+
+format:
+  pdf:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    pdf-engine: xelatex
+  html:
+    df-print: paged
+---
+
+## Instructions 作业说明 {.unnumbered}
+
+- Write your R code inside `{r}` code chunks, run them, and verify the output. 将R代码填入 `{r}` 代码块中，运行并验证输出结果。
+- After completing all exercises, click the **Render** button in RStudio to generate a PDF. 完成后，点击 RStudio 中的 **Render** 按钮生成 PDF。
+- **Rename the PDF** to: `Name-StudentID-talk03-homework.pdf` and submit to the course platform. **将PDF重命名**为：`姓名-学号-talk03-homework.pdf`，提交到课程平台。
+- **Use CodeBuddy AI** whenever you get stuck — it's part of the learning process! 遇到困难时请使用 **CodeBuddy AI** ——这是学习过程的一部分！
+
+## User Verification 用户身份验证 {.unnumbered}
+
+Run the following to verify your identity 运行以下代码验证你的身份:
+
+```{r}
+Sys.info()[["user"]]
+Sys.getenv("HOME")
+```
+
+## Talk 03 Content Review 内容回顾
+
+Today we covered 今天的内容包括:
+
+- **Factors** 因子: `factor()`, `levels`, `ordered`, `forcats` (`fct_relevel`, `fct_recode`, `fct_lump`)
+- **Lists** 列表: creation, naming, `$` / `[[ ]]` vs `[ ]`, nested access
+- **Data Frames** 数据框: `data.frame()`, subsetting `[row, col]`, `rbind`/`cbind`, column operations
+- **Tibbles** 数据表: `tibble()`/`tribble()`, vs data.frame differences, `add_row`/`add_column`/`bind_rows`
+- **File I/O** 文件读写: `read_csv`, `read_tsv`, `write_csv`, `col_types`, `readr`
+- **Tidy Data** 整洁数据: variables = columns, observations = rows, `pivot_longer`
+- **lubridate** 日期处理: `ymd()`, `mdy()`, `today()`, date arithmetic
+
+---
+
+# Exercise 1: Factors 因子 {.unnumbered}
+
+## 1.1 Create a basic factor
+
+Create a factor from the following vector of blood types. Display the factor and its levels. 从以下血型向量创建因子，显示因子及其水平。
+
+```{r}
+blood_types <- c("A", "O", "B", "AB", "O", "A", "B", "A", "AB", "O")
+
+## Write your code here — use factor()
+```
+
+## 1.2 Control the level order
+
+Create the same factor but with levels in this order: `"O"`, `"A"`, `"B"`, `"AB"`. Why might you want to control level order? 用指定顺序创建因子：`"O"`, `"A"`, `"B"`, `"AB"`。为什么要控制水平顺序？
+
+```{r}
+## Write your code here
+```
+
+**Question**: Why would you choose this particular order (`O`, `A`, `B`, `AB`)? 为什么选择这个顺序？
+
+**Answer**:
+
+## 1.3 Ordered factor for disease severity
+
+Create an **ordered** factor for disease severity: `"Mild"`, `"Severe"`, `"Moderate"`, `"Mild"`, `"Severe"`. Verify that `"Mild" < "Severe"` returns `TRUE`. 创建有序因子，验证比较运算。
+
+```{r}
+severity <- c("Mild", "Severe", "Moderate", "Mild", "Severe")
+
+## Write your code here — use ordered() or factor(..., ordered = TRUE)
+```
+
+```{r}
+## Test the comparison here
+```
+
+## 1.4 Count factor levels with `table()`
+
+Use `table()` to count how many blood samples of each type are in the `blood_types` vector from 1.1. Which type is most common? 用 `table()` 统计每种血型的样本数。哪种血型最常见？
+
+```{r}
+## Write your code here
+```
+
+**Answer**:
+
+## 1.5 `forcats` — reorder by frequency
+
+Use `fct_infreq()` to reorder the levels of `blood_types` factor by frequency (most common first). Then use `table()` again to confirm. 用 `fct_infreq()` 按频率重新排序。
+
+```{r}
+library(forcats)
+
+## Write your code here
+```
+
+## 1.6 `forcats` — rename factor levels
+
+Use `fct_recode()` to rename the levels of the blood type factor: `"A"` → `"Type A"`, `"B"` → `"Type B"`, `"AB"` → `"Type AB"`, `"O"` → `"Type O"`. 用 `fct_recode()` 重命名因子水平。
+
+```{r}
+## Write your code here
+```
+
+## 1.7 Gene expression categories — practical exercise
+
+Create an ordered factor from the gene expression data below. Levels should be: `"Down"`, `"Unchanged"`, `"Up"` (in that order). Then create a `table()` summary. 创建基因表达类别因子并做汇总。
+
+```{r}
+expr_result <- c("Up", "Up", "Down", "Unchanged", "Up", "Down",
+                 "Unchanged", "Unchanged", "Up", "Down", "Down", "Up")
+
+## Write your code here — create the factor with ordered levels
+```
+
+```{r}
+## Write table() summary here
+```
+
+**Question**: How many genes are up-regulated? Down-regulated? Unchanged? 有多少基因上调、下调、不变？
+
+**Answer**:
+
+---
+
+# Exercise 2: Lists 列表 {.unnumbered}
+
+## 2.1 Create a patient record list
+
+Create a list `patient` with these elements:
+- `id`: `"P042"` (character)
+- `age`: `58` (numeric)
+- `diagnosis`: `"Type 2 Diabetes"` (character)
+- `glucose_readings`: `c(142, 155, 138, 167, 149)` (numeric vector)
+- `on_medication`: `TRUE` (logical)
+
+创建一个包含病人信息的列表。
+
+```{r}
+## Write your code here
+```
+
+## 2.2 Access list elements
+
+Using the `patient` list from 2.1, extract the following using **three different access methods** (`$`, `[[ ]]`, `[ ]`):
+
+用三种不同的方式从列表中提取元素。
+
+```{r}
+# (a) Extract the patient id using $
+# (b) Extract glucose_readings using [[ ]]
+# (c) Extract the first two glucose readings using [ ] after [[ ]]
+# (d) Use [ ] to get a sub-list containing only id and diagnosis
+```
+
+**Question**: What is the difference in result type between `patient["id"]` and `patient[["id"]]`? Use `class()` to verify. 两者结果类型有何不同？用 `class()` 验证。
+
+**Answer**:
+
+## 2.3 Nested list — differential expression result
+
+Create a list `de_result` representing a differential expression analysis output:
+- `gene`: `"TP53"`
+- `statistics`: a **sub-list** with `log2FC = -2.1`, `p_value = 0.003`, `fdr = 0.042`
+- `sample_ids`: `c("T1", "T2", "T3", "N1", "N2", "N3")`
+
+Then extract the `fdr` value from the nested list using `$`. 创建嵌套列表并提取元素。
+
+```{r}
+## Write your code here
+```
+
+```{r}
+## Extract fdr using $ chaining
+```
+
+## 2.4 Modify a list
+
+Starting with the `patient` list from 2.1:
+- Add a new element `bmi` with value `28.5`
+- Change `diagnosis` to `"Type 2 Diabetes with complications"`
+- Remove the `on_medication` element by setting it to `NULL`
+- Display the modified list
+
+从 2.1 的列表出发，添加、修改、删除元素。
+
+```{r}
+## Write your code here — modify patient list
+```
+
+## 2.5 List of analysis results
+
+Create a list `analysis_results` that contains:
+- Element `"pca"`: a numeric vector `c(PC1 = 0.45, PC2 = 0.23, PC3 = 0.12)`
+- Element `"significant_genes"`: a character vector `c("BRCA1", "TP53", "EGFR", "MYC")`
+- Use `length()` to check how many top-level elements the list has
+- Use `length()` on `analysis_results$significant_genes` to see how many significant genes
+
+创建分析结果列表。
+
+```{r}
+## Write your code here
+```
+
+---
+
+# Exercise 3: Data Frames 数据框 {.unnumbered}
+
+## 3.1 Create a data frame from scratch
+
+Create a data frame `patients` with 4 patients:
+
+| Name | Age | BloodType | Glucose |
+|------|-----|-----------|---------|
+| Zhang | 45 | A | 98 |
+| Li | 62 | O | 142 |
+| Wang | 38 | B | 105 |
+| Chen | 55 | AB | 128 |
+
+Use `stringsAsFactors = FALSE` to keep `BloodType` as character. 用 `data.frame()` 创建数据框，注意设置 `stringsAsFactors = FALSE`。
+
+```{r}
+## Write your code here
+```
+
+## 3.2 Inspect the data frame
+
+Apply the following inspection functions to `patients` from 3.1 and report what you find: 用以下函数检查数据框。
+
+```{r}
+# Use: nrow(), ncol(), dim(), str(), summary()
+```
+
+## 3.3 Subset rows and columns
+
+Using `patients` from 3.1, perform the following operations: 对数据框进行子集提取。
+
+```{r}
+# (a) Select the first two rows
+# (b) Select the "Name" and "Glucose" columns
+# (c) Select rows where Glucose > 110
+# (d) Select the "BloodType" column as a vector (not a data frame)
+```
+
+## 3.4 Add and remove columns
+
+Starting with `patients` from 3.1: 添加和删除列。
+
+```{r}
+# (a) Add a column "BMI" with values c(23.5, 28.1, 21.7, 25.3)
+# (b) Add a column "Diabetic" as a logical: Glucose > 125
+# (c) Remove the "BloodType" column
+# (d) Display the result
+```
+
+## 3.5 Work with `VADeaths`
+
+The built-in dataset `VADeaths` contains death rates in Virginia (1940). 使用内置数据集 `VADeaths`。
+
+```{r}
+# (a) Check the class of VADeaths
+# (b) Convert it to a data frame
+# (c) Add a "Total" column (sum of each row)
+# (d) Reorder columns so "Total" is first
+```
+
+## 3.6 Work with `swiss`
+
+The built-in `swiss` dataset contains Swiss fertility data. 使用内置 `swiss` 数据集。
+
+```{r}
+# (a) Select rows 1, 2, 3, 10, 11, 12, 13 and columns Examination, Education, Infant.Mortality
+# (b) In the result, find the row named "Sarine" and set its Infant.Mortality to NA
+# (c) Add a column "Mean" with the row-wise mean of each row
+```
+
+## 3.7 Merge three vectors into a data frame
+
+Merge the following three vectors into a single data frame: 合并三个向量为数据框。
+
+```{r}
+Id <- LETTERS[1:26]
+x  <- seq(1, 52, along.with = Id)
+y  <- seq(-20, 20, along.with = Id)
+
+## Write your code here
+```
+
+**Question**: What does `along.with` do in `seq()`? Explain with an example. `along.with` 参数的作用是什么？举例说明。
+
+**Answer**:
+
+## 3.8 Merge two data frames by a common column
+
+Merge `df1` and `df2` by their `Id` column: 按共同列合并两个数据框。
+
+```{r}
+df1 <- data.frame(Id = 1:4, Age = c(14, 12, 15, 10))
+df2 <- data.frame(Id = 1:4, Sex = c("F", "M", "M", "F"), Code = c("a", "b", "c", "d"))
+
+## Write your code here — use merge() or cbind()
+```
+
+```{r}
+# Then remove the "Code" column from the result
+```
+
+## 3.9 Recycling with `cbind()`
+
+Run the following code and answer each question: 运行以下代码并回答问题。
+
+```{r}
+df3 <- data.frame(data = 1:10, group = c("A", "B"))
+
+# (a) cbind(df3, newcol = 1)        — does it work?
+# (b) cbind(df3, newcol = 1:10)     — does it work?
+# (c) cbind(df3, newcol = 1:2)      — does it work?
+# (d) cbind(df3, newcol = 1:3)      — does it work?
+```
+
+**Question**: Explain which cases work and which don't. What recycling rules apply to `cbind` with data frames? 哪些情况可行，哪些不可行？`cbind` 的循环规则是什么？
+
+**Answer**:
+
+---
+
+# Exercise 4: Tibbles 数据表 {.unnumbered}
+
+## 4.1 Create a tibble
+
+Create a tibble with:
+- `gene`: `c("BRCA1", "TP53", "EGFR", "MYC", "KRAS")`
+- `log2FC`: `c(2.3, -1.5, 0.8, 3.1, -0.4)`
+- `significant`: calculated as `abs(log2FC) > 1` (use the column reference!)
+
+用 `tibble()` 创建数据表，利用 tibble 的顺序计算特性。
+
+```{r}
+library(tibble)
+
+## Write your code here — create tibble with sequential column evaluation
+```
+
+## 4.2 Create a tibble with `tribble()`
+
+Recreate the same gene data using `tribble()` (row-by-row format). 用 `tribble()` 按行创建同样的数据。
+
+```{r}
+## Write your code here
+```
+
+## 4.3 Tibble subsetting — test `drop` behavior
+
+Create a tibble `tb <- tibble(x = 1:3, y = 3:1, z = c("a", "b", "c"))` and extract: 测试 tibble 子集行为。
+
+```{r}
+tb <- tibble(x = 1:3, y = 3:1, z = c("a", "b", "c"))
+
+# (a) Extract column x — use class() to check if it stays a tibble
+# (b) Extract column x as a vector (not a tibble)
+# (c) Extract columns x and y as a tibble
+```
+
+**Question**: What is the key difference between `tb[1]`, `tb[[1]]`, and `tb$x`? Which returns a tibble vs a vector? 三种访问方式分别返回什么类型？
+
+**Answer**:
+
+## 4.4 Explain the recycling difference
+
+Explain why this works: 解释为什么 data.frame 可行而 tibble 不可行。
+
+```{r eval=FALSE}
+data.frame(a = 1:6, b = LETTERS[1:2])   # works
+# tibble(a = 1:6, b = LETTERS[1:2])     # doesn't work — why?
+```
+
+**Question**: What is the recycling rule difference between `data.frame()` and `tibble()`? data.frame 和 tibble 的循环规则有何不同？
+
+**Answer**:
+
+## 4.5 Build a tibble row-by-row
+
+Create an empty tibble with columns `name` (character), `age` (integer), `score` (double), then use `add_row()` to add three rows of random data. 创建空 tibble 并逐行添加数据。
+
+```{r}
+## Write your code here
+## Step 1: Create empty tibble with column definitions
+## Step 2: Add three rows using add_row()
+```
+
+## 4.6 Convert between data frame and tibble
+
+```{r}
+# (a) Convert the built-in "mtcars" dataset to a tibble
+# (b) Print the first 3 rows
+# (c) Convert it back to a regular data frame
+```
+
+## 4.7 Tibble advantages summary
+
+**Question**: List at least 4 advantages of `tibble` over `data.frame`. Show a code example for one of them. 列出 tibble 相比 data.frame 的至少4个优势，并用代码示例说明其中一个。
+
+**Answer**:
+
+```{r}
+## Code example for one advantage
+```
+
+---
+
+# Exercise 5: Data Import / Export 文件读写 {.unnumbered}
+
+## 5.1 Read iris.csv with explicit column types
+
+Read `../data/talk03/iris.csv` using `read_csv()`. Use `col_types` to specify all 5 columns explicitly (4 × `col_double()` + 1 × `col_character()`). 用 `read_csv()` 读取 iris.csv，显式指定列类型。
+
+```{r}
+library(tidyverse)
+
+## Write your code here
+```
+
+```{r}
+# Check the result with str() or glimpse()
+```
+
+## 5.2 Read a TSV file
+
+Read `../data/talk03/states1.csv` (it's actually a CSV with semicolons as delimiter — check its content first). Note: some files use `;` or other delimiters. Show how to read it correctly with `read_delim()`. 读取使用非标准分隔符的文件。
+
+```{r}
+# First, use read_lines() to peek at the first 3 lines of the file
+```
+
+```{r}
+# Then read it with the correct delimiter
+```
+
+## 5.3 Write data to file
+
+Using the `patients` data frame from Exercise 3.1: 将数据框写入文件。
+
+```{r}
+# (a) Write to "patients.csv" using write_csv()
+# (b) Write to "patients.tsv" using write_tsv()
+# (c) Verify by reading the files back
+```
+
+## 5.4 Convert wide gene expression to long format
+
+**Tidy data practice**: Convert the following wide gene expression table into tidy long format using `pivot_longer()`. 将宽格式基因表达表转换为整洁的长格式。
+
+```{r}
+library(tidyr)
+
+wide_expr <- tibble(
+  patient = c("P1", "P2", "P3"),
+  BRCA1   = c(2.3, 1.8, 3.1),
+  TP53    = c(-1.2, -0.8, 0.5),
+  EGFR    = c(0.5, 1.1, -0.3)
+)
+
+## Write pivot_longer() here
+```
+
+**Question**: Why is the long format considered "tidy" for this data? What operations become easier? 为什么长格式被认为是"整洁的"？哪些操作变得更简单了？
+
+**Answer**:
+
+## 5.5 Read real-world files — overview 真实文件读取概述 {.unnumbered}
+
+In real bioinformatics work, data files are rarely perfect. They may have **missing headers**, **non-standard delimiters**, **comment lines**, **European decimal marks**, **embedded special characters**, or **various missing-value representations**. The following exercises train you to handle these messy files. 在真实生物信息学工作中，数据文件很少是完美的。它们可能有缺失的列名、非标准分隔符、注释行、欧洲小数点、嵌入的特殊字符或各种缺失值表示。以下练习训练你处理这些混乱文件。
+
+All data files are located in `../Exercises and homework/data/`. 所有数据文件位于 `../Exercises and homework/data/`。
+
+**Important**: For each file, provide **two methods**: (1) using base R functions (`read.table` / `read.csv`), and (2) using `readr` package functions (`read_delim` / `read_csv` / `read_csv2`). Pay attention to the data characteristics and read each column into the correct data type. 对于每个文件，提供两种方法读取。
+
+## 5.6 Table0.txt — no header, tab-separated
+
+This file contains 7 rows of person data (Name, Age, Height, Weight, Sex) but **has no column header**. Delimiter is **tab**. 该文件无列名，制表符分隔。
+
+```{r}
+## Method 1: Base R — read.table()
+```
+
+```{r}
+## Method 2: readr — read_delim()
+```
+
+## 5.7 Table1.txt — with header, tab-separated
+
+Same data as Table0 but **with a header row**. Still tab-delimited. 与 Table0 数据相同，但有列名行。
+
+```{r}
+## Method 1: Base R
+```
+
+```{r}
+## Method 2: readr
+```
+
+## 5.8 Table2.txt — comment line + `/` wrappers
+
+This file has **two header lines** (a comment "Table 2: ..." then the real header). Names are wrapped with `/` (e.g., `/Alex/`), and Sex is wrapped with `/` (e.g., `/F/`). You need to **skip the comment line** and **strip the `/` characters**. 该文件有两行表头（一行注释 + 一行列名），姓名和性别被 `/` 包裹，需要跳过注释行并去除 `/` 字符。
+
+```{r}
+## Method 1: Base R — use skip=, then clean with gsub()
+```
+
+```{r}
+## Method 2: readr — use skip=, comment=, then mutate with str_remove_all()
+library(stringr)
+```
+
+**Question**: What `comment` argument value did you use for readr? Why? 你用了什么 `comment` 参数值？为什么？
+
+**Answer**:
+
+## 5.9 Table3.txt — various missing value representations
+
+This file has **two header lines** like Table2, but **no `/` wrapping**. The challenge: missing values are represented as `NA` (Age for Lilly), `--` (Age for Mark), `*` (Height for Martha), and `**` (Weight for Lucas). You must convert all of these to `NA` in R. 该文件包含多种缺失值表示方式，需要将它们都转换为 R 的 NA。
+
+```{r}
+## Method 1: Base R — use na.strings argument
+```
+
+```{r}
+## Method 2: readr — use na argument
+```
+
+**Question**: What are the different `na` representations you specified? List them all. 你指定了哪些缺失值表示方式？请全部列出。
+
+**Answer**:
+
+## 5.10 Table4.txt — European decimal marks (`,` as decimal)
+
+This file has **two header lines** and missing values (like Table3), but with **European decimal format**: Height values like `1,77` mean `1.77` (comma as decimal separator). You must read Height as `col_double()`. 该文件使用欧洲小数点格式，逗号表示小数点，Height 列需读取为数值型。
+
+```{r}
+## Method 1: Base R — use dec="," or read.csv2() approach
+## Hint: read the file as character first, then convert comma to dot and coerce to numeric
+```
+
+```{r}
+## Method 2: readr — use locale = locale(decimal_mark = ",")
+```
+
+**Question**: How does `locale(decimal_mark = ",")` change the parsing behavior? `locale(decimal_mark = ",")` 如何改变解析行为？
+
+**Answer**:
+
+## 5.11 Table5.txt — semicolon-delimited + European decimals
+
+This file uses **`;` as delimiter** (semicolon-separated), with **European decimal marks** and **various missing values**. No comment lines, but missing values include `--`, `*`, `**`, and empty fields. 该文件以分号分隔，使用欧洲小数点，包含多种缺失值。
+
+```{r}
+## Method 1: Base R — use read.csv2() or read.table(sep=";")
+```
+
+```{r}
+## Method 2: readr — use read_csv2() or read_delim(delim=";")
+```
+
+## 5.12 Table6.txt — repeated data with annotations
+
+This file has **108 lines**: 2 header lines + 105 data lines (7 people × 15 repetitions). Some data lines have annotations like `@Boss` and `@Secretary` appended to the Sex column. You need to:
+- Skip the 2 comment/header lines
+- **Remove duplicate rows** after reading
+- **Strip the `@...` annotations** from the Sex column
+
+该文件包含重复数据和 `@Boss`/`@Secretary` 等注释，需要去重并清理 Sex 列。
+
+```{r}
+## Method 1: Base R — use skip=, then unique() and gsub()
+```
+
+```{r}
+## Method 2: readr — use skip=, then distinct() and str_remove()
+library(dplyr)
+library(stringr)
+```
+
+**Question**: How many unique rows remain after deduplication? 去重后剩下多少唯一行？
+
+**Answer**:
+
+## 5.13 states1.csv and states2.csv — compare two formats
+
+These two files contain the same US states data but in **different formats**:
+
+- **states1.csv**: Standard CSV (comma-separated), with **European decimals** (`2,1` means 2.1), **quoted state names**
+- **states2.csv**: Semicolon-separated (`;`), **quoted fields**, **European decimals**
+
+Read both files and **verify they produce identical data frames**. 读取两个文件，验证它们产生相同的数据框。
+
+```{r}
+## Read states1.csv — Method 1: Base R
+## Hint: use read.csv() or read.table() with appropriate arguments
+```
+
+```{r}
+## Read states1.csv — Method 2: readr
+```
+
+```{r}
+## Read states2.csv — Method 1: Base R
+```
+
+```{r}
+## Read states2.csv — Method 2: readr
+```
+
+```{r}
+## Verify both produce identical data
+## Use identical() or all.equal() to compare
+```
+
+**Question**: What were the key differences in arguments between reading states1.csv and states2.csv? 读取 states1.csv 和 states2.csv 时，参数的关键区别是什么？
+
+**Answer**:
+
+**Question**: After this exercise, which approach (base R vs readr) do you find easier to use for messy real-world files? Why? 完成本练习后，对于混乱的真实文件，你觉得哪种方式（base R 还是 readr）更好用？为什么？
+
+**Answer**:
+
+---
+
+# Exercise 6: Dates with lubridate 日期处理 {.unnumbered}
+
+## 6.1 Parse dates in different formats
+
+Parse the following date strings using `lubridate` functions. For each, display the parsed result and extract the year and month. 用 lubridate 解析日期字符串，提取年月。
+
+```{r}
+library(lubridate)
+
+# (a) "2024-03-15"
+# (b) "March 15, 2024"
+# (c) "15-03-2024"
+# (d) "2024-03-15 14:30:00" (date-time)
+```
+
+## 6.2 Date arithmetic
+
+Calculate: 日期算术运算。
+
+```{r}
+# (a) What is the date 90 days from today?
+# (b) How many days between "2024-01-01" and "2024-12-31"?
+# (c) What day of the week was "2020-01-23"? (Use wday with label = TRUE)
+```
+
+## 6.3 Sample collection timeline
+
+A clinical study collected samples on these dates: `"2024-01-15"`, `"2024-02-20"`, `"2024-03-10"`, `"2024-04-05"`, `"2024-05-12"`. 计算采样时间间隔。
+
+```{r}
+# (a) Parse all dates into a vector
+# (b) Calculate the interval (in days) between the first and last collection
+# (c) Calculate the interval between each consecutive pair of dates
+```
+
+---
+
+# Exercise 7: Putting It All Together 综合练习 {.unnumbered}
+
+## 7.1 Build a gene study data table
+
+Create a tibble that combines all concepts from this talk:
+
+- Use `tibble()` to create a table with columns: `gene` (factor), `log2FC` (numeric), `pvalue` (numeric), and `collection_date` (date)
+- The `gene` factor should have levels: `"BRCA1"`, `"TP53"`, `"EGFR"`, `"MYC"`
+- Use `ymd()` for the dates
+- After creating, filter to show only rows where `pvalue < 0.05`
+
+综合运用本讲所有概念创建数据表。
+
+```{r}
+library(tibble)
+library(lubridate)
+library(forcats)
+
+## Write your code here — create the tibble with all requirements
+```
+
+```{r}
+# Filter for pvalue < 0.05
+```
+
+## 7.2 Write results and read back
+
+```{r}
+# (a) Write the filtered results (pvalue < 0.05) to "significant_genes.csv"
+# (b) Read the file back to verify
+```
+
+---
+
+# Exercise 8: Use CodeBuddy to Help 使用 AI 辅助 {.unnumbered}
+
+## 8.1 Debug with AI
+
+If you encountered any errors in the exercises above, paste the error message to CodeBuddy and ask for help. Record the prompt and summary below. 如遇到错误，用 CodeBuddy 调试。
+
+**My debug prompt**:
+
+```
+```
+
+**CodeBuddy's response summary**:
+
+## 8.2 Explain a concept with AI
+
+Ask CodeBuddy: "Explain the difference between a factor and a character vector in R. When should I use each?"
+
+**My prompt**:
+
+```
+```
+
+**CodeBuddy's response summary**:
+
+## 8.3 Generate extra practice
+
+Ask CodeBuddy: "Give me 3 additional exercises about R lists, with answers. Focus on nested list extraction."
+
+**My prompt**:
+
+```
+```
+
+**CodeBuddy's response summary**:
+
+---
+
+*Homework ends here. Make sure all code chunks run without errors, then Render to PDF and submit. 作业结束。请确认所有代码块运行无误，Render 生成 PDF 后提交。*

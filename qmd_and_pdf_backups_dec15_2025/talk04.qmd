@@ -1,0 +1,579 @@
+---
+title: "R for bioinformatics, R language basics, part 3: factor"
+subtitle: "HUST Bioinformatics course series"
+author: "Wei-Hua Chen (CC BY-NC 4.0)"
+institute: "HUST, China"
+date: today
+
+CJKmainfont: "Hei"  # 关键：指定中文字体为黑体
+
+format: 
+  beamer:
+    aspectratio: 1610 ## more morden aspectratio --
+    navigation: vertical
+    theme: AnnArbor
+    colortheme: beaver
+    fonttheme: structurebold
+    highlight: tango
+    slide_level: 2
+    toc: true
+  pdf:
+    pdf-engine: xelatex  # 关键：指定XeLaTeX引擎
+
+execute:
+  echo: true
+---
+
+
+# section 1: TOC
+
+## 前情提要
+
+### data frame and tibble
+
+-   declaration & usage
+-   manipulation （更多相关内容会在介绍 `dplyr` 时讲到）
+-   differences between data.frame and tibble
+-   advantages of using tibble (更多内容以后会介绍)
+-   `with`, `within`，`attach`, `detach` 等的用法
+
+### IO
+
+-   read from files of different formats
+-   write to files
+-   use GUI to read files (& get the corresponding code)
+
+## 今次预报
+
+1.  IO, project management, working environment management
+2.  factors: R 中最重要的概念之一
+3.  exercises
+
+# section 2: IO and working enviroment management
+
+## R session 的概念
+
+每个R session 是一个单独的工作空间（work space），包含各自的数据、变量和操作历史。
+
+![two R sessions](images/talk04/r_sessions.png){height="60%"}
+
+## R session in RStudio
+
+Each RStudio session is automatically associated with a R session
+
+![R session in RStudio](images/talk04/r_session_in_rstudio.png){heigh="30%"}
+
+## start a new RStudio session by creating a new project
+
+1.  右上角的 Project 按钮，在弹出菜单里选 New Project …
+
+![create new project, step 1](images/talk04/rstudio_create_new_project.png){height="60%"}
+
+## create a new project, cont.
+
+2.  Select: New directory -\> New Project in the popup window
+
+![create new project, step 2](images/talk04/rstudio_create_project_2.png){height="60%"}
+
+## create a new project, cont.
+
+3.  Enter a new directory name, choose its mother directory ...
+
+![create new project, step 3](images/talk04/rstudio_create_new_project_3.png){height="60%"}
+
+## 现场演示
+
+演示\~\~
+
+## working space
+
+当前工作空间，包括所有已装入的数据、包和自制函数
+
+可通过以下代码管理变量
+
+\footnotesize
+
+```{r eval=TRUE}
+ls();  ## 显示当前环境下所有变量
+rm( x ); ## 删除一个变量
+ls(); 
+
+##rm(list=ls()); ## 删除当前环境下所有变量！！！ 
+```
+
+## variables in working space in RStudio
+
+在RStudio右上角的"Environment"窗口显示了所有当前工作间的变量
+
+![RStudio enviroment window](images/talk04/rstudio_enviroment_window.png){height="70%"}
+
+## save and restore work space
+
+\footnotesize
+
+```{r eval=FALSE}
+## -- save all loaded variables into an external .RData file
+save.image( file = "prj_r_for_bioinformatics_aug3_2019.RData" );
+
+## -- restore ( load ) saved work space 
+load( file = "prj_r_for_bioinformatics_aug3_2019.RData" );
+```
+
+\normalsize
+
+### Notes
+
+-   existing variables will be kept, however, those will the same names will be replaced by loaded variables
+-   please consider using `rm( list=ls() )` to remove all existing variables to have a clean start
+-   you may need to reload all the packages
+
+## save selected variables
+
+Sometimes you need to transfer processed data to a collaborator ...
+
+\footnotesize
+
+```{r eval=FALSE}
+## save selected variables to external 
+save(city, country, file="1.RData"); ## you can specify directory name
+
+## --
+load( "1.RData" );
+```
+
+\normalsize
+
+## close and (re)open a project
+
+close a project is easy:
+
+![Two ways of closing a project](images/talk04/Rstudio_close_a_project.png){height="40%"}
+
+however ...
+
+## 退出 projects 时的一些选项 （RStudio）
+
+![Project options](images/talk04/rstudio_project_options.png){height="50%"}
+
+### notes
+
+-   退出时保存
+-   打开时装入
+-   但数据较大时，装入时间可能过长 ...
+
+## open a project
+
+![Open a project](images/talk04/rstudio_open_a_project.png){height="60%"}
+
+演示项目的不同打开姿式（1-5）。
+
+## 练习
+
+-   创建一个项目
+-   定义一些变量
+-   从外部文件装入一些数据
+-   保存workspace到 <file_name>.RData
+-   退出 project
+-   重新打开 project 并恢复 workspace
+
+# section 3: factors
+
+## 什么是factors？
+
+Factor is a data structure used for fields that takes only predefined, finite number of values (categorical data).
+
+### `factor` 的作用
+
+-   限制输入范围
+-   有意义的排序
+-   作图
+-   其它
+-   `factor` 造成的不便
+
+## 1. `factor` 用于限制输入范围
+
+Factor 用于限制某个字段（列），只允许其接受某些值
+
+\footnotesize
+
+```{r}
+x <- c("single", "married", "married", "single");
+str(x);
+```
+
+```{r}
+## create factor as it is ... 
+x <- as.factor(x);
+
+## please note the change in the displayed values ... 
+str(x);
+```
+
+```{r}
+## create factor from scratch ... 
+x <- factor( c( "single", "married", "married", "single" ) );
+str(x);
+```
+
+\normalsize
+
+**注意**：用 `as.factor` 创建 factor 时，得到的 levels 按`字母表`排列；
+
+
+## 输入不允许的值时，会产生`NA`
+
+\footnotesize
+
+```{r}
+str(x);
+x[ length(x) + 1 ] <- "widowed";
+```
+
+```{r}
+x;
+```
+
+
+## 使用 `levels()` 函数调整 `factor` 的内容
+
+\footnotesize
+
+```{r}
+levels(x) <- c(levels(x), "widowed");
+x[ length(x) + 1 ] <- "widowed";
+str(x);
+```
+
+**注意**：用 `levels( y )` 方式指定 levels 时，则按照指定的顺序；
+
+## `levels`的顺序决定了排序的顺序
+
+\footnotesize
+
+```{r}
+##
+y <-  as.factor( c( "single", "married", "married", "single" ) );
+levels(y);
+sort(y);
+
+## 
+y2 <- y;
+levels(y2) <- c("single", "married", "widowed");
+sort(y2);
+```
+
+## 2. 用`factor`做有意义的排序
+
+### 无意义的排序
+
+\footnotesize
+
+```{r}
+## Month
+x1 <- c("Dec", "Apr", "Jan", "Mar");
+sort(x1);
+
+```
+
+### 有意义的排序
+
+\footnotesize
+
+```{r}
+
+month_levels <- c(
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+)
+
+y1 <- factor(x1, levels = month_levels)
+sort(y1);
+```
+
+## 3. `factor` 用于作图（真正精髓）
+
+举例：对一项调查结果进行统计并作图
+
+`是否增加更多作业`？？？
+
+\footnotesize
+
+```{r fig.height=2, fig.width=6}
+## 同学们的回答：
+( responses <- factor( c("Agree", "Agree", "Strongly Agree", "Disagree", 
+                         "Disagree", "Agree") ) );
+
+## -- plot the results --
+library(ggplot2);
+barplot <-
+  ggplot( data = data.frame( res = responses ), aes( x = res )) +
+  geom_bar();
+```
+
+## 作图结果
+
+```{r fig.height=3, fig.width=8, echo=FALSE}
+barplot;
+```
+
+\normalsize
+
+默认情况下， factor 按字母表排序： Agree -\> Disagree -\> Strong Agree 。ggplot2 也会按factor的排序作图
+
+## 调整 `factor` 使统计结果更合理
+
+\footnotesize
+
+```{r fig.heigh=2, fig.width=8}
+res <- data.frame( res=responses );
+## -- 按照同意程度从强->弱 排序
+
+res$res <- factor( res$res, levels = c( "Strongly Agree", "Agree",  "Disagree" ), ordered = T );
+str(res);
+
+plot2 <- 
+  ggplot( data = res, aes( x = res )) +
+  geom_bar() +
+  xlab( "Response" ) + ylab("Count");
+```
+
+## 调整结果
+
+\footnotesize
+
+```{r fig.height=3, fig.width=8, echo=FALSE}
+plot2;
+```
+
+## ordered factor
+
+通过 ordered 参数，让用户知道 factors 是经过精心排序的
+
+\footnotesize
+
+```{r}
+( responses <- factor( c("Agree", "Agree", "Strongly Agree", "Disagree", "Disagree", "Agree"), 
+                       levels = c( "Disagree", "Agree", "Strongly Agree"), ordered = T ) );
+is.ordered( responses );
+```
+
+## 4. `factor` 的其它应用
+
+### 通过 `factor` 改变 值
+
+使用 `dplyr` 包的 `recode()`函数改变 value
+
+\footnotesize
+
+```{r message=FALSE}
+( x <- factor( c( "alpha", "beta", "gamma", "theta", "beta", "alpha" ) ) );
+
+## --
+library( dplyr );
+x <- recode( x, "alpha" = "one", "beta" = "two" );
+str(x);
+```
+
+
+## use `factor` to clean data
+
+\footnotesize
+
+```{r}
+library(forcats); ## just to make sure the codes will run smoothly ... 
+
+## 假设我有一组性别数据，其写法非常不规整；
+gender <- c("f", "m ", "male ","male", "female", "FEMALE", "Male", "f", "m");
+
+## 要求：都改为 Female, Male
+gender <- as_factor( gender );
+fct_count( gender );
+
+```
+
+
+## use `factor` to clean data, cont.
+
+\footnotesize
+```{r}
+## clean up
+gender <- fct_collapse(
+  gender,
+  Female = c("f", "female", "FEMALE"),
+  Male   = c("m ", "m", "male ", "male", "Male")
+)
+
+## see the results 
+fct_count(gender);
+```
+
+## or use `fct_relabel`
+
+\footnotesize
+
+```{r}
+gender <- c("f", "m ", "male ","male", "female", "FEMALE", "Male", "f", "m")
+gender <- as_factor(gender)
+gender <- fct_relabel(gender, ~ ifelse(tolower(substring(., 1, 1)) == "f", "Female", "Male"))
+
+fct_count(gender)
+```
+
+## 5. `factor` 造成的不便
+
+先读取一个文件，注意 `stringsAsFactors` 参数（默认为 `F`）；
+
+\footnotesize
+
+```{r}
+mouse.genes <- read.delim( file = "data/talk04/mouse_genes_biomart_sep2018.txt", 
+                           sep = "\t", header = T, stringsAsFactors = T );
+
+str(mouse.genes);
+```
+
+## 从`mouse.genes` 中取部分数据
+
+\footnotesize
+
+```{r fig.width=10, fig.height=4}
+mouse.chr_10_12 <- subset( mouse.genes,  Chromosome.scaffold.name %in% c( "10", "11", "12" ) );
+## plot length distribution --
+boxplot( Transcript.length..including.UTRs.and.CDS. ~ Chromosome.scaffold.name, 
+         data = mouse.chr_10_12, las = 2 );
+```
+
+## 如何去除不用的 levels？
+
+**上面作图的问题！！**：`subset()` 无法去除不用的 factors ...
+
+解决方案：使用 `droplevels` 函数（see next page）。
+
+## 如何去除不用的 levels？ cont.
+
+\footnotesize
+
+```{r fig.width=10, fig.height=3.5}
+mouse.chr_10_12$Chromosome.scaffold.name <- 
+  droplevels( mouse.chr_10_12$Chromosome.scaffold.name );
+levels( mouse.chr_10_12$Chromosome.scaffold.name );
+
+## 再次 plot ... 
+boxplot( Transcript.length..including.UTRs.and.CDS. ~ Chromosome.scaffold.name, 
+         data = mouse.chr_10_12, las = 2 );
+```
+
+## 也可以使用 tibble ，默认不使用 `factor`
+
+\footnotesize
+
+```{r fig.width=10, fig.height=5}
+library( readr );
+mouse.tibble <- read_delim( file = "data/talk04/mouse_genes_biomart_sep2018.txt", 
+                            delim = "\t", quote = "" )
+
+mouse.tibble.chr10_12 <- 
+  mouse.tibble %>% filter( `Chromosome/scaffold name` %in%  c( "10", "11", "12" ) );
+
+plot3 <- 
+  ggplot( data = mouse.tibble.chr10_12, 
+        aes( x = `Chromosome/scaffold name`, 
+             y = `Transcript length (including UTRs and CDS)` ) ) +
+  geom_boxplot() + 
+  coord_flip() + 
+  ylim( 0, 2500 ) ;
+```
+
+## 也可以使用 tibble ，默认不使用 `factor`, cont.
+
+显示作图结果：
+
+```{r fig.width=10, fig.height=5, echo=FALSE}
+plot3;
+```
+
+## 另一种不显示 `outlier` 的方法（更科学）
+
+\footnotesize
+
+```{r fig.width=10, fig.height=5}
+p1 <- 
+  ggplot( data = mouse.tibble.chr10_12, 
+        aes( x = `Chromosome/scaffold name`, 
+             y = `Transcript length (including UTRs and CDS)` ) ) +
+  geom_boxplot() +
+  coord_flip(ylim = c(0, 5000), clip = "on");
+```
+
+
+## 按基因长度 中值 从 大 -\> 小 排序
+
+\footnotesize
+
+```{r fig.width=10, fig.height=5}
+plot4 <- 
+  ggplot( data = mouse.tibble.chr10_12, 
+        aes( x = reorder( `Chromosome/scaffold name`, 
+                          `Transcript length (including UTRs and CDS)`, 
+                          median ), 
+             y = `Transcript length (including UTRs and CDS)` ) ) +
+  geom_boxplot() + 
+  coord_flip(ylim = c(0, 5000), clip = "on")
+```
+
+\normalsize
+
+`reorder( vector_with_factor, numeric_value , FUN = mean  )` 的用法
+
+## 按基因长度 中值 从 大 -\> 小 排序， cont.
+
+\footnotesize
+
+```{r fig.height=3, fig.width=8, echo=FALSE}
+plot4;
+```
+
+\normalsize
+
+**注意** `` reorder( `Chromosome/scaffold name`, - `Transcript length (including UTRs and CDS)`, median ) `` 的作用
+
+## use `forcats::fct_reorder` to reorder factors
+
+\footnotesize
+
+```{r fig.width=10, fig.height=3}
+  ggplot( data = mouse.tibble.chr10_12,
+        aes( x = fct_reorder( `Chromosome/scaffold name`, 
+                          `Transcript length (including UTRs and CDS)`, 
+                          median ), 
+             y = `Transcript length (including UTRs and CDS)` ) ) +
+  geom_boxplot() + 
+  coord_flip(ylim = c(0, 5000), clip = "on");
+```
+
+# section 4: 练习 & 作业
+
+## 小结
+
+### 今次提要
+
+-   IO, project management, working environment management
+-   factor ：R 另一个超级**重要**的概念
+    -   定义
+    -   操作
+    -   使用
+-   基础和进阶绘图（配合 factor 讲解）
+
+### 下次预告
+
+-   data-wrangler: `dplyr`
+
+### important
+
+-   all codes are available at Github: <https://github.com/evolgeniusteam/R-for-bioinformatics>
+
+## 练习 & 作业
+
+-   `Exercises and homework` 目录下 `talk04-homework.Rmd` 文件；
+
+-   完成时间：见钉群的要求

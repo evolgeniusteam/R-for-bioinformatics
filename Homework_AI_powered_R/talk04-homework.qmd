@@ -1,0 +1,470 @@
+---
+title: "Talk 04 — Homework"
+subtitle: "Data Wrangling with tidyverse — Pipe, dplyr, tidyr & Joins"
+author: "Your Name — Your Student ID"
+date: today
+
+CJKmainfont: "Hei"
+
+format:
+  pdf:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    pdf-engine: xelatex
+  html:
+    df-print: paged
+---
+
+## Instructions 作业说明 {.unnumbered}
+
+- Write your R code inside `{r}` code chunks, run them, and verify the output. 将R代码填入 `{r}` 代码块中，运行并验证输出结果。
+- After completing all exercises, click the **Render** button in RStudio to generate a PDF. 完成后，点击 RStudio 中的 **Render** 按钮生成 PDF。
+- **Rename the PDF** to: `Name-StudentID-talk04-homework.pdf` and submit to the course platform. **将PDF重命名**为：`姓名-学号-talk04-homework.pdf`，提交到课程平台。
+- **Use CodeBuddy AI** whenever you get stuck — it's part of the learning process! 遇到困难时请使用 **CodeBuddy AI** ——这是学习过程的一部分！
+
+## User Verification 用户身份验证 {.unnumbered}
+
+Run the following to verify your identity 运行以下代码验证你的身份:
+
+```{r}
+Sys.info()[["user"]]
+Sys.getenv("HOME")
+getwd()
+```
+
+## Talk 04 Content Review 内容回顾
+
+Today we covered 今天的内容包括:
+
+- **The Pipe** 管道操作符: `%>%`, `.` placeholder, `%T>%`, `%$%`, `%<>%`
+- **dplyr Core Verbs** 核心函数:
+  - `select()` — choose columns 选择列
+  - `filter()` — subset rows 过滤行
+  - `mutate()` — create/modify columns 创建/修改列
+  - `summarise()` + `group_by()` — grouped aggregation 分组汇总
+  - `arrange()` — sort rows 排序
+  - `across()` — column-wise operations 列操作
+  - `rowwise()` — row-wise operations 行操作
+- **tidyr**: `pivot_longer()` / `pivot_wider()`, `separate()` / `unite()`
+- **Joins** 连接: `left_join`, `inner_join`, `full_join`, `semi_join`, `anti_join`
+
+---
+
+# Exercise 1: The Pipe 管道操作 {.unnumbered}
+
+## 1.1 Rewrite nested code with pipes
+
+Rewrite the following nested code using `%>%`. Verify both produce the same result. 用管道重写以下嵌套代码，验证结果相同。
+
+```{r}
+library(tidyverse)
+# Original nested code
+result_original <- head(arrange(summarise(group_by(filter(starwars, species == "Human"), gender), avg_height = mean(height, na.rm = TRUE)), desc(avg_height)), 3)
+result_original
+```
+
+```{r}
+# Your pipe version here
+```
+
+**Question**: Which version is easier to read and debug? Why? 哪个版本更易读易调试？为什么？
+
+**Answer**:
+
+## 1.2 Use `.` placeholder
+
+Use the `.` placeholder to pass `mtcars` as a **non-first** argument:
+
+```{r}
+# Use %>% and . to pass mtcars to lm() as the data argument
+# Fit: mpg ~ wt + hp
+```
+
+## 1.3 The tee pipe `%T>%`
+
+Explain what happens in this code. Which value does `res` receive? 解释以下代码，`res` 最终接收到什么值？
+
+```{r}
+library(magrittr)
+res <- rnorm(50) %>% matrix(ncol = 5) %T>% plot() %>% colMeans()
+res
+```
+
+**Answer**:
+
+---
+
+# Exercise 2: dplyr Core Verbs 核心函数 {.unnumbered}
+
+## 2.1 `select()` — choose columns
+
+Using the `starwars` dataset 使用 `starwars` 数据集:
+
+```{r}
+library(tidyverse)
+
+# (a) Select name, species, and all columns ending with "color"
+# (b) Select columns from "name" through "mass" using column range
+# (c) Remove the "films", "vehicles", and "starships" columns using -
+```
+
+## 2.2 `filter()` — subset rows
+
+Using `starwars` 使用 `starwars`:
+
+```{r}
+# (a) Filter for Human characters with height > 180
+# (b) Filter for characters whose homeworld is "Tatooine" OR "Naboo"
+# (c) Filter for characters with BOTH blue eyes AND blond hair
+# (d) Filter for characters with height between 150 and 200 (inclusive)
+```
+
+## 2.3 `mutate()` — create/modify columns
+
+Using `starwars` 使用 `starwars`:
+
+```{r}
+# (a) Create a "bmi" column: mass / (height/100)^2
+# (b) Create a "height_cat" column using case_when():
+#     < 100 → "Short", 100–180 → "Medium", > 180 → "Tall"
+# (c) Show only name, species, height, height_cat, bmi — sorted by bmi descending
+```
+
+## 2.4 `summarise()` + `group_by()` — grouped aggregation
+
+Using `starwars` 使用 `starwars`:
+
+```{r}
+# (a) Count how many characters per species (use n()), sort by count descending
+# (b) Calculate avg height and avg mass per gender (remove NAs)
+# (c) Find the tallest character per species (use slice_max), only for species with ≥ 2 members
+```
+
+## 2.5 `arrange()` — sort rows
+
+Using `starwars` 使用 `starwars`:
+
+```{r}
+# (a) Sort by mass descending, show the top 5 heaviest characters
+# (b) Sort by species alphabetically, then by height descending within each species
+```
+
+---
+
+# Exercise 3: Mouse Genes Analysis 小鼠基因分析 {.unnumbered}
+
+## 3.1 Load and explore the data
+
+Read the mouse genes file from `../data/talk04/mouse_genes_biomart_sep2018.txt` and explore: 读取小鼠基因数据并探索。
+
+```{r}
+# Load with read_delim() (tab-separated, quote = "")
+```
+
+```{r}
+# Count genes per chromosome/scaffold, sorted by count descending
+```
+
+```{r}
+# Count genes per transcript type, sorted by count descending
+```
+
+## 3.2 Filter and summarize
+
+Complete the following analysis pipeline 完成以下分析管道:
+
+```{r}
+# 1. Keep only chromosomes 1–19, X, Y
+# 2. Keep only "protein_coding", "miRNA", "lincRNA" transcript types
+# 3. Rename columns for readability (short names)
+# 4. Group by chromosome and type
+# 5. Summarize: count of distinct genes, mean gene length, min and max gene length
+# 6. Sort by chromosome (ascending), then count (descending)
+```
+
+```{r}
+# Bonus: Remove chromosomes with fewer than 500 genes, 
+# then re-sort by chromosome and count
+```
+
+## 3.3 Find extreme genes
+
+For each chromosome, find the **longest** and **shortest** gene (by transcript length). Show gene ID, chromosome, and length. 找出每条染色体上最长和最短的基因。
+
+```{r}
+# Hint: use slice_max() and slice_min() after group_by()
+```
+
+---
+
+# Exercise 4: Grades Analysis 成绩分析 {.unnumbered}
+
+## 4.1 Create and reshape the data
+
+Create the grades tibble and reshape to long format 创建成绩数据并转为长格式:
+
+```{r}
+set.seed(42)  # for reproducibility
+grades <- tibble(
+  "Name" = c("Weihua Chen", "Mm Hu", "John Doe", "Jane Doe",
+             "Warren Buffet", "Elon Musk", "Jack Ma"),
+  "Occupation" = c("Teacher", "Student", "Teacher", "Student",
+                   rep("Entrepreneur", 3)),
+  "English" = sample(60:100, 7),
+  "ComputerScience" = sample(80:90, 7),
+  "Biology" = sample(50:100, 7),
+  "Bioinformatics" = sample(40:90, 7)
+)
+
+# Use pivot_longer() to reshape to long format (columns: Name, Occupation, course, grade)
+```
+
+## 4.2 Average grades
+
+Calculate the average grade per student, sorted from highest to lowest. 计算每人平均成绩，从高到低排序。
+
+```{r}
+# Use group_by() + summarise() + arrange()
+```
+
+## 4.3 Best and worst subjects
+
+Find each student's best subject and worst subject. 找出每人最强和最弱科目。
+
+```{r}
+# Best subject per student (use slice_max)
+```
+
+```{r}
+# Worst subject per student (use slice_min)
+```
+
+## 4.4 By occupation
+
+```{r}
+# (a) Which occupation has the highest average grade?
+# (b) For each occupation, which subject has the highest average score?
+```
+
+---
+
+# Exercise 5: tidyr — Reshaping 数据重塑 {.unnumbered}
+
+## 5.1 Wide to long
+
+Convert this wide gene expression table to long (tidy) format 将宽格式转为长格式:
+
+```{r}
+expr_wide <- tibble(
+  patient = c("P1", "P2", "P3", "P4"),
+  treatment = c("Drug", "Drug", "Placebo", "Placebo"),
+  IL6 = c(12.3, 15.1, 8.7, 9.2),
+  TNF = c(5.6, 7.8, 3.2, 4.1),
+  CRP = c(2.1, 3.4, 1.5, 1.8)
+)
+
+# Use pivot_longer() — keep patient and treatment as identifiers
+```
+
+## 5.2 Long to wide
+
+Convert back to wide format 转回宽格式:
+
+```{r}
+# Use pivot_wider() on the long result from 5.1
+```
+
+## 5.3 Separate and unite
+
+```{r}
+# Data with combined drug-dose column
+trial <- tibble(
+  treatment = c("Aspirin_100mg", "Aspirin_200mg", "Ibuprofen_200mg", "Ibuprofen_400mg"),
+  response = c(0.72, 0.85, 0.63, 0.78)
+)
+
+# (a) Use separate() to split treatment into drug and dose columns
+```
+
+```{r}
+# (b) Use unite() to combine drug and dose back, separated by " - "
+```
+
+---
+
+# Exercise 6: Joining Tables 表连接 {.unnumbered}
+
+## 6.1 Basic joins
+
+Two datasets from a clinical study 临床研究中的两个数据集:
+
+```{r}
+# Gene expression data
+expr <- tibble(
+  gene = c("BRCA1", "TP53", "EGFR", "MYC", "KRAS", "PTEN"),
+  log2FC = c(2.3, -1.5, 0.8, 3.1, -0.4, -2.1),
+  pvalue = c(0.001, 0.02, 0.15, 0.003, 0.08, 0.01)
+)
+
+# Gene annotation
+annotation <- tibble(
+  gene = c("BRCA1", "TP53", "EGFR", "MYC", "VEGFA", "PTEN"),
+  chromosome = c("17", "17", "7", "8", "6", "10"),
+  pathway = c("DNA repair", "Cell cycle", "Signaling", "Transcription", "Angiogenesis", "Signaling")
+)
+
+# (a) inner_join — keep only genes present in BOTH tables
+```
+
+```{r}
+# (b) left_join — keep all genes from expr, add annotation where available
+```
+
+```{r}
+# (c) full_join — keep ALL genes from both tables
+```
+
+## 6.2 Anti join — quality control
+
+```{r}
+# (a) Which genes are in expr but NOT in annotation?
+# (b) Which genes are in annotation but NOT in expr?
+```
+
+## 6.3 Join interpretation
+
+**Question**: In a bioinformatics analysis, you have a DEG table (differentially expressed genes) and a pathway table. You want to keep ALL DEGs and annotate them with pathways when available. Which join should you use? Why? 在一个生物信息学分析中，你有 DEG 表和 pathway 表。你想保留所有 DEG 并标注可用的 pathway，应该用哪种 join？为什么？
+
+**Answer**:
+
+---
+
+# Exercise 7: Advanced dplyr 高级 dplyr {.unnumbered}
+
+## 7.1 `across()` — column-wise operations
+
+Using `starwars` 使用 `starwars`:
+
+```{r}
+# (a) Calculate the mean of ALL numeric columns (remove NAs)
+# (b) For ALL numeric columns, create a centered version (value - mean, as new columns with "_centered" suffix)
+```
+
+## 7.2 `rowwise()` — row-wise operations
+
+```{r}
+# Gene expression: calculate the mean expression across samples per gene
+gene_expr <- tibble(
+  gene = c("BRCA1", "TP53", "EGFR", "MYC", "KRAS"),
+  tumor1 = c(12.3, 8.7, 15.2, 22.1, 5.4),
+  tumor2 = c(10.1, 9.3, 14.8, 20.5, 6.1),
+  tumor3 = c(11.5, 7.9, 16.1, 21.3, 4.8),
+  normal1 = c(5.2, 10.1, 14.0, 6.3, 5.0),
+  normal2 = c(4.8, 9.5, 13.5, 5.8, 4.5)
+)
+
+# Use rowwise() + c_across() to calculate:
+# - mean_tumor: mean of columns starting with "tumor"
+# - mean_normal: mean of columns starting with "normal"
+# - log2FC: log2(mean_tumor / mean_normal)
+```
+
+## 7.3 `slice_*()` — row selection
+
+Using `Theoph` (built-in dataset) 使用内置 `Theoph` 数据集:
+
+```{r}
+data(Theoph)
+# Convert to tibble
+th <- as_tibble(Theoph)
+
+# (a) Show the first 3 rows per Subject
+# (b) Show the row with the maximum conc per Subject
+# (c) Show the row with the minimum Time per Subject
+```
+
+---
+
+# Exercise 8: Putting It All Together 综合练习 {.unnumbered}
+
+## 8.1 Complete analysis pipeline
+
+Using the `starwars` dataset, create a single pipeline that: 使用 `starwars` 完成以下综合管道:
+
+```{r}
+# 1. Filter to keep only characters with height and mass both > 0
+# 2. Create a "bmi" column
+# 3. Create a "bmi_cat" column: < 18.5 → "Underweight", 18.5–25 → "Normal", 
+#    25–30 → "Overweight", > 30 → "Obese"
+# 4. Group by species and bmi_cat
+# 5. Count how many characters per species-bmi_cat combination
+# 6. Keep only combinations with count ≥ 2
+# 7. Arrange by species, then by bmi_cat (in order: Underweight → Normal → Overweight → Obese)
+```
+
+## 8.2 Join + reshape + summarize
+
+```{r}
+# Clinical trial data
+patients <- tibble(
+  patient_id = c("P01", "P02", "P03", "P04", "P05"),
+  age = c(45, 62, 38, 55, 41),
+  sex = c("F", "M", "F", "M", "F"),
+  treatment = c("Drug", "Placebo", "Drug", "Drug", "Placebo")
+)
+
+# Gene expression (wide format)
+expression <- tibble(
+  patient_id = c("P01", "P02", "P03", "P04", "P05"),
+  BRCA1 = c(2.3, 1.1, 3.5, 2.8, 1.9),
+  TP53  = c(-1.2, 0.3, -2.1, -0.8, 0.1),
+  EGFR  = c(0.5, -0.2, 1.8, 0.9, -0.5)
+)
+
+# (a) Join patients and expression by patient_id
+# (b) Pivot expression to long format (gene, expression columns)
+# (c) Group by treatment and gene, calculate mean expression
+# (d) Pivot back to wide format: one row per gene, columns = treatment means
+```
+
+---
+
+# Exercise 9: Use CodeBuddy to Help 使用 AI 辅助 {.unnumbered}
+
+## 9.1 Debug with AI
+
+If you encountered any errors in the exercises above, paste the error message to CodeBuddy and ask for help. Record the prompt and summary below. 如遇到错误，用 CodeBuddy 调试。
+
+**My debug prompt**:
+
+```
+```
+
+**CodeBuddy's response summary**:
+
+## 9.2 Explain a concept with AI
+
+Ask CodeBuddy: "Explain the difference between inner_join, left_join, and full_join in R dplyr. When should I use each in a bioinformatics context?"
+
+**My prompt**:
+
+```
+```
+
+**CodeBuddy's response summary**:
+
+## 9.3 Generate extra practice
+
+Ask CodeBuddy: "Give me 3 additional exercises about dplyr group_by and summarise with the starwars dataset, with answers."
+
+**My prompt**:
+
+```
+```
+
+**CodeBuddy's response summary**:
+
+---
+
+*Homework ends here. Make sure all code chunks run without errors, then Render to PDF and submit. 作业结束。请确认所有代码块运行无误，Render 生成 PDF 后提交。*

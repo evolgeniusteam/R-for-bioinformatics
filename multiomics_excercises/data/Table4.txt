@@ -1,0 +1,8 @@
+Name    Age   Height  Weight   Sex
+Alex	 25      1,77     57     F
+Lilly 	 31        NA     69	 F
+Mark	 --	 1,90     83     M
+Oliver	 52      1,79     75	 M
+Martha   76         *     70     F
+Lucas	 49      1,83     **     M
+Caroline 26      1,64     53     F

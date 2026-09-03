@@ -1,0 +1,82 @@
+#relative abundance information for curated sample: PRJEB6070-DE-074, at species level
+#for project: PRJEB6070
+#phenotype: D006262, Health
+ncbi_taxon_id	taxon_rank_level	relative_abundance	scientific_name
+853	species	13.7514	Faecalibacterium prausnitzii
+39485	species	13.6499	[Eubacterium] eligens
+46506	species	9.19599	Bacteroides stercoris
+165179	species	8.73775	Prevotella copri
+204516	species	7.02362	Bacteroides massiliensis
+216816	species	5.91995	Bifidobacterium longum
+28116	species	5.23307	Bacteroides ovatus
+74426	species	4.3022	Collinsella aerofaciens
+818	species	4.13086	Bacteroides thetaiotaomicron
+40545	species	3.99159	Sutterella wadsworthensis
+821	species	3.74124	Bacteroides vulgatus
+39490	species	2.58861	Eubacterium ramulus
+88431	species	2.40747	Dorea longicatena
+658081	species	1.86584	Lachnospiraceae bacterium 1_1_57FAA
+820	species	1.66184	Bacteroides uniformis
+33039	species	1.28668	[Ruminococcus] torques
+39488	species	1.22619	[Eubacterium] hallii
+28026	species	1.00096	Bifidobacterium pseudocatenulatum
+457412	species	0.93893	Ruminococcus sp. 5_1_39BFAA
+823	species	0.81504	Parabacteroides distasonis
+410072	species	0.78706	Coprococcus comes
+39486	species	0.63183	Dorea formicigenerans
+40520	species	0.49993	Blautia obeum
+47678	species	0.45032	Bacteroides caccae
+33038	species	0.31918	[Ruminococcus] gnavus
+665943	species	0.22293	Eggerthella sp. 1_3_56FAA
+39491	species	0.22117	[Eubacterium] rectale
+28118	species	0.21283	Odoribacter splanchnicus
+1304	species	0.14593	Streptococcus salivarius
+501571	species	0.13667	Butyricicoccus pullicaecorum
+649756	species	0.12838	Anaerostipes hadrus
+1308	species	0.11941	Streptococcus thermophilus
+1118061	species	0.09458	Alistipes obesi
+658089	species	0.0917	Lachnospiraceae bacterium 5_1_63FAA
+665950	species	0.05874	Lachnospiraceae bacterium 3_1_46FAA
+116085	species	0.05436	Coprococcus catus
+1318	species	0.05007	Streptococcus parasanguinis
+1584	species	0.04945	Lactobacillus delbrueckii
+357276	species	0.02823	Bacteroides dorei
+39777	species	0.02713	Veillonella atypica
+1625	species	0.0251	Lactobacillus sanfranciscensis
+246787	species	0.02089	Bacteroides cellulosilyticus
+239935	species	0.01992	Akkermansia muciniphila
+658082	species	0.01562	Lachnospiraceae bacterium 2_1_58FAA
+40518	species	0.01518	Ruminococcus bromii
+817	species	0.01467	Bacteroides fragilis
+562	species	0.01383	Escherichia coli
+291645	species	0.01364	Bacteroides nordii
+29466	species	0.01326	Veillonella parvula
+328813	species	0.01241	Alistipes onderdonkii
+446660	species	0.00778	Adlercreutzia equolifaciens
+360807	species	0.00751	Roseburia inulinivorans
+552398	species	0.00716	Ruminococcaceae bacterium D16
+626932	species	0.00635	Alistipes indistinctus
+292800	species	0.00588	Flavonifractor plautii
+1311	species	0.00549	Streptococcus agalactiae
+729	species	0.00503	Haemophilus parainfluenzae
+1343	species	0.00498	Streptococcus vestibularis
+84112	species	0.00457	Eggerthella lenta
+35833	species	0.0044	Bilophila wadsworthia
+46503	species	0.0043	Parabacteroides merdae
+487174	species	0.00375	Barnesiella intestinihominis
+28117	species	0.00321	Alistipes putredinis
+28038	species	0.00312	Lactobacillus curvatus
+214851	species	0.00287	Subdoligranulum variabile
+113107	species	0.00287	Streptococcus australis
+1305	species	0.00255	Streptococcus sanguinis
+61171	species	0.00208	Holdemania filiformis
+39778	species	0.00175	Veillonella dispar
+208479	species	0.0016	[Clostridium] bolteae
+371601	species	0.00137	Bacteroides xylanisolvens
+658087	species	0.00127	Lachnospiraceae bacterium 7_1_58FAA
+329854	species	0.00049	Bacteroides intestinalis
+674529	species	0.00048	Bacteroides faecis
+1512	species	0.00044	[Clostridium] symbiosum
+1685	species	0.00026	Bifidobacterium breve
+1070699	species	0.00026	Clostridiaceae bacterium JC118
+-1	species	1.94462	Unknown

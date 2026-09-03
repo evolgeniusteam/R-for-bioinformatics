@@ -1,0 +1,99 @@
+---
+title: "Verification Report — Beamer"
+subtitle: "System & Environment Check"
+author: "Wei-Hua Chen"
+institute: "HUST, China"
+date: today
+
+format: 
+  beamer:
+    aspectratio: 1610
+    navigation: vertical
+    theme: Warsaw
+    colortheme: beaver
+    fonttheme: structurebold
+    highlight: tango
+    slide_level: 2
+    toc: true
+    pdf-engine: xelatex
+
+execute:
+  echo: true
+---
+
+# System Information
+
+## User & Environment
+
+```{r}
+# System user name
+Sys.info()[c("user", "nodename")]
+
+# Operating system / platform
+Sys.info()["sysname"]
+
+# R version
+R.version.string
+
+# Platform string (architecture + OS)
+R.version$platform
+
+plot(1:10);
+```
+
+## Working Directory
+
+```{r}
+# Current working directory
+getwd()
+```
+
+# Installed Packages
+
+## Packages by Library Path
+
+```{r}
+# All installed packages, grouped by library path
+pkgs <- installed.packages()
+pkgs_df <- as.data.frame(pkgs[, c("Package", "Version", "LibPath")],
+                         stringsAsFactors = FALSE)
+
+# Show the distinct library paths
+cat("Library paths in use:\n")
+print(unique(pkgs_df$LibPath))
+```
+
+## Packages in Default Library
+
+```{r}
+# Default library (.libPaths()[1]) — usually where install.packages() puts things
+default_lib <- .libPaths()[1]
+cat("Default library:", default_lib, "\n\n")
+
+default_pkgs <- pkgs_df[pkgs_df$LibPath == default_lib, ]
+cat(sprintf("Number of packages: %d\n", nrow(default_pkgs)))
+print(default_pkgs)
+```
+
+## Package Count Summary by Library Path
+
+```{r}
+# Summary table: how many packages live in each library
+lib_summary <- table(pkgs_df$LibPath)
+print(lib_summary)
+```
+
+## All Libraries, cont.
+
+```{r}
+# Show any remaining packages in other library paths
+other_libs <- setdiff(unique(pkgs_df$LibPath), default_lib)
+if (length(other_libs) > 0) {
+  for (lib in other_libs) {
+    cat("\nLibrary:", lib, "\n")
+    print(pkgs_df[pkgs_df$LibPath == lib, c("Package", "Version")])
+  }
+} else {
+  cat("No packages in other library paths.\n")
+}
+```

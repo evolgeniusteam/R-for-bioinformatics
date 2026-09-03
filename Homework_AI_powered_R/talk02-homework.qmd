@@ -1,0 +1,668 @@
+---
+title: "Talk 02 — Homework"
+subtitle: "R Language Basics I — Data Types, Vectors, Matrices & Operations"
+author: "Your Name — Your Student ID"
+date: today
+
+CJKmainfont: "Hei"
+
+format:
+  pdf:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    pdf-engine: xelatex
+  html:
+    df-print: paged
+---
+
+## Instructions 作业说明 {.unnumbered}
+
+- Write your R code inside `{r}` code chunks, run them, and verify the output. 将R代码填入 `{r}` 代码块中，运行并验证输出结果。
+- After completing all exercises, click the **Render** button in RStudio to generate a PDF. 完成后，点击 RStudio 中的 **Render** 按钮生成 PDF。
+- **Rename the PDF** to: `Name-StudentID-talk02-homework.pdf` and submit to the course platform. **将PDF重命名**为：`姓名-学号-talk02-homework.pdf`，提交到课程平台。
+- **Use CodeBuddy AI** whenever you get stuck — it's part of the learning process! 遇到困难时请使用 **CodeBuddy AI** ——这是学习过程的一部分！
+
+## User Verification 用户身份验证 {.unnumbered}
+
+Run the following to verify your identity 运行以下代码验证你的身份:
+
+```{r}
+Sys.info()[["user"]]
+Sys.getenv("HOME")
+```
+
+## Talk 02 Content Review 内容回顾
+
+Today we covered 今天的内容包括:
+
+- **Basic data types** 基本数据类型: numeric, integer, character, logical, complex
+- **Type coercion rules** 类型强制转换规则: logical → numeric → character
+- **Vectors** 向量: creation with `c()` and `:`, single-type constraint
+- **Matrices** 矩阵: `matrix()`, `nrow`/`ncol`, `byrow`, `dimnames`, recycling
+- **Arrays** 数组: `array()`, multi-dimensional data
+- **Basic operators** 基本运算符: arithmetic (`+`, `-`, `*`, `/`, `^`, `%%`) and logical (`|`, `&`)
+- **Variables & assignment** 变量与赋值: `<-`, `=`, `ls()`, `rm()`
+- **Vectorized operations** 向量化操作: element-wise computation, recycling rules
+- **Subsetting** 子集提取: `[ ]` for vectors and matrices, replacement
+- **Missing & special values** 缺失值与特殊值: `NA`, `NaN`, `Inf`, `NULL`, `typeof()`, `is.*()`
+
+---
+
+# Exercise 1: Basic Data Types {.unnumbered}
+
+## 1.1 Identify vector types
+
+Use `class()` to determine the type of each vector below:
+
+```{r}
+# Write your code here — for each vector, use class()
+# (a) c(100, 20, 30)
+# (b) c("string", "array", "a vector")
+# (c) c(TRUE, FALSE, TRUE, T, F)
+# (d) c(1L, 2L, 3L)      # note the L suffix
+
+```
+
+## 1.2 Type coercion
+
+Use `class()` or `str()` to determine the resulting type when different types are combined in a single vector:
+
+```{r}
+# Write your code here
+# (a) c(45, TRUE, 20, FALSE, -100)
+# (b) c("string a", FALSE, "string b", TRUE)
+# (c) c("a string", 1.2, "another string", 1e-3)
+# (d) c(1L, 3.14, TRUE)
+
+```
+
+**Question 1.2a**: In (a), combining numeric and logical values — what type is the result? Why?
+
+**Answer**:
+
+**Question 1.2b**: In (b), combining character and logical values — what type is the result? Why?
+
+**Answer**:
+
+**Question 1.2c**: State the general **coercion rule** in R. Which type "wins" when different types are mixed? 描述 R 的类型强制转换规则。不同类型混合时哪种类型"胜出"？
+
+**Answer**:
+
+## 1.3 Logical values as numbers
+
+Run and explain the following:
+
+```{r}
+# (a) 1 + TRUE
+# (b) 2 * FALSE
+# (c) TRUE + TRUE + FALSE
+# (d) mean(c(TRUE, FALSE, TRUE, TRUE))
+
+```
+
+**Question**: What numeric values do `TRUE` and `FALSE` correspond to? Give a practical example of where this is useful.
+
+**Answer**:
+
+## 1.4 Inspecting types with `typeof()` vs `class()`
+
+Run `typeof()` and `class()` on each object below and compare the results:
+
+```{r}
+# Write your code here
+# (a) 1:10
+# (b) 3.14
+# (c) 2L
+# (d) "hello"
+# (e) TRUE
+# (f) factor(c("a", "b", "c"))
+
+```
+
+**Question**: For which objects do `typeof()` and `class()` give different answers? What does this tell you about these two functions?
+
+**Answer**:
+
+---
+
+# Exercise 2: Vector Operations {.unnumbered}
+
+## 2.1 Creating and naming vectors
+
+```{r}
+# (a) Create a vector v <- 1:10
+# (b) Name its elements with letters a through j
+# (c) Display the named vector
+
+```
+
+## 2.2 Subsetting by position
+
+Using the vector `v` from 2.1, extract:
+
+```{r}
+# (a) The first element
+# (b) Elements 2 through 5
+# (c) Elements at positions 1, 3, 9, 2, 5 (in that order)
+# (d) The last element
+
+```
+
+## 2.3 Subsetting by name
+
+Using the named vector `v` from 2.1, extract:
+
+```{r}
+# (a) The element named "a"
+# (b) Elements named "a", "c", "b" (in that order)
+# (c) All elements EXCEPT "e"  (hint: use negative index or !=)
+
+```
+
+## 2.4 Replacing values
+
+Starting with `v <- 1:10` and `names(v) <- letters[1:10]`, perform these replacements one by one. After **each** replacement, display `v`:
+
+```{r}
+# Re-create v with names
+v <- 1:10
+names(v) <- letters[1:10]
+
+# (a) Replace the first element with 100
+# (b) Replace elements 2:3 with 100
+# (c) Replace elements 3:5 with c(100, 200)
+# (d) Replace elements at positions c(1, 5, 3) with c(100, 500, 300)
+
+```
+
+**Question**: In step (c), you replace 3 positions (3, 4, 5) with only 2 values (100, 200). What happens? What rule is being applied?
+
+**Answer**:
+
+## 2.5 Appending to a vector
+
+```{r}
+# (a) Create a <- sample(1:20, 10)
+# (b) Check its length
+# (c) Append the value 666 to the end
+# (d) Check the length again — what changed?
+
+```
+
+## 2.6 Vector arithmetic
+
+```{r}
+# (a) Create x <- c(4, 6, 5, 7, 10, 9, 4, 15)
+# (b) Create y <- c(0, 10, 1, 8, 2, 3, 4, 1)
+# (c) Compute x * y (element-wise product)
+# (d) Compute x + y
+
+```
+
+## 2.7 Element-wise comparisons
+
+```{r}
+# (a) Create a <- c(1, 5, 4, 3, 6) and b <- c(3, 5, 2, 1, 9)
+# (b) Compute a <= b
+# (c) Compute a == b
+# (d) Compute a > b & b > 3
+
+```
+
+## 2.8 Vectorized math
+
+```{r}
+# (a) Create x <- c(10, 100, 1000, 10000)
+# (b) Compute (y <- sqrt(x) * 4 + 10)
+# (c) Explain what the outer parentheses in (b) do
+
+```
+
+**Question**: What do the outer parentheses `( ... )` around `y <- sqrt(x) * 4 + 10` accomplish?
+
+**Answer**:
+
+## 2.9 Apply inspection functions
+
+Apply the following functions to `x <- 1:12`, `y <- LETTERS[1:12]`, and `z <- c(F, T, FALSE)`:
+
+```{r}
+x <- 1:12
+y <- LETTERS[1:12]
+z <- c(F, T, FALSE)
+
+# Apply: dim(), is.numeric(), is.character(), is.logical(), length()
+# to each of x, y, z
+# Also: is.vector(x), is.vector(y), is.vector(z)
+
+```
+
+**Question**: Is `7` a vector? What about `TRUE`? What does `is.vector(7)` return and why?
+
+**Answer**:
+
+## 2.10 Subsetting with logical conditions
+
+```{r}
+x <- c(4, 6, 5, 7, 10, 9, 4, 15)
+
+# (a) Extract elements of x that are < 7
+# (b) Extract elements of x that are >= 9
+# (c) Extract elements of x where x %% 2 == 0 (even numbers)
+
+```
+
+## 2.11 Vector concatenation and type change
+
+```{r}
+# (a) Create a <- 1:3 and b <- LETTERS[1:3]
+# (b) Combine: ab <- c(a, b)
+# (c) What type is ab? Use at least two different functions to verify
+
+```
+
+**Question**: When you combine a numeric vector and a character vector, what happens? What type does the result become?
+
+**Answer**:
+
+---
+
+# Exercise 3: Matrices {.unnumbered}
+
+## 3.1 Creating matrices
+
+```{r}
+# (a) Create a matrix with values c(20, 30.1, 2, 45.8, 23, 14), 2 rows, fill by row
+# (b) Create the same matrix but fill by column
+# (c) Compare the two results — what's the difference?
+
+```
+
+## 3.2 Named matrices
+
+```{r}
+# Create a matrix with:
+# - values: c(20, 30.1, 2, 45.8, 23, 14)
+# - 2 rows
+# - row names: "row_A", "row_B"
+# - column names: "A", "B", "C"
+# - fill by row
+
+## Complete the following line by filling in the matrix() call:
+# m <- ...
+
+```
+
+## 3.3 Matrix properties
+
+Using the matrix `m` from 3.2, apply the following functions:
+
+```{r}
+# Apply each function to m:
+# dim(), nrow(), ncol(), range(), summary()
+# colnames(), rownames(), t(), class(), str()
+
+```
+
+**Question**: What does `t(m)` do? When would you use it in bioinformatics?
+
+**Answer**:
+
+## 3.4 Matrix subsetting — rows and columns
+
+Using `m` from 3.2:
+
+```{r}
+# (a) Extract the first row only
+# (b) Extract the second column only
+# (c) Extract the third and second columns (in that order)
+# (d) Extract rows 1-2, columns 2-3 (a sub-block)
+
+```
+
+**Question**: For each extraction in (a)-(d), use `class()` to check the result type. When does subsetting return a vector vs. a matrix? What is the `drop` argument? 对 (a)-(d) 中的每个提取结果，用 `class()` 检查类型。何时子集提取返回向量而非矩阵？`drop` 参数是什么？
+
+**Answer**:
+
+## 3.5 Matrix subsetting by name
+
+```{r}
+# Using m from 3.2:
+# (a) Extract the row named "row_A"
+# (b) Extract the columns named "B" and "A" (in that order)
+
+```
+
+## 3.6 Matrix value replacement
+
+```{r}
+# (a) Re-create m from 3.2
+# (b) Replace the first row entirely with value 10
+# (c) Replace column "C" with c(230, 140)
+# (d) Display m after each change
+
+```
+
+## 3.7 Random value replacement
+
+```{r}
+# (a) Re-create m from 3.2
+# (b) Replace the first row with 2 random values between 1 and 1000 (use sample())
+# (c) Replace the second column with 3 random values between 1 and 1000
+
+```
+
+## 3.8 Recycling in matrices
+
+```{r}
+# (a) Create a matrix with data = 1:20, 2 rows, 5 columns, byrow = TRUE
+#     How many values are in 1:20? How many cells in the matrix? Any recycling?
+#
+# (b) Create a matrix with data = 1:3, 2 rows, 3 columns, byrow = TRUE
+#     How many values in data? How many cells? What happens?
+#
+# (c) Create a matrix with data = 1:3, 2 rows, 4 columns, byrow = TRUE
+#     Pay attention to any warning message!
+
+```
+
+**Question**: Explain the recycling rules for `matrix()`. When does R give a warning and when does it not?
+
+**Answer**:
+
+---
+
+# Exercise 4: Arrays {.unnumbered}
+
+## 4.1 Creating a 3D array
+
+```{r}
+# Create a 3-dimensional array with:
+# - data: LETTERS[1:16]
+# - dimensions: 2 rows, 4 columns, 2 layers
+# - dimension names:
+#   - Rows: "A", "B"
+#   - Columns: "one", "two", "three", "four"
+#   - Layers: "first", "second"
+
+```
+
+## 4.2 Array subsetting
+
+Using the array from 4.1:
+
+```{r}
+# (a) Extract the first layer (all rows, all columns, layer 1)
+# (b) Extract all rows, columns "two" and "three", second layer
+# (c) Extract row "A", all columns, all layers
+
+```
+
+---
+
+# Exercise 5: Operators & Expressions {.unnumbered}
+
+## 5.1 Arithmetic
+
+```{r}
+# Compute the following:
+# (a) 1 + 2 - 3 * 4 / 5
+# (b) 1 + (2 - 3) * 4 / 5      # how do parentheses change the result?
+# (c) 2 ^ 6                      # exponentiation
+# (d) 5 %% 2                     # modulo (remainder)
+# (e) 100:110 %% 2               # vectorized modulo
+
+```
+
+## 5.2 Logical operators
+
+```{r}
+# Compute and explain:
+# (a) T | F
+# (b) T & F
+# (c) 5 | 0
+# (d) 5 & -1
+# (e) 5 & 0
+
+```
+
+**Question**: Why does `5 & -1` return `TRUE` while `5 & 0` returns `FALSE`? What rule governs this?
+
+**Answer**:
+
+## 5.3 isTRUE() behavior
+
+```{r}
+# Apply isTRUE() to each of these:
+# (a) TRUE
+# (b) FALSE
+# (c) 5
+# (d) 0
+# (e) -1
+# (f) 5 & 6
+
+```
+
+**Question**: `isTRUE(5)` returns `FALSE` and `isTRUE(6)` returns `FALSE`, but `isTRUE(5 & 6)` returns `TRUE`. Why?
+
+**Answer**:
+
+## 5.4 Which elements are finite?
+
+```{r}
+# (a) Create x <- c(12:4)
+# (b) Create y <- c(0, 1, 2, 0, 1, 2, 0, 1, 2)
+# (c) Compute: which(!is.finite(x / y))
+# (d) Explain the result
+
+```
+
+**Question**: What does `!is.finite()` detect? Which divisions produced non-finite values and why?
+
+**Answer**:
+
+## 5.5 Character comparisons
+
+```{r}
+# Create x <- letters[1:10] and y <- letters[15:24]
+# Compute x > y
+# Can characters be compared with >? What rule is used?
+
+```
+
+---
+
+# Exercise 6: Vectorized Operations & Recycling {.unnumbered}
+
+## 6.1 Element-wise operations
+
+```{r}
+# (a) Create x <- 1:10
+# (b) Compute sqrt(x), log(x), x^2 all at once
+# (c) Explain: why no loop is needed?
+
+```
+
+## 6.2 Recycling with same-length vectors
+
+```{r}
+# (a) Create p <- c(3, 5, 6, 8) and q <- c(3, 3, 3, 3)
+# (b) Compute p + q
+# (c) Compute p * q
+
+```
+
+## 6.3 Recycling with unequal-length vectors
+
+```{r}
+# (a) Create p <- c(3, 5, 6, 8) and q <- c(3, 3, 3)
+# (b) Compute p + q — note any warning
+# (c) Explain what happened
+
+```
+
+**Question**: When vectors of unequal length are combined, the shorter one is **recycled**. What are the risks of recycling? In what situations is it useful? 当长度不等的向量组合时，较短的向量会被**循环补齐**。这有什么风险？在什么情况下很有用？
+
+**Answer**:
+
+## 6.4 Recycling in comparisons
+
+```{r}
+# (a) Create x <- c(4, 6, 5, 7, 10, 9, 4, 15)
+# (b) Compute x < 7
+# (c) Compute x < c(8, 4)
+# (d) Explain the recycling in step (c)
+
+```
+
+## 6.5 Matrix arithmetic with recycling
+
+```{r}
+# Re-create m from 3.2
+m <- matrix(c(20, 30.1, 2, 45.8, 23, 14), nrow = 2, byrow = TRUE)
+
+# (a) Divide every element by 10
+# (b) Divide by c(1, 10, 100) — observe column-major recycling
+# (c) Divide by c(1, 10) — observe recycling across columns
+
+```
+
+**Question**: Matrix recycling follows **column-major** order. What does that mean? Draw a diagram if helpful.
+
+**Answer**:
+
+---
+
+# Exercise 7: Special Values {.unnumbered}
+
+## 7.1 Creating special values
+
+```{r}
+# (a) Create a vector sp containing: NA, NaN, Inf, -Inf
+# (b) Apply to sp: is.finite(), is.infinite(), is.na(), is.nan()
+# (c) Create a table or list comparing the results
+
+```
+
+## 7.2 Division by zero
+
+```{r}
+# Compute c(-1, 0, 1) / 0
+# For each element, explain the result
+
+```
+
+## 7.3 NULL vs NA
+
+```{r}
+# (a) Create a vector with a NULL: c(1, 2, NULL, 4) — what happens?
+# (b) Create a vector with an NA: c(1, 2, NA, 4)
+# (c) What is the difference between NULL and NA?
+
+```
+
+**Question**: Explain the difference between `NULL` and `NA` in R. When would you encounter each?
+
+**Answer**:
+
+## 7.4 is.*() function practice
+
+```{r}
+# Test each expression and report TRUE/FALSE:
+# (a) is.null(NULL)
+# (b) is.na(NULL)
+# (c) is.null(NA)
+# (d) is.na(NA)
+# (e) is.numeric(NA)
+# (f) is.numeric(Inf)
+# (g) is.nan(NaN)
+# (h) is.infinite(Inf)
+
+```
+
+**Question**: Why does `is.numeric(NA)` return `TRUE`? What does this tell us about `NA`?
+
+**Answer**:
+
+---
+
+# Exercise 8: Putting It All Together {.unnumbered}
+
+## 8.1 Mini data analysis
+
+Create a small dataset and perform basic operations:
+
+```{r}
+# (a) Create a numeric vector "height" with 5 values: 165, 172, 158, 181, 169
+# (b) Create a character vector "name" with 5 names: "Alice", "Bob", "Carol", "Dave", "Eve"
+# (c) Compute the mean, median, min, and max of height
+# (d) Which person is the tallest? (hint: use which.max())
+
+```
+
+## 8.2 Create a summary matrix
+
+```{r}
+# (a) Create a matrix "scores" with 3 rows and 4 columns:
+#     Row 1 (Alice):  85, 90, 78, 92
+#     Row 2 (Bob):     72, 88, 91, 76
+#     Row 3 (Carol):   94, 82, 89, 95
+# (b) Name rows: "Alice", "Bob", "Carol"
+# (c) Name columns: "Exam1", "Exam2", "Exam3", "Exam4"
+# (d) Compute each student's average score (hint: rowMeans())
+# (e) Compute each exam's average score (hint: colMeans())
+# (f) Which student had the highest overall average?
+
+```
+
+## 8.3 Logical indexing challenge
+
+```{r}
+# (a) Create a <- sample(1:50, 20)  # 20 random numbers between 1 and 50
+# (b) Extract all values > 20
+# (c) Count how many values are even (hint: sum(a %% 2 == 0))
+# (d) Extract values that are both > 25 AND even
+
+```
+
+---
+
+# Exercise 9: Use CodeBuddy to Help {.unnumbered}
+
+## 9.1 Debug with AI
+
+If you encountered any errors in the exercises above, paste the error message to CodeBuddy and ask for help. Copy the **prompt you used** and a **brief summary of CodeBuddy's response** below:
+
+**My debug prompt**:
+
+```
+```
+
+**CodeBuddy's response summary**:
+
+## 9.2 Explain a concept with AI
+
+Ask CodeBuddy: "Explain vectorized operations in R with simple examples. Why are they faster than loops?"
+
+**My prompt**:
+
+```
+```
+
+**CodeBuddy's response summary**:
+
+## 9.3 Generate practice exercises
+
+Ask CodeBuddy: "Give me 5 additional practice exercises about R matrices and subsetting, with answers."
+
+**My prompt**:
+
+```
+```
+
+**CodeBuddy's response summary**:
+
+---
+
+*Homework ends here. Make sure all code chunks run without errors, then Render to PDF and submit. 作业结束。请确认所有代码块运行无误，Render 生成 PDF 后提交。*

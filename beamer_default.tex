@@ -20,9 +20,18 @@ $endif$
 \usepackage{amssymb,amsmath}
 
 % required for kable and kableExtra for R  ----
+\usepackage{array}      % provides \arraybackslash needed by Pandoc table specs
+\usepackage{calc}       % provides arithmetic in length args, e.g. (\linewidth - 4\tabcolsep) * \real{0.18}
 \usepackage{longtable}
 \usepackage{booktabs} 
 % < --- < ---
+
+% Fix Pandoc's \def\LTcaptype{none} with newer longtable package
+% Pandoc generates this for captionless tables; longtable >= v4.20
+% no longer silently ignores an undefined counter name
+\makeatletter
+\@ifundefined{c@none}{\newcounter{none}}{}
+\makeatother
 
 % solve the issue below:
 % Undefined control sequence.

@@ -1,0 +1,828 @@
+---
+title: "AI-powered bioinformatic analysis using R, #8"
+subtitle: "Strings, Iteration & Functional Programming"
+author: "Wei-Hua Chen (CC BY-NC 4.0)"
+institute: "HUST, China"
+date: today
+
+CJKmainfont: "Arial"
+
+format: 
+  beamer:
+    aspectratio: 1610
+    navigation: vertical
+    theme: AnnArbor
+    colortheme: beaver
+    fonttheme: structurebold
+    highlight: tango
+    slide_level: 2
+    toc: true
+    pdf-engine: xelatex
+    header-includes:
+      - \AtBeginSubsection{}
+
+execute:
+  echo: true
+  fig-width: 8
+  fig-height: 4.5
+---
+
+# String Basics
+
+## What Are Strings?
+
+Strings are sequences of characters. In bioinformatics, strings are everywhere:
+
+- DNA/RNA sequences: `"ATCGGCGCG..."`
+- Gene names: `"TP53"`, `"BRCA1"`
+- File paths, sample IDs, annotations
+
+## Some exmaples
+
+\footnotesize
+```{r}
+library(tidyverse)
+library(stringr)
+
+string1 <- "This is a string"
+string2 <- 'If I want to include a "quote" inside a string, I use single quotes'
+
+# Multiline string
+(string3 <- "a multiline
+string")
+writeLines(string3)  # see the actual content
+```
+\normalsize
+
+## Special Characters
+
+\footnotesize
+```{r}
+# Double and single quotes
+(double_quote <- "\"")
+(single_quote <- '\'')
+
+# Unicode
+(x <- "\u00b5")  # µ (micro sign)
+
+# Backslash — note the difference!
+(y <- "\\")
+writeLines(y)
+```
+\normalsize
+
+## String Length
+
+\footnotesize
+```{r}
+# Base R
+nchar(c("a", "R for data science", NA))
+
+# stringr
+str_length(c("a", "R for data science", NA))
+```
+\normalsize
+
+## String Concatenation
+
+\footnotesize
+```{r}
+# Base R — paste()
+paste("a", "b", "c", sep = "")
+
+# stringr — str_c()
+str_c("a", "b", "c")
+
+# Vectorized
+paste(c("a", "b", "c"), 2, sep = "")
+str_c(c("a", "b", "c"), 2)
+```
+\normalsize
+
+## String Comparison
+
+\footnotesize
+```{r}
+# Direct comparison (lexicographic)
+"A" > "abc"
+
+library(pracma)
+strcmp("chen", "chenweihua")    # case-sensitive
+strcmpi("chen", "CHEN")         # case-insensitive
+```
+\normalsize
+
+## Case Conversion & Other Basics
+
+\footnotesize
+```{r}
+toupper(letters[1:10])
+tolower(LETTERS[1:5])
+
+library(stringi)
+stri_reverse("ABC")
+```
+\normalsize
+
+**Tip**: `stringi` functions start with `stri_`, `stringr` functions start with `str_`.
+
+# Regular Expressions (Regex)
+
+## What is Regex?
+
+**A sequence of characters that define a search pattern.**
+
+\footnotesize
+```{r}
+# [ab] means "a or b"
+c("abc", "chen", "liu", "blah") %>% str_subset("[ab]")
+
+# \d+ means "one or more digits"
+c("a1334bc", "ch13e_45n", "liu", "bl00ah") %>% str_extract("\\d+")
+```
+\normalsize
+
+**Useful tools**: [regex101.com](https://regex101.com), [regexr.com](https://regexr.com)
+
+## Four Tasks of Regex
+
+1. **Match patterns** — what characters?
+2. **Match rules** — which character classes?
+3. **Position rules** — where in the string?
+4. **Quantity rules** — how many repetitions?
+
+## 1. Character Classes & Groups
+
+| Pattern | Meaning |
+|---------|---------|
+| `.` | any character |
+| `[abc]` | a, b, or c |
+| `[^abc]` | anything except a, b, c |
+| `[a-z]` | any lowercase letter |
+| `[A-Z]` | any uppercase letter |
+| `[0-9]` | any digit |
+| `(ab\|cd)` | "ab" or "cd" |
+
+## 1. Special Character Classes
+
+| Shorthand | Meaning |
+|-----------|---------|
+| `\d` | digit `[0-9]` |
+| `\D` | non-digit |
+| `\w` | word character `[A-Za-z0-9_]` |
+| `\W` | non-word |
+| `\s` | whitespace (space, tab, newline) |
+| `\S` | non-whitespace |
+
+\footnotesize
+```{r}
+"abc_123_??$$^" %>% str_detect("\\s+")   # has whitespace?
+"abc_123_??$$^" %>% str_detect("\\d+")   # has digits?
+"abc_123_??$$^" %>% str_detect("\\w+")   # has word chars?
+```
+\normalsize
+
+## 2. Position Rules — Anchors
+
+| Anchor | Meaning |
+|--------|---------|
+| `^` | start of string |
+| `$` | end of string |
+| `\b` | word boundary |
+
+\footnotesize
+```{r}
+# Ends with "wei"
+c("chen wei hua", "chen wei", "chen") %>% str_subset("wei$")
+
+# Word ending in "wei"
+c("chen wei hua", "chen wei", "chen") %>% str_subset("wei\\b")
+```
+\normalsize
+
+## 3. Quantity Rules — Quantifiers
+
+| Quantifier | Meaning |
+|------------|---------|
+| `+` | 1 or more |
+| `*` | 0 or more |
+| `?` | 0 or 1 |
+| `{n}` | exactly n |
+| `{n,}` | n or more |
+| `{n,m}` | between n and m |
+
+\footnotesize
+```{r}
+"1234abc" %>% str_extract("\\d+")       # all digits
+"1234abc" %>% str_extract("\\d{3}")     # exactly 3 digits
+"1234abc" %>% str_extract("\\d{5,6}")   # 5-6 digits → NA
+"1234abc" %>% str_extract("\\d{2,6}")   # 2-6 digits
+```
+\normalsize
+
+# Regex Tasks in stringr
+
+## 1. Detect Patterns
+
+\footnotesize
+```{r}
+# Base R
+grep("\\d+", c("123", "abc", "wei555hua"))
+grepl("\\d+", c("123", "abc", "wei555hua"))
+
+# stringr
+c("123", "abc", "wei555hua") %>% str_detect("\\d+")
+```
+\normalsize
+
+## 1. Count Matches
+
+\footnotesize
+```{r}
+x <- c("why", "video", "cross", "extra", "deal", "authority")
+str_detect(x, "[aeiou]")    # contains vowel?
+str_count(x, "[aeiou]")     # how many vowels?
+```
+\normalsize
+
+## 2. Locate Patterns
+
+\footnotesize
+```{r}
+# Base R
+regexpr("\\d+", c("123", "abc", "wei555hua"))
+
+# stringr
+c("123", "abc", "wei555hua") %>% str_locate("\\d+")
+```
+\normalsize
+
+## 3. Extract Patterns
+
+\footnotesize
+```{r}
+c("123", "abc", "wei555hua") %>% str_extract("\\d+")
+c("123", "abc", "wei555hua") %>% str_match("\\d+")
+```
+\normalsize
+
+## str_extract vs. str_match
+
+\footnotesize
+```{r}
+x
+str_extract(x, "(.)[aeiou](.)")            # extract match
+str_match(x, "(.)[aeiou](.)")        # extract groups around vowel
+```
+\normalsize
+
+`str_match()` returns capture groups `(...)` as separate columns!
+
+## Extract All Occurrences
+
+\footnotesize
+```{r}
+x
+str_extract_all(x, "[aeiou]+")
+str_match_all(x, "[aeiou]+")
+```
+\normalsize
+
+## 4. Replace Patterns
+
+\footnotesize
+```{r}
+str_replace(c("123", "abc", "wei555hua"), "\\d+", "###")
+str_replace_all("123_abc_456_789", "\\d+", "###")
+```
+\normalsize
+
+## 5. Split by Pattern
+
+\footnotesize
+```{r}
+str_split(x, "")
+```
+\normalsize
+
+## Advanced Example: Chromosome Coordinates
+
+\footnotesize
+```{r}
+dat <- tibble(chrom = readLines(textConnection(
+  "chr11:69464719-69502928
+chr7:55075808-55093954
+chr8:128739772-128762863
+chr3:169389459-169490555
+chr17:37848534-37877201
+chr19:30306758-30316875
+chr1:150496857-150678056
+chr12:69183279-69260755
+chr11:77610143-77641464
+chr8:38191804-38260814
+chr12:58135797-58156509")))
+
+# Split into chr, start, end
+dat$chrom %>% str_split('[:-]', simplify = TRUE)
+```
+\normalsize
+
+## Alternative: tidyr::extract()
+
+\footnotesize
+```{r}
+library(tidyr)
+extract(dat, chrom, into = c('chr', 'chrStart', 'chrEnd'),
+        '([^:]+):([^-]+)-(.*)', convert = TRUE)
+```
+\normalsize
+
+# Iteration: for Loops
+
+## for Loop Basics
+
+\footnotesize
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+
+df <- tibble(a = rnorm(100), b = rnorm(100), c = rnorm(100), d = rnorm(100))
+
+# Compute row means — pre-allocate output!
+res1 <- vector("double", nrow(df))
+for (row_idx in 1:nrow(df)) {
+  res1[row_idx] <- mean(as.numeric(df[row_idx, ]))
+}
+
+# Compute column means
+res2 <- vector("double", ncol(df))
+for (col_idx in 1:ncol(df)) {
+  res2[col_idx] <- mean(df[[col_idx]])
+}
+```
+\normalsize
+
+**Golden rule**: Always **pre-allocate** the output vector! `vector("double", N)`
+
+## Vectorized Alternatives to for Loops
+
+\footnotesize
+```{r}
+# Much faster than for loops
+rowMeans(df)
+colMeans(df)
+
+# Also available:
+# rowSums(), colSums()
+```
+\normalsize
+
+# The apply Family
+
+## apply() — Row/Column Operations
+
+`apply(X, MARGIN, FUN, ...)`
+
+- **MARGIN = 1**: rows
+- **MARGIN = 2**: columns
+
+\footnotesize
+```{r}
+df %>% apply(1, median)    # row medians
+df %>% apply(2, median)    # column medians
+```
+\normalsize
+
+## apply() with Custom Functions
+
+\footnotesize
+```{r}
+df %>% apply(2, function(x) {
+  return(c(n = length(x), mean = mean(x), median = median(x)))
+})
+```
+\normalsize
+
+**Note**: Most row operations can be replaced by `dplyr`.
+
+## tapply() — Grouped Operations
+
+`tapply(X, INDEX, FUN)`
+
+Group **X** by **INDEX**, apply **FUN** to each group.
+
+\footnotesize
+```{r warning=FALSE, message=FALSE}
+library(magrittr)
+# mpg by cylinder
+mtcars %$% tapply(mpg, cyl, mean)
+```
+\normalsize
+
+## tapply vs. dplyr
+
+\footnotesize
+```{r warning=FALSE, message=FALSE}
+# tapply
+mtcars %$% tapply(mpg, cyl, mean)
+
+# dplyr — clearer, more readable
+mtcars %>% group_by(cyl) %>% summarise(mean = mean(mpg))
+```
+\normalsize
+
+**Both tapply and dplyr operate on rows!**
+
+## lapply() and sapply()
+
+Column/list operations — iterate over each element:
+
+- **vector**: one element at a time
+- **data.frame / tibble / matrix**: one column at a time
+- **list**: one member at a time
+
+\footnotesize
+```{r}
+df %>% lapply(mean)    # returns list
+```
+\normalsize
+
+## sapply() — Type-stable
+
+\footnotesize
+```{r}
+df %>% sapply(mean)    # returns vector
+```
+\normalsize
+
+## lapply/sapply with Custom Functions
+
+\footnotesize
+```{r}
+list(a = 1:10, b = letters[1:5], c = LETTERS[1:8]) %>%
+  sapply(function(x) { length(x) })
+```
+\normalsize
+
+**Key**: `lapply`/`sapply` = column-wise operations, equivalent to `apply(x, 2, FUN)`.
+
+# purrr: Modern Iteration
+
+## What is purrr?
+
+Part of the **tidyverse**, provides consistent, type-stable iteration functions.
+
+`map()` = `lapply()` replacement:
+
+- Iterates over each column (tibble) or slot (list)
+- Applies FUN
+- Returns results as a list
+
+## map() — Column/Slot Operations
+
+\footnotesize
+```{r}
+df %>% map(summary)
+```
+\normalsize
+
+## Typed map Functions (sapply replacement)
+
+| Function | Returns |
+|----------|---------|
+| `map_lgl()` | logical vector |
+| `map_int()` | integer vector |
+| `map_dbl()` | double vector |
+| `map_chr()` | character vector |
+| `map_df()` | data frame (row-binding) |
+
+\footnotesize
+```{r}
+df %>% map_dbl(mean)
+```
+\normalsize
+
+## Advanced map: split + cor.test
+
+\footnotesize
+```{r fig.height=4, fig.width=10}
+# For each cylinder group, correlate mpg and wt
+mtcars %>%
+  split(.$cyl) %>%
+  map(~ cor.test(.$wt, .$mpg)) %>%
+  map_dbl(~ .$estimate)
+```
+\normalsize
+
+The code logic:
+
+- split the data frame by `cyl`
+- for each group, run `cor.test(wt, mpg)`
+- extract the `estimate` from the result
+
+## The code above is equivalent to:
+
+\footnotesize
+```{r}
+# For each cylinder group, correlate mpg and wt
+mtcars %>%
+  group_by(cyl) %>%
+  summarise(cor = cor.test(wt, mpg)$estimate)
+```
+
+## The ~ (tilde) Syntax
+
+Short for `function(x)`:
+
+```{r eval=FALSE}
+# Full form
+map(function(df) { cor.test(df$wt, df$mpg) })
+
+# Shorthand — ~ replaces function, . replaces the argument
+map(~ cor.test(.$wt, .$mpg))
+```
+
+## map2() — Two-Input Mapping
+
+\footnotesize
+```{r}
+mu <- list(5, 10, -3)
+sigma <- list(1, 5, 10)
+map2(mu, sigma, rnorm, n = 5) %>% str()
+```
+\normalsize
+
+What is the output?
+
+- generate 5 random numbers for each pair of `mu` (as mean) and `sigma` (as standard deviation)
+
+## pmap() — Multi-Input Mapping
+
+\footnotesize
+```{r}
+params <- tribble(
+  ~mean, ~sd, ~n,
+     5,    1,  1,
+    10,    5,  3,
+    -3,   10,  5
+)
+params %>% pmap(rnorm)
+```
+\normalsize
+
+## reduce() — Combine Elements
+
+\footnotesize
+```{r}
+# Full join multiple tables
+dfs <- list(
+  age = tibble(name = "John", age = 30),
+  sex = tibble(name = c("John", "Mary"), sex = c("M", "F")),
+  trt = tibble(name = "Mary", treatment = "A")
+)
+dfs %>% reduce(full_join)
+```
+\normalsize
+
+## reduce() for Set Operations
+
+\footnotesize
+```{r}
+vs <- list(
+  c(1, 3, 5, 6, 10),
+  c(1, 2, 3, 7, 8, 10),
+  c(1, 2, 3, 4, 8, 9, 10)
+)
+vs %>% reduce(intersect)    # common elements
+```
+\normalsize
+
+## accumulate() — See Intermediate Steps
+
+\footnotesize
+```{r}
+(x <- sample(10))
+x %>% accumulate(`+`)    # cumulative sum, step by step
+```
+\normalsize
+
+## keep() and discard()
+
+\footnotesize
+```{r}
+# Keep factor columns
+iris %>% keep(is.factor)
+```
+
+## discard()
+
+\footnotesize
+```{r}
+# Discard factor columns
+iris %>% discard(is.factor)
+```
+
+\normalsize
+
+# Writing Custom Functions
+
+## Function Syntax
+
+\footnotesize
+
+```{r}
+# Basic structure
+my_function <- function(arg1, arg2 = default_value) {
+  # body
+  return(result)
+}
+
+# Example
+calc_cv <- function(x) {
+
+    ## if no return value is specified, the last expression is returned
+  sd(x, na.rm = TRUE) / mean(x, na.rm = TRUE) * 100
+}
+
+calc_cv(mtcars$mpg)
+```
+
+## Defensive Programming
+
+Always validate inputs:
+
+\footnotesize
+```{r}
+safe_mean <- function(x) {
+  stopifnot(is.numeric(x))         # validate input
+  if (length(x) == 0) return(NA)   # handle edge case
+  mean(x, na.rm = TRUE)
+}
+
+# safe_mean(c("a", "b"))  # would error with clear message
+safe_mean(c(1, 2, 3, NA))
+```
+\normalsize
+
+# Parallel Computing (Brief)
+
+## Why Parallel Computing?
+
+- Modern computers have multiple CPU cores
+- Many bioinformatics tasks are "embarrassingly parallel"
+- Speed up by running tasks simultaneously on multiple cores
+
+## Three Steps of Parallel Computing
+
+1. **Split** tasks and distribute to workers
+2. **Compute** independently on each worker
+3. **Collect** and combine results
+
+## Key Packages
+
+- **`parallel`**: detect CPU cores, `parLapply()`
+- **`doParallel`**: register parallel backend
+- **`foreach`**: provides `%do%` (sequential) and `%dopar%` (parallel)
+- **`iterators`**: split data for parallel tasks
+
+## Simple Example
+
+\footnotesize
+```{r}
+library(doParallel)
+library(foreach)
+library(iterators)
+
+# Detect CPUs
+(cpus <- parallel::detectCores())
+
+# Register parallel backend
+registerDoParallel(cpus - 1)   # leave 1 core free
+
+# Parallel loop
+data(iris)
+x <- iris[which(iris[, 5] != "setosa"), c(1, 5)]
+trials <- 10000
+
+r <- foreach(icount(trials), .combine = rbind) %dopar% {
+  ind <- sample(100, 100, replace = TRUE)
+  result1 <- glm(x[ind, 2] ~ x[ind, 1], family = binomial(logit))
+  coefficients(result1)
+}
+```
+\normalsize
+
+## Sequential vs. Parallel: Time Comparison
+
+Let's compare running time of sequential vs. parallel for a realistic bioinformatics task — performing many t-tests on simulated gene expression data:
+
+\footnotesize
+```{r}
+library(doParallel)
+library(foreach)
+
+# Simulate: 5000 genes × 20 samples (10 case, 10 control)
+set.seed(123)
+n_genes <- 5000
+expr_data <- matrix(rnorm(n_genes * 20, mean = 10, sd = 2), nrow = n_genes)
+colnames(expr_data) <- c(paste0("Case_", 1:10), paste0("Ctrl_", 1:10))
+group <- rep(c("Case", "Ctrl"), each = 10)
+
+# --- Sequential ---
+time_seq <- system.time({
+  res_seq <- foreach(i = 1:n_genes, .combine = c) %do% {
+    t.test(expr_data[i, group == "Case"], 
+           expr_data[i, group == "Ctrl"])$p.value
+  }
+})
+```
+
+## Sequential vs. Parallel: Time Comparison, cont.
+
+\footnotesize
+```{r}
+# Register parallel backend
+registerDoParallel(parallel::detectCores() - 1)
+
+# --- Parallel ---
+time_par <- system.time({
+  res_par <- foreach(i = 1:n_genes, .combine = c) %dopar% {
+    t.test(expr_data[i, group == "Case"], 
+           expr_data[i, group == "Ctrl"])$p.value
+  }
+})
+
+stopImplicitCluster()
+```
+
+## Sequential vs. Parallel: Time Comparison, cont.
+
+\footnotesize
+```{r}
+# Compare timing
+rbind(Sequential = time_seq[1:3], Parallel = time_par[1:3])
+
+# Speedup
+cat(sprintf("\nSpeedup: %.1fx faster with parallel computing\n",
+            time_seq["elapsed"] / time_par["elapsed"]))
+```
+\normalsize
+
+**Key takeaway**: For independent, repetitive computations (e.g., per-gene statistics, bootstrapping, permutation tests), parallel computing can dramatically reduce runtime.
+
+## foreach Parameters
+
+- **`.combine`**: how to combine results (`'c'`, `'rbind'`, `'cbind'`, or a custom function)
+- **`.packages`**: packages to load on each worker (e.g., `c("tidyverse")`)
+
+\footnotesize
+```{r eval=FALSE}
+# Example with .packages
+res <- foreach(df = iter(mtcars %>% split(.$cyl)), 
+               .combine = 'rbind',
+               .packages = c("ggplot2")) %dopar% {
+  p <- ggplot(df, aes(x = wt, y = mpg)) + geom_point()
+  return(p)
+}
+
+# ALWAYS close the cluster!
+stopImplicitCluster()
+```
+\normalsize
+
+## furrr: purrr + future
+
+A simpler approach — combine `purrr` with `future`:
+
+\footnotesize
+```{r eval=FALSE}
+library(furrr)
+plan(multisession, workers = 4)  # use 4 cores
+
+# Replace map() with future_map()
+result <- mtcars %>%
+  split(.$cyl) %>%
+  future_map(~ cor.test(.$wt, .$mpg))
+```
+\normalsize
+
+# Summary
+
+## What We Covered
+
+| Topic | Key Functions |
+|-------|---------------|
+| **String basics** | `str_length`, `str_c`, `toupper`, `tolower` |
+| **Regex** | `str_detect`, `str_count`, `str_locate`, `str_extract`, `str_match`, `str_replace`, `str_split` |
+| **for loops** | pre-allocation, `vector("double", N)` |
+| **apply family** | `apply()`, `tapply()`, `lapply()`, `sapply()` |
+| **purrr** | `map()`, `map_dbl()`, `map2()`, `pmap()`, `reduce()`, `accumulate()`, `keep()`, `discard()` |
+| **Custom functions** | `function()`, `stopifnot()`, input validation |
+| **Parallel computing** | `foreach` + `%dopar%`, `furrr::future_map()` |
+
+## Next Talk
+
+**Talk 09**: Statistical Analysis & Machine Learning Basics
+
+## Homework
+
+Complete `Homework_AI_powered_R/talk08-homework.qmd`

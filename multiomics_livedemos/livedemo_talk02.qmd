@@ -1,0 +1,27 @@
+---
+title: "live demo for talk02"
+author: "WHC"
+format: pdf
+---
+
+## Live demos for talk 02
+
+1.  open RStudio and the `R for bioinformatics` project
+2.  open this file `talk02/livedemo/livedemo.qmd`
+3.  install packages
+4.  Render Exercises 01 - multiomics.qmd to PDF
+
+## Install required packages
+
+- choose your nearest CRAN mirror first
+
+- Method 1: use `install.packages("package_name")` in R console
+
+- Method 2: use RStudio `Packages` tab to install packages
+
+## Install tinytex package
+
+```{r}
+# install.packages("tinytex")
+tinytex:::install_prebuilt("../../TinyTex files - downloaded Aug 2025/TinyTex.zip")
+```

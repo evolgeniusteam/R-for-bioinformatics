@@ -1,0 +1,420 @@
+---
+title: "Talk 08 — Homework"
+subtitle: "Strings, Iteration & Functional Programming"
+author: "Your Name — Your Student ID"
+date: today
+CJKmainfont: "Hei"
+format:
+  pdf:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    pdf-engine: xelatex
+  html:
+    df-print: paged
+---
+
+## Instructions 说明
+
+1.  Run each code chunk to verify results. 运行每个代码块以验证结果。
+2.  For string exercises, use `stringr` functions. For iteration, use both base R and `purrr` where appropriate.
+3.  Submit the compiled PDF as `姓名-学号-talk08-homework.pdf`.
+
+## User Verification 用户验证
+
+```{r}
+Sys.info()[["user"]]
+Sys.getenv("HOME")
+```
+
+```{r}
+library(tidyverse)
+library(stringr)
+```
+
+---
+
+# Exercise 1: String Basics 字符串基础 {.unnumbered}
+
+## 1.1 Basic Operations
+
+Using `x <- c('weihua', 'chen')`:
+
+1. Get the length of each element 每个元素的长度
+2. Capitalize the first letter of each 首字母大写
+3. Extract the first two characters of each 取前两个字符
+4. Combine into one string separated by `', '` 合并为一个字符串
+5. Count the number of **vowels** (a, e, i, o, u) in each element 数元音字母
+
+```{r}
+x <- c('weihua', 'chen')
+
+## Your code here
+
+```
+
+## 1.2 Working with mtcars Row Names
+
+1. Filter all Mercedes-Benz cars 筛选奔驰车
+2. Filter all non-Mercedes-Benz cars 筛选非奔驰车
+3. Split rownames into brand and model. E.g., `"Mazda RX4 Wag"` → `c("Mazda", "RX4 Wag")` 拆分品牌和车型
+
+```{r}
+## Your code here
+
+```
+
+## 1.3 str_c with Prefix and Suffix
+
+Add prefix `"|-"` and suffix `"-|"` to `x <- c("abc", NA)` so the result is: `"|-abc-|" "|-NA-|"`
+
+```{r}
+x <- c("abc", NA)
+
+## Your code here
+
+```
+
+---
+
+# Exercise 2: Regular Expression Practice 正则表达式 {.unnumbered}
+
+## 2.1 starwars Queries
+
+1. Select all characters whose `skin_color` contains `"white"`. Show `name`, `homeworld`, `species`, `skin_color`.
+2. Print all names containing `"ar"` (case-insensitive).
+
+```{r}
+## Your code here
+
+```
+
+## 2.2 Working with vec
+
+Using `vec <- c("123", "abc", "wei555hua666")`:
+
+1. Find strings containing digits 找出含数字的字符串
+2. Locate the position of the first digit in each string 定位第一个数字
+3. Locate all digit positions 定位所有数字
+4. Extract the first digit group 提取第一组数字
+5. Extract all digit groups 提取所有数字
+6. Replace digits with `"666"` 替换数字为666
+
+```{r}
+vec <- c("123", "abc", "wei555hua666")
+
+## Your code here
+
+```
+
+## 2.3 DNA Sequence Analysis 序列分析
+
+Using `seq <- "ATCTCGGCGCGCATCGCGTACGCTACTAGC"`:
+
+1. Get its reverse complement 反向互补 (A↔T, C↔G)
+2. Calculate GC content as percentage GC含量
+3. Split into codons (groups of 3 nucleotides) 拆分为密码子
+
+```{r}
+seq <- "ATCTCGGCGCGCATCGCGTACGCTACTAGC"
+
+## Your code here
+
+```
+
+## 2.4 str_pad
+
+**Question**: What does `stringr::str_pad` do? Provide an example. `str_pad` 的作用是什么？举例说明。
+
+**Answer**:
+
+```{r}
+## Your example code here
+
+```
+
+## 2.5 Repeated Pattern Extraction
+
+Extract substrings of length 2 that repeat 2+ times from these strings. E.g., `"1212"` contains `"12"` repeated twice; `"898989"` contains `"89"` repeated 3 times.
+
+`c("banana", "coconut", "1232323", "database")`
+
+```{r}
+## Your code here
+
+```
+
+## 2.6 Number Matching Regex
+
+Design a regex that matches all of these number formats:
+
+```
+123
+123.45
+0.124
+-1.5
+-0.2
++1.3
+-11
+-199.62
+```
+
+```{r}
+## Your code here
+
+```
+
+---
+
+# Exercise 3: for Loops 循环 {.unnumbered}
+
+## 3.1 Basic Loop Practice
+
+1. Write a loop to compute and print squares of numbers 1 to 7 打印1到7的平方
+2. Print each column name of `iris` with its length, in format: `Sepal.Length (12)` 打印列名及长度
+3. Write a `while` loop that draws `rnorm(1)` each time until the value is > 1 直到取到>1的数
+4. Write a loop to find how many Fibonacci numbers are needed before the value exceeds 1 million. Fibonacci: `0, 1, 1, 2, 3, 5, 8, ...` 计算Fibonacci超过100万需要的循环数
+
+```{r}
+## Your code here
+
+```
+
+---
+
+# Exercise 4: apply Family {.unnumbered}
+
+## 4.1 Matrix Operations
+
+Create a 100 × 100 numeric matrix. Compute:
+
+1. Row means using `rowMeans()` and `apply()`
+2. Column means using `colMeans()` and `apply()`
+3. Row sums using `rowSums()` and `apply()`
+4. Column sums using `colSums()` and `apply()`
+5. Using a custom function, compute row mean, sum, and sd simultaneously
+
+```{r}
+## Your code here
+
+```
+
+## 4.2 tapply and dplyr
+
+Using `mtcars`:
+
+1. Compute mean `mpg` by `cyl` using `tapply()`
+2. Compute mean `wt` by `cyl` using `tapply()`
+3. Reproduce both using `dplyr` (group_by + summarise)
+
+```{r}
+## Your code here
+
+```
+
+## 4.3 lapply and sapply
+
+1. Using `lapply` and `sapply`, compute the length of each member in: `list(a = 1:10, b = letters[1:5], c = LETTERS[1:8])`
+2. Using `lapply` and `sapply`, compute the mean of each column in `mtcars`
+
+```{r}
+## Your code here
+
+```
+
+---
+
+# Exercise 5: purrr 函数式编程 {.unnumbered}
+
+## 5.1 map Basics
+
+Using `df <- tibble(a = rnorm(10), b = rnorm(10), c = rnorm(10), d = rnorm(10))`, compute column means, sums, and medians with `map`.
+
+```{r}
+df <- tibble(a = rnorm(10), b = rnorm(10), c = rnorm(10), d = rnorm(10))
+
+## Your code here
+
+```
+
+## 5.2 map Advanced
+
+For each `cyl` group in `mtcars`, compute the Pearson correlation between `mpg` and `wt`, extracting both the correlation coefficient and p-value.
+
+```{r}
+## Your code here
+
+```
+
+## 5.3 keep and discard
+
+1. Keep only factor columns from `iris`, print first 10 rows
+2. Discard factor columns from `iris`, print first 10 rows
+
+```{r}
+## Your code here
+
+```
+
+## 5.4 reduce
+
+Use `reduce()` to find the common elements among:
+
+```{r}
+c(1, 3, 5, 6, 10)
+c(1, 2, 3, 7, 8, 10)
+c(1, 2, 3, 4, 8, 9, 10)
+```
+
+Also: reproduce `reduce(full_join)` using `pivot_wider`.
+
+```{r}
+## Your code here
+
+```
+
+---
+
+# Exercise 6: map2 and pmap {.unnumbered}
+
+## 6.1 map2
+
+Run the code below and reproduce the result using a `for` loop.
+
+```{r}
+mu <- list(5, 10, -3)
+sigma <- list(1, 5, 10)
+map2(mu, sigma, rnorm, n = 5)
+```
+
+```{r}
+## Reproduce with for loop
+
+```
+
+## 6.2 pmap
+
+Run the code below and reproduce the result using a `for` loop.
+
+```{r}
+params <- tribble(
+  ~mean, ~sd, ~n,
+     5,    1,  1,
+    10,    5,  3,
+    -3,   10,  5
+)
+params %>% pmap(rnorm)
+```
+
+```{r}
+## Reproduce with for loop
+
+```
+
+---
+
+# Exercise 7: Custom Functions 自定义函数 {.unnumbered}
+
+## 7.1 Write a Function
+
+Write a function `summarize_numeric(df)` that:
+1. Takes a data frame as input
+2. Checks each column is numeric (`stopifnot`)
+3. Returns a tibble with columns: `variable`, `n`, `mean`, `sd`, `min`, `max`
+4. Handles NA values
+
+Test it on `mtcars`.
+
+```{r}
+## Your code here
+
+```
+
+## 7.2 Write a DNA Function
+
+Write a function `gc_content(seq)` that:
+1. Takes a DNA sequence string
+2. Validates it only contains A, T, C, G (case-insensitive)
+3. Returns the GC content as a percentage (rounded to 2 decimal places)
+
+```{r}
+## Your code here
+
+```
+
+---
+
+# Exercise 8: Parallel Computing 并行计算 {.unnumbered}
+
+## 8.1 Setup and Test
+
+Run the following code and answer the questions.
+
+```{r}
+library(parallel)
+library(foreach)
+library(iterators)
+
+# How many CPUs?
+(cpus <- parallel::detectCores())
+
+# Create test data
+d <- data.frame(x = 1:10000, y = rnorm(10000))
+
+# Make a cluster
+cl <- makeCluster(cpus - 1)
+
+# Parallel computation
+res <- foreach(row = iter(d, by = "row")) %dopar% {
+  return(row$x * row$y)
+}
+
+# Close cluster
+stopCluster(cl)
+
+summary(unlist(res))
+```
+
+**Question**: How many CPU cores does your system have? How many were used for this task? 你的系统有多少个CPU核心？本次任务用了几个？
+
+**Answer**:
+
+---
+
+# Exercise 9: AI-Assisted Practice AI 辅助练习 {.unnumbered}
+
+## 9.1 Regex Help
+
+Ask your AI tool: *"Write a regex that extracts email addresses from text, and show me how to use it with stringr."*
+
+**AI Response**:
+
+```
+
+```
+
+## 9.2 purrr Help
+
+Ask your AI tool: *"When should I use map_df() instead of map()? Give me a bioinformatics example."*
+
+**AI Response**:
+
+```
+
+```
+
+## 9.3 Debug
+
+If any exercise above gave you errors, paste the error message here and ask your AI tool for help. Record the solution.
+
+**Error**:
+
+```
+
+```
+
+**AI Solution**:
+
+```
+
+```

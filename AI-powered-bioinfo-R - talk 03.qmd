@@ -1,0 +1,908 @@
+---
+title: "AI-powered bioinformatic analysis using R, #3"
+subtitle: "R Language Basics II — Factors, Lists, Data Frames & File I/O"
+author: "Wei-Hua Chen (CC BY-NC 4.0)"
+institute: "HUST, China"
+date: today
+
+CJKmainfont: "Arial"
+
+format: 
+  beamer:
+    aspectratio: 1610
+    navigation: vertical
+    theme: AnnArbor
+    colortheme: beaver
+    fonttheme: structurebold
+    highlight: tango
+    slide_level: 2
+    toc: true
+    pdf-engine: xelatex
+    header-includes:
+      - \AtBeginSection{}
+      - \AtBeginSubsection{}
+
+execute:
+  echo: true
+  fig-width: 8
+  fig-height: 4.5
+---
+
+# Factors
+
+## What is a Factor?
+
+In bioinformatics, many variables are **categorical**:
+- Treatment groups: "Control", "Drug A", "Drug B"
+- Tissue types: "Liver", "Kidney", "Brain"
+- Genotypes: "AA", "Aa", "aa"
+- Disease status: "Healthy", "Mild", "Severe"
+
+**Factors** are R's way of handling categorical data. They store values as **integers** with a set of **labels** (levels).
+
+:::: {.callout-tip}
+Factors look like characters but behave like **coded integers** — this is crucial for statistical modeling!
+::::
+
+## Creating Factors
+
+Use `factor()` to create a factor from a vector:
+
+\footnotesize
+
+```{r}
+# A character vector of treatment groups
+treatment <- c("Control", "Drug", "Control", "Drug", "Control")
+
+# Convert to factor
+( treat_f <- factor(treatment) )
+```
+
+## Creating Factors, cont.
+
+\footnotesize
+
+Check the internal structure:
+
+```{r}
+class(treat_f)
+str(treat_f)       # shows integer codes + levels
+levels(treat_f)    # unique categories
+```
+
+## Factor Levels — Default Order
+
+By default, levels are ordered **alphabetically**:
+
+\footnotesize
+
+```{r}
+group <- c("High", "Low", "Medium", "Low", "High")
+factor(group)
+```
+
+\vspace{0.3cm}
+
+\footnotesize
+
+```{r}
+# Levels are: High, Low, Medium (alphabetical)
+# This may NOT be what you want for plotting or modeling!
+```
+
+\normalsize
+
+For plots and statistical models, you often need a **meaningful order**:
+`Low < Medium < High` (not alphabetical).
+
+## Controlling Level Order
+
+Specify the `levels` argument explicitly:
+
+\footnotesize
+
+```{r}
+( group_f <- factor(group, 
+                    levels = c("Low", "Medium", "High")) )
+```
+
+\vspace{0.3cm}
+
+```{r}
+# Now levels are in the correct logical order
+levels(group_f)
+```
+
+## Ordered Factors
+
+Use `ordered = TRUE` (or `ordered()`) to create an **ordered factor**:
+
+\footnotesize
+
+```{r}
+( severity <- ordered(c("Mild", "Severe", "Moderate", "Mild"),
+                       levels = c("Mild", "Moderate", "Severe")) )
+```
+
+\vspace{0.3cm}
+
+```{r}
+# Comparisons work on ordered factors
+severity[1] < severity[2]    # "Mild" < "Severe" → TRUE
+```
+
+\normalsize
+
+:::: {.callout-warning}
+Only use `ordered = TRUE` when the categories have a **genuine** order (e.g., disease stage). Don't order nominal categories like "Red", "Green", "Blue".
+::::
+
+## Factor Manipulation with `forcats`
+
+The **forcats** package (part of tidyverse) provides tools for factor management:
+
+\footnotesize
+
+```{r}
+library(forcats)  # or library(tidyverse)
+
+# fct_relevel()  — reorder levels manually
+fct_relevel(treat_f, "Drug", "Control")
+
+# fct_rev()      — reverse level order
+fct_rev(treat_f)
+
+# fct_infreq()   — order by frequency
+fct_infreq(treat_f)
+```
+
+## `forcats` — Renaming & Combining Levels
+
+\footnotesize
+
+```{r}
+x <- factor(c("apple", "bear", "banana", "dates", "bear"))
+
+# fct_recode()  — rename levels
+fct_recode(x, fruit = "apple", fruit = "banana", 
+              fruit = "dates", animal = "bear")
+
+# fct_lump()    — lump small groups together
+y <- factor(letters[rpois(100, 5)])
+fct_lump(y, n = 5)    # keep top 5, lump rest as "Other"
+```
+
+## Factors in Bioinformatics — Example
+
+\footnotesize
+
+```{r}
+# Gene expression categories in a cancer study
+expr_level <- c("Under-expressed", "Normal", "Over-expressed",
+                "Over-expressed", "Normal", "Under-expressed",
+                "Normal", "Normal", "Over-expressed", "Under-expressed")
+
+( expr_f <- factor(expr_level, 
+                    levels = c("Under-expressed", "Normal", "Over-expressed"),
+                    ordered = TRUE) )
+
+# Count how many genes in each category
+table(expr_f)
+
+# Summary statistics by category
+summary(expr_f)
+```
+
+## Why Factors Matter
+
+1. **Statistical models**: `lm()` and `glm()` automatically create dummy variables from factors
+2. **Plot ordering**: `ggplot2` respects factor level order on axes
+3. **Memory efficiency**: factors store integers internally, not full strings
+4. **Data validation**: only values in `levels` are allowed
+
+\vspace{0.3cm}
+
+:::: {.callout-tip}
+**AI tip**: Ask CodeBuddy: "My ggplot bar chart shows categories in wrong order — how do I reorder using `fct_relevel()`?"
+::::
+
+# Lists
+
+## What is a List?
+
+A **list** is a container that can hold **different types** of objects — unlike vectors which require uniform types. Lists are R's most flexible data structure.
+
+\footnotesize
+
+```{r}
+# A list can contain anything
+my_list <- list(
+  name       = "Gene TP53",
+  chromosome = 17,
+  is_oncogene = TRUE,
+  expression = c(2.3, 4.5, 1.8, 3.2, 5.1),
+  metadata   = list(study = "TCGA", cancer = "BRCA")
+)
+my_list
+```
+
+## List Structure
+
+Lists are **recursive** — they can contain other lists:
+
+\footnotesize
+
+```{r}
+str(my_list)       # inspect the structure
+length(my_list)    # number of top-level elements
+names(my_list)     # element names
+```
+
+## List Structure, cont.
+
+\footnotesize
+
+Lists are everywhere in bioinformatics R:
+- Statistical model outputs (`lm()`, `glm()`)
+- Genomic ranges (Bioconductor `GRanges`)
+- Seurat single-cell objects
+- JSON/API responses
+
+## Creating Lists
+
+\footnotesize
+
+```{r}
+# Unnamed list
+list(1:5, letters[1:3], TRUE)
+
+# Named list (preferred for readability)
+list(numbers = 1:5, chars = letters[1:3], flag = TRUE)
+
+# Empty list
+list()
+```
+
+## Creating Lists, cont.
+
+\footnotesize
+
+```{r}
+# List from vectors of different lengths
+list(
+  patient_ids  = c("P001", "P002", "P003"),
+  ages         = c(45, 62, 38),
+  diagnoses    = c("Healthy", "T2D", "Healthy"),
+  medications  = c("None", "Metformin"),       # shorter — no recycling!
+  lab_results  = data.frame(glucose = c(90, 140, 95),
+                            insulin = c(5.2, 12.1, 4.8))
+)
+```
+
+## Accessing List Elements — `$` and `[[ ]]`
+
+The `$` operator extracts a single named element:
+
+\footnotesize
+
+```{r}
+my_list$name          # returns the element itself
+my_list$expression    # returns the numeric vector
+```
+
+\vspace{0.3cm}
+
+`[[ ]]` extracts by position or name:
+
+```{r}
+my_list[[1]]          # first element
+my_list[["name"]]     # by name (equivalent to $)
+```
+
+## Accessing List Elements — `[ ]` vs `[[ ]]`
+
+**Single bracket `[ ]`** returns a **sub-list**:
+
+\footnotesize
+
+```{r}
+my_list[1]            # a list containing the first element
+class(my_list[1])     # "list"
+```
+
+## Accessing List Elements — `[ ]` vs `[[ ]]`, cont.
+
+\footnotesize
+
+**Double bracket `[[ ]]`** returns the **element itself**:
+
+```{r}
+my_list[[1]]          # the actual value
+class(my_list[[1]])   # "character"
+```
+
+\normalsize
+
+:::: {.callout-tip}
+Think of it like a train: `[ ]` gives you a train car (still a train), `[[ ]]` gives you what's inside the car.
+::::
+
+## Deep Access in Nested Lists
+
+\footnotesize
+
+```{r}
+# Accessing nested elements
+my_list$metadata$study        # "TCGA"
+my_list[["metadata"]][["cancer"]]  # "BRCA"
+
+# Equivalent chaining
+my_list$metadata[[2]]         # also "BRCA" (2nd element of metadata)
+```
+
+## Modifying Lists
+
+\footnotesize
+
+```{r}
+# Add a new element
+my_list$gene_length <- 19149  # base pairs
+
+# Modify an existing element
+my_list$expression <- c(3.1, 4.8, 2.0, 3.5, 5.5)
+
+# Remove an element
+my_list$metadata <- NULL
+
+str(my_list)
+```
+
+\normalsize
+
+Adding an element to a list is as simple as assigning to a new name with `$`.
+
+## Lists in Bioinformatics — Practical Example
+
+\footnotesize
+
+```{r}
+# Simulate a differential expression result
+de_result <- list(
+  gene = "BRCA1",
+  log2FC = 2.34,
+  p_value = 0.00042,
+  fdr = 0.015,
+  samples = c("Tumor1", "Tumor2", "Normal1", "Normal2")
+)
+
+# Extract p-value for downstream filtering
+de_result$p_value
+
+# Check if gene is significant (FDR < 0.05)
+de_result$fdr < 0.05
+```
+
+# Data Frames & Tibbles
+
+## What is a Data Frame?
+
+A **data frame** is a 2-dimensional table where each column can have a different type:
+
+\footnotesize
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+# Built-in example dataset
+library(tidyverse)
+library(kableExtra)
+kbl(head(mpg), booktabs = TRUE)
+```
+
+\vspace{0.3cm}
+
+\normalsize
+
+- Each **column** is a vector of a single type
+- Each **row** is one observation
+- The most fundamental data structure for tabular data in R
+
+## Data Frame Properties
+
+\footnotesize
+
+```{r}
+nrow(mpg)      # number of rows
+ncol(mpg)      # number of columns
+dim(mpg)       # both
+str(mpg)       # structure overview
+```
+
+## Data Frame Properties, cont.
+
+\footnotesize
+
+```{r}
+# Quick peek
+head(mpg, n = 3)     # first 3 rows
+tail(mpg, n = 3)     # last 3 rows
+```
+
+## Creating Data Frames
+
+\footnotesize
+
+```{r}
+# data.frame() function
+( dat <- data.frame(
+  gene   = c("BRCA1", "TP53", "EGFR", "MYC"),
+  logFC  = c(2.3, -1.5, 0.8, 3.1),
+  pvalue = c(0.001, 0.04, 0.35, 0.0001),
+  stringsAsFactors = FALSE   # keep characters as characters!
+) )
+```
+
+\normalsize
+
+:::: {.callout-warning}
+Prior to R 4.0, `data.frame()` automatically converted character columns to **factors**. Always use `stringsAsFactors = FALSE` unless you specifically need factors.
+::::
+
+## Data Frame Subsetting
+
+Data frames use `[row, column]` for subsetting:
+
+\footnotesize
+
+```{r}
+# Select rows 1-2
+dat[1:2, ]
+
+# Select a column (returns a vector by default)
+dat[, "gene"]
+
+# Select by condition
+dat[dat$pvalue < 0.05, ]     # significant genes only
+```
+
+## Data Frame — Adding & Removing Columns
+
+\footnotesize
+
+```{r}
+# Add a column
+dat$significant <- dat$pvalue < 0.05
+dat
+
+# Add with cbind()
+cbind(dat, rank = 1:4)
+
+# Remove a column
+dat$significant <- NULL
+dat
+```
+
+\normalsize
+
+You can also append rows with `rbind()`, but column names must match.
+
+## Tibble — The Modern Data Frame
+
+A **tibble** is the tidyverse's upgraded data frame. Use `tibble()` or `tribble()`:
+
+\footnotesize
+
+```{r}
+library(tibble)
+
+# tibble() — by column
+( tb <- tibble(
+  gene  = c("BRCA1", "TP53", "EGFR"),
+  logFC = c(2.3, -1.5, 0.8),
+  sig   = c(TRUE, FALSE, TRUE)
+) )
+```
+
+## Tibble — The Modern Data Frame, cont.
+
+\footnotesize
+
+```{r}
+# tribble() — by row (easier to read for small data)
+tribble(
+  ~gene,  ~logFC, ~sig,
+  "BRCA1", 2.3,  TRUE,
+  "TP53", -1.5,  FALSE,
+  "EGFR",  0.8,  TRUE
+)
+```
+
+
+## Tibble vs Data Frame — Key Differences
+
+### 1. Sequential column evaluation
+
+\footnotesize
+
+```{r}
+# Tibble: columns evaluated left-to-right
+tibble(x = 1:5, y = x^2)
+
+# data.frame: this fails!
+# data.frame(x = 1:5, y = x^2)
+```
+
+## Tibble vs Data Frame — Key Differences, cont.
+
+### 2. Subsetting never simplifies
+
+\footnotesize
+
+```{r}
+df <- data.frame(x = 1:3, y = 3:1)
+tb <- tibble(x = 1:3, y = 3:1)
+
+# data.frame: single column becomes a vector
+class(df[, 1])              # "integer"
+
+# tibble: always stays a tibble
+class(tb[, 1])              # "tbl_df" "tbl" "data.frame"
+```
+
+## Tibble vs Data Frame — More Differences
+
+### 3. Recycling rules
+
+\footnotesize
+
+```{r}
+# data.frame: recycles freely (6 is multiple of 2)
+data.frame(a = 1:6, b = LETTERS[1:2])     # works silently!
+```
+
+## Tibble vs Data Frame — More Differences, cont.
+
+\footnotesize
+
+```{r}
+# tibble: only length-1 or exact match
+# tibble(a = 1:6, b = LETTERS[1:2])       # ERROR!
+tibble(a = 1:6, b = 1)                    # length-1: OK
+```
+
+### 4. Partial matching
+
+\footnotesize
+
+```{r}
+df <- data.frame(abc = 1:3)
+df$ab                       # partial match — dangerous!
+
+tb <- tibble(abc = 1:3)
+# tb$a                       # NULL + warning — safer!
+```
+
+## Converting Between Types
+
+\footnotesize
+
+```{r}
+# data.frame → tibble
+as_tibble(iris)
+
+```
+
+## Converting Between Types, cont.
+
+\footnotesize
+```{r}
+# tibble → data.frame
+as.data.frame(as_tibble(iris)[1:5, ])
+```
+
+\normalsize
+
+:::: {.callout-tip}
+In this course, we prefer **tibbles** for everyday work. Convert to `data.frame` only when a function requires it.
+::::
+
+## Working with tibbles — Add Rows & Columns
+
+\footnotesize
+
+```{r}
+tb <- tibble(gene = character(), logFC = double())
+
+# Add rows one by one
+tb <- add_row(tb, gene = "BRCA1", logFC = 2.3)
+tb <- add_row(tb, gene = "TP53",  logFC = -1.5)
+tb
+
+# Add a column
+tb <- add_column(tb, significant = c(TRUE, FALSE))
+tb
+
+
+```
+
+## Working with tibbles — Add Rows & Columns, cont.
+
+\footnotesize
+
+```{r}
+# Combine tibbles by row
+bind_rows(tb, tb)
+```
+
+## `attach()`, `with()`, and `within()`
+
+\footnotesize
+
+```{r}
+# attach: access columns directly (use sparingly!)
+attach(iris)
+head(Sepal.Length, 3)
+detach(iris)
+
+# with: safer temporary access
+with(iris, head(Sepal.Length, 3))
+
+# within: modify multiple columns at once
+head(within(airquality, {
+  lOzone <- log(Ozone)
+  cTemp  <- round((Temp - 32) * 5 / 9, 1)
+}), 3)
+```
+
+# Data Import & Export
+
+## Reading Data with `readr`
+
+`readr` (part of tidyverse) provides fast, consistent file reading:
+
+\footnotesize
+
+| Function | Purpose |
+|----------|---------|
+| `read_csv()` | Comma-separated files |
+| `read_tsv()` | Tab-separated files |
+| `read_delim()` | Custom delimiters |
+| `read_fwf()` | Fixed-width files |
+| `read_table()` | Whitespace-separated columns |
+| `read_log()` | Web server logs |
+
+```{r eval=FALSE}
+library(tidyverse)    # readr is included
+# or: library(readr)
+```
+
+## Reading CSV Files
+
+\footnotesize
+
+```{r}
+# Basic reading
+myiris <- read_csv("data/talk03/iris.csv")
+myiris
+```
+
+## Reading CSV Files, cont.
+
+\footnotesize
+
+With explicit column types:
+
+```{r}
+read_csv("data/talk03/iris.csv", col_types = cols(
+  Sepal.Length = col_double(),
+  Sepal.Width  = col_double(),
+  Petal.Length = col_double(),
+  Petal.Width  = col_double(),
+  Species      = col_character()
+))
+```
+
+## Column Type Specifications
+
+\footnotesize
+
+| `col_*()` | Type |
+|-----------|------|
+| `col_double()` | Double-precision numbers |
+| `col_integer()` | Integers |
+| `col_character()` | Text strings |
+| `col_logical()` | TRUE/FALSE |
+| `col_factor()` | Factors (categorical) |
+| `col_date()` | Dates |
+| `col_datetime()` | Date-times |
+| `col_skip()` | Skip this column |
+| `col_guess()` | Let readr guess |
+
+\normalsize
+
+Use `col_types = cols(...)` to ensure correct parsing, especially for date columns or numeric columns with special formatting.
+
+## Writing Data
+
+\footnotesize
+
+| Function | Output format |
+|----------|--------------|
+| `write_csv()` | Comma-separated |
+| `write_tsv()` | Tab-separated |
+| `write_delim()` | Custom delimiter |
+| `write_excel_csv()` | CSV optimised for Excel |
+| `write_rds()` | R binary format |
+| `write_lines()` | One string per line |
+
+```{r eval=FALSE}
+# Write iris to CSV
+write_csv(iris, "iris_output.csv")
+
+# Write to TSV
+write_tsv(iris, "iris_output.tsv")
+```
+
+## Reading Other Formats
+
+\footnotesize
+
+| Package | Format |
+|---------|--------|
+| **readxl** | Excel (.xls, .xlsx) |
+| **haven** | SPSS, Stata, SAS |
+| **jsonlite** | JSON |
+| **xml2** | XML |
+| **DBI** | Databases (SQLite, PostgreSQL) |
+| **httr** | Web APIs |
+| **rvest** | HTML (web scraping) |
+
+\normalsize
+
+For bioinformatics: use `read_csv()`/`read_tsv()` for most flat files; `readxl` for Excel files from collaborators; `httr` for NCBI/Ensembl APIs.
+
+# Tidy Data
+
+## What is Tidy Data?
+
+**Tidy data** is a standardized format where:
+
+1.  Each **variable** has its own column
+2.  Each **observation** has its own row
+3.  Each **value** has its own cell
+
+\vspace{0.3cm}
+
+:::: {.callout-tip}
+Tidy data makes it easy to filter, group, summarize, and plot. It's the foundation of the entire tidyverse workflow. (See R4DS by Wickham & Grolemund for visual examples.)
+::::
+
+## Tidy vs Untidy — Example
+
+**Untidy** (wide format — common in Excel):
+
+\footnotesize
+
+```{r}
+# Column headers are values (genes), not variable names
+untidy <- tibble(
+  patient = c("P1", "P2", "P3"),
+  BRCA1   = c(2.3, 1.8, 3.1),
+  TP53    = c(-1.2, -0.8, 0.5),
+  EGFR    = c(0.5, 1.1, -0.3)
+)
+untidy
+```
+
+## Tidy vs Untidy — Example, cont.
+
+**Tidy** (long format):
+
+\footnotesize
+
+```{r}
+library(tidyr)
+tidy <- pivot_longer(untidy, cols = c(BRCA1, TP53, EGFR),
+                     names_to = "gene", values_to = "expression")
+tidy
+```
+
+## Why Tidy Data?
+
+1.  **dplyr** and **ggplot2** are designed for tidy data
+2.  Easier to filter, group, and summarize
+3.  Consistent mental model — you always know where to find things
+4.  The foundation of the entire tidyverse workflow
+
+\vspace{0.3cm}
+
+:::: {.callout-tip}
+> "Tidy datasets are all alike, but every messy dataset is messy in its own way."
+> — Hadley Wickham
+::::
+
+# Dates with lubridate
+
+## Working with Dates — `lubridate`
+
+Biological data often involves dates: sample collection dates, patient birth dates, follow-up visits. The **lubridate** package makes date handling intuitive.
+
+\footnotesize
+
+```{r}
+library(lubridate)
+
+# Parse dates from strings
+ymd("2024-03-15")            # year-month-day
+mdy("March 15, 2024")        # month-day-year
+dmy("15-03-2024")            # day-month-year
+
+# Parse date-times
+ymd_hms("2024-03-15 14:30:00")
+```
+
+## Date Extraction & Arithmetic
+
+\footnotesize
+
+```{r}
+today()                       # current date
+now()                         # current date-time
+
+# Extract components
+date <- ymd("2024-03-15")
+year(date)                    # 2024
+month(date)                   # 3
+day(date)                     # 15
+wday(date, label = TRUE)      # Fri (weekday name)
+```
+
+## Date Extraction & Arithmetic, cont.
+
+\footnotesize
+
+```{r}
+# Date arithmetic
+date + days(7)                # one week later
+date - days(30)               # 30 days earlier
+```
+
+# Summary & Homework
+
+## Today's Summary
+
+\footnotesize
+
+| Topic | Key Concepts |
+|-------|-------------|
+| **Factors** | `factor()`, `levels`, `ordered`, `forcats` (`fct_relevel`, `fct_recode`, `fct_lump`) |
+| **Lists** | Flexible containers, `$` / `[[ ]]` vs `[ ]`, nested access |
+| **Data Frames** | `data.frame()`, `nrow`/`ncol`, subsetting `[row, col]`, `rbind`/`cbind` |
+| **Tibbles** | `tibble()`/`tribble()`, no simplification, strict recycling, sequential evaluation |
+| **File I/O** | `read_csv`, `read_tsv`, `write_csv`, `col_types` |
+| **Tidy Data** | Variables = columns, observations = rows, `pivot_longer` |
+| **lubridate** | `ymd()`, `mdy()`, `today()`, date arithmetic |
+
+## Homework
+
+\footnotesize
+
+1. Open `Homework_AI_powered_R/talk03-homework.qmd` in your course repository
+2. Complete all exercises — use **CodeBuddy AI** for help!
+3. Render to PDF
+4. Submit as instructed on the course platform
+
+:::: {.callout-tip}
+**AI tips for this talk:**
+- "Create a factor with levels in this specific order: ..."
+- "How do I extract a nested element from a list in R?"
+- "Why does my `read_csv` parse this column as character instead of numeric?"
+- "Convert this wide gene expression table to tidy long format"
+::::
+
+## Next Talk
+
+**Talk 04 — Data Wrangling with tidyverse**
+
+- The pipe operator (`%>%` / `|>`)
+- `dplyr` core verbs: `filter`, `select`, `mutate`, `arrange`, `summarise` + `group_by`
+- `tidyr`: `pivot_longer`, `pivot_wider`, `separate`, `unite`
+- Joins: `left_join`, `inner_join`, `full_join`

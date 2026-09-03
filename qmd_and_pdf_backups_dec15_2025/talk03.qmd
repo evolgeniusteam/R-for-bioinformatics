@@ -1,0 +1,663 @@
+---
+title: "R for bioinformatics, data visualisation, part 2"
+subtitle: "HUST Bioinformatics course series"
+author: "Wei-Hua Chen (CC BY-NC 4.0)"
+institute: "HUST, China"
+date: today
+
+CJKmainfont: "Hei"  # 关键：指定中文字体为黑体
+
+format: 
+  beamer:
+    aspectratio: 1610 ## more morden aspectratio --
+    navigation: vertical
+    theme: AnnArbor
+    colortheme: beaver
+    fonttheme: structurebold
+    highlight: tango
+    slide_level: 2
+    toc: true
+  pdf:
+    pdf-engine: xelatex  # 关键：指定XeLaTeX引擎
+
+execute:
+  echo: true
+---
+
+# section 1: TOC
+
+## 前情提要
+
+### vector & matrix:
+
+-   declaration
+-   manipulation
+-   arithmetic
+-   transposition
+
+### vectorization
+
+-   every is a vector!!
+-   vectorization verses loop (will be explained later)
+-   advantages using vectorization
+
+## 今次预报
+
+1.  data.frame, tibble
+2.  read files from harddrive (IO)
+3.  exercises & homework
+
+# section 2: data.frame and tibble
+
+## data.frame, outline
+
+1.  what is a data.frame???
+2.  how to make a data.frame
+3.  how to add row(s)/col(s) to an existing data.frame how to combine two data.frames
+4.  how to manipulate a data.frame
+
+## 2.1 what is a data.frame?
+
+眼见为实：
+
+\footnotesize
+
+```{r echo=TRUE, message=FALSE, warning=FALSE }
+library(tidyverse); ## 装入包
+library(kableExtra);
+kbl( head(mpg), booktabs = T); ## 显示前几行数据
+```
+
+\normalsize
+
+注意`head()` `tail()`的用法和参数
+
+## head 和 tail 的用法
+
+\footnotesize
+
+```{r}
+nrow(mpg); ## total number of rows 
+kbl( head(mpg,  n=3), booktabs = T); ## 显示前几行数据
+kbl( tail(mpg,  n=3), booktabs = T); ## 显示最后3行数据
+```
+
+## data.frame的组成与常用函数
+
+### 组成
+
+-   二维表格
+-   由不同列组成；每列是一个**vector**，不同列的数据类型可以不同，但一列只包括一种数据类型（int, num, chr ...）
+-   各列的长度相同
+
+### 常用 functions
+
+-   nrow( );
+-   ncol( );
+-   dim( );
+-   ...
+
+## structure of data.frame： `str` 函数
+
+\footnotesize
+
+```{r}
+str( mpg );
+```
+
+**注**：Tibble class 是 data.frame 的升级版本；本课程将二者混用，以tibble为主。 用`?mpg`命令查看 mpg 各列的意义
+
+## 2.2 make a new data.frame
+
+使用`data.frame`函数创建新的data.frame:
+
+\footnotesize
+
+```{r}
+##  data.frame()
+( dat2 <- 
+  data.frame( "data d" = sample( 1:100, 10 ), 
+        group = sample( LETTERS[1:3], 10, replace = TRUE), 
+        data2 = 0.1 )
+);
+```
+
+## 2.2 make a new data.frame, cont.
+
+\footnotesize
+
+```{r}
+str(dat2);
+```
+
+
+## 2.3 how to add row(s)/col(s) to an existing data.frame
+
+先创建"表头"，再填充
+
+\footnotesize
+
+```{r}
+df2 <- data.frame( x = character(), y = integer(), z = double() , stringsAsFactors = FALSE );
+
+## 
+df2 <- rbind( df2, data.frame( x = "a", y = 1L, z = 2.2 ) );
+df2 <- rbind( df2, data.frame( x = "b", y = 2, z = 4.4 ) );
+
+df2;
+```
+
+\normalsize
+
+**注意**
+
+-   使用`rbind`函数
+-   新的一行用 `data.frame`定义，其"表头"需要与合并表相同
+
+## 问题：
+
+以下代码能顺利执行吗？
+
+\footnotesize
+
+```{r eval=FALSE}
+##  注意这里的 data.frame 会有多行 ...
+df2 <- rbind( df2, data.frame( x = c("a","b","c"), y = 1L, z = 2.2 ) );
+
+```
+
+## data.frame, add column
+
+用`cbind`函数增加列： **column bind**
+
+\footnotesize
+
+```{r}
+m <- cbind(1, 1:7) ; ## 产生两列数据 7行数据 .. 
+( m <- cbind(m, 8:14) ); ## 增加一列 也有7行数据 ... 
+```
+
+## data.frame, add column, cont.
+
+自行练习，回答代码中的问题：
+
+\footnotesize
+
+```{r eval=FALSE}
+## 1. 生成一个 10行2列的 data.frame  
+df3 <- data.frame( data = 1:10, group = c("A","B") );
+
+## 2. 增加一列，其长度是1，可以吗？
+cbind(df3, newcol = 1);
+
+## 3. 增加一列，其长度是10，可以吗？
+cbind(df3, newcol = 1:10);
+
+## 4. 增加一列，其长度是2，可以吗？
+cbind(df3, newcol = 1:2);
+
+## 5. 增加一列，其长度是3，可以吗？
+cbind(df3, newcol = 1:3);
+```
+
+## data.frame, 以列方式合并两个 data.frame
+
+同样使用 `cbind`
+
+\footnotesize
+
+```{r error=TRUE}
+df4 <- data.frame( data = 1:10, group = c("A","B") );
+df5 <- data.frame( length = sample(1:100, 10), width = sample(1:100, 10) );
+
+## --
+head( cbind( df4, df5 ) );
+
+## 如果 一个df的行数少于另一处怎么办？ 
+df6 <- data.frame( length = sample(1:100, 5), width = sample(1:100, 5) );
+head( cbind( df4, df6 ) );
+```
+
+\normalsize
+
+**问题** 如果一个df的行数不是另一个的整数倍，怎么办？
+
+## 2.4 how to manipulate a data.frame
+
+自行尝试以下操作
+
+\footnotesize
+
+```{r eval=FALSE}
+## 取行：
+df4[ 1:2, ];
+
+## 取列
+df4[, 2]
+
+## 取行，重新排序
+df4[c(2,3,1), ]
+
+## 取列，重新排序
+df4[, c(2,1)]
+
+## 替换一行：
+df4[1, ] <- data.frame( data = 100, group = "A" );
+
+## 替换一列：
+df4[, "data"] <- sample( 1:100, 5 );
+```
+
+## tibble, outline
+
+5.  how to make a tibble
+6.  how to add row(s)/col(s) to an existing tibble how to combine two tibble
+7.  how to manipulate a tibble
+
+## 2.5 make a new tibble
+
+`tibble`相关功能由`tibble`或`tidiverse`包提供
+
+\footnotesize
+
+```{r}
+library(tibble); ## 或 library(tidiverse); 
+## 用 tibble 函数创建，用法和 data.frame() 相似
+( dat <- 
+  tibble( data = sample( 1:100, 10 ), 
+        group = sample( LETTERS[1:3], 10, replace = TRUE), 
+        data2 = 0.1 )
+);
+```
+
+-   注意每列的数据类型
+-   长度不足时，比如**data2**列，会循环使用
+-   `sample()`函数的用法
+
+## str( dat )
+
+查看得到的数据结构
+
+\footnotesize
+
+```{r dat}
+str(dat);
+```
+
+## 创建tibble的另一种方式 (by row)
+
+\footnotesize
+
+```{r}
+## 另一种方式创建tibble 
+tribble(
+  ~x, ~y,  ~z,
+  "a", 2,  3.6,
+  "b", 1,  8.5
+)
+```
+
+## 2.6 how to add row(s)/col(s) to an existing tibble
+
+\footnotesize
+
+```{r}
+## 新tibble, with defined columns ... 创建表头 
+tb <- tibble( x = character(), y = integer(), z = double() );
+dim(tb);
+
+## 增加行 ... 
+tb <- add_row( tb, x = "a", y = 2, z = 3.6  );
+tb <- add_row( tb, x = "b", y = 1, z = 8.5  );
+
+## 显示 
+tb;
+```
+
+## tibble, add_row 插入时指定行号
+
+\footnotesize
+
+```{r}
+## 生成一个 tibble 
+df <- tibble(x = 1:3, y = 3:1);
+
+# 在第二行之前插入
+df <- add_row(df, x = 4, y = 0, .before = 2);
+
+df;
+```
+
+## tibble, add_row 插入多行, 插入另一个tibble??
+
+\footnotesize
+
+```{r error=TRUE}
+## 插入多行 
+df <- add_row(df, x = 4:5, y = 0:-1);
+
+## 插入另一个tibble （与另一个tibble合并） ??? 
+df2 <- tibble( x = as.double(200:202), y = as.double(1000:1002) );
+df3 <- add_row( df, df2 ); ## 可以运行 ... 
+```
+
+## tibble, 合并多个 tibble
+
+\footnotesize
+
+```{r}
+df3 <- bind_rows( df, df2 );
+df3;
+```
+
+## tibble, add column
+
+\footnotesize
+
+```{r}
+tb3 <- tribble(
+  ~x, ~y,  ~z,
+  "a", 2,  3.6,
+  "b", 1,  8.5
+);
+
+tb3 <- add_column( tb3, a = 98 ); ## recycle ... 
+tb3 <- add_column( tb3, b = LETTERS[1:2], c = c("CHEN", "WANG") ); 
+tb3;
+```
+
+## tibble, 按列合并两个 tibble?
+
+练习：
+
+1.  尝试用 `add_column` 合并两个 tibble
+2.  使用 `bind_cols` 合并两个 tibble
+
+## 2.7 how to manipulate a tibble
+
+自行练习以熟悉以下操作：
+
+\footnotesize
+
+```{r eval=FALSE}
+## 取得行
+tb3[c(1,2), ];
+
+## 取得列，按顺序取列
+tb3[, c("z", "y")];
+
+## 替换列 
+tb3[["z"]] <- c(4.6, 5.5);
+
+## 替换行 
+tb3[ 1, ] <- tibble( x = "d", y = 20, z = 46, a = 10, b = "C", c = "LILI" );
+```
+
+## 2.8 tibble 与 data.frame 之间相互转换
+
+\footnotesize
+
+```{r}
+library(tibble)
+head( as_tibble(iris) );
+```
+
+**note**: iris data set gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris (鸢尾属植物). The species are Iris setosa, versicolor, and virginica.
+
+## tibble to dataframe
+
+\footnotesize
+
+```{r}
+library(tibble)
+as.data.frame(  head( as_tibble(iris) ) );
+```
+
+## 2.9 differences between tibble and data.frame
+
+### tibble evaluates columns sequentially
+
+\footnotesize
+
+```{r warning=FALSE,message=FALSE}
+rm(x,y); ## 删除可能存在的 x , y
+tibble(x = 1:5, y = x ^ 2); ## 可以用 tibble 这样做
+```
+
+练习：
+
+```{r error=TRUE}
+data.frame(x = 1:5, y = x ^ 2); ## 但 data.frame 不行
+```
+
+## differences between tibble and data.frame, cont.
+
+### data.frame 在取subset操作时，会造成困扰
+
+\footnotesize
+
+```{r}
+df1 <- data.frame(x = 1:3, y = 3:1);
+class(df1[, 1:2]);
+
+## subset 操作 ： 取一列，期待得到一个 data.frame () 
+class(df1[, 1]); ## 结果得到一个 vector ... 
+```
+
+\footnotesize
+
+```{r}
+## 而 tibble 则不会
+df2 <- tibble(x = 1:3, y = 3:1);
+class(df2[, 1]); ## 永远都是 tibble 
+```
+
+## differences between tibble and data.frame, cont.
+
+### tibble可以进行可控的数据类型转换：
+
+\footnotesize
+
+```{r}
+class(df2[[1]]); ## 取一列，转换为 vector 
+class(df2$x); ## 用 [[]] 或 $ 都可以哦
+```
+
+## differences between tibble and data.frame, cont.
+
+### recycling
+
+\footnotesize
+
+```{r error=TRUE, warning=TRUE}
+data.frame(a = 1:6, b = LETTERS[1:2]); ##  data.frame 可以！！！
+tibble(a = 1:6, b = LETTERS[1:2]); ## 但 tibble 不行！！！
+```
+
+\normalsize
+
+**注意** `tibble`的 recycling 仅限于长度为1或等长；而 `data.frame` 则为整除即可。
+
+## practises for recycling
+
+\footnotesize
+
+```{r error=TRUE}
+tibble(a = 1, b = 1:3);
+tibble(a = 1:3, b = 1);
+tibble(a = 1:3, c = 1:2);
+```
+
+## differences between tibble and data.frame, cont.
+
+### data.frame will do partial matching
+
+\footnotesize
+
+```{r}
+df <- data.frame(abc = 1)
+df$ab; ## unwanted result ... 
+
+## -- but tibble will never do it;
+df2 <- tibble(abc = 1)
+df2$a; ## produce a warning and return NULL 
+```
+
+## 2.10 data.frame和tibble的高级使用技巧
+
+`attach` 和 `detach`
+
+\footnotesize
+
+```{r}
+head( iris, n = 3 );
+head(  iris$Sepal.Length , n = 10 ); ## 用 $ 操作符取得一列 ... 
+```
+
+```{r}
+attach( iris );
+head(  Sepal.Length , n = 10 ); ## 直接用列名获取数据；
+detach(iris); ## 取消 attach 操作 --
+```
+
+## with 函数
+
+\footnotesize
+
+```{r}
+with( iris, head(  Sepal.Length, n  = 10 )); ## 用 with 也可以实现
+```
+
+## within 函数
+
+也可以用 `within` 对多列数据进行修改
+
+\footnotesize
+
+```{r}
+head( airquality , n = 3 );
+
+aq <- within(airquality, {     # Notice that multiple vars can be changed
+    lOzone <- log(Ozone)
+    Month <- factor(month.abb[Month])
+    cTemp <- round((Temp - 32) * 5/9, 1) # From Fahrenheit to Celsius
+    S.cT <- Solar.R / cTemp  # using the newly created variable
+    rm(Day, Temp) ## 删除特定列 ... 
+});
+
+head(aq, n = 3 );
+```
+
+# section 3: file IO: read a file into tibble & write tibble to a file
+
+## read from files
+
+使用 functions from the `readr` package
+
+\footnotesize
+
+```{r eval=FALSE}
+## readr is part of tidyverse
+library(tidyverse); ## or alternatively 
+library(readr);
+```
+
+\normalsize
+
+### available functions
+
+-   read_csv(): comma separated (CSV) files
+-   read_tsv(): tab separated files
+-   read_delim(): general delimited files
+-   read_fwf(): fixed width files
+-   read_table(): tabular files where columns are separated by white-space.
+-   read_log(): web log files
+
+## read a file into tibble
+
+\footnotesize
+
+```{r}
+myiris <- read_csv("data/talk03/iris.csv");
+```
+
+**注意** 输出的 columns 定义
+
+## read with predifined column types
+
+\footnotesize
+
+```{r}
+myiris2 <-  read_csv("data/talk03/iris.csv", col_types = cols(
+  Sepal.Length = col_double(),
+  Sepal.Width = col_double(),
+  Petal.Length = col_double(),
+  Petal.Width = col_double(),
+  Species = col_character()
+));
+```
+
+## how to read from other formats??
+
+### try the following packages for other formats
+
+-   **haven** - SPSS, Stata, and SAS files
+-   **readxl** - excel files (.xls and .xlsx)
+-   **DBI** - databases
+-   **jsonlite** - json
+-   **xml2** - XML
+-   **httr** - Web APIs
+-   **rvest** - HTML (Web Scraping)
+
+## write to files
+
+### use the following functions to write object(s) to external files
+
+\footnotesize
+
+-   Comma delimited file: **write_csv**(x, path, na = "NA", append = FALSE, col_names = !append)
+-   File with arbitrary delimiter: **write_delim**(x, path, delim = " ", na ="NA", append = FALSE, col_names = !append)
+-   CSV for excel: **write_excel_csv**(x, path, na = "NA", append = FALSE, col_names = !append)
+-   String to file: **write_file**(x, path, append = FALSE)
+-   String vector to file, one element per line: **write_lines**(x,path, na = "NA", append = FALSE)
+-   Object to RDS file: **write_rds**(x, path, compress = c("none", "gz", "bz2", "xz"), ...)
+-   Tab delimited files: **write_tsv**(x, path, na = "NA", append = FALSE, col_names = !append)
+
+## 练习
+
+\footnotesize
+
+```{r eval=FALSE}
+## write iris to outfiles of various formats
+write_csv( iris, "iris.csv" );
+write_tsv(iris, "iris.tsv", quote_escape = "none");
+```
+
+\normalsize
+
+check `readr` cheatsheet (please Google).
+
+# section 4: 练习 & 作业
+
+## 小结
+
+### 今次提要
+
+1.  data.frame, tibble
+2.  定义、区别、转化
+3.  read files from harddrive (IO)
+
+### 下次预告
+
+-   factor ：R 另一个超级重要且难以上手的概念
+-   基础和进阶绘图（配合 factor 讲解）
+
+### important
+
+-   all codes are available at Github: <https://github.com/evolgeniusteam/R-for-bioinformatics>
+
+## 练习 & 作业
+
+-   `Exercises and homework` 目录下 `talk03-homework.Rmd` 文件；
+
+-   完成时间：见钉群的要求

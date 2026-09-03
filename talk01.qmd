@@ -1,5 +1,5 @@
 ---
-title: "R for bioinformatics, Multi-omics data analysis and visualisation, #1"
+title: "Multi-omics data analysis and visualisation, #1"
 subtitle: "HUST Bioinformatics course series"
 author: "Wei-Hua Chen (CC BY-NC 4.0)"
 institute: "HUST, China"
@@ -24,122 +24,65 @@ execute:
   echo: true
 ---
 
+# section 1: 课程介绍
 
-# section 1: TOC
+## 课程
 
-## Course contents
+- 《生物医学数据分析与作图》课程
+- 生物医药及高端医疗设备专项系列课程之一
+- 适合对象：生物信息学、计算生物学、统计学、数据科学等相关专业的研究生和本科高年级学生
+- 课程目标：掌握生物医学数据分析与可视化的基本技能
 
-1.  开发平台相关软件安装
-2.  R基础知识
-3.  数据处理
-4.  做图
-5.  常见组学数据和分析、可视化方法
-6.  机器学习在组学分析当中的应用
+## 课程内容
 
-## 机器学习（重点新增内容）
+1.  课程介绍
+2.  安装软件及 IDE (intergrated development environment)
+3.  R 基础
+4.  数据处理 (with dplyr and tidyr)
+5.  数据可视化 (with ggplot2)
+6.  组学数据分析
+7.  机器学习及其在组学分析中的应用
+8.  Case studies
 
-### 内容
+## 练习与作业
 
--   基础知识
+1. 每次课后都有练习/作业
+2. 作业为 Rmarkdown 格式 (.Rmd)
+3. （如需提交作业） RMD 文件需转化为 PDF 格式进行提交
 
--   应用示例
-
-### 现有工作介绍
-
--   宁康：人工智能赋能菌群大数据挖掘
--   薛宇：机器学习在新冠标志物和图像识别当中的应用
--   陈卫华：机器学习在肠道菌群为基础的疾病标志物挖掘当中的应用
-
-## 宁康
-
-![宁康教授在热心肠先生的主题报告](images/talk01/ML-kangning.png){width="80%"}
-
-[SOHU页面](https://www.sohu.com/a/438990464_185627)
-
-## 宁康，cont.
-
-![Briefings in Bioinformatics (2023 IF=9.5)](images/talk01/ningkang_2023_bib.png){width="80%"}
-
-基于肿瘤菌的多种肿瘤诊断模型
-
-## 薛宇
-
-![Nature BME & Immunity (2023 IF=29)](images/talk01/ML-xueyu.png){width="60%"}
-
-机器学习在新冠标志物和图像识别当中的应用
-
-## 薛宇, cont.
-
-![Nature communications (2023 IF=16.6)](images/talk01/xueyu2023_NC.png){width="60%"}
-
-小样本机器学习
-
-## 陈卫华
-
-![Cell Metabolism (2023IF:29)](images/talk01/ML-weihuachen.png){width="60%"}
-
-机器学习在肠道菌群为基础的疾病标志物挖掘当中的应用
-
-## 基于肠道菌群的疾病诊断
-
-![Gut Microbes (2023 IF: 12.2)](images/talk01/WHC_2023_gm.png){height="75%"}
-
-基于肠道菌群的机器学习诊断模型
-
-## 基于肠道菌群的预后分析
-
-![Gut (2023 IF: 24)](images/talk01/WHC_2022_gut.png){width=95%}
-
-肠道菌群可预示NKTCL的预后
-
-## 其它动物的肠道菌群
-
-![Nature communications (2023 IF: 16.6)](images/talk01/buffalo_MAGs.png){width=100%}
-
-## 噬菌体研究
-
-![Advanced science (2023 IF: 15.1)](images/talk01/WHC_2023_advanced_science.png){width=90%}
-
-基于三代测序的肠道噬菌体研究
-
-## Class rules
-
-1.  每次随机点名
-2.  课堂随机提问
-3.  每人有1次无理由缺课机会
-4.  有事提前请假
-5.  考试、平时成绩各占总成绩的50%
-
-注: 严格按以上进行，如多次表现不好，可能会不及格
-
-## 作业和扣分规则
-
-1. （几乎）每次课后都有作业；
-2. 直接从平时成绩50分中扣除；
-2. 作业迟交三天以内每次扣3分；七天以内每次5分；七天及以上每次10分；
-3. 每人有一次迟交机会（3天以内），不扣分。
-4. **补交仅限前三次作业**；
-5. 老师有最终解释权
-
-## 考试
-
-1. 开卷；允许带资料、书籍，不允许带任何有大屏幕或智能屏幕的电子设备
-2. 内容都在**ppt**上或**作业**里，不会超纲
-3. 考试时允许零星英文，但不允许大段英文（抄ppt）
-4. 老师有最终解释权
-
-# section 2: why choose R?
+# section 2: R语言简史
 
 ## R语言简史
 
-1993到2000这段时间R只在小范围内流传。2000年之后开始大爆发，用户数量直线上升。除去R本身的优秀之外，这种爆发与多个因素有关，比如自由软件的兴起，Linux的成熟等等；经济危机也促进大家采用免费的自由软件替代统计领域的传统强者如SPSS、SAS和Matlab等（注：均为收费软件）。
+- R语言由新西兰奥克兰大学的Ross Ihaka和Robert Gentleman于1993年开发，现由R核心团队（R Core Team）维护和更新。R语言的名称来源于两位创始人名字的首字母，同时也暗示了其与S语言的渊源（S语言是贝尔实验室开发的一种统计编程语言，R语言在设计上受到了S语言的启发）。
 
-首先，越来越多的学术文章使用R作为分析工具。根据来自著名学术搜索引擎Google
-Scholar（谷歌学术）的数据，R的流行趋势有以下两个特点：1）在学术领域的市场份额逐年增加，且增势迅猛，2）R是为数不多市场份额增加的统计软件之一。
+- R语言是一种开源编程语言，任何人都可以免费下载和使用。
 
-接下来我们就用R把这个趋势画出来！如下面代码所示，所需代码包括4个部分：装入所需要的包，读取数据，处理数据和作图。运行这段代码，既专业又美观的图片就生成了！
+- 1993 - 2000：小范围内流传时期；
 
-## R的流行性调查
+- 2000年后：大爆发期。
+
+## R语言简史, cont.
+
+### R语言成功的外在因素：
+
+  - 自由软件的兴起；
+  - Linux的成熟；
+  - 经济危机；
+
+### R 语言成功的内在因素：
+
+  - R语言功能强大，适用于各种统计分析和数据可视化任务。
+  - R语言拥有丰富的扩展包生态系统，用户可以根据需要安装各种功能包来扩展R的功能。
+  - R语言具有良好的社区支持，用户可以通过论坛、邮件列表和社交媒体等渠道获取帮助和交流经验。
+
+## R语言示例1：R的流行性调查
+
+- 任务：调查R语言在学术研究中的流行程度
+- 数据：使用Google Scholar（谷歌学术）数据分析R语言在学术文章中的引用情况（2012及以前）
+- 方法：使用R语言进行数据处理和可视化
+
+## R的流行性调查, cont. 
 
 代码 \footnotesize
 
@@ -165,21 +108,21 @@ plot1 <-
               aes(label = Software), hjust = 0, vjust = 0.5);
 ```
 
-## Market share, result
+## R的流行性调查, 结果 
 
 ```{r plot1, fig.width=10, fig.height=4.5, echo=FALSE, warning=FALSE, message=FALSE }
 plot1
 ```
 
-**注**：这里移除了市场占有率较大的SAS和SPSS
+**结论**：R（统计学软件中）的市场份额逐年上升；2000是其流行的拐点。
 
-## R的招聘趋势
+## R语言示例1：R的招聘趋势
 
-其次，统计分析相关工作的招聘信息中要求申请者会用R的也越来越多了。根据美国招聘搜索引擎indeed.com的数据，自2005年（此搜索引擎提供的最早数据）起，需要用到R的招聘信息占总体招聘的比例逐年上升，目前仅排在SAS和Matlab之后，处于第3位。而且，除了Stata之外，R是唯一一个占比上升。
+- 任务：调查统计分析工作岗位对R语言的要求；
+- 数据：来自美国招聘搜索引擎indeed.com（2015年以前）
+- 方法：使用R语言进行数据处理和可视化
 
-同样的，我们用R把这个趋势画出来！
-
-## R job trends
+## R job trends, cont. 
 
 \footnotesize
 
@@ -211,6 +154,8 @@ plot2 <-
 plot2;
 ```
 
+**总结**： 需要用到R的招聘信息占总体招聘的比例逐年上升，目前仅排在SAS和Matlab之后，处于第3位。而且，除了Stata之外，R是唯一一个占比上升。
+
 ## Popularity of Programming language 2023
 
 ![PYPL ranking (https://pypl.github.io/)](images/talk01/pypl_2023.png){width="70%"}
@@ -219,13 +164,13 @@ plot2;
 
 ![PYPL ranking (https://pypl.github.io/)](images/talk01/pypl_2025.png){width="70%"}
 
-## Programming languages for bioinformatics
+## 生物医学数据分析所需的编程语言
 
-### Perl或Python
+### Python
 
 -   强大的文本处理能力（包括序列）
--   不错的运行速度（尤其是Python）
--   强大的生信和统计学扩展包（尤其是Python）
+-   不错的运行速度
+-   强大的生信和统计学扩展包
 -   方便的并行计算
 
 ### R
@@ -236,38 +181,6 @@ plot2;
 -   专业的生信扩展包（Bioconductor）
 -   超级好用的整合开发环境IDE（RStudio）
 
-## 我用过的 programming languages
-
-```{=tex}
-\begin{columns}
-\begin{column}{0.48\textwidth}
-\begin{itemize}
-\item - C
-\item -  \textbf{Perl}
-\item -  \textbf{R}
-\item -  \textbf{PHP}
-\item -  \textbf{Java}
-\item -  \textbf{MySQL}
-\item -  HTML
-\item -  Javascript
-\end{itemize}
-
-\href{https://www.evolgenius.info/evolview}{Evolview ver3.0}
-
-cited 242 times in 2024 (ver2+3), 170 so far (as of Aug 30, 2025)
-
-\end{column}
-\begin{column}{0.48\textwidth}
-
-\begin{figure}
-  \includegraphics[width=\linewidth]{images/talk01/evolview_showcase3.png}
-  \caption{.Evolview showcase 3}
-  \label{fig:evolviewshowcase03}
-\end{figure}
-
-\end{column}
-\end{columns}
-```
 ## 网站链接、参考文献和扩展阅读
 
 综上所述，R已经是最流行的免费统计分析软件，排名仅在几个传统的分析软件之后，而且大有赶超它们的趋势。学好R，不仅有助于在学术研究领域的发展，对找工作也有不少的帮助。
@@ -282,43 +195,140 @@ cited 242 times in 2024 (ver2+3), 170 so far (as of Aug 30, 2025)
 -   indeed招聘趋势: www.indeed.com/jobtrends
 -   R for data science: <https://r4ds.had.co.nz> (必读！！)
 
-# Section 3: setting up working enviroment
+# Section 3: 安装软件及开发环境（IDE）
 
-## Install R
+## 本节概览
+
+1.   安装R
+2.   安装RStudio （集成开发环境IDE）
+3.   安装`扩展包`
+4.   安装 TinyTex （作业和练习用）
+
+## 1. Install R
 
 Go go <https://mirrors.tuna.tsinghua.edu.cn/CRAN/>
 (清华镜像)，R支持主流的操作系统包括Linux，Windows和MacOS，请根据操作系统下载对应的安装文件。如下图所示：
 
-![选择合适的安装包](images/talk01/download_R_from_selected_mirror.png){width="80%"}
+![选择与操作系统对应的版本下载](images/talk01/download_R_from_selected_mirror.png){width="80%"}
 
 新版本的Mac OS
 X还需要安装XQuartz(<http://xquartz.macosforge.org/landing/>)。某些还需要用到Xcode，可以从App
 Store免费安装。
 
-## Install R on Linux
+## 1. Install R on Linux
 
-目前大多Linux发行版都带有R，因此可直接使用。从CRAN下载文件进行安装稍嫌复杂，要求用户对Linux系统有一定的了解，而且需要有管理员权限。建议初级用户在Linux高手指导下安装。
-点击上图中的"Download R for
-Linux"后，发行版为Redhat（红帽）或Suse的用户要先阅读网站上提供的readme或readme.html文件，然后其中的指示进行安装。这里就不再累述了。
+- 大多Linux发行版都带有R，可直接使用
+- 从命令行安装
+  - 对于基于Debian的发行版（如Ubuntu），使用以下命令安装R：
 
-![R安装包文件名](images/talk01/R_linux_installer_name.png){width="80%"}
+    ```bash
+    sudo apt-get update
+    sudo apt-get install r-base
+    ```
 
-## R studio
+  - 对于基于Redhat的发行版（如CentOS），使用以下命令安装R：
+
+    ```bash
+    sudo yum install R
+    ```
+
+## 1. Install R on Linux, cont.
+
+- 从源代码编译安装
+  - 下载R的源代码包（tar.gz格式）；
+  - 解压缩源代码包；
+  - 进入解压后的目录，运行以下命令进行编译和安装：
+
+    ```bash
+    ./configure
+    make
+    sudo make install
+    ```
+
+## 2. 安装 R studio
 
 ![RStudio website main page](images/talk01/rstudio_mainpage_screenshot.png){height="60%"}
 
 RStudio 从 https://posit.co/downloads/ 下载，支持等主流的操作系统。有商业和免费版本；也有server版
 
-## R studio, cont.
+## 3. 安装`扩展包`
+
+- R语言的强大功能很大程度上依赖于其丰富的`扩展包` (package) 生态系统
+- CRAN（Comprehensive R Archive Network）是R语言的主要扩展包存储库，包含了数以千计的扩展包，用户可以根据需要安装和使用这些包
+- Bioconductor是一个专门用于生物信息学和计算生物学的R扩展包存储库，提供了大量用于基因组学、转录组学、蛋白质组学等领域的分析工具
+
+## 3. 安装 扩展包, cont.
+
+- 安装扩展包的基本命令是 `install.packages("package_name")`，其中 `package_name` 是要安装的包的名称
+- 例如，要安装 `ggplot2` 包，可以运行以下命令：
+```{r eval=FALSE}
+install.packages("ggplot2");
+```
+
+## 3. 安装 扩展包, cont.
+
+- 一次性安装多个包，可以将包名放在一个字符向量中：
+```{r eval=FALSE}
+install.packages( c("ggplot2", "dplyr", "tidyr"));
+```
+
+## 4. 安装 TinyTex (作业和练习用）
+
+### Windows用户
+
+  * 最好新建一个英文帐户，用户名只包括英文字符，比如姓名全拼或英文名： `WeihuaChen` or `JackMa`
+  * 尽量**不要**更改当前用户，以免数据丢失
+  * 将以下软件安装到默认目录，包括 **R** and **RStudio** 
+
+## 4. 安装 TinyTex (作业和练习用）, cont.
+
+### Step 1: 安装 `tinytex` 包，辅助将 Rmd 文件转为 PDF
+
+```{r eval=FALSE}
+install.packages("tinytex");
+```
+
+## 4. 安装 TinyTex (作业和练习用）, cont.
+
+### Step 2: 下载 `TinyTex.zip` 文件
+
+下载页面：https://github.com/rstudio/tinytex-releases
+
+下载 precompiled `TinyTex.zip` （找到对应的平台）。
+
+![TinyTex.zip 下载](images/talk01/download_tinytex_zip.png){height="42%"}
+
+
+## 4. 安装 TinyTex (作业和练习用）, cont.
+
+### Step 3: 安装下载的 `TinyTex.zip` 文件
+
+```{r eval=FALSE}
+tinytex:::install_prebuilt("C:/wchen/Downloads/TinyTex.zip");
+
+## 注： 请将 “C:/wchen/Downloads/TinyTex.zip” 更换为实际下载路径
+```
+
+注意：
+
+* 请使用 / （反斜杠）！！
+
+* 不要解压缩！！
+
+* 安装过程需要一些时间，请耐心等待！！
+
+# Section 4: RStudio IDE介绍
+
+## R studio 运行界面
 
 RStudio运行时的界面如下图所示，除了顶部的菜单栏工具栏之外，主界面还包括4个子窗口：
 
 ![R studio
 单机版主界面](images/talk01/RStudio_interface.png){width="355"}
 
-## R studio, cont.
+## R studio 运行界面, cont.
 
-### 1. 代码编辑器
+### 窗口1. 代码编辑器
 
 -   具有代码编辑、语法高亮、代码和变量提示、代码错误检查等功能
 -   选中并向R控制台（窗口2）发送并运行代码。用快捷键Ctrl+Enter（MacOS下是Cmd+Enter）进行代码发送。没有代码选中时，发送光标所在行的代码
@@ -326,15 +336,15 @@ RStudio运行时的界面如下图所示，除了顶部的菜单栏工具栏之�
 -   除R代码外，还支持C++、R MarkDown、HTML等其它文件的编辑
 -   也可用于显示数据
 
-### 2. R console
+### 窗口2. R console
 
 -   可在此直接输入各种命令并查看运行结果。支持代码提示
 
-### 3. 变量列表及代码运行的历史记录
+### 窗口3. 变量列表及代码运行的历史记录
 
-## R studio, cont.
+## R studio 运行界面, cont.
 
-### 4. 其它窗口
+### 窗口4. 其它窗口
 
 -   当前工作目录下的文件列表
 -   作图结果
@@ -348,7 +358,7 @@ RStudio运行时的界面如下图所示，除了顶部的菜单栏工具栏之�
 
 -   创建、管理 projects
 
-## R studio 特点详解
+## R studio IDE 特点详解
 
 ### 代码提示/自动完成
 
@@ -358,7 +368,7 @@ RStudio运行时的界面如下图所示，除了顶部的菜单栏工具栏之�
 ![R studio code
 autocomplete](images/talk01/RStudio_code_autocomplete.png){height="40%"}
 
-## R studio 特点详解, cont.
+## R studio IDE 特点详解, cont.
 
 ### 查看变量内容
 
@@ -368,7 +378,7 @@ autocomplete](images/talk01/RStudio_code_autocomplete.png){height="40%"}
 
 直接 click 变量名即可查看变量内容。
 
-## R studio 特点详解, cont.
+## R studio IDE 特点详解, cont.
 
 ### 导出作图并选择导出格式
 
@@ -391,9 +401,18 @@ packages](images/talk01/RStudio_installed_packages.png){height="50%"}
 ![install new
 package](images/talk01/RStudio_install_package.png){height="60%"}
 
-## Packages needed for this study
+# Section 5: 第一次运行 R 代码！
 
-大部分包都由 Posit （前身为RStudio）公司提供；包括：ggplot2，tidyr，readr，stringr等。可以用以下命令一次性安装。不过，为方便读者直接从后面章节阅读，在每一次使用新包时，我们会再次进行提示安装方法。
+## 第一次运行代码：安装包
+
+- 任务：安排本课程需要的R包
+- 方法：使用R语言进行包安装
+
+大部分包都由 Posit （前身为RStudio）公司提供；包括：ggplot2，tidyr，readr，stringr等。可以用以下命令一次性安装。
+
+## 安装方法
+
+首先，打开 RStudio 软件，然后在**子窗口2**的R控制台中输入以下命令并回车运行：
 
 \footnotesize
 
@@ -412,15 +431,13 @@ install.packages( "ggplot2" ); #安装作图用的ggplot2
 install.packages( "tidyr" ); # 数据处理用等
 ```
 
+## 安装方法, cont. 
+
 \normalsize
 
-第一次运行命令 install.packages()
-时，系统会提示选择镜像网站；请选择地理位置上距你最近的镜像（比如中国）。
+**注意**：第一次运行命令 `install.packages()` 时，系统会提示选择镜像网站；请选择地理位置上距你最近的镜像（比如中国）。
 
-## install packages, cont.
-
-You can also choose your CRAN mirror manually (recommended when
-installing takes a long time):
+也可以使用以下命令选择镜像：
 
 \footnotesize
 
@@ -432,10 +449,7 @@ chooseCRANmirror();
 
 ![Choose CRAN mirror](images/talk01/choosecran_mirror.png){height="40%"}
 
-You can also use `chooseBioCmirror();` to choose mirror for
-[BioConductor](https://bioconductor.org/) packages.
-
-## Packages needed for this study, cont.
+## 安装方法, cont. 
 
 实际上，以上包属于一个meta-package，我们只需要安装它就可以了：
 
@@ -451,7 +465,18 @@ install.packages("tidyverse")
 
 ![tidyverse: a mega package](images/talk01/tidyverse.png){width="43%"}
 
-## R studio server
+## `tidyverse` 包含的包
+
+-   dplyr: 强大且方便的数据处理
+-   tydyr：数据转换工具
+-   readr：方便的文件IO
+-   stringr：文本处理
+-   Tibble：代替 data.frame 的 下一代数据存储格式
+-   purr: 函数式编程工具
+-   ggplot2：专业的画图工具
+-   forcats：处理分类变量
+
+## `R studio` 的服务器版本
 
 ### 特点：
 
@@ -467,110 +492,19 @@ account)](images/talk01/rstudio_server_login_page_web.png){height="50%"}
 ![RStudio server
 界面（通过浏览器）](images/talk01/rstudio_server_interface.png){height="70%"}
 
-## R studio packages for data science
 
-### all part of (业界良心) tidyverse
+# Section 6: 如何做**作业**?
 
--   dplyr: 强大且方便的数据处理
--   tydyr：数据转换工具
--   readr：方便的文件IO
--   stringr：文本处理
--   Tibble：代替 data.frame 的 下一代数据存储格式
--   purr：（暂时还未用到的包 \~\~ ）
+## 正确的做作业流程
 
-## R studio packages for data visualisation
+1. 安装 R 和 RStudio
+2. 安装 `tinytex` 包（用于将 Rmd 文件转换为 PDF）
+3. 下载课程文件并解压缩
+4. 打开 `R for bioinformatics.Rproj` 项目
+5. 通过 Rstudio 打开相应的 `Excercises and homework` 文件夹，打开对应的 RMD 文件，做作业
+6. 使用工具栏的 knit 命令将完成的作业转化为 pdf 格式，将生成的 PDF 文件按要求命名并提交
 
-### tidyverse
-
--   ggplot2：专业好用（但学习曲线很陡）的画图工具
-
-    -   <http://ggplot2.tidyverse.org>
-    -   gallery: <http://www.ggplot2-exts.org/gallery/>
-
-![surminer
-<https://rpkgs.datanovia.com/survminer/index.html>](images/talk01/suvminer_example_output.png){width="42%"}
-
-## RStudio packages for data visualisation, cont.
-
-### ggvis (currently ver0.4): <http://ggvis.rstudio.com>
-
--   from the **ggplot2** team
--   create interactive graphics in RStudio and web browser
--   [top 50 ggplot2
-    visualisations](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html)
-
-![ggvis example plots](images/talk01/ggvis_v0_4.png){width="40%"}
-
-## RStudio packages for data visualisation, cont.
-
-### Shiny: <https://shiny.posit.co/r/gallery/>
-
--   build professional, interactive visualizations
--   equipped with popular web widgets
--   can be deployed as independent websites
-
-![Shiny website example:
-<https://shiny.posit.co/r/gallery/interactive-visualizations/bus-dashboard/>](images/talk01/shiny_example.png){height="40%"}
-
-## RStudio packages for data visualisation, cont.
-
-### other packages（默认已安装）
-
--   rmarkdown : create professional documents
--   knitr: convert rmarkdown to pdf, html and more ...
-
-# Section 4: 如何做**作业**?
-
-## Windows用户
-
-  * 最好新建一个英文帐户，用户名只包括英文字符，比如姓名全拼或英文名： `WeihuaChen` or `JackMa`
-  * 尽量**不要**更改当前用户，以免数据丢失
-  * 将以下软件安装到默认目录，包括 **R** and **RStudio** 
-
-
-## 完成**作业**并**提交**?
-
-### 1，安装必要软件
-
-* R 4.0 or newer
-* RStudio 最新版 
-
-### 2，安装 `tinytex` 包，辅助将 Rmd 文件转为 PDF
-
-```{r eval=FALSE}
-install.packages("tinytex");
-```
-
-## 完成**作业**并**提交**? cont.
-
-### 3，下载 `TinyTex.zip` 文件
-
-下载页面：https://github.com/rstudio/tinytex-releases
-
-下载 precompiled `TinyTex.zip` （找到对应的平台）。
-
-![TinyTex.zip 下载](images/talk01/download_tinytex_zip.png){height="42%"}
-
-
-## 完成**作业**并**提交**? cont.
-
-### 4，安装下载的 `TinyTex.zip` 文件
-
-```{r eval=FALSE}
-tinytex:::install_prebuilt("C:/wchen/Downloads/TinyTex.zip");
-
-## 注： 请将 “C:/wchen/Downloads/TinyTex.zip” 更换为实际下载路径
-```
-
-注意：
-
-* 请使用 / （反斜杠）！！
-
-* 不要解压缩！！
-
-## 完成**作业**并**提交**? cont.
-
-### 5，下载课程文件并解压缩
+### 3. 下载课程文件并解压缩
 
 * 在浏览器打开网址：https://github.com/evolgeniusteam/R-for-bioinformatics
 
@@ -581,23 +515,17 @@ tinytex:::install_prebuilt("C:/wchen/Downloads/TinyTex.zip");
 ![](images/talk01/download_from_github_course_tutorial.png){height="40%"}
 
 
-## 完成**作业**并**提交**? cont.
-
-### 6，打开 `R for bioinformatics.Rproj` 项目
+## 4. 打开 `R for bioinformatics.Rproj` 项目
 
 * 打开解压得到的目录，找到 `R for bioinformatics.Rproj` 文件，双击用`RStudio`打开
 
 ![](images/talk01/find_and_open_folder_downloaded_from_github.png){height="30%"}
 
-## 完成**作业**并**提交**? cont.
-
-### 7，通过 Rstudio 打开相应的 `Excercises and homework` 文件夹下面的 `talk01-homework.Rmd` 文件
+## 5. 通过 Rstudio 打开相应的 `Excercises and homework` 文件夹下面的 `talk01-homework.Rmd` 文件
 
 ![](images/talk01/open_project_and_find_homework.png){height="80%"}
 
-## 完成**作业**并**提交**? cont.
-
-### 8，完成作业并提交
+## 6. 完成作业并提交
 
 * 按`Rmd`文件的要求回答问题或/和提供代码
 
@@ -608,8 +536,6 @@ tinytex:::install_prebuilt("C:/wchen/Downloads/TinyTex.zip");
 
 * 用工具栏中的 `Knit` 按钮生成与 `Rmd` 同名的 `PDF` 文件, 将文件名改为：`姓名-学号-talk##作业.pdf`
 
-* 通过`钉钉`，在规定的时间内提交
-
 * 现场演示 ... 
 
 ## 注意事项
@@ -618,56 +544,30 @@ tinytex:::install_prebuilt("C:/wchen/Downloads/TinyTex.zip");
 * 软件安装目录 及 工作目录，**不要带中文！！！**
 * 软件安装目录 及 工作目录，**不要带中文！！！**
 
-# Section 5: other tools used in our group
+# section 7: 结语 & 练习
 
-## Tools used in our group
-
-### programming languages
-
--   R
--   Python
--   Perl
-
-### code depository
-
--   Github
--   Github desktop
--   Atom (general-purpose text editor and more)
-
-### web development
-
--   AngularJS
--   Vue.js
--   Bootstrap
--   plot.ly (interactive visualisation)
-
-# section 6: Concluding remarks & 作业
-
-## Concluding remarks
+## 结语
 
 ### 本期回顾
 
 -   生信分析必备编程语言
 -   强大、专业又好用
 -   RStudio及其众多扩展包
--   To be continued
 
-### 下期预告
+## 练习
+
+-   ```Exercises and homework``` 目录下 ```talk01-homework.Rmd``` 文件；
+
+
+## 下期预告
 
 * 数字和字符串
 * 整数、小数、逻辑
 * 数据类型之间转换；自动规则
 * ```matrix```
 
-### About the course
+
+## About the course
 
 -   all codes are available at Github:
     <https://github.com/evolgeniusteam/R-for-bioinformatics>
-
-### important
-* all codes are available at Github: https://github.com/evolgeniusteam/R-for-bioinformatics
-
-## 作业
-
--   ```Exercises and homework``` 目录下 ```talk01-homework.Rmd``` 文件；
-- 完成时间：见钉群的要求
